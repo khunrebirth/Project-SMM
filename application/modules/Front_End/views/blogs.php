@@ -1,5 +1,5 @@
 <!-- Title -->
-<section class="page-title" style="background-image:url(http://192.168.1.7/web/khun/social.co.th/resources/front-end/images/slider-1.jpg)">
+<section class="page-title" style="background-image:url(http://localhost/social.co.th/resources/front-end/images/slider-1.jpg)">
     <div class="container my-auto text-center wow fadeInUp">
         <h1>Blogs Page</h1>
     </div>
