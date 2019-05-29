@@ -1,0 +1,488 @@
+/*
+ * Theme Name   : Social Media Master
+ * Last Update  : 28/5/2019
+ * Author       : Khun
+ */
+
+
+/* ==================================
+ * BASE
+====================================*/
+
+html, body {
+    font-family: "Prompt", sans-serif;
+}
+
+section {
+    padding: 60px 0px;
+}
+
+.bg-gray {
+    background-color: #eee;
+}
+
+.no-gutters > .col, .no-gutters > [class*=col-] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.h1, h1,
+.h2, h2 {
+    font-size: 3rem;
+}
+
+.font-weight-light {
+    font-weight: 500 !important;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: #127dbc;
+    border-color: #127dbc;
+    border-radius: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: .3s;
+}
+
+.btn-primary:hover {
+    opacity: 0.6;
+}
+
+.btn-link:hover,
+.btn-link:focus {
+    text-decoration: none;
+}
+
+/***** Menu *****/
+.navbar-light .navbar-nav .active > .nav-link {
+    color: #127dbc;
+}
+
+.navbar {
+    background: transparent;
+    -o-transition: all .6s;
+    -moz-transition: all .6s;
+    -webkit-transition: all .6s;
+    -ms-transition: all .6s;
+    transition: all .6s;
+    backface-visibility: hidden;
+}
+
+.navbar.navbar-no-bg {
+    background: transparent;
+}
+
+.nav-link.active {
+    color: #00264c;
+}
+
+.navbar-light .navbar-nav {
+    /*font-size: 15px;*/
+    color: #127dbc;
+    /*text-transform: uppercase;*/
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #127dbc;
+    transition: .3s;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:active,
+.navbar-light .navbar-nav .nav-link:active:focus {
+    color: #00264c;
+}
+
+.navbar-expand-md .navbar-nav .nav-link {
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+}
+
+/*.navbar-brand {*/
+/*    width: 105px;*/
+/*    background: url(../img/logo.png) left center no-repeat;*/
+/*    border: 0;*/
+/*    text-indent: -99999px;*/
+/*}*/
+
+.navbar-light ul.navbar-nav li a.btn-link {
+    display: inline-block;
+    margin: 9px 0 0 15px;
+    padding: 6px 15px;
+    background: #127dbc;
+    border: 0;
+    font-size: 10px;
+    font-weight: 500;
+    color: #fff;
+    -moz-border-radius: 16px;
+    -webkit-border-radius: 16px;
+    border-radius: 16px;
+    transition: .3s;
+}
+
+.navbar-light ul.navbar-nav li a.btn-link:hover,
+.navbar-light ul.navbar-nav li a.btn-link:focus,
+.navbar-light ul.navbar-nav li a.btn-link:active,
+.navbar-light ul.navbar-nav li a.btn-link:active:focus {
+    outline: 0;
+    opacity: 0.6;
+    color: #fff;
+    text-decoration: none;
+}
+
+.card {
+    margin-bottom: 16px;
+}
+
+
+/* ==================================
+ * UTILITIES
+====================================*/
+
+.scrolled {
+    background: #fff !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .4);
+}
+
+.page-title {
+    position: relative;
+    padding: 180px 0px 180px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.page-title h1 {
+    position: relative;
+    color: #ffffff;
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 1.2em;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
+
+.page-title:before {
+    position: absolute;
+    content: '';
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: rgba(18, 125, 188, 0.1);
+}
+
+
+/* ==================================
+ * SECTION (HOME)
+====================================*/
+
+#home {
+    height: 100vh;
+    min-height: 500px;
+    background-image: url('http://localhost/social.co.th/resources/front-end/images/slider-1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.home__title--head {
+    font-weight: 500;
+    line-height: 1;
+}
+
+.home__title--head span {
+    color: #0d84be;
+}
+
+.home__title--body {
+    color: #666;
+}
+
+
+/* ==================================
+ * SECTION (ABOUT)
+====================================*/
+
+#about {
+    padding-top: 0px;
+    padding-bottom: 60px;
+}
+
+.showcase-img {
+    height: 100vh;
+    background-size: cover;
+}
+
+.showcase .showcase-text {
+    padding: 4rem;
+}
+
+.about__title--head {
+    font-weight: 500;
+    line-height: 1;
+}
+
+.about__title--head span {
+    color: #0d84be;
+}
+
+.about__title--body {
+    color: #00264c;
+}
+
+
+/* ==================================
+ * SECTION (SERVICE)
+====================================*/
+
+.text-primary {
+    color: #ffffff !important;
+    background: rgba(18, 125, 188, 0.7);
+    font-weight: 500 !important;
+    font-family: "Prompt", sans-serif;
+    font-size: 1.75em;
+    padding: 0.50em 0px;
+}
+
+.service__icon--resize {
+    width: 50%;
+}
+
+.service__title--head {
+    font-weight: 300;
+    font-size: 1.25rem;
+    color: #0d84be;
+}
+
+.service__title--body {
+    color: #999;
+}
+
+
+/* ==================================
+ * SECTION (CLIENT)
+====================================*/
+
+.client__navs .nav-link.active {
+    color: #00264c;
+}
+
+.client__navs .nav-link {
+    color: #127dbc;
+    transition: .3s;
+}
+
+.client__navs .nav-link:hover {
+    color: #00264c;
+}
+
+.client__navs--border--right {
+    border-right: 1px solid #00264c;
+}
+
+
+/* ==================================
+ * SECTION (BLOGS)
+====================================*/
+
+.blog__modern--figure {
+    position: relative;
+    overflow: hidden;
+    display: block
+}
+
+.blog__modern--figure img {
+    width: 100%;
+    transition: all .3s ease
+}
+
+.blog__modern--time {
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px 17px 8px 1px;
+    color: #756aee;
+    font-size: 21px;
+    line-height: .5;
+    letter-spacing: .025em;
+    text-transform: uppercase;
+    background: #fff
+}
+
+.blog__modern--time::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background: inherit;
+    transform: translate3d(0, -100%, 0) skewX(30deg);
+    transform-origin: 50% 100%;
+    will-change: transform
+}
+
+.blog__modern--time .blog__modern--time--month {
+    font-size: 32px
+}
+
+.blog__modern--time .blog__modern--time--month::after {
+    content: '/';
+    position: relative;
+    display: inline-block;
+    font-size: inherit;
+    color: inherit;
+    margin-left: 3px
+}
+
+.blog__modern--time * + .blog__modern--time--number {
+    margin-left: 2px
+}
+
+.blog__modern--text {
+    letter-spacing: .025em;
+    color: #9b9b9b
+}
+
+* + .blog__modern--title {
+    margin-top: 20px
+}
+
+* + .blog__modern--text {
+    margin-top: 12px
+}
+
+.blog__modern--title a {
+    color: #000;
+}
+
+
+/* ==================================
+ * SECTION (TEAM)
+====================================*/
+
+#team {
+    background: #eee;
+}
+
+.team__card--parent {
+    background: transparent !important;
+    border: none;
+}
+
+.team__crad--title {
+    font-weight: bold;
+    color: #00264c !important;
+}
+
+.team__crad--body {
+    color: #999 !important;
+}
+
+
+/* ==================================
+ * SECTION (CONTACT)
+====================================*/
+
+.contact__title--head {
+    font-size: 1.75rem;
+    font-weight: 400;
+}
+
+.contact__title--body {
+
+}
+
+.contact__form--title {
+    font-size: 1.75rem;
+}
+
+.contact__form--title span {
+    color: #0d84be;
+}
+
+.contact__form--body {
+    font-size: 14px;
+}
+
+
+/***** MEDIA QUERIES *****/
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+}
+
+@media (max-width: 767px) {
+
+    .navbar {
+        color: #fff !important;
+        text-align: center;
+    }
+
+    .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+        margin-left: 15px;
+    }
+
+    .navbar-collapse {
+        border: 0;
+    }
+
+    .navbar-light .navbar-toggle {
+        border-color: transparent;
+    }
+
+    .navbar-light ul.navbar-nav li a.btn-link-3 {
+        margin: 10px;
+    }
+
+    .navbar-light ul.navbar-nav li a.btn-link {
+        margin-left: 0px;
+    }
+
+    .client__navs {
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+    }
+
+    #client .nav-item {
+        display: inline-block;
+        width: 100%;
+        padding: 8px;
+        border-bottom: 1px solid #00264c;
+    }
+
+    #client .nav-item:last-child {
+        border-bottom: none;
+    }
+
+    #client .client__navs--border--right {
+        border-right: none;
+    }
+
+}
+
+@media (max-width: 415px) {
+
+}
+
+/* Retina-ize images/icons */
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (   min--moz-device-pixel-ratio: 2), only screen and (     -o-min-device-pixel-ratio: 2/1), only screen and (        min-device-pixel-ratio: 2), only screen and (                min-resolution: 192dpi), only screen and (                min-resolution: 2dppx) {
+
+    /* logo */
+    .navbar-brand {
+        background-image: url(../img/logo@2x.png) !important;
+        background-repeat: no-repeat !important;
+        background-size: 102px 32px !important;
+    }
+
+}
