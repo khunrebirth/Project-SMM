@@ -6,7 +6,7 @@ $("#modal-2").fireModal({body: 'Modal body text goes here.', center: true});
 let modal_3_body = '<p>Object to create a button on the modal.</p><pre class="language-javascript"><code>';
 modal_3_body += '[\n';
 modal_3_body += ' {\n';
-modal_3_body += "   text: 'Login',\n";
+modal_3_body += "   text: 'Authentication',\n";
 modal_3_body += "   submit: true,\n";
 modal_3_body += "   class: 'btn btn-primary btn-shadow',\n";
 modal_3_body += "   handler: function(modal) {\n";
@@ -43,7 +43,7 @@ $("#modal-4").fireModal({
 });
 
 $("#modal-5").fireModal({
-  title: 'Login',
+  title: 'Authentication',
   body: $("#modal-login-part"),
   footerClass: 'bg-whitesmoke',
   autoFocus: false,
@@ -67,7 +67,7 @@ $("#modal-5").fireModal({
   },
   buttons: [
     {
-      text: 'Login',
+      text: 'Authentication',
       submit: true,
       class: 'btn btn-primary btn-shadow',
       handler: function(modal) {

@@ -18,11 +18,28 @@ class Dashboard extends MX_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+
+    private $data = false;
+
+    public function __construct()
+    {
+        parent::__construct();
+
+        // Middleware
+        require_login('backoffice/login');
+
+        // Set Model
+        $this->load->model('User_model');
+
+        $this->data['user'] = $this->User_model->get_user_by_id($this->session->userdata('user_id'));
+    }
+
 	public function index()
 	{
-		$data['content'] = 'dashboard';
+        $this->data['title'] = 'Dashboard';
+		$this->data['content'] = 'dashboard';
 
-		$this->load->view('app', $data);
+		$this->load->view('app', $this->data);
 	}
 
 }

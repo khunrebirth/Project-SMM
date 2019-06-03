@@ -1,56 +1,26 @@
-<footer class="container-fluid text-center">
-    <p>&copy; 2019 บริษัท โซเซียล มีเดีย มาสเตอร์ จำกัด All right reserved.</p>
-</footer>
+        <footer class="main-footer">
+            <div class="footer-left">
+                Copyright &copy; 2018
+                <div class="bullet"></div>
+                Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a>
+            </div>
+            <div class="footer-right">
+                2.3.0
+            </div>
+        </footer>
 
-<!-- Custom JS -->
-<script>
-    function config() {
-        new WOW().init()
+    </div>
+</div>
 
-        $(".navbar").toggleClass('scrolled', $(this).scrollTop() > $(".navbar").height())
-    }
+        <!-- Template JS File -->
+        <script src="<?php echo base_url('resources/back-end/assets/js/scripts.js'); ?>"></script>
+        <script src="<?php echo base_url('resources/back-end/assets/js/custom.js'); ?>"></script>
 
+        <!-- Page Specific JS File -->
+        <script src="<?php echo base_url('resources/back-end/assets/js/page/index-0.js'); ?>"></script>
 
-    $(function () {
-
-        /******************
-         * Config
-         * ****************/
-        config()
-
-
-        /******************
-         * Event
-         * ****************/
-
-        $(document).scroll(function () {
-            $(".navbar").toggleClass('scrolled', $(this).scrollTop() > $(".navbar").height())
-            if ($(".navbar-collapse").hasClass('show')) {
-                $(".navbar").addClass('scrolled')
-            }
-        })
-
-        $(".navbar-toggler").on('click', function() {
-            if ($(window).scrollTop() == 0) {
-                if ($(".navbar-collapse").hasClass('show')) {
-                    $(".navbar").removeClass('scrolled')
-
-                } else {
-                    $(".navbar").addClass('scrolled')
-                }
-            }
-        })
-        //
-        // $(".navbar .nav-link").on('click', function (e) {
-        //     e.preventDefault()
-        //     let position = $($(this).attr("href")).offset().top
-        //     $("body, html").animate({
-        //         scrollTop: position
-        //     }, 500)
-        // })
-    });
-
-</script>
+        <!-- Custom JS -->
+        <script></script>
 
 </body>
 </html>

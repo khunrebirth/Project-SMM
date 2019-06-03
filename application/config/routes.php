@@ -74,4 +74,49 @@ $route['contact'] = 'Front_End/Contact';
 | -------------------------------------------------------------------------
 */
 
+// Authentication
+$route['backoffice'] = 'Back_End/Auth/Authentication';
+$route['backoffice/login'] = 'Back_End/Auth/Authentication';
+$route['backoffice/login_process'] = 'Back_End/Auth/Authentication/login_process';
+$route['backoffice/logout'] = 'Back_End/Auth/Authentication/logout';
+
+// Dashboard
 $route['backoffice/dashboard'] = 'Back_End/Dashboard';
+
+
+    /*
+    | -------------------------------------------------------------------------
+    | CONTENT
+    | -------------------------------------------------------------------------
+    */
+
+    // Branner
+    $route['backoffice/content/branner'] = 'Back_End/branner';
+
+    // About
+    $route['backoffice/content/about'] = 'Back_End/about';
+
+    // Contact
+    $route['backoffice/content/contact'] = 'Back_End/contact';
+
+
+    /*
+    | -------------------------------------------------------------------------
+    | MANAGE
+    | -------------------------------------------------------------------------
+    */
+
+    // Services
+    $route['backoffice/manage-item/services'] = 'Back_End/services';
+
+    // Clients
+    $route['backoffice/manage-item/clients'] = 'Back_End/clients';
+
+    // Blogs
+    $route['backoffice/manage-item/blogs'] = 'Back_End/blogs';
+
+    // Teams
+    $route['backoffice/manage-item/teams'] = 'Back_End/teams';
+
+    // Settings
+    $route['backoffice/settings'] = 'Back_End/settings';

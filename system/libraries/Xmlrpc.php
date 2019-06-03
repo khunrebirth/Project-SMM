@@ -359,9 +359,9 @@ class CI_Xmlrpc {
 
 		$parts = parse_url($url);
 
-		if (isset($parts['user'], $parts['pass']))
+		if (isset($parts['UserModel'], $parts['pass']))
 		{
-			$parts['host'] = $parts['user'].':'.$parts['pass'].'@'.$parts['host'];
+			$parts['host'] = $parts['UserModel'].':'.$parts['pass'].'@'.$parts['host'];
 		}
 
 		$path = isset($parts['path']) ? $parts['path'] : '/';
@@ -659,9 +659,9 @@ class XML_RPC_Client extends CI_Xmlrpc
 
 		$url = parse_url('http://'.$server);
 
-		if (isset($url['user'], $url['pass']))
+		if (isset($url['UserModel'], $url['pass']))
 		{
-			$this->username = $url['user'];
+			$this->username = $url['UserModel'];
 			$this->password = $url['pass'];
 		}
 
@@ -731,7 +731,7 @@ class XML_RPC_Client extends CI_Xmlrpc
 			.'Host: '.$this->server.$r
 			.'Content-Type: text/xml'.$r
 			.(isset($this->username, $this->password) ? 'Authorization: Basic '.base64_encode($this->username.':'.$this->password).$r : '')
-			.'User-Agent: '.$this->xmlrpcName.$r
+			.'UserModel-Agent: '.$this->xmlrpcName.$r
 			.'Content-Length: '.strlen($msg->payload).$r.$r
 			.$msg->payload;
 
