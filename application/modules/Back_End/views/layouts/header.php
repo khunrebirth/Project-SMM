@@ -36,6 +36,7 @@
     <script src="<?php echo base_url('resources/back-end/node_modules/jqvmap/dist/maps/jquery.vmap.world.js'); ?>"></script>
     <script src="<?php echo base_url('resources/back-end/node_modules/summernote/dist/summernote-bs4.js'); ?>"></script>
     <script src="<?php echo base_url('resources/back-end/node_modules/chocolat/dist/js/jquery.chocolat.min.js'); ?>"></script>
+    <script src="<?php echo base_url('resources/back-end/node_modules/sweetalert/dist/sweetalert.min.js'); ?>"></script>
 </head>
 <body>
 <div id="app">

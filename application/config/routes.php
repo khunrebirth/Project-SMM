@@ -117,6 +117,10 @@ $route['backoffice/dashboard'] = 'Back_End/Dashboard';
 
     // Teams
     $route['backoffice/manage-item/teams'] = 'Back_End/teams';
+    $route['backoffice/manage-item/teams/store'] = 'Back_End/teams/store';
+    $route['backoffice/manage-item/teams/edit/(:any)'] = 'Back_End/teams/edit';
+    $route['backoffice/manage-item/teams/update/(:any)'] = 'Back_End/teams/update';
+    $route['backoffice/manage-item/teams/destroy/(:any)'] = 'Back_End/teams/destroy';
 
     // Settings
     $route['backoffice/settings'] = 'Back_End/settings';

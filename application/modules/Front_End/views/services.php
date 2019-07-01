@@ -1,105 +1,339 @@
 <!-- Title -->
-<section class="page-title" style="background-image:url(http://localhost/social.co.th/resources/front-end/images/slider-1.jpg)">
-    <div class="container my-auto text-center wow fadeInUp">
-        <h1>Services Page</h1>
+<!--<section class="page-title" style="background-image:url(http://localhost/social.co.th/resources/front-end/images/slider-1.jpg)">-->
+<!--    <div class="container my-auto text-center wow fadeInUp">-->
+<!--        <h1>Services Page</h1>-->
+<!--    </div>-->
+<!--</section>-->
+
+<style>
+    h3.service--split__title--head {
+        font-size: 1.25rem;
+        font-weight: 500;
+        line-height: 1;
+        color: #00264c;
+    }
+
+    .service--split__title--head span {
+        color: #0d84be;
+    }
+
+    .service--split__title--body {
+        color: #333;
+    }
+
+
+    #service-1 {
+        background-color: #0d84be;
+        color: #fff;
+        padding: 80px 0px;
+    }
+
+    .service-1__title--head {
+        font-weight: 500;
+        font-size: 1.25rem;
+        border-bottom: 3px solid #fff;
+        height: 60px;
+        width: 65%;
+    }
+
+    .service-1__wrapper {
+        height: 100%; border-bottom: 1px solid #fff;
+    }
+
+
+    #service-2 {
+        background-color: #fff;
+        color: #00264c;
+        padding-top: 80px;
+        padding-bottom: 16rem;
+    }
+
+    #service-2 h2 {
+        position: relative;
+    }
+
+    #service-2 h2:after {
+        content: "";
+        color: #00264c;
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        right: 0;
+        height: 10px;
+        width: 30%;
+        border-top: 3px solid #00264c;
+        z-index: 1
+    }
+
+    #service-3 {
+        background-color: #0d84be;
+        color: #fff;
+        padding: 80px 0px;
+    }
+
+    #service-3 h2 {
+        position: relative;
+    }
+
+    #service-3 h2:after {
+        content: "";
+        color: #fff;
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        right: 0;
+        height: 10px;
+        width: 30%;
+        border-top: 3px solid #fff;
+        z-index: 1
+    }
+
+    #service-4 {
+        background-image: url("resources/front-end/images/img-/images/ppc.jpg");
+        color: #00264c;
+        padding: 80px 0px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;.
+    }
+
+    #service-4 h2 {
+        position: relative;
+    }
+
+    #service-4 h2:after {
+        content: "";
+        color: #0d84be;
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        right: 0;
+        height: 10px;
+        width: 30%;
+        border-top: 3px solid #0d84be;
+        z-index: 1
+    }
+
+
+    @media (max-width: 767px) {
+        .service-1__wrapper {
+            border-bottom: none;
+        }
+    }
+</style>
+
+<!-- Service -->
+<section id="service" style="padding-top: 160px; padding-bottom: 0px;">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-md-5 col-lg-5 text-right pr-3 pr-xs-0 text-center text-sm-right">
+                <h2 class="service--split__title--head mt-md-0 mt-4"><span>S</span>ocial Media Master</h2>
+                <p class="lead service--split__title--body mt-4 mb-4">
+                    คร่ำหวอดในแวดวงดิจิทัลมาอย่างยาวนานตั้งแต่ยุคแรก ๆ  ของการทำสื่อโฆษณาออนไลน์ ไม่ใช่แค่ประสบการณ์ที่เราได้เก็บเกี่ยว และเพาะบ่มเท่านั้นแต่เรายังมีเทคนิคในการทำการตลาดออนไลน์มีเพียบ ที่พร้อมจะขับเคลื่อนธุรกิจของคุณ ให้ประสบความสำเร็จ บนโลกออนไลน์
+                </p>
+            </div>
+            <div class="col-xs-12 col-md-7 col-lg-7 pl-md-5 text-center text-sm-left">
+                <img src="<?php base_url() ?>resources/front-end/images/img-/images/title-service.png" alt="" class="img-fluid">
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-xs-12 col-md-3 col-lg-3 mb-5">
+                <img src="resources/front-end/images/service-1/smm-consult.png" alt="" class="img-fluid service__icon--resize">
+                <h3 class="service--split__title--head mt-3">บริการที่ปรึกษาการคลาดออนไลน์</h3>
+            </div>
+            <div class="col-xs-12 col-md-3 col-lg-3 mb-5">
+                <img src="resources/front-end/images/service-1/smm-marketing.png" alt="" class="img-fluid service__icon--resize">
+                <h3 class="service--split__title--head mt-3">บริการวางแผนและทำการตลาดออนไลน์</h3>
+            </div>
+            <div class="col-xs-12 col-md-3 col-lg-3 mb-5">
+                <img src="resources/front-end/images/service-1/smm-production.png" alt="" class="img-fluid service__icon--resize">
+                <h3 class="service--split__title--head mt-3">รับพัฒนา และออกแบบเว็บไซต์</h3>
+            </div>
+            <div class="col-xs-12 col-md-3 col-lg-3 mb-5">
+                <img src="resources/front-end/images/service-1/smm-website.png" alt="" class="img-fluid service__icon--resize">
+                <h3 class="service--split__title--head mt-3">Production</h3>
+            </div>
+        </div>
     </div>
 </section>
 
-<!-- Service -->
-<section id="service" class="pb-0">
-    <div class="container-fluid text-center">
-        <div class="title-service" style="text-align: center; padding: 4rem;">
-            <img src="<?php base_url() ?>resources/front-end/images/img-/images/title-service.png" alt="" class="img-fluid">
-        </div>
-        <div class="row mb-5">
-            <div class="col-xs-12 col-md-3 col-lg-3 mb-5">
-                <img src="<?php base_url() ?>resources/front-end/images/img-/images/icon1.png" alt=""
-                     class="img-fluid service__icon--resize">
-                <h3 class="service__title--head">Digital Marketing Strategy Cons ancy</h3>
-                <p class="service__title--body">
-                    This service is offered to those businesses that require a more known service where we can provide
-                    individual consultancy.
-                </p>
-            </div>
-            <div class="col-xs-12 col-md-3 col-lg-3 mb-5">
-                <img src="<?php base_url() ?>resources/front-end/images/img-/images/icon2.png" alt=""
-                     class="img-fluid service__icon--resize">
-                <h3 class="service__title--head">Creative & Web Design</h3>
-                <p class="service__title--body">
-                    Our development team is able to work with you to plan and scope on your requirement for a properly
-                    work.
-                </p>
-            </div>
-            <div class="col-xs-12 col-md-3 col-lg-3 mb-5">
-                <img src="<?php base_url() ?>resources/front-end/images/img-/images/icon3.png" alt=""
-                     class="img-fluid service__icon--resize">
-                <h3 class="service__title--head">Social Media Marketing</h3>
-                <p class="service__title--body">
-                    Due to social media marketing is an essential part of the marketing. It has the power to reach an
-                    enormous audience
-                </p>
-            </div>
-            <div class="col-xs-12 col-md-3 col-lg-3 mb-5">
-                <img src="<?php base_url() ?>resources/front-end/images/img-/images/icon4.png" alt=""
-                     class="img-fluid service__icon--resize">
-                <h3 class="service__title--head">Production & Management Servic</h3>
-                <p class="service__title--body">
-                    Business image is very important.We should plan to work as a system for effective business
-                </p>
-            </div>
-        </div>
+<section id="service-1">
+    <div class="container">
         <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-3 mb-4" style="padding: 0px;">
-                <a href="#" title="Pay Per Click">
-                    <div class="grid">
-                        <figure class="effect-ruby">
-                            <img src="<?php base_url() ?>resources/front-end/images/img-/images/ppc.jpg"
-                                 alt="Design and Production" class="img-fluid">
-                            <figcaption>
-                                <h3 class="h4 text-primary"><span>Pay Per Click</span></h3>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </a>
+            <div class="col-md-4">
+                <h2>บริการที่ปรึกษาการตลาดออนไลน์</h2>
+                <div class="service-1__wrapper--icon text-center mt-5 mb-5" style="width: 100%;">
+                    <img src="resources/front-end/images/service-1/smm-consult.png" alt="" class="img-fluid">
+                </div>
+<!--                <div class="service-1__footer">-->
+<!--                    <h3>Contact us</h3>-->
+<!--                    <span>02-193-9062</span>-->
+<!--                </div>-->
             </div>
-            <div class="col-sm-12 col-md-6 col-lg-3 mb-4 " style="padding: 0px;">
-                <a href="#" title="Online Ads.">
-                    <div class="grid">
-                        <figure class="effect-ruby">
-                            <img src="<?php base_url() ?>resources/front-end/images/img-/images/online-ad.jpg"
-                                 alt="Design and Production" class="img-fluid">
-                            <figcaption>
-                                <h3 class="h4 text-primary"><span>Online Ads.</span></h3>
-                            </figcaption>
-                        </figure>
+            <div class="col-md-8">
+                <div class="row mb-5">
+                    <img src="resources/front-end/images/service-1/service-1_16.png" alt="" class="img-fluid">
+                </div>
+                <div class="row">
+                    <div class="col-md-4 pl-md-0">
+                        <div class="service-1__wrapper">
+                            <h3 class="service-1__title--head mb-5">วางแผนทางการตลาดออนไลน์</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid cumque nihil quo repellendus suscipit. Aut, neque sequi. Accusantium adipisci architecto dicta eveniet id omnis, optio rem tempore. Atque, deserunt et.</p>
+                        </div>
                     </div>
-                </a>
+                    <div class="col-md-4 pl-md-0">
+                        <div class="service-1__wrapper">
+                            <h3 class="service-1__title--head mb-5">ที่ปรึกษาการตลาดออนไลน์</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet asperiores laudantium minus numquam ratione sapiente? Architecto consectetur eaque itaque nulla possimus veniam voluptatum. Accusamus alias beatae deleniti magnam sint.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 pl-md-0">
+                        <div class="service-1__wrapper">
+                            <h3 class="service-1__title--head mb-5">วิทยากรบรรยาย</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores dolor facilis nulla, provident rerum totam! Aut eos, et ex fugit nam natus necessitatibus quaerat quas sit soluta tenetur voluptas voluptates.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-12 col-md-6 col-lg-3 mb-4" style="padding: 0px;">
-                <a href="#" title="Web Design">
-                    <div class="grid">
-                        <figure class="effect-ruby">
-                            <img src="<?php base_url() ?>resources/front-end/images/img-/images/webdesign.jpg"
-                                 alt="Design and Production" class="img-fluid">
-                            <figcaption>
-                                <h3 class="h4 text-primary"><span>Web Design</span></h3>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </a>
+        </div>
+    </div>
+</section>
+
+<section id="service-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>บริการวางแผนและการทำการตลาดออนไลน์</h2>
+<!--                <div class="service-1__footer">-->
+<!--                    <h3>Contact us</h3>-->
+<!--                    <span>02-193-9062</span>-->
+<!--                </div>-->
             </div>
-            <div class="col-sm-12 col-md-6 col-lg-3 mb-4" style="padding: 0px;">
-                <a href="#" title="SEO">
-                    <div class="grid">
-                        <figure class="effect-ruby">
-                            <img src="<?php base_url() ?>resources/front-end/images/img-/images/seo.jpg"
-                                 alt="Design and Production" class="img-fluid">
-                            <figcaption>
-                                <h3 class="h4 text-primary"><span>SEO</span></h3>
-                            </figcaption>
-                        </figure>
+            <div class="col-md-4">
+                <div class="service-2__wrapper--box mb-3">
+                    <h5>รับทำ Search Marketing</h5>
+                    <ul class="service-2__box--menu">
+                        <li>รับทำ SEO</li>
+                        <li>รับทำ Google Adword</li>
+                    </ul>
+                </div>
+                <div class="service-2__wrapper--box mb-3">
+                    <h5>รับทำ Social Media Marketing</h5>
+                    <ul class="service-2__box--menu">
+                        <li>รับทำ Facebook Ads</li>
+                        <li>รับทำ Instagram Ads</li>
+                        <li>รับทำ Youtube Ads</li>
+                        <li>บริหารดูแล Line@</li>
+                        <li>บริหารบริการจัดการแฟนเพจ</li>
+                    </ul>
+                </div>
+                <div class="service-2__wrapper--box mb-3">
+                    <h5>รับทำ Content Marketing / Creative Content</h5>
+                </div>
+
+                <div class="service-2__wrapper--box mb-3">
+                    <h5>รับทำ Influencer & Micro Influencer</h5>
+                </div>
+                <div class="service-2__wrapper--box mb-3">
+                    <h5>รับทำ EDM</h5>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <img src="resources/front-end/images/service-1/service-1_20.png" alt=""  class="img-fluid">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="service-3" style="position:relative;">
+    <img src="resources/front-end/images/service-1/footer-section.jpg" alt="" style="position: absolute;top:-201px;right:0px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>รับพัฒนาและออกแบบเว็บไซต์</h2>
+                <div class="service-1__wrapper--icon text-center mt-5 mb-5" style="width: 100%;">
+                    <img src="resources/front-end/images/service-1/smm-marketing.png" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-4">
+
+                <div class="mb-5">
+                    <span>รับพัฒนา</span>
+                    <h3>Website</h3>
+                </div>
+
+                <div class="mb-5">
+                    <span>รับพัฒนา</span>
+                    <h3>Web App</h3>
+                </div>
+
+
+                <div class="mb-5">
+                    <span>รับพัฒนา</span>
+                    <h3>Moblie App</h3>
+                </div>
+
+                <div class="mb-5">
+                    <span>รับพัฒนา</span>
+                    <h3>Landing page</h3>
+                </div>
+            </div>
+            <div class="col-md-4">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="service-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Production</h2>
+            </div>
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">VDO Production</h5>
+<!--                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+                            </div>
+                        </div>
                     </div>
-                </a>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Graphic Design</h5>
+<!--                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Motion Graphic</h5>
+<!--                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Animation</h5>
+                                <!--                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">MV Music</h5>
+                                <!--                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

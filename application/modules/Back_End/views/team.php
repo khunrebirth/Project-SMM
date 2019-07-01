@@ -22,7 +22,8 @@
                         <div class="card-header">
                             <h4>List of Teams</h4>
                             <div class="card-header-action">
-                                <a href="#modalAddEditTeam" class="btn btn-primary" onclick="addTeam()" data-toggle="modal">
+                                <a href="#modalAddEditTeam" class="btn btn-primary" onclick="addTeam()"
+                                   data-toggle="modal">
                                     <i class="fas fa-plus"></i> Add News
                                 </a>
                             </div>
@@ -41,7 +42,7 @@
                                     </thead>
                                     <tbody>
                                     <?php
-                                        $counter  = 1;
+                                        $counter = 1;
                                         foreach ($teams as $team) {
                                             echo '<tr>';
                                             echo '<td>' . $counter++ . '</td>';
@@ -49,10 +50,10 @@
                                             echo '<td>' . $team->body . '</td>';
                                             echo '<td>' . '<img alt="image" src=' . base_url('storage/images/' . $team->image) . ' width="45">' . '</td>';
                                             echo '<td>
-                                                      <a href=' . base_url('backoffice/team') . ' class="btn btn-warning"><i class="fas fa-edit"></i> Edit</a>
-                                                      <a href=' . base_url('backoffice/team') . ' class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete</a>
-                                                  </td>';
-                                             echo '</tr>';
+                                                        <a class="btn btn-warning" onclick="editTeam(' . "'" . $team->id .  "'" . ',' . "'" . base_url("backoffice/manage-item/teams/edit/$team->id") . "'" . ')"><i class="fas fa-edit"></i> Edit</a>
+                                                        <a class="btn btn-danger" onclick="deleteTeam(' . "'" . $team->id . "'" . ',' . "'" . base_url("backoffice/manage-item/teams/destroy/$team->id") . "'" . ')"><i class="fas fa-trash-alt"></i> Delete</a>
+                                                    </td>';
+                                            echo '</tr>';
                                         }
                                     ?>
                                     </tbody>
@@ -77,8 +78,8 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <form action="" id="addEditTeamForm">
+                <form id="addEditTeamForm">
+                    <div class="modal-body">
                         <div class="form-group">
                             <label>Title</label>
                             <input type="text" class="form-control" name="title" id="title">
@@ -91,12 +92,12 @@
                             <label>File</label>
                             <input type="file" class="form-control" name="file" id="file">
                         </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" id="btnAddTeam">Save changes</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -124,60 +125,43 @@
 
     function addTeam() {
         clearForm()
-        $('#customerFirstName').val('')
-        $('#customerLastName').val('')
-        $('#modalCustomerName').text('เพิ่มลูกค้าใหม่')
-        $('#btnAddCustomer').text('บันทึก')
+        $('#title').val('')
+        $('#body').val('')
+        $('#file').val('')
     }
-    function showTeam(id) {
-        $.ajax({
-            url: '{{ route('ajax.get.customer.by.id') }}',
-            data: {id: id},
-            success: function (res) {
-                $('#modalShowCustomer').modal('show')
-                var html = '<p>' +
-                    'ชื่อ: ' + res.data.first_name + '<br>' +
-                    'นามสกุล: ' + res.data.last_name + '<br>' +
-                    'ชื่อเล่น: ' + res.data.nickname + '<br>' +
-                    'รหัสบัตรประชาชน: ' + res.data.idcard + ' <br>' +
-                    'เบอร์โทร: ' + res.data.phone + ' <br>' +
-                    'ค้างชำระ: ' + res.etc + ' <br>' +
-                    '</p>'
-                $('#bodyCustomer').html(html)
-            }
-        })
-    }
+
     function editTeam(id, url) {
         clearForm()
+
         $.ajax({
-            url: '{{ route('ajax.get.customer.by.id') }}',
+            url: url,
             data: {id: id},
             success: function (res) {
-                $('#modalAddEditCustomer').modal('show')
-                $('#modalCustomerName').text('แก้ไขลูกค้า')
-                $('#btnAddCustomer').text('อัพเดท')
-                $('#customerId').val(res.data.id)
-                $('#customerFirstName').val(res.data.first_name)
-                $('#customerLastName').val(res.data.last_name)
-                $('#customerNickname').val(res.data.nickname)
-                $('#customerIdcard').val(res.data.idcard)
-                $('#customerPhone').val(res.data.phone)
-                $('#customerEmail').val(res.data.email)
-                $('#customerId').data('link-to-update', url)
+                $('#modalAddEditTeam').modal('show')
+                // $('#modalCustomerName').text('แก้ไขลูกค้า')
+                // $('#customerId').val(res.data.id)
+                // $('#customerFirstName').val(res.data.first_name)
+                // $('#customerLastName').val(res.data.last_name)
+                // $('#customerNickname').val(res.data.nickname)
+                // $('#customerIdcard').val(res.data.idcard)
+                // $('#customerPhone').val(res.data.phone)
+                // $('#customerEmail').val(res.data.email)
+                // $('#customerId').data('link-to-update', url)
             },
             error: function (res) {
                 swal({
                     title: 'Oops...',
-                    text: res.message,
+                    text: 'fail',
                     icon: 'error',
                     timer: '1500'
                 })
             }
         })
     }
+
     function deleteTeam(id, url) {
         swal({
-            title: 'คุณต้องการจะลบ ?',
+            title: 'Are you sure ?',
             icon: 'warning',
             button: true,
             dangerMode: true
@@ -185,63 +169,65 @@
             .then((willDelete) => {
                 if (willDelete) {
                     $.ajax({
-                        type: 'DELETE',
+                        type: 'POST',
                         url: url,
-                        data: {_token: "{{ csrf_token() }}"},
+                        data: {
+                            id, id
+                        },
                         success: function (res) {
                             swal({
-                                title: res.message,
+                                title: 'Success',
                                 icon: 'success',
-                                button: "Great!"
+                                button: 'Great!'
                             })
                             reload()
                         },
                         error: function (res) {
                             swal({
                                 title: 'Oops...',
-                                text: res.message,
+                                text: 'Fail',
                                 icon: 'error',
                                 timer: '1500'
                             })
                         }
                     })
                 } else {
-                    swal('ยกเลิก')
+                    swal('Cancel')
                 }
             })
     }
+
     $(document).ready(function () {
-        $('#modalAddEditTeam').on('submit', function (e) {
+        $('#addEditTeamForm').on('submit', function (e) {
             e.preventDefault()
-            var customerId = $('#customerId').val()
-            var url = ''
-            var method = ''
-            // Case:: Update
-            if (customerId != '') {
-                url = $('#customerId').data('link-to-update')
-                method = 'PATCH'
-            }
-            // Case:: Insert New
-            else {
-                url = '{{ route('customers.store') }}'
+
+            let $data = new FormData($(this)[0]),
+                $teamId = '', // $('#customerId').val()
+                url = '',
                 method = 'POST'
+
+
+            // Case: Update
+            if ($teamId != '') {
+                // url = $('#customerId').data('link-to-update')
             }
+            // Case: Insert New
+            else {
+                url = '<?php echo base_url('backoffice/manage-item/teams/store'); ?>'
+            }
+
             $.ajax({
                 type: method,
                 url: url,
-                data: {
-                    _token: "{{ csrf_token() }}",
-                    customer_first_name: $('#customerFirstName').val(),
-                    customer_last_name: $('#customerLastName').val(),
-                    customer_nickname: $('#customerNickname').val(),
-                    customer_idcard: $('#customerIdcard').val(),
-                    customer_phone: $('#customerPhone').val(),
-                    customer_email: $('#customerEmail').val()
-                },
+                data: $data,
+                processData: false,
+                contentType: false,
+                cache: false,
+                async: false,
                 success: function (res) {
-                    $('#modalAddEditCustomer').modal('hide')
+                    $('#modalAddEditTeam').modal('hide')
                     swal({
-                        title: res.message,
+                        title: 'Success',
                         icon: 'success',
                         button: "Great!"
                     })
