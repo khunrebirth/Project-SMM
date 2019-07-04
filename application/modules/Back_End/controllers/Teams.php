@@ -49,8 +49,10 @@ class Teams extends MX_Controller
 
     public function store()
     {
+
         // TODO:: Validate
-        $config['upload_path'] = './storage/images';
+
+        $config['upload_path'] = './storage/images/teams';
         $config['allowed_types'] = 'gif|jpg|png';
         $config['file_name'] = 'img-team-' . $this->input->post('title') . '-' . time();
 
@@ -77,7 +79,6 @@ class Teams extends MX_Controller
             }
         }
 
-
         return $this->output
             ->set_status_header($status)
             ->set_content_type('application/json')
@@ -86,16 +87,15 @@ class Teams extends MX_Controller
 
     public function show() {}
 
-    public function edit() {
+    public function edit($id) {
         $status = 500;
         $response['success'] = 0;
 
-        $team = $this->Team_model->get_team_by_id($this->input->post('id'));
-
-        print_r($this->input->post('id')); exit();
+        $team = $this->Team_model->get_team_by_id($id);
 
         if ($team != false) {
             $status = 200;
+            $response['data'] = $team;
             $response['success'] = 1;
         }
 
@@ -105,14 +105,65 @@ class Teams extends MX_Controller
             ->set_output(json_encode($response));
     }
 
-    public function update() {}
+    public function update($id)
+    {
 
-    public function destroy()
+        // TODO:: Validate
+
+        $config['upload_path'] = './storage/images/teams';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['file_name'] = 'img-team-' . $this->input->post('title') . '-' . time();
+
+        $status = 500;
+        $response['success'] = 0;
+
+        $this->load->library('upload', $config);
+
+        // Case: Don't have upload
+        if (!$this->upload->do_upload('file')) {
+            $error = array('error' => $this->upload->display_errors());
+
+            $team = $this->Team_model->update_team_by_id($id, array(
+                'title' => $this->input->post('title'),
+                'body' => $this->input->post('body'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ));
+
+            if ($team != false) {
+                $status = 200;
+                $response['success'] = 1;
+            }
+        }
+
+        // Case: Have Upload
+        else {
+            $data = array('upload_data' => $this->upload->data());
+
+            $team = $this->Team_model->update_team_by_id($id, array(
+                'title' => $this->input->post('title'),
+                'body' => $this->input->post('body'),
+                'image' => $data['upload_data']['file_name'],
+                'updated_at' => date('Y-m-d H:i:s')
+            ));
+
+            if ($team != false) {
+                $status = 200;
+                $response['success'] = 1;
+            }
+        }
+
+        return $this->output
+            ->set_status_header($status)
+            ->set_content_type('application/json')
+            ->set_output(json_encode($response));
+    }
+
+    public function destroy($id)
     {
         $status = 500;
         $response['success'] = 0;
 
-        $team = $this->Team_model->delete_team_by_id($this->input->post('id'));
+        $team = $this->Team_model->delete_team_by_id($id);
 
         if ($team != false) {
             $status = 200;

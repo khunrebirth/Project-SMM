@@ -48,10 +48,10 @@
                                             echo '<td>' . $counter++ . '</td>';
                                             echo '<td>' . $team->title . '</td>';
                                             echo '<td>' . $team->body . '</td>';
-                                            echo '<td>' . '<img alt="image" src=' . base_url('storage/images/' . $team->image) . ' width="45">' . '</td>';
+                                            echo '<td>' . '<img alt="image" src=' . base_url('storage/images/teams/' . $team->image) . ' width="45">' . '</td>';
                                             echo '<td>
-                                                        <a class="btn btn-warning" onclick="editTeam(' . "'" . $team->id .  "'" . ',' . "'" . base_url("backoffice/manage-item/teams/edit/$team->id") . "'" . ')"><i class="fas fa-edit"></i> Edit</a>
-                                                        <a class="btn btn-danger" onclick="deleteTeam(' . "'" . $team->id . "'" . ',' . "'" . base_url("backoffice/manage-item/teams/destroy/$team->id") . "'" . ')"><i class="fas fa-trash-alt"></i> Delete</a>
+                                                        <a class="btn btn-warning" onclick="editTeam(' . "'" . base_url("backoffice/manage-item/teams/edit/$team->id") . "'" . ')"><i class="fas fa-edit"></i> Edit</a>
+                                                        <a class="btn btn-danger" onclick="deleteTeam(' . "'" . base_url("backoffice/manage-item/teams/destroy/$team->id") . "'" . ')"><i class="fas fa-trash-alt"></i> Delete</a>
                                                     </td>';
                                             echo '</tr>';
                                         }
@@ -73,7 +73,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalTeamTitle">Modal Template</h5>
+                    <h5 class="modal-title" id="modalTitle">Modal Template</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -82,15 +82,19 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label>Title</label>
-                            <input type="text" class="form-control" name="title" id="title">
+                            <input type="hidden" value="" id="id">
+                            <input type="text" class="form-control" name="title" id="title" required="required">
                         </div>
                         <div class="form-group">
                             <label>Body</label>
-                            <textarea class="form-control" name="body" id="body"></textarea>
+                            <textarea class="form-control" name="body" id="body" required="required"></textarea>
                         </div>
                         <div class="form-group">
                             <label>File</label>
-                            <input type="file" class="form-control" name="file" id="file">
+                            <div class="text-center">
+                                <img id="imgTeam" src="" class="rounded" width="200px">
+                            </div>
+                            <input type="file" class="form-control" name="file" id="file" required="required">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -116,7 +120,7 @@
     function reload() {
         setTimeout(function () {
             location.reload()
-        }, 1 * 1000)
+        }, 1 * 1500)
     }
 
     function clearForm() {
@@ -125,28 +129,30 @@
 
     function addTeam() {
         clearForm()
+        $('#modalTitle').html('Add')
+        $('#id').val('')
         $('#title').val('')
         $('#body').val('')
-        $('#file').val('')
+        $('#file').val('').attr('required', 'required')
+        $('#imgTeam').attr('src', '')
     }
 
-    function editTeam(id, url) {
+    function editTeam(url) {
         clearForm()
 
         $.ajax({
             url: url,
-            data: {id: id},
             success: function (res) {
+                let team = res.data
+
                 $('#modalAddEditTeam').modal('show')
-                // $('#modalCustomerName').text('แก้ไขลูกค้า')
-                // $('#customerId').val(res.data.id)
-                // $('#customerFirstName').val(res.data.first_name)
-                // $('#customerLastName').val(res.data.last_name)
-                // $('#customerNickname').val(res.data.nickname)
-                // $('#customerIdcard').val(res.data.idcard)
-                // $('#customerPhone').val(res.data.phone)
-                // $('#customerEmail').val(res.data.email)
-                // $('#customerId').data('link-to-update', url)
+
+                $('#modalTitle').html('Edit')
+                $('#id').val(team.id).attr('data-link-to-update', url.replace('edit', 'update'))
+                $('#title').val(team.title)
+                $('#body').val(team.body)
+                $('#imgTeam').attr('src', "<?php echo base_url('storage/images/teams/'); ?>" + team.image)
+                $('#file').removeAttr('required')
             },
             error: function (res) {
                 swal({
@@ -159,7 +165,7 @@
         })
     }
 
-    function deleteTeam(id, url) {
+    function deleteTeam(url) {
         swal({
             title: 'Are you sure ?',
             icon: 'warning',
@@ -171,9 +177,6 @@
                     $.ajax({
                         type: 'POST',
                         url: url,
-                        data: {
-                            id, id
-                        },
                         success: function (res) {
                             swal({
                                 title: 'Success',
@@ -202,14 +205,16 @@
             e.preventDefault()
 
             let $data = new FormData($(this)[0]),
-                $teamId = '', // $('#customerId').val()
+                $teamId = $('#id').val(),
                 url = '',
-                method = 'POST'
-
+                method = 'POST',
+                fileData = ''
 
             // Case: Update
             if ($teamId != '') {
-                // url = $('#customerId').data('link-to-update')
+                url = $('#id').attr('data-link-to-update')
+                fileData = $("#file").prop("files")[0]
+                $data.append('file', fileData)
             }
             // Case: Insert New
             else {
@@ -231,12 +236,13 @@
                         icon: 'success',
                         button: "Great!"
                     })
+
                     reload()
                 },
                 error: function (res) {
                     swal({
                         title: 'Oops...',
-                        text: res.message,
+                        text: 'fail',
                         icon: 'error',
                         timer: '1500'
                     })

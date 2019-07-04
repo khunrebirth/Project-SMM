@@ -198,7 +198,7 @@
                 </div>
                 <ul class="sidebar-menu">
                     <li class="menu-header">General</li>
-                    <li class="active"><a class="nav-link" href="<?php echo base_url('backoffice/dashboard'); ?>"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
+                    <li class=""><a class="nav-link" href="<?php echo base_url('backoffice/dashboard'); ?>"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link has-dropdown"><i class="fas fa-pencil-ruler"></i><span>Content (Text Edit)</span></a>
                         <ul class="dropdown-menu">
@@ -207,21 +207,21 @@
                             <li><a class="nav-link" href="<?php echo base_url('backoffice/content/contact'); ?>">&#9679; Section Contact</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown <?php if ($this->uri->segment(2) == "manage-item") { echo 'active'; } ?>" <?php echo $this->uri->segment(1); ?>>
                         <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i><span>Manage Item</span></a>
                         <ul class="dropdown-menu">
                             <li><a class="nav-link" href="<?php echo base_url('backoffice/manage-item/services'); ?>">&#9679; Serivces</a></li>
                             <li><a class="nav-link" href="<?php echo base_url('backoffice/manage-item/services'); ?>">&#9679; Serivces Type 2</a></li>
                             <li><a class="nav-link" href="<?php echo base_url('backoffice/manage-item/clients'); ?>">&#9679; Clients</a></li>
                             <li><a class="nav-link" href="<?php echo base_url('backoffice/manage-item/blogs'); ?>">&#9679; Blogs</a></li>
-                            <li><a class="nav-link" href="<?php echo base_url('backoffice/manage-item/teams'); ?>">&#9679; Teams</a></li>
+                            <li class="<?php if ($this->uri->segment(2) == "manage-item" && $this->uri->segment(3) == "teams"){ echo 'active'; } ?>"><a class="nav-link" href="<?php echo base_url('backoffice/manage-item/teams'); ?>">&#9679; Teams</a></li>
                         </ul>
                     </li>
                     <li><a class="nav-link" href="<?php echo base_url('backoffice/settings'); ?>"><i class="fas fa-ellipsis-h"></i> <span>Settings</span></a></li>
                 </ul>
 
                 <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
-                    <a href="https://getstisla.com/docs" class="btn btn-primary btn-lg btn-block btn-icon-split">
+                    <a href="<?php echo base_url('home'); ?>" class="btn btn-primary btn-lg btn-block btn-icon-split">
                         <i class="fas fa-rocket"></i> Back to Website
                     </a>
                 </div>
