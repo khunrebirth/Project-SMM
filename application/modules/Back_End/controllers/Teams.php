@@ -54,7 +54,7 @@ class Teams extends MX_Controller
 
         $config['upload_path'] = './storage/images/teams';
         $config['allowed_types'] = 'gif|jpg|png';
-        $config['file_name'] = 'img-team-' . $this->input->post('title') . '-' . time();
+        $config['file_name'] = 'img-' . $this->input->post('title') . '-' . time();
 
         $status = 500;
         $response['success'] = 0;
@@ -112,7 +112,7 @@ class Teams extends MX_Controller
 
         $config['upload_path'] = './storage/images/teams';
         $config['allowed_types'] = 'gif|jpg|png';
-        $config['file_name'] = 'img-team-' . $this->input->post('title') . '-' . time();
+        $config['file_name'] = 'img-' . $this->input->post('title') . '-' . time();
 
         $status = 500;
         $response['success'] = 0;

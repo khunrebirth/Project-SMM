@@ -210,7 +210,7 @@
                     <li class="nav-item dropdown <?php if ($this->uri->segment(2) == "manage-item") { echo 'active'; } ?>" <?php echo $this->uri->segment(1); ?>>
                         <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i><span>Manage Item</span></a>
                         <ul class="dropdown-menu">
-                            <li><a class="nav-link" href="<?php echo base_url('backoffice/manage-item/services'); ?>">&#9679; Serivces</a></li>
+                            <li class="<?php if ($this->uri->segment(2) == "manage-item" && $this->uri->segment(3) == "services"){ echo 'active'; } ?>"><a class="nav-link" href="<?php echo base_url('backoffice/manage-item/services'); ?>">&#9679; Serivces</a></li>
                             <li><a class="nav-link" href="<?php echo base_url('backoffice/manage-item/services'); ?>">&#9679; Serivces Type 2</a></li>
                             <li><a class="nav-link" href="<?php echo base_url('backoffice/manage-item/clients'); ?>">&#9679; Clients</a></li>
                             <li><a class="nav-link" href="<?php echo base_url('backoffice/manage-item/blogs'); ?>">&#9679; Blogs</a></li>

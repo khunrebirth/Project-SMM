@@ -108,12 +108,31 @@ $route['backoffice/dashboard'] = 'Back_End/Dashboard';
 
     // Services
     $route['backoffice/manage-item/services'] = 'Back_End/services';
+    $route['backoffice/manage-item/services/store'] = 'Back_End/services/store';
+    $route['backoffice/manage-item/services/edit/(:any)'] = "Back_End/services/edit/$1";
+    $route['backoffice/manage-item/services/update/(:any)'] = "Back_End/services/update/$1";
+    $route['backoffice/manage-item/services/destroy/(:any)'] = "Back_End/services/destroy/$1";
+
+    // Services Row 2
+    $route['backoffice/manage-item/services2'] = 'Back_End/services2';
+    $route['backoffice/manage-item/services2/store'] = 'Back_End/services2/store';
+    $route['backoffice/manage-item/services2/edit/(:any)'] = "Back_End/services2/edit/$1";
+    $route['backoffice/manage-item/services2/update/(:any)'] = "Back_End/services2/update/$1";
+    $route['backoffice/manage-item/services2/destroy/(:any)'] = "Back_End/services2/destroy/$1";
 
     // Clients
     $route['backoffice/manage-item/clients'] = 'Back_End/clients';
+    $route['backoffice/manage-item/clients/store'] = 'Back_End/clients/store';
+    $route['backoffice/manage-item/clients/edit/(:any)'] = "Back_End/clients/edit/$1";
+    $route['backoffice/manage-item/clients/update/(:any)'] = "Back_End/clients/update/$1";
+    $route['backoffice/manage-item/clients/destroy/(:any)'] = "Back_End/clients/destroy/$1";
 
     // Blogs
     $route['backoffice/manage-item/blogs'] = 'Back_End/blogs';
+    $route['backoffice/manage-item/blogs/store'] = 'Back_End/blogs/store';
+    $route['backoffice/manage-item/blogs/edit/(:any)'] = "Back_End/blogs/edit/$1";
+    $route['backoffice/manage-item/blogs/update/(:any)'] = "Back_End/blogs/update/$1";
+    $route['backoffice/manage-item/blogs/destroy/(:any)'] = "Back_End/blogs/destroy/$1";
 
     // Teams
     $route['backoffice/manage-item/teams'] = 'Back_End/teams';
