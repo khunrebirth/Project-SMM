@@ -45,7 +45,7 @@
                                             echo '<tr>';
                                             echo '<td>' . $counter++ . '</td>';
                                             echo '<td>' . $service2->title . '</td>';
-                                            echo '<td>' . '<img alt="image" src=' . base_url('storage/images/services/' . $service2->image) . ' width="60">' . '</td>';
+                                            echo '<td>' . '<img alt="image" src=' . base_url('storage/images/services/' . $service2->image) . ' width="100">' . '</td>';
                                             echo '<td>
                                                         <a class="btn btn-warning" onclick="editService2(' . "'" . base_url("backoffice/manage-item/services2/edit/$service2->id") . "'" . ')"><i class="fas fa-edit"></i> Edit</a>
                                                         <a class="btn btn-danger" onclick="deleteService2(' . "'" . base_url("backoffice/manage-item/services2/destroy/$service2->id") . "'" . ')"><i class="fas fa-trash-alt"></i> Delete</a>

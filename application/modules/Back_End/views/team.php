@@ -48,7 +48,7 @@
                                             echo '<td>' . $counter++ . '</td>';
                                             echo '<td>' . $team->title . '</td>';
                                             echo '<td>' . $team->body . '</td>';
-                                            echo '<td>' . '<img alt="image" src=' . base_url('storage/images/teams/' . $team->image) . ' width="45">' . '</td>';
+                                            echo '<td>' . '<img alt="image" src=' . base_url('storage/images/teams/' . $team->image) . ' width="120">' . '</td>';
                                             echo '<td>
                                                         <a class="btn btn-warning" onclick="editTeam(' . "'" . base_url("backoffice/manage-item/teams/edit/$team->id") . "'" . ')"><i class="fas fa-edit"></i> Edit</a>
                                                         <a class="btn btn-danger" onclick="deleteTeam(' . "'" . base_url("backoffice/manage-item/teams/destroy/$team->id") . "'" . ')"><i class="fas fa-trash-alt"></i> Delete</a>
