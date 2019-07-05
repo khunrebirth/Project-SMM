@@ -5,6 +5,7 @@ class Client_model extends CI_Model {
 
     public function get_client_all()
     {
+        // TODO:: Get Category
         $query = $this->db->get('clients');
 
         return $query->num_rows() > 0 ? $query->result() : false;

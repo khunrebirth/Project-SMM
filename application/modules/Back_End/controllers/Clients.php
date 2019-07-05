@@ -69,6 +69,7 @@ class Clients extends MX_Controller {
 
             $client = $this->Client_model->insert_client(array(
 //                'title' => $this->input->post('title'),
+                'category_id' => $this->input->post('category'),
                 'image' => $data['upload_data']['file_name'],
                 'created_at' => date('Y-m-d H:i:s')
             ));
@@ -127,6 +128,7 @@ class Clients extends MX_Controller {
 
             $client = $this->Client_model->update_client_by_id($id, array(
 //                'title' => $this->input->post('title'),
+                'category_id' => $this->input->post('category'),
                 'updated_at' => date('Y-m-d H:i:s')
             ));
         }
@@ -137,6 +139,7 @@ class Clients extends MX_Controller {
 
             $client = $this->Client_model->update_client_by_id($id, array(
 //                'title' => $this->input->post('title'),
+                'category_id' => $this->input->post('category'),
                 'image' => $data['upload_data']['file_name'],
                 'updated_at' => date('Y-m-d H:i:s')
             ));

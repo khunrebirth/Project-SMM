@@ -79,7 +79,7 @@
                                     <tr>
                                         <th class="text-center">#</th>
                                         <th>Image</th>
-                                        <th></th>
+                                        <th>Category</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
@@ -90,7 +90,7 @@
                                         echo '<tr>';
                                         echo '<td class="text-center">' . $counter++ . '</td>';
                                         echo '<td>' . '<img alt="image" src=' . base_url('storage/images/clients/' . $client->image) . ' width="80">' . '</td>';
-                                        echo '<td></td>';
+                                        echo '<td>' . $client->category_id . '</td>';
                                         echo '<td>
                                                         <a class="btn btn-warning" onclick="editClient(' . "'" . base_url("backoffice/manage-item/clients/edit/$client->id") . "'" . ')"><i class="fas fa-edit"></i> Edit</a>
                                                         <a class="btn btn-danger" onclick="deleteClient(' . "'" . base_url("backoffice/manage-item/clients/destroy/$client->id") . "'" . ')"><i class="fas fa-trash-alt"></i> Delete</a>
@@ -153,6 +153,16 @@
                             <input type="hidden" value="" id="idClient">
 <!--                            <input type="text" class="form-control" name="title" id="title" required="required">-->
 <!--                        </div>-->
+                        <div class="form-group">
+                            <label>Category</label>
+                            <select class="form-control" name="category" id="category">
+                            <?php
+                                foreach ($client_categories as $client_category) {
+                                    echo '<option value = "' . $client_category->id . '">' . $client_category->title . '</option >';
+                                }
+                             ?>
+                            </select>
+                        </div>
                         <div class="form-group">
                             <label>File</label>
                             <div class="text-center mb-3">
@@ -246,6 +256,7 @@
                 $('#modalTitleClient').html('Edit')
                 $('#idClient').val(client.id).attr('data-link-to-update', url.replace('edit', 'update'))
                 // $('#titleClient').val(client.title)
+                $('#category').val(client.category_id)
                 $('#imgClient').attr('src', "<?php echo base_url('storage/images/clients/'); ?>" + client.image)
                 $('#file').removeAttr('required')
             },
@@ -390,7 +401,7 @@
 
             // Case: Update
             if ($clientId != '') {
-                url = $('#id').attr('data-link-to-update')
+                url = $('#idClient').attr('data-link-to-update')
                 fileData = $("#file").prop("files")[0]
                 $data.append('file', fileData)
             }
@@ -398,8 +409,6 @@
             else {
                 url = '<?php echo base_url('backoffice/manage-item/clients/store'); ?>'
             }
-
-            console.log(url)
 
             $.ajax({
                 type: method,
