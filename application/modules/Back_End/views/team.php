@@ -91,7 +91,7 @@
                         </div>
                         <div class="form-group">
                             <label>File</label>
-                            <div class="text-center">
+                            <div class="text-center mb-3">
                                 <img id="imgTeam" src="" class="rounded" width="200px">
                             </div>
                             <input type="file" class="form-control" name="file" id="file" required="required">
@@ -183,6 +183,7 @@
                                 icon: 'success',
                                 button: 'Great!'
                             })
+
                             reload()
                         },
                         error: function (res) {

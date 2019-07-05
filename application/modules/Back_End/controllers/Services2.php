@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Services extends MX_Controller {
+class Services2 extends MX_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -30,16 +30,16 @@ class Services extends MX_Controller {
 
         // Set Model
         $this->load->model('User_model');
-        $this->load->model('Service_model');
+        $this->load->model('Service2_model');
 
         $this->data['user'] = $this->User_model->get_user_by_id($this->session->userdata('user_id'));
     }
 
 	public function index()
 	{
-        $this->data['title'] = 'Services';
-		$this->data['content'] = 'service';
-        $this->data['services'] = $this->Service_model->get_service_all();
+        $this->data['title'] = 'Services2';
+		$this->data['content'] = 'service2';
+        $this->data['services2'] = $this->Service2_model->get_service2_all();
 
 		$this->load->view('app', $this->data);
 	}
@@ -65,14 +65,13 @@ class Services extends MX_Controller {
         } else {
             $data = array('upload_data' => $this->upload->data());
 
-            $service = $this->Service_model->insert_service(array(
+            $service2 = $this->Service2_model->insert_service2(array(
                 'title' => $this->input->post('title'),
-                'body' => $this->input->post('body'),
-                'icon' => $data['upload_data']['file_name'],
+                'image' => $data['upload_data']['file_name'],
                 'created_at' => date('Y-m-d H:i:s')
             ));
 
-            if ($service != false) {
+            if ($service2 != false) {
                 $status = 200;
                 $response['success'] = 1;
             }
@@ -90,11 +89,11 @@ class Services extends MX_Controller {
         $status = 500;
         $response['success'] = 0;
 
-        $service = $this->Service_model->get_service_by_id($id);
+        $service2 = $this->Service2_model->get_service2_by_id($id);
 
-        if ($service != false) {
+        if ($service2 != false) {
             $status = 200;
-            $response['data'] = $service;
+            $response['data'] = $service2;
             $response['success'] = 1;
         }
 
@@ -122,13 +121,12 @@ class Services extends MX_Controller {
         if (!$this->upload->do_upload('file')) {
             $error = array('error' => $this->upload->display_errors());
 
-            $service = $this->Team_model->update_service_by_id($id, array(
+            $service2 = $this->Service2_model->update_service2_by_id($id, array(
                 'title' => $this->input->post('title'),
-                'body' => $this->input->post('body'),
                 'updated_at' => date('Y-m-d H:i:s')
             ));
 
-            if ($service != false) {
+            if ($service2 != false) {
                 $status = 200;
                 $response['success'] = 1;
             }
@@ -138,14 +136,13 @@ class Services extends MX_Controller {
         else {
             $data = array('upload_data' => $this->upload->data());
 
-            $service = $this->Service_model->update_team_by_id($id, array(
+            $service2 = $this->Service2_model->update_service2_by_id($id, array(
                 'title' => $this->input->post('title'),
-                'body' => $this->input->post('body'),
-                'icon' => $data['upload_data']['file_name'],
+                'image' => $data['upload_data']['file_name'],
                 'updated_at' => date('Y-m-d H:i:s')
             ));
 
-            if ($service != false) {
+            if ($service2 != false) {
                 $status = 200;
                 $response['success'] = 1;
             }
@@ -162,7 +159,7 @@ class Services extends MX_Controller {
         $status = 500;
         $response['success'] = 0;
 
-        $team = $this->Service_model->delete_service_by_id($id);
+        $team = $this->Service_model->delete_service2_by_id($id);
 
         if ($team != false) {
             $status = 200;

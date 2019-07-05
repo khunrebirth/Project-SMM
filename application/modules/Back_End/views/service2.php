@@ -7,11 +7,11 @@
 <div class="main-content">
     <section class="section">
         <div class="section-header">
-            <h1>Manage Item: Services</h1>
+            <h1>Manage Item: Services Type 2</h1>
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-                <div class="breadcrumb-item"><a href="#">Manage Service</a></div>
-                <div class="breadcrumb-item">Service</div>
+                <div class="breadcrumb-item"><a href="#">Manage Service Type 2</a></div>
+                <div class="breadcrumb-item">Service Type 2</div>
             </div>
         </div>
 
@@ -22,8 +22,7 @@
                         <div class="card-header">
                             <h4>List of Services</h4>
                             <div class="card-header-action">
-                                <a href="#modalAddEditService" class="btn btn-primary" onclick="addService()"
-                                   data-toggle="modal">
+                                <a href="#modalAddEditService2" class="btn btn-primary" onclick="addService2()" data-toggle="modal">
                                     <i class="fas fa-plus"></i> Add News
                                 </a>
                             </div>
@@ -35,23 +34,21 @@
                                     <tr>
                                         <th class="text-center">#</th>
                                         <th>Title</th>
-                                        <th>Body</th>
-                                        <th>Icon</th>
+                                        <th>Image</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <?php
                                         $counter = 1;
-                                        foreach ($services as $service) {
+                                        foreach ($services2 as $service2) {
                                             echo '<tr>';
                                             echo '<td>' . $counter++ . '</td>';
-                                            echo '<td>' . $service->title . '</td>';
-                                            echo '<td>' . $service->body . '</td>';
-                                            echo '<td>' . '<img alt="image" src=' . base_url('storage/images/services/' . $service->icon) . ' width="60">' . '</td>';
+                                            echo '<td>' . $service2->title . '</td>';
+                                            echo '<td>' . '<img alt="image" src=' . base_url('storage/images/services/' . $service2->image) . ' width="60">' . '</td>';
                                             echo '<td>
-                                                        <a class="btn btn-warning" onclick="editService(' . "'" . base_url("backoffice/manage-item/services/edit/$service->id") . "'" . ')"><i class="fas fa-edit"></i> Edit</a>
-                                                        <a class="btn btn-danger" onclick="deleteService(' . "'" . base_url("backoffice/manage-item/services/destroy/$service->id") . "'" . ')"><i class="fas fa-trash-alt"></i> Delete</a>
+                                                        <a class="btn btn-warning" onclick="editService2(' . "'" . base_url("backoffice/manage-item/services2/edit/$service2->id") . "'" . ')"><i class="fas fa-edit"></i> Edit</a>
+                                                        <a class="btn btn-danger" onclick="deleteService2(' . "'" . base_url("backoffice/manage-item/services2/destroy/$service2->id") . "'" . ')"><i class="fas fa-trash-alt"></i> Delete</a>
                                                     </td>';
                                             echo '</tr>';
                                         }
@@ -69,7 +66,7 @@
 
 
     <!-- Modal -->
-    <div class="modal fade" tabindex="-1" role="dialog" id="modalAddEditService">
+    <div class="modal fade" tabindex="-1" role="dialog" id="modalAddEditService2">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -86,19 +83,15 @@
                             <input type="text" class="form-control" name="title" id="title" required="required">
                         </div>
                         <div class="form-group">
-                            <label>Body</label>
-                            <textarea class="form-control" name="body" id="body" required="required"></textarea>
-                        </div>
-                        <div class="form-group">
                             <label>File</label>
                             <div class="text-center mb-3">
-                                <img id="imgService" src="" class="rounded" width="200px">
+                                <img id="imgService2" src="" class="rounded" width="200px">
                             </div>
                             <input type="file" class="form-control" name="file" id="file" required="required">
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary" id="btnAddService">Save changes</button>
+                        <button type="submit" class="btn btn-primary" id="btnAddService2">Save changes</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </form>
@@ -124,21 +117,20 @@
     }
 
     function clearForm() {
-        $('#modalAddEditService form')[0].reset()
+        $('#modalAddEditService2 form')[0].reset()
     }
 
-    function addService() {
+    function addService2() {
         clearForm()
         $('#modalTitle').html('Add')
         $('#id').val('')
         $('#title').val('')
-        $('#body').val('')
-        $('#icon').val('')
+        $('#image').val('')
         $('#file').val('').attr('required', 'required')
-        $('#imgService').attr('src', '')
+        $('#imgService2').attr('src', '')
     }
 
-    function editService(url) {
+    function editService2(url) {
         clearForm()
 
         $.ajax({
@@ -146,14 +138,13 @@
             success: function (res) {
                 let service = res.data
 
-                $('#modalAddEditService').modal('show')
+                $('#modalAddEditService2').modal('show')
 
                 $('#modalTitle').html('Edit')
                 $('#id').val(service.id).attr('data-link-to-update', url.replace('edit', 'update'))
                 $('#title').val(service.title)
-                $('#body').val(service.body)
-                $('#icon').val(service.icon)
-                $('#imgService').attr('src', "<?php echo base_url('storage/images/services/'); ?>" + service.icon)
+                $('#image').val(service.image)
+                $('#imgService2').attr('src', "<?php echo base_url('storage/images/services/'); ?>" + service.image)
                 $('#file').removeAttr('required')
             },
             error: function (res) {
@@ -167,7 +158,7 @@
         })
     }
 
-    function deleteService(url) {
+    function deleteService2(url) {
         swal({
             title: 'Are you sure ?',
             icon: 'warning',
@@ -185,7 +176,6 @@
                                 icon: 'success',
                                 button: 'Great!'
                             })
-
                             reload()
                         },
                         error: function (res) {
@@ -221,7 +211,7 @@
             }
             // Case: Insert New
             else {
-                url = '<?php echo base_url('backoffice/manage-item/services/store'); ?>'
+                url = '<?php echo base_url('backoffice/manage-item/services2/store'); ?>'
             }
 
             $.ajax({
@@ -233,7 +223,7 @@
                 cache: false,
                 async: false,
                 success: function (res) {
-                    $('#modalAddEditService').modal('hide')
+                    $('#modalAddEditService2').modal('hide')
                     swal({
                         title: 'Success',
                         icon: 'success',
