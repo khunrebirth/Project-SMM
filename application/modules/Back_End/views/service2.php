@@ -43,7 +43,7 @@
                                         $counter = 1;
                                         foreach ($services2 as $service2) {
                                             echo '<tr>';
-                                            echo '<td>' . $counter++ . '</td>';
+                                            echo '<td class="text-center">' . $counter++ . '</td>';
                                             echo '<td>' . $service2->title . '</td>';
                                             echo '<td>' . '<img alt="image" src=' . base_url('storage/images/services/' . $service2->image) . ' width="100">' . '</td>';
                                             echo '<td>

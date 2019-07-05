@@ -45,7 +45,7 @@
                                         $counter = 1;
                                         foreach ($teams as $team) {
                                             echo '<tr>';
-                                            echo '<td>' . $counter++ . '</td>';
+                                            echo '<td class="text-center">' . $counter++ . '</td>';
                                             echo '<td>' . $team->title . '</td>';
                                             echo '<td>' . $team->body . '</td>';
                                             echo '<td>' . '<img alt="image" src=' . base_url('storage/images/teams/' . $team->image) . ' width="120">' . '</td>';

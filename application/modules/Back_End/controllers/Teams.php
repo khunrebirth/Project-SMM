@@ -87,7 +87,8 @@ class Teams extends MX_Controller
 
     public function show() {}
 
-    public function edit($id) {
+    public function edit($id)
+    {
         $status = 500;
         $response['success'] = 0;
 

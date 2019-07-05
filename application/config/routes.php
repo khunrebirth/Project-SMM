@@ -126,6 +126,10 @@ $route['backoffice/dashboard'] = 'Back_End/Dashboard';
     $route['backoffice/manage-item/clients/edit/(:any)'] = "Back_End/clients/edit/$1";
     $route['backoffice/manage-item/clients/update/(:any)'] = "Back_End/clients/update/$1";
     $route['backoffice/manage-item/clients/destroy/(:any)'] = "Back_End/clients/destroy/$1";
+    $route['backoffice/manage-item/clients/store_client_category'] = 'Back_End/clients/store_client_category';
+    $route['backoffice/manage-item/clients/edit_client_category/(:any)'] = "Back_End/clients/edit_client_category/$1";
+    $route['backoffice/manage-item/clients/update_client_category/(:any)'] = "Back_End/clients/update_client_category/$1";
+    $route['backoffice/manage-item/clients/destroy_client_category/(:any)'] = "Back_End/clients/destroy_client_category/$1";
 
     // Blogs
     $route['backoffice/manage-item/blogs'] = 'Back_End/blogs';
