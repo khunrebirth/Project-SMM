@@ -115,8 +115,10 @@ class Services extends MX_Controller {
 
         $status = 500;
         $response['success'] = 0;
+        $service = false;
 
         $this->load->library('upload', $config);
+
 
         // Case: Don't have upload
         if (!$this->upload->do_upload('file')) {
@@ -127,11 +129,6 @@ class Services extends MX_Controller {
                 'body' => $this->input->post('body'),
                 'updated_at' => date('Y-m-d H:i:s')
             ));
-
-            if ($service != false) {
-                $status = 200;
-                $response['success'] = 1;
-            }
         }
 
         // Case: Have Upload
@@ -144,11 +141,11 @@ class Services extends MX_Controller {
                 'icon' => $data['upload_data']['file_name'],
                 'updated_at' => date('Y-m-d H:i:s')
             ));
+        }
 
-            if ($service != false) {
-                $status = 200;
-                $response['success'] = 1;
-            }
+        if ($service != false) {
+            $status = 200;
+            $response['success'] = 1;
         }
 
         return $this->output

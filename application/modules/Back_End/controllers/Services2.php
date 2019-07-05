@@ -114,6 +114,7 @@ class Services2 extends MX_Controller {
 
         $status = 500;
         $response['success'] = 0;
+        $service2 = false;
 
         $this->load->library('upload', $config);
 
@@ -141,11 +142,11 @@ class Services2 extends MX_Controller {
                 'image' => $data['upload_data']['file_name'],
                 'updated_at' => date('Y-m-d H:i:s')
             ));
+        }
 
-            if ($service2 != false) {
-                $status = 200;
-                $response['success'] = 1;
-            }
+        if ($service2 != false) {
+            $status = 200;
+            $response['success'] = 1;
         }
 
         return $this->output
@@ -159,9 +160,9 @@ class Services2 extends MX_Controller {
         $status = 500;
         $response['success'] = 0;
 
-        $team = $this->Service_model->delete_service2_by_id($id);
+        $service2 = $this->Service_model->delete_service2_by_id($id);
 
-        if ($team != false) {
+        if ($service2 != false) {
             $status = 200;
             $response['success'] = 1;
         }

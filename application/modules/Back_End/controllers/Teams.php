@@ -116,6 +116,7 @@ class Teams extends MX_Controller
 
         $status = 500;
         $response['success'] = 0;
+        $team = false;
 
         $this->load->library('upload', $config);
 
@@ -128,11 +129,6 @@ class Teams extends MX_Controller
                 'body' => $this->input->post('body'),
                 'updated_at' => date('Y-m-d H:i:s')
             ));
-
-            if ($team != false) {
-                $status = 200;
-                $response['success'] = 1;
-            }
         }
 
         // Case: Have Upload
@@ -145,11 +141,12 @@ class Teams extends MX_Controller
                 'image' => $data['upload_data']['file_name'],
                 'updated_at' => date('Y-m-d H:i:s')
             ));
+        }
 
-            if ($team != false) {
-                $status = 200;
-                $response['success'] = 1;
-            }
+        // Set Status
+        if ($team != false) {
+            $status = 200;
+            $response['success'] = 1;
         }
 
         return $this->output
