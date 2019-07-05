@@ -22,8 +22,7 @@
                         <div class="card-header">
                             <h4>List of Teams</h4>
                             <div class="card-header-action">
-                                <a href="#modalAddEditTeam" class="btn btn-primary" onclick="addTeam()"
-                                   data-toggle="modal">
+                                <a href="#modalAddEditTeam" class="btn btn-primary" onclick="addTeam()" data-toggle="modal">
                                     <i class="fas fa-plus"></i> Add News
                                 </a>
                             </div>

@@ -7,7 +7,7 @@
 <div class="main-content">
     <section class="section">
         <div class="section-header">
-            <h1>Manage Item: Teams</h1>
+            <h1>Manage Item: Clients</h1>
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
                 <div class="breadcrumb-item"><a href="#">Manage Item</a></div>
@@ -34,6 +34,7 @@
                                     <tr>
                                         <th class="text-center">#</th>
                                         <th>Title</th>
+                                        <th></th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
@@ -44,6 +45,7 @@
                                             echo '<tr>';
                                             echo '<td class="text-center">' . $counter++ . '</td>';
                                             echo '<td>' . $client_category->title . '</td>';
+                                            echo '<td></td>';
                                             echo '<td>
                                                         <a class="btn btn-warning" onclick="editClientCategory(' . "'" . base_url("backoffice/manage-item/clients/edit_client_category/$client_category->id") . "'" . ')"><i class="fas fa-edit"></i> Edit</a>
                                                         <a class="btn btn-danger" onclick="deleteClientCategory(' . "'" . base_url("backoffice/manage-item/clients/destroy_client_category/$client_category->id") . "'" . ')"><i class="fas fa-trash-alt"></i> Delete</a>
@@ -72,11 +74,12 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-striped" id="table-1">
+                                <table class="table table-striped" id="table-2">
                                     <thead>
                                     <tr>
                                         <th class="text-center">#</th>
                                         <th>Image</th>
+                                        <th></th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
@@ -87,6 +90,7 @@
                                         echo '<tr>';
                                         echo '<td class="text-center">' . $counter++ . '</td>';
                                         echo '<td>' . '<img alt="image" src=' . base_url('storage/images/clients/' . $client->image) . ' width="80">' . '</td>';
+                                        echo '<td></td>';
                                         echo '<td>
                                                         <a class="btn btn-warning" onclick="editClient(' . "'" . base_url("backoffice/manage-item/clients/edit/$client->id") . "'" . ')"><i class="fas fa-edit"></i> Edit</a>
                                                         <a class="btn btn-danger" onclick="deleteClient(' . "'" . base_url("backoffice/manage-item/clients/destroy/$client->id") . "'" . ')"><i class="fas fa-trash-alt"></i> Delete</a>
@@ -146,7 +150,7 @@
                     <div class="modal-body">
 <!--                        <div class="form-group">-->
 <!--                            <label>Title</label>-->
-<!--                            <input type="hidden" value="" id="id">-->
+                            <input type="hidden" value="" id="idClient">
 <!--                            <input type="text" class="form-control" name="title" id="title" required="required">-->
 <!--                        </div>-->
                         <div class="form-group">
@@ -394,6 +398,8 @@
             else {
                 url = '<?php echo base_url('backoffice/manage-item/clients/store'); ?>'
             }
+
+            console.log(url)
 
             $.ajax({
                 type: method,

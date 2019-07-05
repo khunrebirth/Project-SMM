@@ -53,9 +53,9 @@ class Clients extends MX_Controller {
 
         // TODO:: Validate
 
-        $config['upload_path'] = './storage/images/teams';
+        $config['upload_path'] = './storage/images/clients';
         $config['allowed_types'] = 'gif|jpg|png';
-        $config['file_name'] = 'img-' . $this->input->post('title') . '-' . time();
+        $config['file_name'] = 'img-client' . '-' . time();
 
         $status = 500;
         $response['success'] = 0;
@@ -67,8 +67,8 @@ class Clients extends MX_Controller {
         } else {
             $data = array('upload_data' => $this->upload->data());
 
-            $client = $this->Team_model->insert_client(array(
-                'title' => $this->input->post('title'),
+            $client = $this->Client_model->insert_client(array(
+//                'title' => $this->input->post('title'),
                 'image' => $data['upload_data']['file_name'],
                 'created_at' => date('Y-m-d H:i:s')
             ));
@@ -111,9 +111,9 @@ class Clients extends MX_Controller {
 
         // TODO:: Validate
 
-        $config['upload_path'] = './storage/images/teams';
+        $config['upload_path'] = './storage/images/clients';
         $config['allowed_types'] = 'gif|jpg|png';
-        $config['file_name'] = 'img-' . $this->input->post('title') . '-' . time();
+        $config['file_name'] = 'img-client' . '-' . time();
 
         $status = 500;
         $response['success'] = 0;
@@ -159,9 +159,9 @@ class Clients extends MX_Controller {
         $status = 500;
         $response['success'] = 0;
 
-        $team = $this->Team_model->delete_team_by_id($id);
+        $client = $this->Client_model->delete_client_by_id($id);
 
-        if ($team != false) {
+        if ($client != false) {
             $status = 200;
             $response['success'] = 1;
         }
@@ -179,29 +179,17 @@ class Clients extends MX_Controller {
 
         // TODO:: Validate
 
-        $config['upload_path'] = './storage/images/teams';
-        $config['allowed_types'] = 'gif|jpg|png';
-        $config['file_name'] = 'img-' . $this->input->post('title') . '-' . time();
-
         $status = 500;
         $response['success'] = 0;
 
-        $this->load->library('upload', $config);
+        $client_category = $this->Client_category_model->insert_client_category(array(
+            'title' => $this->input->post('title'),
+            'created_at' => date('Y-m-d H:i:s')
+        ));
 
-        if (!$this->upload->do_upload('file')) {
-            $error = array('error' => $this->upload->display_errors());
-        } else {
-            $data = array('upload_data' => $this->upload->data());
-
-            $client_category = $this->Team_model->insert_team(array(
-                'title' => $this->input->post('title'),
-                'created_at' => date('Y-m-d H:i:s')
-            ));
-
-            if ($client_category != false) {
-                $status = 200;
-                $response['success'] = 1;
-            }
+        if ($client_category != false) {
+            $status = 200;
+            $response['success'] = 1;
         }
 
         return $this->output
@@ -261,7 +249,7 @@ class Clients extends MX_Controller {
         $status = 500;
         $response['success'] = 0;
 
-        $client_category = $this->Team_model->delete_client_category_by_id($id);
+        $client_category = $this->Client_category_model->delete_client_category_by_id($id);
 
         if ($client_category != false) {
             $status = 200;
