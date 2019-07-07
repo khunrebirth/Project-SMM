@@ -11,7 +11,7 @@
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
                 <div class="breadcrumb-item"><a href="#">Manage Item</a></div>
-                <div class="breadcrumb-item">Clients</div>
+                <div class="breadcrumb-item">Blogs</div>
             </div>
         </div>
 
@@ -20,9 +20,9 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>List of Client Categories</h4>
+                            <h4>List of Blog Categories</h4>
                             <div class="card-header-action">
-                                <a href="#modalAddEditClientCategory" class="btn btn-primary" onclick="addClientCategory()" data-toggle="modal">
+                                <a href="#modalAddEditBlogCategory" class="btn btn-primary" onclick="addBlogCategory()" data-toggle="modal">
                                     <i class="fas fa-plus"></i> Add News
                                 </a>
                             </div>
@@ -41,14 +41,14 @@
                                     <tbody>
                                     <?php
                                         $counter = 1;
-                                        foreach ($client_categories as $client_category) {
+                                        foreach ($blog_categories as $blog_category) {
                                             echo '<tr>';
                                             echo '<td class="text-center">' . $counter++ . '</td>';
-                                            echo '<td>' . $client_category->title . '</td>';
+                                            echo '<td>' . $blog_category->title . '</td>';
                                             echo '<td></td>';
                                             echo '<td>
-                                                        <a class="btn btn-warning" onclick="editClientCategory(' . "'" . base_url("backoffice/manage-item/clients/edit_client_category/$client_category->id") . "'" . ')"><i class="fas fa-edit"></i> Edit</a>
-                                                        <a class="btn btn-danger" onclick="deleteClientCategory(' . "'" . base_url("backoffice/manage-item/clients/destroy_client_category/$client_category->id") . "'" . ')"><i class="fas fa-trash-alt"></i> Delete</a>
+                                                        <a class="btn btn-warning" onclick="editBlogCategory(' . "'" . base_url("backoffice/manage-item/blogs/edit_blog_category/$blog_category->id") . "'" . ')"><i class="fas fa-edit"></i> Edit</a>
+                                                        <a class="btn btn-danger" onclick="deleteBlogCategory(' . "'" . base_url("backoffice/manage-item/blogs/destroy_blog_category/$blog_category->id") . "'" . ')"><i class="fas fa-trash-alt"></i> Delete</a>
                                                     </td>';
                                             echo '</tr>';
                                         }
@@ -64,9 +64,9 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>List of Clients</h4>
+                            <h4>List of Blogs</h4>
                             <div class="card-header-action">
-                                <a href="#modalAddEditClient" class="btn btn-primary" onclick="addClient()"
+                                <a href="#modalAddEditBlog" class="btn btn-primary" onclick="addBlog()"
                                    data-toggle="modal">
                                     <i class="fas fa-plus"></i> Add News
                                 </a>
@@ -79,6 +79,8 @@
                                     <tr>
                                         <th class="text-center">#</th>
                                         <th>Image</th>
+                                        <th>Title</th>
+                                        <th>Body</th>
                                         <th>Category</th>
                                         <th>Action</th>
                                     </tr>
@@ -86,14 +88,16 @@
                                     <tbody>
                                     <?php
                                     $counter = 1;
-                                    foreach ($clients as $client) {
+                                    foreach ($blogs as $blog) {
                                         echo '<tr>';
                                         echo '<td class="text-center">' . $counter++ . '</td>';
-                                        echo '<td>' . '<img alt="image" src=' . base_url('storage/images/clients/' . $client->image) . ' width="80">' . '</td>';
-                                        echo '<td>' . $client->category_title . '</td>';
+                                        echo '<td>' . '<img alt="image" src=' . base_url('storage/images/blogs/' . $blog->image) . ' width="200">' . '</td>';
+                                        echo '<td>' . $blog->title . '</td>';
+                                        echo '<td>' . $blog->body . '</td>';
+                                        echo '<td>' . $blog->blog_title . '</td>';
                                         echo '<td>
-                                                        <a class="btn btn-warning" onclick="editClient(' . "'" . base_url("backoffice/manage-item/clients/edit/$client->id") . "'" . ')"><i class="fas fa-edit"></i> Edit</a>
-                                                        <a class="btn btn-danger" onclick="deleteClient(' . "'" . base_url("backoffice/manage-item/clients/destroy/$client->id") . "'" . ')"><i class="fas fa-trash-alt"></i> Delete</a>
+                                                        <a class="btn btn-warning" onclick="editBlog(' . "'" . base_url("backoffice/manage-item/blogs/edit/$blog->id") . "'" . ')"><i class="fas fa-edit"></i> Edit</a>
+                                                        <a class="btn btn-danger" onclick="deleteBlog(' . "'" . base_url("backoffice/manage-item/blogs/destroy/$blog->id") . "'" . ')"><i class="fas fa-trash-alt"></i> Delete</a>
                                                     </td>';
                                         echo '</tr>';
                                     }
@@ -109,25 +113,25 @@
     </section>
 
     <!-- Modal Category -->
-    <div class="modal fade" tabindex="-1" role="dialog" id="modalAddEditClientCategory">
+    <div class="modal fade" tabindex="-1" role="dialog" id="modalAddEditBlogCategory">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalTitleClientCategory">Modal Template</h5>
+                    <h5 class="modal-title" id="modalTitleBlogCategory">Modal Template</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form id="addEditClientCategoryForm">
+                <form id="addEditBlogCategoryForm">
                     <div class="modal-body">
                         <div class="form-group">
                             <label>Title</label>
-                            <input type="hidden" value="" id="idClientCategory">
-                            <input type="text" class="form-control" name="title" id="titleClientCategory" required="required">
+                            <input type="hidden" value="" id="idBlogCategory">
+                            <input type="text" class="form-control" name="title" id="titleBlogCategory" required="required">
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary" id="btnAddClientCategory">Save changes</button>
+                        <button type="submit" class="btn btn-primary" id="btnAddBlogCategory">Save changes</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </form>
@@ -135,8 +139,8 @@
         </div>
     </div>
 
-    <!-- Modal Client -->
-    <div class="modal fade" tabindex="-1" role="dialog" id="modalAddEditClient">
+    <!-- Modal Blog -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="modalAddEditBlog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -145,23 +149,8 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form id="addEditClientForm">
+                <form id="addEditBlogForm">
                     <div class="modal-body">
-<!--                        <div class="form-group">-->
-<!--                            <label>Title</label>-->
-                            <input type="hidden" value="" id="idClient">
-<!--                            <input type="text" class="form-control" name="title" id="title" required="required">-->
-<!--                        </div>-->
-                        <div class="form-group">
-                            <label>Category</label>
-                            <select class="form-control" name="category" id="category">
-                            <?php
-                                foreach ($client_categories as $client_category) {
-                                    echo '<option value = "' . $client_category->id . '">' . $client_category->title . '</option >';
-                                }
-                             ?>
-                            </select>
-                        </div>
                         <div class="form-group">
                             <label>File</label>
                             <div class="text-center mb-3">
@@ -169,9 +158,28 @@
                             </div>
                             <input type="file" class="form-control" name="file" id="file" required="required">
                         </div>
+                        <div class="form-group">
+                            <label>Title</label>
+                            <input type="hidden" value="" id="idBlog">
+                            <input type="text" class="form-control" name="title" id="titleBlog" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label>Textarea</label>
+                            <textarea class="form-control" name="body" id="bodyBlog" rows="4" cols="50"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Category</label>
+                            <select class="form-control" name="category" id="category">
+                            <?php
+                                foreach ($blog_categories as $blog_category) {
+                                    echo '<option value = "' . $blog_category->id . '">' . $blog_category->title . '</option >';
+                                }
+                             ?>
+                            </select>
+                        </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary" id="btnAddClient">Save changes</button>
+                        <button type="submit" class="btn btn-primary" id="btnAddBlog">Save changes</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </form>
@@ -190,6 +198,7 @@
 <script src="<?php echo base_url('resources/back-end/assets/js/page/modules-datatables.js'); ?>"></script>
 
 <script>
+
     function reload() {
         setTimeout(function () {
             location.reload()
@@ -197,39 +206,39 @@
     }
 
     function clearForm() {
-        $('#modalAddEditClientCategory form')[0].reset()
-        $('#modalAddEditClient form')[0].reset()
+        $('#modalAddEditBlogCategory form')[0].reset()
+        $('#modalAddEditBlog form')[0].reset()
     }
 
-    function addClientCategory() {
+    function addBlogCategory() {
         clearForm()
-        $('#modalTitleClientCategory').html('Add')
-        $('#idClientCategory').val('')
-        $('#titleClientCategory').val('')
+        $('#modalTitleBlogCategory').html('Add')
+        $('#idBlogCategory').val('')
+        $('#titleBlogCategory').val('')
     }
 
-    function addClient() {
+    function addBlog() {
         clearForm()
         $('#modalTitleClient').html('Add')
-        $('#idClient').val('')
+        $('#idBlog').val('')
         // $('#titleClient').val('')
         $('#file').val('').attr('required', 'required')
         $('#imgClient').attr('src', '')
     }
 
-    function editClientCategory(url) {
+    function editBlogCategory(url) {
         clearForm()
 
         $.ajax({
             url: url,
             success: function (res) {
-                let clientCategory = res.data
+                let blogCategory = res.data
 
-                $('#modalAddEditClientCategory').modal('show')
+                $('#modalAddEditBlogCategory').modal('show')
 
-                $('#modalTitleClientCategory').html('Edit')
-                $('#idClientCategory').val(clientCategory.id).attr('data-link-to-update', url.replace('edit', 'update'))
-                $('#titleClientCategory').val(clientCategory.title)
+                $('#modalTitleBlogCategory').html('Edit')
+                $('#idBlogCategory').val(blogCategory.id).attr('data-link-to-update', url.replace('edit', 'update'))
+                $('#titleBlogCategory').val(blogCategory.title)
             },
             error: function (res) {
                 swal({
@@ -242,21 +251,22 @@
         })
     }
 
-    function editClient(url) {
+    function editBlog(url) {
         clearForm()
 
         $.ajax({
             url: url,
             success: function (res) {
-                let client = res.data
+                let blog = res.data
 
-                $('#modalAddEditClient').modal('show')
+                $('#modalAddEditBlog').modal('show')
 
-                $('#modalTitleClient').html('Edit')
-                $('#idClient').val(client.id).attr('data-link-to-update', url.replace('edit', 'update'))
-                // $('#titleClient').val(client.title)
-                $('#category').val(client.category_id)
-                $('#imgClient').attr('src', "<?php echo base_url('storage/images/clients/'); ?>" + client.image)
+                $('#modalTitleBlog').html('Edit')
+                $('#idBlog').val(blog.id).attr('data-link-to-update', url.replace('edit', 'update'))
+                $('#titleBlog').val(blog.title)
+                $('#bodyBlog').val(blog.body)
+                $('#category').val(blog.category_id)
+                $('#imgClient').attr('src', "<?php echo base_url('storage/images/blogs/'); ?>" + blog.image)
                 $('#file').removeAttr('required')
             },
             error: function (res) {
@@ -270,7 +280,7 @@
         })
     }
 
-    function deleteClientCategory(url) {
+    function deleteBlogCategory(url) {
         swal({
             title: 'Are you sure ?',
             icon: 'warning',
@@ -306,7 +316,7 @@
             })
     }
 
-    function deleteClient(url) {
+    function deleteBlog(url) {
         swal({
             title: 'Are you sure ?',
             icon: 'warning',
@@ -341,23 +351,24 @@
                 }
             })
     }
+
 
     $(document).ready(function () {
-        $('#addEditClientCategoryForm').on('submit', function (e) {
+        $('#addEditBlogCategoryForm').on('submit', function (e) {
             e.preventDefault()
 
             let $data = new FormData($(this)[0]),
-                $clientCategoryId = $('#idClientCategory').val(),
+                $blogCategoryId = $('#idBlogCategory').val(),
                 url = '',
                 method = 'POST'
 
             // Case: Update
-            if ($clientCategoryId != '') {
-                url = $('#idClientCategory').attr('data-link-to-update')
+            if ($blogCategoryId != '') {
+                url = $('#idBlogCategory').attr('data-link-to-update')
             }
             // Case: Insert New
             else {
-                url = '<?php echo base_url('backoffice/manage-item/clients/store_client_category'); ?>'
+                url = '<?php echo base_url('backoffice/manage-item/blogs/store_blog_category'); ?>'
             }
 
             $.ajax({
@@ -369,7 +380,7 @@
                 cache: false,
                 async: false,
                 success: function (res) {
-                    $('#modalAddEditClientCategory').modal('hide')
+                    $('#modalAddEditBlogCategory').modal('hide')
                     swal({
                         title: 'Success',
                         icon: 'success',
@@ -389,24 +400,24 @@
             })
         })
 
-        $('#addEditClientForm').on('submit', function (e) {
+        $('#addEditBlogForm').on('submit', function (e) {
             e.preventDefault()
 
             let $data = new FormData($(this)[0]),
-                $clientId = $('#idClient').val(),
+                $blogId = $('#idBlog').val(),
                 url = '',
                 method = 'POST',
                 fileData = ''
 
             // Case: Update
-            if ($clientId != '') {
-                url = $('#idClient').attr('data-link-to-update')
+            if ($blogId != '') {
+                url = $('#idBlog').attr('data-link-to-update')
                 fileData = $("#file").prop("files")[0]
                 $data.append('file', fileData)
             }
             // Case: Insert New
             else {
-                url = '<?php echo base_url('backoffice/manage-item/clients/store'); ?>'
+                url = '<?php echo base_url('backoffice/manage-item/blogs/store'); ?>'
             }
 
             $.ajax({
@@ -418,7 +429,7 @@
                 cache: false,
                 async: false,
                 success: function (res) {
-                    $('#modalAddEditClient').modal('hide')
+                    $('#modalAddEditBlog').modal('hide')
                     swal({
                         title: 'Success',
                         icon: 'success',

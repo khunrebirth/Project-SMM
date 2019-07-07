@@ -204,7 +204,7 @@
                         <ul class="dropdown-menu">
                             <li><a class="nav-link" href="<?php echo base_url('backoffice/content/branner'); ?>">&#9679; Section Branner</a></li>
                             <li><a class="nav-link" href="<?php echo base_url('backoffice/content/about'); ?>">&#9679; Section About</a></li>
-                            <li><a class="nav-link" href="<?php echo base_url('backoffice/content/contact'); ?>">&#9679; Section Contact</a></li>
+<!--                            <li><a class="nav-link" href="--><?php //echo base_url('backoffice/content/contact'); ?><!--">&#9679; Section Contact</a></li>-->
                         </ul>
                     </li>
                     <li class="nav-item dropdown <?php if ($this->uri->segment(2) == "manage-item") { echo 'active'; } ?>" <?php echo $this->uri->segment(1); ?>>

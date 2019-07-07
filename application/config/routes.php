@@ -137,6 +137,10 @@ $route['backoffice/dashboard'] = 'Back_End/Dashboard';
     $route['backoffice/manage-item/blogs/edit/(:any)'] = "Back_End/blogs/edit/$1";
     $route['backoffice/manage-item/blogs/update/(:any)'] = "Back_End/blogs/update/$1";
     $route['backoffice/manage-item/blogs/destroy/(:any)'] = "Back_End/blogs/destroy/$1";
+    $route['backoffice/manage-item/blogs/store_blog_category'] = 'Back_End/blogs/store_blog_category';
+    $route['backoffice/manage-item/blogs/edit_blog_category/(:any)'] = "Back_End/blogs/edit_blog_category/$1";
+    $route['backoffice/manage-item/blogs/update_blog_category/(:any)'] = "Back_End/blogs/update_blog_category/$1";
+    $route['backoffice/manage-item/blogs/destroy_blog_category/(:any)'] = "Back_End/blogs/destroy_blog_category/$1";
 
     // Teams
     $route['backoffice/manage-item/teams'] = 'Back_End/teams';
