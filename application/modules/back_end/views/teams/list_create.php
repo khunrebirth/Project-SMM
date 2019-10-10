@@ -53,12 +53,6 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Image Title &amp; Alt</label>
-											<div class="col-sm-10">
-												<input class="form-control input-file-w-30" name="img_title_alt_th" placeholder="Image Title &amp; Alt" type="text" value="">
-											</div>
-										</div>
-										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Title</label>
 											<div class="col-sm-10">
 												<input class="form-control" name="title_th" placeholder="Title" type="text" value="" required>
@@ -88,12 +82,6 @@
 													<input type="file" name="img_en" class="custom-file-input" onchange="PreviewImage(this, 'previewImgEn');">
 													<label class="custom-file-label">Choose file (.gif | .jpg | .png)</label>
 												</div>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Image Title &amp; Alt</label>
-											<div class="col-sm-10">
-												<input class="form-control input-file-w-30" name="img_title_alt_en" placeholder="Image Title &amp; Alt" type="text" value="">
 											</div>
 										</div>
 										<div class="form-group row">
