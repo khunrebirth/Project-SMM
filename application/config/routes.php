@@ -65,7 +65,10 @@ $route['services'] = 'front_end/Services';
 $route['clients'] = 'front_end/Clients';
 $route['blogs'] = 'front_end/Blogs';
 $route['teams'] = 'front_end/Teams';
+
+// contact
 $route['contact'] = 'front_end/Contact';
+$route['contact/send'] = 'front_end/Contact/send';
 
 
 /*

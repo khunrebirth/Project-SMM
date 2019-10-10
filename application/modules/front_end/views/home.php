@@ -393,21 +393,21 @@
             <div class="col-xs-12 col-md-6 col-lg-6">
                 <h2 class="text-secondary contact__form--title">กรอกแบบ<span>ฟอร์ม</span>ติดต่อเรา</h2>
                 <p class="text-secondary contact__form--body mb-4">เราจะติดต่อกลับโดยด่วนที่สุด</p>
-                <form class="mt-4">
+                <form class="mt-4" action="<?php echo base_url('contact/send') ?>" method="post">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Name*">
+                        <input type="text" class="form-control" name="name" placeholder="Your Name*">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Email Address*">
+                        <input type="text" class="form-control" name="email" placeholder="Your Email Address*">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Company Name*">
+                        <input type="text" class="form-control" name="company" placeholder="Company Name*">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Phone Number*">
+                        <input type="text" class="form-control" name="phone" placeholder="Your Phone Number*">
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" rows="5" placeholder="How can we help?"></textarea>
+                        <textarea class="form-control" rows="5" name="detail" placeholder="How can we help?"></textarea>
                     </div>
                     <div class="col text-center">
                         <button type="submit" class="btn btn-primary text-center">SEND</button>

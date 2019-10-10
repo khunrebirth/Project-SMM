@@ -1,31 +1,44 @@
 <!-- Title -->
-<section class="page-title" style="background-image:url(http://localhost/social.co.th/resources/front-end/images/slider-1.jpg)">
+<section class="page-title"
+         style="background-image:url(http://localhost/social.co.th/resources/front-end/images/slider-1.jpg)">
     <div class="container my-auto text-center wow fadeInUp">
+        <?php if ($this->session->flashdata('success')) { ?>
+            <div class="alert alert-success"><?php echo $this->session->flashdata('success'); ?></div>
+        <?php } ?>
+        <?php if ($this->session->flashdata('error')) { ?>
+            <div class="alert alert-danger"><?php echo $this->session->flashdata('error'); ?></div>
+        <?php } ?>
         <h1>Contact Page</h1>
     </div>
 </section>
-
 <!-- Contact -->
 <section id="contact">
     <div class="container">
         <div class="title-contact" style="text-align: center; padding: 4rem;">
-            <img src="<?php base_url() ?>resources/front-end/images/img-/images/title-contact.png" alt="" class="img-fluid">
+            <img src="<?php base_url() ?>resources/front-end/images/img-/images/title-contact.png" alt=""
+                 class="img-fluid">
         </div>
         <div class="row">
             <div class="col-xs-12 col-md-6 col-lg-6 ">
                 <div class="row">
                     <div class="col-xs-12 col-md-4 col-lg-4 d-none d-sm-block">
-                        <img src="https://www.anchorwave.com/wp-content/uploads/2016/04/google-partner358x138.png" alt="Follow Us on Facebook" class="img-fluid m-2">
+                        <img src="https://www.anchorwave.com/wp-content/uploads/2016/04/google-partner358x138.png"
+                             alt="Follow Us on Facebook" class="img-fluid m-2">
                     </div>
                     <div class="col-xs-12 col-md-8 col-lg8 d-none d-sm-block">
                         <h2 class="text-secondary d-none d-sm-none d-md-none d-lg-block" style="font-size:1.2rem;">
                             specialized in :
                         </h2>
-                        <img src="http://www.clixmarketing.com/blog/wp-content/uploads/2015/02/photo.png" alt="Follow Us on Facebook" class="img-fluid m-2" style="width: 40px;">
-                        <img src="https://knockconsulting.com/images/icon-sm-instagram-round.svg" alt="Follow Us on Instagram" class="img-fluid m-2" style="width: 40px;">
-                        <img src="https://b2bm.s3.amazonaws.com/styles/default_image/s3/youtube-icon-full_color.png?itok=3QLCT4W_" alt="Follow Us on Youtube" class="img-fluid m-2" style="width: 40px;">
-                        <img src="https://knockconsulting.com/images/icon-sm-linkedin-round.svg" alt="Follow Us on Linkedin" class="img-fluid m-2" style="width: 40px;">
-                        <img src="https://knockconsulting.com/images/google-plus.svg" alt="Follow Us on Google Plus" class="img-fluid m-2" style="width: 40px;">
+                        <img src="http://www.clixmarketing.com/blog/wp-content/uploads/2015/02/photo.png"
+                             alt="Follow Us on Facebook" class="img-fluid m-2" style="width: 40px;">
+                        <img src="https://knockconsulting.com/images/icon-sm-instagram-round.svg"
+                             alt="Follow Us on Instagram" class="img-fluid m-2" style="width: 40px;">
+                        <img src="https://b2bm.s3.amazonaws.com/styles/default_image/s3/youtube-icon-full_color.png?itok=3QLCT4W_"
+                             alt="Follow Us on Youtube" class="img-fluid m-2" style="width: 40px;">
+                        <img src="https://knockconsulting.com/images/icon-sm-linkedin-round.svg"
+                             alt="Follow Us on Linkedin" class="img-fluid m-2" style="width: 40px;">
+                        <img src="https://knockconsulting.com/images/google-plus.svg" alt="Follow Us on Google Plus"
+                             class="img-fluid m-2" style="width: 40px;">
                     </div>
                 </div>
                 <h2 class="text-secondary contact__title--head mt-3 mb-3">Social Medie Master Co.,Ltd</h2>
@@ -40,13 +53,16 @@
                     <div class="col-12 col-sm-12 col-md-11 col-lg-12">
                         <h2 class="text-secondary contact__title--head">Follow us on Social Media</h2>
                         <a href="#">
-                            <img src="https://knockconsulting.com/images/icon-sm-facebook-round.svg" alt="Follow Us on Facebook" width="40" class="img-fluid m-0">
+                            <img src="https://knockconsulting.com/images/icon-sm-facebook-round.svg"
+                                 alt="Follow Us on Facebook" width="40" class="img-fluid m-0">
                         </a>
                         <a href="#">
-                            <img src="https://knockconsulting.com/images/icon-sm-instagram-round.svg" alt="Follow Us on Instagram" width="40" class="img-fluid m-0">
+                            <img src="https://knockconsulting.com/images/icon-sm-instagram-round.svg"
+                                 alt="Follow Us on Instagram" width="40" class="img-fluid m-0">
                         </a>
                         <a href="#">
-                            <img src="https://knockconsulting.com/images/icon-sm-youtube-round.svg" alt="Follow Us on Youtube" width="40" class="img-fluid m-0">
+                            <img src="https://knockconsulting.com/images/icon-sm-youtube-round.svg"
+                                 alt="Follow Us on Youtube" width="40" class="img-fluid m-0">
                         </a>
                     </div>
                 </div>
@@ -54,21 +70,21 @@
             <div class="col-xs-12 col-md-6 col-lg-6">
                 <h2 class="text-secondary contact__form--title">กรอกแบบ<span>ฟอร์ม</span>ติดต่อเรา</h2>
                 <p class="text-secondary contact__form--body mb-4">เราจะติดต่อกลับโดยด่วนที่สุด</p>
-                <form class="mt-4">
+                <form class="mt-4" action="<?php echo base_url('contact/send') ?>" method="post">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Name*">
+                        <input type="text" class="form-control" name="name" placeholder="Your Name*">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Email Address*">
+                        <input type="text" class="form-control" name="email" placeholder="Your Email Address*">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Company Name*">
+                        <input type="text" class="form-control" name="company" placeholder="Company Name*">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Phone Number*">
+                        <input type="text" class="form-control" name="phone" placeholder="Your Phone Number*">
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" rows="5" placeholder="How can we help?"></textarea>
+                        <textarea class="form-control" rows="5" name="detail" placeholder="How can we help?"></textarea>
                     </div>
                     <div class="col text-center">
                         <button type="submit" class="btn btn-primary text-center">SEND</button>
