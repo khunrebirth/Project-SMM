@@ -101,9 +101,6 @@ class Team extends MX_Controller
 		$this->data['content'] = 'teams/list_edit';
 		$this->data['team'] = $team;
 
-		echo '<pre>';
-		print_r($team); exit();
-
 		$this->load->view('app', $this->data);
 	}
 
