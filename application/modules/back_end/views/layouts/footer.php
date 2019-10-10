@@ -13,11 +13,11 @@
 </div>
 
         <!-- Template JS File -->
-        <script src="<?php echo base_url('resources/back-end/assets/js/scripts.js'); ?>"></script>
-        <script src="<?php echo base_url('resources/back-end/assets/js/custom.js'); ?>"></script>
+        <script src="<?php echo base_url('resources/back_end/assets/js/scripts.js'); ?>"></script>
+        <script src="<?php echo base_url('resources/back_end/assets/js/custom.js'); ?>"></script>
 
         <!-- Page Specific JS File -->
-        <script src="<?php echo base_url('resources/back-end/assets/js/page/index-0.js'); ?>"></script>
+        <script src="<?php echo base_url('resources/back_end/assets/js/page/index-0.js'); ?>"></script>
 
         <!-- Custom JS -->
         <script></script>

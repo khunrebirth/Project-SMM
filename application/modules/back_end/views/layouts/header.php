@@ -11,14 +11,14 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <!-- CSS Libraries -->
-    <link rel="stylesheet" href="<?php echo base_url('resources/back-end/node_modules/jqvmap/dist/jqvmap.min.css'); ?>">
-    <link rel="stylesheet" href="<?php echo base_url('resources/back-end/node_modules/weathericons/css/weather-icons.min.css'); ?>">
-    <link rel="stylesheet" href="<?php echo base_url('resources/back-end/node_modules/weathericons/css/weather-icons-wind.min.css'); ?>">
-    <link rel="stylesheet" href="<?php echo base_url('resources/back-end/node_modules/summernote/dist/summernote-bs4.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/jqvmap/dist/jqvmap.min.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/weathericons/css/weather-icons.min.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/weathericons/css/weather-icons-wind.min.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/summernote/dist/summernote-bs4.css'); ?>">
 
     <!-- Template CSS -->
-    <link rel="stylesheet" href="<?php echo base_url('resources/back-end/assets/css/style.css'); ?>">
-    <link rel="stylesheet" href="<?php echo base_url('resources/back-end/assets/css/components.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('resources/back_end/assets/css/style.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('resources/back_end/assets/css/components.css'); ?>">
 
 
     <!-- General JS Scripts -->
@@ -27,16 +27,16 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="<?php echo base_url('resources/back-end/assets/js/stisla.js'); ?>"></script>
+    <script src="<?php echo base_url('resources/back_end/assets/js/stisla.js'); ?>"></script>
 
     <!-- JS Libraies -->
-    <script src="<?php echo base_url('resources/back-end/node_modules/simpleweather/jquery.simpleWeather.min.js'); ?>"></script>
-    <script src="<?php echo base_url('resources/back-end/node_modules/chart.js/dist/Chart.min.js'); ?>"></script>
-    <script src="<?php echo base_url('resources/back-end/node_modules/jqvmap/dist/jquery.vmap.min.js'); ?>"></script>
-    <script src="<?php echo base_url('resources/back-end/node_modules/jqvmap/dist/maps/jquery.vmap.world.js'); ?>"></script>
-    <script src="<?php echo base_url('resources/back-end/node_modules/summernote/dist/summernote-bs4.js'); ?>"></script>
-    <script src="<?php echo base_url('resources/back-end/node_modules/chocolat/dist/js/jquery.chocolat.min.js'); ?>"></script>
-    <script src="<?php echo base_url('resources/back-end/node_modules/sweetalert/dist/sweetalert.min.js'); ?>"></script>
+    <script src="<?php echo base_url('resources/back_end/node_modules/simpleweather/jquery.simpleWeather.min.js'); ?>"></script>
+    <script src="<?php echo base_url('resources/back_end/node_modules/chart.js/dist/Chart.min.js'); ?>"></script>
+    <script src="<?php echo base_url('resources/back_end/node_modules/jqvmap/dist/jquery.vmap.min.js'); ?>"></script>
+    <script src="<?php echo base_url('resources/back_end/node_modules/jqvmap/dist/maps/jquery.vmap.world.js'); ?>"></script>
+    <script src="<?php echo base_url('resources/back_end/node_modules/summernote/dist/summernote-bs4.js'); ?>"></script>
+    <script src="<?php echo base_url('resources/back_end/node_modules/chocolat/dist/js/jquery.chocolat.min.js'); ?>"></script>
+    <script src="<?php echo base_url('resources/back_end/node_modules/sweetalert/dist/sweetalert.min.js'); ?>"></script>
 </head>
 <body>
 <div id="app">
@@ -196,30 +196,24 @@
                 <div class="sidebar-brand sidebar-brand-sm">
                     <a href="<?php echo base_url('backoffice/dashboard'); ?>">SMM</a>
                 </div>
-                <ul class="sidebar-menu">
-                    <li class="menu-header">General</li>
-                    <li class=""><a class="nav-link" href="<?php echo base_url('backoffice/dashboard'); ?>"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link has-dropdown"><i class="fas fa-pencil-ruler"></i><span>Content (Text Edit)</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a class="nav-link" href="<?php echo base_url('backoffice/content/branner'); ?>">&#9679; Section Branner</a></li>
-                            <li><a class="nav-link" href="<?php echo base_url('backoffice/content/about'); ?>">&#9679; Section About</a></li>
-<!--                            <li><a class="nav-link" href="--><?php //echo base_url('backoffice/content/contact'); ?><!--">&#9679; Section Contact</a></li>-->
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown <?php if ($this->uri->segment(2) == "manage-item") { echo 'active'; } ?>" <?php echo $this->uri->segment(1); ?>>
-                        <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i><span>Manage Item</span></a>
-                        <ul class="dropdown-menu">
-                            <li class="<?php if ($this->uri->segment(2) == "manage-item" && $this->uri->segment(3) == "services"){ echo 'active'; } ?>"><a class="nav-link" href="<?php echo base_url('backoffice/manage-item/services'); ?>">&#9679; Serivces</a></li>
-                            <li class="<?php if ($this->uri->segment(2) == "manage-item" && $this->uri->segment(3) == "services2"){ echo 'active'; } ?>"><a class="nav-link" href="<?php echo base_url('backoffice/manage-item/services2'); ?>">&#9679; Serivces Type 2</a></li>
-                            <li class="<?php if ($this->uri->segment(2) == "manage-item" && $this->uri->segment(3) == "clients"){ echo 'active'; } ?>"><a class="nav-link" href="<?php echo base_url('backoffice/manage-item/clients'); ?>">&#9679; Clients</a></li>
-                            <li class="<?php if ($this->uri->segment(2) == "manage-item" && $this->uri->segment(3) == "blogs"){ echo 'active'; } ?>"><a class="nav-link" href="<?php echo base_url('backoffice/manage-item/blogs'); ?>">&#9679; Blogs</a></li>
-                            <li class="<?php if ($this->uri->segment(2) == "manage-item" && $this->uri->segment(3) == "teams"){ echo 'active'; } ?>"><a class="nav-link" href="<?php echo base_url('backoffice/manage-item/teams'); ?>">&#9679; Teams</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="nav-link" href="<?php echo base_url('backoffice/settings'); ?>"><i class="fas fa-ellipsis-h"></i> <span>Settings</span></a></li>
-                </ul>
-
+				<ul class="sidebar-menu">
+					<li class="menu-header">General</li>
+					<li class="<?php if ($this->uri->segment(2) == "dashboard") { echo 'active'; } ?>">
+						<a class="nav-link" href="<?php echo base_url('backoffice/dashboard'); ?>"><i class="fas fa-fire"></i> <span>Dashboard</span></a>
+					</li>
+					<li class="menu-header">Pages</li>
+					<li class="nav-item dropdown <?php if ($this->uri->segment(2) == "page" && $this->uri->segment(3) == "teams") { echo 'active'; } ?>">
+						<a href="#" class="nav-link has-dropdown"><i class="fas fa-home"></i><span>Teams</span></a>
+						<ul class="dropdown-menu">
+							<li class="<?php if ($this->uri->segment(3) == "teams" && $this->uri->segment(4) == "content") { echo 'active'; } ?>">
+								<a class="nav-link" href="<?php echo base_url('backoffice/page/teams/content/1'); ?>">&#9679; Content</a>
+							</li>
+							<li class="<?php if ($this->uri->segment(3) == "teams") { echo 'active'; } ?>">
+								<a class="nav-link" href="<?php echo base_url('backoffice/page/teams/list-teams'); ?>">&#9679; Teams</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
                 <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
                     <a href="<?php echo base_url('home'); ?>" class="btn btn-primary btn-lg btn-block btn-icon-split">
                         <i class="fas fa-rocket"></i> Back to Website

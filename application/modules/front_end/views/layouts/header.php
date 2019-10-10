@@ -10,28 +10,28 @@
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Prompt:300,400,500,700,900&subset=thai">
     <!-- CSS Bootstrap 4 -->
-    <link rel="stylesheet" href="<?php echo base_url('resources/front-end/css/bootstrap.min.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/bootstrap.min.css'); ?>">
     <!-- Hover Effect -->
-    <link rel="stylesheet" href="<?php echo base_url('resources/front-end/css/hover-effect.css'); ?>">
-    <link rel="stylesheet" href="<?php echo base_url('resources/front-end/css/hover-style.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/hover-effect.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/hover-style.css'); ?>">
     <!-- Animate -->
-    <link rel="stylesheet" href="<?php echo base_url('resources/front-end/css/animate.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/animate.css'); ?>">
 
     <!-- Customer CSS -->
-    <link rel="stylesheet" href="<?php echo base_url('resources/front-end/css/style.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style.css'); ?>">
 
 
     <!-- JS Library -->
-    <script src="<?php echo base_url('resources/front-end/js/jquery-3.4.1.min.js'); ?>"></script>
+    <script src="<?php echo base_url('resources/front_end/js/jquery-3.4.1.min.js'); ?>"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="<?php echo base_url('resources/front-end/js/bootstrap.min.js'); ?>"></script>
-    <script src="<?php echo base_url('resources/front-end/js/wow.js'); ?>"></script>
+    <script src="<?php echo base_url('resources/front_end/js/bootstrap.min.js'); ?>"></script>
+    <script src="<?php echo base_url('resources/front_end/js/wow.js'); ?>"></script>
 </head>
 <body>
 
 <nav class="navbar navbar-light fixed-top navbar-expand-md navbar-no-bg">
     <a class="navbar-brand" href="<?php echo base_url('home'); ?>">
-        <img src="<?php echo base_url('resources/front-end/images/img-/logo-smm.png'); ?>" alt="">
+        <img src="<?php echo base_url('resources/front_end/images/img-/logo-smm.png'); ?>" alt="">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'Front_End/Home';
+$route['default_controller'] = 'front_end/Home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
@@ -59,13 +59,13 @@ $route['translate_uri_dashes'] = FALSE;
 | -------------------------------------------------------------------------
 */
 
-$route['home'] = 'Front_End/Home';
-$route['about'] = 'Front_End/About';
-$route['services'] = 'Front_End/Services';
-$route['clients'] = 'Front_End/Clients';
-$route['blogs'] = 'Front_End/Blogs';
-$route['teams'] = 'Front_End/Teams';
-$route['contact'] = 'Front_End/Contact';
+$route['home'] = 'front_end/Home';
+$route['about'] = 'front_end/About';
+$route['services'] = 'front_end/Services';
+$route['clients'] = 'front_end/Clients';
+$route['blogs'] = 'front_end/Blogs';
+$route['teams'] = 'front_end/Teams';
+$route['contact'] = 'front_end/Contact';
 
 
 /*
@@ -75,79 +75,49 @@ $route['contact'] = 'Front_End/Contact';
 */
 
 // Authentication
-$route['backoffice'] = 'Back_End/Auth/Authentication';
-$route['backoffice/login'] = 'Back_End/Auth/Authentication';
-$route['backoffice/login_process'] = 'Back_End/Auth/Authentication/login_process';
-$route['backoffice/logout'] = 'Back_End/Auth/Authentication/logout';
-
-// Dashboard
-$route['backoffice/dashboard'] = 'Back_End/Dashboard';
+$route['backoffice'] = 'back_end/Auth/Authentication';
+$route['backoffice/login'] = 'back_end/Auth/Authentication';
+$route['backoffice/login_process'] = 'back_end/Auth/Authentication/login_process';
+$route['backoffice/logout'] = 'back_end/Auth/Authentication/logout';
 
 
-    /*
-    | -------------------------------------------------------------------------
-    | CONTENT
-    | -------------------------------------------------------------------------
-    */
+	/*
+	| -------------------------------------------------------------------------
+	| Dashboard
+	| -------------------------------------------------------------------------
+	*/
 
-    // Branner
-    $route['backoffice/content/branner'] = 'Back_End/branner';
-
-    // About
-    $route['backoffice/content/about'] = 'Back_End/about';
-
-    // Contact
-    $route['backoffice/content/contact'] = 'Back_End/contact';
-
+	$route['backoffice/dashboard'] = 'back_end/Dashboard';
 
     /*
     | -------------------------------------------------------------------------
-    | MANAGE
+    | PAGE
     | -------------------------------------------------------------------------
     */
 
-    // Services
-    $route['backoffice/manage-item/services'] = 'Back_End/services';
-    $route['backoffice/manage-item/services/store'] = 'Back_End/services/store';
-    $route['backoffice/manage-item/services/edit/(:any)'] = "Back_End/services/edit/$1";
-    $route['backoffice/manage-item/services/update/(:any)'] = "Back_End/services/update/$1";
-    $route['backoffice/manage-item/services/destroy/(:any)'] = "Back_End/services/destroy/$1";
+		/*
+		| -------------------------------------------------------------------------
+		| Team
+		| -------------------------------------------------------------------------
+		*/
 
-    // Services Row 2
-    $route['backoffice/manage-item/services2'] = 'Back_End/services2';
-    $route['backoffice/manage-item/services2/store'] = 'Back_End/services2/store';
-    $route['backoffice/manage-item/services2/edit/(:any)'] = "Back_End/services2/edit/$1";
-    $route['backoffice/manage-item/services2/update/(:any)'] = "Back_End/services2/update/$1";
-    $route['backoffice/manage-item/services2/destroy/(:any)'] = "Back_End/services2/destroy/$1";
+		// Content
+		$route['backoffice/page/teams/content/(:any)'] = 'back_end/Team/edit_content/$1';
+		$route['backoffice/page/teams/content/update/(:any)'] = 'back_end/Team/update_content/$1';
 
-    // Clients
-    $route['backoffice/manage-item/clients'] = 'Back_End/clients';
-    $route['backoffice/manage-item/clients/store'] = 'Back_End/clients/store';
-    $route['backoffice/manage-item/clients/edit/(:any)'] = "Back_End/clients/edit/$1";
-    $route['backoffice/manage-item/clients/update/(:any)'] = "Back_End/clients/update/$1";
-    $route['backoffice/manage-item/clients/destroy/(:any)'] = "Back_End/clients/destroy/$1";
-    $route['backoffice/manage-item/clients/store_client_category'] = 'Back_End/clients/store_client_category';
-    $route['backoffice/manage-item/clients/edit_client_category/(:any)'] = "Back_End/clients/edit_client_category/$1";
-    $route['backoffice/manage-item/clients/update_client_category/(:any)'] = "Back_End/clients/update_client_category/$1";
-    $route['backoffice/manage-item/clients/destroy_client_category/(:any)'] = "Back_End/clients/destroy_client_category/$1";
+		// Lists
+		$route['backoffice/page/teams/list-teams'] = 'back_end/Team';
+		$route['backoffice/page/teams/list-teams/create'] = 'back_end/Team/create';
+		$route['backoffice/page/teams/list-teams/store'] = 'back_end/Team/store';
+		$route['backoffice/page/teams/list-teams/edit/(:any)'] = "back_end/Team/edit/$1";
+		$route['backoffice/page/teams/list-teams/update/(:any)'] = "back_end/Team/update/$1";
+		$route['backoffice/page/teams/list-teams/destroy/(:any)'] = "back_end/Team/destroy/$1";
 
-    // Blogs
-    $route['backoffice/manage-item/blogs'] = 'Back_End/blogs';
-    $route['backoffice/manage-item/blogs/store'] = 'Back_End/blogs/store';
-    $route['backoffice/manage-item/blogs/edit/(:any)'] = "Back_End/blogs/edit/$1";
-    $route['backoffice/manage-item/blogs/update/(:any)'] = "Back_End/blogs/update/$1";
-    $route['backoffice/manage-item/blogs/destroy/(:any)'] = "Back_End/blogs/destroy/$1";
-    $route['backoffice/manage-item/blogs/store_blog_category'] = 'Back_End/blogs/store_blog_category';
-    $route['backoffice/manage-item/blogs/edit_blog_category/(:any)'] = "Back_End/blogs/edit_blog_category/$1";
-    $route['backoffice/manage-item/blogs/update_blog_category/(:any)'] = "Back_End/blogs/update_blog_category/$1";
-    $route['backoffice/manage-item/blogs/destroy_blog_category/(:any)'] = "Back_End/blogs/destroy_blog_category/$1";
+	/*
+	| -------------------------------------------------------------------------
+	| Setting
+	| -------------------------------------------------------------------------
+	*/
 
-    // Teams
-    $route['backoffice/manage-item/teams'] = 'Back_End/teams';
-    $route['backoffice/manage-item/teams/store'] = 'Back_End/teams/store';
-    $route['backoffice/manage-item/teams/edit/(:any)'] = "Back_End/teams/edit/$1";
-    $route['backoffice/manage-item/teams/update/(:any)'] = "Back_End/teams/update/$1";
-    $route['backoffice/manage-item/teams/destroy/(:any)'] = "Back_End/teams/destroy/$1";
-
-    // Settings
-    $route['backoffice/settings'] = 'Back_End/settings';
+    // Setting
+    $route['backoffice/settings'] = 'back_end/settings';
