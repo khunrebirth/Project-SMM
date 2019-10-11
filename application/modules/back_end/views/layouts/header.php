@@ -37,6 +37,18 @@
     <script src="<?php echo base_url('resources/back_end/node_modules/summernote/dist/summernote-bs4.js'); ?>"></script>
     <script src="<?php echo base_url('resources/back_end/node_modules/chocolat/dist/js/jquery.chocolat.min.js'); ?>"></script>
     <script src="<?php echo base_url('resources/back_end/node_modules/sweetalert/dist/sweetalert.min.js'); ?>"></script>
+
+	<style>
+		.input-file-w-30 {
+			width: 30%;
+		}
+
+		@media (max-width: 767px) {
+			.input-file-w-30 {
+				width: 100% !important;
+			}
+		}
+	</style>
 </head>
 <body>
 <div id="app">
@@ -208,7 +220,7 @@
 							<li class="<?php if ($this->uri->segment(3) == "teams" && $this->uri->segment(4) == "content") { echo 'active'; } ?>">
 								<a class="nav-link" href="<?php echo base_url('backoffice/page/teams/content/1'); ?>">&#9679; Content</a>
 							</li>
-							<li class="<?php if ($this->uri->segment(3) == "teams") { echo 'active'; } ?>">
+							<li class="<?php if ($this->uri->segment(3) == "teams" && $this->uri->segment(4) == "list-teams") { echo 'active'; } ?>">
 								<a class="nav-link" href="<?php echo base_url('backoffice/page/teams/list-teams'); ?>">&#9679; Teams</a>
 							</li>
 						</ul>

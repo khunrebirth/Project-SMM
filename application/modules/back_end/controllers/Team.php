@@ -4,11 +4,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Team extends MX_Controller
 {
 
-    private $data = false;
+	private $data = false;
 
-    public function __construct()
-    {
-        parent::__construct();
+	public function __construct()
+	{
+		parent::__construct();
 
 		/*
 		| -------------------------------------------------------------------------
@@ -16,7 +16,7 @@ class Team extends MX_Controller
 		| -------------------------------------------------------------------------
 		*/
 
-        require_login('backoffice/login');
+		require_login('backoffice/login');
 
 		/*
 		| -------------------------------------------------------------------------
@@ -25,8 +25,9 @@ class Team extends MX_Controller
 		*/
 
 		// Model
-        $this->load->model('User_model');
-        $this->load->model('Team_model');
+		$this->load->model('User_model');
+		$this->load->model('Team_model');
+		$this->load->model('Team_page_model');
 
 		/*
 		| -------------------------------------------------------------------------
@@ -34,19 +35,19 @@ class Team extends MX_Controller
 		| -------------------------------------------------------------------------
 		*/
 
-        $this->data['user'] = $this->User_model->get_user_by_id($this->session->userdata('user_id'));
-    }
+		$this->data['user'] = $this->User_model->get_user_by_id($this->session->userdata('user_id'));
+	}
 
-    public function index()
-    {
-        $this->data['title'] = 'Page: Teams';
-        $this->data['content'] = 'teams/list';
-        $this->data['teams'] = $this->Team_model->get_team_all();
+	public function index()
+	{
+		$this->data['title'] = 'Page: Teams';
+		$this->data['content'] = 'teams/list';
+		$this->data['teams'] = $this->Team_model->get_team_all();
 
-        $this->load->view('app', $this->data);
-    }
+		$this->load->view('app', $this->data);
+	}
 
-    public function create()
+	public function create()
 	{
 		$this->data['title'] = 'Page: Teams - Add';
 		$this->data['content'] = 'teams/list_create';
@@ -55,8 +56,8 @@ class Team extends MX_Controller
 		$this->load->view('app', $this->data);
 	}
 
-    public function store()
-    {
+	public function store()
+	{
 		// Handle Image
 		$img_en = '';
 		$img_th = '';
@@ -89,11 +90,11 @@ class Team extends MX_Controller
 		}
 
 		redirect('backoffice/page/teams/list-teams');
-    }
+	}
 
-    public function show() {}
+	public function show() {}
 
-    public function edit($id)
+	public function edit($id)
 	{
 		$team = $this->Team_model->get_team_by_id($id);
 
@@ -104,7 +105,7 @@ class Team extends MX_Controller
 		$this->load->view('app', $this->data);
 	}
 
-    public function update($id)
+	public function update($id)
 	{
 		// Get Old data
 		$team = $this->Team_model->get_team_by_id($id);
@@ -144,23 +145,74 @@ class Team extends MX_Controller
 		redirect('backoffice/page/teams/list-teams');
 	}
 
-    public function destroy($id)
-    {
-        $status = 500;
-        $response['success'] = 0;
+	public function destroy($id)
+	{
+		$status = 500;
+		$response['success'] = 0;
 
-        $team = $this->Team_model->delete_team_by_id($id);
+		$team = $this->Team_model->delete_team_by_id($id);
 
-        if ($team != false) {
-            $status = 200;
-            $response['success'] = 1;
-        }
+		if ($team != false) {
+			$status = 200;
+			$response['success'] = 1;
+		}
 
-        return $this->output
-            ->set_status_header($status)
-            ->set_content_type('application/json')
-            ->set_output(json_encode($response));
-    }
+		return $this->output
+			->set_status_header($status)
+			->set_content_type('application/json')
+			->set_output(json_encode($response));
+	}
+
+	public function edit_content($id)
+	{
+		$this->data['title'] = 'Page: Teams - Content - Edit';
+		$this->data['content'] = 'teams/content';
+		$this->data['page_content'] =  $this->Team_page_model->get_team_page_by_id($id);
+
+		$this->load->view('app', $this->data);
+	}
+
+	public function update_content($id)
+	{
+		// Get Old data
+		$page_content = $this->Team_page_model->get_team_page_by_id($id);
+
+		// Handle Image
+		$meta_og_image_en = unserialize($page_content->img_og_twitter)['en'];
+		$meta_og_image_th = unserialize($page_content->img_og_twitter)['th'];
+
+		if (isset($_FILES['meta_og_image_en']) && $_FILES['meta_og_image_en']['name'] != '') {
+			$meta_og_image_en = $this->ddoo_upload_team('meta_og_image_en');
+		}
+
+		if (isset($_FILES['meta_og_image_th']) && $_FILES['meta_og_image_th']['name'] != '') {
+			$meta_og_image_th = $this->ddoo_upload_team('meta_og_image_th');
+		}
+
+		// Filter Data
+		$input_meta_tag_title = ['en' => $this->input->post('meta_tag_title_en'), 'th' => $this->input->post('meta_tag_title_th')];
+		$input_meta_tag_description = ['en' => $this->input->post('meta_tag_description_en'), 'th' => $this->input->post('meta_tag_description_th')];
+		$input_meta_tag_keywords = ['en' => $this->input->post('meta_tag_keywords_en'), 'th' => $this->input->post('meta_tag_keywords_th')];
+		$input_img_og_twitter = ['en' => $meta_og_image_en, 'th' => $meta_og_image_th];
+
+		// Update Data
+		$update_page_content = $this->Team_page_model->update_team_page_by_id($id, [
+			'meta_tag_title' => serialize($input_meta_tag_title),
+			'meta_tag_description' => serialize($input_meta_tag_description),
+			'meta_tag_keywords' => serialize($input_meta_tag_keywords),
+			'img_og_twitter' => serialize($input_img_og_twitter),
+			'updated_at' => date('Y-m-d H:i:s')
+		]);
+
+		// Set Session To View
+		if ($update_page_content) {
+			$this->session->set_flashdata('success', 'Update Done');
+		} else {
+			$this->session->set_flashdata('error', 'Something wrong');
+		}
+
+		redirect('backoffice/page/teams/content/' . $id);
+	}
 
 	private function ddoo_upload_team($filename)
 	{

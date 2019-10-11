@@ -30,8 +30,10 @@
 								<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#handleEn">EN</a></li>
 							</ul>
 							<!-- Tab panes -->
-							<form class="form-horizontal" method="post" action="#" enctype="multipart/form-data">
+							<form class="form-horizontal" method="post" action="<?php echo base_url('backoffice/page/teams/content/update/' . $page_content->id); ?>" enctype="multipart/form-data">
 								<div class="tab-content">
+
+									<!-- THAI -->
 									<div class="tab-pane active" id="handleTh">
 										<!-- Meta Tag -->
 										<div style="padding-top: 20px;"><h4><i class="fa fa-tag"></i> Meta Tag (SEO)</h4></div>
@@ -39,19 +41,19 @@
 										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Title</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="meta_title_th" placeholder="Meta Title" type="text" value="<?php echo unserialize($page_content->meta_title)['th']; ?>">
+												<input class="form-control" name="meta_tag_title_th" placeholder="Meta Title" type="text" value="<?php echo unserialize($page_content->meta_tag_title)['th']; ?>">
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Description</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="meta_description_th" placeholder="Meta Description" type="text" value="<?php echo unserialize($page_content->meta_description)['th']; ?>">
+												<input class="form-control" name="meta_tag_description_th" placeholder="Meta Description" type="text" value="<?php echo unserialize($page_content->meta_tag_description)['th']; ?>">
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Keywords</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="meta_keyword_th" placeholder="Meta Keywords" type="text" value="<?php echo unserialize($page_content->meta_keyword)['th']; ?>">
+												<input class="form-control" name="meta_tag_keywords_th" placeholder="Meta Keywords" type="text" value="<?php echo unserialize($page_content->meta_tag_keywords)['th']; ?>">
 											</div>
 										</div>
 										<!-- OG & Twitter -->
@@ -79,6 +81,8 @@
 											</div>
 										</div>
 									</div>
+
+									<!-- ENG -->
 									<div class="tab-pane fade" id="handleEn">
 										<!-- Meta Tag -->
 										<div style="padding-top: 20px;"><h4><i class="fa fa-tag"></i> Meta Tag (SEO)</h4></div>
@@ -86,19 +90,19 @@
 										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Title</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="meta_title_en" placeholder="Meta Title" type="text" value="<?php echo unserialize($page_content->meta_title)['en']; ?>">
+												<input class="form-control" name="meta_tag_title_en" placeholder="Meta Title" type="text" value="<?php echo unserialize($page_content->meta_tag_title)['en']; ?>">
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Description</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="meta_description_en" placeholder="Meta Description" type="text" value="<?php echo unserialize($page_content->meta_description)['en']; ?>">
+												<input class="form-control" name="meta_tag_description_en" placeholder="Meta Description" type="text" value="<?php echo unserialize($page_content->meta_tag_description)['en']; ?>">
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Keywords</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="meta_keyword_en" placeholder="Meta Keywords" type="text" value="<?php echo unserialize($page_content->meta_keyword)['th']; ?>">
+												<input class="form-control" name="meta_tag_keywords_en" placeholder="Meta Keywords" type="text" value="<?php echo unserialize($page_content->meta_tag_keywords)['th']; ?>">
 											</div>
 										</div>
 										<!-- OG & Twitter -->
@@ -126,6 +130,7 @@
 											</div>
 										</div>
 									</div>
+
 								</div>
 								<div class="row">
 									<div class="col-sm-12 col-md-12 text-left text-md-right">
@@ -148,3 +153,17 @@
 
 <!-- Page Specific JS File -->
 <script src="<?php echo base_url('resources/back_end/assets/js/page/modules-datatables.js'); ?>"></script>
+
+<script>
+    function PreviewImage(input, previewImage) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader()
+
+            reader.onload = function (e) {
+                $('#' + previewImage).attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
