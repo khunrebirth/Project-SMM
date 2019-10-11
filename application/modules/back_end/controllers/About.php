@@ -25,6 +25,7 @@ class About extends MX_Controller
 		*/
 
         // Model
+		$this->load->model('User_model');
         $this->load->model('About_page_model');
 
 		/*
