@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <!-- CSS Libraries -->
-    <link rel="stylesheet" href="<?php echo base_url('resources/back-end/node_modules/bootstrap-social/bootstrap-social.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/bootstrap-social/bootstrap-social.css'); ?>">
 
     <!-- Template CSS -->
-    <link rel="stylesheet" href="<?php echo base_url('resources/back-end/assets/css/style.css'); ?>">
-    <link rel="stylesheet" href="<?php echo base_url('resources/back-end/assets/css/components.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('resources/back_end/assets/css/style.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('resources/back_end/assets/css/components.css'); ?>">
 </head>
 
 <body>
@@ -24,7 +24,7 @@
             <div class="col-lg-4 col-md-6 col-12 order-lg-1 order-2 bg-white my-auto">
                 <div class="p-5 m-3">
                     <div class="text-center">
-                        <img src="<?php echo base_url('resources/back-end/assets/img/smm/logo-smm.png'); ?>" alt="logo" width="120" class="shadow-light mb-5 mt-2">
+                        <img src="<?php echo base_url('resources/back_end/assets/img/smm/logo-smm.png'); ?>" alt="logo" width="120" class="shadow-light mb-5 mt-2">
                     </div>
                     <h4 class="text-dark font-weight-normal text-center">Welcome to <span class="font-weight-bold">SMM Backoffice</span></h4>
                     <form method="POST" action="<?php echo base_url('backoffice/login_process'); ?>"" class="needs-validation" novalidate="">
@@ -58,16 +58,16 @@
                     </form>
 
                     <div class="text-center mt-5 text-small">
-                        Copyright &copy; Your Company. Made with 💙 by Stisla
-                        <div class="mt-2">
-                            <a href="#">Privacy Policy</a>
-                            <div class="bullet"></div>
-                            <a href="#">Terms of Service</a>
-                        </div>
+<!--                        Copyright &copy; Your Company. Made with 💙 by Stisla-->
+<!--                        <div class="mt-2">-->
+<!--                            <a href="#">Privacy Policy</a>-->
+<!--                            <div class="bullet"></div>-->
+<!--                            <a href="#">Terms of Service</a>-->
+<!--                        </div>-->
                     </div>
                 </div>
             </div>
-            <div class="col-lg-8 col-12 order-lg-2 order-1 min-vh-100 background-walk-y position-relative overlay-gradient-bottom" data-background="<?php echo base_url('resources/back-end/assets/img/unsplash/login-bg.jpg'); ?>">
+            <div class="col-lg-8 col-12 order-lg-2 order-1 min-vh-100 background-walk-y position-relative overlay-gradient-bottom" data-background="<?php echo base_url('resources/back_end/assets/img/unsplash/login-bg.jpg'); ?>">
                 <div class="absolute-bottom-left index-2">
                     <div class="text-light p-5 pb-2">
                         <div class="mb-5 pb-3">
@@ -88,14 +88,14 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-<script src="<?php echo base_url('resources/back-end/assets/js/stisla.js'); ?>"></script>
+<script src="<?php echo base_url('resources/back_end/assets/js/stisla.js'); ?>"></script>
 
 <!-- JS Libraies -->
 
 <!-- Page Specific JS File -->
 
 <!-- Template JS File -->
-<script src="<?php echo base_url('resources/back-end/assets/js/scripts.js'); ?>"></script>
-<script src="<?php echo base_url('resources/back-end/assets/js/custom.js"'); ?>"></script>
+<script src="<?php echo base_url('resources/back_end/assets/js/scripts.js'); ?>"></script>
+<script src="<?php echo base_url('resources/back_end/assets/js/custom.js"'); ?>"></script>
 </body>
 </html>

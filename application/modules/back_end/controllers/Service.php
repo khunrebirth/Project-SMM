@@ -1,14 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class About extends MX_Controller
+class Service extends MX_Controller
 {
 
-    private $data = false;
+	private $data = false;
 
-    public function __construct()
-    {
-        parent::__construct();
+	public function __construct()
+	{
+		parent::__construct();
 
 		/*
 		| -------------------------------------------------------------------------
@@ -16,7 +16,7 @@ class About extends MX_Controller
 		| -------------------------------------------------------------------------
 		*/
 
-        require_login('backoffice/login');
+		require_login('backoffice/login');
 
 		/*
 		| -------------------------------------------------------------------------
@@ -24,9 +24,9 @@ class About extends MX_Controller
 		| -------------------------------------------------------------------------
 		*/
 
-        // Model
+		// Model
 		$this->load->model('User_model');
-        $this->load->model('About_page_model');
+		$this->load->model('Service_page_model');
 
 		/*
 		| -------------------------------------------------------------------------
@@ -34,14 +34,14 @@ class About extends MX_Controller
 		| -------------------------------------------------------------------------
 		*/
 
-        $this->data['user'] = $this->User_model->get_user_by_id($this->session->userdata('user_id'));
-    }
+		$this->data['user'] = $this->User_model->get_user_by_id($this->session->userdata('user_id'));
+	}
 
 	public function edit_content($id)
 	{
-		$this->data['title'] = 'Page: About - Content - Edit';
-		$this->data['content'] = 'abouts/content';
-		$this->data['page_content'] =  $this->About_page_model->get_about_page_by_id($id);
+		$this->data['title'] = 'Page: Services - Content - Edit';
+		$this->data['content'] = 'services/content';
+		$this->data['page_content'] =  $this->Service_page_model->get_service_page_by_id($id);
 
 		$this->load->view('app', $this->data);
 	}
@@ -49,18 +49,18 @@ class About extends MX_Controller
 	public function update_content($id)
 	{
 		// Get Old data
-		$page_content = $this->About_page_model->get_about_page_by_id($id);
+		$page_content = $this->Service_page_model->get_service_page_by_id($id);
 
 		// Handle Image
 		$meta_og_image_en = unserialize($page_content->img_og_twitter)['en'];
 		$meta_og_image_th = unserialize($page_content->img_og_twitter)['th'];
 
 		if (isset($_FILES['meta_og_image_en']) && $_FILES['meta_og_image_en']['name'] != '') {
-			$meta_og_image_en = $this->ddoo_upload_about('meta_og_image_en');
+			$meta_og_image_en = $this->ddoo_upload_client('meta_og_image_en');
 		}
 
 		if (isset($_FILES['meta_og_image_th']) && $_FILES['meta_og_image_th']['name'] != '') {
-			$meta_og_image_th = $this->ddoo_upload_about('meta_og_image_th');
+			$meta_og_image_th = $this->ddoo_upload_client('meta_og_image_th');
 		}
 
 		// Filter Data
@@ -70,7 +70,7 @@ class About extends MX_Controller
 		$input_img_og_twitter = ['en' => $meta_og_image_en, 'th' => $meta_og_image_th];
 
 		// Update Data
-		$update_page_content = $this->About_page_model->update_about_page_by_id($id, [
+		$update_page_content = $this->Service_page_model->update_service_page_by_id($id, [
 			'meta_tag_title' => serialize($input_meta_tag_title),
 			'meta_tag_description' => serialize($input_meta_tag_description),
 			'meta_tag_keywords' => serialize($input_meta_tag_keywords),
@@ -83,7 +83,7 @@ class About extends MX_Controller
 
 			logger_store([
 				'user_id' => $this->data['user']->id,
-				'detail' => 'แก้ไข Content (Abouts Page)',
+				'detail' => 'แก้ไข Content (Services Page)',
 				'event' => 'update',
 				'ip' => $this->input->ip_address(),
 			]);
@@ -93,12 +93,12 @@ class About extends MX_Controller
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
 
-		redirect('backoffice/page/abouts/content/' . $id);
+		redirect('backoffice/page/services/content/' . $id);
 	}
 
-	private function ddoo_upload_about($filename)
+	private function ddoo_upload_client($filename)
 	{
-		$config['upload_path'] = './storage/uploads/images/about';
+		$config['upload_path'] = './storage/uploads/images/services';
 		$config['allowed_types'] = 'gif|jpg|png';
 		$config['encrypt_name'] = TRUE;
 

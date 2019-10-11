@@ -84,6 +84,14 @@ class Team extends MX_Controller
 
 		// Set Session To View
 		if ($add_team) {
+
+			logger_store([
+				'user_id' => $this->data['user']->id,
+				'detail' => 'เพิ่ม Team (Team Page)',
+				'event' => 'add',
+				'ip' => $this->input->ip_address(),
+			]);
+
 			$this->session->set_flashdata('success', 'Add Done');
 		} else {
 			$this->session->set_flashdata('error', 'Something wrong');
@@ -137,6 +145,14 @@ class Team extends MX_Controller
 
 		// Set Session To View
 		if ($update_team) {
+
+			logger_store([
+				'user_id' => $this->data['user']->id,
+				'detail' => 'แก้ไข Team (Team Page)',
+				'event' => 'update',
+				'ip' => $this->input->ip_address(),
+			]);
+
 			$this->session->set_flashdata('success', 'Add Done');
 		} else {
 			$this->session->set_flashdata('error', 'Something wrong');
@@ -155,6 +171,13 @@ class Team extends MX_Controller
 		if ($team != false) {
 			$status = 200;
 			$response['success'] = 1;
+
+			logger_store([
+				'user_id' => $this->data['user']->id,
+				'detail' => 'ลบ Team (Team Page)',
+				'event' => 'delete',
+				'ip' => $this->input->ip_address(),
+			]);
 		}
 
 		return $this->output
@@ -206,6 +229,14 @@ class Team extends MX_Controller
 
 		// Set Session To View
 		if ($update_page_content) {
+
+			logger_store([
+				'user_id' => $this->data['user']->id,
+				'detail' => 'แก้ไข Content (Team Page)',
+				'event' => 'update',
+				'ip' => $this->input->ip_address(),
+			]);
+
 			$this->session->set_flashdata('success', 'Update Done');
 		} else {
 			$this->session->set_flashdata('error', 'Something wrong');

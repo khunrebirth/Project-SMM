@@ -4,39 +4,40 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Contact extends MX_Controller
 {
 
-    /**
-     * Index Page for this controller.
-     *
-     * Maps to the following URL
-     *        http://example.com/index.php/welcome
-     *    - or -
-     *        http://example.com/index.php/welcome/index
-     *    - or -
-     * Since this controller is set as the default controller in
-     * config/routes.php, it's displayed at http://example.com/
-     *
-     * So any other public methods not prefixed with an underscore will
-     * map to /index.php/welcome/<method_name>
-     * @see https://codeigniter.com/user_guide/general/urls.html
-     */
-
     private $data = false;
 
     public function __construct()
     {
         parent::__construct();
 
-        // Middleware
+		/*
+		| -------------------------------------------------------------------------
+		| MIDDLEWARE
+		| -------------------------------------------------------------------------
+		*/
+
         require_login('backoffice/login');
 
-        // Set Model
+		/*
+		| -------------------------------------------------------------------------
+		| SET UTILITIES
+		| -------------------------------------------------------------------------
+		*/
+
+        // Model
         $this->load->model('User_model');
         $this->load->model('Contact_page_model');
+
+		/*
+		| -------------------------------------------------------------------------
+		| HANDLE
+		| -------------------------------------------------------------------------
+		*/
 
         $this->data['user'] = $this->User_model->get_user_by_id($this->session->userdata('user_id'));
     }
 
-    public function edit_contact($id)
+    public function edit_content($id)
     {
         $this->data['title'] = 'Page: Contact - Content - Edit';
         $this->data['content'] = 'contact/content';
@@ -45,7 +46,7 @@ class Contact extends MX_Controller
         $this->load->view('app', $this->data);
     }
 
-    public function update_contact($id)
+    public function update_content($id)
     {
         // Get Old data
         $page_content = $this->Contact_page_model->get_contact_page_by_id($id);
