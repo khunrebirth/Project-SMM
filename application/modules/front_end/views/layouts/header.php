@@ -49,7 +49,7 @@
                 <a class="nav-link <?php if ($this->uri->segment(1) == "services" || $this->uri->segment(2) == "services") { echo 'active'; }?>" href="<?php echo base_url('services'); ?>">Services</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php if ($this->uri->segment(1) == "category_clients" || $this->uri->segment(2) == "category_clients") { echo 'active'; }?>" href="<?php echo base_url('clients'); ?>">Clients</a>
+                <a class="nav-link <?php if ($this->uri->segment(1) == "clients" || $this->uri->segment(2) == "category_clients") { echo 'active'; }?>" href="<?php echo base_url('clients'); ?>">Clients</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link <?php if ($this->uri->segment(1) == "blogs" || $this->uri->segment(2) == "blogs") { echo 'active'; }?>" href="<?php echo base_url('blogs'); ?>">Blogs</a>
