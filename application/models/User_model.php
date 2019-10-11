@@ -21,4 +21,9 @@ class User_model extends CI_Model {
 
         return $user->num_rows() > 0 ? $user->row() : false;
     }
+
+	public function get_users_count_total()
+	{
+		return $this->db->count_all('users');
+	}
 }
