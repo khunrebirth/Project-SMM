@@ -144,7 +144,21 @@ $route['backoffice/logout'] = 'back_end/Auth/Authentication/logout';
 		| -------------------------------------------------------------------------
 		*/
 
-		//
+		// Category
+		$route['backoffice/page/blogs/list-category-blogs'] = 'back_end/Blog/list_category_blog';
+		$route['backoffice/page/blogs/list-category-blogs/create'] = 'back_end/Blog/category_blog_create';
+		$route['backoffice/page/blogs/list-category-blogs/store'] = 'back_end/Blog/category_blog_store';
+		$route['backoffice/page/blogs/list-category-blogs/edit/(:any)'] = "back_end/Blog/category_blog_edit/$1";
+		$route['backoffice/page/blogs/list-category-blogs/update/(:any)'] = "back_end/Blog/category_blog_update/$1";
+		$route['backoffice/page/blogs/list-category-blogs/destroy/(:any)'] = "back_end/Blog/category_blog_destroy/$1";
+
+		// Blog
+		$route['backoffice/page/blogs/list-blogs/(:any)'] = 'back_end/Blog/list_blog/$1';
+		$route['backoffice/page/blogs/list-blogs/create/(:any)'] = 'back_end/Blog/blog_create/$1';
+		$route['backoffice/page/blogs/list-blogs/store/(:any)'] = 'back_end/Blog/blog_store/$1';
+		$route['backoffice/page/blogs/list-blogs/edit/(:any)/(:any)'] = "back_end/Blog/blog_edit/$1/$2";
+		$route['backoffice/page/blogs/list-blogs/update/(:any)/(:any)'] = "back_end/Blog/blog_update/$1/$2";
+		$route['backoffice/page/blogs/list-blogs/destroy/(:any)/(:any)'] = "back_end/Blog/blog_destroy/$1/$2";
 
 		/*
 		| -------------------------------------------------------------------------
