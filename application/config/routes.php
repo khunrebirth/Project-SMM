@@ -116,6 +116,17 @@ $route['backoffice/logout'] = 'back_end/Auth/Authentication/logout';
 		$route['backoffice/page/teams/list-teams/update/(:any)'] = "back_end/Team/update/$1";
 		$route['backoffice/page/teams/list-teams/destroy/(:any)'] = "back_end/Team/destroy/$1";
 
+
+        /*
+        | -------------------------------------------------------------------------
+        | Team
+        | -------------------------------------------------------------------------
+        */
+
+        // Content
+        $route['backoffice/page/contact/content/(:any)'] = 'back_end/Contact/edit_contact/$1';
+        $route['backoffice/page/contact/content/update/(:any)'] = 'back_end/Contact/update_contact/$1';
+
 	/*
 	| -------------------------------------------------------------------------
 	| Setting
