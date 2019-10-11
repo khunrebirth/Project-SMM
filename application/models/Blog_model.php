@@ -5,10 +5,7 @@ class Blog_model extends CI_Model {
 
     public function get_blog_all()
     {
-        $query = $this->db
-            ->select('blogs.*, blog_categories.title as blog_title')
-            ->join('blog_categories', 'blogs.category_id = blog_categories.id')
-            ->get('blogs');
+        $query = $this->db->get('blogs');
 
         return $query->num_rows() > 0 ? $query->result() : false;
     }
@@ -19,6 +16,13 @@ class Blog_model extends CI_Model {
 
         return $query->num_rows() > 0 ? $query->row() : false;
     }
+
+	public function get_blog_by_category_blog_id($category_blog_id)
+	{
+		$query = $this->db->where('category_blog_id', $category_blog_id)->get('blogs');
+
+		return $query->num_rows() > 0 ? $query->result() : [];
+	}
 
     public function insert_blog($data)
     {
