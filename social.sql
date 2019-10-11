@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 11, 2019 at 05:56 AM
+-- Generation Time: Oct 11, 2019 at 07:29 AM
 -- Server version: 5.7.17-log
 -- PHP Version: 5.6.30
 
@@ -19,6 +19,30 @@ SET time_zone = "+00:00";
 --
 -- Database: `social`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `about_page`
+--
+
+CREATE TABLE `about_page` (
+  `id` int(11) NOT NULL,
+  `meta_tag_title` text CHARACTER SET utf8 NOT NULL,
+  `meta_tag_description` text CHARACTER SET utf8 NOT NULL,
+  `meta_tag_keywords` text CHARACTER SET utf8 NOT NULL,
+  `img_og_twitter` text CHARACTER SET utf8 NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `about_page`
+--
+
+INSERT INTO `about_page` (`id`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:3:\"asd\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:3:\"asd\";}', 'a:2:{s:2:\"en\";s:3:\"asd\";s:2:\"th\";s:3:\"asd\";}', 'a:2:{s:2:\"en\";N;s:2:\"th\";s:36:\"bc9cee3c829bf42297748337b230ef60.jpg\";}', '2019-10-02 09:16:29', '2019-10-10 22:55:07', NULL);
 
 -- --------------------------------------------------------
 
@@ -79,6 +103,30 @@ INSERT INTO `client_categories` (`id`, `title`, `created_at`, `updated_at`, `del
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `client_page`
+--
+
+CREATE TABLE `client_page` (
+  `id` int(11) NOT NULL,
+  `meta_tag_title` text CHARACTER SET utf8 NOT NULL,
+  `meta_tag_description` text CHARACTER SET utf8 NOT NULL,
+  `meta_tag_keywords` text CHARACTER SET utf8 NOT NULL,
+  `img_og_twitter` text CHARACTER SET utf8 NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `client_page`
+--
+
+INSERT INTO `client_page` (`id`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:3:\"asd\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:3:\"asd\";}', 'a:2:{s:2:\"en\";s:3:\"asd\";s:2:\"th\";s:3:\"asd\";}', 'a:2:{s:2:\"en\";N;s:2:\"th\";s:36:\"bc9cee3c829bf42297748337b230ef60.jpg\";}', '2019-10-02 09:16:29', '2019-10-10 22:55:07', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `contacts`
 --
 
@@ -97,6 +145,30 @@ CREATE TABLE `contacts` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `contact_page`
+--
+
+CREATE TABLE `contact_page` (
+  `id` int(11) NOT NULL,
+  `meta_tag_title` text CHARACTER SET utf8 NOT NULL,
+  `meta_tag_description` text CHARACTER SET utf8 NOT NULL,
+  `meta_tag_keywords` text CHARACTER SET utf8 NOT NULL,
+  `img_og_twitter` text CHARACTER SET utf8 NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `contact_page`
+--
+
+INSERT INTO `contact_page` (`id`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:3:\"asd\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:3:\"asd\";}', 'a:2:{s:2:\"en\";s:3:\"asd\";s:2:\"th\";s:3:\"asd\";}', 'a:2:{s:2:\"en\";N;s:2:\"th\";s:36:\"bc9cee3c829bf42297748337b230ef60.jpg\";}', '2019-10-02 09:16:29', '2019-10-10 22:55:07', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `contents`
 --
 
@@ -110,6 +182,30 @@ CREATE TABLE `contents` (
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `deleted_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `home_page`
+--
+
+CREATE TABLE `home_page` (
+  `id` int(11) NOT NULL,
+  `meta_tag_title` text CHARACTER SET utf8 NOT NULL,
+  `meta_tag_description` text CHARACTER SET utf8 NOT NULL,
+  `meta_tag_keywords` text CHARACTER SET utf8 NOT NULL,
+  `img_og_twitter` text CHARACTER SET utf8 NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `home_page`
+--
+
+INSERT INTO `home_page` (`id`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:3:\"asd\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:3:\"asd\";}', 'a:2:{s:2:\"en\";s:3:\"asd\";s:2:\"th\";s:3:\"asd\";}', 'a:2:{s:2:\"en\";N;s:2:\"th\";s:36:\"bc9cee3c829bf42297748337b230ef60.jpg\";}', '2019-10-02 09:16:29', '2019-10-10 22:55:07', NULL);
 
 -- --------------------------------------------------------
 
@@ -175,6 +271,30 @@ INSERT INTO `services2` (`id`, `title`, `image`, `created_at`, `updated_at`, `de
 (2, 'Online Ads.', 'pic-2.jpg', '2019-07-05 02:51:14', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (3, 'Web Design', 'pic-3.jpg', '2019-07-05 02:51:16', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (4, 'SEO', 'pic-4.jpg', '2019-07-05 02:51:23', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `service_page`
+--
+
+CREATE TABLE `service_page` (
+  `id` int(11) NOT NULL,
+  `meta_tag_title` text CHARACTER SET utf8 NOT NULL,
+  `meta_tag_description` text CHARACTER SET utf8 NOT NULL,
+  `meta_tag_keywords` text CHARACTER SET utf8 NOT NULL,
+  `img_og_twitter` text CHARACTER SET utf8 NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `service_page`
+--
+
+INSERT INTO `service_page` (`id`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:3:\"asd\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:3:\"asd\";}', 'a:2:{s:2:\"en\";s:3:\"asd\";s:2:\"th\";s:3:\"asd\";}', 'a:2:{s:2:\"en\";N;s:2:\"th\";s:36:\"bc9cee3c829bf42297748337b230ef60.jpg\";}', '2019-10-02 09:16:29', '2019-10-10 22:55:07', NULL);
 
 -- --------------------------------------------------------
 
@@ -255,6 +375,12 @@ INSERT INTO `users` (`id`, `username`, `password`, `role_id`, `status`, `created
 --
 
 --
+-- Indexes for table `about_page`
+--
+ALTER TABLE `about_page`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `clients`
 --
 ALTER TABLE `clients`
@@ -267,15 +393,33 @@ ALTER TABLE `client_categories`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `client_page`
+--
+ALTER TABLE `client_page`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `contacts`
 --
 ALTER TABLE `contacts`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `contact_page`
+--
+ALTER TABLE `contact_page`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `contents`
 --
 ALTER TABLE `contents`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `home_page`
+--
+ALTER TABLE `home_page`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -294,6 +438,12 @@ ALTER TABLE `services`
 -- Indexes for table `services2`
 --
 ALTER TABLE `services2`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `service_page`
+--
+ALTER TABLE `service_page`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -319,6 +469,11 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `about_page`
+--
+ALTER TABLE `about_page`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
@@ -329,15 +484,30 @@ ALTER TABLE `clients`
 ALTER TABLE `client_categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
+-- AUTO_INCREMENT for table `client_page`
+--
+ALTER TABLE `client_page`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
+-- AUTO_INCREMENT for table `contact_page`
+--
+ALTER TABLE `contact_page`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `contents`
 --
 ALTER TABLE `contents`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `home_page`
+--
+ALTER TABLE `home_page`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `services`
 --
@@ -348,6 +518,11 @@ ALTER TABLE `services`
 --
 ALTER TABLE `services2`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `service_page`
+--
+ALTER TABLE `service_page`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `teams`
 --
