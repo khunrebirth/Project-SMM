@@ -134,6 +134,24 @@ $route['backoffice/logout'] = 'back_end/Auth/Authentication/logout';
 		| -------------------------------------------------------------------------
 		*/
 
+        // category
+        $route['backoffice/page/clients/category'] = 'back_end/Client';
+        $route['backoffice/page/clients/category/create'] = 'back_end/Client/create';
+        $route['backoffice/page/clients/category/store'] = 'back_end/Client/store';
+        $route['backoffice/page/clients/category/edit/(:any)'] = 'back_end/Client/edit/$1';
+        $route['backoffice/page/clients/category/update/(:any)'] = 'back_end/Client/update/$1';
+        $route['backoffice/page/clients/category/destroy/(:any)'] = 'back_end/Client/destroy/$1';
+
+
+         // list-clients-pictures
+        $route['backoffice/page/clients/list-clients'] = 'back_end/Client';
+        $route['backoffice/page/clients/list-clients/create'] = 'back_end/Client/create_pictures';
+        $route['backoffice/page/clients/list-clients/store'] = 'back_end/Client/store_pictures';
+        $route['backoffice/page/clients/list-clients/edit/(:any)'] = 'back_end/Client/edit_pictures/$1';
+        $route['backoffice/page/clients/list-clients/update/(:any)'] = 'back_end/Client/update_pictures/$1';
+        $route['backoffice/page/clients/list-clients/destroy/(:any)'] = 'back_end/Client/destroy_pictures/$1';
+
+
 		// Content
 		$route['backoffice/page/clients/content/(:any)'] = 'back_end/Client/edit_content/$1';
 		$route['backoffice/page/clients/content/update/(:any)'] = 'back_end/Client/update_content/$1';

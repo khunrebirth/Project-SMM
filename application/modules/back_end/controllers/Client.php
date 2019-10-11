@@ -26,7 +26,8 @@ class Client extends MX_Controller
 
 		// Model
 		$this->load->model('User_model');
-		$this->load->model('Client_page_model');
+        $this->load->model('Client_page_model');
+        $this->load->model('Client_category_model');
 
 		/*
 		| -------------------------------------------------------------------------
@@ -36,11 +37,107 @@ class Client extends MX_Controller
 
 		$this->data['user'] = $this->User_model->get_user_by_id($this->session->userdata('user_id'));
 	}
+    public function index()
+    {
+        $this->data['title'] = 'Page: Clients';
+        $this->data['content'] = 'category_clients/list';
+        $this->data['clients'] = $this->Client_category_model->get_client_category_all();
 
+        $this->load->view('app', $this->data);
+    }
+    public function create()
+    {
+        $this->data['title'] = 'Page: Clients - Catagory - Add';
+        $this->data['content'] = 'category_clients/list_create';
+
+        $this->load->view('app', $this->data);
+    }
+
+    public function store()
+    {
+        // Filter Data
+        $input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
+
+        // Add Data
+        $add_client = $this->Client_category_model->insert_client_category([
+            'title' => serialize($input_title),
+        ]);
+
+        // Set Session To View
+        if ($add_client) {
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'เพิ่ม Client (Client Page)',
+                'event' => 'add',
+                'ip' => $this->input->ip_address(),
+            ]);
+
+            $this->session->set_flashdata('success', 'Add Done');
+        } else {
+            $this->session->set_flashdata('error', 'Something wrong');
+        }
+
+        redirect('backoffice/page/clients/category');
+    }
+    public function edit($id)
+    {
+        $this->data['title'] = 'Page: Clients - Category - Add';
+        $this->data['content'] = 'category_clients/list_edit';
+        $this->data['clients'] = $this->Client_category_model->get_client_category_by_id($id);
+
+        $this->load->view('app', $this->data);
+    }
+    public function update($id)
+    {
+        // Filter Data
+        $input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
+
+        // Add Data
+        $update_client = $this->Client_category_model->update_client_category_by_id($id,[
+            'title' => serialize($input_title),
+        ]);
+
+        // Set Session To View
+        if ($update_client) {
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'แก้ไข Client (Client Page)',
+                'event' => 'update',
+                'ip' => $this->input->ip_address(),
+            ]);
+
+            $this->session->set_flashdata('success', 'Add Done');
+        } else {
+            $this->session->set_flashdata('error', 'Something wrong');
+        }
+
+        redirect('backoffice/page/clients/category');
+    }
+    public function destroy($id)
+    {
+        $status = 500;
+        $response['success'] = 0;
+
+        $team = $this->Client_category_model->delete_client_category_by_id($id);
+
+        if ($team != false) {
+            $status = 200;
+            $response['success'] = 1;
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'ลบ Client (Client Page)',
+                'event' => 'delete',
+                'ip' => $this->input->ip_address(),
+            ]);
+        }
+    }
 	public function edit_content($id)
 	{
 		$this->data['title'] = 'Page: Clients - Content - Edit';
-		$this->data['content'] = 'clients/content';
+		$this->data['content'] = 'category_clients/content';
 		$this->data['page_content'] =  $this->Client_page_model->get_client_page_by_id($id);
 
 		$this->load->view('app', $this->data);
@@ -93,12 +190,12 @@ class Client extends MX_Controller
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
 
-		redirect('backoffice/page/clients/content/' . $id);
+		redirect('backoffice/page/category_clients/content/' . $id);
 	}
 
 	private function ddoo_upload_client($filename)
 	{
-		$config['upload_path'] = './storage/uploads/images/clients';
+		$config['upload_path'] = './storage/uploads/images/category_clients';
 		$config['allowed_types'] = 'gif|jpg|png';
 		$config['encrypt_name'] = TRUE;
 

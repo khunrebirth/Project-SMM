@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `clients`
+-- Table structure for table `category_clients`
 --
 
 CREATE TABLE `clients` (
@@ -37,7 +37,7 @@ CREATE TABLE `clients` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `clients`
+-- Dumping data for table `category_clients`
 --
 
 INSERT INTO `clients` (`id`, `title`, `image`, `category_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -255,7 +255,7 @@ INSERT INTO `users` (`id`, `username`, `password`, `role_id`, `status`, `created
 --
 
 --
--- Indexes for table `clients`
+-- Indexes for table `category_clients`
 --
 ALTER TABLE `clients`
   ADD PRIMARY KEY (`id`);
@@ -319,7 +319,7 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `clients`
+-- AUTO_INCREMENT for table `category_clients`
 --
 ALTER TABLE `clients`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;

@@ -6,8 +6,8 @@ class Client_model extends CI_Model {
     public function get_client_all()
     {
         $query = $this->db
-            ->select('clients.*, client_categories.title as category_title')
-            ->join('client_categories', 'clients.category_id = client_categories.id')
+            ->select('category_clients.*, client_categories.title as category_title')
+            ->join('client_categories', 'category_clients.category_id = client_categories.id')
             ->get('clients');
 
         return $query->num_rows() > 0 ? $query->result() : false;

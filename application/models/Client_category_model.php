@@ -5,9 +5,19 @@ class Client_category_model extends CI_Model {
 
     public function get_client_category_all()
     {
-        $query = $this->db->get('client_categories');
+        $sql = "
+			SELECT  client_categories.id,
+					client_categories.title, 
+					client_categories.created_at,
+					COUNT(clients.id) as counter 
+			FROM client_categories
+			LEFT JOIN clients ON client_categories.id = clients.category_id
+			GROUP BY client_categories.id
+        ";
 
-        return $query->num_rows() > 0 ? $query->result() : false;
+        $query = $this->db->query($sql);
+
+        return $query->num_rows() > 0 ? $query->result() : [];
     }
 
     public function get_client_category_by_id($id)
