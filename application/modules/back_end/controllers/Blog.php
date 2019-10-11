@@ -1,23 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Clients extends MX_Controller {
-
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
+class Blog extends MX_Controller {
 
     private $data = false;
 
@@ -25,23 +9,40 @@ class Clients extends MX_Controller {
     {
         parent::__construct();
 
-        // Middleware
-        require_login('backoffice/login');
+		/*
+		| -------------------------------------------------------------------------
+		| MIDDLEWARE
+		| -------------------------------------------------------------------------
+		*/
 
-        // Set Model
+		require_login('backoffice/login');
+
+		/*
+		| -------------------------------------------------------------------------
+		| SET UTILITIES
+		| -------------------------------------------------------------------------
+		*/
+
+        // Model
         $this->load->model('User_model');
-        $this->load->model('Client_model');
-        $this->load->model('Client_category_model');
+        $this->load->model('Blog_model');
+        $this->load->model('Blog_category_model');
+
+		/*
+		| -------------------------------------------------------------------------
+		| HANDLE
+		| -------------------------------------------------------------------------
+		*/
 
         $this->data['user'] = $this->User_model->get_user_by_id($this->session->userdata('user_id'));
     }
 
 	public function index()
 	{
-        $this->data['title'] = 'Clients';
-		$this->data['content'] = 'client';
-        $this->data['client_categories'] = $this->Client_category_model->get_client_category_all();
-        $this->data['clients'] = $this->Client_model->get_client_all();
+        $this->data['title'] = 'Blogs';
+		$this->data['content'] = 'blog';
+        $this->data['blog_categories'] = $this->Blog_category_model->get_blog_category_all();
+        $this->data['blogs'] = $this->Blog_model->get_blog_all();
 
 		$this->load->view('app', $this->data);
 	}
@@ -53,7 +54,7 @@ class Clients extends MX_Controller {
 
         // TODO:: Validate
 
-        $config['upload_path'] = './storage/images/clients';
+        $config['upload_path'] = './storage/images/blogs';
         $config['allowed_types'] = 'gif|jpg|png';
         $config['file_name'] = 'img-client' . '-' . time();
 
@@ -67,14 +68,15 @@ class Clients extends MX_Controller {
         } else {
             $data = array('upload_data' => $this->upload->data());
 
-            $client = $this->Client_model->insert_client(array(
-//                'title' => $this->input->post('title'),
-                'category_id' => $this->input->post('category'),
+            $blog = $this->Blog_model->insert_blog(array(
+                'title' => $this->input->post('title'),
+                'body' => $this->input->post('body'),
                 'image' => $data['upload_data']['file_name'],
+                'category_id' => $this->input->post('category'),
                 'created_at' => date('Y-m-d H:i:s')
             ));
 
-            if ($client != false) {
+            if ($blog != false) {
                 $status = 200;
                 $response['success'] = 1;
             }
@@ -93,11 +95,11 @@ class Clients extends MX_Controller {
         $status = 500;
         $response['success'] = 0;
 
-        $client = $this->Client_model->get_client_by_id($id);
+        $blog = $this->Blog_model->get_blog_by_id($id);
 
-        if ($client != false) {
+        if ($blog != false) {
             $status = 200;
-            $response['data'] = $client;
+            $response['data'] = $blog;
             $response['success'] = 1;
         }
 
@@ -112,13 +114,13 @@ class Clients extends MX_Controller {
 
         // TODO:: Validate
 
-        $config['upload_path'] = './storage/images/clients';
+        $config['upload_path'] = './storage/images/blogs';
         $config['allowed_types'] = 'gif|jpg|png';
         $config['file_name'] = 'img-client' . '-' . time();
 
         $status = 500;
         $response['success'] = 0;
-        $client = false;
+        $blog = false;
 
         $this->load->library('upload', $config);
 
@@ -126,8 +128,9 @@ class Clients extends MX_Controller {
         if (!$this->upload->do_upload('file')) {
             $error = array('error' => $this->upload->display_errors());
 
-            $client = $this->Client_model->update_client_by_id($id, array(
-//                'title' => $this->input->post('title'),
+            $blog = $this->Blog_model->update_blog_by_id($id, array(
+                'title' => $this->input->post('title'),
+                'body' => $this->input->post('body'),
                 'category_id' => $this->input->post('category'),
                 'updated_at' => date('Y-m-d H:i:s')
             ));
@@ -137,16 +140,17 @@ class Clients extends MX_Controller {
         else {
             $data = array('upload_data' => $this->upload->data());
 
-            $client = $this->Client_model->update_client_by_id($id, array(
-//                'title' => $this->input->post('title'),
-                'category_id' => $this->input->post('category'),
+            $blog = $this->Blog_model->update_blog_by_id($id, array(
+                'title' => $this->input->post('title'),
+                'body' => $this->input->post('body'),
                 'image' => $data['upload_data']['file_name'],
+                'category_id' => $this->input->post('category'),
                 'updated_at' => date('Y-m-d H:i:s')
             ));
         }
 
         // Set Status
-        if ($client != false) {
+        if ($blog != false) {
             $status = 200;
             $response['success'] = 1;
         }
@@ -162,9 +166,9 @@ class Clients extends MX_Controller {
         $status = 500;
         $response['success'] = 0;
 
-        $client = $this->Client_model->delete_client_by_id($id);
+        $blog = $this->Blog_model->delete_blog_by_id($id);
 
-        if ($client != false) {
+        if ($blog != false) {
             $status = 200;
             $response['success'] = 1;
         }
@@ -175,9 +179,9 @@ class Clients extends MX_Controller {
             ->set_output(json_encode($response));
     }
 
-    public function create_client_category() {}
+    public function create_blog_category() {}
 
-    public function store_client_category()
+    public function store_blog_category()
     {
 
         // TODO:: Validate
@@ -185,12 +189,12 @@ class Clients extends MX_Controller {
         $status = 500;
         $response['success'] = 0;
 
-        $client_category = $this->Client_category_model->insert_client_category(array(
+        $blog_category = $this->Blog_category_model->insert_blog_category(array(
             'title' => $this->input->post('title'),
             'created_at' => date('Y-m-d H:i:s')
         ));
 
-        if ($client_category != false) {
+        if ($blog_category != false) {
             $status = 200;
             $response['success'] = 1;
         }
@@ -201,18 +205,18 @@ class Clients extends MX_Controller {
             ->set_output(json_encode($response));
     }
 
-    public function show_client_category() {}
+    public function show_blog_category() {}
 
-    public function edit_client_category($id)
+    public function edit_blog_category($id)
     {
         $status = 500;
         $response['success'] = 0;
 
-        $client_category = $this->Client_category_model->get_client_category_by_id($id);
+        $blog_category = $this->Blog_category_model->get_blog_category_by_id($id);
 
-        if ($client_category != false) {
+        if ($blog_category != false) {
             $status = 200;
-            $response['data'] = $client_category;
+            $response['data'] = $blog_category;
             $response['success'] = 1;
         }
 
@@ -222,7 +226,7 @@ class Clients extends MX_Controller {
             ->set_output(json_encode($response));
     }
 
-    public function update_client_category($id)
+    public function update_blog_category($id)
     {
 
         // TODO:: Validate
@@ -230,13 +234,13 @@ class Clients extends MX_Controller {
         $status = 500;
         $response['success'] = 0;
 
-        $client_category = $this->Client_category_model->update_client_category_by_id($id, array(
+        $blog_category = $this->Blog_category_model->update_blog_category_by_id($id, array(
             'title' => $this->input->post('title'),
             'updated_at' => date('Y-m-d H:i:s')
         ));
 
         // Set Status
-        if ($client_category != false) {
+        if ($blog_category != false) {
             $status = 200;
             $response['success'] = 1;
         }
@@ -247,14 +251,14 @@ class Clients extends MX_Controller {
             ->set_output(json_encode($response));
     }
 
-    public function destroy_client_category($id)
+    public function destroy_blog_category($id)
     {
         $status = 500;
         $response['success'] = 0;
 
-        $client_category = $this->Client_category_model->delete_client_category_by_id($id);
+        $blog_category = $this->Blog_category_model->delete_blog_category_by_id($id);
 
-        if ($client_category != false) {
+        if ($blog_category != false) {
             $status = 200;
             $response['success'] = 1;
         }
