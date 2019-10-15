@@ -212,3 +212,21 @@ $route['backoffice/logout'] = 'back_end/Auth/Authentication/logout';
 
     // Setting
     $route['backoffice/settings'] = 'back_end/settings';
+
+	// Users
+	$route['backoffice/setting/users'] = 'back_end/User';
+	$route['backoffice/setting/users/create'] = 'back_end/User/create';
+	$route['backoffice/setting/users/store'] = 'back_end/User/store';
+	$route['backoffice/setting/users/edit/(:any)'] = "back_end/User/edit/$1";
+	$route['backoffice/setting/users/update/(:any)'] = "back_end/User/update/$1";
+	$route['backoffice/setting/users/destroy/(:any)'] = "back_end/User/destroy/$1";
+
+	/*
+	| -------------------------------------------------------------------------
+	| Profile
+	| -------------------------------------------------------------------------
+	*/
+
+	$route['backoffice/setting/profile'] = 'back_end/Profile';
+	$route['backoffice/setting/profile/edit/(:any)'] = 'back_end/Profile/edit/$1';
+	$route['backoffice/setting/profile/update/(:any)'] = "back_end/Profile/update/$1";

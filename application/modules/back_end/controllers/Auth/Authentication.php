@@ -1,35 +1,18 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Authentication extends MX_Controller {
+class Authentication extends MX_Controller
+{
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
-
-    public function __construct()
-    {
-        parent::__construct();
-
-    }
-
+	public function __construct()
+	{
+		parent::__construct();
+	}
 
 	public function index()
 	{
-        // Middleware
-        require_no_login('backoffice/dashboard');
+		// Middleware
+		require_no_login('backoffice/dashboard');
 
 		$data['content'] = 'auth/login';
 
@@ -37,31 +20,50 @@ class Authentication extends MX_Controller {
 	}
 
 	public function login_process()
-    {
-        $this->load->model('User_model');
+	{
+		$this->load->model('User_model');
 
-        $username = $this->input->post('username');
-        $password = $this->input->post('password');
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
 
-        $user = $this->User_model->get_user($username, $password);
+		$users = $this->User_model->get_user($username);
 
-        if ($user) {
+		if (count($users) > 0) {
+			foreach ($users as $user) {
+				if (password_verify($password, $user->password)) {
+					$this->session->set_userdata([
+						'user_id' => $user->id,
+						'role_id' => $user->role_id
+					]);
 
-            $params = array(
-                'user_id' => $user->id,
-            );
+					logger_store([
+						'user_id' => $user->id,
+						'detail' => 'เข้าสู่ระบบ SSM Backoffice',
+						'event' => 'login',
+						'ip' => $this->input->ip_address(),
+					]);
 
-            $this->session->set_userdata($params);
+					redirect('backoffice/dashboard');
+				}
+			}
+			redirect('backoffice/login');
+		}
+		else {
+			redirect('backoffice/login');
+		}
+	}
 
-            redirect('backoffice/dashboard');
-        }
-    }
+	public function logout()
+	{
+		logger_store([
+			'user_id' => $this->session->userdata('user_id'),
+			'detail' => 'ออกจากระบบ SSM Backoffice',
+			'event' => 'logout',
+			'ip' => $this->input->ip_address(),
+		]);
 
-    public function logout()
-    {
-        $this->session->sess_destroy();
+		$this->session->sess_destroy();
 
-        redirect('backoffice/login');
-    }
-
+		redirect('backoffice/login');
+	}
 }
