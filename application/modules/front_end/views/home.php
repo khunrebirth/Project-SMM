@@ -18,7 +18,7 @@
     <div class="container-fluid p-0">
         <div class="row no-gutters">
             <div class="col-md-6 col-lg-6 order-lg-2 showcase-img d-none d-sm-block"
-                 style="background-image: url('http://localhost/social.co.th/resources/front_end/images/img-/about.jpg');"></div>
+                 style="background-image: url('http://localhost/social-dev/resources/front_end/images/img-/about.jpg');"></div>
             <div class="col-xs-12 col-md-6 col-lg-6 order-lg-1 my-auto showcase-text text-center wow fadeInLeft">
                 <div class="title-about" style="">
                     <img src="<?php base_url() ?>resources/front_end/images/img-/title-about.png" alt="" class="img-fluid">

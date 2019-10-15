@@ -1,6 +1,6 @@
 <!-- Title -->
 <section class="page-title"
-         style="background-image:url(http://localhost/social.co.th/resources/front_end/images/slider-1.jpg)">
+         style="background-image:url(http://localhost/social-dev/resources/front_end/images/slider-1.jpg)">
     <div class="container my-auto text-center wow fadeInUp">
         <?php if ($this->session->flashdata('success')) { ?>
             <div class="alert alert-success"><?php echo $this->session->flashdata('success'); ?></div>
