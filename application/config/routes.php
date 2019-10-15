@@ -153,6 +153,8 @@ $route['backoffice/logout'] = 'back_end/Auth/Authentication/logout';
 		$route['backoffice/page/clients/list-clients/edit/(:any)/(:any)'] = "back_end/Client/client_edit/$1/$2";
 		$route['backoffice/page/clients/list-clients/update/(:any)/(:any)'] = "back_end/Client/client_update/$1/$2";
 		$route['backoffice/page/clients/list-clients/destroy/(:any)'] = "back_end/Client/client_destroy/$1";
+		$route['backoffice/page/clients/list-clients/ajax/get/clients/sort/show/(:any)'] = 'back_end/Client/ajax_get_client_and_sort_show/$1';
+		$route['backoffice/page/clients/list-clients/ajax/get/clients/sort/update'] = 'back_end/Client/ajax_get_client_and_sort_update';
 
 		/*
 		| -------------------------------------------------------------------------

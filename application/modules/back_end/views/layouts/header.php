@@ -49,6 +49,10 @@
 			}
 		}
 	</style>
+	<!-- Custom JS -->
+	<script type="text/javascript">
+        window.base_url = "<?php echo base_url(); ?>"
+	</script>
 </head>
 <body>
 <div id="app">

@@ -8,6 +8,7 @@ class Client_model extends CI_Model {
         $query = $this->db
             ->select('clients.*, client_categories.title as category_title')
             ->join('client_categories', 'clients.category_id = client_categories.id')
+			->order_by('clients.sort', 'asc')
             ->get('clients');
 
         return $query->num_rows() > 0 ? $query->result() : false;
@@ -22,7 +23,7 @@ class Client_model extends CI_Model {
 
 	public function get_client_by_category_id($category_id)
 	{
-		$query = $this->db->where('category_id', $category_id)->get('clients');
+		$query = $this->db->where('category_id', $category_id)->order_by('sort', 'asc')->get('clients');
 
 		return $query->num_rows() > 0 ? $query->result() : [];
 	}
