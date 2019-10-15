@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 11, 2019 at 10:16 AM
+-- Generation Time: Oct 15, 2019 at 10:26 AM
 -- Server version: 5.7.17-log
 -- PHP Version: 5.6.30
 
@@ -42,7 +42,7 @@ CREATE TABLE `about_page` (
 --
 
 INSERT INTO `about_page` (`id`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:3:\"asd\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:3:\"asd\";}', 'a:2:{s:2:\"en\";s:3:\"asd\";s:2:\"th\";s:3:\"asd\";}', 'a:2:{s:2:\"en\";N;s:2:\"th\";s:36:\"bc9cee3c829bf42297748337b230ef60.jpg\";}', '2019-10-02 09:16:29', '2019-10-10 22:55:07', NULL);
+(1, 'a:2:{s:2:\"en\";s:18:\"About | social.com\";s:2:\"th\";s:49:\"เกี่ยวกับเรา | social.com\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";N;s:2:\"th\";s:36:\"bc9cee3c829bf42297748337b230ef60.jpg\";}', '2019-10-02 09:16:29', '2019-10-15 00:51:39', NULL);
 
 -- --------------------------------------------------------
 
@@ -75,7 +75,7 @@ CREATE TABLE `blogs` (
 --
 
 INSERT INTO `blogs` (`id`, `meta_title`, `meta_description`, `meta_keyword`, `img_og_twitter`, `img`, `img_title_alt`, `title`, `slug`, `slug_en`, `slug_th`, `description_section`, `body`, `category_blog_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:12:\"content1.jpg\";s:2:\"th\";s:12:\"content1.jpg\";}', '', 'a:2:{s:2:\"en\";s:122:\"สั่งเครื่องดื่มอย่างไร ไม่ให้ขาด เหลือทิ้ง\";s:2:\"th\";s:122:\"สั่งเครื่องดื่มอย่างไร ไม่ให้ขาด เหลือทิ้ง\";}', 'a:2:{s:2:\"en\";s:86:\"สงเครองดมอยางไร-ไมใหขาด-เหลอทง\";s:2:\"th\";s:122:\"สั่งเครื่องดื่มอย่างไร-ไม่ให้ขาด-เหลือทิ้ง\";}', 'สงเครองดมอยางไร-ไมใหขาด-เหลอทง', 'สั่งเครื่องดื่มอย่างไร-ไม่ให้ขาด-เหลือทิ้ง', 'a:2:{s:2:\"en\";s:507:\"ในทุกๆงานเลี้ยงสังสรรค์ เครื่องดื่มเป็นสิ่งที่ทั้งผู้จัดงานควรให้ความสำคัญไม่แพ้อาหาร และการเลือกเครื่องดื่มที่ดี มีส่วนอย่างมากในการสร้างความประทับใจให้กับแขกที่มาร่วมงาน\";s:2:\"th\";s:507:\"ในทุกๆงานเลี้ยงสังสรรค์ เครื่องดื่มเป็นสิ่งที่ทั้งผู้จัดงานควรให้ความสำคัญไม่แพ้อาหาร และการเลือกเครื่องดื่มที่ดี มีส่วนอย่างมากในการสร้างความประทับใจให้กับแขกที่มาร่วมงาน\";}', 'a:2:{s:2:\"en\";s:507:\"ในทุกๆงานเลี้ยงสังสรรค์ เครื่องดื่มเป็นสิ่งที่ทั้งผู้จัดงานควรให้ความสำคัญไม่แพ้อาหาร และการเลือกเครื่องดื่มที่ดี มีส่วนอย่างมากในการสร้างความประทับใจให้กับแขกที่มาร่วมงาน\";s:2:\"th\";s:507:\"ในทุกๆงานเลี้ยงสังสรรค์ เครื่องดื่มเป็นสิ่งที่ทั้งผู้จัดงานควรให้ความสำคัญไม่แพ้อาหาร และการเลือกเครื่องดื่มที่ดี มีส่วนอย่างมากในการสร้างความประทับใจให้กับแขกที่มาร่วมงาน\";}', 2, '2019-08-28 08:21:52', '2019-09-24 02:05:36', NULL),
+(1, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:12:\"content1.jpg\";s:2:\"th\";s:12:\"content1.jpg\";}', '', 'a:2:{s:2:\"en\";s:122:\"สั่งเครื่องดื่มอย่างไร ไม่ให้ขาด เหลือทิ้ง\";s:2:\"th\";s:122:\"สั่งเครื่องดื่มอย่างไร ไม่ให้ขาด เหลือทิ้ง\";}', 'a:2:{s:2:\"en\";s:86:\"สงเครองดมอยางไร-ไมใหขาด-เหลอทง\";s:2:\"th\";s:122:\"สั่งเครื่องดื่มอย่างไร-ไม่ให้ขาด-เหลือทิ้ง\";}', 'สงเครองดมอยางไร-ไมใหขาด-เหลอทง', 'สั่งเครื่องดื่มอย่างไร-ไม่ให้ขาด-เหลือทิ้ง', 'a:2:{s:2:\"en\";s:507:\"ในทุกๆงานเลี้ยงสังสรรค์ เครื่องดื่มเป็นสิ่งที่ทั้งผู้จัดงานควรให้ความสำคัญไม่แพ้อาหาร และการเลือกเครื่องดื่มที่ดี มีส่วนอย่างมากในการสร้างความประทับใจให้กับแขกที่มาร่วมงาน\";s:2:\"th\";s:507:\"ในทุกๆงานเลี้ยงสังสรรค์ เครื่องดื่มเป็นสิ่งที่ทั้งผู้จัดงานควรให้ความสำคัญไม่แพ้อาหาร และการเลือกเครื่องดื่มที่ดี มีส่วนอย่างมากในการสร้างความประทับใจให้กับแขกที่มาร่วมงาน\";}', 'a:2:{s:2:\"en\";s:507:\"ในทุกๆงานเลี้ยงสังสรรค์ เครื่องดื่มเป็นสิ่งที่ทั้งผู้จัดงานควรให้ความสำคัญไม่แพ้อาหาร และการเลือกเครื่องดื่มที่ดี มีส่วนอย่างมากในการสร้างความประทับใจให้กับแขกที่มาร่วมงาน\";s:2:\"th\";s:507:\"ในทุกๆงานเลี้ยงสังสรรค์ เครื่องดื่มเป็นสิ่งที่ทั้งผู้จัดงานควรให้ความสำคัญไม่แพ้อาหาร และการเลือกเครื่องดื่มที่ดี มีส่วนอย่างมากในการสร้างความประทับใจให้กับแขกที่มาร่วมงาน\";}', 2, '2019-08-28 08:21:52', '2019-10-15 02:09:58', NULL),
 (2, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:12:\"content2.jpg\";s:2:\"th\";s:12:\"content2.jpg\";}', '', 'a:2:{s:2:\"en\";s:79:\"เสริมมงคล ให้กับงานแต่งงาน...\";s:2:\"th\";s:79:\"เสริมมงคล ให้กับงานแต่งงาน...\";}', 'a:2:{s:2:\"en\";s:67:\"งานปาร์ตี้บริษัท-องค์กร\";s:2:\"th\";s:67:\"งานปาร์ตี้บริษัท-องค์กร\";}a:2:{s:2:\"en\";s:76:\"เสริมมงคล-ให้กับงานแต่งงาน\";s:2:\"th\";s:76:\"เสริมมงคล-ให้กับงานแต่งงาน\";}', 'เสริมมงคล-ให้กับงานแต่งงาน', 'เสริมมงคล-ให้กับงานแต่งงาน', 'a:2:{s:2:\"en\";s:435:\"เพิ่มความเป็นสิริมงคลด้วย “อาหาร” เองก็ถือเป็นเรื่องหลักๆ ที่บ่าวสาวควรวางแผน ตัดสินใจ และเลือกสรรเป็นอย่างดีตามความต้องการและความเหมาะสมของงานนั้นๆ \";s:2:\"th\";s:435:\"เพิ่มความเป็นสิริมงคลด้วย “อาหาร” เองก็ถือเป็นเรื่องหลักๆ ที่บ่าวสาวควรวางแผน ตัดสินใจ และเลือกสรรเป็นอย่างดีตามความต้องการและความเหมาะสมของงานนั้นๆ \";}', 'a:2:{s:2:\"en\";s:435:\"เพิ่มความเป็นสิริมงคลด้วย “อาหาร” เองก็ถือเป็นเรื่องหลักๆ ที่บ่าวสาวควรวางแผน ตัดสินใจ และเลือกสรรเป็นอย่างดีตามความต้องการและความเหมาะสมของงานนั้นๆ \";s:2:\"th\";s:435:\"เพิ่มความเป็นสิริมงคลด้วย “อาหาร” เองก็ถือเป็นเรื่องหลักๆ ที่บ่าวสาวควรวางแผน ตัดสินใจ และเลือกสรรเป็นอย่างดีตามความต้องการและความเหมาะสมของงานนั้นๆ \";}', 2, '2019-08-28 08:28:23', NULL, NULL);
 
 -- --------------------------------------------------------
@@ -100,8 +100,7 @@ INSERT INTO `blog_categories` (`id`, `title`, `created_at`, `updated_at`, `delet
 (1, 'a:2:{s:2:\"en\";s:9:\"SEO & SEM\";s:2:\"th\";s:9:\"SEO & SEM\";}', '2019-10-11 08:19:05', '2019-07-04 21:56:35', '0000-00-00 00:00:00'),
 (2, 'a:2:{s:2:\"en\";s:12:\"Social media\";s:2:\"th\";s:12:\"Social media\";}', '2019-10-11 08:18:55', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (3, 'a:2:{s:2:\"en\";s:39:\"พัฒนาเว็บไซต์\";s:2:\"th\";s:39:\"พัฒนาเว็บไซต์\";}', '2019-10-11 08:18:45', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(4, 'a:2:{s:2:\"en\";s:12:\"Landing Page\";s:2:\"th\";s:12:\"Landing Page\";}', '2019-10-11 08:18:36', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(7, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:3:\"asd\";}', '2019-10-11 09:10:56', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(4, 'a:2:{s:2:\"en\";s:12:\"Landing Page\";s:2:\"th\";s:12:\"Landing Page\";}', '2019-10-11 08:18:36', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -111,7 +110,8 @@ INSERT INTO `blog_categories` (`id`, `title`, `created_at`, `updated_at`, `delet
 
 CREATE TABLE `clients` (
   `id` int(11) NOT NULL,
-  `title` varchar(40) NOT NULL,
+  `sort` int(11) NOT NULL,
+  `title` text NOT NULL,
   `image` text NOT NULL,
   `category_id` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -123,17 +123,17 @@ CREATE TABLE `clients` (
 -- Dumping data for table `clients`
 --
 
-INSERT INTO `clients` (`id`, `title`, `image`, `category_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, '', 'a:2:{s:2:\"en\";s:15:\"smm-fashion.jpg\";s:2:\"th\";s:15:\"smm-fashion.jpg\";}', 1, '2019-10-11 08:19:16', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(2, '', 'a:2:{s:2:\"en\";s:11:\"smm-pmn.jpg\";s:2:\"th\";s:11:\"smm-pmn.jpg\";}', 1, '2019-10-11 08:19:24', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(3, '', 'a:2:{s:2:\"en\";s:15:\"smm-western.jpg\";s:2:\"th\";s:15:\"smm-western.jpg\";}', 1, '2019-10-11 08:19:39', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(4, '', 'a:2:{s:2:\"en\";s:12:\"smm-tceb.jpg\";s:2:\"th\";s:12:\"smm-tceb.jpg\";}', 1, '2019-10-11 08:19:59', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(5, '', 'a:2:{s:2:\"en\";s:12:\"mock1_12.jpg\";s:2:\"th\";s:12:\"mock1_12.jpg\";}', 1, '2019-10-11 08:20:11', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(6, '', 'a:2:{s:2:\"en\";s:13:\"smm-lalin.jpg\";s:2:\"th\";s:13:\"smm-lalin.jpg\";}', 1, '2019-10-11 08:20:19', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(7, '', 'a:2:{s:2:\"en\";s:12:\"smm-tara.jpg\";s:2:\"th\";s:12:\"smm-tara.jpg\";}', 1, '2019-10-11 08:20:29', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(8, '', 'a:2:{s:2:\"en\";s:17:\"smm-sathaporn.jpg\";s:2:\"th\";s:17:\"smm-sathaporn.jpg\";}', 1, '2019-10-11 08:20:38', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(9, '', 'a:2:{s:2:\"en\";s:10:\"smm-lh.jpg\";s:2:\"th\";s:10:\"smm-lh.jpg\";}', 1, '2019-10-11 08:20:46', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(10, '', 'a:2:{s:2:\"en\";s:12:\"mock1_03.jpg\";s:2:\"th\";s:12:\"mock1_03.jpg\";}', 1, '2019-10-11 08:20:56', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `clients` (`id`, `sort`, `title`, `image`, `category_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 1, '', 'a:2:{s:2:\"en\";s:15:\"smm-fashion.jpg\";s:2:\"th\";s:15:\"smm-fashion.jpg\";}', 1, '2019-10-15 10:20:55', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(2, 2, '', 'a:2:{s:2:\"en\";s:11:\"smm-pmn.jpg\";s:2:\"th\";s:11:\"smm-pmn.jpg\";}', 1, '2019-10-15 10:20:55', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(3, 3, '', 'a:2:{s:2:\"en\";s:15:\"smm-western.jpg\";s:2:\"th\";s:15:\"smm-western.jpg\";}', 1, '2019-10-15 10:06:26', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(4, 4, '', 'a:2:{s:2:\"en\";s:12:\"smm-tceb.jpg\";s:2:\"th\";s:12:\"smm-tceb.jpg\";}', 1, '2019-10-15 10:06:28', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(5, 5, '', 'a:2:{s:2:\"en\";s:12:\"mock1_12.jpg\";s:2:\"th\";s:12:\"mock1_12.jpg\";}', 1, '2019-10-15 10:06:30', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(6, 6, '', 'a:2:{s:2:\"en\";s:13:\"smm-lalin.jpg\";s:2:\"th\";s:13:\"smm-lalin.jpg\";}', 1, '2019-10-15 10:06:32', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(7, 7, '', 'a:2:{s:2:\"en\";s:12:\"smm-tara.jpg\";s:2:\"th\";s:12:\"smm-tara.jpg\";}', 1, '2019-10-15 10:06:34', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(8, 8, '', 'a:2:{s:2:\"en\";s:17:\"smm-sathaporn.jpg\";s:2:\"th\";s:17:\"smm-sathaporn.jpg\";}', 1, '2019-10-15 10:06:36', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(9, 9, '', 'a:2:{s:2:\"en\";s:10:\"smm-lh.jpg\";s:2:\"th\";s:10:\"smm-lh.jpg\";}', 1, '2019-10-15 10:06:39', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(10, 10, '', 'a:2:{s:2:\"en\";s:12:\"mock1_03.jpg\";s:2:\"th\";s:12:\"mock1_03.jpg\";}', 1, '2019-10-15 10:06:41', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -181,7 +181,7 @@ CREATE TABLE `client_page` (
 --
 
 INSERT INTO `client_page` (`id`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:3:\"asd\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:3:\"asd\";}', 'a:2:{s:2:\"en\";s:3:\"asd\";s:2:\"th\";s:3:\"asd\";}', 'a:2:{s:2:\"en\";N;s:2:\"th\";s:36:\"bc9cee3c829bf42297748337b230ef60.jpg\";}', '2019-10-02 09:16:29', '2019-10-10 22:55:07', NULL);
+(1, 'a:2:{s:2:\"en\";s:20:\"Cleints | social.com\";s:2:\"th\";s:49:\"ลูกค้าของเรา | social.com\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";N;s:2:\"th\";s:36:\"bc9cee3c829bf42297748337b230ef60.jpg\";}', '2019-10-02 09:16:29', '2019-10-15 00:50:57', NULL);
 
 -- --------------------------------------------------------
 
@@ -223,7 +223,7 @@ CREATE TABLE `contact_page` (
 --
 
 INSERT INTO `contact_page` (`id`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:3:\"asd\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:3:\"asd\";}', 'a:2:{s:2:\"en\";s:3:\"asd\";s:2:\"th\";s:3:\"asd\";}', 'a:2:{s:2:\"en\";N;s:2:\"th\";s:36:\"bc9cee3c829bf42297748337b230ef60.jpg\";}', '2019-10-02 09:16:29', '2019-10-10 22:55:07', NULL);
+(1, 'a:2:{s:2:\"en\";s:20:\"Contact | social.com\";s:2:\"th\";s:31:\"ติดต่อ | social.com\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";N;s:2:\"th\";s:36:\"bc9cee3c829bf42297748337b230ef60.jpg\";}', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL);
 
 -- --------------------------------------------------------
 
@@ -264,7 +264,7 @@ CREATE TABLE `home_page` (
 --
 
 INSERT INTO `home_page` (`id`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:3:\"asd\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:3:\"asd\";}', 'a:2:{s:2:\"en\";s:3:\"asd\";s:2:\"th\";s:3:\"asd\";}', 'a:2:{s:2:\"en\";N;s:2:\"th\";s:36:\"bc9cee3c829bf42297748337b230ef60.jpg\";}', '2019-10-02 09:16:29', '2019-10-10 22:55:07', NULL);
+(1, 'a:2:{s:2:\"en\";s:17:\"Home | social.com\";s:2:\"th\";s:34:\"หน้าแรก | social.com\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";N;s:2:\"th\";s:36:\"bc9cee3c829bf42297748337b230ef60.jpg\";}', '2019-10-02 09:16:29', '2019-10-15 00:51:56', NULL);
 
 -- --------------------------------------------------------
 
@@ -319,10 +319,18 @@ INSERT INTO `log_events` (`id`, `title`, `created_at`, `updated_at`, `deleted_at
 CREATE TABLE `roles` (
   `id` int(11) NOT NULL,
   `title` varchar(40) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `deleted_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `roles`
+--
+
+INSERT INTO `roles` (`id`, `title`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'super admin', '2019-10-08 09:38:23', NULL, NULL),
+(2, 'admin', '2019-10-08 09:38:23', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -397,7 +405,7 @@ CREATE TABLE `service_page` (
 --
 
 INSERT INTO `service_page` (`id`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:3:\"asd\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:3:\"asd\";}', 'a:2:{s:2:\"en\";s:3:\"asd\";s:2:\"th\";s:3:\"asd\";}', 'a:2:{s:2:\"en\";N;s:2:\"th\";s:36:\"bc9cee3c829bf42297748337b230ef60.jpg\";}', '2019-10-02 09:16:29', '2019-10-10 22:55:07', NULL);
+(1, 'a:2:{s:2:\"en\";s:21:\"Services | social.com\";s:2:\"th\";s:49:\"บริการของเรา | social.com\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";N;s:2:\"th\";s:36:\"bc9cee3c829bf42297748337b230ef60.jpg\";}', '2019-10-02 09:16:29', '2019-10-15 00:51:19', NULL);
 
 -- --------------------------------------------------------
 
@@ -447,7 +455,7 @@ CREATE TABLE `team_page` (
 --
 
 INSERT INTO `team_page` (`id`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:3:\"asd\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:3:\"asd\";}', 'a:2:{s:2:\"en\";s:3:\"asd\";s:2:\"th\";s:3:\"asd\";}', 'a:2:{s:2:\"en\";N;s:2:\"th\";s:36:\"bc9cee3c829bf42297748337b230ef60.jpg\";}', '2019-10-02 09:16:29', '2019-10-10 22:55:07', NULL);
+(1, 'a:2:{s:2:\"en\";s:18:\"Teams | social.com\";s:2:\"th\";s:22:\"ทีม | social.com\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";N;s:2:\"th\";s:36:\"bc9cee3c829bf42297748337b230ef60.jpg\";}', '2019-10-02 09:16:29', '2019-10-15 00:50:05', NULL);
 
 -- --------------------------------------------------------
 
@@ -458,20 +466,21 @@ INSERT INTO `team_page` (`id`, `meta_tag_title`, `meta_tag_description`, `meta_t
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(40) NOT NULL,
-  `password` varchar(40) NOT NULL,
+  `password` text NOT NULL,
   `role_id` int(11) NOT NULL,
-  `status` varchar(40) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `deleted_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `role_id`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'admin', '1234', 0, '', '2019-06-03 09:47:47', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `users` (`id`, `username`, `password`, `role_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'spadmin', '$2y$10$ZFYrWY4cThYRqh7oilxwae9OQzpX48O3U41wm.xwsHdN78NRHrUU2', 1, '2019-08-14 08:23:55', NULL, NULL),
+(2, 'admin', '$2y$10$gup248FaYX4Obb.t23qbT.Wo8xIifMO7kZQmDRcX0uJdvCpzOjvjq', 2, '2019-10-08 09:39:07', '2019-10-15 02:45:19', NULL),
+(3, 'khun', '$2y$10$barSRj6dErpHvkgNNe.V9OzmNmr8gZGszHnTPP58Dbyb07aKfjiMC', 2, '2019-10-08 09:39:14', '2019-10-09 05:05:47', NULL);
 
 --
 -- Indexes for dumped tables
@@ -604,7 +613,7 @@ ALTER TABLE `about_page`
 -- AUTO_INCREMENT for table `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `blog_categories`
 --
@@ -614,12 +623,12 @@ ALTER TABLE `blog_categories`
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `client_categories`
 --
 ALTER TABLE `client_categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `client_page`
 --
@@ -629,7 +638,7 @@ ALTER TABLE `client_page`
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `contact_page`
 --
@@ -649,12 +658,17 @@ ALTER TABLE `home_page`
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 --
 -- AUTO_INCREMENT for table `log_events`
 --
 ALTER TABLE `log_events`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `roles`
+--
+ALTER TABLE `roles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `services`
 --
@@ -674,7 +688,7 @@ ALTER TABLE `service_page`
 -- AUTO_INCREMENT for table `teams`
 --
 ALTER TABLE `teams`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `team_page`
 --
@@ -684,7 +698,7 @@ ALTER TABLE `team_page`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
