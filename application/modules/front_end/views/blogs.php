@@ -1,5 +1,5 @@
 <!-- Title -->
-<section class="page-title" style="background-image:url(http://localhost/social.co.th/resources/front-end/images/slider-1.jpg)">
+<section class="page-title" style="background-image:url(http://localhost/social.co.th/resources/front_end/images/slider-1.jpg)">
     <div class="container my-auto text-center wow fadeInUp">
         <h1>Blogs Page</h1>
     </div>
@@ -9,12 +9,12 @@
 <section id="blog">
     <div class="container-fluid">
         <div class="title-client" style="text-align: center; padding: 4rem;">
-            <img src="<?php base_url() ?>resources/front-end/images/img-/images/title-blog.png" alt="" class="img-fluid">
+            <img src="<?php base_url() ?>resources/front_end/images/img-/images/title-blog.png" alt="" class="img-fluid">
         </div>
         <div class="row row-60 row-sm">
             <div class="col-xs-12 col-sm-6 col-lg-3" style="visibility: visible; animation-name: fadeInLeft;">
                 <article class="blog blog__modern"><a class="blog__modern--figure"><img
-                                src="<?php base_url() ?>resources/front-end/images/example-blog-1.jpg" alt="" width="370"
+                                src="<?php base_url() ?>resources/front_end/images/example-blog-1.jpg" alt="" width="370"
                                 height="307">
                         <div class="blog__modern--time">
                             <time datetime="2019-07-04"><span class="blog__modern--time--month">07</span><span
@@ -31,7 +31,7 @@
             <div class="col-xs-12 col-sm-6 col-lg-3" data-wow-delay=".1s"
                  style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
                 <article class="blog blog__modern"><a class="blog__modern--figure"><img
-                                src="<?php base_url() ?>resources/front-end/images/example-blog-2.jpg" alt="" width="370"
+                                src="<?php base_url() ?>resources/front_end/images/example-blog-2.jpg" alt="" width="370"
                                 height="307">
                         <div class="blog__modern--time">
                             <time datetime="2019-07-17"><span class="blog__modern--time--month">07</span><span
@@ -48,7 +48,7 @@
             <div class="col-xs-12 col-sm-6 col-lg-3" data-wow-delay=".2s"
                  style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
                 <article class="blog blog__modern"><a class="blog__modern--figure"><img
-                                src="<?php base_url() ?>resources/front-end/images/example-blog-3.jpg" alt="" width="370"
+                                src="<?php base_url() ?>resources/front_end/images/example-blog-3.jpg" alt="" width="370"
                                 height="307">
                         <div class="blog__modern--time">
                             <time datetime="2019-07-22"><span class="blog__modern--time--month">07</span><span
@@ -65,7 +65,7 @@
             <div class="col-xs-12 col-sm-6 col-lg-3" data-wow-delay=".3s"
                  style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
                 <article class="blog blog__modern"><a class="blog__modern--figure"><img
-                                src="<?php base_url() ?>resources/front-end/images/example-blog-1.jpg" alt="" width="370"
+                                src="<?php base_url() ?>resources/front_end/images/example-blog-1.jpg" alt="" width="370"
                                 height="307">
                         <div class="blog__modern--time">
                             <time datetime="2019-07-22"><span class="blog__modern--time--month">07</span><span

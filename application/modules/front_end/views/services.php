@@ -1,5 +1,5 @@
 <!-- Title -->
-<!--<section class="page-title" style="background-image:url(http://localhost/social.co.th/resources/front-end/images/slider-1.jpg)">-->
+<!--<section class="page-title" style="background-image:url(http://localhost/social.co.th/resources/front_end/images/slider-1.jpg)">-->
 <!--    <div class="container my-auto text-center wow fadeInUp">-->
 <!--        <h1>Services Page</h1>-->
 <!--    </div>-->
@@ -89,7 +89,7 @@
     }
 
     #service-4 {
-        background-image: url("resources/front-end/images/img-/images/ppc.jpg");
+        background-image: url("resources/front_end/images/img-/images/ppc.jpg");
         color: #00264c;
         padding: 80px 0px;
         background-size: cover;
@@ -133,24 +133,24 @@
                 </p>
             </div>
             <div class="col-xs-12 col-md-7 col-lg-7 pl-md-5 text-center text-sm-left">
-                <img src="<?php base_url() ?>resources/front-end/images/img-/images/title-service.png" alt="" class="img-fluid">
+                <img src="<?php base_url() ?>resources/front_end/images/img-/images/title-service.png" alt="" class="img-fluid">
             </div>
         </div>
         <div class="row text-center">
             <div class="col-xs-12 col-md-3 col-lg-3 mb-5">
-                <img src="resources/front-end/images/service-1/smm-consult.png" alt="" class="img-fluid service__icon--resize">
+                <img src="resources/front_end/images/service-1/smm-consult.png" alt="" class="img-fluid service__icon--resize">
                 <h3 class="service--split__title--head mt-3">บริการที่ปรึกษาการคลาดออนไลน์</h3>
             </div>
             <div class="col-xs-12 col-md-3 col-lg-3 mb-5">
-                <img src="resources/front-end/images/service-1/smm-marketing.png" alt="" class="img-fluid service__icon--resize">
+                <img src="resources/front_end/images/service-1/smm-marketing.png" alt="" class="img-fluid service__icon--resize">
                 <h3 class="service--split__title--head mt-3">บริการวางแผนและทำการตลาดออนไลน์</h3>
             </div>
             <div class="col-xs-12 col-md-3 col-lg-3 mb-5">
-                <img src="resources/front-end/images/service-1/smm-production.png" alt="" class="img-fluid service__icon--resize">
+                <img src="resources/front_end/images/service-1/smm-production.png" alt="" class="img-fluid service__icon--resize">
                 <h3 class="service--split__title--head mt-3">รับพัฒนา และออกแบบเว็บไซต์</h3>
             </div>
             <div class="col-xs-12 col-md-3 col-lg-3 mb-5">
-                <img src="resources/front-end/images/service-1/smm-website.png" alt="" class="img-fluid service__icon--resize">
+                <img src="resources/front_end/images/service-1/smm-website.png" alt="" class="img-fluid service__icon--resize">
                 <h3 class="service--split__title--head mt-3">Production</h3>
             </div>
         </div>
@@ -163,7 +163,7 @@
             <div class="col-md-4">
                 <h2>บริการที่ปรึกษาการตลาดออนไลน์</h2>
                 <div class="service-1__wrapper--icon text-center mt-5 mb-5" style="width: 100%;">
-                    <img src="resources/front-end/images/service-1/smm-consult.png" alt="" class="img-fluid">
+                    <img src="resources/front_end/images/service-1/smm-consult.png" alt="" class="img-fluid">
                 </div>
 <!--                <div class="service-1__footer">-->
 <!--                    <h3>Contact us</h3>-->
@@ -172,7 +172,7 @@
             </div>
             <div class="col-md-8">
                 <div class="row mb-5">
-                    <img src="resources/front-end/images/service-1/service-1_16.png" alt="" class="img-fluid">
+                    <img src="resources/front_end/images/service-1/service-1_16.png" alt="" class="img-fluid">
                 </div>
                 <div class="row">
                     <div class="col-md-4 pl-md-0">
@@ -239,20 +239,20 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <img src="resources/front-end/images/service-1/service-1_20.png" alt=""  class="img-fluid">
+                <img src="resources/front_end/images/service-1/service-1_20.png" alt=""  class="img-fluid">
             </div>
         </div>
     </div>
 </section>
 
 <section id="service-3" style="position:relative;">
-    <img src="resources/front-end/images/service-1/footer-section.jpg" alt="" style="position: absolute;top:-201px;right:0px;">
+    <img src="resources/front_end/images/service-1/footer-section.jpg" alt="" style="position: absolute;top:-201px;right:0px;">
     <div class="container">
         <div class="row">
             <div class="col-md-4">
                 <h2>รับพัฒนาและออกแบบเว็บไซต์</h2>
                 <div class="service-1__wrapper--icon text-center mt-5 mb-5" style="width: 100%;">
-                    <img src="resources/front-end/images/service-1/smm-marketing.png" alt="" class="img-fluid">
+                    <img src="resources/front_end/images/service-1/smm-marketing.png" alt="" class="img-fluid">
                 </div>
             </div>
             <div class="col-md-4">

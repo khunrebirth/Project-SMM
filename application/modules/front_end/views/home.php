@@ -18,10 +18,10 @@
     <div class="container-fluid p-0">
         <div class="row no-gutters">
             <div class="col-md-6 col-lg-6 order-lg-2 showcase-img d-none d-sm-block"
-                 style="background-image: url('http://localhost/social.co.th/resources/front-end/images/img-/about.jpg');"></div>
+                 style="background-image: url('http://localhost/social.co.th/resources/front_end/images/img-/about.jpg');"></div>
             <div class="col-xs-12 col-md-6 col-lg-6 order-lg-1 my-auto showcase-text text-center wow fadeInLeft">
                 <div class="title-about" style="">
-                    <img src="<?php base_url() ?>resources/front-end/images/img-/title-about.png" alt="" class="img-fluid">
+                    <img src="<?php base_url() ?>resources/front_end/images/img-/title-about.png" alt="" class="img-fluid">
                 </div>
                 <h2 class="about__title--head mt-5 mb-4"><span>S</span>ocial Media Master</h2>
                 <div class="row justify-content-center">
@@ -44,11 +44,11 @@
 <section id="service" class="wow fadeInUp">
     <div class="container-fluid text-center">
         <div class="title-service" style="text-align: center; padding: 4rem;">
-            <img src="<?php base_url() ?>resources/front-end/images/img-/images/title-service.png" alt="" class="img-fluid">
+            <img src="<?php base_url() ?>resources/front_end/images/img-/images/title-service.png" alt="" class="img-fluid">
         </div>
         <div class="row mb-5">
             <div class="col-xs-12 col-md-3 col-lg-3 mb-5">
-                <img src="<?php base_url() ?>resources/front-end/images/img-/images/icon1.png" alt=""
+                <img src="<?php base_url() ?>resources/front_end/images/img-/images/icon1.png" alt=""
                      class="img-fluid service__icon--resize">
                 <h3 class="service__title--head">Digital Marketing Strategy Cons ancy</h3>
                 <p class="service__title--body">
@@ -57,7 +57,7 @@
                 </p>
             </div>
             <div class="col-xs-12 col-md-3 col-lg-3 mb-5">
-                <img src="<?php base_url() ?>resources/front-end/images/img-/images/icon2.png" alt=""
+                <img src="<?php base_url() ?>resources/front_end/images/img-/images/icon2.png" alt=""
                      class="img-fluid service__icon--resize">
                 <h3 class="service__title--head">Creative & Web Design</h3>
                 <p class="service__title--body">
@@ -66,7 +66,7 @@
                 </p>
             </div>
             <div class="col-xs-12 col-md-3 col-lg-3 mb-5">
-                <img src="<?php base_url() ?>resources/front-end/images/img-/images/icon3.png" alt=""
+                <img src="<?php base_url() ?>resources/front_end/images/img-/images/icon3.png" alt=""
                      class="img-fluid service__icon--resize">
                 <h3 class="service__title--head">Social Media Marketing</h3>
                 <p class="service__title--body">
@@ -75,7 +75,7 @@
                 </p>
             </div>
             <div class="col-xs-12 col-md-3 col-lg-3 mb-5">
-                <img src="<?php base_url() ?>resources/front-end/images/img-/images/icon4.png" alt=""
+                <img src="<?php base_url() ?>resources/front_end/images/img-/images/icon4.png" alt=""
                      class="img-fluid service__icon--resize">
                 <h3 class="service__title--head">Production & Management Servic</h3>
                 <p class="service__title--body">
@@ -88,7 +88,7 @@
                 <a href="#" title="Pay Per Click">
                     <div class="grid">
                         <figure class="effect-ruby">
-                            <img src="<?php base_url() ?>resources/front-end/images/img-/images/ppc.jpg"
+                            <img src="<?php base_url() ?>resources/front_end/images/img-/images/ppc.jpg"
                                  alt="Design and Production" class="img-fluid">
                             <figcaption>
                                 <h3 class="h4 text-primary"><span>Pay Per Click</span></h3>
@@ -101,7 +101,7 @@
                 <a href="#" title="Online Ads.">
                     <div class="grid">
                         <figure class="effect-ruby">
-                            <img src="<?php base_url() ?>resources/front-end/images/img-/images/online-ad.jpg"
+                            <img src="<?php base_url() ?>resources/front_end/images/img-/images/online-ad.jpg"
                                  alt="Design and Production" class="img-fluid">
                             <figcaption>
                                 <h3 class="h4 text-primary"><span>Online Ads.</span></h3>
@@ -114,7 +114,7 @@
                 <a href="#" title="Web Design">
                     <div class="grid">
                         <figure class="effect-ruby">
-                            <img src="<?php base_url() ?>resources/front-end/images/img-/images/webdesign.jpg"
+                            <img src="<?php base_url() ?>resources/front_end/images/img-/images/webdesign.jpg"
                                  alt="Design and Production" class="img-fluid">
                             <figcaption>
                                 <h3 class="h4 text-primary"><span>Web Design</span></h3>
@@ -127,7 +127,7 @@
                 <a href="#" title="SEO">
                     <div class="grid">
                         <figure class="effect-ruby">
-                            <img src="<?php base_url() ?>resources/front-end/images/img-/images/seo.jpg"
+                            <img src="<?php base_url() ?>resources/front_end/images/img-/images/seo.jpg"
                                  alt="Design and Production" class="img-fluid">
                             <figcaption>
                                 <h3 class="h4 text-primary"><span>SEO</span></h3>
@@ -144,7 +144,7 @@
 <section id="client" class="wow fadeInUp">
     <div class="container-fluid">
         <div class="title-client" style="text-align: center; padding: 4rem;">
-            <img src="<?php base_url() ?>resources/front-end/images/img-/images/title-cilent.png" alt="" class="img-fluid">
+            <img src="<?php base_url() ?>resources/front_end/images/img-/images/title-cilent.png" alt="" class="img-fluid">
         </div>
         <!-- tab -->
         <div class="row justify-content-center">
@@ -171,36 +171,36 @@
             <div class="tab-pane fade show active" id="pills-seo" role="tabpanel" aria-labelledby="pills-seo-tab">
                 <div class="row mt-5">
                     <div class="col text-center">
-                        <img src="<?php base_url() ?>resources/front-end/images/img-/images/logo/smm-fashion.jpg" alt="AIS Our Clients" class="img-clients">
+                        <img src="<?php base_url() ?>resources/front_end/images/img-/images/logo/smm-fashion.jpg" alt="AIS Our Clients" class="img-clients">
                     </div>
                     <div class="col text-center">
-                        <img src="<?php base_url() ?>resources/front-end/images/img-/images/logo/smm-pmn.jpg" alt="Allianz Ayudhya Our Clients" class="img-clients">
+                        <img src="<?php base_url() ?>resources/front_end/images/img-/images/logo/smm-pmn.jpg" alt="Allianz Ayudhya Our Clients" class="img-clients">
                     </div>
                     <div class="col text-center">
-                        <img src="<?php base_url() ?>resources/front-end/images/img-/images/logo/smm-western.jpg" alt="Berkeley GroupOur Clients" class="img-clients">
+                        <img src="<?php base_url() ?>resources/front_end/images/img-/images/logo/smm-western.jpg" alt="Berkeley GroupOur Clients" class="img-clients">
                     </div>
                     <div class="col text-center">
-                        <img src="<?php base_url() ?>resources/front-end/images/img-/images/logo/smm-tceb.jpg" alt="Blue Elephant Our Clients" class="img-clients">
+                        <img src="<?php base_url() ?>resources/front_end/images/img-/images/logo/smm-tceb.jpg" alt="Blue Elephant Our Clients" class="img-clients">
                     </div>
                     <div class="col text-center">
-                        <img src="<?php base_url() ?>resources/front-end/images/img-/images/logo/mock1_12.jpg" alt="dtac Our Clients" class="img-clients">
+                        <img src="<?php base_url() ?>resources/front_end/images/img-/images/logo/mock1_12.jpg" alt="dtac Our Clients" class="img-clients">
                     </div>
                 </div>
                 <div class="row mt-3">
                     <div class="col text-center">
-                        <img src="<?php base_url() ?>resources/front-end/images/img-/images/logo/smm-lalin.jpg" alt="Berkeley GroupOur Clients" class="img-clients">
+                        <img src="<?php base_url() ?>resources/front_end/images/img-/images/logo/smm-lalin.jpg" alt="Berkeley GroupOur Clients" class="img-clients">
                     </div>
                     <div class="col text-center">
-                        <img src="<?php base_url() ?>resources/front-end/images/img-/images/logo/smm-tara.jpg" alt="Blue Elephant Our Clients" class="img-clients">
+                        <img src="<?php base_url() ?>resources/front_end/images/img-/images/logo/smm-tara.jpg" alt="Blue Elephant Our Clients" class="img-clients">
                     </div>
                     <div class="col text-center">
-                        <img src="<?php base_url() ?>resources/front-end/images/img-/images/logo/smm-sathaporn.jpg" alt="City Bank Our Clients" class="img-clients">
+                        <img src="<?php base_url() ?>resources/front_end/images/img-/images/logo/smm-sathaporn.jpg" alt="City Bank Our Clients" class="img-clients">
                     </div>
                     <div class="col text-center">
-                        <img src="<?php base_url() ?>resources/front-end/images/img-/images/logo/smm-lh.jpg" alt="dtac Our Clients" class="img-clients">
+                        <img src="<?php base_url() ?>resources/front_end/images/img-/images/logo/smm-lh.jpg" alt="dtac Our Clients" class="img-clients">
                     </div>
                     <div class="col text-center">
-                        <img src="<?php base_url() ?>resources/front-end/images/img-/images/logo/mock1_03.jpg" alt="dtac Our Clients" class="img-clients">
+                        <img src="<?php base_url() ?>resources/front_end/images/img-/images/logo/mock1_03.jpg" alt="dtac Our Clients" class="img-clients">
                     </div>
                 </div>
             </div>
@@ -239,11 +239,11 @@
 <section id="blog">
     <div class="container-fluid">
         <div class="title-client" style="text-align: center; padding: 4rem;">
-            <img src="<?php base_url() ?>resources/front-end/images/img-/images/title-blog.png" alt="" class="img-fluid">
+            <img src="<?php base_url() ?>resources/front_end/images/img-/images/title-blog.png" alt="" class="img-fluid">
         </div>
         <div class="row row-60 row-sm">
             <div class="col-xs-12 col-sm-6 col-lg-3 wow fadeInLeft" style="visibility: visible; animation-name: fadeInLeft;">
-                <article class="blog blog__modern"><a class="blog__modern--figure"><img src="<?php base_url() ?>resources/front-end/images/example-blog-1.jpg" alt="" width="370" height="307">
+                <article class="blog blog__modern"><a class="blog__modern--figure"><img src="<?php base_url() ?>resources/front_end/images/example-blog-1.jpg" alt="" width="370" height="307">
                         <div class="blog__modern--time">
                             <time datetime="2019-07-04"><span class="blog__modern--time--month">07</span><span class="blog__modern--time--number">04</span></time>
                         </div>
@@ -257,7 +257,7 @@
             </div>
             <div class="col-xs-12 col-sm-6 col-lg-3 wow fadeInLeft" data-wow-delay=".1s"
                  style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
-                <article class="blog blog__modern"><a class="blog__modern--figure"><img src="<?php base_url() ?>resources/front-end/images/example-blog-2.jpg" alt="" width="370" height="307">
+                <article class="blog blog__modern"><a class="blog__modern--figure"><img src="<?php base_url() ?>resources/front_end/images/example-blog-2.jpg" alt="" width="370" height="307">
                         <div class="blog__modern--time">
                             <time datetime="2019-07-17"><span class="blog__modern--time--month">07</span><span class="blog__modern--time--number">17</span></time>
                         </div>
@@ -269,7 +269,7 @@
             </div>
             <div class="col-xs-12 col-sm-6 col-lg-3 wow fadeInLeft" data-wow-delay=".2s"
                  style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
-                <article class="blog blog__modern"><a class="blog__modern--figure"><img src="<?php base_url() ?>resources/front-end/images/example-blog-3.jpg" alt="" width="370" height="307">
+                <article class="blog blog__modern"><a class="blog__modern--figure"><img src="<?php base_url() ?>resources/front_end/images/example-blog-3.jpg" alt="" width="370" height="307">
                         <div class="blog__modern--time">
                             <time datetime="2019-07-22"><span class="blog__modern--time--month">07</span><span class="blog__modern--time--number">22</span></time>
                         </div>
@@ -281,7 +281,7 @@
             </div>
             <div class="col-xs-12 col-sm-6 col-lg-3 wow fadeInLeft" data-wow-delay=".3s"
                  style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
-                <article class="blog blog__modern"><a class="blog__modern--figure"><img src="<?php base_url() ?>resources/front-end/images/example-blog-1.jpg" alt="" width="370" height="307">
+                <article class="blog blog__modern"><a class="blog__modern--figure"><img src="<?php base_url() ?>resources/front_end/images/example-blog-1.jpg" alt="" width="370" height="307">
                         <div class="blog__modern--time">
                             <time datetime="2019-07-22"><span class="blog__modern--time--month">07</span><span class="blog__modern--time--number">22</span></time>
                         </div>
@@ -301,12 +301,12 @@
 <section id="team" class="wow fadeInUp">
     <div class="container-fluid ">
         <div class="title-team" style="text-align: center; padding: 4rem;">
-            <img src="<?php base_url() ?>resources/front-end/images/img-/images/title-team.png" alt="" class="img-fluid">
+            <img src="<?php base_url() ?>resources/front_end/images/img-/images/title-team.png" alt="" class="img-fluid">
         </div>
         <div class="row">
             <div class="col-xs-12 col-md-3 col-lg-3">
                 <div class="card team__card--parent mx-auto" style="width: 18rem;">
-                    <img class="card-img-top" src="<?php base_url() ?>resources/front-end/images/img-/images/smm-kriangkrai.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="<?php base_url() ?>resources/front_end/images/img-/images/smm-kriangkrai.jpg" alt="Card image cap">
                     <div class="card-body pl-0">
                         <h5 class="card-title team__crad--title">Kriangkrai <br>Nilkamhaeng</h5>
                         <p class="card-text team__crad--body">CEO / Founder</p>
@@ -315,7 +315,7 @@
             </div>
             <div class="col-xs-12 col-md-3 col-lg-3">
                 <div class="card team__card--parent mx-auto" style="width: 18rem;">
-                    <img class="card-img-top" src="<?php base_url() ?>resources/front-end/images/img-/images/smm-krissana.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="<?php base_url() ?>resources/front_end/images/img-/images/smm-krissana.jpg" alt="Card image cap">
                     <div class="card-body pl-0">
                         <h5 class="card-title team__crad--title">Krissana <br>Wimoonchad</h5>
                         <p class="card-text team__crad--body">Assistant Managing Director</p>
@@ -324,7 +324,7 @@
             </div>
             <div class="col-xs-12 col-md-3 col-lg-3">
                 <div class="card team__card--parent mx-auto" style="width: 18rem;">
-                    <img class="card-img-top" src="<?php base_url() ?>resources/front-end/images/img-/images/smm-tanchanok.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="<?php base_url() ?>resources/front_end/images/img-/images/smm-tanchanok.jpg" alt="Card image cap">
                     <div class="card-body pl-0">
                         <h5 class="card-title team__crad--title">Tanchanok <br>Sirisopitkul</h5>
                         <p class="card-text team__crad--body">Assistant Managing Director</p>
@@ -333,7 +333,7 @@
             </div>
             <div class="col-xs-12 col-md-3 col-lg-3">
                 <div class="card team__card--parent mx-auto" style="width: 18rem;">
-                    <img class="card-img-top" src="<?php base_url() ?>resources/front-end/images/img-/images/smm-juthamas.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="<?php base_url() ?>resources/front_end/images/img-/images/smm-juthamas.jpg" alt="Card image cap">
                     <div class="card-body pl-0">
                         <h5 class="card-title team__crad--title">Juthamas <br>Sattayapun</h5>
                         <p class="card-text team__crad--body">Project Manager</p>
@@ -348,7 +348,7 @@
 <section id="contact" class="wow fadeInUp">
     <div class="container">
         <div class="title-contact" style="text-align: center; padding: 4rem;">
-            <img src="<?php base_url() ?>resources/front-end/images/img-/images/title-contact.png" alt="" class="img-fluid">
+            <img src="<?php base_url() ?>resources/front_end/images/img-/images/title-contact.png" alt="" class="img-fluid">
         </div>
         <div class="row">
             <div class="col-xs-12 col-md-6 col-lg-6 ">

@@ -1,6 +1,6 @@
 <!-- Title -->
 <section class="page-title"
-         style="background-image:url(http://localhost/social.co.th/resources/front-end/images/slider-1.jpg)">
+         style="background-image:url(http://localhost/social.co.th/resources/front_end/images/slider-1.jpg)">
     <div class="container my-auto text-center wow fadeInUp">
         <?php if ($this->session->flashdata('success')) { ?>
             <div class="alert alert-success"><?php echo $this->session->flashdata('success'); ?></div>
@@ -15,7 +15,7 @@
 <section id="contact">
     <div class="container">
         <div class="title-contact" style="text-align: center; padding: 4rem;">
-            <img src="<?php base_url() ?>resources/front-end/images/img-/images/title-contact.png" alt=""
+            <img src="<?php base_url() ?>resources/front_end/images/img-/images/title-contact.png" alt=""
                  class="img-fluid">
         </div>
         <div class="row">

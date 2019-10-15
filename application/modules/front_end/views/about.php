@@ -1,5 +1,5 @@
 <!-- Title -->
-<!--<section class="page-title" style="background-image:url(http://localhost/social.co.th/resources/front-end/images/slider-1.jpg)">-->
+<!--<section class="page-title" style="background-image:url(http://localhost/social.co.th/resources/front_end/images/slider-1.jpg)">-->
 <!--    <div class="container my-auto text-center wow fadeInUp">-->
 <!--        <h1>About Page</h1>-->
 <!--    </div>-->
@@ -168,7 +168,7 @@
         <div class="row">
             <div class="col-md-5 offset-md-5 pl-md-5 pl-sm-5 pl-xs-0 text-center text-sm-left">
                 <div class="title-about" style="">
-                    <img src="<?php base_url() ?>resources/front-end/images/img-/title-about.png" alt="" class="img-fluid">
+                    <img src="<?php base_url() ?>resources/front_end/images/img-/title-about.png" alt="" class="img-fluid">
                 </div>
             </div>
 

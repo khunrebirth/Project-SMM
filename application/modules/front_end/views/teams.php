@@ -1,5 +1,5 @@
 <!-- Title -->
-<section class="page-title" style="background-image:url(http://localhost/social.co.th/resources/front-end/images/slider-1.jpg)">
+<section class="page-title" style="background-image:url(http://localhost/social.co.th/resources/front_end/images/slider-1.jpg)">
     <div class="container my-auto text-center wow fadeInUp">
         <h1>Teams Page</h1>
     </div>
@@ -9,12 +9,12 @@
 <section id="team">
     <div class="container-fluid ">
         <div class="title-team" style="text-align: center; padding: 4rem;">
-            <img src="<?php base_url() ?>resources/front-end/images/img-/images/title-team.png" alt="" class="img-fluid">
+            <img src="<?php base_url() ?>resources/front_end/images/img-/images/title-team.png" alt="" class="img-fluid">
         </div>
         <div class="row">
             <div class="col-xs-12 col-md-3 col-lg-3">
                 <div class="card team__card--parent mx-auto" style="width: 18rem;">
-                    <img class="card-img-top" src="<?php base_url() ?>resources/front-end/images/img-/images/smm-kriangkrai.jpg"
+                    <img class="card-img-top" src="<?php base_url() ?>resources/front_end/images/img-/images/smm-kriangkrai.jpg"
                          alt="Card image cap">
                     <div class="card-body pl-0">
                         <h5 class="card-title team__crad--title">Kriangkrai <br>Nilkamhaeng</h5>
@@ -24,7 +24,7 @@
             </div>
             <div class="col-xs-12 col-md-3 col-lg-3">
                 <div class="card team__card--parent mx-auto" style="width: 18rem;">
-                    <img class="card-img-top" src="<?php base_url() ?>resources/front-end/images/img-/images/smm-krissana.jpg"
+                    <img class="card-img-top" src="<?php base_url() ?>resources/front_end/images/img-/images/smm-krissana.jpg"
                          alt="Card image cap">
                     <div class="card-body pl-0">
                         <h5 class="card-title team__crad--title">Krissana <br>Wimoonchad</h5>
@@ -34,7 +34,7 @@
             </div>
             <div class="col-xs-12 col-md-3 col-lg-3">
                 <div class="card team__card--parent mx-auto" style="width: 18rem;">
-                    <img class="card-img-top" src="<?php base_url() ?>resources/front-end/images/img-/images/smm-tanchanok.jpg"
+                    <img class="card-img-top" src="<?php base_url() ?>resources/front_end/images/img-/images/smm-tanchanok.jpg"
                          alt="Card image cap">
                     <div class="card-body pl-0">
                         <h5 class="card-title team__crad--title">Tanchanok <br>Sirisopitkul</h5>
@@ -44,7 +44,7 @@
             </div>
             <div class="col-xs-12 col-md-3 col-lg-3">
                 <div class="card team__card--parent mx-auto" style="width: 18rem;">
-                    <img class="card-img-top" src="<?php base_url() ?>resources/front-end/images/img-/images/smm-juthamas.jpg"
+                    <img class="card-img-top" src="<?php base_url() ?>resources/front_end/images/img-/images/smm-juthamas.jpg"
                          alt="Card image cap">
                     <div class="card-body pl-0">
                         <h5 class="card-title team__crad--title">Juthamas <br>Sattayapun</h5>

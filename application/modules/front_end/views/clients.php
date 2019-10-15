@@ -1,5 +1,5 @@
 <!-- Title -->
-<section class="page-title" style="background-image:url(http://localhost/social.co.th/resources/front-end/images/slider-1.jpg)">
+<section class="page-title" style="background-image:url(http://localhost/social.co.th/resources/front_end/images/slider-1.jpg)">
     <div class="container my-auto text-center wow fadeInUp">
         <h1>Client Page</h1>
     </div>
@@ -9,7 +9,7 @@
 <section id="client">
     <div class="container-fluid">
         <div class="title-client" style="text-align: center; padding: 4rem;">
-            <img src="<?php base_url() ?>resources/front-end/images/img-/images/title-cilent.png" alt="" class="img-fluid">
+            <img src="<?php base_url() ?>resources/front_end/images/img-/images/title-cilent.png" alt="" class="img-fluid">
         </div>
         <!-- tab -->
         <div class="row justify-content-center">
@@ -43,45 +43,45 @@
             <div class="tab-pane fade show active" id="pills-seo" role="tabpanel" aria-labelledby="pills-seo-tab">
                 <div class="row mt-5">
                     <div class="col text-center">
-                        <img src="<?php base_url() ?>resources/front-end/images/img-/images/logo/smm-fashion.jpg"
+                        <img src="<?php base_url() ?>resources/front_end/images/img-/images/logo/smm-fashion.jpg"
                              alt="AIS Our Clients" class="img-clients">
                     </div>
                     <div class="col text-center">
-                        <img src="<?php base_url() ?>resources/front-end/images/img-/images/logo/smm-pmn.jpg"
+                        <img src="<?php base_url() ?>resources/front_end/images/img-/images/logo/smm-pmn.jpg"
                              alt="Allianz Ayudhya Our Clients" class="img-clients">
                     </div>
                     <div class="col text-center">
-                        <img src="<?php base_url() ?>resources/front-end/images/img-/images/logo/smm-western.jpg"
+                        <img src="<?php base_url() ?>resources/front_end/images/img-/images/logo/smm-western.jpg"
                              alt="Berkeley GroupOur Clients" class="img-clients">
                     </div>
                     <div class="col text-center">
-                        <img src="<?php base_url() ?>resources/front-end/images/img-/images/logo/smm-tceb.jpg"
+                        <img src="<?php base_url() ?>resources/front_end/images/img-/images/logo/smm-tceb.jpg"
                              alt="Blue Elephant Our Clients" class="img-clients">
                     </div>
                     <div class="col text-center">
-                        <img src="<?php base_url() ?>resources/front-end/images/img-/images/logo/mock1_12.jpg"
+                        <img src="<?php base_url() ?>resources/front_end/images/img-/images/logo/mock1_12.jpg"
                              alt="dtac Our Clients" class="img-clients">
                     </div>
                 </div>
                 <div class="row mt-3">
                     <div class="col text-center">
-                        <img src="<?php base_url() ?>resources/front-end/images/img-/images/logo/smm-lalin.jpg"
+                        <img src="<?php base_url() ?>resources/front_end/images/img-/images/logo/smm-lalin.jpg"
                              alt="Berkeley GroupOur Clients" class="img-clients">
                     </div>
                     <div class="col text-center">
-                        <img src="<?php base_url() ?>resources/front-end/images/img-/images/logo/smm-tara.jpg"
+                        <img src="<?php base_url() ?>resources/front_end/images/img-/images/logo/smm-tara.jpg"
                              alt="Blue Elephant Our Clients" class="img-clients">
                     </div>
                     <div class="col text-center">
-                        <img src="<?php base_url() ?>resources/front-end/images/img-/images/logo/smm-sathaporn.jpg"
+                        <img src="<?php base_url() ?>resources/front_end/images/img-/images/logo/smm-sathaporn.jpg"
                              alt="City Bank Our Clients" class="img-clients">
                     </div>
                     <div class="col text-center">
-                        <img src="<?php base_url() ?>resources/front-end/images/img-/images/logo/smm-lh.jpg"
+                        <img src="<?php base_url() ?>resources/front_end/images/img-/images/logo/smm-lh.jpg"
                              alt="dtac Our Clients" class="img-clients">
                     </div>
                     <div class="col text-center">
-                        <img src="<?php base_url() ?>resources/front-end/images/img-/images/logo/mock1_03.jpg"
+                        <img src="<?php base_url() ?>resources/front_end/images/img-/images/logo/mock1_03.jpg"
                              alt="dtac Our Clients" class="img-clients">
                     </div>
                 </div>
