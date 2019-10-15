@@ -108,6 +108,4 @@ class Contact extends MX_Controller
         }
     
     }
-
-
 }
