@@ -80,7 +80,7 @@ class Dashboard extends MX_Controller
 						break;
 
 					case 'sort_item':
-						$html_badge = '<div class="badge badge-secondary">sort_item</div>';
+						$html_badge = '<div class="badge badge-secondary">sort item</div>';
 						break;
 
 					default:
