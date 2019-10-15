@@ -9,7 +9,7 @@
 		<div class="section-header">
 			<div class="section-header-breadcrumb">
 				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
-				<div class="breadcrumb-item"><a href="#">Page: Blogs</a></div>
+				<div class="breadcrumb-item"><a href="#">Page: Clients</a></div>
 				<div class="breadcrumb-item active">Category</div>
 			</div>
 		</div>
@@ -20,7 +20,7 @@
 						<div class="card-header">
 							<h4>List of Category</h4>
 							<div class="card-header-action">
-								<a href="<?php echo base_url('backoffice/page/blogs/list-category-blogs/create'); ?>" class="btn btn-primary">
+								<a href="<?php echo base_url('backoffice/page/clients/list-category-clients/create'); ?>" class="btn btn-primary">
 									<i class="fas fa-plus"></i> Add
 								</a>
 							</div>
@@ -56,7 +56,7 @@
 												<td><?php echo unserialize($category->title)['th']; ?></td>
 												<td><?php echo $category->created_at; ?></td>
 												<td>
-													<a class="btn btn-warning" href="<?php echo base_url('backoffice/page/blogs/list-blogs/' . $category->id); ?>"><i class="far fa-view"></i> Items (<?php echo $category->counter; ?>)</a>
+													<a class="btn btn-warning" href="<?php echo base_url('backoffice/page/clients/list-clients/' . $category->id); ?>"><i class="far fa-view"></i> Items (<?php echo $category->counter; ?>)</a>
 												</td>
 												<td>
 													<div class="dropdown d-inline">
@@ -64,8 +64,8 @@
 															<i class="fas fa-cog"></i> Manage
 														</button>
 														<div class="dropdown-menu">
-															<a class="dropdown-item has-icon" href="<?php echo base_url('backoffice/page/blogs/list-category-blogs/edit/' . $category->id); ?>"><i class="far fa-edit"></i> Edit</a>
-															<a class="dropdown-item has-icon" onclick="deleteCategory('<?php echo base_url('backoffice/page/blogs/list-category-blogs/destroy/' . $category->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
+															<a class="dropdown-item has-icon" href="<?php echo base_url('backoffice/page/clients/list-category-clients/edit/' . $category->id); ?>"><i class="far fa-edit"></i> Edit</a>
+															<a class="dropdown-item has-icon" onclick="deleteCategory('<?php echo base_url('backoffice/page/clients/list-category-clients/destroy/' . $category->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
 														</div>
 													</div>
 												</td>

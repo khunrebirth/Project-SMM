@@ -32,7 +32,7 @@
 								<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#handleEn">EN</a></li>
 							</ul>
 							<!-- Tab panes -->
-							<form class="form-horizontal" method="post" action="<?php echo base_url('/backoffice/page/tips/list/update/' . $category->id . '/' . $blog->id); ?>" enctype="multipart/form-data">
+							<form class="form-horizontal" method="post" action="<?php echo base_url('backoffice/page/blogs/list-blogs/update/' . $category->id . '/' . $blog->id); ?>" enctype="multipart/form-data">
 								<div class="tab-content">
 									<div class="tab-pane active" id="handleTh">
 										<!-- Meta Tag -->

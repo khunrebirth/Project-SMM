@@ -10,9 +10,10 @@
 			<h1>Add New</h1>
 			<div class="section-header-breadcrumb">
 				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
-				<div class="breadcrumb-item"><a href="#">Page: Teams</a></div>
-				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/teams/list-teams'); ?>">Teams</a></div>
-				<div class="breadcrumb-item active">Add New</div>
+				<div class="breadcrumb-item"><a href="#">Page: Clients</a></div>
+				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/clients/list-category-clients'); ?>">Categories</a></div>
+				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/clients/list-clients/' . $category->id); ?>">Client (Category: <?php echo unserialize($category->title)['th']; ?>)</a></div>
+				<div class="breadcrumb-item active">Add</div>
 			</div>
 		</div>
 		<div class="section-body">
@@ -33,7 +34,7 @@
 								<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#handleEn">EN</a></li>
 							</ul>
 							<!-- Tab panes -->
-							<form class="form-horizontal" method="post" action="<?php echo base_url('backoffice/page/teams/list-teams/store'); ?>" enctype="multipart/form-data">
+							<form class="form-horizontal" method="post" action="<?php echo base_url('backoffice/page/clients/list-clients/store/' . $category->id); ?>" enctype="multipart/form-data">
 								<div class="tab-content">
 									<div class="tab-pane active" id="handleTh">
 										<!-- Information -->
@@ -55,15 +56,9 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Title</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right">Image Title &amp; Alt</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="title_th" placeholder="Title" type="text" value="" required>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Body</label>
-											<div class="col-sm-10">
-												<textarea class="form-control" name="body_th"></textarea>
+												<input class="form-control input-file-w-30" name="img_title_alt_th" placeholder="Image Title &amp; Alt" type="text" value="">
 											</div>
 										</div>
 										<hr>
@@ -88,15 +83,9 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Title</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right">Image Title &amp; Alt</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="title_en" placeholder="Title" type="text" value="">
-											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Body</label>
-											<div class="col-sm-10">
-												<textarea class="form-control" name="body_en"></textarea>
+												<input class="form-control input-file-w-30" name="img_title_alt_en" placeholder="Image Title &amp; Alt" type="text" value="">
 											</div>
 										</div>
 										<hr>
@@ -104,7 +93,7 @@
 								</div>
 								<div class="row">
 									<div class="col-sm-12 col-md-12 text-left text-md-right">
-										<button type="submit" class="btn btn-primary">Save changes</button>
+										<button class="btn btn-primary">Save Changes</button>
 									</div>
 								</div>
 							</form>

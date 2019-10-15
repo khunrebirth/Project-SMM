@@ -10,8 +10,8 @@
 			<h1>Edit: <?php echo unserialize($category->title)['th']; ?></h1>
 			<div class="section-header-breadcrumb">
 				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
-				<div class="breadcrumb-item"><a href="#">Page: Blogs</a></div>
-				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/blogs/list-category-blogs'); ?>">Categories</a></div>
+				<div class="breadcrumb-item"><a href="#">Page: Clients</a></div>
+				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/clients/list-category-clients'); ?>">Categories</a></div>
 				<div class="breadcrumb-item active">Edit: <?php echo unserialize($category->title)['th']; ?></div>
 			</div>
 		</div>
@@ -20,20 +20,18 @@
 				<div class="col-12">
 					<div class="card">
 						<div class="card-body">
-
 							<?php if ($this->session->flashdata('success')) { ?>
 								<div class="alert alert-success"><?php echo $this->session->flashdata('success'); ?></div>
 							<?php } ?>
 							<?php if ($this->session->flashdata('error')) { ?>
 								<div class="alert alert-danger"><?php echo $this->session->flashdata('error'); ?></div>
 							<?php } ?>
-
 							<ul class="nav nav-tabs">
 								<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#handleTh">TH</a></li>
 								<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#handleEn">EN</a></li>
 							</ul>
 							<!-- Tab panes -->
-							<form class="form-horizontal" method="post" action="<?php echo base_url('backoffice/page/blogs/list-category-blogs/update/' . $category->id); ?>" enctype="multipart/form-data">
+							<form class="form-horizontal" method="post" action="<?php echo base_url('backoffice/page/clients/list-category-clients/update/' . $category->id); ?>" enctype="multipart/form-data">
 								<div class="tab-content">
 									<div class="tab-pane active" id="handleTh">
 										<!-- Information -->

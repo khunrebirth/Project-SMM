@@ -207,7 +207,7 @@ class Blog extends MX_Controller {
 		$slug = ['en' => $slug_en, 'th' => $slug_th];
 
 		// Add Data
-		$add_blog = $this->Tip_model->insert_tips([
+		$add_blog = $this->Blog_model->insert_blog([
 			'meta_title' => serialize($input_meta_title),
 			'meta_description' => serialize($input_meta_description),
 			'meta_keyword' => serialize($input_meta_keyword),
@@ -218,7 +218,8 @@ class Blog extends MX_Controller {
 			'body' => serialize($input_body),
 			'slug' => serialize($slug),
 			'slug_en' => $slug_en,
-			'slug_th' => $slug_th
+			'slug_th' => $slug_th,
+			'category_blog_id' => $blog_category_id
 		]);
 
 		// Set Session To View

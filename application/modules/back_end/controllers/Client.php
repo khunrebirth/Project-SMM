@@ -26,6 +26,8 @@ class Client extends MX_Controller
 
 		// Model
 		$this->load->model('User_model');
+		$this->load->model('Client_category_model');
+		$this->load->model('Client_model');
 		$this->load->model('Client_page_model');
 
 		/*
@@ -36,6 +38,10 @@ class Client extends MX_Controller
 
 		$this->data['user'] = $this->User_model->get_user_by_id($this->session->userdata('user_id'));
 	}
+
+	/***********************************
+	 * Content
+	 * ********************************/
 
 	public function edit_content($id)
 	{
@@ -94,6 +100,261 @@ class Client extends MX_Controller
 		}
 
 		redirect('backoffice/page/clients/content/' . $id);
+	}
+
+	/***********************************
+	 * Category
+	 * ********************************/
+
+	public function list_category_client()
+	{
+		$this->data['title'] = 'Page: Clients';
+		$this->data['content'] = 'clients/category_list';
+		$this->data['categories'] = $this->Client_category_model->get_client_category_all();
+
+		$this->load->view('app', $this->data);
+	}
+
+	public function category_client_create()
+	{
+		$this->data['title'] = 'Page: Clients - Category - Add';
+		$this->data['content'] = 'clients/category_create';
+
+		$this->load->view('app', $this->data);
+	}
+
+	public function category_client_store()
+	{
+		// Filter Data
+		$input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
+
+		// Add Data
+		$add_category = $this->Client_category_model->insert_client_category([
+			'title' => serialize($input_title)
+		]);
+
+		// Set Session To View
+		if ($add_category) {
+
+			logger_store([
+				'user_id' => $this->data['user']->id,
+				'detail' => 'เพิ่ม Category (Client Page)',
+				'event' => 'add',
+				'ip' => $this->input->ip_address(),
+			]);
+
+			$this->session->set_flashdata('success', 'Add Done');
+		} else {
+			$this->session->set_flashdata('error', 'Something wrong');
+		}
+
+		redirect('backoffice/page/clients/list-category-clients');
+	}
+
+	public function category_client_edit($client_id)
+	{
+		$category = $this->Client_category_model->get_client_category_by_id($client_id);
+		$this->data['title'] = 'Page: Clients - Category - Edit ('. unserialize($category->title)['th'] . ')';
+		$this->data['content'] = 'clients/category_edit';
+		$this->data['category'] = $category;
+
+		$this->load->view('app', $this->data);
+	}
+
+	public function category_client_update($client_id)
+	{
+		// Filter Data
+		$input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
+
+		// Add Data
+		$update_category = $this->Client_category_model->update_client_category_by_id($client_id, [
+			'title' => serialize($input_title),
+			'updated_at' => date('Y-m-d H:i:s')
+		]);
+
+		// Set Session To View
+		if ($update_category) {
+
+			logger_store([
+				'user_id' => $this->data['user']->id,
+				'detail' => 'แก้ไข Category (Client Page)',
+				'event' => 'update',
+				'ip' => $this->input->ip_address(),
+			]);
+
+			$this->session->set_flashdata('success', 'Add Done');
+		} else {
+			$this->session->set_flashdata('error', 'Something wrong');
+		}
+
+		redirect('backoffice/page/clients/list-category-clients');
+	}
+
+	public function category_client_destroy($client_id)
+	{
+		$status = 500;
+		$response['success'] = 0;
+
+		$category = $this->Client_category_model->delete_client_category_by_id($client_id);
+
+		if ($category != false) {
+			$status = 200;
+			$response['success'] = 1;
+		}
+
+		return $this->output
+			->set_status_header($status)
+			->set_content_type('application/json')
+			->set_output(json_encode($response));
+	}
+
+	/***********************************
+	 * Client
+	 * ********************************/
+
+	public function list_client($client_category_id)
+	{
+		$this->data['title'] = 'Page: Clients';
+		$this->data['content'] = 'clients/client_list';
+		$this->data['clients'] = $this->Client_model->get_client_by_category_id($client_category_id);
+		$this->data['category'] =  $this->Client_category_model->get_client_category_by_id($client_category_id);
+
+		$this->load->view('app', $this->data);
+	}
+
+	public function client_create($client_category_id)
+	{
+		$this->data['title'] = 'Page: Clients - Clients - Add';
+		$this->data['content'] = 'clients/client_create';
+		$this->data['category'] =  $this->Client_category_model->get_client_category_by_id($client_category_id);
+
+		$this->load->view('app', $this->data);
+	}
+
+	public function client_store($client_category_id)
+	{
+		// Handle Image
+		$img_en = '';
+		$img_th = '';
+
+		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
+			$img_en = $this->ddoo_upload_client('img_en');
+		}
+
+		if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
+			$img_th = $this->ddoo_upload_client('img_th');
+		}
+
+		// Filter Data
+		$input_img = ['en' => $img_en, 'th' => $img_th];
+		$input_title = ['en' => $this->input->post('img_title_alt_en'), 'th' => $this->input->post('img_title_alt_th')];
+
+		// Add Data
+		$add_client = $this->Client_model->insert_client([
+			'image' => serialize($input_img),
+			'title' => serialize($input_title),
+			'category_id' => $client_category_id
+		]);
+
+		// Set Session To View
+		if ($add_client) {
+
+			logger_store([
+				'user_id' => $this->data['user']->id,
+				'detail' => 'เพิ่ม Client (Clients Page)',
+				'event' => 'add',
+				'ip' => $this->input->ip_address(),
+			]);
+
+			$this->session->set_flashdata('success', 'Add Done');
+		} else {
+			$this->session->set_flashdata('error', 'Something wrong');
+		}
+
+		redirect('backoffice/page/clients/list-clients/' . $client_category_id);
+	}
+
+	public function client_edit($client_category_id, $client_id)
+	{
+		$client = $this->Client_model->get_client_by_id($client_id);
+
+		$this->data['title'] = 'Page: Clients - Clients - Edit(' . unserialize($client->title)['th'] . ')';
+		$this->data['content'] = 'clients/client_edit';
+		$this->data['client'] = $client;
+		$this->data['category'] =  $this->Client_category_model->get_client_category_by_id($client_category_id);
+
+		$this->load->view('app', $this->data);
+	}
+
+	public function client_update($client_category_id, $client_id)
+	{
+		// Get Old data
+		$client = $this->Client_model->get_client_by_id($client_id);
+
+		// Handle Image
+		$img_en = unserialize($client->image)['en'];
+		$img_th = unserialize($client->image)['th'];
+
+		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
+			$img_en = $this->ddoo_upload_client('img_en');
+		}
+
+		if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
+			$img_th = $this->ddoo_upload_client('img_th');
+		}
+
+		// Filter Data
+		$input_img = ['en' => $img_en, 'th' => $img_th];
+		$input_title = ['en' => $this->input->post('img_title_alt_en'), 'th' => $this->input->post('img_title_alt_th')];
+
+		// Update Data
+		$update_client = $this->Client_model->update_client_by_id($client_id, [
+			'image' => serialize($input_img),
+			'title' => serialize($input_title),
+			'updated_at' => date('Y-m-d H:i:s')
+		]);
+
+		// Set Session To View
+		if ($update_client) {
+
+			logger_store([
+				'user_id' => $this->data['user']->id,
+				'detail' => 'แก้ไข Client (Clients Page)',
+				'event' => 'update',
+				'ip' => $this->input->ip_address(),
+			]);
+
+			$this->session->set_flashdata('success', 'Update Done');
+		} else {
+			$this->session->set_flashdata('error', 'Something wrong');
+		}
+
+		redirect('backoffice/page/clients/list-clients/' . $client_category_id);
+	}
+
+	public function client_destroy($client_id)
+	{
+		$status = 500;
+		$response['success'] = 0;
+
+		$client = $this->Client_model->delete_client_by_id($client_id);
+
+		if ($client != false) {
+			$status = 200;
+			$response['success'] = 1;
+
+			logger_store([
+				'user_id' => $this->data['user']->id,
+				'detail' => 'ลบ Client (Client Page)',
+				'event' => 'delete',
+				'ip' => $this->input->ip_address(),
+			]);
+		}
+
+		return $this->output
+			->set_status_header($status)
+			->set_content_type('application/json')
+			->set_output(json_encode($response));
 	}
 
 	private function ddoo_upload_client($filename)

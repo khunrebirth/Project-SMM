@@ -10,7 +10,8 @@
 			<div class="section-header-breadcrumb">
 				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
 				<div class="breadcrumb-item"><a href="#">Page: Blogs</a></div>
-				<div class="breadcrumb-item active">Category</div>
+				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/clients/list-category-clients'); ?>">Categories</a></div>
+				<div class="breadcrumb-item active">Clients (Category: <?php echo unserialize($category->title)['th']; ?>)</div>
 			</div>
 		</div>
 		<div class="section-body">
@@ -18,9 +19,9 @@
 				<div class="col-12">
 					<div class="card">
 						<div class="card-header">
-							<h4>List of Category</h4>
+							<h4>List of Blogs</h4>
 							<div class="card-header-action">
-								<a href="<?php echo base_url('backoffice/page/blogs/list-category-blogs/create'); ?>" class="btn btn-primary">
+								<a href="<?php echo base_url('backoffice/page/clients/list-clients/create/' . $category->id); ?>" class="btn btn-primary">
 									<i class="fas fa-plus"></i> Add
 								</a>
 							</div>
@@ -41,7 +42,6 @@
 										<th class="text-center">#</th>
 										<th>Title(en)</th>
 										<th>Title(th)</th>
-										<th>Items</th>
 										<th>Created at</th>
 										<th>Action</th>
 									</tr>
@@ -49,23 +49,20 @@
 									<tbody>
 									<?php
 										$counter = 1;
-										foreach ($categories as $category) { ?>
+										foreach ($clients as $client) { ?>
 											<tr>
 												<td class="text-center"><?php echo $counter++; ?></td>
-												<td><?php echo unserialize($category->title)['en']; ?></td>
-												<td><?php echo unserialize($category->title)['th']; ?></td>
-												<td><?php echo $category->created_at; ?></td>
-												<td>
-													<a class="btn btn-warning" href="<?php echo base_url('backoffice/page/blogs/list-blogs/' . $category->id); ?>"><i class="far fa-view"></i> Items (<?php echo $category->counter; ?>)</a>
-												</td>
+												<td><img src="<?php echo base_url('storage/uploads/images/clients/' . unserialize($client->image)['en']); ?>" width="120"></td>
+												<td><img src="<?php echo base_url('storage/uploads/images/clients/' . unserialize($client->image)['th']); ?>" width="120"></td>
+												<td><?php echo $client->created_at; ?></td>
 												<td>
 													<div class="dropdown d-inline">
 														<button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 															<i class="fas fa-cog"></i> Manage
 														</button>
 														<div class="dropdown-menu">
-															<a class="dropdown-item has-icon" href="<?php echo base_url('backoffice/page/blogs/list-category-blogs/edit/' . $category->id); ?>"><i class="far fa-edit"></i> Edit</a>
-															<a class="dropdown-item has-icon" onclick="deleteCategory('<?php echo base_url('backoffice/page/blogs/list-category-blogs/destroy/' . $category->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
+															<a class="dropdown-item has-icon" href="<?php echo base_url('backoffice/page/clients/list-clients/edit/' . $client->category_id . '/' . $client->id); ?>"><i class="far fa-edit"></i> Edit</a>
+															<a class="dropdown-item has-icon" onclick="deleteClient('<?php echo base_url('backoffice/page/clients/list-clients/destroy/' . $client->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
 														</div>
 													</div>
 												</td>
@@ -105,7 +102,7 @@
         }, 1 * 1500)
     }
 
-    function deleteCategory(url) {
+    function deleteClient(url) {
         swal({
             title: 'Are you sure ?',
             icon: 'warning',

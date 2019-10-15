@@ -119,12 +119,15 @@
 							<li class="<?php if ($this->uri->segment(3) == "clients" && $this->uri->segment(4) == "content") { echo 'active'; } ?>">
 								<a class="nav-link" href="<?php echo base_url('backoffice/page/clients/content/1'); ?>">&#9679; Content</a>
 							</li>
+							<li class="<?php if ($this->uri->segment(3) == "clients" && $this->uri->segment(4) == "list-category-clients" || $this->uri->segment(4) == 'list-clients') { echo 'active'; } ?>">
+								<a class="nav-link" href="<?php echo base_url('backoffice/page/clients/list-category-clients'); ?>">&#9679; Clients</a>
+							</li>
 						</ul>
 					</li>
 					<li class="nav-item dropdown <?php if ($this->uri->segment(2) == "page" && $this->uri->segment(3) == "blogs") { echo 'active'; } ?>">
 						<a href="#" class="nav-link has-dropdown"><i class="fas fa-pen-alt"></i><span>Blogs</span></a>
 						<ul class="dropdown-menu">
-							<li class="<?php if ($this->uri->segment(3) == "blogs" && $this->uri->segment(4) == "content") { echo 'active'; } ?>">
+							<li class="<?php if ($this->uri->segment(3) == "blogs" && $this->uri->segment(4) == "list-category-blogs" || $this->uri->segment(4) == 'list-blogs') { echo 'active'; } ?>">
 								<a class="nav-link" href="<?php echo base_url('backoffice/page/blogs/list-category-blogs'); ?>">&#9679; Blogs</a>
 							</li>
 						</ul>

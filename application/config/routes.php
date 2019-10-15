@@ -138,6 +138,22 @@ $route['backoffice/logout'] = 'back_end/Auth/Authentication/logout';
 		$route['backoffice/page/clients/content/(:any)'] = 'back_end/Client/edit_content/$1';
 		$route['backoffice/page/clients/content/update/(:any)'] = 'back_end/Client/update_content/$1';
 
+		// Category
+		$route['backoffice/page/clients/list-category-clients'] = 'back_end/Client/list_category_client';
+		$route['backoffice/page/clients/list-category-clients/create'] = 'back_end/Client/category_client_create';
+		$route['backoffice/page/clients/list-category-clients/store'] = 'back_end/Client/category_client_store';
+		$route['backoffice/page/clients/list-category-clients/edit/(:any)'] = "back_end/Client/category_client_edit/$1";
+		$route['backoffice/page/clients/list-category-clients/update/(:any)'] = "back_end/Client/category_client_update/$1";
+		$route['backoffice/page/clients/list-category-clients/destroy/(:any)'] = "back_end/Client/category_client_destroy/$1";
+
+		// Client
+		$route['backoffice/page/clients/list-clients/(:any)'] = 'back_end/Client/list_client/$1';
+		$route['backoffice/page/clients/list-clients/create/(:any)'] = 'back_end/Client/client_create/$1';
+		$route['backoffice/page/clients/list-clients/store/(:any)'] = 'back_end/Client/client_store/$1';
+		$route['backoffice/page/clients/list-clients/edit/(:any)/(:any)'] = "back_end/Client/client_edit/$1/$2";
+		$route['backoffice/page/clients/list-clients/update/(:any)/(:any)'] = "back_end/Client/client_update/$1/$2";
+		$route['backoffice/page/clients/list-clients/destroy/(:any)'] = "back_end/Client/client_destroy/$1";
+
 		/*
 		| -------------------------------------------------------------------------
 		| Blogs
@@ -158,7 +174,7 @@ $route['backoffice/logout'] = 'back_end/Auth/Authentication/logout';
 		$route['backoffice/page/blogs/list-blogs/store/(:any)'] = 'back_end/Blog/blog_store/$1';
 		$route['backoffice/page/blogs/list-blogs/edit/(:any)/(:any)'] = "back_end/Blog/blog_edit/$1/$2";
 		$route['backoffice/page/blogs/list-blogs/update/(:any)/(:any)'] = "back_end/Blog/blog_update/$1/$2";
-		$route['backoffice/page/blogs/list-blogs/destroy/(:any)/(:any)'] = "back_end/Blog/blog_destroy/$1/$2";
+		$route['backoffice/page/blogs/list-blogs/destroy/(:any)'] = "back_end/Blog/blog_destroy/$1";
 
 		/*
 		| -------------------------------------------------------------------------

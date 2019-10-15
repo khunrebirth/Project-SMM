@@ -20,6 +20,13 @@ class Client_model extends CI_Model {
         return $query->num_rows() > 0 ? $query->row() : false;
     }
 
+	public function get_client_by_category_id($category_id)
+	{
+		$query = $this->db->where('category_id', $category_id)->get('clients');
+
+		return $query->num_rows() > 0 ? $query->result() : [];
+	}
+
     public function insert_client($data)
     {
         $this->db->insert('clients', $data);
