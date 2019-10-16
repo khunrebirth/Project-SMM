@@ -487,3 +487,46 @@ a:hover {
     }
 
 }
+
+.sec-blogs_content-01 {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+}
+.sec-blogs_content-01 .card {
+    margin: 0;
+}
+.sec-blogs_content-01 .list-group {
+    margin: 0;
+}
+.sec-blogs_content-01 .list-group-item {
+    border: none;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-bottom: 1px solid #e2e1e6;
+    margin: 0;
+}
+.sec-blogs_content-01 .list-group-item:last-of-type {
+    
+    border-bottom: none;
+}
+.sec-blogs_content-01 .list-group-item.active,
+.sec-blogs_content-01 .list-group-item:hover {
+    background-color: #127dbc;
+    border-color: #127dbc;
+    color: #fff;
+}
+.sec-blogs_content-01 .list-group-ttl {
+    background-color: #00264c;
+    border-color: #00264c;
+    font-size: 1.25rem;
+    color: #fff;
+}
+.sec-blogs_content-01 .list-group-ttl:hover {
+    background-color: inherit;
+    border-color: inherit;
+
+}
