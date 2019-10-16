@@ -301,6 +301,7 @@ a:hover {
 
 .blog__modern--figure img {
     width: 100%;
+    height: auto;
     transition: all .3s ease
 }
 

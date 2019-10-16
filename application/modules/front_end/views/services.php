@@ -89,7 +89,7 @@
     }
 
     #service-4 {
-        background-image: url("resources/front_end/images/img-/images/ppc.jpg");
+        background-image: url("<?php base_url() ?>resources/front_end/images/service-1/bg-service-01.jpg");
         color: #00264c;
         padding: 80px 0px;
         background-size: cover;
@@ -120,6 +120,63 @@
             border-bottom: none;
         }
     }
+
+        
+    .txt-service-cap {
+        padding: 15px 0;
+        font-size: 1.3rem;
+        border-bottom: 3px solid #fff;
+        display: inline-block;
+    }
+    .img-main-cus {
+        margin-left: -100px;
+    }
+    @media (min-width: 540px) {
+        .img-main-cus {
+            margin-left: 0;
+        }
+    }
+    @media (min-width: 720px) {
+        .img-main-cus {
+            margin-left: 0;
+        }
+    }
+    @media (min-width: 960px) {
+        .img-main-cus {
+            margin-left: -100px;
+        }
+    }
+    @media (min-width: 1140px) {
+        .img-main-cus {
+            margin-left: -100px;
+        }
+    }
+    .box-service-pro {
+        background-color: #51bad7;
+        border: none;
+        height: 390px;
+        border-radius: 40px;
+        padding: 2rem;
+        margin-bottom: 50px;
+    }
+    .box-service-pro .card-body {
+        padding: 0;
+    }
+        .box-service-pro  .card-title {
+            color: #fff;
+            position: relative;
+            margin: 0;
+            padding: 0 0 15px;
+        }
+            .box-service-pro  .card-title::after {
+                content: '';
+                width: 50px;
+                height: 3px;
+                background-color: #00264c;
+                bottom: 0;
+                left: 0;
+                position: absolute;
+            }
 </style>
 
 <!-- Service -->
@@ -249,37 +306,34 @@
     <img src="resources/front_end/images/service-1/footer-section.jpg" alt="" style="position: absolute;top:-201px;right:0px;">
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-5">
                 <h2>รับพัฒนาและออกแบบเว็บไซต์</h2>
                 <div class="service-1__wrapper--icon text-center mt-5 mb-5" style="width: 100%;">
-                    <img src="resources/front_end/images/service-1/smm-marketing.png" alt="" class="img-fluid">
+                    <img src="<?php base_url() ?>resources/front_end/images/service-1/img_service_01.png" alt="" class="img-fluid img-main-cus">
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-7 row">
 
-                <div class="mb-5">
-                    <span>รับพัฒนา</span>
-                    <h3>Website</h3>
+                <div class="mb-5 col-6">
+                    <img src="<?php base_url() ?>resources/front_end/images/service-1/img_service_02.jpg" alt="" class="img-fluid">
+                    <h3 class="txt-service-cap">Website</h3>
                 </div>
 
-                <div class="mb-5">
-                    <span>รับพัฒนา</span>
-                    <h3>Web App</h3>
+                <div class="mb-5 col-6">
+                    <img src="<?php base_url() ?>resources/front_end/images/service-1/img_service_03.jpg" alt="" class="img-fluid">
+                    <h3 class="txt-service-cap">Web App</h3>
                 </div>
 
 
-                <div class="mb-5">
-                    <span>รับพัฒนา</span>
-                    <h3>Moblie App</h3>
+                <div class="mb-5 col-6">
+                    <img src="<?php base_url() ?>resources/front_end/images/service-1/img_service_04.jpg" alt="" class="img-fluid">
+                    <h3 class="txt-service-cap">Moblie App</h3>
                 </div>
 
-                <div class="mb-5">
-                    <span>รับพัฒนา</span>
-                    <h3>Landing page</h3>
+                <div class="mb-5 col-6">
+                    <img src="<?php base_url() ?>resources/front_end/images/service-1/img_service_05.jpg" alt="" class="img-fluid">
+                    <h3 class="txt-service-cap">Landing page</h3>
                 </div>
-            </div>
-            <div class="col-md-4">
-
             </div>
         </div>
     </div>
@@ -294,7 +348,7 @@
             <div class="col-md-8">
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="card">
+                        <div class="card box-service-pro">
                             <div class="card-body">
                                 <h5 class="card-title">VDO Production</h5>
 <!--                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
@@ -302,7 +356,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card">
+                        <div class="card box-service-pro">
                             <div class="card-body">
                                 <h5 class="card-title">Graphic Design</h5>
 <!--                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
@@ -310,7 +364,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card">
+                        <div class="card box-service-pro">
                             <div class="card-body">
                                 <h5 class="card-title">Motion Graphic</h5>
 <!--                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
@@ -318,7 +372,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card">
+                        <div class="card box-service-pro">
                             <div class="card-body">
                                 <h5 class="card-title">Animation</h5>
                                 <!--                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
@@ -326,7 +380,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card">
+                        <div class="card box-service-pro">
                             <div class="card-body">
                                 <h5 class="card-title">MV Music</h5>
                                 <!--                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->

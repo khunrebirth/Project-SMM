@@ -1,3 +1,85 @@
+<style>
+        
+    /*========================================
+    home custom
+    ========================================*/
+    /*------------ sec-home-service
+    -----------------------------------------*/
+    .sec-home-service {
+        max-width: 1440px;
+        margin: 0 auto;
+        position: relative;
+    }
+        .sec-home-service  .service__icon--resize {
+            width: auto;
+        }
+    .col-cmn-05 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 50% ;
+        flex: 0 0 50% ;
+        max-width: 50% ;
+    }
+
+    @media (min-width: 540px) {
+        .col-cmn-05 {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 50% ;
+            flex: 0 0 50% ;
+            max-width: 50% ;
+        }
+    }
+    @media (min-width: 720px) {
+        .col-cmn-05 {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 33.3333% ;
+            flex: 0 0 33.3333% ;
+            max-width: 33.3333% ;
+        }
+    }
+    @media (min-width: 960px) {
+        .col-cmn-05 {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 25% ;
+            flex: 0 0 25% ;
+            max-width: 25% ;
+        }
+    }
+    @media (min-width: 1140px) {
+        .col-cmn-05 {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 20% ;
+            flex: 0 0 20% ;
+            max-width: 20% ;
+        }
+    }
+    .col-cmn-05 img {
+        margin-bottom: 20px;
+    }
+    .box-cmn-emtry {
+        background-color: #44444d;
+        width: 100%;
+        height: 100%;
+    }
+
+    .sec-wrap-teams { }
+    .sec-wrap-teams .item-team {
+        margin: 0 !important;
+        padding: 0 15px;
+    }
+    .sec-wrap-teams .item-team-ttl { }
+    .sec-wrap-teams .card-img-top {
+        width: 100%;
+    }
+    .sec-wrap-teams .card {
+        width: 100% !important;
+    }
+    .sec-wrap-teams .team__crad--title ,
+    .sec-wrap-teams .card-text:last-child {
+        font-size: 0.8em;
+        line-height: 1.5;
+        margin-bottom: 0;
+    }
+</style>
 <!-- Home -->
 <header id="home">
     <div class="container h-100">
@@ -42,99 +124,73 @@
 
 <!-- Service -->
 <section id="service" class="wow fadeInUp">
-    <div class="container-fluid text-center">
-        <div class="title-service" style="text-align: center; padding: 4rem;">
+    <div class="container-fluid text-center sec-home-service">
+        <div class="title-service" style="text-align: left; padding: 4rem 0;">
             <img src="<?php base_url() ?>resources/front_end/images/img-/images/title-service.png" alt="" class="img-fluid">
         </div>
         <div class="row mb-5">
-            <div class="col-xs-12 col-md-3 col-lg-3 mb-5">
-                <img src="<?php base_url() ?>resources/front_end/images/img-/images/icon1.png" alt=""
+            <div class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
+                <img src="<?php base_url() ?>resources/front_end/images/home/ico_facebook_01.png" alt=""
                      class="img-fluid service__icon--resize">
-                <h3 class="service__title--head">Digital Marketing Strategy Cons ancy</h3>
                 <p class="service__title--body">
-                    This service is offered to those businesses that require a more known service where we can provide
-                    individual consultancy.
+                    Social Media Marketing
                 </p>
             </div>
-            <div class="col-xs-12 col-md-3 col-lg-3 mb-5">
-                <img src="<?php base_url() ?>resources/front_end/images/img-/images/icon2.png" alt=""
+            <div class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
+                <img src="<?php base_url() ?>resources/front_end/images/home/ico_seo_01.png" alt=""
                      class="img-fluid service__icon--resize">
-                <h3 class="service__title--head">Creative & Web Design</h3>
                 <p class="service__title--body">
-                    Our development team is able to work with you to plan and scope on your requirement for a properly
-                    work.
+                    Search Engine Marketing
                 </p>
             </div>
-            <div class="col-xs-12 col-md-3 col-lg-3 mb-5">
-                <img src="<?php base_url() ?>resources/front_end/images/img-/images/icon3.png" alt=""
+            <div class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
+                <img src="<?php base_url() ?>resources/front_end/images/home/ico_line_01.png" alt=""
                      class="img-fluid service__icon--resize">
-                <h3 class="service__title--head">Social Media Marketing</h3>
                 <p class="service__title--body">
-                    Due to social media marketing is an essential part of the marketing. It has the power to reach an
-                    enormous audience
+                    Line Marketing
                 </p>
             </div>
-            <div class="col-xs-12 col-md-3 col-lg-3 mb-5">
-                <img src="<?php base_url() ?>resources/front_end/images/img-/images/icon4.png" alt=""
+            <div class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
+                <img src="<?php base_url() ?>resources/front_end/images/home/ico_sem_01.png" alt=""
                      class="img-fluid service__icon--resize">
-                <h3 class="service__title--head">Production & Management Servic</h3>
                 <p class="service__title--body">
-                    Business image is very important.We should plan to work as a system for effective business
+                    Search Engine Optimization
                 </p>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-3 mb-4" style="padding: 0px;">
-                <a href="#" title="Pay Per Click">
-                    <div class="grid">
-                        <figure class="effect-ruby">
-                            <img src="<?php base_url() ?>resources/front_end/images/img-/images/ppc.jpg"
-                                 alt="Design and Production" class="img-fluid">
-                            <figcaption>
-                                <h3 class="h4 text-primary"><span>Pay Per Click</span></h3>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </a>
+            <div class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
+                <img src="<?php base_url() ?>resources/front_end/images/home/ico_production_01.png" alt=""
+                     class="img-fluid service__icon--resize">
+                <p class="service__title--body">
+                    Creative & Production
+                </p>
             </div>
-            <div class="col-sm-12 col-md-6 col-lg-3 mb-4 " style="padding: 0px;">
-                <a href="#" title="Online Ads.">
-                    <div class="grid">
-                        <figure class="effect-ruby">
-                            <img src="<?php base_url() ?>resources/front_end/images/img-/images/online-ad.jpg"
-                                 alt="Design and Production" class="img-fluid">
-                            <figcaption>
-                                <h3 class="h4 text-primary"><span>Online Ads.</span></h3>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </a>
+            <div class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
+                <img src="<?php base_url() ?>resources/front_end/images/home/ico_web_01.png" alt=""
+                     class="img-fluid service__icon--resize">
+                <p class="service__title--body">
+                    Website design
+                </p>
             </div>
-            <div class="col-sm-12 col-md-6 col-lg-3 mb-4" style="padding: 0px;">
-                <a href="#" title="Web Design">
-                    <div class="grid">
-                        <figure class="effect-ruby">
-                            <img src="<?php base_url() ?>resources/front_end/images/img-/images/webdesign.jpg"
-                                 alt="Design and Production" class="img-fluid">
-                            <figcaption>
-                                <h3 class="h4 text-primary"><span>Web Design</span></h3>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </a>
+            <div class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
+                <img src="<?php base_url() ?>resources/front_end/images/home/ico_consult_01.png" alt=""
+                     class="img-fluid service__icon--resize">
+                <p class="service__title--body">
+                บริการให้คำแนะนำปรึกษา  และวางแผนการตลาดออนไลน์
+                </p>
             </div>
-            <div class="col-sm-12 col-md-6 col-lg-3 mb-4" style="padding: 0px;">
-                <a href="#" title="SEO">
-                    <div class="grid">
-                        <figure class="effect-ruby">
-                            <img src="<?php base_url() ?>resources/front_end/images/img-/images/seo.jpg"
-                                 alt="Design and Production" class="img-fluid">
-                            <figcaption>
-                                <h3 class="h4 text-primary"><span>SEO</span></h3>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </a>
+            <div class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
+                <img src="<?php base_url() ?>resources/front_end/images/home/ico_speak_01.png" alt=""
+                     class="img-fluid service__icon--resize">
+                <p class="service__title--body">
+                Speaker
+                </p>
+            </div>
+            <div class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
+                <img src="<?php base_url() ?>resources/front_end/images/home/ico_setting_01.png" alt=""
+                     class="img-fluid service__icon--resize">
+            </div>
+            <div class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
+                <div class="box-cmn-emtry"></div>
             </div>
         </div>
     </div>
@@ -300,44 +356,48 @@
 <!-- Team -->
 <section id="team" class="wow fadeInUp">
     <div class="container-fluid ">
-        <div class="title-team" style="text-align: center; padding: 4rem;">
-            <img src="<?php base_url() ?>resources/front_end/images/img-/images/title-team.png" alt="" class="img-fluid">
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-md-3 col-lg-3">
-                <div class="card team__card--parent mx-auto" style="width: 18rem;">
-                    <img class="card-img-top" src="<?php base_url() ?>resources/front_end/images/img-/images/smm-kriangkrai.jpg" alt="Card image cap">
-                    <div class="card-body pl-0">
-                        <h5 class="card-title team__crad--title">Kriangkrai <br>Nilkamhaeng</h5>
-                        <p class="card-text team__crad--body">CEO / Founder</p>
+        <div class="sec-wrap-teams row flex-sm-column-reverse flex-column-reverse flex-md-column-reverse flex-lg-row">
+            <div class="row col-lg-8 col-sm-12 item-team">
+                <div class="col-xs-12 col-md-3 col-lg-3">
+                    <div class="card team__card--parent mb-0" style="width: 18rem;">
+                        <img class="card-img-top" src="<?php base_url() ?>resources/front_end/images/img-/images/smm-kriangkrai.jpg" alt="Card image cap">
+                        <div class="card-body pl-0 pt-2 pb-2">
+                            <h5 class="card-title team__crad--title">Kriangkrai <br>Nilkamhaeng</h5>
+                            <p class="card-text team__crad--body">CEO / Founder</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-3 col-lg-3">
+                    <div class="card team__card--parent mb-0" style="width: 18rem;">
+                        <img class="card-img-top" src="<?php base_url() ?>resources/front_end/images/img-/images/smm-krissana.jpg" alt="Card image cap">
+                        <div class="card-body pl-0 pt-2 pb-2">
+                            <h5 class="card-title team__crad--title">Krissana <br>Wimoonchad</h5>
+                            <p class="card-text team__crad--body">Assistant Managing Director</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-3 col-lg-3">
+                    <div class="card team__card--parent mb-0" style="width: 18rem;">
+                        <img class="card-img-top" src="<?php base_url() ?>resources/front_end/images/img-/images/smm-tanchanok.jpg" alt="Card image cap">
+                        <div class="card-body pl-0 pt-2 pb-2">
+                            <h5 class="card-title team__crad--title">Tanchanok <br>Sirisopitkul</h5>
+                            <p class="card-text team__crad--body">Assistant Managing Director</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-3 col-lg-3">
+                    <div class="card team__card--parent mb-0" style="width: 18rem;">
+                        <img class="card-img-top" src="<?php base_url() ?>resources/front_end/images/img-/images/smm-juthamas.jpg" alt="Card image cap">
+                        <div class="card-body pl-0 pt-2 pb-2">
+                            <h5 class="card-title team__crad--title">Juthamas <br>Sattayapun</h5>
+                            <p class="card-text team__crad--body">Project Manager</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-md-3 col-lg-3">
-                <div class="card team__card--parent mx-auto" style="width: 18rem;">
-                    <img class="card-img-top" src="<?php base_url() ?>resources/front_end/images/img-/images/smm-krissana.jpg" alt="Card image cap">
-                    <div class="card-body pl-0">
-                        <h5 class="card-title team__crad--title">Krissana <br>Wimoonchad</h5>
-                        <p class="card-text team__crad--body">Assistant Managing Director</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-3 col-lg-3">
-                <div class="card team__card--parent mx-auto" style="width: 18rem;">
-                    <img class="card-img-top" src="<?php base_url() ?>resources/front_end/images/img-/images/smm-tanchanok.jpg" alt="Card image cap">
-                    <div class="card-body pl-0">
-                        <h5 class="card-title team__crad--title">Tanchanok <br>Sirisopitkul</h5>
-                        <p class="card-text team__crad--body">Assistant Managing Director</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-3 col-lg-3">
-                <div class="card team__card--parent mx-auto" style="width: 18rem;">
-                    <img class="card-img-top" src="<?php base_url() ?>resources/front_end/images/img-/images/smm-juthamas.jpg" alt="Card image cap">
-                    <div class="card-body pl-0">
-                        <h5 class="card-title team__crad--title">Juthamas <br>Sattayapun</h5>
-                        <p class="card-text team__crad--body">Project Manager</p>
-                    </div>
+            <div class="item-team-ttl col-lg-4 col-sm-12">
+                <div class="title-team" style="text-align: center; padding: 4rem;">
+                    <img src="<?php base_url() ?>resources/front_end/images/img-/images/title-team.png" alt="" class="img-fluid">
                 </div>
             </div>
         </div>

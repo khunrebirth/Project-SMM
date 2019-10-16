@@ -15,7 +15,7 @@
     }
 
     .test {
-        background: url('http://extrawall.net/images/wallpapers/378_1920x1080_abstract_city.jpg') no-repeat fixed center;
+        background: url('<?php base_url() ?>resources/front_end/images/about/img_about_01.jpg') no-repeat center center;
         background-size: cover;
     }
 
@@ -37,19 +37,25 @@
         position: absolute;
         bottom: 0;
         top: 100;
-        width: 3000px;
+        /* width: 3000px; */
         height: 50px;
         background: rgba(0, 0, 0, 0.5);
         border-top: 1px solid #fff;
         padding-left: 80px;
+        
+        width: calc(100% + 25% - 180px);
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
     }
 
     .date {
         color: #fff;
         float: left;
-        width: 250px;
+        /* width: 250px; */
         height: 50px;
         /*padding-left: 80px;*/
+        width: 20%;
     }
 
     .date::before {
@@ -160,6 +166,13 @@
     /*        transform: scale(1.1)*/
     /*    }*/
     /*}*/
+
+    .txt-about {
+        text-align: left;
+        font-size: 1.3rem;
+        padding: 33px 90px 0;
+        color: #fff;
+    }
 </style>
 
 <!-- About -->
@@ -191,7 +204,7 @@
         </div>
 
         <div class="row mt-5">
-            <div class="col-md-12 test">
+            <div class="col-md-12 test d-none d-sm-none d-md-block d-ld-block d-lx-block">
                 <div class="structure" ng-app="app" ng-controller="HomeController">
 
                     <div class="preloaderimg">
@@ -228,7 +241,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12 text-center">
-                                <h1 id="test">{{goal_title}}</h1>
+                                <h1 class="txt-about" id="test">{{goal_title}}</h1>
                             </div>
                         </div>
                     </div>
@@ -317,15 +330,15 @@
         $('.goal_real_estate').click(function(){
             console.log('goal click');
             $('.test').fadeTo('ease', 0.3, function() {
-                $(this).css('background-image', 'url(http://extrawall.net/images/wallpapers/378_1920x1080_abstract_city.jpg)');
+                $(this).css('background-image', 'url(<?php base_url() ?>resources/front_end/images/about/img_about_01.jpg');
             }).fadeTo('slow', 1);
-            $("#test").html('test 1')
+            $("#test").html('Social Media Master ได้เริ่มก่อตั้งบริษัทที่ให้บริการวางแผนและประชาสัมพันธ์ผ่านสื่อออนไลน์ซึ่งถือได้ว่า เราคือดิจิทัล เอเจนซี่เจ้าแรก ๆ ในยุคนั้น')
         });
 
         $('.goal_retirement').click(function(){
             console.log('goal click');
             $('.test').fadeTo('ease', 0.3, function() {
-                $(this).css('background-image', 'url(https://wallpaperscraft.com/image/tropics_sea_palm_trees_vacation_84858_2412x1810.jpg)');
+                $(this).css('background-image', 'url(<?php base_url() ?>resources/front_end/images/about/img_about_01.jpg)');
             }).fadeTo('slow', 1);
             $("#test").html('test 2')
         });
@@ -333,7 +346,7 @@
         $('.goal_involve').click(function(){
             console.log('goal click');
             $('.test').fadeTo('ease', 0.3, function() {
-                $(this).css('background-image', 'url(http://www.churchmilitant.com/images/uploads/2015-06-12-niles-x.jpg)');
+                $(this).css('background-image', 'url(<?php base_url() ?>resources/front_end/images/about/img_about_01.jpg)');
             }).fadeTo('slow', 1);
             $("#test").html('test 3')
         });
@@ -342,7 +355,7 @@
         $('.goal_2017').click(function(){
             console.log('goal click');
             $('.test').fadeTo('ease', 0.3, function() {
-                $(this).css('background-image', 'url(http://extrawall.net/images/wallpapers/378_1920x1080_abstract_city.jpg)');
+                $(this).css('background-image', 'url(<?php base_url() ?>resources/front_end/images/about/img_about_01.jpg)');
             }).fadeTo('slow', 1);
             $("#test").html('test 4')
         });
@@ -350,7 +363,7 @@
         $('.goal_2019').click(function(){
             console.log('goal click');
             $('.test').fadeTo('ease', 0.3, function() {
-                $(this).css('background-image', 'url(http://www.churchmilitant.com/images/uploads/2015-06-12-niles-x.jpg)');
+                $(this).css('background-image', 'url(<?php base_url() ?>resources/front_end/images/about/img_about_01.jpg)');
             }).fadeTo('slow', 1);
             $("#test").html('test 5')
         });
