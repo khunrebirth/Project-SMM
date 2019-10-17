@@ -190,7 +190,8 @@
                      class="img-fluid service__icon--resize">
             </div>
             <div class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
-                <div class="box-cmn-emtry"></div>
+                <img src="<?php base_url() ?>resources/front_end/images/home/ico_contact_01.png" alt=""
+                     class="img-fluid service__icon--resize">
             </div>
         </div>
     </div>

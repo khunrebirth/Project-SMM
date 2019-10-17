@@ -60,6 +60,19 @@
         <div class="row">
             <div class="title-client col-12" style="text-align: center; padding: 4rem;">
                 <img src="<?php base_url() ?>resources/front_end/images/img-/images/title-blog.png" alt="" class="img-fluid">
+                
+                <div class="box-blog_catagory">
+                    <ul class="list-blog_catagory ">
+                        <li><a href="">0001</a></li>
+                        <li><a href="">0001</a></li>
+                        <li><a href="">0001</a></li>
+                        <li><a href="">0001</a></li>
+                        <li><a href="">0001</a></li>
+                        <li><a href="">0001</a></li>
+                        <li><a href="">0001</a></li>
+                        <li><a href="">0001</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="sec-blogs-01">

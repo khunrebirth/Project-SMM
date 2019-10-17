@@ -57,8 +57,14 @@
             <li class="nav-item">
                 <a class="nav-link <?php if ($this->uri->segment(1) == "teams" || $this->uri->segment(2) == "teams") { echo 'active'; }?>" href="<?php echo base_url('teams'); ?>">Teams</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item wrap-btn-centact">
                 <a class="btn btn-link btn__contact" href="<?php echo base_url('contact'); ?>">Contact us</a>
+            </li>
+            <li class="nav-item">
+                <ul class="list-lang">
+                    <li><a class="active" href="#">TH</a></li>
+                    <li><a href="#">EN</a></li>
+                </ul>
             </li>
         </ul>
     </div>
