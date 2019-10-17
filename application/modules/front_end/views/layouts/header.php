@@ -34,6 +34,11 @@
     <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/hover-style.css'); ?>">
     <!-- Animate -->
     <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/animate.css'); ?>">
+    
+    <!-- OWL CAL CSS -->
+    <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/owl.theme.default.min.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/owl.carousel.min.css'); ?>">
+    
 
     <!-- Customer CSS -->
     <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style.css'); ?>">
@@ -44,6 +49,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="<?php echo base_url('resources/front_end/js/bootstrap.min.js'); ?>"></script>
     <script src="<?php echo base_url('resources/front_end/js/wow.js'); ?>"></script>
+
+    <!-- OWL CAL JS -->
+    <script src="<?php echo base_url('resources/front_end/js/owl.carousel.min.js'); ?>"></script>
+
 </head>
 <body>
 
