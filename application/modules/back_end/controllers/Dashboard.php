@@ -5,6 +5,7 @@ class Dashboard extends MX_Controller
 {
 
 	private $data = false;
+	private $lang = 'th';
 
 	public function __construct()
 	{
@@ -29,6 +30,9 @@ class Dashboard extends MX_Controller
 		$this->load->model('Logger_model');
 		$this->load->model('Logger_event_model');
 
+		// Language
+		$this->lang = $this->config->item('language_abbr');
+
 		/*
 		| -------------------------------------------------------------------------
 		| HANDLE
@@ -40,6 +44,7 @@ class Dashboard extends MX_Controller
 
 	public function index()
 	{
+		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Dashboard';
 		$this->data['content'] = 'dashboard';
 		$this->data['user_total'] = $this->User_model->get_users_count_total();

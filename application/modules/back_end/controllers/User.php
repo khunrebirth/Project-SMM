@@ -5,6 +5,7 @@ class User extends MX_Controller
 {
 
 	private $data = false;
+	private $lang = 'th';
 
 	public function __construct()
 	{
@@ -28,6 +29,9 @@ class User extends MX_Controller
 		// Model
 		$this->load->model('User_model');
 
+		// Language
+		$this->lang = $this->config->item('language_abbr');
+
 		/*
 		| -------------------------------------------------------------------------
 		| HANDLE
@@ -39,6 +43,7 @@ class User extends MX_Controller
 
 	public function index()
 	{
+		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Users';
 		$this->data['content'] = 'user/user';
 		$this->data['users'] = $this->User_model->get_user_all();
@@ -48,6 +53,7 @@ class User extends MX_Controller
 
 	public function create()
 	{
+		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Users - Add';
 		$this->data['content'] = 'user/add_user';
 
@@ -76,13 +82,14 @@ class User extends MX_Controller
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
 
-		redirect('backoffice/setting/users');
+		redirect($this->lang . '/backoffice/setting/users');
 	}
 
 	public function show() {}
 
-	public function edit($id)
+	public function edit($lang, $id)
 	{
+		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'User - Edit';
 		$this->data['content'] = 'user/edit_user';
 		$this->data['user'] = $this->User_model->get_user_by_id($id);
@@ -90,7 +97,7 @@ class User extends MX_Controller
 		$this->load->view('app', $this->data);
 	}
 
-	public function update($id)
+	public function update($lang, $id)
 	{
 		$update_user = $this->User_model->update_user_by_id($id, [
 			'username' => $this->input->post('username'),
@@ -113,10 +120,10 @@ class User extends MX_Controller
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
 
-		redirect('backoffice/setting/users');
+		redirect($this->lang . '/backoffice/setting/users');
 	}
 
-	public function destroy($id)
+	public function destroy($lang, $id)
 	{
 		$status = 500;
 		$response['success'] = 0;

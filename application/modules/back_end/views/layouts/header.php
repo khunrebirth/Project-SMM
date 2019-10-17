@@ -71,11 +71,11 @@
                         <div class="d-sm-none d-lg-inline-block">Hi, <?php echo $user->username; ?></div>
                     </a>
 					<div class="dropdown-menu dropdown-menu-right">
-						<a href="<?php echo base_url('backoffice/setting/profile/edit/' . $user->id); ?>" class="dropdown-item has-icon">
+						<a href="<?php echo base_url($lang . '/backoffice/setting/profile/edit/' . $user->id); ?>" class="dropdown-item has-icon">
 							<i class="fas fa-cog"></i> Profile
 						</a>
 						<div class="dropdown-divider"></div>
-						<a href="<?php echo base_url('backoffice/logout'); ?>" class="dropdown-item has-icon text-danger">
+						<a href="<?php echo base_url($lang . '/backoffice/logout'); ?>" class="dropdown-item has-icon text-danger">
 							<i class="fas fa-sign-out-alt"></i> Logout
 						</a>
 					</div>
@@ -85,10 +85,10 @@
         <div class="main-sidebar sidebar-style-2">
             <aside id="sidebar-wrapper">
                 <div class="sidebar-brand">
-                    <a href="<?php echo base_url('backoffice/dashboard'); ?>">SMM Backoffice</a>
+                    <a href="<?php echo base_url($lang . '/backoffice/dashboard'); ?>">SMM Backoffice</a>
                 </div>
                 <div class="sidebar-brand sidebar-brand-sm">
-                    <a href="<?php echo base_url('backoffice/dashboard'); ?>">SMM</a>
+                    <a href="<?php echo base_url($lang . '/backoffice/dashboard'); ?>">SMM</a>
                 </div>
 				<ul class="sidebar-menu">
 					<li class="menu-header">General</li>
