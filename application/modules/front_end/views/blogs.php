@@ -60,19 +60,16 @@
         <div class="row">
             <div class="title-client col-12" style="text-align: center; padding: 4rem;">
                 <img src="<?php base_url() ?>resources/front_end/images/img-/images/title-blog.png" alt="" class="img-fluid">
-                
-                <div class="box-blog_catagory">
-                    <ul class="list-blog_catagory ">
-                        <li><a href="">0001</a></li>
-                        <li><a href="">0001</a></li>
-                        <li><a href="">0001</a></li>
-                        <li><a href="">0001</a></li>
-                        <li><a href="">0001</a></li>
-                        <li><a href="">0001</a></li>
-                        <li><a href="">0001</a></li>
-                        <li><a href="">0001</a></li>
-                    </ul>
-                </div>
+            </div>
+            <div class="box-blog_catagory col-12">
+                <ul class="list-blog_catagory row">
+                    <li class="col-lg-2 col-md-3 col-sm-12"><a href="">functions</a></li>
+                    <li class="col-lg-2 col-md-3 col-sm-12"><a href="">Query Language</a></li>
+                    <li class="col-lg-2 col-md-3 col-sm-12"><a href="">tutorial</a></li>
+                    <li class="col-lg-2 col-md-3 col-sm-12"><a href="">Hibernate</a></li>
+                    <li class="col-lg-2 col-md-3 col-sm-12"><a href="">methodologies</a></li>
+                    <li class="col-lg-2 col-md-3 col-sm-12"><a href="">object-oriented</a></li>
+                </ul>
             </div>
         </div>
         <div class="sec-blogs-01">
