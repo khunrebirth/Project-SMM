@@ -18,6 +18,11 @@ class Home extends MX_Controller
 
 		// Model
 		$this->load->model('Home_page_model');
+		$this->load->model('Client_category_model');
+		$this->load->model('Client_model');
+		$this->load->model('Blog_category_model');
+		$this->load->model('Blog_model');
+		$this->load->model('Team_model');
 
 		// Language
 		$this->lang = $this->config->item('language_abbr');
@@ -60,6 +65,11 @@ class Home extends MX_Controller
 		$data['content'] = 'home';
 
 		// Utilities
+		$data['client_categories'] = $this->Client_category_model->get_client_category_all();
+		$data['clients'] = $this->filter_data_clients($this->Client_category_model->get_client_category_all());
+		$data['blog_categories'] = $this->Blog_category_model->get_blog_category_all();
+		$data['blogs'] = $this->Blog_model->get_last_blog(4);
+		$data['teams'] = $this->Team_model->get_team_all();
 
 		/*
 		| -------------------------------------------------------------------------
@@ -68,5 +78,28 @@ class Home extends MX_Controller
 		*/
 
 		$this->load->view('app', $data);
+	}
+
+	private function filter_data_clients($client_categories)
+	{
+		$data = [];
+
+		foreach ($client_categories as $key_category => $category) {
+
+			$clients = $this->Client_model->get_client_by_category_id($category->id);
+
+			$data[$key_category]['category_id'] = $category->id;
+			$data[$key_category]['category_name'] = unserialize($category->title)[$this->lang];
+			$data[$key_category]['clients'] = [];
+
+			if (count($category) > 0) {
+				foreach ($clients as $key_client => $client) {
+					$data[$key_category]['clients'][$key_client]['img'] = unserialize($client->image)[$this->lang];
+					$data[$key_category]['clients'][$key_client]['title'] = unserialize($client->title)[$this->lang];
+				}
+			}
+		}
+
+		return $data;
 	}
 }

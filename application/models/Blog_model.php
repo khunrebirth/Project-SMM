@@ -29,13 +29,13 @@ class Blog_model extends CI_Model {
 		return $query->num_rows() > 0 ? $query->result() : [];
 	}
 
-	public function get_last_blog()
+	public function get_last_blog($limit)
 	{
 		$query = $this->db
 			->select('blogs.*, blog_categories.slug as blog_category_slug')
 			->from('blogs')
 			->join('blog_categories', 'blog_categories.id = blogs.category_blog_id')
-			->limit(5)
+			->limit($limit)
 			->order_by('created_at', 'desc')
 			->get();
 

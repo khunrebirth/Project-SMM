@@ -160,7 +160,7 @@ class Blogs extends MX_Controller
 		$data['content'] = 'blog_detail';
 
 		// Utilities
-		$data['last_blogs'] = $this->Blog_model->get_last_blog();
+		$data['last_blogs'] = $this->Blog_model->get_last_blog(5);
 		$data['blog'] = $this->Blog_model->get_blog_by_id($blog_id);
 
 		/*
