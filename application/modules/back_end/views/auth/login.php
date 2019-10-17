@@ -27,7 +27,7 @@
                         <img src="<?php echo base_url('resources/back_end/assets/img/smm/logo-smm.png'); ?>" alt="logo" width="120" class="shadow-light mb-5 mt-2">
                     </div>
                     <h4 class="text-dark font-weight-normal text-center">Welcome to <span class="font-weight-bold">SMM Backoffice</span></h4>
-                    <form method="POST" action="<?php echo base_url('backoffice/login_process'); ?>"" class="needs-validation" novalidate="">
+                    <form method="POST" action="<?php echo base_url($lang . '/backoffice/login_process'); ?>"" class="needs-validation" novalidate="">
                         <div class="form-group">
                             <label for="">Username</label>
                             <input id="email" type="text" class="form-control" name="username" tabindex="1" required autofocus>

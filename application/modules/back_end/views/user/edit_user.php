@@ -3,9 +3,9 @@
     <section class="section">
         <div class="section-header">
             <div class="section-header-breadcrumb">
-                <div class="breadcrumb-item active"><a href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
+                <div class="breadcrumb-item active"><a href="<?php echo base_url($lang . '/backoffice/dashboard'); ?>">Dashboard</a></div>
 				<div class="breadcrumb-item"><a href="#">Setting</a></div>
-				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/setting/users'); ?>">Users</a></div>
+				<div class="breadcrumb-item"><a href="<?php echo base_url($lang . '/backoffice/setting/users'); ?>">Users</a></div>
                 <div class="breadcrumb-item">Edit User: <?php echo $user->username; ?></div>
             </div>
         </div>
@@ -18,7 +18,7 @@
                             <h4>Edit Project</h4>
                         </div>
                         <div class="card-body">
-							<form action="<?php echo base_url('backoffice/setting/users/update/' . $user->id); ?>" method="post">
+							<form action="<?php echo base_url($lang . '/backoffice/setting/users/update/' . $user->id); ?>" method="post">
 								<div style="padding-top: 20px;"><h6><i class="fa fa-tag"></i> Information</h6></div>
 								<hr>
 								<div class="form-group row">
@@ -50,7 +50,7 @@
 								</div>
 								<div class="text-right">
 									<button type="submit" class="btn btn-primary" id="btnSave" disabled>Save changes</button>
-									<a href="<?php echo base_url('backoffice/setting/users'); ?>" class="btn btn-secondary">Close</a>
+									<a href="<?php echo base_url($lang . '/backoffice/setting/users'); ?>" class="btn btn-secondary">Close</a>
 								</div>
 							</form>
                         </div>

@@ -7,6 +7,9 @@ class Authentication extends MX_Controller
 	public function __construct()
 	{
 		parent::__construct();
+
+		// Set Lang
+		$this->lang = $this->config->item('language_abbr');
 	}
 
 	public function index()
@@ -15,6 +18,7 @@ class Authentication extends MX_Controller
 		require_no_login('backoffice/dashboard');
 
 		$data['content'] = 'auth/login';
+		$data['lang'] = $this->lang;
 
 		$this->load->view('auth/login', $data);
 	}

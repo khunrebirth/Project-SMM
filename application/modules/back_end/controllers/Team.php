@@ -5,6 +5,7 @@ class Team extends MX_Controller
 {
 
 	private $data = false;
+	private $lang = 'th';
 
 	public function __construct()
 	{
@@ -29,6 +30,9 @@ class Team extends MX_Controller
 		$this->load->model('Team_model');
 		$this->load->model('Team_page_model');
 
+		// Language
+		$this->lang = $this->config->item('language_abbr');
+
 		/*
 		| -------------------------------------------------------------------------
 		| HANDLE
@@ -40,6 +44,7 @@ class Team extends MX_Controller
 
 	public function index()
 	{
+		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Page: Teams';
 		$this->data['content'] = 'teams/list';
 		$this->data['teams'] = $this->Team_model->get_team_all();
@@ -49,6 +54,7 @@ class Team extends MX_Controller
 
 	public function create()
 	{
+		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Page: Teams - Add';
 		$this->data['content'] = 'teams/list_create';
 		$this->data['teams'] = $this->Team_model->get_team_all();
@@ -97,15 +103,16 @@ class Team extends MX_Controller
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
 
-		redirect('backoffice/page/teams/list-teams');
+		redirect($this->lang . '/backoffice/page/teams/list-teams');
 	}
 
 	public function show() {}
 
-	public function edit($id)
+	public function edit($lang, $id)
 	{
 		$team = $this->Team_model->get_team_by_id($id);
 
+		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Page: Teams - Edit (' . $team->title . ')';
 		$this->data['content'] = 'teams/list_edit';
 		$this->data['team'] = $team;
@@ -113,7 +120,7 @@ class Team extends MX_Controller
 		$this->load->view('app', $this->data);
 	}
 
-	public function update($id)
+	public function update($lang, $id)
 	{
 		// Get Old data
 		$team = $this->Team_model->get_team_by_id($id);
@@ -158,10 +165,10 @@ class Team extends MX_Controller
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
 
-		redirect('backoffice/page/teams/list-teams');
+		redirect($lang . '/backoffice/page/teams/list-teams');
 	}
 
-	public function destroy($id)
+	public function destroy($lang, $id)
 	{
 		$status = 500;
 		$response['success'] = 0;
@@ -186,8 +193,9 @@ class Team extends MX_Controller
 			->set_output(json_encode($response));
 	}
 
-	public function edit_content($id)
+	public function edit_content($lang, $id)
 	{
+		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Page: Teams - Content - Edit';
 		$this->data['content'] = 'teams/content';
 		$this->data['page_content'] =  $this->Team_page_model->get_team_page_by_id($id);
@@ -195,7 +203,7 @@ class Team extends MX_Controller
 		$this->load->view('app', $this->data);
 	}
 
-	public function update_content($id)
+	public function update_content($lang, $id)
 	{
 		// Get Old data
 		$page_content = $this->Team_page_model->get_team_page_by_id($id);
@@ -242,7 +250,7 @@ class Team extends MX_Controller
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
 
-		redirect('backoffice/page/teams/content/' . $id);
+		redirect($lang . '/backoffice/page/teams/content/' . $id);
 	}
 
 	private function ddoo_upload_team($filename)

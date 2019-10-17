@@ -8,7 +8,7 @@
 	<section class="section">
 		<div class="section-header">
 			<div class="section-header-breadcrumb">
-				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
+				<div class="breadcrumb-item"><a href="<?php echo base_url($lang . '/backoffice/dashboard'); ?>">Dashboard</a></div>
 				<div class="breadcrumb-item"><a href="#">Page: Teams</a></div>
 				<div class="breadcrumb-item active">Teams</div>
 			</div>
@@ -20,7 +20,7 @@
 						<div class="card-header">
 							<h4>List of Team</h4>
 							<div class="card-header-action">
-								<a href="<?php echo base_url('backoffice/page/teams/list-teams/create'); ?>" class="btn btn-primary">
+								<a href="<?php echo base_url($lang . '/backoffice/page/teams/list-teams/create'); ?>" class="btn btn-primary">
 									<i class="fas fa-plus"></i> Add
 								</a>
 							</div>
@@ -60,8 +60,8 @@
 															<i class="fas fa-cog"></i> Manage
 														</button>
 														<div class="dropdown-menu">
-															<a class="dropdown-item has-icon" href="<?php echo base_url('backoffice/page/teams/list-teams/edit/' . $team->id); ?>"><i class="far fa-edit"></i> Edit</a>
-															<a class="dropdown-item has-icon" onclick="deleteTeam('<?php echo base_url('backoffice/page/teams/list-teams/destroy/' . $team->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
+															<a class="dropdown-item has-icon" href="<?php echo base_url($lang . '/backoffice/page/teams/list-teams/edit/' . $team->id); ?>"><i class="far fa-edit"></i> Edit</a>
+															<a class="dropdown-item has-icon" onclick="deleteTeam('<?php echo base_url($lang . '/backoffice/page/teams/list-teams/destroy/' . $team->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
 														</div>
 													</div>
 												</td>

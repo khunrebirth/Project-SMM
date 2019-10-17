@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Blog extends MX_Controller {
 
     private $data = false;
+	private $lang = 'th';
 
     public function __construct()
     {
@@ -28,6 +29,9 @@ class Blog extends MX_Controller {
         $this->load->model('Blog_model');
         $this->load->model('Blog_category_model');
 
+		// Language
+		$this->lang = $this->config->item('language_abbr');
+
 		/*
 		| -------------------------------------------------------------------------
 		| HANDLE
@@ -45,6 +49,7 @@ class Blog extends MX_Controller {
 
 	public function list_category_blog()
 	{
+		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Page: Blogs';
 		$this->data['content'] = 'blogs/category_list';
 		$this->data['categories'] = $this->Blog_category_model->get_blog_category_all();
@@ -54,6 +59,7 @@ class Blog extends MX_Controller {
 
     public function category_blog_create()
 	{
+		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Page: Blogs - Category - Add';
 		$this->data['content'] = 'blogs/category_create';
 
@@ -85,12 +91,14 @@ class Blog extends MX_Controller {
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
 
-		redirect('backoffice/page/blogs/list-category-blogs');
+		redirect($this->lang . '/backoffice/page/blogs/list-category-blogs');
 	}
 
-    public function category_blog_edit($blog_id)
+    public function category_blog_edit($lang, $blog_id)
 	{
 		$category = $this->Blog_category_model->get_blog_category_by_id($blog_id);
+
+		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Page: Blogs - Category - Edit ('. unserialize($category->title)['th'] . ')';
 		$this->data['content'] = 'blogs/category_edit';
 		$this->data['category'] = $category;
@@ -98,7 +106,7 @@ class Blog extends MX_Controller {
 		$this->load->view('app', $this->data);
 	}
 
-	public function category_blog_update($blog_id)
+	public function category_blog_update($lang, $blog_id)
 	{
 		// Filter Data
 		$input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
@@ -124,10 +132,10 @@ class Blog extends MX_Controller {
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
 
-		redirect('backoffice/page/blogs/list-category-blogs');
+		redirect($lang . '/backoffice/page/blogs/list-category-blogs');
 	}
 
-    public function category_blog_destroy($blog_id)
+    public function category_blog_destroy($lang, $blog_id)
     {
         $status = 500;
         $response['success'] = 0;
@@ -149,8 +157,9 @@ class Blog extends MX_Controller {
 	 * Blog
 	 * ********************************/
 
-	public function list_blog($blog_category_id)
+	public function list_blog($lang, $blog_category_id)
 	{
+		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Page: Blogs';
 		$this->data['content'] = 'blogs/blog_list';
 		$this->data['blogs'] = $this->Blog_model->get_blog_by_category_blog_id($blog_category_id);
@@ -159,8 +168,9 @@ class Blog extends MX_Controller {
 		$this->load->view('app', $this->data);
 	}
 
-	public function blog_create($blog_category_id)
+	public function blog_create($lang, $blog_category_id)
 	{
+		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Page: Blogs - Blogs - Add';
 		$this->data['content'] = 'blogs/blog_create';
 		$this->data['category'] =  $this->Blog_category_model->get_blog_category_by_id($blog_category_id);
@@ -168,7 +178,7 @@ class Blog extends MX_Controller {
 		$this->load->view('app', $this->data);
 	}
 
-	public function blog_store($blog_category_id)
+	public function blog_store($lang, $blog_category_id)
 	{
 		// Handle Image
 		$meta_og_image_en = '';
@@ -208,17 +218,15 @@ class Blog extends MX_Controller {
 
 		// Add Data
 		$add_blog = $this->Blog_model->insert_blog([
-			'meta_title' => serialize($input_meta_title),
-			'meta_description' => serialize($input_meta_description),
-			'meta_keyword' => serialize($input_meta_keyword),
+			'meta_tag_title' => serialize($input_meta_title),
+			'meta_tag_description' => serialize($input_meta_description),
+			'meta_tag_keywords' => serialize($input_meta_keyword),
 			'img_og_twitter' => serialize($input_img_og_twitter),
 			'img' => serialize($input_img),
 			'title' => serialize($input_title),
 			'description_section' => serialize($input_description_section),
 			'body' => serialize($input_body),
 			'slug' => serialize($slug),
-			'slug_en' => $slug_en,
-			'slug_th' => $slug_th,
 			'category_blog_id' => $blog_category_id
 		]);
 
@@ -237,13 +245,14 @@ class Blog extends MX_Controller {
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
 
-		redirect('backoffice/page/blogs/list-blogs/' . $blog_category_id);
+		redirect($lang . '/backoffice/page/blogs/list-blogs/' . $blog_category_id);
 	}
 
-	public function blog_edit($blog_category_id, $blog_id)
+	public function blog_edit($lang, $blog_category_id, $blog_id)
 	{
 		$blog = $this->Blog_model->get_blog_by_id($blog_id);
 
+		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Page: Blogs - Blogs - Edit(' . unserialize($blog->title)['th'] . ')';
 		$this->data['content'] = 'blogs/blog_edit';
 		$this->data['blog'] = $blog;
@@ -252,7 +261,7 @@ class Blog extends MX_Controller {
 		$this->load->view('app', $this->data);
 	}
 
-	public function blog_update($blog_category_id, $blog_id)
+	public function blog_update($lang, $blog_category_id, $blog_id)
 	{
 		// Get Old data
 		$blog = $this->Blog_model->get_blog_by_id($blog_id);
@@ -295,17 +304,15 @@ class Blog extends MX_Controller {
 
 		// Update Data
 		$update_blog = $this->Blog_model->update_blog_by_id($blog_id, [
-			'meta_title' => serialize($input_meta_title),
-			'meta_description' => serialize($input_meta_description),
-			'meta_keyword' => serialize($input_meta_keyword),
+			'meta_tag_title' => serialize($input_meta_title),
+			'meta_tag_description' => serialize($input_meta_description),
+			'meta_tag_keywords' => serialize($input_meta_keyword),
 			'img_og_twitter' => serialize($input_img_og_twitter),
 			'img' => serialize($input_img),
 			'title' => serialize($input_title),
 			'description_section' => serialize($input_description_section),
 			'body' => serialize($input_body),
 			'slug' => serialize($slug),
-			'slug_en' => $slug_en,
-			'slug_th' => $slug_th,
 			'updated_at' => date('Y-m-d H:i:s')
 		]);
 
@@ -324,10 +331,10 @@ class Blog extends MX_Controller {
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
 
-		redirect('backoffice/page/blogs/list-blogs/' . $blog_category_id);
+		redirect($this->lang . '/backoffice/page/blogs/list-blogs/' . $blog_category_id);
 	}
 
-	public function blog_destroy($blog_id)
+	public function blog_destroy($lang, $blog_id)
 	{
 		$status = 500;
 		$response['success'] = 0;

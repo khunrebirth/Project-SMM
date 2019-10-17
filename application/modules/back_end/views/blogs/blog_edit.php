@@ -9,10 +9,10 @@
 		<div class="section-header">
 			<h1>Edit: <?php echo unserialize($blog->title)['th']; ?></h1>
 			<div class="section-header-breadcrumb">
-				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
+				<div class="breadcrumb-item"><a href="<?php echo base_url($lang . '/backoffice/dashboard'); ?>">Dashboard</a></div>
 				<div class="breadcrumb-item"><a href="#">Page: Blogs</a></div>
-				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/blogs/list-category-blogs'); ?>">Categories</a></div>
-				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/blogs/list-blogs/' . $category->id); ?>">Blogs (Category: <?php echo unserialize($category->title)['th']; ?>)</a></div>
+				<div class="breadcrumb-item"><a href="<?php echo base_url($lang . '/backoffice/page/blogs/list-category-blogs'); ?>">Categories</a></div>
+				<div class="breadcrumb-item"><a href="<?php echo base_url($lang . '/backoffice/page/blogs/list-blogs/' . $category->id); ?>">Blogs (Category: <?php echo unserialize($category->title)['th']; ?>)</a></div>
 				<div class="breadcrumb-item active">Edit</div>
 			</div>
 		</div>
@@ -32,7 +32,7 @@
 								<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#handleEn">EN</a></li>
 							</ul>
 							<!-- Tab panes -->
-							<form class="form-horizontal" method="post" action="<?php echo base_url('backoffice/page/blogs/list-blogs/update/' . $category->id . '/' . $blog->id); ?>" enctype="multipart/form-data">
+							<form class="form-horizontal" method="post" action="<?php echo base_url($lang . '/backoffice/page/blogs/list-blogs/update/' . $category->id . '/' . $blog->id); ?>" enctype="multipart/form-data">
 								<div class="tab-content">
 									<div class="tab-pane active" id="handleTh">
 										<!-- Meta Tag -->
@@ -41,19 +41,19 @@
 										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Title</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="meta_title_th" placeholder="Meta Title" type="text" value="<?php echo unserialize($blog->meta_title)['th']; ?>">
+												<input class="form-control" name="meta_title_th" placeholder="Meta Title" type="text" value="<?php echo unserialize($blog->meta_tag_title)['th']; ?>">
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Description</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="meta_description_th" placeholder="Meta Description" type="text" value="<?php echo unserialize($blog->meta_description)['th']; ?>">
+												<input class="form-control" name="meta_description_th" placeholder="Meta Description" type="text" value="<?php echo unserialize($blog->meta_tag_description)['th']; ?>">
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Keywords</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="meta_keyword_th" placeholder="Meta Keywords" type="text" value="<?php echo unserialize($blog->meta_keyword)['th']; ?>">
+												<input class="form-control" name="meta_keyword_th" placeholder="Meta Keywords" type="text" value="<?php echo unserialize($blog->meta_tag_keywords)['th']; ?>">
 											</div>
 										</div>
 										<!-- OG & Twitter -->

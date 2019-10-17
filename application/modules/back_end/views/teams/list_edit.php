@@ -9,9 +9,9 @@
 		<div class="section-header">
 			<h1>Add New</h1>
 			<div class="section-header-breadcrumb">
-				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
+				<div class="breadcrumb-item"><a href="<?php echo base_url($lang . '/backoffice/dashboard'); ?>">Dashboard</a></div>
 				<div class="breadcrumb-item"><a href="#">Page: Teams</a></div>
-				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/teams/list-teams'); ?>">Teams</a></div>
+				<div class="breadcrumb-item"><a href="<?php echo base_url($lang . '/backoffice/page/teams/list-teams'); ?>">Teams</a></div>
 				<div class="breadcrumb-item active">Add New</div>
 			</div>
 		</div>
@@ -33,7 +33,7 @@
 								<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#handleEn">EN</a></li>
 							</ul>
 							<!-- Tab panes -->
-							<form class="form-horizontal" method="post" action="<?php echo base_url('backoffice/page/teams/list-teams/update/' . $team->id); ?>" enctype="multipart/form-data">
+							<form class="form-horizontal" method="post" action="<?php echo base_url($lang . '/backoffice/page/teams/list-teams/update/' . $team->id); ?>" enctype="multipart/form-data">
 								<div class="tab-content">
 									<div class="tab-pane active" id="handleTh">
 										<!-- Information -->
@@ -123,3 +123,17 @@
 
 <!-- Page Specific JS File -->
 <script src="<?php echo base_url('resources/back_end/assets/js/page/modules-datatables.js'); ?>"></script>
+
+<script>
+    function PreviewImage(input, previewImage) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader()
+
+            reader.onload = function (e) {
+                $('#' + previewImage).attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>

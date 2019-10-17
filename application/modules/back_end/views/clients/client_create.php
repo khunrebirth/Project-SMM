@@ -9,10 +9,10 @@
 		<div class="section-header">
 			<h1>Add New</h1>
 			<div class="section-header-breadcrumb">
-				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
+				<div class="breadcrumb-item"><a href="<?php echo base_url($lang . '/backoffice/dashboard'); ?>">Dashboard</a></div>
 				<div class="breadcrumb-item"><a href="#">Page: Clients</a></div>
-				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/clients/list-category-clients'); ?>">Categories</a></div>
-				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/clients/list-clients/' . $category->id); ?>">Client (Category: <?php echo unserialize($category->title)['th']; ?>)</a></div>
+				<div class="breadcrumb-item"><a href="<?php echo base_url($lang . '/backoffice/page/clients/list-category-clients'); ?>">Categories</a></div>
+				<div class="breadcrumb-item"><a href="<?php echo base_url($lang . '/backoffice/page/clients/list-clients/' . $category->id); ?>">Client (Category: <?php echo unserialize($category->title)['th']; ?>)</a></div>
 				<div class="breadcrumb-item active">Add</div>
 			</div>
 		</div>
@@ -34,7 +34,7 @@
 								<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#handleEn">EN</a></li>
 							</ul>
 							<!-- Tab panes -->
-							<form class="form-horizontal" method="post" action="<?php echo base_url('backoffice/page/clients/list-clients/store/' . $category->id); ?>" enctype="multipart/form-data">
+							<form class="form-horizontal" method="post" action="<?php echo base_url($lang . '/backoffice/page/clients/list-clients/store/' . $category->id); ?>" enctype="multipart/form-data">
 								<div class="tab-content">
 									<div class="tab-pane active" id="handleTh">
 										<!-- Information -->

@@ -8,9 +8,9 @@
 	<section class="section">
 		<div class="section-header">
 			<div class="section-header-breadcrumb">
-				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
+				<div class="breadcrumb-item"><a href="<?php echo base_url($lang . '/backoffice/dashboard'); ?>">Dashboard</a></div>
 				<div class="breadcrumb-item"><a href="#">Page: Blogs</a></div>
-				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/blogs/list-category-blogs'); ?>">Categories</a></div>
+				<div class="breadcrumb-item"><a href="<?php echo base_url($lang . '/backoffice/page/blogs/list-category-blogs'); ?>">Categories</a></div>
 				<div class="breadcrumb-item active">Blogs (Category: <?php echo unserialize($category->title)['th']; ?>)</div>
 			</div>
 		</div>
@@ -21,7 +21,7 @@
 						<div class="card-header">
 							<h4>List of Blogs</h4>
 							<div class="card-header-action">
-								<a href="<?php echo base_url('backoffice/page/blogs/list-blogs/create/' . $category->id); ?>" class="btn btn-primary">
+								<a href="<?php echo base_url($lang . '/backoffice/page/blogs/list-blogs/create/' . $category->id); ?>" class="btn btn-primary">
 									<i class="fas fa-plus"></i> Add
 								</a>
 							</div>
@@ -61,8 +61,8 @@
 															<i class="fas fa-cog"></i> Manage
 														</button>
 														<div class="dropdown-menu">
-															<a class="dropdown-item has-icon" href="<?php echo base_url('backoffice/page/blogs/list-blogs/edit/' . $blog->category_blog_id . '/' . $blog->id); ?>"><i class="far fa-edit"></i> Edit</a>
-															<a class="dropdown-item has-icon" onclick="deleteCategory('<?php echo base_url('backoffice/page/blogs/list-blogs/destroy/' . $blog->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
+															<a class="dropdown-item has-icon" href="<?php echo base_url($lang . '/backoffice/page/blogs/list-blogs/edit/' . $blog->category_blog_id . '/' . $blog->id); ?>"><i class="far fa-edit"></i> Edit</a>
+															<a class="dropdown-item has-icon" onclick="deleteCategory('<?php echo base_url($lang . '/backoffice/page/blogs/list-blogs/destroy/' . $blog->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
 														</div>
 													</div>
 												</td>
