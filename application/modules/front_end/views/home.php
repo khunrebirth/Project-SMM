@@ -1,8 +1,8 @@
 <!-- Home -->
 <header id="home">
 	<div class="container h-100">
-		<div class="row justify-content-center h-100 align-items-center">
-			<div class="col-8 text-center wow fadeInUp">
+		<div class="row justify-content-end h-100 align-items-center">
+			<div class="text-center wow fadeInUp">
 				<h1 class="home__title--head mb-3">Re<span>s</span>ults Driven <br> Marketing Agency</h1>
 				<p class="lead home__title--body">
 					จุดประกายให้ธุรกิจของคุณโลดแล่นบนโลกออนไลน์อย่างมืออาชีพด้วย <br>

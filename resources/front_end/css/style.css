@@ -246,7 +246,7 @@ a:hover {
 #home {
     height: 100vh;
     min-height: 500px;
-    background-image: url('http://localhost/social-dev/resources/front_end/images/slider-1.jpg');
+    background-image: url('http://localhost/social-dev/resources/front_end/images/home/brn_top_01.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
