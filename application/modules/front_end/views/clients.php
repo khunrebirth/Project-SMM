@@ -9,7 +9,7 @@
 <section id="client">
     <div class="container-fluid">
         <div class="title-client" style="text-align: center; padding: 4rem;">
-            <img src="<?php base_url() ?>resources/front_end/images/img-/images/title-cilent.png" alt="" class="img-fluid">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/img-/images/title-cilent.png' : 'resources/front_end/images/img-/images/title-cilent.png'); ?>" alt="" class="img-fluid">
         </div>
         <!-- tab -->
         <div class="row justify-content-center">
@@ -62,7 +62,7 @@
 <!-- SiteMap -->
 <?php include 'layouts/sitemap.php'; ?>
 
-<!-- Custom JS -->
+<!-- Push Custom Scripts -->
 <script>
     $(function () {
         $(".client__navs a:first").tab('show')

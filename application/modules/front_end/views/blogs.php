@@ -1,264 +1,160 @@
 <style>
-        
-    .sec-blogs-01 {
-        max-width: 1440px;
-        margin: 0 auto;
-    }
-    .blog {
-        margin-bottom: 30px;
-    }
-    .box-page-nation {
-        margin: 30px -2px 0;
-    }
-    .box-page-nation .page-link {
-        color: #756aee ;
-        font-size: 21px ;
-        border: none;
-        padding: 1rem 1.5rem;
-        background-color: #05618b;
-        color: #fff;
-        margin: 0 2px;
-    }
-    .box-page-nation .page-link:hover ,
-    .box-page-nation .page-link.active{
-        background-color: #2e7dab;
-        outline: none;
-        border: none;
-        box-shadow: none;
-    }
-    .box-page-nation .page-link:visited,
-    .box-page-nation .page-item:focus,
-    .box-page-nation .page-item:active,
-    .box-page-nation .page-item:hover ,
-    .box-page-nation .page-link:active ,
-    .box-page-nation .page-link:focus {
-        outline: none;
-        border: none;
-        box-shadow: none;
-    }
-    .box-page-nation .page-item:first-child .page-link,
-    .box-page-nation .page-item:last-child .page-link {
-        border-radius: 0;
-        -webkit-border-radius: 0;
-        -moz-border-radius: 0;
-        -ms-border-radius: 0;
-        -o-border-radius: 0;
-        border: none;
-    }
-    .box-blog_catagory {
-    position: relative;
-    max-width: 1440px;
-    width: 100%;
-    margin: 0 auto;
-    }
-    .list-blog_catagory {
-        list-style: none;
-        padding: 30px 0;
-        margin: 0 0 50px 0;
-        background-color: #05618b;
-        -webkit-box-shadow: 3px 3px 4px 0px #00000047;
-                box-shadow: 3px 3px 4px 0px #00000047;
-        width: 100%;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-            -ms-flex-align: center;
-                align-items: center;
-        padding: 10px 0 5px;
-        border-radius: 5px;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        -ms-border-radius: 5px;
-        -o-border-radius: 5px;
-    }
-    .list-blog_catagory li {
-        margin-bottom: 5px;
-    }
-    .list-blog_catagory li a {
-        padding: 10px;
-        display: block;
-        transition: all 0.3s;
-        -webkit-transition: all 0.3s;
-        -moz-transition: all 0.3s;
-        -ms-transition: all 0.3s;
-        -o-transition: all 0.3s;
-        text-align: center;
-        border-radius: 5px;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        -ms-border-radius: 5px;
-        -o-border-radius: 5px;
-        color: #fff;
-    }
-    .list-blog_catagory li a:hover {
-        background: #2e7dab;
-        color: #fff;
-    }
+	.sec-blogs-01 {
+		max-width: 1440px;
+		margin: 0 auto;
+	}
+
+	.blog {
+		margin-bottom: 30px;
+	}
+
+	.box-page-nation {
+		margin: 30px -2px 0;
+	}
+
+	.box-page-nation .page-link {
+		color: #756aee;
+		font-size: 21px;
+		border: none;
+		padding: 1rem 1.5rem;
+		background-color: #05618b;
+		color: #fff;
+		margin: 0 2px;
+	}
+
+	.box-page-nation .page-link:hover,
+	.box-page-nation .page-link.active {
+		background-color: #2e7dab;
+		outline: none;
+		border: none;
+		box-shadow: none;
+	}
+
+	.box-page-nation .page-link:visited,
+	.box-page-nation .page-item:focus,
+	.box-page-nation .page-item:active,
+	.box-page-nation .page-item:hover,
+	.box-page-nation .page-link:active,
+	.box-page-nation .page-link:focus {
+		outline: none;
+		border: none;
+		box-shadow: none;
+	}
+
+	.box-page-nation .page-item:first-child .page-link,
+	.box-page-nation .page-item:last-child .page-link {
+		border-radius: 0;
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+		-ms-border-radius: 0;
+		-o-border-radius: 0;
+		border: none;
+	}
+
+	.box-blog_catagory {
+		position: relative;
+		max-width: 1440px;
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	.list-blog_catagory {
+		list-style: none;
+		padding: 30px 0;
+		margin: 0 0 50px 0;
+		background-color: #05618b;
+		-webkit-box-shadow: 3px 3px 4px 0px #00000047;
+		box-shadow: 3px 3px 4px 0px #00000047;
+		width: 100%;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
+		padding: 10px 0 5px;
+		border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		-ms-border-radius: 5px;
+		-o-border-radius: 5px;
+	}
+
+	.list-blog_catagory li {
+		margin-bottom: 5px;
+	}
+
+	.list-blog_catagory li a {
+		padding: 10px;
+		display: block;
+		transition: all 0.3s;
+		-webkit-transition: all 0.3s;
+		-moz-transition: all 0.3s;
+		-ms-transition: all 0.3s;
+		-o-transition: all 0.3s;
+		text-align: center;
+		border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		-ms-border-radius: 5px;
+		-o-border-radius: 5px;
+		color: #fff;
+	}
+
+	.list-blog_catagory li a:hover {
+		background: #2e7dab;
+		color: #fff;
+	}
 
 
-    .title-client {
-        max-width: 1440px;
-        margin: 0 auto;
-    }
+	.title-client {
+		max-width: 1440px;
+		margin: 0 auto;
+	}
 </style>
 
 <!-- Title -->
 <section class="page-title" style="background-image:url(http://localhost/social-dev/resources/front_end/images/slider-1.jpg)">
-    <div class="container my-auto text-center wow fadeInUp">
-        <h1>Blogs Page</h1>
-    </div>
+	<div class="container my-auto text-center wow fadeInUp">
+		<h1><?php echo lang('page_blog'); ?></h1>
+	</div>
 </section>
 
-<!-- Blog -->
+<!-- Content -->
 <section id="blog">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="title-client col-12" style="text-align: center; padding: 4rem;">
-                <img src="<?php base_url() ?>resources/front_end/images/img-/images/title-blog.png" alt="" class="img-fluid">
-            </div>
-            <div class="box-blog_catagory col-12">
-                <ul class="list-blog_catagory row">
-                    <li class="col-lg-2 col-md-3 col-sm-12"><a href="">functions</a></li>
-                    <li class="col-lg-2 col-md-3 col-sm-12"><a href="">Query Language</a></li>
-                    <li class="col-lg-2 col-md-3 col-sm-12"><a href="">tutorial</a></li>
-                    <li class="col-lg-2 col-md-3 col-sm-12"><a href="">Hibernate</a></li>
-                    <li class="col-lg-2 col-md-3 col-sm-12"><a href="">methodologies</a></li>
-                    <li class="col-lg-2 col-md-3 col-sm-12"><a href="">object-oriented</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="sec-blogs-01">
-            <div class="row row-60 row-sm">
-                <div class="col-xs-12 col-sm-6 col-lg-3" style="visibility: visible; animation-name: fadeInLeft;">
-                    <article class="blog blog__modern"><a class="blog__modern--figure"><img
-                                    src="<?php base_url() ?>resources/front_end/images/example-blog-1.jpg" alt="" width="370"
-                                    height="307">
-                            <div class="blog__modern--time">
-                                <time datetime="2019-07-04"><span class="blog__modern--time--month">07</span><span
-                                            class="blog__modern--time--number">04</span></time>
-                            </div>
-                        </a>
-                        <h4 class="blog__modern--title"><a href="#">Benefits Of Async/Await</a></h4>
-                        <p class="blog__modern--text">
-                            Asynchronous functions are a good and bad thing in JavaScript. The good
-                            side is that asynchronous functions are non-blocking and…
-                        </p>
-                    </article>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-lg-3" data-wow-delay=".1s"
-                    style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
-                    <article class="blog blog__modern"><a class="blog__modern--figure"><img
-                                    src="<?php base_url() ?>resources/front_end/images/example-blog-2.jpg" alt="" width="370"
-                                    height="307">
-                            <div class="blog__modern--time">
-                                <time datetime="2019-07-17"><span class="blog__modern--time--month">07</span><span
-                                            class="blog__modern--time--number">17</span></time>
-                            </div>
-                        </a>
-                        <h4 class="blog__modern--title"><a href="#">Key Considerations Of iPaaS</a></h4>
-                        <p class="blog__modern--text">
-                            Digital transformation requires cloud appropriate adoption, legacy IT systems modernization, and
-                            Agile-based methodologies for faster…
-                        </p>
-                    </article>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-lg-3" data-wow-delay=".2s"
-                    style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
-                    <article class="blog blog__modern"><a class="blog__modern--figure"><img
-                                    src="<?php base_url() ?>resources/front_end/images/example-blog-3.jpg" alt="" width="370"
-                                    height="307">
-                            <div class="blog__modern--time">
-                                <time datetime="2019-07-22"><span class="blog__modern--time--month">07</span><span
-                                            class="blog__modern--time--number">22</span></time>
-                            </div>
-                        </a>
-                        <h4 class="blog__modern--title"><a href="#">Hibernate Query Language</a></h4>
-                        <p class="blog__modern--text">
-                            In this tutorial, we will discuss the Hibernate Query Language. HQL is an object-oriented query
-                            language. Hibernate Query...
-                        </p>
-                    </article>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-lg-3" data-wow-delay=".3s"
-                    style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
-                    <article class="blog blog__modern"><a class="blog__modern--figure"><img
-                                    src="<?php base_url() ?>resources/front_end/images/example-blog-1.jpg" alt="" width="370"
-                                    height="307">
-                            <div class="blog__modern--time">
-                                <time datetime="2019-07-22"><span class="blog__modern--time--month">07</span><span
-                                            class="blog__modern--time--number">22</span></time>
-                            </div>
-                        </a>
-                        <h4 class="blog__modern--title"><a href="#">Hibernate Query Language</a></h4>
-                        <p class="blog__modern--text">
-                            In this tutorial, we will discuss the Hibernate Query Language. HQL is an object-oriented query
-                            language. Hibernate Query...
-                        </p>
-                    </article>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-lg-3" data-wow-delay=".3s"
-                    style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
-                    <article class="blog blog__modern"><a class="blog__modern--figure"><img
-                                    src="<?php base_url() ?>resources/front_end/images/example-blog-1.jpg" alt="" width="370"
-                                    height="307">
-                            <div class="blog__modern--time">
-                                <time datetime="2019-07-22"><span class="blog__modern--time--month">07</span><span
-                                            class="blog__modern--time--number">22</span></time>
-                            </div>
-                        </a>
-                        <h4 class="blog__modern--title"><a href="#">Hibernate Query Language</a></h4>
-                        <p class="blog__modern--text">
-                            In this tutorial, we will discuss the Hibernate Query Language. HQL is an object-oriented query
-                            language. Hibernate Query...
-                        </p>
-                    </article>
-                </div>
-            </div>
-            
-            <div class="row row-60 row-sm text-center">
-                <div class="col-12  box-page-nation">
-                    <nav aria-label="Page navigation">
-                        <ul class="pagination">
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                </a>
-                            </li>
-                            <li class="page-item"><a class="page-link active" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="title-client col-12" style="text-align: center; padding: 4rem;">
+				<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/img-/images/title-blog.png' : 'resources/front_end/images/img-/images/title-blog.png'); ?>" alt="" class="img-fluid">
+			</div>
+			<div class="box-blog_catagory col-12">
+				<ul class="list-blog_catagory row">
+					<?php foreach ($blog_categories as $blog_category) { ?>
+						<li class="col-lg-2 col-md-3 col-sm-12"><a href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/' . unserialize($blog_category->slug)[$lang] . '/' . hashids_encrypt($blog_category->id)); ?>"><?php echo unserialize($blog_category->title)[$lang]; ?></a></li>
+					<?php } ?>
+				</ul>
+			</div>
+		</div>
+		<div class="sec-blogs-01">
+			<div class="row row-60 row-sm">
+				<?php foreach ($blogs as $blog) { ?>
+					<div class="col-xs-12 col-sm-6 col-lg-3" style="visibility: visible; animation-name: fadeInLeft;">
+						<article class="blog blog__modern">
+							<a class="blog__modern--figure" href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/' . unserialize($blog->blog_category_slug)[$lang] . '/' .  unserialize($blog->slug)[$lang] . '/' . hashids_encrypt($blog->id)); ?>">
+								<img src="<?php echo base_url('storage/uploads/images/blogs/' . unserialize($blog->img)[$lang]) ?>" alt="<?php echo unserialize($blog->img_title_alt)[$lang]; ?>" width="370" height="307">
+								<div class="blog__modern--time">
+									<time datetime="<?php echo $blog->created_at; ?>"><span class="blog__modern--time--month"><?php echo date_format(date_create($blog->created_at), 'm'); ?></span><span class="blog__modern--time--number"><?php echo date_format(date_create($blog->created_at), 'd'); ?></span></time>
+								</div>
+							</a>
+							<h4 class="blog__modern--title"><a href="#"><?php echo unserialize($blog->title)[$lang]; ?></a></h4>
+							<p class="blog__modern--text">
+								<?php echo unserialize($blog->description_section)[$lang]; ?>
+							</p>
+						</article>
+					</div>
+				<?php } ?>
+			</div>
+		</div>
+	</div>
 </section>
 
 <!-- SiteMap -->
-<div id="accordion">
-    <div class="card text-center" style="background: #00264c; color: #fff; border-radius: 0;">
-        <div class="card-header" id="headingOne" style="padding-top: 0px; padding-bottom: 0px;">
-            <h5 class="mb-0">
-                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                        aria-controls="collapseOne" style="color: #fff;">
-                    Site map <i class="fas fa-plus-circle"></i>
-                </button>
-            </h5>
-        </div>
-        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-            <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-                Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-                shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-                proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-                aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-            </div>
-        </div>
-    </div>
-</div>
+<?php include 'layouts/sitemap.php'; ?>

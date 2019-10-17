@@ -19,7 +19,25 @@ class Blog_model extends CI_Model {
 
 	public function get_blog_by_category_blog_id($category_blog_id)
 	{
-		$query = $this->db->where('category_blog_id', $category_blog_id)->get('blogs');
+		$query = $this->db
+				->select('blogs.*, blog_categories.slug as blog_category_slug')
+				->from('blogs')
+				->join('blog_categories', 'blog_categories.id = blogs.category_blog_id')
+				->where('blogs.category_blog_id', $category_blog_id)
+				->get();
+
+		return $query->num_rows() > 0 ? $query->result() : [];
+	}
+
+	public function get_last_blog()
+	{
+		$query = $this->db
+			->select('blogs.*, blog_categories.slug as blog_category_slug')
+			->from('blogs')
+			->join('blog_categories', 'blog_categories.id = blogs.category_blog_id')
+			->limit(5)
+			->order_by('created_at', 'desc')
+			->get();
 
 		return $query->num_rows() > 0 ? $query->result() : [];
 	}

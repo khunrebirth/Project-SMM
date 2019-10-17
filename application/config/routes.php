@@ -79,9 +79,12 @@ $route['(\w{2})/clients'] = 'front_end/Clients';
 $route['(\w{2})/ลูกค้าของเรา'] = 'front_end/Clients';
 
 // Blogs
-$route['(\w{2})blogs'] = 'front_end/Blogs';
+$route['(\w{2})/blogs'] = 'front_end/Blogs';
 $route['(\w{2})/บทความ'] = 'front_end/Blogs';
-$route['(\w{2})/blogs/(:any)/(:any)'] = 'front_end/Blogs/$1/$2/$3';
+$route['(\w{2})/blogs/(:any)/(:any)'] = 'front_end/Blogs/category_show/$1/$2/$3';
+$route['(\w{2})/บทความ/(:any)/(:any)'] = 'front_end/Blogs/category_show/$1/$2/$3';
+$route['(\w{2})/blogs/(:any)/(:any)/(:any)'] = 'front_end/Blogs/blog_show/$1/$2/$3/$4';
+$route['(\w{2})/บทความ/(:any)/(:any)/(:any)'] = 'front_end/Blogs/blog_show/$1/$2/$3/$4';
 
 // Teams
 $route['(\w{2})/teams'] = 'front_end/Teams';
