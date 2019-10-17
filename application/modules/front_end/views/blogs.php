@@ -45,6 +45,60 @@
         -o-border-radius: 0;
         border: none;
     }
+    .box-blog_catagory {
+    position: relative;
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    }
+    .list-blog_catagory {
+        list-style: none;
+        padding: 30px 0;
+        margin: 0 0 50px 0;
+        background-color: #05618b;
+        -webkit-box-shadow: 3px 3px 4px 0px #00000047;
+                box-shadow: 3px 3px 4px 0px #00000047;
+        width: 100%;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        padding: 10px 0 5px;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+    }
+    .list-blog_catagory li {
+        margin-bottom: 5px;
+    }
+    .list-blog_catagory li a {
+        padding: 10px;
+        display: block;
+        transition: all 0.3s;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        text-align: center;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        color: #fff;
+    }
+    .list-blog_catagory li a:hover {
+        background: #2e7dab;
+        color: #fff;
+    }
+
+
+    .title-client {
+        max-width: 1440px;
+        margin: 0 auto;
+    }
 </style>
 
 <!-- Title -->
