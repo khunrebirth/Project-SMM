@@ -10,7 +10,7 @@
     <section class="section">
         <div class="section-header">
             <div class="section-header-breadcrumb">
-                <div class="breadcrumb-item active"><a href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
+                <div class="breadcrumb-item active"><a href="<?php echo base_url($lang . '/backoffice/dashboard'); ?>">Dashboard</a></div>
                 <div class="breadcrumb-item"><a href="#">Setting</a></div>
                 <div class="breadcrumb-item">Users</div>
             </div>
@@ -23,7 +23,7 @@
                         <div class="card-header">
                             <h4>List of User</h4>
                             <div class="card-header-action">
-                                <a href="<?php echo base_url('backoffice/setting/users/create'); ?>"
+                                <a href="<?php echo base_url($lang . '/backoffice/setting/users/create'); ?>"
                                    class="btn btn-primary">
                                     <i class="fas fa-plus"></i> Add
                                 </a>
@@ -65,8 +65,8 @@
                                                             <i class="fas fa-cog"></i> Manage
                                                         </button>
                                                         <div class="dropdown-menu">
-                                                            <a class="dropdown-item has-icon" href="<?php echo base_url('backoffice/setting/users/edit/' . $user->id); ?>"><i class="far fa-edit"></i> Edit</a>
-                                                            <a class="dropdown-item has-icon" onclick="deleteUser('<?php echo base_url('backoffice/setting/users/destroy/' . $user->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
+                                                            <a class="dropdown-item has-icon" href="<?php echo base_url($lang . '/backoffice/setting/users/edit/' . $user->id); ?>"><i class="far fa-edit"></i> Edit</a>
+                                                            <a class="dropdown-item has-icon" onclick="deleteUser('<?php echo base_url($lang . '/backoffice/setting/users/destroy/' . $user->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
                                                         </div>
                                                     </div>
                                                 </td>

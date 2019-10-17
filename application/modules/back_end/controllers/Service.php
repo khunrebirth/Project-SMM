@@ -5,6 +5,7 @@ class Service extends MX_Controller
 {
 
 	private $data = false;
+	private $lang = 'th';
 
 	public function __construct()
 	{
@@ -28,6 +29,9 @@ class Service extends MX_Controller
 		$this->load->model('User_model');
 		$this->load->model('Service_page_model');
 
+		// Language
+		$this->lang = $this->config->item('language_abbr');
+
 		/*
 		| -------------------------------------------------------------------------
 		| HANDLE
@@ -37,8 +41,9 @@ class Service extends MX_Controller
 		$this->data['user'] = $this->User_model->get_user_by_id($this->session->userdata('user_id'));
 	}
 
-	public function edit_content($id)
+	public function edit_content($lang, $id)
 	{
+		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Page: Services - Content - Edit';
 		$this->data['content'] = 'services/content';
 		$this->data['page_content'] =  $this->Service_page_model->get_service_page_by_id($id);
@@ -46,7 +51,7 @@ class Service extends MX_Controller
 		$this->load->view('app', $this->data);
 	}
 
-	public function update_content($id)
+	public function update_content($lang, $id)
 	{
 		// Get Old data
 		$page_content = $this->Service_page_model->get_service_page_by_id($id);
@@ -93,7 +98,7 @@ class Service extends MX_Controller
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
 
-		redirect('backoffice/page/services/content/' . $id);
+		redirect($lang . '/backoffice/page/services/content/' . $id);
 	}
 
 	private function ddoo_upload_client($filename)

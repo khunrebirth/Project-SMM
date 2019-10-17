@@ -3,7 +3,7 @@
     <section class="section">
         <div class="section-header">
             <div class="section-header-breadcrumb">
-                <div class="breadcrumb-item active"><a href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
+                <div class="breadcrumb-item active"><a href="<?php echo base_url($lang . '/backoffice/dashboard'); ?>">Dashboard</a></div>
 				<div class="breadcrumb-item"><a href="#">Setting</a></div>
 				<div class="breadcrumb-item"><a href="#">Profile</a></div>
                 <div class="breadcrumb-item">Edit</div>
@@ -18,7 +18,7 @@
                             <h4>Change Password</h4>
                         </div>
                         <div class="card-body">
-                            <form action="<?php echo base_url('backoffice/setting/profile/update/' . $profile->id); ?>" method="post">
+                            <form action="<?php echo base_url($lang . '/backoffice/setting/profile/update/' . $profile->id); ?>" method="post">
                                 <div style="padding-top: 20px;"><h6><i class="fa fa-tag"></i> Information</h6></div>
                                 <hr>
                                 <div class="form-group row">

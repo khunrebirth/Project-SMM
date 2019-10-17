@@ -45,73 +45,62 @@
 <section id="service" class="wow fadeInUp">
 	<div class="container-fluid text-center sec-home-service">
 		<div class="title-service" style="text-align: left; padding: 4rem 0;">
-			<img src="<?php base_url() ?>resources/front_end/images/img-/images/title-service.png" alt=""
-				 class="img-fluid">
+			<img src="<?php echo base_url('resources/front_end/images/img-/images/title-service.png') ?>" alt="" class="img-fluid">
 		</div>
 		<div class="row mb-5">
 			<div class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
-				<img src="<?php base_url() ?>resources/front_end/images/home/ico_facebook_01.png" alt=""
-					 class="img-fluid service__icon--resize">
+				<img src="<?php echo base_url('resources/front_end/images/home/ico_facebook_01.png') ?>" alt="" class="img-fluid service__icon--resize">
 				<p class="service__title--body">
 					Social Media Marketing
 				</p>
 			</div>
 			<div class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
-				<img src="<?php base_url() ?>resources/front_end/images/home/ico_seo_01.png" alt=""
-					 class="img-fluid service__icon--resize">
+				<img src="<?php echo base_url('resources/front_end/images/home/ico_seo_01.png') ?>" alt="" class="img-fluid service__icon--resize">
 				<p class="service__title--body">
 					Search Engine Marketing
 				</p>
 			</div>
 			<div class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
-				<img src="<?php base_url() ?>resources/front_end/images/home/ico_line_01.png" alt=""
-					 class="img-fluid service__icon--resize">
+				<img src="<?php echo base_url('resources/front_end/images/home/ico_line_01.png') ?>" alt="" class="img-fluid service__icon--resize">
 				<p class="service__title--body">
 					Line Marketing
 				</p>
 			</div>
 			<div class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
-				<img src="<?php base_url() ?>resources/front_end/images/home/ico_sem_01.png" alt=""
-					 class="img-fluid service__icon--resize">
+				<img src="<?php echo base_url('resources/front_end/images/home/ico_sem_01.png') ?>" alt="" class="img-fluid service__icon--resize">
 				<p class="service__title--body">
 					Search Engine Optimization
 				</p>
 			</div>
 			<div class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
-				<img src="<?php base_url() ?>resources/front_end/images/home/ico_production_01.png" alt=""
-					 class="img-fluid service__icon--resize">
+				<img src="<?php echo base_url('resources/front_end/images/home/ico_production_01.png') ?>" alt="" class="img-fluid service__icon--resize">
 				<p class="service__title--body">
 					Creative & Production
 				</p>
 			</div>
 			<div class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
-				<img src="<?php base_url() ?>resources/front_end/images/home/ico_web_01.png" alt=""
-					 class="img-fluid service__icon--resize">
+				<img src="<?php echo base_url('resources/front_end/images/home/ico_web_01.png') ?>" alt="" class="img-fluid service__icon--resize">
 				<p class="service__title--body">
 					Website design
 				</p>
 			</div>
 			<div class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
-				<img src="<?php base_url() ?>resources/front_end/images/home/ico_consult_01.png" alt=""
-					 class="img-fluid service__icon--resize">
+				<img src="<?php echo base_url('resources/front_end/images/home/ico_consult_01.png') ?>" alt="" class="img-fluid service__icon--resize">
 				<p class="service__title--body">
 					บริการให้คำแนะนำปรึกษา และวางแผนการตลาดออนไลน์
 				</p>
 			</div>
 			<div class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
-				<img src="<?php base_url() ?>resources/front_end/images/home/ico_speak_01.png" alt=""
-					 class="img-fluid service__icon--resize">
+				<img src="<?php echo base_url('resources/front_end/images/home/ico_speak_01.png') ?>" alt="" class="img-fluid service__icon--resize">
 				<p class="service__title--body">
 					Speaker
 				</p>
 			</div>
 			<div class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
-				<img src="<?php base_url() ?>resources/front_end/images/home/ico_setting_01.png" alt=""
-					 class="img-fluid service__icon--resize">
+				<img src="<?php echo base_url('resources/front_end/images/home/ico_setting_01.png') ?>" alt="" class="img-fluid service__icon--resize">
 			</div>
 			<div class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
-				<img src="<?php base_url() ?>resources/front_end/images/home/ico_contact_01.png" alt=""
-					 class="img-fluid service__icon--resize">
+				<img src="<?php echo base_url('resources/front_end/images/home/ico_contact_01.png') ?>" alt="" class="img-fluid service__icon--resize">
 			</div>
 		</div>
 	</div>
@@ -121,111 +110,52 @@
 <section id="client" class="wow fadeInUp">
 	<div class="container-fluid">
 		<div class="title-client" style="text-align: center; padding: 4rem;">
-			<img src="<?php base_url() ?>resources/front_end/images/img-/images/title-cilent.png" alt=""
-				 class="img-fluid">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/img-/images/title-cilent.png' : 'resources/front_end/images/img-/images/title-cilent.png'); ?>" alt="" class="img-fluid">
 		</div>
 		<!-- tab -->
 		<div class="row justify-content-center">
 			<div class="col-xs-12 col-sm-12 col-md-10 col-lg-8">
 				<!-- Nav tabs -->
 				<ul class="nav nav-fill client__navs bg-gray pt-2 pb-2">
-					<li class="nav-item">
-						<a class="nav-link active client__navs--border--right pt-0 pb-0" id="pills-seo-tab"
-						   data-toggle="pill" href="#pills-seo" role="tab" aria-controls="pills-seo"
-						   aria-selected="true">SEO & SEM</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link client__navs--border--right pt-0 pb-0" id="pills-social-tab"
-						   data-toggle="pill" href="#pills-social" role="tab" aria-controls="pills-social"
-						   aria-selected="false">Social media</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link client__navs--border--right pt-0 pb-0" id="pills-web-tab" data-toggle="pill"
-						   href="#pills-web" role="tab" aria-controls="pills-web"
-						   aria-selected="false">พัฒนาเว็บไซต์</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link pt-0 pb-0" id="pills-page-tab" data-toggle="pill" href="#pills-page"
-						   role="tab" aria-controls="pills-page" aria-selected="false">Landing Page</a>
-					</li>
+					<?php foreach ($client_categories as $client_category) { ?>
+						<li class="nav-item">
+							<a class="nav-link client__navs--border--right pt-0 pb-0" id="pills-<?php echo $client_category->id; ?>-tab" data-toggle="pill" href="#pills-<?php echo $client_category->id; ?>" role="tab" aria-controls="pills-<?php echo $client_category->id; ?>"><?php echo unserialize($client_category->title)[$lang]; ?></a>
+						</li>
+					<?php } ?>
 				</ul>
 			</div>
 		</div>
 		<!-- content tab-->
 		<div class="tab-content" id="pills-tabContent">
-			<div class="tab-pane fade show active" id="pills-seo" role="tabpanel" aria-labelledby="pills-seo-tab">
+			<?php foreach ($clients as $client) { ?>
+			<div class="tab-pane fade" id="pills-<?php echo $client['category_id']; ?>" role="tabpanel" aria-labelledby="pills-<?php echo $client['category_id']; ?>-tab">
+				<?php if (count($client['clients']) > 0) { ?>
+			<?php
+			$counter = 1;
+			$total = count($client['clients']);
+			?>
+			<?php foreach ($client['clients'] as $key => $client_specific) { ?>
+			<?php if ($counter == 1) { ?>
 				<div class="row mt-5">
+					<?php } ?>
 					<div class="col text-center">
-						<img src="<?php base_url() ?>resources/front_end/images/img-/images/logo/smm-fashion.jpg"
-							 alt="AIS Our Clients" class="img-clients">
+						<img src="<?php echo base_url('storage/uploads/images/clients/' . $client_specific['img']) ?>" alt="<?php echo $client_specific['title']; ?>" class="img-clients">
 					</div>
-					<div class="col text-center">
-						<img src="<?php base_url() ?>resources/front_end/images/img-/images/logo/smm-pmn.jpg"
-							 alt="Allianz Ayudhya Our Clients" class="img-clients">
-					</div>
-					<div class="col text-center">
-						<img src="<?php base_url() ?>resources/front_end/images/img-/images/logo/smm-western.jpg"
-							 alt="Berkeley GroupOur Clients" class="img-clients">
-					</div>
-					<div class="col text-center">
-						<img src="<?php base_url() ?>resources/front_end/images/img-/images/logo/smm-tceb.jpg"
-							 alt="Blue Elephant Our Clients" class="img-clients">
-					</div>
-					<div class="col text-center">
-						<img src="<?php base_url() ?>resources/front_end/images/img-/images/logo/mock1_12.jpg"
-							 alt="dtac Our Clients" class="img-clients">
-					</div>
+					<?php
+					if ($counter == 5) {
+						echo '</div>';
+						$counter = 1;
+					} else {
+						if ($total == ($key + 1)) {
+							echo '</div>';
+						}
+
+						$counter++;
+					} ?>
+					<?php } ?>
+					<?php } ?>
 				</div>
-				<div class="row mt-3">
-					<div class="col text-center">
-						<img src="<?php base_url() ?>resources/front_end/images/img-/images/logo/smm-lalin.jpg"
-							 alt="Berkeley GroupOur Clients" class="img-clients">
-					</div>
-					<div class="col text-center">
-						<img src="<?php base_url() ?>resources/front_end/images/img-/images/logo/smm-tara.jpg"
-							 alt="Blue Elephant Our Clients" class="img-clients">
-					</div>
-					<div class="col text-center">
-						<img src="<?php base_url() ?>resources/front_end/images/img-/images/logo/smm-sathaporn.jpg"
-							 alt="City Bank Our Clients" class="img-clients">
-					</div>
-					<div class="col text-center">
-						<img src="<?php base_url() ?>resources/front_end/images/img-/images/logo/smm-lh.jpg"
-							 alt="dtac Our Clients" class="img-clients">
-					</div>
-					<div class="col text-center">
-						<img src="<?php base_url() ?>resources/front_end/images/img-/images/logo/mock1_03.jpg"
-							 alt="dtac Our Clients" class="img-clients">
-					</div>
-				</div>
-			</div>
-			<div class="tab-pane fade" id="pills-social" role="tabpanel" aria-labelledby="pills-social-tab">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							2
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="tab-pane fade" id="pills-web" role="tabpanel" aria-labelledby="pills-web-tab">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							3
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="tab-pane fade" id="pills-page" role="tabpanel" aria-labelledby="pills-page-tab">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							4
-						</div>
-					</div>
-				</div>
-			</div>
+				<?php } ?>
 		</div>
 	</div>
 </section>
@@ -234,76 +164,25 @@
 <section id="blog">
 	<div class="container-fluid">
 		<div class="title-client" style="text-align: center; padding: 4rem;">
-			<img src="<?php base_url() ?>resources/front_end/images/img-/images/title-blog.png" alt=""
-				 class="img-fluid">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/img-/images/title-blog.png' : 'resources/front_end/images/img-/images/title-blog.png'); ?>" alt="" class="img-fluid">
 		</div>
 		<div class="row row-60 row-sm">
-			<div class="col-xs-12 col-sm-6 col-lg-3 wow fadeInLeft"
-				 style="visibility: visible; animation-name: fadeInLeft;">
-				<article class="blog blog__modern"><a class="blog__modern--figure"><img
-							src="<?php base_url() ?>resources/front_end/images/example-blog-1.jpg" alt="" width="370"
-							height="307">
-						<div class="blog__modern--time">
-							<time datetime="2019-07-04"><span class="blog__modern--time--month">07</span><span
-									class="blog__modern--time--number">04</span></time>
-						</div>
-					</a>
-					<h4 class="blog__modern--title"><a href="#">Benefits Of Async/Await</a></h4>
-					<p class="blog__modern--text">
-						Asynchronous functions are a good and bad thing in JavaScript. The good
-						side is that asynchronous functions are non-blocking and…
-					</p>
-				</article>
-			</div>
-			<div class="col-xs-12 col-sm-6 col-lg-3 wow fadeInLeft" data-wow-delay=".1s"
-				 style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
-				<article class="blog blog__modern"><a class="blog__modern--figure"><img
-							src="<?php base_url() ?>resources/front_end/images/example-blog-2.jpg" alt="" width="370"
-							height="307">
-						<div class="blog__modern--time">
-							<time datetime="2019-07-17"><span class="blog__modern--time--month">07</span><span
-									class="blog__modern--time--number">17</span></time>
-						</div>
-					</a>
-					<h4 class="blog__modern--title"><a href="#">Key Considerations Of iPaaS</a></h4>
-					<p class="blog__modern--text">Digital transformation requires cloud appropriate adoption, legacy IT
-						systems modernization, and Agile-based methodologies for faster…
-					</p>
-				</article>
-			</div>
-			<div class="col-xs-12 col-sm-6 col-lg-3 wow fadeInLeft" data-wow-delay=".2s"
-				 style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
-				<article class="blog blog__modern"><a class="blog__modern--figure"><img
-							src="<?php base_url() ?>resources/front_end/images/example-blog-3.jpg" alt="" width="370"
-							height="307">
-						<div class="blog__modern--time">
-							<time datetime="2019-07-22"><span class="blog__modern--time--month">07</span><span
-									class="blog__modern--time--number">22</span></time>
-						</div>
-					</a>
-					<h4 class="blog__modern--title"><a href="#">Hibernate Query Language</a></h4>
-					<p class="blog__modern--text">In this tutorial, we will discuss the Hibernate Query Language. HQL is
-						an object-oriented query language. Hibernate Query...
-					</p>
-				</article>
-			</div>
-			<div class="col-xs-12 col-sm-6 col-lg-3 wow fadeInLeft" data-wow-delay=".3s"
-				 style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
-				<article class="blog blog__modern"><a class="blog__modern--figure"><img
-							src="<?php base_url() ?>resources/front_end/images/example-blog-1.jpg" alt="" width="370"
-							height="307">
-						<div class="blog__modern--time">
-							<time datetime="2019-07-22"><span class="blog__modern--time--month">07</span><span
-									class="blog__modern--time--number">22</span></time>
-						</div>
-					</a>
-					<h4 class="blog__modern--title"><a href="#">Hibernate Query Language</a></h4>
-					<p class="blog__modern--text">
-						In this tutorial, we will discuss the Hibernate Query Language. HQL is an object-oriented query
-						language. Hibernate Query...
-					</p>
-				</article>
-			</div>
+			<?php foreach ($blogs as $blog) { ?>
+				<div class="col-xs-12 col-sm-6 col-lg-3" style="visibility: visible; animation-name: fadeInLeft;">
+					<article class="blog blog__modern">
+						<a class="blog__modern--figure" href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/' . unserialize($blog->blog_category_slug)[$lang] . '/' .  unserialize($blog->slug)[$lang] . '/' . hashids_encrypt($blog->id)); ?>">
+							<img src="<?php echo base_url('storage/uploads/images/blogs/' . unserialize($blog->img)[$lang]) ?>" alt="<?php echo unserialize($blog->img_title_alt)[$lang]; ?>" width="370" height="307">
+							<div class="blog__modern--time">
+								<time datetime="<?php echo $blog->created_at; ?>"><span class="blog__modern--time--month"><?php echo date_format(date_create($blog->created_at), 'm'); ?></span><span class="blog__modern--time--number"><?php echo date_format(date_create($blog->created_at), 'd'); ?></span></time>
+							</div>
+						</a>
+						<h4 class="blog__modern--title"><a href="#"><?php echo unserialize($blog->title)[$lang]; ?></a></h4>
+						<p class="blog__modern--text">
+							<?php echo unserialize($blog->description_section)[$lang]; ?>
+						</p>
+					</article>
+				</div>
+			<?php } ?>
 		</div>
 	</div>
 </section>
@@ -360,8 +239,7 @@
 			</div>
 			<div class="item-team-ttl col-lg-4 col-sm-12">
 				<div class="title-team" style="text-align: center; padding: 4rem;">
-					<img src="<?php base_url() ?>resources/front_end/images/img-/images/title-team.png" alt=""
-						 class="img-fluid">
+					<img src="<?php base_url() ?>resources/front_end/images/img-/images/title-team.png" alt="" class="img-fluid">
 				</div>
 			</div>
 		</div>
@@ -372,80 +250,68 @@
 <section id="contact" class="wow fadeInUp">
 	<div class="container">
 		<div class="title-contact" style="text-align: center; padding: 4rem;">
-			<img src="<?php base_url() ?>resources/front_end/images/img-/images/title-contact.png" alt=""
-				 class="img-fluid">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/img-/images/title-contact.png' : 'resources/front_end/images/img-/images/title-contact.png'); ?>" alt="" class="img-fluid">
 		</div>
 		<div class="row">
 			<div class="col-xs-12 col-md-6 col-lg-6 ">
 				<div class="row">
 					<div class="col-xs-12 col-md-4 col-lg-4 d-none d-sm-block">
-						<img src="https://www.anchorwave.com/wp-content/uploads/2016/04/google-partner358x138.png"
-							 alt="Follow Us on Facebook" class="img-fluid m-2">
+						<img src="https://www.anchorwave.com/wp-content/uploads/2016/04/google-partner358x138.png" alt="Follow Us on Facebook" class="img-fluid m-2">
 					</div>
 					<div class="col-xs-12 col-md-8 col-lg8 d-none d-sm-block">
 						<h2 class="text-secondary d-none d-sm-none d-md-none d-lg-block" style="font-size:1.2rem;">
 							specialized in :
 						</h2>
-						<img src="http://www.clixmarketing.com/blog/wp-content/uploads/2015/02/photo.png"
-							 alt="Follow Us on Facebook" class="img-fluid m-2" style="width: 40px;">
-						<img src="https://knockconsulting.com/images/icon-sm-instagram-round.svg"
-							 alt="Follow Us on Instagram" class="img-fluid m-2" style="width: 40px;">
-						<img
-							src="https://b2bm.s3.amazonaws.com/styles/default_image/s3/youtube-icon-full_color.png?itok=3QLCT4W_"
-							alt="Follow Us on Youtube" class="img-fluid m-2" style="width: 40px;">
-						<img src="https://knockconsulting.com/images/icon-sm-linkedin-round.svg"
-							 alt="Follow Us on Linkedin" class="img-fluid m-2" style="width: 40px;">
-						<img src="https://knockconsulting.com/images/google-plus.svg" alt="Follow Us on Google Plus"
-							 class="img-fluid m-2" style="width: 40px;">
+						<img src="http://www.clixmarketing.com/blog/wp-content/uploads/2015/02/photo.png" alt="Follow Us on Facebook" class="img-fluid m-2" style="width: 40px;">
+						<img src="https://knockconsulting.com/images/icon-sm-instagram-round.svg" alt="Follow Us on Instagram" class="img-fluid m-2" style="width: 40px;">
+						<img src="https://b2bm.s3.amazonaws.com/styles/default_image/s3/youtube-icon-full_color.png?itok=3QLCT4W_" alt="Follow Us on Youtube" class="img-fluid m-2" style="width: 40px;">
+						<img src="https://knockconsulting.com/images/icon-sm-linkedin-round.svg" alt="Follow Us on Linkedin" class="img-fluid m-2" style="width: 40px;">
+						<img src="https://knockconsulting.com/images/google-plus.svg" alt="Follow Us on Google Plus" class="img-fluid m-2" style="width: 40px;">
 					</div>
 				</div>
-				<h2 class="text-secondary contact__title--head mt-3 mb-3">Social Medie Master Co.,Ltd</h2>
+				<h2 class="text-secondary contact__title--head mt-3 mb-3"><?php echo lang('page_contact_company'); ?></h2>
 				<p class="text-secondary contact__title--bod mb-0">
-					290/25 หมู่บ้านกลางเมืองเอสเซ้น ลาดพร้าว 84 ถ.ประดิษฐ์มนูธรรม <br>
-					เขตวังทองหลาง แขวงวังทองหลาง กรุงเทพฯ 10310 <br><br>
-					<strong>โทร.</strong> 0-2193-9062 (5 line) <br>
-					<strong>โทรสาร.</strong> 0-2193-9047 <br>
-					<strong>อีเมล์.</strong> info@social.co.th <br><br>
+					<?php echo lang('page_contact_address_detail'); ?>
+					<strong><?php echo lang('page_contact_phone'); ?>.</strong> 0-2193-9062 (5 line) <br>
+					<strong><?php echo lang('page_contact_fax'); ?>.</strong> 0-2193-9047 <br>
+					<strong><?php echo lang('page_contact_email'); ?>.</strong> info@social.co.th <br><br>
 				</p>
 				<div class="row mb-5">
 					<div class="col-12 col-sm-12 col-md-11 col-lg-12">
-						<h2 class="text-secondary contact__title--head">Follow us on Social Media</h2>
+						<h2 class="text-secondary contact__title--head"><?php echo lang('page_contact_follow'); ?></h2>
 						<a href="#">
-							<img src="https://knockconsulting.com/images/icon-sm-facebook-round.svg"
-								 alt="Follow Us on Facebook" width="40" class="img-fluid m-0">
+							<img src="https://knockconsulting.com/images/icon-sm-facebook-round.svg" alt="Follow Us on Facebook" width="40" class="img-fluid m-0">
 						</a>
 						<a href="#">
-							<img src="https://knockconsulting.com/images/icon-sm-instagram-round.svg"
-								 alt="Follow Us on Instagram" width="40" class="img-fluid m-0">
+							<img src="https://knockconsulting.com/images/icon-sm-instagram-round.svg" alt="Follow Us on Instagram" width="40" class="img-fluid m-0">
 						</a>
 						<a href="#">
-							<img src="https://knockconsulting.com/images/icon-sm-youtube-round.svg"
-								 alt="Follow Us on Youtube" width="40" class="img-fluid m-0">
+							<img src="https://knockconsulting.com/images/icon-sm-youtube-round.svg" alt="Follow Us on Youtube" width="40" class="img-fluid m-0">
 						</a>
 					</div>
 				</div>
 			</div>
 			<div class="col-xs-12 col-md-6 col-lg-6">
-				<h2 class="text-secondary contact__form--title">กรอกแบบ<span>ฟอร์ม</span>ติดต่อเรา</h2>
-				<p class="text-secondary contact__form--body mb-4">เราจะติดต่อกลับโดยด่วนที่สุด</p>
+				<h2 class="text-secondary contact__form--title"><?php echo lang('page_contact_title_first'); ?><span><?php echo lang('page_contact_title_center'); ?></span><?php echo lang('page_contact_title_end'); ?></h2>
+				<p class="text-secondary contact__form--body mb-4"><?php echo lang('page_contact_desc'); ?></p>
 				<form class="mt-4" action="<?php echo base_url('contact/send') ?>" method="post">
 					<div class="form-group">
-						<input type="text" class="form-control" name="name" placeholder="Your Name*">
+						<input type="text" class="form-control" name="name" placeholder="<?php echo lang('page_contact_form_txt_name'); ?>" required>
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" name="email" placeholder="Your Email Address*">
+						<input type="text" class="form-control" name="email" placeholder="<?php echo lang('page_contact_form_txt_email'); ?>" required>
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" name="company" placeholder="Company Name*">
+						<input type="text" class="form-control" name="company" placeholder="<?php echo lang('page_contact_form_txt_company'); ?>" required>
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" name="phone" placeholder="Your Phone Number*">
+						<input type="text" class="form-control" name="phone" placeholder="<?php echo lang('page_contact_form_txt_phone'); ?>" required>
 					</div>
 					<div class="form-group">
-						<textarea class="form-control" rows="5" name="detail" placeholder="How can we help?"></textarea>
+						<textarea class="form-control" rows="5" name="detail" placeholder="<?php echo lang('page_contact_form_txt_detail'); ?>"></textarea>
 					</div>
 					<div class="col text-center">
-						<button type="submit" class="btn btn-primary text-center">SEND</button>
+						<button type="submit" class="btn btn-primary text-center"><?php echo lang('page_contact_button_send'); ?></button>
 					</div>
 				</form>
 			</div>
@@ -454,25 +320,11 @@
 </section>
 
 <!-- SiteMap -->
-<div id="accordion">
-	<div class="card text-center" style="background: #00264c; color: #fff; border-radius: 0;">
-		<div class="card-header" id="headingOne" style="padding-top: 0px; padding-bottom: 0px;">
-			<h5 class="mb-0">
-				<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-						aria-controls="collapseOne" style="color: #fff;">
-					Site map <i class="fas fa-plus-circle"></i>
-				</button>
-			</h5>
-		</div>
-		<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-			<div class="card-body">
-				Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-				moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-				Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-				shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-				proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-				aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-			</div>
-		</div>
-	</div>
-</div>
+<?php include 'layouts/sitemap.php'; ?>
+
+<!-- Push Custom Scripts -->
+<script>
+    $(function () {
+        $(".client__navs a:first").tab('show')
+    });
+</script>

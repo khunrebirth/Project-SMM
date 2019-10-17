@@ -5,6 +5,7 @@ class Client extends MX_Controller
 {
 
 	private $data = false;
+	private $lang = 'th';
 
 	public function __construct()
 	{
@@ -30,6 +31,9 @@ class Client extends MX_Controller
 		$this->load->model('Client_model');
 		$this->load->model('Client_page_model');
 
+		// Language
+		$this->lang = $this->config->item('language_abbr');
+
 		/*
 		| -------------------------------------------------------------------------
 		| HANDLE
@@ -43,8 +47,9 @@ class Client extends MX_Controller
 	 * Content
 	 * ********************************/
 
-	public function edit_content($id)
+	public function edit_content($lang, $id)
 	{
+		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Page: Clients - Content - Edit';
 		$this->data['content'] = 'clients/content';
 		$this->data['page_content'] =  $this->Client_page_model->get_client_page_by_id($id);
@@ -52,7 +57,7 @@ class Client extends MX_Controller
 		$this->load->view('app', $this->data);
 	}
 
-	public function update_content($id)
+	public function update_content($lang, $id)
 	{
 		// Get Old data
 		$page_content = $this->Client_page_model->get_client_page_by_id($id);
@@ -99,7 +104,7 @@ class Client extends MX_Controller
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
 
-		redirect('backoffice/page/clients/content/' . $id);
+		redirect($this->lang . '/backoffice/page/clients/content/' . $id);
 	}
 
 	/***********************************
@@ -108,6 +113,7 @@ class Client extends MX_Controller
 
 	public function list_category_client()
 	{
+		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Page: Clients';
 		$this->data['content'] = 'clients/category_list';
 		$this->data['categories'] = $this->Client_category_model->get_client_category_all();
@@ -117,6 +123,7 @@ class Client extends MX_Controller
 
 	public function category_client_create()
 	{
+		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Page: Clients - Category - Add';
 		$this->data['content'] = 'clients/category_create';
 
@@ -148,12 +155,13 @@ class Client extends MX_Controller
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
 
-		redirect('backoffice/page/clients/list-category-clients');
+		redirect($this->lang . '/backoffice/page/clients/list-category-clients');
 	}
 
-	public function category_client_edit($client_id)
+	public function category_client_edit($lang, $client_id)
 	{
 		$category = $this->Client_category_model->get_client_category_by_id($client_id);
+		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Page: Clients - Category - Edit ('. unserialize($category->title)['th'] . ')';
 		$this->data['content'] = 'clients/category_edit';
 		$this->data['category'] = $category;
@@ -161,7 +169,7 @@ class Client extends MX_Controller
 		$this->load->view('app', $this->data);
 	}
 
-	public function category_client_update($client_id)
+	public function category_client_update($lang, $client_id)
 	{
 		// Filter Data
 		$input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
@@ -187,10 +195,10 @@ class Client extends MX_Controller
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
 
-		redirect('backoffice/page/clients/list-category-clients');
+		redirect($this->lang . '/backoffice/page/clients/list-category-clients');
 	}
 
-	public function category_client_destroy($client_id)
+	public function category_client_destroy($lang, $client_id)
 	{
 		$status = 500;
 		$response['success'] = 0;
@@ -212,8 +220,9 @@ class Client extends MX_Controller
 	 * Client
 	 * ********************************/
 
-	public function list_client($client_category_id)
+	public function list_client($lang, $client_category_id)
 	{
+		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Page: Clients';
 		$this->data['content'] = 'clients/client_list';
 		$this->data['clients'] = $this->Client_model->get_client_by_category_id($client_category_id);
@@ -222,8 +231,9 @@ class Client extends MX_Controller
 		$this->load->view('app', $this->data);
 	}
 
-	public function client_create($client_category_id)
+	public function client_create($lang, $client_category_id)
 	{
+		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Page: Clients - Clients - Add';
 		$this->data['content'] = 'clients/client_create';
 		$this->data['category'] =  $this->Client_category_model->get_client_category_by_id($client_category_id);
@@ -231,7 +241,7 @@ class Client extends MX_Controller
 		$this->load->view('app', $this->data);
 	}
 
-	public function client_store($client_category_id)
+	public function client_store($lang, $client_category_id)
 	{
 		// Handle Image
 		$img_en = '';
@@ -271,13 +281,14 @@ class Client extends MX_Controller
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
 
-		redirect('backoffice/page/clients/list-clients/' . $client_category_id);
+		redirect($this->lang . '/backoffice/page/clients/list-clients/' . $client_category_id);
 	}
 
-	public function client_edit($client_category_id, $client_id)
+	public function client_edit($lang, $client_category_id, $client_id)
 	{
 		$client = $this->Client_model->get_client_by_id($client_id);
 
+		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Page: Clients - Clients - Edit(' . unserialize($client->title)['th'] . ')';
 		$this->data['content'] = 'clients/client_edit';
 		$this->data['client'] = $client;
@@ -286,7 +297,7 @@ class Client extends MX_Controller
 		$this->load->view('app', $this->data);
 	}
 
-	public function client_update($client_category_id, $client_id)
+	public function client_update($lang, $client_category_id, $client_id)
 	{
 		// Get Old data
 		$client = $this->Client_model->get_client_by_id($client_id);
@@ -329,10 +340,10 @@ class Client extends MX_Controller
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
 
-		redirect('backoffice/page/clients/list-clients/' . $client_category_id);
+		redirect($this->lang . '/backoffice/page/clients/list-clients/' . $client_category_id);
 	}
 
-	public function client_destroy($client_id)
+	public function client_destroy($lang, $client_id)
 	{
 		$status = 500;
 		$response['success'] = 0;
@@ -361,7 +372,7 @@ class Client extends MX_Controller
 	 * Sorting (Using Ajax)
 	 * ********************************/
 
-	public function ajax_get_client_and_sort_show($category_id)
+	public function ajax_get_client_and_sort_show($lang, $category_id)
 	{
 		$status = 500;
 		$response['success'] = 0;

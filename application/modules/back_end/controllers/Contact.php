@@ -5,6 +5,7 @@ class Contact extends MX_Controller
 {
 
     private $data = false;
+	private $lang = 'th';
 
     public function __construct()
     {
@@ -28,6 +29,9 @@ class Contact extends MX_Controller
         $this->load->model('User_model');
         $this->load->model('Contact_page_model');
 
+		// Language
+		$this->lang = $this->config->item('language_abbr');
+
 		/*
 		| -------------------------------------------------------------------------
 		| HANDLE
@@ -37,8 +41,9 @@ class Contact extends MX_Controller
         $this->data['user'] = $this->User_model->get_user_by_id($this->session->userdata('user_id'));
     }
 
-    public function edit_content($id)
+    public function edit_content($lang, $id)
     {
+		$this->data['lang'] = $this->lang;
         $this->data['title'] = 'Page: Contact - Content - Edit';
         $this->data['content'] = 'contact/content';
         $this->data['page_content'] = $this->Contact_page_model->get_contact_page_by_id($id);
@@ -46,7 +51,7 @@ class Contact extends MX_Controller
         $this->load->view('app', $this->data);
     }
 
-    public function update_content($id)
+    public function update_content($lang, $id)
     {
         // Get Old data
         $page_content = $this->Contact_page_model->get_contact_page_by_id($id);
@@ -85,7 +90,7 @@ class Contact extends MX_Controller
             $this->session->set_flashdata('error', 'Something wrong');
         }
 
-        redirect('backoffice/page/contact/content/' . $id);
+        redirect($lang . '/backoffice/page/contact/content/' . $id);
     }
 
     private function do_upload_contact($filename)

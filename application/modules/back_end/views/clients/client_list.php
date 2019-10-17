@@ -32,9 +32,9 @@
 	<section class="section">
 		<div class="section-header">
 			<div class="section-header-breadcrumb">
-				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
+				<div class="breadcrumb-item"><a href="<?php echo base_url($lang . '/backoffice/dashboard'); ?>">Dashboard</a></div>
 				<div class="breadcrumb-item"><a href="#">Page: Clients</a></div>
-				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/clients/list-category-clients'); ?>">Categories</a></div>
+				<div class="breadcrumb-item"><a href="<?php echo base_url($lang . '/backoffice/page/clients/list-category-clients'); ?>">Categories</a></div>
 				<div class="breadcrumb-item active">Clients (Category: <?php echo unserialize($category->title)['th']; ?>)</div>
 			</div>
 		</div>
@@ -47,7 +47,7 @@
 							<div class="card-header-action">
 								<button class="btn btn-primary" id="btnSort"><i class="fas fa-sort"></i> Sort Images</button>
 								<input type="hidden" id="categoryId" value="<?php echo $category->id; ?>">
-								<a href="<?php echo base_url('backoffice/page/clients/list-clients/create/' . $category->id); ?>" class="btn btn-primary">
+								<a href="<?php echo base_url($lang . '/backoffice/page/clients/list-clients/create/' . $category->id); ?>" class="btn btn-primary">
 									<i class="fas fa-plus"></i> Add
 								</a>
 							</div>
@@ -87,8 +87,8 @@
 															<i class="fas fa-cog"></i> Manage
 														</button>
 														<div class="dropdown-menu">
-															<a class="dropdown-item has-icon" href="<?php echo base_url('backoffice/page/clients/list-clients/edit/' . $client->category_id . '/' . $client->id); ?>"><i class="far fa-edit"></i> Edit</a>
-															<a class="dropdown-item has-icon" onclick="deleteClient('<?php echo base_url('backoffice/page/clients/list-clients/destroy/' . $client->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
+															<a class="dropdown-item has-icon" href="<?php echo base_url($lang . '/backoffice/page/clients/list-clients/edit/' . $client->category_id . '/' . $client->id); ?>"><i class="far fa-edit"></i> Edit</a>
+															<a class="dropdown-item has-icon" onclick="deleteClient('<?php echo base_url($lang . '/backoffice/page/clients/list-clients/destroy/' . $client->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
 														</div>
 													</div>
 												</td>
@@ -192,7 +192,7 @@
 
             $.ajax({
                 type: "POST",
-                url: window.base_url + 'backoffice/page/clients/list-clients/ajax/get/clients/sort/show/' + $categoryId,
+                url: window.base_url + '/' + window.langSite +'/backoffice/page/clients/list-clients/ajax/get/clients/sort/show/' + $categoryId,
                 success: function(res) {
                     $('#custom-width-modal .modal-body').html(res.data)
                     $("#custom-width-modal #sortable").sortable({ placeholder: "ui-state-highlight" })
@@ -219,7 +219,7 @@
 
             $.ajax({
                 type: "POST",
-                url: window.base_url + 'backoffice/page/clients/list-clients/ajax/get/clients/sort/update',
+                url: window.base_url + '/' + window.langSite +'/backoffice/page/clients/list-clients/ajax/get/clients/sort/update',
                 data: {
                     id: selectedID,
                     sort: selectedSort

@@ -79,9 +79,12 @@ $route['(\w{2})/clients'] = 'front_end/Clients';
 $route['(\w{2})/ลูกค้าของเรา'] = 'front_end/Clients';
 
 // Blogs
-$route['(\w{2})blogs'] = 'front_end/Blogs';
+$route['(\w{2})/blogs'] = 'front_end/Blogs';
 $route['(\w{2})/บทความ'] = 'front_end/Blogs';
-$route['(\w{2})/blogs/(:any)/(:any)'] = 'front_end/Blogs/$1/$2/$3';
+$route['(\w{2})/blogs/(:any)/(:any)'] = 'front_end/Blogs/category_show/$1/$2/$3';
+$route['(\w{2})/บทความ/(:any)/(:any)'] = 'front_end/Blogs/category_show/$1/$2/$3';
+$route['(\w{2})/blogs/(:any)/(:any)/(:any)'] = 'front_end/Blogs/blog_show/$1/$2/$3/$4';
+$route['(\w{2})/บทความ/(:any)/(:any)/(:any)'] = 'front_end/Blogs/blog_show/$1/$2/$3/$4';
 
 // Teams
 $route['(\w{2})/teams'] = 'front_end/Teams';
@@ -108,12 +111,16 @@ $route['(\w{2})/contact/send'] = 'front_end/Contact/send';
 | -------------------------------------------------------------------------
 */
 
-// Authentication
-$route['backoffice'] = 'back_end/Auth/Authentication';
-$route['backoffice/login'] = 'back_end/Auth/Authentication';
-$route['backoffice/login_process'] = 'back_end/Auth/Authentication/login_process';
-$route['backoffice/logout'] = 'back_end/Auth/Authentication/logout';
+	/*
+	| -------------------------------------------------------------------------
+	| AUTHENTICATION
+	| -------------------------------------------------------------------------
+	*/
 
+	$route['(\w{2})/backoffice'] = 'back_end/Auth/Authentication';
+	$route['(\w{2})/backoffice/login'] = 'back_end/Auth/Authentication';
+	$route['(\w{2})/backoffice/login_process'] = 'back_end/Auth/Authentication/login_process';
+	$route['(\w{2})/backoffice/logout'] = 'back_end/Auth/Authentication/logout';
 
 	/*
 	| -------------------------------------------------------------------------
@@ -121,7 +128,7 @@ $route['backoffice/logout'] = 'back_end/Auth/Authentication/logout';
 	| -------------------------------------------------------------------------
 	*/
 
-	$route['backoffice/dashboard'] = 'back_end/Dashboard';
+	$route['(\w{2})/backoffice/dashboard'] = 'back_end/Dashboard';
 
     /*
     | -------------------------------------------------------------------------
@@ -136,8 +143,8 @@ $route['backoffice/logout'] = 'back_end/Auth/Authentication/logout';
 		*/
 
 		// Content
-		$route['backoffice/page/home/content/(:any)'] = 'back_end/Home/edit_content/$1';
-		$route['backoffice/page/home/content/update/(:any)'] = 'back_end/Home/update_content/$1';
+		$route['(\w{2})/backoffice/page/home/content/(:any)'] = 'back_end/Home/edit_content/$1/$2';
+		$route['(\w{2})/backoffice/page/home/content/update/(:any)'] = 'back_end/Home/update_content/$1/$2';
 
 		/*
 		| -------------------------------------------------------------------------
@@ -146,8 +153,8 @@ $route['backoffice/logout'] = 'back_end/Auth/Authentication/logout';
 		*/
 
 		// Content
-		$route['backoffice/page/abouts/content/(:any)'] = 'back_end/About/edit_content/$1';
-		$route['backoffice/page/abouts/content/update/(:any)'] = 'back_end/About/update_content/$1';
+		$route['(\w{2})/backoffice/page/abouts/content/(:any)'] = 'back_end/About/edit_content/$1/$2';
+		$route['(\w{2})/backoffice/page/abouts/content/update/(:any)'] = 'back_end/About/update_content/$1/$2';
 
 		/*
 		| -------------------------------------------------------------------------
@@ -156,8 +163,8 @@ $route['backoffice/logout'] = 'back_end/Auth/Authentication/logout';
 		*/
 
 		// Content
-		$route['backoffice/page/services/content/(:any)'] = 'back_end/Service/edit_content/$1';
-		$route['backoffice/page/services/content/update/(:any)'] = 'back_end/Service/update_content/$1';
+		$route['(\w{2})/backoffice/page/services/content/(:any)'] = 'back_end/Service/edit_content/$1/$2';
+		$route['(\w{2})/backoffice/page/services/content/update/(:any)'] = 'back_end/Service/update_content/$1/$2';
 
 		/*
 		| -------------------------------------------------------------------------
@@ -166,26 +173,26 @@ $route['backoffice/logout'] = 'back_end/Auth/Authentication/logout';
 		*/
 
 		// Content
-		$route['backoffice/page/clients/content/(:any)'] = 'back_end/Client/edit_content/$1';
-		$route['backoffice/page/clients/content/update/(:any)'] = 'back_end/Client/update_content/$1';
+		$route['(\w{2})/backoffice/page/clients/content/(:any)'] = 'back_end/Client/edit_content/$1/$2';
+		$route['(\w{2})/backoffice/page/clients/content/update/(:any)'] = 'back_end/Client/update_content/$1/$2';
 
 		// Category
-		$route['backoffice/page/clients/list-category-clients'] = 'back_end/Client/list_category_client';
-		$route['backoffice/page/clients/list-category-clients/create'] = 'back_end/Client/category_client_create';
-		$route['backoffice/page/clients/list-category-clients/store'] = 'back_end/Client/category_client_store';
-		$route['backoffice/page/clients/list-category-clients/edit/(:any)'] = "back_end/Client/category_client_edit/$1";
-		$route['backoffice/page/clients/list-category-clients/update/(:any)'] = "back_end/Client/category_client_update/$1";
-		$route['backoffice/page/clients/list-category-clients/destroy/(:any)'] = "back_end/Client/category_client_destroy/$1";
+		$route['(\w{2})/backoffice/page/clients/list-category-clients'] = 'back_end/Client/list_category_client';
+		$route['(\w{2})/backoffice/page/clients/list-category-clients/create'] = 'back_end/Client/category_client_create';
+		$route['(\w{2})/backoffice/page/clients/list-category-clients/store'] = 'back_end/Client/category_client_store';
+		$route['(\w{2})/backoffice/page/clients/list-category-clients/edit/(:any)'] = "back_end/Client/category_client_edit/$1/$2";
+		$route['(\w{2})/backoffice/page/clients/list-category-clients/update/(:any)'] = "back_end/Client/category_client_update/$1/$2";
+		$route['(\w{2})/backoffice/page/clients/list-category-clients/destroy/(:any)'] = "back_end/Client/category_client_destroy/$1/$2";
 
 		// Client
-		$route['backoffice/page/clients/list-clients/(:any)'] = 'back_end/Client/list_client/$1';
-		$route['backoffice/page/clients/list-clients/create/(:any)'] = 'back_end/Client/client_create/$1';
-		$route['backoffice/page/clients/list-clients/store/(:any)'] = 'back_end/Client/client_store/$1';
-		$route['backoffice/page/clients/list-clients/edit/(:any)/(:any)'] = "back_end/Client/client_edit/$1/$2";
-		$route['backoffice/page/clients/list-clients/update/(:any)/(:any)'] = "back_end/Client/client_update/$1/$2";
-		$route['backoffice/page/clients/list-clients/destroy/(:any)'] = "back_end/Client/client_destroy/$1";
-		$route['backoffice/page/clients/list-clients/ajax/get/clients/sort/show/(:any)'] = 'back_end/Client/ajax_get_client_and_sort_show/$1';
-		$route['backoffice/page/clients/list-clients/ajax/get/clients/sort/update'] = 'back_end/Client/ajax_get_client_and_sort_update';
+		$route['(\w{2})/backoffice/page/clients/list-clients/(:any)'] = 'back_end/Client/list_client/$1/$2';
+		$route['(\w{2})/backoffice/page/clients/list-clients/create/(:any)'] = 'back_end/Client/client_create/$1/$2';
+		$route['(\w{2})/backoffice/page/clients/list-clients/store/(:any)'] = 'back_end/Client/client_store/$1/$2';
+		$route['(\w{2})/backoffice/page/clients/list-clients/edit/(:any)/(:any)'] = "back_end/Client/client_edit/$1/$2/$3";
+		$route['(\w{2})/backoffice/page/clients/list-clients/update/(:any)/(:any)'] = "back_end/Client/client_update/$1/$2/$3";
+		$route['(\w{2})/backoffice/page/clients/list-clients/destroy/(:any)'] = "back_end/Client/client_destroy/$1/$2";
+		$route['(\w{2})/backoffice/page/clients/list-clients/ajax/get/clients/sort/show/(:any)'] = 'back_end/Client/ajax_get_client_and_sort_show/$1/$2';
+		$route['(\w{2})/backoffice/page/clients/list-clients/ajax/get/clients/sort/update'] = 'back_end/Client/ajax_get_client_and_sort_update';
 
 		/*
 		| -------------------------------------------------------------------------
@@ -194,20 +201,20 @@ $route['backoffice/logout'] = 'back_end/Auth/Authentication/logout';
 		*/
 
 		// Category
-		$route['backoffice/page/blogs/list-category-blogs'] = 'back_end/Blog/list_category_blog';
-		$route['backoffice/page/blogs/list-category-blogs/create'] = 'back_end/Blog/category_blog_create';
-		$route['backoffice/page/blogs/list-category-blogs/store'] = 'back_end/Blog/category_blog_store';
-		$route['backoffice/page/blogs/list-category-blogs/edit/(:any)'] = "back_end/Blog/category_blog_edit/$1";
-		$route['backoffice/page/blogs/list-category-blogs/update/(:any)'] = "back_end/Blog/category_blog_update/$1";
-		$route['backoffice/page/blogs/list-category-blogs/destroy/(:any)'] = "back_end/Blog/category_blog_destroy/$1";
+		$route['(\w{2})/backoffice/page/blogs/list-category-blogs'] = 'back_end/Blog/list_category_blog';
+		$route['(\w{2})/backoffice/page/blogs/list-category-blogs/create'] = 'back_end/Blog/category_blog_create';
+		$route['(\w{2})/backoffice/page/blogs/list-category-blogs/store'] = 'back_end/Blog/category_blog_store';
+		$route['(\w{2})/backoffice/page/blogs/list-category-blogs/edit/(:any)'] = "back_end/Blog/category_blog_edit/$1/$2";
+		$route['(\w{2})/backoffice/page/blogs/list-category-blogs/update/(:any)'] = "back_end/Blog/category_blog_update/$1/$2";
+		$route['(\w{2})/backoffice/page/blogs/list-category-blogs/destroy/(:any)'] = "back_end/Blog/category_blog_destroy/$1/$2";
 
 		// Blog
-		$route['backoffice/page/blogs/list-blogs/(:any)'] = 'back_end/Blog/list_blog/$1';
-		$route['backoffice/page/blogs/list-blogs/create/(:any)'] = 'back_end/Blog/blog_create/$1';
-		$route['backoffice/page/blogs/list-blogs/store/(:any)'] = 'back_end/Blog/blog_store/$1';
-		$route['backoffice/page/blogs/list-blogs/edit/(:any)/(:any)'] = "back_end/Blog/blog_edit/$1/$2";
-		$route['backoffice/page/blogs/list-blogs/update/(:any)/(:any)'] = "back_end/Blog/blog_update/$1/$2";
-		$route['backoffice/page/blogs/list-blogs/destroy/(:any)'] = "back_end/Blog/blog_destroy/$1";
+		$route['(\w{2})/backoffice/page/blogs/list-blogs/(:any)'] = 'back_end/Blog/list_blog/$1/$2';
+		$route['(\w{2})/backoffice/page/blogs/list-blogs/create/(:any)'] = 'back_end/Blog/blog_create/$1/$2';
+		$route['(\w{2})/backoffice/page/blogs/list-blogs/store/(:any)'] = 'back_end/Blog/blog_store/$1/$2';
+		$route['(\w{2})/backoffice/page/blogs/list-blogs/edit/(:any)/(:any)'] = "back_end/Blog/blog_edit/$1/$2/$3";
+		$route['(\w{2})/backoffice/page/blogs/list-blogs/update/(:any)/(:any)'] = "back_end/Blog/blog_update/$1/$2/$3";
+		$route['(\w{2})/backoffice/page/blogs/list-blogs/destroy/(:any)'] = "back_end/Blog/blog_destroy/$1/$2";
 
 		/*
 		| -------------------------------------------------------------------------
@@ -216,16 +223,16 @@ $route['backoffice/logout'] = 'back_end/Auth/Authentication/logout';
 		*/
 
 		// Content
-		$route['backoffice/page/teams/content/(:any)'] = 'back_end/Team/edit_content/$1';
-		$route['backoffice/page/teams/content/update/(:any)'] = 'back_end/Team/update_content/$1';
+		$route['(\w{2})/backoffice/page/teams/content/(:any)'] = 'back_end/Team/edit_content/$1/$2';
+		$route['(\w{2})/backoffice/page/teams/content/update/(:any)'] = 'back_end/Team/update_content/$1/$2';
 
 		// Lists
-		$route['backoffice/page/teams/list-teams'] = 'back_end/Team';
-		$route['backoffice/page/teams/list-teams/create'] = 'back_end/Team/create';
-		$route['backoffice/page/teams/list-teams/store'] = 'back_end/Team/store';
-		$route['backoffice/page/teams/list-teams/edit/(:any)'] = "back_end/Team/edit/$1";
-		$route['backoffice/page/teams/list-teams/update/(:any)'] = "back_end/Team/update/$1";
-		$route['backoffice/page/teams/list-teams/destroy/(:any)'] = "back_end/Team/destroy/$1";
+		$route['(\w{2})/backoffice/page/teams/list-teams'] = 'back_end/Team';
+		$route['(\w{2})/backoffice/page/teams/list-teams/create'] = 'back_end/Team/create';
+		$route['(\w{2})/backoffice/page/teams/list-teams/store'] = 'back_end/Team/store';
+		$route['(\w{2})/backoffice/page/teams/list-teams/edit/(:any)'] = "back_end/Team/edit/$1/$2";
+		$route['(\w{2})/backoffice/page/teams/list-teams/update/(:any)'] = "back_end/Team/update/$1/$2";
+		$route['(\w{2})/backoffice/page/teams/list-teams/destroy/(:any)'] = "back_end/Team/destroy/$1/$2";
 
         /*
         | -------------------------------------------------------------------------
@@ -234,8 +241,8 @@ $route['backoffice/logout'] = 'back_end/Auth/Authentication/logout';
         */
 
         // Content
-        $route['backoffice/page/contact/content/(:any)'] = 'back_end/Contact/edit_content/$1';
-        $route['backoffice/page/contact/content/update/(:any)'] = 'back_end/Contact/update_content/$1';
+        $route['(\w{2})/backoffice/page/contact/content/(:any)'] = 'back_end/Contact/edit_content/$1/$2';
+        $route['(\w{2})/backoffice/page/contact/content/update/(:any)'] = 'back_end/Contact/update_content/$1/$2';
 
 	/*
 	| -------------------------------------------------------------------------
@@ -244,15 +251,15 @@ $route['backoffice/logout'] = 'back_end/Auth/Authentication/logout';
 	*/
 
     // Setting
-    $route['backoffice/settings'] = 'back_end/settings';
+    $route['(\w{2})/backoffice/settings'] = 'back_end/settings';
 
 	// Users
-	$route['backoffice/setting/users'] = 'back_end/User';
-	$route['backoffice/setting/users/create'] = 'back_end/User/create';
-	$route['backoffice/setting/users/store'] = 'back_end/User/store';
-	$route['backoffice/setting/users/edit/(:any)'] = "back_end/User/edit/$1";
-	$route['backoffice/setting/users/update/(:any)'] = "back_end/User/update/$1";
-	$route['backoffice/setting/users/destroy/(:any)'] = "back_end/User/destroy/$1";
+	$route['(\w{2})/backoffice/setting/users'] = 'back_end/User';
+	$route['(\w{2})/backoffice/setting/users/create'] = 'back_end/User/create';
+	$route['(\w{2})/backoffice/setting/users/store'] = 'back_end/User/store';
+	$route['(\w{2})/backoffice/setting/users/edit/(:any)'] = "back_end/User/edit/$1/$2";
+	$route['(\w{2})/backoffice/setting/users/update/(:any)'] = "back_end/User/update/$1/$2";
+	$route['(\w{2})/backoffice/setting/users/destroy/(:any)'] = "back_end/User/destroy/$1/$2";
 
 	/*
 	| -------------------------------------------------------------------------
@@ -260,6 +267,6 @@ $route['backoffice/logout'] = 'back_end/Auth/Authentication/logout';
 	| -------------------------------------------------------------------------
 	*/
 
-	$route['backoffice/setting/profile'] = 'back_end/Profile';
-	$route['backoffice/setting/profile/edit/(:any)'] = 'back_end/Profile/edit/$1';
-	$route['backoffice/setting/profile/update/(:any)'] = "back_end/Profile/update/$1";
+	$route['(\w{2})/backoffice/setting/profile'] = 'back_end/Profile';
+	$route['(\w{2})/backoffice/setting/profile/edit/(:any)'] = 'back_end/Profile/edit/$1/$2';
+	$route['(\w{2})/backoffice/setting/profile/update/(:any)'] = "back_end/Profile/update/$1/$2";

@@ -5,6 +5,7 @@ class Profile extends MX_Controller
 {
 
 	private $data = false;
+	private $lang = 'th';
 
 	public function __construct()
 	{
@@ -27,6 +28,9 @@ class Profile extends MX_Controller
 		// Model
 		$this->load->model('User_model');
 
+		// Language
+		$this->lang = $this->config->item('language_abbr');
+
 		/*
 		| -------------------------------------------------------------------------
 		| HANDLE
@@ -38,8 +42,9 @@ class Profile extends MX_Controller
 
 	public function index() {}
 
-	public function edit($id)
+	public function edit($lang, $id)
 	{
+		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Profile - Edit';
 		$this->data['content'] = 'profile/edit_profile';
 		$this->data['profile'] = $this->User_model->get_user_by_id($id);
@@ -47,7 +52,7 @@ class Profile extends MX_Controller
 		$this->load->view('app', $this->data);
 	}
 
-	public function update($id)
+	public function update($lang, $id)
 	{
 
 		$update_profile = $this->User_model->update_user_by_id($id, [
@@ -68,6 +73,6 @@ class Profile extends MX_Controller
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
 
-		redirect('backoffice/dashboard');
+		redirect($this->lang . '/backoffice/dashboard');
 	}
 }
