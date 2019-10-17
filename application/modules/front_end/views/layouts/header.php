@@ -4,7 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Social Media Master</title>
+    <title><?php echo $title; ?></title>
+	<meta name="description" content="<?php echo $meta['description']; ?>">
+	<meta name="keywords" content="<?php echo $meta['keyword']; ?>">
+	<link rel="shortcut icon" href="<?php echo base_url('resources/front_end/images/favicon.png'); ?>">
+	<link rel="canonical" href="<?php echo current_url(); ?>" />
+	<meta property="og:locale" content="th_TH" />
+	<meta property="og:locale:alternate" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="<?php echo $og_twitter['title']; ?>" />
+	<meta property="og:description" content="<?php echo $og_twitter['description']; ?>" />
+	<meta property="og:url" content="<?php echo current_url(); ?>" />
+	<meta property="og:site_name" content="<?php echo base_url(); ?>" />
+	<meta property="og:image" content="<?php echo $og_twitter['image']; ?>" />
+
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="<?php echo $og_twitter['title']; ?>" />
+	<meta name="twitter:description" content="<?php echo $og_twitter['description']; ?>" />
+	<meta name="twitter:image" content="<?php echo $og_twitter['image']; ?>" />
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <!-- Google Font -->
@@ -40,30 +58,30 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link <?php if ($this->uri->segment(1) == "home" || $this->uri->segment(2) == "home") { echo 'active'; }?>" href="<?php echo base_url('home'); ?>">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link <?php if ($this->uri->segment(0) == "home" || $this->uri->segment(0) == "หน้าแรก") { echo 'active'; }?>" href="<?php echo base_url($lang . '/' . lang('menu_home')); ?>"><?php echo lang('menu_home'); ?> <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php if ($this->uri->segment(1) == "about" || $this->uri->segment(2) == "about") { echo 'active'; }?>" href="<?php echo base_url('about'); ?>">About</a>
+                <a class="nav-link <?php if ($this->uri->segment(0) == "about" || $this->uri->segment(0) == "เกี่ยวกับเรา") { echo 'active'; }?>" href="<?php echo base_url($lang . '/' . lang('menu_about')); ?>"><?php echo lang('menu_about'); ?></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php if ($this->uri->segment(1) == "services" || $this->uri->segment(2) == "services") { echo 'active'; }?>" href="<?php echo base_url('services'); ?>">Services</a>
+                <a class="nav-link <?php if ($this->uri->segment(0) == "services" || $this->uri->segment(0) == "บริการ") { echo 'active'; }?>" href="<?php echo base_url($lang . '/' . lang('menu_service')); ?>"><?php echo lang('menu_service'); ?></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php if ($this->uri->segment(1) == "clients" || $this->uri->segment(2) == "clients") { echo 'active'; }?>" href="<?php echo base_url('clients'); ?>">Clients</a>
+                <a class="nav-link <?php if ($this->uri->segment(0) == "clients" || $this->uri->segment(0) == "ลูกค้าของเรา") { echo 'active'; }?>" href="<?php echo base_url($lang . '/' . lang('menu_our_clients')); ?>"><?php echo lang('menu_our_clients'); ?></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php if ($this->uri->segment(1) == "blogs" || $this->uri->segment(2) == "blogs") { echo 'active'; }?>" href="<?php echo base_url('blogs'); ?>">Blogs</a>
+                <a class="nav-link <?php if ($this->uri->segment(0) == "blogs" || $this->uri->segment(0) == "บทความ") { echo 'active'; }?>" href="<?php echo base_url($lang . '/' . lang('menu_blogs')); ?>"><?php echo lang('menu_blogs'); ?></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php if ($this->uri->segment(1) == "teams" || $this->uri->segment(2) == "teams") { echo 'active'; }?>" href="<?php echo base_url('teams'); ?>">Teams</a>
+                <a class="nav-link <?php if ($this->uri->segment(0) == "teams" || $this->uri->segment(0) == "ทีมงาน") { echo 'active'; }?>" href="<?php echo base_url($lang . '/' . lang('menu_teams')); ?>"><?php echo lang('menu_teams'); ?></a>
             </li>
             <li class="nav-item wrap-btn-centact">
-                <a class="btn btn-link btn__contact" href="<?php echo base_url('contact'); ?>">Contact us</a>
+                <a class="btn btn-link btn__contact" href="<?php echo base_url($lang . '/' . lang('menu_contact')); ?>"><?php echo lang('menu_contact'); ?></a>
             </li>
             <li class="nav-item">
                 <ul class="list-lang">
-                    <li><a class="active" href="#">TH</a></li>
-                    <li><a href="#">EN</a></li>
+                    <li><a href="<?php echo base_url('th'); ?>">TH</a></li>
+                    <li><a href="<?php echo base_url('en'); ?>">EN</a></li>
                 </ul>
             </li>
         </ul>

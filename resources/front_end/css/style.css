@@ -17,6 +17,53 @@ section {
     padding: 60px 0px;
 }
 
+.col-cmn-05 {
+	-webkit-box-flex: 0;
+	-ms-flex: 0 0 50%;
+	flex: 0 0 50%;
+	max-width: 50%;
+}
+
+@media (min-width: 540px) {
+	.col-cmn-05 {
+		-webkit-box-flex: 0;
+		-ms-flex: 0 0 50%;
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+}
+
+@media (min-width: 720px) {
+	.col-cmn-05 {
+		-webkit-box-flex: 0;
+		-ms-flex: 0 0 33.3333%;
+		flex: 0 0 33.3333%;
+		max-width: 33.3333%;
+	}
+}
+
+@media (min-width: 960px) {
+	.col-cmn-05 {
+		-webkit-box-flex: 0;
+		-ms-flex: 0 0 25%;
+		flex: 0 0 25%;
+		max-width: 25%;
+	}
+}
+
+@media (min-width: 1140px) {
+	.col-cmn-05 {
+		-webkit-box-flex: 0;
+		-ms-flex: 0 0 20%;
+		flex: 0 0 20%;
+		max-width: 20%;
+	}
+}
+
+.col-cmn-05 img {
+	margin-bottom: 20px;
+}
+
 .bg-gray {
     background-color: #eee;
 }
@@ -278,6 +325,22 @@ a:hover {
     color: #999;
 }
 
+.sec-home-service {
+	max-width: 1440px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.sec-home-service .service__icon--resize {
+	width: auto;
+}
+
+.box-cmn-emtry {
+	background-color: #44444d;
+	width: 100%;
+	height: 100%;
+}
+
 
 /* ==================================
  * SECTION (CLIENT)
@@ -401,6 +464,31 @@ a:hover {
     color: #999 !important;
 }
 
+.sec-wrap-teams {
+}
+
+.sec-wrap-teams .item-team {
+	margin: 0 !important;
+	padding: 0 15px;
+}
+
+.sec-wrap-teams .item-team-ttl {
+}
+
+.sec-wrap-teams .card-img-top {
+	width: 100%;
+}
+
+.sec-wrap-teams .card {
+	width: 100% !important;
+}
+
+.sec-wrap-teams .team__crad--title,
+.sec-wrap-teams .card-text:last-child {
+	font-size: 0.8em;
+	line-height: 1.5;
+	margin-bottom: 0;
+}
 
 /* ==================================
  * SECTION (CONTACT)

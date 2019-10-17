@@ -53,23 +53,53 @@ $route['default_controller'] = 'front_end/Home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+//route example: http://domain.tld/en/controller => http://domain.tld/controller
+$route['(\w{2})'] = $route['default_controller'];
+
 /*
 | -------------------------------------------------------------------------
 | SET ROUTE FRONT END
 | -------------------------------------------------------------------------
 */
 
-$route['home'] = 'front_end/Home';
-$route['about'] = 'front_end/About';
-$route['services'] = 'front_end/Services';
-$route['clients'] = 'front_end/Clients';
-$route['blogs'] = 'front_end/Blogs';
-$route['blogs/detail'] = 'front_end/Blogs/detail';
-$route['teams'] = 'front_end/Teams';
+// Home
+$route['(\w{2})/home'] = 'front_end/Home';
+$route['(\w{2})/หน้าแรก'] = 'front_end/Home';
 
-// contact
-$route['contact'] = 'front_end/Contact';
-$route['contact/send'] = 'front_end/Contact/send';
+// About
+$route['(\w{2})/about'] = 'front_end/About';
+$route['(\w{2})/เกี่ยวกับเรา'] = 'front_end/About';
+
+// Services
+$route['(\w{2})/services'] = 'front_end/Services';
+$route['(\w{2})/บริการ'] = 'front_end/Services';
+
+// Clients
+$route['(\w{2})/clients'] = 'front_end/Clients';
+$route['(\w{2})/ลูกค้าของเรา'] = 'front_end/Clients';
+
+// Blogs
+$route['(\w{2})blogs'] = 'front_end/Blogs';
+$route['(\w{2})/บทความ'] = 'front_end/Blogs';
+$route['(\w{2})/blogs/(:any)/(:any)'] = 'front_end/Blogs/$1/$2/$3';
+
+// Teams
+$route['(\w{2})/teams'] = 'front_end/Teams';
+$route['(\w{2})/ทีมงาน'] = 'front_end/Teams';
+
+// Contact
+$route['(\w{2})/contact'] = 'front_end/Contact';
+$route['(\w{2})/ติดต่อเรา'] = 'front_end/Contact';
+$route['(\w{2})/contact/send'] = 'front_end/Contact/send';
+
+	/*
+	| -------------------------------------------------------------------------
+	| HELPS
+	| -------------------------------------------------------------------------
+	*/
+
+	$route['th'] = 'langswitch/switchLanguage/th';
+	$route['en'] = 'langswitch/switchLanguage/en';
 
 
 /*

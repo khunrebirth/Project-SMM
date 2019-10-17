@@ -1,5 +1,5 @@
 <footer class="container-fluid text-center">
-    <p>&copy; 2019 บริษัท โซเซียล มีเดีย มาสเตอร์ จำกัด All right reserved.</p>
+    <p>&copy; 2019 <?php echo lang('footer_copyright'); ?> All right reserved.</p>
 </footer>
 
 <!-- Custom JS -->
@@ -49,7 +49,6 @@
         //     }, 500)
         // })
     });
-
 </script>
 
 </body>
