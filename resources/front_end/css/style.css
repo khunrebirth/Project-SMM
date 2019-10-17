@@ -131,7 +131,7 @@ a:hover {
 .navbar-light .navbar-nav {
     /*font-size: 15px;*/
     color: #127dbc;
-    /*text-transform: uppercase;*/
+    text-transform: uppercase;
 }
 
 .navbar-light .navbar-nav .nav-link {

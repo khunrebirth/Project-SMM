@@ -18,25 +18,10 @@
                 <ul class="nav nav-fill client__navs bg-gray pt-2 pb-2">
 					<?php foreach ($client_categories as $client_category) { ?>
 						<li class="nav-item">
-							<a class="nav-link active client__navs--border--right pt-0 pb-0" id="pills-<?php echo $client_category->id; ?>-tab" data-toggle="pill" href="#pills-<?php echo $client_category->id; ?>" role="tab" aria-controls="pills-<?php echo $client_category->id; ?>"><?php echo unserialize($client_category->title)[$lang]; ?></a>
+							<a class="nav-link client__navs--border--right pt-0 pb-0" id="pills-<?php echo $client_category->id; ?>-tab" data-toggle="pill" href="#pills-<?php echo $client_category->id; ?>" role="tab" aria-controls="pills-<?php echo $client_category->id; ?>"><?php echo unserialize($client_category->title)[$lang]; ?></a>
 						</li>
 					<?php } ?>
                 </ul>
-
-				<ul class="nav nav-fill client__navs bg-gray pt-2 pb-2">
-					<li class="nav-item">
-						<a class="nav-link active client__navs--border--right pt-0 pb-0" id="pills-1-tab" data-toggle="pill" href="#pills-1" role="tab" aria-controls="pills-1">SEO & SEM</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link client__navs--border--right pt-0 pb-0" id="pills-2-tab" data-toggle="pill" href="#pills-2" role="tab" aria-controls="pills-2">Social media</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link client__navs--border--right pt-0 pb-0" id="pills-3-tab" data-toggle="pill" href="#pills-3" role="tab" aria-controls="pills-3">พัฒนาเว็บไซต์</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link pt-0 pb-0" id="pills-4-tab" data-toggle="pill" href="#pills-4" role="tab" aria-controls="pills-4">Landing Page</a>
-					</li>
-				</ul>
             </div>
         </div>
         <!-- content tab-->
@@ -50,7 +35,7 @@
 						?>
 						<?php foreach ($client['clients'] as $key => $client_specific) { ?>
 							<?php if ($counter == 1) { ?>
-								<div class="row">
+								<div class="row mt-5">
 							<?php } ?>
 									<div class="col text-center">
 										<img src="<?php echo base_url('storage/uploads/images/clients/' . $client_specific['img']) ?>" alt="<?php echo $client_specific['title']; ?>" class="img-clients">
@@ -79,7 +64,6 @@
 
 <!-- Custom JS -->
 <script>
-
     $(function () {
         $(".client__navs a:first").tab('show')
     });
