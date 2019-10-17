@@ -485,7 +485,7 @@ a:hover {
 
 .sec-wrap-teams .team__crad--title,
 .sec-wrap-teams .card-text:last-child {
-	font-size: 0.8em;
+	font-size: 1em;
 	line-height: 1.5;
 	margin-bottom: 0;
 }
