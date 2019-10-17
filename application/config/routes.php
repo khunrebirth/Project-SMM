@@ -117,7 +117,6 @@ $route['backoffice/login'] = 'back_end/Auth/Authentication';
 $route['backoffice/login_process'] = 'back_end/Auth/Authentication/login_process';
 $route['backoffice/logout'] = 'back_end/Auth/Authentication/logout';
 
-
 	/*
 	| -------------------------------------------------------------------------
 	| Dashboard
