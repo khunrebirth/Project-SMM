@@ -61,6 +61,7 @@ class About extends MX_Controller
 		$data['content'] = 'about';
 
 		// Utilities
+		$data['about'] = $this->About_page_model->get_about_page_by_id($about_id);
 
 		/*
 		| -------------------------------------------------------------------------

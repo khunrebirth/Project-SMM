@@ -18,21 +18,19 @@
 	<div class="container-fluid p-0">
 		<div class="row no-gutters">
 			<div class="col-md-6 col-lg-6 order-lg-2 showcase-img d-none d-sm-block"
-				 style="background-image: url('http://localhost/social-dev/resources/front_end/images/img-/about.jpg');"></div>
+				 style="background-image: url('<?php echo base_url('storage/uploads/images/abouts/' . unserialize($about->img_section)[$lang]); ?>');"></div>
 			<div class="col-xs-12 col-md-6 col-lg-6 order-lg-1 my-auto showcase-text text-center wow fadeInLeft">
 				<div class="title-about" style="">
-					<img src="<?php base_url() ?>resources/front_end/images/img-/title-about.png" alt=""
-						 class="img-fluid">
+					<img src="<?php base_url() ?>resources/front_end/images/img-/title-about.png" alt="" class="img-fluid">
 				</div>
 				<h2 class="about__title--head mt-5 mb-4"><span>S</span>ocial Media Master</h2>
 				<div class="row justify-content-center">
 					<div class="col-xs-12 col-md-10 col-lg-8">
 						<p class="lead about__title--body mt-4 mb-4">
-							เราคือเอเจนซี่ออนไลน์ที่มีประสบการณ์ในสายงานดิจิทัลพร้อมด้วยบริการการตลาดที่หลากหลายอย่างครบวงจรกว่า
-							4 ล้านแฟนเพจที่เราดูแล กว่า 300 ล้าน impression ที่เราสร้าง ผู้เทนด์ โซเซียลมีเดีย
-							ในประเทศไทย..
+							<?php echo unserialize($about->content_left)[$lang]; ?>
 						</p>
 						<button type="button" class="btn btn-primary">READ MODE</button>
+						<a href=""></a>
 					</div>
 				</div>
 

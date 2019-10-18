@@ -18,6 +18,7 @@ class Home extends MX_Controller
 
 		// Model
 		$this->load->model('Home_page_model');
+		$this->load->model('About_page_model');
 		$this->load->model('Client_category_model');
 		$this->load->model('Client_model');
 		$this->load->model('Blog_category_model');
@@ -65,6 +66,7 @@ class Home extends MX_Controller
 		$data['content'] = 'home';
 
 		// Utilities
+		$data['about'] = $this->About_page_model->get_about_page_by_id(1);
 		$data['client_categories'] = $this->Client_category_model->get_client_category_all();
 		$data['clients'] = $this->filter_data_clients($this->Client_category_model->get_client_category_all());
 		$data['blog_categories'] = $this->Blog_category_model->get_blog_category_all();

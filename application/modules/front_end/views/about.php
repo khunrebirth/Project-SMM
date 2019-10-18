@@ -188,18 +188,11 @@
             <div class="col-md-5 col-lg-5 text-right pr-3 pr-xs-0 text-center text-sm-right">
                 <h2 class="about__title--head mt-md-0 mt-4"><span>S</span>ocial Media Master</h2>
                 <p class="lead about__split--title--body mt-4 mb-4">
-                    เราคือเอเจนซี่ออนไลน์ที่มีประสบการณ์ในสายงานดิจิทัลพร้อมด้วยบริการการตลาดที่หลากหลายอย่างครบวงจรกว่า
-                    4 ล้านแฟนเพจที่เราดูแล กว่า 300 ล้าน impression ที่เราสร้าง ผู้เทนด์ โซเซียลมีเดีย
-                    ในประเทศไทย..
+                    <?php echo unserialize($about->content_left)[$lang]; ?>
                 </p>
             </div>
             <div class="col-xs-12 col-md-7 col-lg-7 pl-md-5 text-center text-sm-left">
-                <p class="lead about__split--title--body mt-4 mb-4">
-                    <strong style="line-height: 2.5;">เป้าหมายของเรา</strong> <br>
-                    เรามีความมุ่งมั่นที่จะวางแผนการตลาดออนไลน์ที่ดีที่สุดเพื่อให้ลูกค้าของเราบรรลุวัตถุประสงค์ที่ตั้งไว้  ด้วยการวางกลยุทธ์ที่ผ่านการคิดวิเคราะห์หากลุ่มลูกค้าที่ตรงจุดกับธุรกิจของคุณ
-                    <br><br>
-                    นอกจากจากวางแผนการตลาดออนไลน์แล้วเรายังทำงานร่วมกันกับลูกค้าเพื่อให้คำแนะนำและปรึกษาใน การวางแนวทางสื่ออนไลน์ให้ได้ผลลัพธ์ที่คุ้มค่าที่สุดอีกด้วย
-                </p>
+				<?php echo unserialize($about->content_right)[$lang]; ?>
             </div>
         </div>
 
@@ -308,7 +301,7 @@
         $('.goal_real_estate').click(function(){
             console.log('goal click');
             $('.test').fadeTo('ease', 0.3, function() {
-                $(this).css('background-image', 'url(<?php base_url() ?>resources/front_end/images/about/img_about_01.jpg');
+                $(this).css('background-image', 'url(<?php echo base_url('resources/front_end/images/about/img_about_01.jpg') ?>');
             }).fadeTo('slow', 1);
             $("#test").html('Social Media Master ได้เริ่มก่อตั้งบริษัทที่ให้บริการวางแผนและประชาสัมพันธ์ผ่านสื่อออนไลน์ซึ่งถือได้ว่า เราคือดิจิทัล เอเจนซี่เจ้าแรก ๆ ในยุคนั้น')
         });
@@ -316,7 +309,7 @@
         $('.goal_retirement').click(function(){
             console.log('goal click');
             $('.test').fadeTo('ease', 0.3, function() {
-                $(this).css('background-image', 'url(<?php base_url() ?>resources/front_end/images/about/img_about_01.jpg)');
+                $(this).css('background-image', 'url(<?php echo base_url('resources/front_end/images/about/img_about_01.jpg') ?>)');
             }).fadeTo('slow', 1);
             $("#test").html('test 2')
         });
@@ -324,7 +317,7 @@
         $('.goal_involve').click(function(){
             console.log('goal click');
             $('.test').fadeTo('ease', 0.3, function() {
-                $(this).css('background-image', 'url(<?php base_url() ?>resources/front_end/images/about/img_about_01.jpg)');
+                $(this).css('background-image', 'url(<?php echo base_url('resources/front_end/images/about/img_about_01.jpg') ?>)');
             }).fadeTo('slow', 1);
             $("#test").html('test 3')
         });
@@ -333,7 +326,7 @@
         $('.goal_2017').click(function(){
             console.log('goal click');
             $('.test').fadeTo('ease', 0.3, function() {
-                $(this).css('background-image', 'url(<?php base_url() ?>resources/front_end/images/about/img_about_01.jpg)');
+                $(this).css('background-image', 'url(<?php echo base_url('resources/front_end/images/about/img_about_01.jpg') ?>)');
             }).fadeTo('slow', 1);
             $("#test").html('test 4')
         });
@@ -341,7 +334,7 @@
         $('.goal_2019').click(function(){
             console.log('goal click');
             $('.test').fadeTo('ease', 0.3, function() {
-                $(this).css('background-image', 'url(<?php base_url() ?>resources/front_end/images/about/img_about_01.jpg)');
+                $(this).css('background-image', 'url(<?php echo base_url('resources/front_end/images/about/img_about_01.jpg') ?>)');
             }).fadeTo('slow', 1);
             $("#test").html('test 5')
         });
