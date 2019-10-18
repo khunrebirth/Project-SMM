@@ -5,9 +5,17 @@ class Service_model extends CI_Model {
 
     public function get_service_all()
     {
-        $query = $this->db->get('services');
+		$sql = "
+			SELECT  services.id,
+					services.title,
+            		services.created_at,
+            		(SELECT COUNT(*) FROM service_ports WHERE services.id = service_ports.service_id) as counter
+			FROM services
+        ";
 
-        return $query->num_rows() > 0 ? $query->result() : false;
+		$query = $this->db->query($sql);
+
+		return $query->num_rows() > 0 ? $query->result() : [];
     }
 
     public function get_service_by_id($id)

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 18, 2019 at 05:02 AM
+-- Generation Time: Oct 18, 2019 at 11:03 AM
 -- Server version: 5.7.17-log
 -- PHP Version: 5.6.30
 
@@ -315,17 +315,6 @@ CREATE TABLE `logs` (
   `deleted_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `logs`
---
-
-INSERT INTO `logs` (`id`, `event_id`, `detail`, `user_id`, `ip`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(60, 4, 'แก้ไข Category (Blogs Page)', 2, '::1', '2019-10-18 04:56:33', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(61, 4, 'แก้ไข Category (Blogs Page)', 2, '::1', '2019-10-18 04:57:39', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(62, 4, 'แก้ไข Category (Blogs Page)', 2, '::1', '2019-10-18 04:58:19', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(63, 4, 'แก้ไข Category (Blogs Page)', 2, '::1', '2019-10-18 04:59:47', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(64, 4, 'แก้ไข Category (Blogs Page)', 2, '::1', '2019-10-18 05:00:19', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
-
 -- --------------------------------------------------------
 
 --
@@ -383,9 +372,19 @@ INSERT INTO `roles` (`id`, `title`, `created_at`, `updated_at`, `deleted_at`) VA
 
 CREATE TABLE `services` (
   `id` int(11) NOT NULL,
-  `title` varchar(40) NOT NULL,
-  `body` text NOT NULL,
+  `meta_tag_title` text NOT NULL,
+  `meta_tag_description` text NOT NULL,
+  `meta_tag_keywords` text NOT NULL,
+  `img_og_twitter` text NOT NULL,
   `icon` text NOT NULL,
+  `title` text NOT NULL,
+  `slug` text NOT NULL,
+  `content_top_img` text NOT NULL,
+  `content_top_title` text NOT NULL,
+  `content_top_body` longtext NOT NULL,
+  `content_bottom_img` text NOT NULL,
+  `content_bottom_title` text NOT NULL,
+  `content_bottom_body` longtext NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `deleted_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
@@ -395,35 +394,39 @@ CREATE TABLE `services` (
 -- Dumping data for table `services`
 --
 
-INSERT INTO `services` (`id`, `title`, `body`, `icon`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Digital Marketing Strategy Cons ancy', 'This service is offered to those businesses that require a more known service where we can provide individual consultancy.', 'icon-1.png', '2019-07-04 10:53:30', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(2, 'Creative & Web Design', 'Our development team is able to work with you to plan and scope on your requirement for a properly work.', 'icon-2.png', '2019-07-04 10:53:38', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(3, 'Social Media Marketing', 'Due to social media marketing is an essential part of the marketing. It has the power to reach an enormous audience', 'icon-3.png', '2019-07-04 10:53:42', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(4, 'Production & Management Servic', 'Business image is very important.We should plan to work as a system for effective business', 'icon-4.png', '2019-07-04 10:53:46', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `services` (`id`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `icon`, `title`, `slug`, `content_top_img`, `content_top_title`, `content_top_body`, `content_bottom_img`, `content_bottom_title`, `content_bottom_body`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:19:\"ico_facebook_01.png\";s:2:\"th\";s:19:\"ico_facebook_01.png\";}', 'a:2:{s:2:\"en\";s:22:\"Social Media Marketing\";s:2:\"th\";s:22:\"Social Media Marketing\";}', 'a:2:{s:2:\"en\";s:22:\"social-media-marketing\";s:2:\"th\";s:22:\"social-media-marketing\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:22:\"Social Media Marketing\";s:2:\"th\";s:22:\"Social Media Marketing\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:42:\"SEO สำคัญอย่างไร ?\";s:2:\"th\";s:42:\"SEO สำคัญอย่างไร ?\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-10-18 10:10:36', '2019-10-17 21:59:47', '0000-00-00 00:00:00'),
+(2, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:14:\"ico_seo_01.png\";s:2:\"th\";s:14:\"ico_seo_01.png\";}', 'a:2:{s:2:\"en\";s:23:\"Search Engine Marketing\";s:2:\"th\";s:23:\"Search Engine Marketing\";}', 'a:2:{s:2:\"en\";s:23:\"search-engine-marketing\";s:2:\"th\";s:23:\"search-engine-marketing\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:23:\"Search Engine Marketing\";s:2:\"th\";s:23:\"Search Engine Marketing\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-10-18 10:10:37', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(3, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:15:\"ico_line_01.png\";s:2:\"th\";s:15:\"ico_line_01.png\";}', 'a:2:{s:2:\"en\";s:14:\"Line Marketing\";s:2:\"th\";s:14:\"Line Marketing\";}', 'a:2:{s:2:\"en\";s:14:\"line-marketing\";s:2:\"th\";s:14:\"line-marketing\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:14:\"Line Marketing\";s:2:\"th\";s:14:\"Line Marketing\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-10-18 10:10:38', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(4, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:14:\"ico_sem_01.png\";s:2:\"th\";s:14:\"ico_sem_01.png\";}', 'a:2:{s:2:\"en\";s:26:\"Search Engine Optimization\";s:2:\"th\";s:26:\"Search Engine Optimization\";}', 'a:2:{s:2:\"en\";s:26:\"search-engine-optimization\";s:2:\"th\";s:26:\"search-engine-optimization\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:26:\"Search Engine Optimization\";s:2:\"th\";s:26:\"Search Engine Optimization\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-10-18 10:10:39', '2019-10-17 22:00:19', '0000-00-00 00:00:00'),
+(5, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:21:\"ico_production_01.png\";s:2:\"th\";s:21:\"ico_production_01.png\";}', 'a:2:{s:2:\"en\";s:21:\"Creative & Production\";s:2:\"th\";s:21:\"Creative & Production\";}', 'a:2:{s:2:\"en\";s:23:\"creative-and-production\";s:2:\"th\";s:23:\"creative-and-production\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:21:\"Creative & Production\";s:2:\"th\";s:21:\"Creative & Production\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-10-18 10:10:39', '2019-10-17 22:00:19', '0000-00-00 00:00:00'),
+(6, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:14:\"ico_web_01.png\";s:2:\"th\";s:14:\"ico_web_01.png\";}', 'a:2:{s:2:\"en\";s:14:\"Website design\";s:2:\"th\";s:14:\"Website design\";}', 'a:2:{s:2:\"en\";s:14:\"website-design\";s:2:\"th\";s:14:\"website-design\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:14:\"Website design\";s:2:\"th\";s:14:\"Website design\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-10-18 10:10:40', '2019-10-17 22:00:19', '0000-00-00 00:00:00'),
+(7, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:18:\"ico_consult_01.png\";s:2:\"th\";s:18:\"ico_consult_01.png\";}', 'a:2:{s:2:\"en\";s:136:\"บริการให้คำแนะนำปรึกษา และวางแผนการตลาดออนไลน์\";s:2:\"th\";s:136:\"บริการให้คำแนะนำปรึกษา และวางแผนการตลาดออนไลน์\";}', 'a:2:{s:2:\"en\";s:136:\"บริการให้คำแนะนำปรึกษา-และวางแผนการตลาดออนไลน์\";s:2:\"th\";s:136:\"บริการให้คำแนะนำปรึกษา-และวางแผนการตลาดออนไลน์\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:136:\"บริการให้คำแนะนำปรึกษา และวางแผนการตลาดออนไลน์\";s:2:\"th\";s:136:\"บริการให้คำแนะนำปรึกษา และวางแผนการตลาดออนไลน์\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-10-18 10:10:41', '2019-10-17 22:00:19', '0000-00-00 00:00:00'),
+(8, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:16:\"ico_speak_01.png\";s:2:\"th\";s:16:\"ico_speak_01.png\";}', 'a:2:{s:2:\"en\";s:7:\"Speaker\";s:2:\"th\";s:7:\"Speaker\";}', 'a:2:{s:2:\"en\";s:7:\"speaker\";s:2:\"th\";s:7:\"speaker\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:7:\"Speaker\";s:2:\"th\";s:7:\"Speaker\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-10-18 10:10:42', '2019-10-17 22:00:19', '0000-00-00 00:00:00'),
+(9, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:18:\"ico_setting_01.png\";s:2:\"th\";s:18:\"ico_setting_01.png\";}', 'a:2:{s:2:\"en\";s:4:\"test\";s:2:\"th\";s:4:\"test\";}', 'a:2:{s:2:\"en\";s:4:\"test\";s:2:\"th\";s:4:\"test\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:4:\"test\";s:2:\"th\";s:4:\"test\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-10-18 10:10:43', '2019-10-17 22:00:19', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `service_page`
+-- Table structure for table `service_ports`
 --
 
-CREATE TABLE `service_page` (
+CREATE TABLE `service_ports` (
   `id` int(11) NOT NULL,
-  `meta_tag_title` text CHARACTER SET utf8 NOT NULL,
-  `meta_tag_description` text CHARACTER SET utf8 NOT NULL,
-  `meta_tag_keywords` text CHARACTER SET utf8 NOT NULL,
-  `img_og_twitter` text CHARACTER SET utf8 NOT NULL,
+  `service_id` int(11) NOT NULL,
+  `img` text CHARACTER SET utf8 NOT NULL,
+  `img_title_alt` text COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `service_page`
+-- Dumping data for table `service_ports`
 --
 
-INSERT INTO `service_page` (`id`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'a:2:{s:2:\"en\";s:21:\"Services | social.com\";s:2:\"th\";s:49:\"บริการของเรา | social.com\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-10-02 09:16:29', '2019-10-15 00:51:19', NULL);
+INSERT INTO `service_ports` (`id`, `service_id`, `img`, `img_title_alt`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 1, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL);
 
 -- --------------------------------------------------------
 
@@ -603,9 +606,9 @@ ALTER TABLE `services`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `service_page`
+-- Indexes for table `service_ports`
 --
-ALTER TABLE `service_page`
+ALTER TABLE `service_ports`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -689,7 +692,7 @@ ALTER TABLE `home_page`
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 --
 -- AUTO_INCREMENT for table `log_events`
 --
@@ -704,11 +707,11 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
--- AUTO_INCREMENT for table `service_page`
+-- AUTO_INCREMENT for table `service_ports`
 --
-ALTER TABLE `service_page`
+ALTER TABLE `service_ports`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `teams`

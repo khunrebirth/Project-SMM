@@ -27,7 +27,7 @@ class Service extends MX_Controller
 
 		// Model
 		$this->load->model('User_model');
-		$this->load->model('Service_page_model');
+		$this->load->model('Service_model');
 
 		// Language
 		$this->lang = $this->config->item('language_abbr');
@@ -41,54 +41,230 @@ class Service extends MX_Controller
 		$this->data['user'] = $this->User_model->get_user_by_id($this->session->userdata('user_id'));
 	}
 
-	public function edit_content($lang, $id)
+	/***********************************
+	 * Services
+	 * ********************************/
+
+	public function list_services()
 	{
 		$this->data['lang'] = $this->lang;
-		$this->data['title'] = 'Page: Services - Content - Edit';
-		$this->data['content'] = 'services/content';
-		$this->data['page_content'] =  $this->Service_page_model->get_service_page_by_id($id);
+		$this->data['title'] = 'Page: Services';
+		$this->data['content'] = 'services/service_list';
+		$this->data['services'] = $this->Service_model->get_service_all();
 
 		$this->load->view('app', $this->data);
 	}
 
-	public function update_content($lang, $id)
+	public function service_create()
 	{
-		// Get Old data
-		$page_content = $this->Service_page_model->get_service_page_by_id($id);
+		$this->data['lang'] = $this->lang;
+		$this->data['title'] = 'Page: Services - Service - Add';
+		$this->data['content'] = 'services/service_create';
 
-		// Handle Image
-		$meta_og_image_en = unserialize($page_content->img_og_twitter)['en'];
-		$meta_og_image_th = unserialize($page_content->img_og_twitter)['th'];
+		$this->load->view('app', $this->data);
+	}
 
-		if (isset($_FILES['meta_og_image_en']) && $_FILES['meta_og_image_en']['name'] != '') {
-			$meta_og_image_en = $this->ddoo_upload_client('meta_og_image_en');
-		}
-
-		if (isset($_FILES['meta_og_image_th']) && $_FILES['meta_og_image_th']['name'] != '') {
-			$meta_og_image_th = $this->ddoo_upload_client('meta_og_image_th');
-		}
-
+	public function service_store()
+	{
 		// Filter Data
-		$input_meta_tag_title = ['en' => $this->input->post('meta_tag_title_en'), 'th' => $this->input->post('meta_tag_title_th')];
-		$input_meta_tag_description = ['en' => $this->input->post('meta_tag_description_en'), 'th' => $this->input->post('meta_tag_description_th')];
-		$input_meta_tag_keywords = ['en' => $this->input->post('meta_tag_keywords_en'), 'th' => $this->input->post('meta_tag_keywords_th')];
-		$input_img_og_twitter = ['en' => $meta_og_image_en, 'th' => $meta_og_image_th];
+		$input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
 
-		// Update Data
-		$update_page_content = $this->Service_page_model->update_service_page_by_id($id, [
-			'meta_tag_title' => serialize($input_meta_tag_title),
-			'meta_tag_description' => serialize($input_meta_tag_description),
-			'meta_tag_keywords' => serialize($input_meta_tag_keywords),
-			'img_og_twitter' => serialize($input_img_og_twitter),
+		// Add Data
+		$add_category = $this->Client_category_model->insert_client_category([
+			'title' => serialize($input_title)
+		]);
+
+		// Set Session To View
+		if ($add_category) {
+
+			logger_store([
+				'user_id' => $this->data['user']->id,
+				'detail' => 'เพิ่ม Service (Services Page)',
+				'event' => 'add',
+				'ip' => $this->input->ip_address(),
+			]);
+
+			$this->session->set_flashdata('success', 'Add Done');
+		} else {
+			$this->session->set_flashdata('error', 'Something wrong');
+		}
+
+		redirect($this->lang . '/backoffice/page/services/list-services');
+	}
+
+	public function service_edit($lang, $client_id)
+	{
+		$category = $this->Client_category_model->get_client_category_by_id($client_id);
+		$this->data['lang'] = $this->lang;
+		$this->data['title'] = 'Page: Clients - Category - Edit ('. unserialize($category->title)['th'] . ')';
+		$this->data['content'] = 'clients/category_edit';
+		$this->data['category'] = $category;
+
+		$this->load->view('app', $this->data);
+	}
+
+	public function service_update($lang, $client_id)
+	{
+		// Filter Data
+		$input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
+
+		// Add Data
+		$update_category = $this->Client_category_model->update_client_category_by_id($client_id, [
+			'title' => serialize($input_title),
 			'updated_at' => date('Y-m-d H:i:s')
 		]);
 
 		// Set Session To View
-		if ($update_page_content) {
+		if ($update_category) {
 
 			logger_store([
 				'user_id' => $this->data['user']->id,
-				'detail' => 'แก้ไข Content (Services Page)',
+				'detail' => 'แก้ไข Category (Client Page)',
+				'event' => 'update',
+				'ip' => $this->input->ip_address(),
+			]);
+
+			$this->session->set_flashdata('success', 'Add Done');
+		} else {
+			$this->session->set_flashdata('error', 'Something wrong');
+		}
+
+		redirect($this->lang . '/backoffice/page/clients/list-category-clients');
+	}
+
+	public function service_destroy($lang, $client_id)
+	{
+		$status = 500;
+		$response['success'] = 0;
+
+		$category = $this->Client_category_model->delete_client_category_by_id($client_id);
+
+		if ($category != false) {
+			$status = 200;
+			$response['success'] = 1;
+		}
+
+		return $this->output
+			->set_status_header($status)
+			->set_content_type('application/json')
+			->set_output(json_encode($response));
+	}
+
+	/***********************************
+	 * Ports
+	 * ********************************/
+
+	public function list_service_ports($lang, $client_category_id)
+	{
+		$this->data['lang'] = $this->lang;
+		$this->data['title'] = 'Page: Clients';
+		$this->data['content'] = 'clients/client_list';
+		$this->data['clients'] = $this->Client_model->get_client_by_category_id($client_category_id);
+		$this->data['category'] =  $this->Client_category_model->get_client_category_by_id($client_category_id);
+
+		$this->load->view('app', $this->data);
+	}
+
+	public function service_port_create($lang, $client_category_id)
+	{
+		$this->data['lang'] = $this->lang;
+		$this->data['title'] = 'Page: Clients - Clients - Add';
+		$this->data['content'] = 'clients/client_create';
+		$this->data['category'] =  $this->Client_category_model->get_client_category_by_id($client_category_id);
+
+		$this->load->view('app', $this->data);
+	}
+
+	public function service_port_store($lang, $client_category_id)
+	{
+		// Handle Image
+		$img_en = '';
+		$img_th = '';
+
+		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
+			$img_en = $this->ddoo_upload_client('img_en');
+		}
+
+		if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
+			$img_th = $this->ddoo_upload_client('img_th');
+		}
+
+		// Filter Data
+		$input_img = ['en' => $img_en, 'th' => $img_th];
+		$input_title = ['en' => $this->input->post('img_title_alt_en'), 'th' => $this->input->post('img_title_alt_th')];
+
+		// Add Data
+		$add_client = $this->Client_model->insert_client([
+			'image' => serialize($input_img),
+			'title' => serialize($input_title),
+			'category_id' => $client_category_id
+		]);
+
+		// Set Session To View
+		if ($add_client) {
+
+			logger_store([
+				'user_id' => $this->data['user']->id,
+				'detail' => 'เพิ่ม Client (Clients Page)',
+				'event' => 'add',
+				'ip' => $this->input->ip_address(),
+			]);
+
+			$this->session->set_flashdata('success', 'Add Done');
+		} else {
+			$this->session->set_flashdata('error', 'Something wrong');
+		}
+
+		redirect($this->lang . '/backoffice/page/clients/list-clients/' . $client_category_id);
+	}
+
+	public function service_port_edit($lang, $client_category_id, $client_id)
+	{
+		$client = $this->Client_model->get_client_by_id($client_id);
+
+		$this->data['lang'] = $this->lang;
+		$this->data['title'] = 'Page: Clients - Clients - Edit(' . unserialize($client->title)['th'] . ')';
+		$this->data['content'] = 'clients/client_edit';
+		$this->data['client'] = $client;
+		$this->data['category'] =  $this->Client_category_model->get_client_category_by_id($client_category_id);
+
+		$this->load->view('app', $this->data);
+	}
+
+	public function service_port_update($lang, $client_category_id, $client_id)
+	{
+		// Get Old data
+		$client = $this->Client_model->get_client_by_id($client_id);
+
+		// Handle Image
+		$img_en = unserialize($client->image)['en'];
+		$img_th = unserialize($client->image)['th'];
+
+		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
+			$img_en = $this->ddoo_upload_client('img_en');
+		}
+
+		if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
+			$img_th = $this->ddoo_upload_client('img_th');
+		}
+
+		// Filter Data
+		$input_img = ['en' => $img_en, 'th' => $img_th];
+		$input_title = ['en' => $this->input->post('img_title_alt_en'), 'th' => $this->input->post('img_title_alt_th')];
+
+		// Update Data
+		$update_client = $this->Client_model->update_client_by_id($client_id, [
+			'image' => serialize($input_img),
+			'title' => serialize($input_title),
+			'updated_at' => date('Y-m-d H:i:s')
+		]);
+
+		// Set Session To View
+		if ($update_client) {
+
+			logger_store([
+				'user_id' => $this->data['user']->id,
+				'detail' => 'แก้ไข Client (Clients Page)',
 				'event' => 'update',
 				'ip' => $this->input->ip_address(),
 			]);
@@ -98,12 +274,110 @@ class Service extends MX_Controller
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
 
-		redirect($lang . '/backoffice/page/services/content/' . $id);
+		redirect($this->lang . '/backoffice/page/clients/list-clients/' . $client_category_id);
+	}
+
+	public function service_port_destroy($lang, $client_id)
+	{
+		$status = 500;
+		$response['success'] = 0;
+
+		$client = $this->Client_model->delete_client_by_id($client_id);
+
+		if ($client != false) {
+			$status = 200;
+			$response['success'] = 1;
+
+			logger_store([
+				'user_id' => $this->data['user']->id,
+				'detail' => 'ลบ Client (Client Page)',
+				'event' => 'delete',
+				'ip' => $this->input->ip_address(),
+			]);
+		}
+
+		return $this->output
+			->set_status_header($status)
+			->set_content_type('application/json')
+			->set_output(json_encode($response));
+	}
+
+	/***********************************
+	 * Sorting (Using Ajax)
+	 * ********************************/
+
+	public function ajax_get_client_and_sort_show($lang, $category_id)
+	{
+		$status = 500;
+		$response['success'] = 0;
+
+		$clients = $this->Client_model->get_client_by_category_id($category_id);
+
+		// Set Response
+		if ($clients != false) {
+			$status = 200;
+			$response['success'] = 1;
+
+			$counter = 1;
+			$html = '<ul id="sortable">';
+			foreach ($clients as $client) {
+				$html .= '<li id="' . $client->id . '" data-sort="' . $client->sort . '"><span style="padding: 0px 10px;">' . $counter . ' . </span><img alt="en" width="120px;" src="' . base_url('storage/uploads/images/clients/' . unserialize($client->image)['en']) . '"> | <img alt="en" width="120px;" src="' . base_url('storage/uploads/images/clients/' . unserialize($client->image)['th']) . '"></li>';
+				$counter++;
+			}
+			$html .= '</ul>';
+
+			$response['data'] = $html;
+		}
+
+		// Send Response
+		return $this->output
+			->set_status_header($status)
+			->set_content_type('application/json')
+			->set_output(json_encode($response));
+	}
+
+	public function ajax_get_client_and_sort_update()
+	{
+		$status = 500;
+		$response['success'] = 0;
+
+		// Set Response
+		if ($this->input->post()) {
+
+			$bundle_id = $this->input->post('id');
+			$bundle_sort = $this->input->post('sort');
+
+			$counter = 1;
+			foreach (array_combine($bundle_id, $bundle_sort) as $id => $sort) {
+
+				$this->Client_model->update_client_by_id($id, [
+					'sort' => $counter
+				]);
+
+				$counter++;
+			}
+
+			$status = 200;
+			$response['success'] = 1;
+
+			logger_store([
+				'user_id' => $this->data['user']->id,
+				'detail' => 'จัดเรียง Client (Clients Page)',
+				'event' => 'sort_item',
+				'ip' => $this->input->ip_address(),
+			]);
+		}
+
+		// Send Response
+		return $this->output
+			->set_status_header($status)
+			->set_content_type('application/json')
+			->set_output(json_encode($response));
 	}
 
 	private function ddoo_upload_client($filename)
 	{
-		$config['upload_path'] = './storage/uploads/images/services';
+		$config['upload_path'] = './storage/uploads/images/clients';
 		$config['allowed_types'] = 'gif|jpg|png';
 		$config['encrypt_name'] = TRUE;
 
