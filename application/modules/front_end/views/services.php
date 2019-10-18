@@ -1,10 +1,3 @@
-<!-- Title -->
-<!--<section class="page-title" style="background-image:url(http://localhost/social.co.th/resources/front_end/images/slider-1.jpg)">-->
-<!--    <div class="container my-auto text-center wow fadeInUp">-->
-<!--        <h1>Services Page</h1>-->
-<!--    </div>-->
-<!--</section>-->
-
 <style>
 	h3.service--split__title--head {
 		font-size: 1.25rem;
@@ -96,7 +89,6 @@
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
-	.
 	}
 
 	#service-4 h2 {
@@ -188,233 +180,84 @@
 		left: 0;
 		position: absolute;
 	}
+
+
+	
+.wrap-slide-port .owl-nav .owl-prev {
+    left: 0;
+    background: url(<?php echo base_url('resources/front_end/images/service/bw.png');?>) !important;
+}
+.wrap-slide-port .owl-nav .owl-next {
+    right: 0;
+    background: url(<?php echo base_url('resources/front_end/images/service/fw.png'); ?>) !important;
+}
+
+
+	
 </style>
+<!-- Title -->
+<section class="page-title" style="background-image:url(http://localhost/social.co.th/resources/front_end/images/slider-1.jpg)">
+   <div class="container my-auto text-center wow fadeInUp">
+       <h1>Services Page</h1>
+   </div>
+</section>
 
-<!-- Service -->
-<section id="service" style="padding-top: 160px; padding-bottom: 0px;">
-	<div class="container">
-		<div class="row mb-5">
-			<div class="col-md-5 col-lg-5 text-right pr-3 pr-xs-0 text-center text-sm-right">
-				<h2 class="service--split__title--head mt-md-0 mt-4"><span>S</span>ocial Media Master</h2>
-				<p class="lead service--split__title--body mt-4 mb-4">
-					คร่ำหวอดในแวดวงดิจิทัลมาอย่างยาวนานตั้งแต่ยุคแรก ๆ ของการทำสื่อโฆษณาออนไลน์
-					ไม่ใช่แค่ประสบการณ์ที่เราได้เก็บเกี่ยว
-					และเพาะบ่มเท่านั้นแต่เรายังมีเทคนิคในการทำการตลาดออนไลน์มีเพียบ ที่พร้อมจะขับเคลื่อนธุรกิจของคุณ
-					ให้ประสบความสำเร็จ บนโลกออนไลน์
+<section class="sec-service-port row">
+	<div class="col row sec-service-port--inner">
+		<div class="col-3  col-md-12 col-lg-3">
+			<img src="<?php echo base_url('resources/front_end/images/service/portfolio.png') ?>" alt="">
+		</div>
+		<div class="col-9  col-md-12  col-lg-9">
+			<div class="wrap-slide-port owl-carousel owl-theme">
+				<div class="item">
+					<img src="<?php echo base_url('resources/front_end/images/service/portfolio.png') ?>" alt="">
+				</div>
+				<div class="item">
+					<img src="<?php echo base_url('resources/front_end/images/service/portfolio.png') ?>" alt="">
+				</div>
+				<div class="item">
+					<img src="<?php echo base_url('resources/front_end/images/service/portfolio.png') ?>" alt="">
+				</div>
+				<div class="item">
+					<img src="<?php echo base_url('resources/front_end/images/service/portfolio.png') ?>" alt="">
+				</div>
+				<div class="item">
+					<img src="<?php echo base_url('resources/front_end/images/service/portfolio.png') ?>" alt="">
+				</div>
+				<div class="item">
+					<img src="<?php echo base_url('resources/front_end/images/service/portfolio.png') ?>" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="sec-service-content">
+	<div class="row wrap-service-content mb-5">
+		<div class="col-4">
+			<img src="<?php echo base_url('resources/front_end/images/service/dummy.jpg') ?>" alt="">
+		</div>
+		<div class="col-8 row justify-content-end">
+			<div class="col-11">
+				<h1 class="ttl-01">
+					SEARCH<br>ENGINE<br>OPTIMIZATION
+				</h1>
+				<p class="txt">คัตเอาต์อินเตอร์ดั๊มพ์ เฟิร์มป๊อป ทาวน์ดยุกสตริง รุมบ้าโหงวคอนเซปต์แฟนซีแพนงเชิญ ล้มเหลวเซลส์แมนอพาร์ทเมนท์ฟอร์มปักขคณนา ป๊อก แฟ้บโมเดิร์นกัมมันตะ</p>
+			</div>
+		</div>
+	</div>
+	<div class="row wrap-service-content flex-row-reverse">
+		<div class="col-4">
+			<img src="<?php echo base_url('resources/front_end/images/service/dummy.jpg') ?>" alt="">
+		</div>
+		<div class="col-8 row">
+			<div class="col-11">
+				<h3 class="ttl-02">
+					Seo สำคัญอย่างไร
+				</h1>
+				<p class="txt">คัตเอาต์อินเตอร์ดั๊มพ์ เฟิร์มป๊อป ทาวน์ดยุกสตริง รุมบ้าโหงวคอนเซปต์แฟนซีแพนงเชิญ ล้มเหลวเซลส์แมนอพาร์ทเมนท์ฟอร์มปักขคณนา ป๊อก แฟ้บโมเดิร์นกัมมันตะ
+				รุมบ้าโหงวคอนเซปต์แฟนซีแพนงเชิญ ล้มเหลวเซลส์แมนอพาร์ทเมนท์ฟอร์มปักขคณนา ป๊อก แฟ้บโมเดิร์นกัมมันตะรุมบ้าโหงวคอนเซปต์แฟนซีแพนงเชิญ ล้มเหลวเซลส์แมนอพาร์ทเมนท์ฟอร์มปักขคณนา ป๊อก แฟ้บโมเดิร์นกัมมันตะ
 				</p>
-			</div>
-			<div class="col-xs-12 col-md-7 col-lg-7 pl-md-5 text-center text-sm-left">
-				<img src="<?php base_url() ?>resources/front_end/images/img-/images/title-service.png" alt=""
-					 class="img-fluid">
-			</div>
-		</div>
-		<div class="row text-center">
-			<div class="col-xs-12 col-md-3 col-lg-3 mb-5">
-				<img src="resources/front_end/images/service-1/smm-consult.png" alt="" class="img-fluid service__icon--resize">
-				<h3 class="service--split__title--head mt-3">บริการที่ปรึกษาการคลาดออนไลน์</h3>
-			</div>
-			<div class="col-xs-12 col-md-3 col-lg-3 mb-5">
-				<img src="resources/front_end/images/service-1/smm-marketing.png" alt="" class="img-fluid service__icon--resize">
-				<h3 class="service--split__title--head mt-3">บริการวางแผนและทำการตลาดออนไลน์</h3>
-			</div>
-			<div class="col-xs-12 col-md-3 col-lg-3 mb-5">
-				<img src="resources/front_end/images/service-1/smm-production.png" alt="" class="img-fluid service__icon--resize">
-				<h3 class="service--split__title--head mt-3">รับพัฒนา และออกแบบเว็บไซต์</h3>
-			</div>
-			<div class="col-xs-12 col-md-3 col-lg-3 mb-5">
-				<img src="resources/front_end/images/service-1/smm-website.png" alt="" class="img-fluid service__icon--resize">
-				<h3 class="service--split__title--head mt-3">Production</h3>
-			</div>
-		</div>
-	</div>
-</section>
-
-<section id="service-1">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-4">
-				<h2>บริการที่ปรึกษาการตลาดออนไลน์</h2>
-				<div class="service-1__wrapper--icon text-center mt-5 mb-5" style="width: 100%;">
-					<img src="resources/front_end/images/service-1/smm-consult.png" alt="" class="img-fluid">
-				</div>
-				<!--                <div class="service-1__footer">-->
-				<!--                    <h3>Contact us</h3>-->
-				<!--                    <span>02-193-9062</span>-->
-				<!--                </div>-->
-			</div>
-			<div class="col-md-8">
-				<div class="row mb-5">
-					<img src="resources/front_end/images/service-1/service-1_16.png" alt="" class="img-fluid">
-				</div>
-				<div class="row">
-					<div class="col-md-4 pl-md-0">
-						<div class="service-1__wrapper">
-							<h3 class="service-1__title--head mb-5">วางแผนทางการตลาดออนไลน์</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid cumque nihil quo
-								repellendus suscipit. Aut, neque sequi. Accusantium adipisci architecto dicta eveniet id
-								omnis, optio rem tempore. Atque, deserunt et.</p>
-						</div>
-					</div>
-					<div class="col-md-4 pl-md-0">
-						<div class="service-1__wrapper">
-							<h3 class="service-1__title--head mb-5">ที่ปรึกษาการตลาดออนไลน์</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet asperiores
-								laudantium minus numquam ratione sapiente? Architecto consectetur eaque itaque nulla
-								possimus veniam voluptatum. Accusamus alias beatae deleniti magnam sint.</p>
-						</div>
-					</div>
-					<div class="col-md-4 pl-md-0">
-						<div class="service-1__wrapper">
-							<h3 class="service-1__title--head mb-5">วิทยากรบรรยาย</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores dolor facilis nulla,
-								provident rerum totam! Aut eos, et ex fugit nam natus necessitatibus quaerat quas sit
-								soluta tenetur voluptas voluptates.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
-<section id="service-2">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-4">
-				<h2>บริการวางแผนและการทำการตลาดออนไลน์</h2>
-				<!--                <div class="service-1__footer">-->
-				<!--                    <h3>Contact us</h3>-->
-				<!--                    <span>02-193-9062</span>-->
-				<!--                </div>-->
-			</div>
-			<div class="col-md-4">
-				<div class="service-2__wrapper--box mb-3">
-					<h5>รับทำ Search Marketing</h5>
-					<ul class="service-2__box--menu">
-						<li>รับทำ SEO</li>
-						<li>รับทำ Google Adword</li>
-					</ul>
-				</div>
-				<div class="service-2__wrapper--box mb-3">
-					<h5>รับทำ Social Media Marketing</h5>
-					<ul class="service-2__box--menu">
-						<li>รับทำ Facebook Ads</li>
-						<li>รับทำ Instagram Ads</li>
-						<li>รับทำ Youtube Ads</li>
-						<li>บริหารดูแล Line@</li>
-						<li>บริหารบริการจัดการแฟนเพจ</li>
-					</ul>
-				</div>
-				<div class="service-2__wrapper--box mb-3">
-					<h5>รับทำ Content Marketing / Creative Content</h5>
-				</div>
-
-				<div class="service-2__wrapper--box mb-3">
-					<h5>รับทำ Influencer & Micro Influencer</h5>
-				</div>
-				<div class="service-2__wrapper--box mb-3">
-					<h5>รับทำ EDM</h5>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<img src="resources/front_end/images/service-1/service-1_20.png" alt="" class="img-fluid">
-			</div>
-		</div>
-	</div>
-</section>
-
-<section id="service-3" style="position:relative;">
-	<img src="resources/front_end/images/service-1/footer-section.jpg" alt=""
-		 style="position: absolute;top:-201px;right:0px;">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-5">
-				<h2>รับพัฒนาและออกแบบเว็บไซต์</h2>
-				<div class="service-1__wrapper--icon text-center mt-5 mb-5" style="width: 100%;">
-					<img src="<?php base_url() ?>resources/front_end/images/service-1/img_service_01.png" alt=""
-						 class="img-fluid img-main-cus">
-				</div>
-			</div>
-			<div class="col-md-7 row">
-
-				<div class="mb-5 col-6">
-					<img src="<?php base_url() ?>resources/front_end/images/service-1/img_service_02.jpg" alt=""
-						 class="img-fluid">
-					<h3 class="txt-service-cap">Website</h3>
-				</div>
-
-				<div class="mb-5 col-6">
-					<img src="<?php base_url() ?>resources/front_end/images/service-1/img_service_03.jpg" alt=""
-						 class="img-fluid">
-					<h3 class="txt-service-cap">Web App</h3>
-				</div>
-
-
-				<div class="mb-5 col-6">
-					<img src="<?php base_url() ?>resources/front_end/images/service-1/img_service_04.jpg" alt=""
-						 class="img-fluid">
-					<h3 class="txt-service-cap">Moblie App</h3>
-				</div>
-
-				<div class="mb-5 col-6">
-					<img src="<?php base_url() ?>resources/front_end/images/service-1/img_service_05.jpg" alt=""
-						 class="img-fluid">
-					<h3 class="txt-service-cap">Landing page</h3>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
-<section id="service-4">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-4">
-				<h2>Production</h2>
-			</div>
-			<div class="col-md-8">
-				<div class="row">
-					<div class="col-md-4">
-						<div class="card box-service-pro">
-							<div class="card-body">
-								<h5 class="card-title">VDO Production</h5>
-								<!--                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="card box-service-pro">
-							<div class="card-body">
-								<h5 class="card-title">Graphic Design</h5>
-								<!--                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="card box-service-pro">
-							<div class="card-body">
-								<h5 class="card-title">Motion Graphic</h5>
-								<!--                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="card box-service-pro">
-							<div class="card-body">
-								<h5 class="card-title">Animation</h5>
-								<!--                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="card box-service-pro">
-							<div class="card-body">
-								<h5 class="card-title">MV Music</h5>
-								<!--                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-							</div>
-						</div>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>
@@ -443,3 +286,15 @@
 		</div>
 	</div>
 </div>
+<!-- Push Custom Scripts -->
+<script>
+    $(function () {
+        $('.wrap-slide-port').owlCarousel({
+            items:5,
+            nav:true,
+            loop:true,
+            dots:false,
+            margin:15,
+        });
+    });
+</script>

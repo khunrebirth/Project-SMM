@@ -256,6 +256,18 @@ a:hover {
     font-weight: 500;
     line-height: 1;
 }
+@media (min-width: 1200px) { 
+    .home__title--head {
+        font-size: 4rem;
+
+    } 
+}
+@media (min-width: 992px) {
+    .home__title--head {
+        font-size: 3rem;
+
+    } 
+}
 
 .home__title--head span {
     color: #0d84be;
@@ -264,7 +276,18 @@ a:hover {
 .home__title--body {
     color: #666;
 }
+@media (min-width: 1200px) { 
+    .home__title--body {
+        font-size: 1.5rem;
 
+    } 
+}
+@media (min-width: 992px) {
+    .home__title--body {
+        font-size: 1.25rem;
+
+    } 
+}
 
 /* ==================================
  * SECTION (ABOUT)
@@ -301,7 +324,9 @@ a:hover {
 /* ==================================
  * SECTION (SERVICE)
 ====================================*/
-
+#service {
+    background-color: #f0f1f6;
+}
 .text-primary {
     color: #ffffff !important;
     background: rgba(18, 125, 188, 0.7);
@@ -630,5 +655,70 @@ a:hover {
             border-radius: 20px;
         }
 
+.sec-client {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto; 
+}
+        
 
-
+.sec-service-port {
+    background-color: #eee;
+    
+}
+.sec-service-port--inner {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.wrap-slide-port {
+    padding: 0 45px;
+    height: 100%;
+    position: relative;
+}
+.wrap-slide-port .item {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrap-slide-port  .owl-item ,
+.wrap-slide-port  .owl-stage,
+.wrap-slide-port  .owl-stage-outer {
+    height: 100%;
+}
+.wrap-slide-port .owl-nav {
+    position: absolute;
+    top: 10%;
+    -webkit-transform: translate3d(0,-50%,0);
+            transform: translate3d(0,-50%,0);
+    width: 100%;
+    left: 0;
+}
+.wrap-slide-port .owl-nav .owl-prev, 
+.wrap-slide-port .owl-nav .owl-next {
+    position: absolute;
+    width: 31px;
+    height: 36px;
+    background-color: #fff !important;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+.wrap-slide-port .owl-nav .owl-prev:focus, 
+.wrap-slide-port .owl-nav .owl-next:focus {
+    outline: none;
+}
+.wrap-slide-port .owl-nav .owl-prev:hover, 
+.wrap-slide-port .owl-nav .owl-next:hover {
+    opacity: 0.7;
+}
+.wrap-slide-port .owl-nav .owl-prev span, 
+.wrap-slide-port .owl-nav .owl-next span {
+    display: none;
+}
+.wrap-service-content {
+    max-width: 1440px;
+    margin: 0 auto;
+}

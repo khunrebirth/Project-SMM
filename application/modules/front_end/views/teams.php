@@ -50,7 +50,7 @@
 </style>
 
 <!-- Title -->
-<section class="page-title" style="background-image:url(http://localhost/social-dev/resources/front_end/images/slider-1.jpg)">
+<section class="page-title" style="background-image:url(http://localhost/social-dev/resources/front_end/images/team/banner-team.jpg)">
     <div class="container my-auto text-center wow fadeInUp">
         <h1><?php echo lang('page_team'); ?></h1>
     </div>

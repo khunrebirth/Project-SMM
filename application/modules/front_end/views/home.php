@@ -43,60 +43,60 @@
 			<img src="<?php echo base_url('resources/front_end/images/img-/images/title-service.png') ?>" alt="" class="img-fluid">
 		</div>
 		<div class="row mb-5">
-			<div class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
+			<a href="#" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
 				<img src="<?php echo base_url('resources/front_end/images/home/ico_facebook_01.png') ?>" alt="" class="img-fluid service__icon--resize">
 				<p class="service__title--body">
 					Social Media Marketing
 				</p>
-			</div>
-			<div class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
+			</a>
+			<a href="#" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
 				<img src="<?php echo base_url('resources/front_end/images/home/ico_seo_01.png') ?>" alt="" class="img-fluid service__icon--resize">
 				<p class="service__title--body">
 					Search Engine Marketing
 				</p>
-			</div>
-			<div class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
+			</a>
+			<a href="#" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
 				<img src="<?php echo base_url('resources/front_end/images/home/ico_line_01.png') ?>" alt="" class="img-fluid service__icon--resize">
 				<p class="service__title--body">
 					Line Marketing
 				</p>
-			</div>
-			<div class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
+			</a>
+			<a href="#" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
 				<img src="<?php echo base_url('resources/front_end/images/home/ico_sem_01.png') ?>" alt="" class="img-fluid service__icon--resize">
 				<p class="service__title--body">
 					Search Engine Optimization
 				</p>
-			</div>
-			<div class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
+			</a>
+			<a href="#" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
 				<img src="<?php echo base_url('resources/front_end/images/home/ico_production_01.png') ?>" alt="" class="img-fluid service__icon--resize">
 				<p class="service__title--body">
 					Creative & Production
 				</p>
-			</div>
-			<div class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
+			</a>
+			<a href="#" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
 				<img src="<?php echo base_url('resources/front_end/images/home/ico_web_01.png') ?>" alt="" class="img-fluid service__icon--resize">
 				<p class="service__title--body">
 					Website design
 				</p>
-			</div>
-			<div class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
+			</a>
+			<a href="#" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
 				<img src="<?php echo base_url('resources/front_end/images/home/ico_consult_01.png') ?>" alt="" class="img-fluid service__icon--resize">
 				<p class="service__title--body">
 					บริการให้คำแนะนำปรึกษา และวางแผนการตลาดออนไลน์
 				</p>
-			</div>
-			<div class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
+			</a>
+			<a href="#" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
 				<img src="<?php echo base_url('resources/front_end/images/home/ico_speak_01.png') ?>" alt="" class="img-fluid service__icon--resize">
 				<p class="service__title--body">
 					Speaker
 				</p>
-			</div>
-			<div class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
+			</a>
+			<a href="#" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
 				<img src="<?php echo base_url('resources/front_end/images/home/ico_setting_01.png') ?>" alt="" class="img-fluid service__icon--resize">
-			</div>
-			<div class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
+			</a>
+			<a href="#" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
 				<img src="<?php echo base_url('resources/front_end/images/home/ico_contact_01.png') ?>" alt="" class="img-fluid service__icon--resize">
-			</div>
+			</a>
 		</div>
 	</div>
 </section>
@@ -121,7 +121,7 @@
 			</div>
 		</div>
 		<!-- content tab-->
-		<div class="tab-content" id="pills-tabContent">
+		<div class="tab-content sec-client" id="pills-tabContent">
 			<?php foreach ($clients as $client) { ?>
 			<div class="tab-pane fade" id="pills-<?php echo $client['category_id']; ?>" role="tabpanel" aria-labelledby="pills-<?php echo $client['category_id']; ?>-tab">
 				<?php if (count($client['clients']) > 0) { ?>
@@ -194,7 +194,7 @@
 						$first_name = substr($fullname, 0, $posBlankSpace);
 						$last_name = substr($fullname, $posBlankSpace, strlen($fullname));
 					?>
-					<div class="col-xs-12 col-md-4 col-lg-4">
+					<div class="col-xs-12 col-md-3 col-lg-3">
 						<div class="card team__card--parent mb-0" style="width: 18rem;">
 							<img class="card-img-top" src="<?php echo base_url('storage/uploads/images/teams/' . unserialize($team->image)[$lang]); ?>">
 							<div class="card-body pl-0 pt-2 pb-2">
