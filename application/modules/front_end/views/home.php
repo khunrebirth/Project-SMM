@@ -17,11 +17,10 @@
 <section id="about" class="showcase">
 	<div class="container-fluid p-0">
 		<div class="row no-gutters">
-			<div class="col-md-6 col-lg-6 order-lg-2 showcase-img d-none d-sm-block"
-				 style="background-image: url('<?php echo base_url('storage/uploads/images/abouts/' . unserialize($about->img_section)[$lang]); ?>');"></div>
+			<div class="col-md-6 col-lg-6 order-lg-2 showcase-img d-none d-sm-block" style="background-image: url('<?php echo base_url('storage/uploads/images/abouts/' . unserialize($about->img_section)[$lang]); ?>');"></div>
 			<div class="col-xs-12 col-md-6 col-lg-6 order-lg-1 my-auto showcase-text text-center wow fadeInLeft">
 				<div class="title-about" style="">
-					<img src="<?php base_url() ?>resources/front_end/images/img-/title-about.png" alt="" class="img-fluid">
+					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/img-/images/title-about.png' : 'resources/front_end/images/img-/images/title-about.png'); ?>" alt="" class="img-fluid">
 				</div>
 				<h2 class="about__title--head mt-5 mb-4"><span>S</span>ocial Media Master</h2>
 				<div class="row justify-content-center">
@@ -29,11 +28,9 @@
 						<p class="lead about__title--body mt-4 mb-4">
 							<?php echo unserialize($about->content_left)[$lang]; ?>
 						</p>
-						<button type="button" class="btn btn-primary">READ MODE</button>
-						<a href=""></a>
+						<a href="<?php echo base_url($lang . '/' . lang('menu_about')); ?>" class="btn btn-primary"><?php echo lang('btn_read_more'); ?></a>
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</div>

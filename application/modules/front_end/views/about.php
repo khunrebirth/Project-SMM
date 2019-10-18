@@ -181,7 +181,7 @@
         <div class="row">
             <div class="col-md-5 offset-md-5 pl-md-5 pl-sm-5 pl-xs-0 text-center text-sm-left">
                 <div class="title-about" style="">
-                    <img src="<?php base_url() ?>resources/front_end/images/img-/title-about.png" alt="" class="img-fluid">
+					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/img-/images/title-about.png' : 'resources/front_end/images/img-/images/title-about.png'); ?>" alt="" class="img-fluid">
                 </div>
             </div>
 
