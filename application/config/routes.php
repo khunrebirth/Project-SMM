@@ -233,6 +233,8 @@ $route['(\w{2})/contact/send'] = 'front_end/Contact/send';
 		$route['(\w{2})/backoffice/page/teams/list-teams/edit/(:any)'] = "back_end/Team/edit/$1/$2";
 		$route['(\w{2})/backoffice/page/teams/list-teams/update/(:any)'] = "back_end/Team/update/$1/$2";
 		$route['(\w{2})/backoffice/page/teams/list-teams/destroy/(:any)'] = "back_end/Team/destroy/$1/$2";
+		$route['(\w{2})/backoffice/page/teams/list-teams/ajax/get/teams/sort/show'] = 'back_end/Team/ajax_get_team_and_sort_show';
+		$route['(\w{2})/backoffice/page/teams/list-teams/ajax/get/teams/sort/update'] = 'back_end/Team/ajax_get_team_and_sort_update';
 
         /*
         | -------------------------------------------------------------------------

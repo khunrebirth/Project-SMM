@@ -253,6 +253,80 @@ class Team extends MX_Controller
 		redirect($lang . '/backoffice/page/teams/content/' . $id);
 	}
 
+	/***********************************
+	 * Sorting (Using Ajax)
+	 * ********************************/
+
+	public function ajax_get_team_and_sort_show()
+	{
+		$status = 500;
+		$response['success'] = 0;
+
+		$teams = $this->Team_model->get_team_all();
+
+		// Set Response
+		if ($teams != false) {
+			$status = 200;
+			$response['success'] = 1;
+
+			$counter = 1;
+			$html = '<ul id="sortable">';
+			foreach ($teams as $team) {
+//				$html .= '<li id="' . $team->id . '" data-sort="' . $team->sort . '"><span style="padding: 0px 10px;">' . $counter . ' . </span><img alt="en" width="120px;" src="' . base_url('storage/uploads/images/teams/' . unserialize($team->image)['en']) . '"> | <img alt="en" width="120px;" src="' . base_url('storage/uploads/images/teams/' . unserialize($team->image)['th']) . '"></li>';
+				$html .= '<li id="' . $team->id . '" data-sort="' . $team->sort . '"><span style="padding: 0px 10px;">' . $counter . '</span>' . unserialize($team->title)['en'] . ' | ' . unserialize($team->title)['th'] . '</li>';
+				$counter++;
+			}
+			$html .= '</ul>';
+
+			$response['data'] = $html;
+		}
+
+		// Send Response
+		return $this->output
+			->set_status_header($status)
+			->set_content_type('application/json')
+			->set_output(json_encode($response));
+	}
+
+	public function ajax_get_team_and_sort_update()
+	{
+		$status = 500;
+		$response['success'] = 0;
+
+		// Set Response
+		if ($this->input->post()) {
+
+			$bundle_id = $this->input->post('id');
+			$bundle_sort = $this->input->post('sort');
+
+			$counter = 1;
+			foreach (array_combine($bundle_id, $bundle_sort) as $id => $sort) {
+
+				$this->Team_model->update_team_by_id($id, [
+					'sort' => $counter
+				]);
+
+				$counter++;
+			}
+
+			$status = 200;
+			$response['success'] = 1;
+
+			logger_store([
+				'user_id' => $this->data['user']->id,
+				'detail' => 'จัดเรียง Team (Team Page)',
+				'event' => 'sort_item',
+				'ip' => $this->input->ip_address(),
+			]);
+		}
+
+		// Send Response
+		return $this->output
+			->set_status_header($status)
+			->set_content_type('application/json')
+			->set_output(json_encode($response));
+	}
+
 	private function ddoo_upload_team($filename)
 	{
 		$config['upload_path'] = './storage/uploads/images/teams';

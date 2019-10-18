@@ -71,7 +71,7 @@ class Home extends MX_Controller
 		$data['clients'] = $this->filter_data_clients($this->Client_category_model->get_client_category_all());
 		$data['blog_categories'] = $this->Blog_category_model->get_blog_category_all();
 		$data['blogs'] = $this->Blog_model->get_last_blog(4);
-		$data['teams'] = $this->Team_model->get_team_all();
+		$data['teams'] = $this->Team_model->get_team_by_limit(3);
 
 		/*
 		| -------------------------------------------------------------------------

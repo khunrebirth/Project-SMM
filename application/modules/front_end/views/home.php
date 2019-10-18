@@ -187,54 +187,27 @@
 	<div class="container-fluid ">
 		<div class="sec-wrap-teams row flex-sm-column-reverse flex-column-reverse flex-md-column-reverse flex-lg-row">
 			<div class="row col-lg-8 col-sm-12 item-team">
-				<div class="col-xs-12 col-md-4 col-lg-4">
-					<div class="card team__card--parent mb-0" style="width: 18rem;">
-						<img class="card-img-top"
-							 src="<?php echo base_url('resources/front_end/images/img-/images/smm-kriangkrai.jpg') ?>"
-							 alt="Card image cap">
-						<div class="card-body pl-0 pt-2 pb-2">
-							<h5 class="card-title team__crad--title">Kriangkrai <br>Nilkamhaeng</h5>
-							<p class="card-text team__crad--body">CEO / Founder</p>
+				<?php foreach ($teams as $team) { ?>
+					<?php
+						$fullname = unserialize($team->title)[$lang];
+						$posBlankSpace = strpos(unserialize($team->title)[$lang], " ");
+						$first_name = substr($fullname, 0, $posBlankSpace);
+						$last_name = substr($fullname, $posBlankSpace, strlen($fullname));
+					?>
+					<div class="col-xs-12 col-md-4 col-lg-4">
+						<div class="card team__card--parent mb-0" style="width: 18rem;">
+							<img class="card-img-top" src="<?php echo base_url('storage/uploads/images/teams/' . unserialize($team->image)[$lang]); ?>">
+							<div class="card-body pl-0 pt-2 pb-2">
+								<h5 class="card-title team__crad--title"><?php echo $first_name; ?> <br><?php echo $last_name; ?></h5>
+								<p class="card-text team__crad--body"><?php echo unserialize($team->body)[$lang]; ?></p>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-xs-12 col-md-4 col-lg-4">
-					<div class="card team__card--parent mb-0" style="width: 18rem;">
-						<img class="card-img-top"
-							 src="<?php echo base_url('resources/front_end/images/img-/images/smm-krissana.jpg') ?>"
-							 alt="Card image cap">
-						<div class="card-body pl-0 pt-2 pb-2">
-							<h5 class="card-title team__crad--title">Krissana <br>Wimoonchad</h5>
-							<p class="card-text team__crad--body">Assistant Managing Director</p>
-						</div>
-					</div>
-				</div>
-				<!-- <div class="col-xs-12 col-md-3 col-lg-3">
-					<div class="card team__card--parent mb-0" style="width: 18rem;">
-						<img class="card-img-top"
-							 src="<?php echo base_url('resources/front_end/images/img-/images/smm-tanchanok.jpg') ?>"
-							 alt="Card image cap">
-						<div class="card-body pl-0 pt-2 pb-2">
-							<h5 class="card-title team__crad--title">Tanchanok <br>Sirisopitkul</h5>
-							<p class="card-text team__crad--body">Assistant Managing Director</p>
-						</div>
-					</div>
-				</div> -->
-				<div class="col-xs-12 col-md-4 col-lg-4">
-					<div class="card team__card--parent mb-0" style="width: 18rem;">
-						<img class="card-img-top"
-							 src="<?php echo base_url('resources/front_end/images/img-/images/smm-juthamas.jpg') ?>"
-							 alt="Card image cap">
-						<div class="card-body pl-0 pt-2 pb-2">
-							<h5 class="card-title team__crad--title">Juthamas <br>Sattayapun</h5>
-							<p class="card-text team__crad--body">Project Manager</p>
-						</div>
-					</div>
-				</div>
+				<?php } ?>
 			</div>
 			<div class="item-team-ttl col-lg-4 col-sm-12">
 				<div class="title-team" style="text-align: center; padding: 4rem;">
-					<img src="<?php echo base_url('resources/front_end/images/img-/images/title-team.png') ?>" alt="" class="img-fluid">
+					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/img-/images/title-team.png' : 'resources/front_end/images/img-/images/title-team.png'); ?>" alt="" class="img-fluid">
 				</div>
 			</div>
 		</div>

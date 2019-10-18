@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 17, 2019 at 09:11 AM
+-- Generation Time: Oct 18, 2019 at 04:24 AM
 -- Server version: 5.7.17-log
 -- PHP Version: 5.6.30
 
@@ -32,6 +32,9 @@ CREATE TABLE `about_page` (
   `meta_tag_description` text CHARACTER SET utf8 NOT NULL,
   `meta_tag_keywords` text CHARACTER SET utf8 NOT NULL,
   `img_og_twitter` text CHARACTER SET utf8 NOT NULL,
+  `content_left` text COLLATE utf8_unicode_ci NOT NULL,
+  `content_right` text COLLATE utf8_unicode_ci NOT NULL,
+  `img_section` text COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
@@ -41,8 +44,8 @@ CREATE TABLE `about_page` (
 -- Dumping data for table `about_page`
 --
 
-INSERT INTO `about_page` (`id`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'a:2:{s:2:\"en\";s:18:\"About | social.com\";s:2:\"th\";s:49:\"เกี่ยวกับเรา | social.com\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";N;s:2:\"th\";s:36:\"bc9cee3c829bf42297748337b230ef60.jpg\";}', '2019-10-02 09:16:29', '2019-10-15 00:51:39', NULL);
+INSERT INTO `about_page` (`id`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `content_left`, `content_right`, `img_section`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'a:2:{s:2:\"en\";s:18:\"About | social.com\";s:2:\"th\";s:49:\"เกี่ยวกับเรา | social.com\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:539:\"เราคือเอเจนซี่ออนไลน์ที่มีประสบการณ์ในสายงานดิจิทัลพร้อมด้วยบริการการตลาดที่หลากหลายอย่างครบวงจรกว่า 4 ล้านแฟนเพจที่เราดูแล กว่า 300 ล้าน impression ที่เราสร้าง ผู้เทนด์ โซเซียลมีเดีย ในประเทศไทย..\";s:2:\"th\";s:539:\"เราคือเอเจนซี่ออนไลน์ที่มีประสบการณ์ในสายงานดิจิทัลพร้อมด้วยบริการการตลาดที่หลากหลายอย่างครบวงจรกว่า 4 ล้านแฟนเพจที่เราดูแล กว่า 300 ล้าน impression ที่เราสร้าง ผู้เทนด์ โซเซียลมีเดีย ในประเทศไทย..\";}', 'a:2:{s:2:\"en\";s:1218:\"<p class=\"lead about__split--title--body mt-4 mb-4\">                     <strong style=\"line-height: 2.5;\">เป้าหมายของเรา</strong> <br>                     เรามีความมุ่งมั่นที่จะวางแผนการตลาดออนไลน์ที่ดีที่สุดเพื่อให้ลูกค้าของเราบรรลุวัตถุประสงค์ที่ตั้งไว้  ด้วยการวางกลยุทธ์ที่ผ่านการคิดวิเคราะห์หากลุ่มลูกค้าที่ตรงจุดกับธุรกิจของคุณ                     <br><br>                     นอกจากจากวางแผนการตลาดออนไลน์แล้วเรายังทำงานร่วมกันกับลูกค้าเพื่อให้คำแนะนำและปรึกษาใน การวางแนวทางสื่ออนไลน์ให้ได้ผลลัพธ์ที่คุ้มค่าที่สุดอีกด้วย                 </p>\";s:2:\"th\";s:1218:\"<p class=\"lead about__split--title--body mt-4 mb-4\">                     <strong style=\"line-height: 2.5;\">เป้าหมายของเรา</strong> <br>                     เรามีความมุ่งมั่นที่จะวางแผนการตลาดออนไลน์ที่ดีที่สุดเพื่อให้ลูกค้าของเราบรรลุวัตถุประสงค์ที่ตั้งไว้  ด้วยการวางกลยุทธ์ที่ผ่านการคิดวิเคราะห์หากลุ่มลูกค้าที่ตรงจุดกับธุรกิจของคุณ                     <br><br>                     นอกจากจากวางแผนการตลาดออนไลน์แล้วเรายังทำงานร่วมกันกับลูกค้าเพื่อให้คำแนะนำและปรึกษาใน การวางแนวทางสื่ออนไลน์ให้ได้ผลลัพธ์ที่คุ้มค่าที่สุดอีกด้วย                 </p>\";}', 'a:2:{s:2:\"en\";s:9:\"about.jpg\";s:2:\"th\";s:9:\"about.jpg\";}', '2019-10-02 09:16:29', '2019-10-17 19:50:33', NULL);
 
 -- --------------------------------------------------------
 
@@ -129,7 +132,7 @@ CREATE TABLE `blog_page` (
 --
 
 INSERT INTO `blog_page` (`id`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'a:2:{s:2:\"en\";s:20:\"Contact | social.com\";s:2:\"th\";s:31:\"ติดต่อ | social.com\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";N;s:2:\"th\";s:36:\"bc9cee3c829bf42297748337b230ef60.jpg\";}', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL);
+(1, 'a:2:{s:2:\"en\";s:20:\"Contact | social.com\";s:2:\"th\";s:31:\"ติดต่อ | social.com\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL);
 
 -- --------------------------------------------------------
 
@@ -210,7 +213,7 @@ CREATE TABLE `client_page` (
 --
 
 INSERT INTO `client_page` (`id`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'a:2:{s:2:\"en\";s:20:\"Cleints | social.com\";s:2:\"th\";s:49:\"ลูกค้าของเรา | social.com\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";N;s:2:\"th\";s:36:\"bc9cee3c829bf42297748337b230ef60.jpg\";}', '2019-10-02 09:16:29', '2019-10-15 00:50:57', NULL);
+(1, 'a:2:{s:2:\"en\";s:20:\"Cleints | social.com\";s:2:\"th\";s:49:\"ลูกค้าของเรา | social.com\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-10-02 09:16:29', '2019-10-15 00:50:57', NULL);
 
 -- --------------------------------------------------------
 
@@ -252,7 +255,7 @@ CREATE TABLE `contact_page` (
 --
 
 INSERT INTO `contact_page` (`id`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'a:2:{s:2:\"en\";s:20:\"Contact | social.com\";s:2:\"th\";s:31:\"ติดต่อ | social.com\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";N;s:2:\"th\";s:36:\"bc9cee3c829bf42297748337b230ef60.jpg\";}', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL);
+(1, 'a:2:{s:2:\"en\";s:20:\"Contact | social.com\";s:2:\"th\";s:31:\"ติดต่อ | social.com\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL);
 
 -- --------------------------------------------------------
 
@@ -311,13 +314,6 @@ CREATE TABLE `logs` (
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `deleted_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `logs`
---
-
-INSERT INTO `logs` (`id`, `event_id`, `detail`, `user_id`, `ip`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(44, 1, 'เข้าสู่ระบบ SSM Backoffice', 2, '::1', '2019-10-17 09:10:49', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -397,31 +393,6 @@ INSERT INTO `services` (`id`, `title`, `body`, `icon`, `created_at`, `updated_at
 -- --------------------------------------------------------
 
 --
--- Table structure for table `services2`
---
-
-CREATE TABLE `services2` (
-  `id` int(11) NOT NULL,
-  `title` varchar(40) NOT NULL,
-  `image` text NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `deleted_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `services2`
---
-
-INSERT INTO `services2` (`id`, `title`, `image`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Pay Per Click', 'pic-1.jpg', '2019-07-05 02:51:08', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(2, 'Online Ads.', 'pic-2.jpg', '2019-07-05 02:51:14', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(3, 'Web Design', 'pic-3.jpg', '2019-07-05 02:51:16', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(4, 'SEO', 'pic-4.jpg', '2019-07-05 02:51:23', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `service_page`
 --
 
@@ -441,7 +412,7 @@ CREATE TABLE `service_page` (
 --
 
 INSERT INTO `service_page` (`id`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'a:2:{s:2:\"en\";s:21:\"Services | social.com\";s:2:\"th\";s:49:\"บริการของเรา | social.com\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";N;s:2:\"th\";s:36:\"bc9cee3c829bf42297748337b230ef60.jpg\";}', '2019-10-02 09:16:29', '2019-10-15 00:51:19', NULL);
+(1, 'a:2:{s:2:\"en\";s:21:\"Services | social.com\";s:2:\"th\";s:49:\"บริการของเรา | social.com\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-10-02 09:16:29', '2019-10-15 00:51:19', NULL);
 
 -- --------------------------------------------------------
 
@@ -451,6 +422,7 @@ INSERT INTO `service_page` (`id`, `meta_tag_title`, `meta_tag_description`, `met
 
 CREATE TABLE `teams` (
   `id` int(11) NOT NULL,
+  `sort` int(11) NOT NULL,
   `title` text NOT NULL,
   `body` text NOT NULL,
   `image` text NOT NULL,
@@ -463,11 +435,18 @@ CREATE TABLE `teams` (
 -- Dumping data for table `teams`
 --
 
-INSERT INTO `teams` (`id`, `title`, `body`, `image`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'a:2:{s:2:\"en\";s:22:\"Kriangkrai Nilkamhaeng\";s:2:\"th\";s:22:\"Kriangkrai Nilkamhaeng\";}', 'a:2:{s:2:\"en\";s:13:\"CEO / Founder\";s:2:\"th\";s:13:\"CEO / Founder\";}', 'a:2:{s:2:\"en\";s:18:\"img-kriangkrai.jpg\";s:2:\"th\";s:18:\"img-kriangkrai.jpg\";}', '2019-10-10 05:56:19', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(2, 'a:2:{s:2:\"en\";s:19:\"Krissana Wimoonchad\";s:2:\"th\";s:19:\"Krissana Wimoonchad\";}', 'a:2:{s:2:\"en\";s:27:\"Assistant Managing Director\";s:2:\"th\";s:27:\"Assistant Managing Director\";}', 'a:2:{s:2:\"en\";s:16:\"img-krissana.jpg\";s:2:\"th\";s:16:\"img-krissana.jpg\";}', '2019-10-10 05:56:44', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(3, 'a:2:{s:2:\"en\";s:22:\"Tanchanok Sirisopitkul\";s:2:\"th\";s:22:\"Tanchanok Sirisopitkul\";}', 'a:2:{s:2:\"en\";s:27:\"Assistant Managing Director\";s:2:\"th\";s:27:\"Assistant Managing Director\";}', 'a:2:{s:2:\"en\";s:17:\"img-tanchanok.jpg\";s:2:\"th\";s:17:\"img-tanchanok.jpg\";}', '2019-10-10 05:57:03', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(4, 'a:2:{s:2:\"en\";s:19:\"Juthamas Sattayapun\";s:2:\"th\";s:19:\"Juthamas Sattayapun\";}', 'a:2:{s:2:\"en\";s:15:\"Project Manager\";s:2:\"th\";s:15:\"Project Manager\";}', 'a:2:{s:2:\"en\";s:16:\"img-juthamas.jpg\";s:2:\"th\";s:16:\"img-juthamas.jpg\";}', '2019-10-10 05:57:23', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `teams` (`id`, `sort`, `title`, `body`, `image`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 1, 'a:2:{s:2:\"en\";s:22:\"Kriangkrai Nilkamhaeng\";s:2:\"th\";s:22:\"Kriangkrai Nilkamhaeng\";}', 'a:2:{s:2:\"en\";s:13:\"CEO / Founder\";s:2:\"th\";s:13:\"CEO / Founder\";}', 'a:2:{s:2:\"en\";s:18:\"img-kriangkrai.jpg\";s:2:\"th\";s:18:\"img-kriangkrai.jpg\";}', '2019-10-18 04:01:07', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(2, 2, 'a:2:{s:2:\"en\";s:19:\"Krissana Wimoonchad\";s:2:\"th\";s:19:\"Krissana Wimoonchad\";}', 'a:2:{s:2:\"en\";s:27:\"Assistant Managing Director\";s:2:\"th\";s:27:\"Assistant Managing Director\";}', 'a:2:{s:2:\"en\";s:16:\"img-krissana.jpg\";s:2:\"th\";s:16:\"img-krissana.jpg\";}', '2019-10-18 04:01:07', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(4, 3, 'a:2:{s:2:\"en\";s:19:\"Juthamas Sattayapun\";s:2:\"th\";s:19:\"Juthamas Sattayapun\";}', 'a:2:{s:2:\"en\";s:15:\"Project Manager\";s:2:\"th\";s:15:\"Project Manager\";}', 'a:2:{s:2:\"en\";s:16:\"img-juthamas.jpg\";s:2:\"th\";s:16:\"img-juthamas.jpg\";}', '2019-10-18 04:14:25', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(5, 4, 'a:2:{s:2:\"en\";s:4:\"test\";s:2:\"th\";s:4:\"test\";}', 'a:2:{s:2:\"en\";s:4:\"test\";s:2:\"th\";s:4:\"test\";}', 'a:2:{s:2:\"en\";s:12:\"img-palm.jpg\";s:2:\"th\";s:12:\"img-palm.jpg\";}', '2019-10-18 04:14:25', '2019-10-17 21:07:08', '0000-00-00 00:00:00'),
+(6, 5, 'a:2:{s:2:\"en\";s:4:\"test\";s:2:\"th\";s:4:\"test\";}', 'a:2:{s:2:\"en\";s:4:\"test\";s:2:\"th\";s:4:\"test\";}', 'a:2:{s:2:\"en\";s:10:\"img-vi.jpg\";s:2:\"th\";s:10:\"img-vi.jpg\";}', '2019-10-18 04:14:25', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(7, 6, 'a:2:{s:2:\"en\";s:4:\"test\";s:2:\"th\";s:4:\"test\";}', 'a:2:{s:2:\"en\";s:4:\"test\";s:2:\"th\";s:4:\"test\";}', 'a:2:{s:2:\"en\";s:11:\"img-pae.jpg\";s:2:\"th\";s:11:\"img-pae.jpg\";}', '2019-10-18 04:14:25', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(8, 7, 'a:2:{s:2:\"en\";s:4:\"test\";s:2:\"th\";s:4:\"test\";}', 'a:2:{s:2:\"en\";s:4:\"test\";s:2:\"th\";s:4:\"test\";}', 'a:2:{s:2:\"en\";s:11:\"img-wan.jpg\";s:2:\"th\";s:11:\"img-wan.jpg\";}', '2019-10-18 04:14:25', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(9, 8, 'a:2:{s:2:\"en\";s:4:\"test\";s:2:\"th\";s:4:\"test\";}', 'a:2:{s:2:\"en\";s:4:\"test\";s:2:\"th\";s:4:\"test\";}', 'a:2:{s:2:\"en\";s:13:\"img-grece.jpg\";s:2:\"th\";s:13:\"img-grece.jpg\";}', '2019-10-18 04:14:25', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(10, 9, 'a:2:{s:2:\"en\";s:4:\"test\";s:2:\"th\";s:4:\"test\";}', 'a:2:{s:2:\"en\";s:4:\"test\";s:2:\"th\";s:4:\"test\";}', 'a:2:{s:2:\"en\";s:12:\"img-bumm.jpg\";s:2:\"th\";s:12:\"img-bumm.jpg\";}', '2019-10-18 04:14:25', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(11, 10, 'a:2:{s:2:\"en\";s:4:\"test\";s:2:\"th\";s:4:\"test\";}', 'a:2:{s:2:\"en\";s:4:\"test\";s:2:\"th\";s:4:\"test\";}', 'a:2:{s:2:\"en\";s:13:\"img-nicky.jpg\";s:2:\"th\";s:13:\"img-nicky.jpg\";}', '2019-10-18 04:14:25', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(13, 11, 'a:2:{s:2:\"en\";s:4:\"test\";s:2:\"th\";s:4:\"test\";}', 'a:2:{s:2:\"en\";s:4:\"test\";s:2:\"th\";s:4:\"test\";}', 'a:2:{s:2:\"en\";s:11:\"img-nat.jpg\";s:2:\"th\";s:11:\"img-nat.jpg\";}', '2019-10-18 04:14:25', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -491,7 +470,7 @@ CREATE TABLE `team_page` (
 --
 
 INSERT INTO `team_page` (`id`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'a:2:{s:2:\"en\";s:18:\"Teams | social.com\";s:2:\"th\";s:22:\"ทีม | social.com\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";N;s:2:\"th\";s:36:\"bc9cee3c829bf42297748337b230ef60.jpg\";}', '2019-10-02 09:16:29', '2019-10-15 00:50:05', NULL);
+(1, 'a:2:{s:2:\"en\";s:18:\"Teams | social.com\";s:2:\"th\";s:22:\"ทีม | social.com\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-10-02 09:16:29', '2019-10-15 00:50:05', NULL);
 
 -- --------------------------------------------------------
 
@@ -613,12 +592,6 @@ ALTER TABLE `services`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `services2`
---
-ALTER TABLE `services2`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `service_page`
 --
 ALTER TABLE `service_page`
@@ -705,7 +678,7 @@ ALTER TABLE `home_page`
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 --
 -- AUTO_INCREMENT for table `log_events`
 --
@@ -722,11 +695,6 @@ ALTER TABLE `roles`
 ALTER TABLE `services`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
--- AUTO_INCREMENT for table `services2`
---
-ALTER TABLE `services2`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
 -- AUTO_INCREMENT for table `service_page`
 --
 ALTER TABLE `service_page`
@@ -735,7 +703,7 @@ ALTER TABLE `service_page`
 -- AUTO_INCREMENT for table `teams`
 --
 ALTER TABLE `teams`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `team_page`
 --
