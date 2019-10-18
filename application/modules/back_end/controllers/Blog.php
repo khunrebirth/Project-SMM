@@ -70,10 +70,12 @@ class Blog extends MX_Controller {
 	{
 		// Filter Data
 		$input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
+		$slug = ['en' => smm_slug($this->input->post('title_en')), 'th' => smm_slug($this->input->post('title_th'))];
 
 		// Add Data
 		$add_category = $this->Blog_category_model->insert_blog_category([
-			'title' => serialize($input_title)
+			'title' => serialize($input_title),
+			'slug' => serialize($slug)
 		]);
 
 		// Set Session To View
@@ -110,10 +112,12 @@ class Blog extends MX_Controller {
 	{
 		// Filter Data
 		$input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
+		$slug = ['en' => smm_slug($this->input->post('title_en')), 'th' => smm_slug($this->input->post('title_th'))];
 
 		// Add Data
 		$update_category = $this->Blog_category_model->update_blog_category_by_id($blog_id, [
 			'title' => serialize($input_title),
+			'slug' => serialize($slug),
 			'updated_at' => date('Y-m-d H:i:s')
 		]);
 
