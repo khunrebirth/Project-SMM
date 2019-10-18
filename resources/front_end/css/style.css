@@ -362,6 +362,9 @@ a:hover {
 .client__navs--border--right {
     border-right: 1px solid #00264c;
 }
+.client__navs .nav-item:last-of-type .client__navs--border--right {
+    border-right: none;
+}
 
 
 /* ==================================
