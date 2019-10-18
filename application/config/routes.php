@@ -95,6 +95,10 @@ $route['(\w{2})/contact'] = 'front_end/Contact';
 $route['(\w{2})/ติดต่อเรา'] = 'front_end/Contact';
 $route['(\w{2})/contact/send'] = 'front_end/Contact/send';
 
+// Thank You
+$route['(\w{2})/thanks'] = 'front_end/Thank_you';
+$route['(\w{2})/ขอบคุณ'] = 'front_end/Thank_you';
+
 	/*
 	| -------------------------------------------------------------------------
 	| HELPS
