@@ -68,12 +68,36 @@ class Blog extends MX_Controller {
 
     public function category_blog_store()
 	{
+		// Handle Image
+		$meta_og_image_en = '';
+		$meta_og_image_th = '';
+
+		if (isset($_FILES['meta_og_image_en']) && $_FILES['meta_og_image_en']['name'] != '') {
+			$meta_og_image_en = $this->ddoo_upload_blog('meta_og_image_en');
+		}
+
+		if (isset($_FILES['meta_og_image_th']) && $_FILES['meta_og_image_th']['name'] != '') {
+			$meta_og_image_th = $this->ddoo_upload_blog('meta_og_image_th');
+		}
+
 		// Filter Data
+		$input_meta_title = ['en' => $this->input->post('meta_tag_title_en'), 'th' => $this->input->post('meta_tag_title_th')];
+		$input_meta_description = ['en' => $this->input->post('meta_tag_description_en'), 'th' => $this->input->post('meta_tag_description_th')];
+		$input_meta_keyword = ['en' => $this->input->post('meta_tag_keywords_en'), 'th' => $this->input->post('meta_tag_keywords_th')];
+		$input_img_og_twitter= ['en' => $meta_og_image_en, 'th' => $meta_og_image_th];
 		$input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
-		$slug = ['en' => smm_slug($this->input->post('title_en')), 'th' => smm_slug($this->input->post('title_th'))];
+		$slug_en = slugify($this->input->post('title_en'));
+		$slug_th = str_replace(" ","-", strtolower($this->input->post('title_th')));
+		$slug_th = str_replace("/","-", $slug_th);
+		$slug_th = str_replace("&","-", $slug_th);
+		$slug = ['en' => $slug_en, 'th' => $slug_th];
 
 		// Add Data
 		$add_category = $this->Blog_category_model->insert_blog_category([
+			'meta_tag_title' => serialize($input_meta_title),
+			'meta_tag_description' => serialize($input_meta_description),
+			'meta_tag_keywords' => serialize($input_meta_keyword),
+			'img_og_twitter' => serialize($input_img_og_twitter),
 			'title' => serialize($input_title),
 			'slug' => serialize($slug)
 		]);
@@ -110,12 +134,39 @@ class Blog extends MX_Controller {
 
 	public function category_blog_update($lang, $blog_id)
 	{
+		// Get Old data
+		$blog_category = $this->Blog_category_model->get_blog_category_by_id($blog_id);
+
+		// Handle Image
+		$meta_og_image_en = unserialize($blog_category->img_og_twitter)['en'];
+		$meta_og_image_th = unserialize($blog_category->img_og_twitter)['en'];
+
+		if (isset($_FILES['meta_og_image_en']) && $_FILES['meta_og_image_en']['name'] != '') {
+			$meta_og_image_en = $this->ddoo_upload_blog('meta_og_image_en');
+		}
+
+		if (isset($_FILES['meta_og_image_th']) && $_FILES['meta_og_image_th']['name'] != '') {
+			$meta_og_image_th = $this->ddoo_upload_blog('meta_og_image_th');
+		}
+
 		// Filter Data
+		$input_meta_title = ['en' => $this->input->post('meta_tag_title_en'), 'th' => $this->input->post('meta_tag_title_th')];
+		$input_meta_description = ['en' => $this->input->post('meta_tag_description_en'), 'th' => $this->input->post('meta_tag_description_th')];
+		$input_meta_keyword = ['en' => $this->input->post('meta_tag_keywords_en'), 'th' => $this->input->post('meta_tag_keywords_th')];
+		$input_img_og_twitter= ['en' => $meta_og_image_en, 'th' => $meta_og_image_th];
 		$input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
-		$slug = ['en' => smm_slug($this->input->post('title_en')), 'th' => smm_slug($this->input->post('title_th'))];
+		$slug_en = slugify($this->input->post('title_en'));
+		$slug_th = str_replace(" ","-", strtolower($this->input->post('title_th')));
+		$slug_th = str_replace("/","-", $slug_th);
+		$slug_th = str_replace("&","-", $slug_th);
+		$slug = ['en' => $slug_en, 'th' => $slug_th];
 
 		// Add Data
 		$update_category = $this->Blog_category_model->update_blog_category_by_id($blog_id, [
+			'meta_tag_title' => serialize($input_meta_title),
+			'meta_tag_description' => serialize($input_meta_description),
+			'meta_tag_keywords' => serialize($input_meta_keyword),
+			'img_og_twitter' => serialize($input_img_og_twitter),
 			'title' => serialize($input_title),
 			'slug' => serialize($slug),
 			'updated_at' => date('Y-m-d H:i:s')
@@ -216,8 +267,9 @@ class Blog extends MX_Controller {
 		$input_description_section = ['en' => $this->input->post('description_section_en'), 'th' => $this->input->post('description_section_th')];
 		$input_body = ['en' => $this->input->post('body_en'), 'th' => $this->input->post('body_th')];
 		$slug_en = slugify($this->input->post('title_en'));
-		$slug_th = str_replace(" ","-", $this->input->post('title_th'));
+		$slug_th = str_replace(" ","-", strtolower($this->input->post('title_th')));
 		$slug_th = str_replace("/","-", $slug_th);
+		$slug_th = str_replace("&","-", $slug_th);
 		$slug = ['en' => $slug_en, 'th' => $slug_th];
 
 		// Add Data
@@ -302,8 +354,9 @@ class Blog extends MX_Controller {
 		$input_description_section = ['en' => $this->input->post('description_section_en'), 'th' => $this->input->post('description_section_th')];
 		$input_body = ['en' => $this->input->post('body_en'), 'th' => $this->input->post('body_th')];
 		$slug_en = slugify($this->input->post('title_en'));
-		$slug_th = str_replace(" ","-", $this->input->post('title_th'));
+		$slug_th = str_replace(" ","-", strtolower($this->input->post('title_th')));
 		$slug_th = str_replace("/","-", $slug_th);
+		$slug_th = str_replace("&","-", $slug_th);
 		$slug = ['en' => $slug_en, 'th' => $slug_th];
 
 		// Update Data

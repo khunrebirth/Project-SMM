@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 18, 2019 at 04:24 AM
+-- Generation Time: Oct 18, 2019 at 05:02 AM
 -- Server version: 5.7.17-log
 -- PHP Version: 5.6.30
 
@@ -105,10 +105,10 @@ CREATE TABLE `blog_categories` (
 --
 
 INSERT INTO `blog_categories` (`id`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `title`, `slug`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:9:\"SEO & SEM\";s:2:\"th\";s:9:\"SEO & SEM\";}', 'a:2:{s:2:\"th\";s:11:\"seo-and-sem\";s:2:\"en\";s:11:\"seo-and-sem\";}', '2019-10-17 07:47:14', '2019-07-04 21:56:35', '0000-00-00 00:00:00'),
+(1, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:9:\"SEO & SEM\";s:2:\"th\";s:9:\"SEO & SEM\";}', 'a:2:{s:2:\"en\";s:7:\"seo-sem\";s:2:\"th\";s:9:\"seo---sem\";}', '2019-10-18 04:59:47', '2019-10-17 21:59:47', '0000-00-00 00:00:00'),
 (2, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:12:\"Social media\";s:2:\"th\";s:12:\"Social media\";}', 'a:2:{s:2:\"th\";s:12:\"social-media\";s:2:\"en\";s:12:\"social-media\";}', '2019-10-17 07:47:15', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (3, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:39:\"พัฒนาเว็บไซต์\";s:2:\"th\";s:39:\"พัฒนาเว็บไซต์\";}', 'a:2:{s:2:\"th\";s:39:\"พัฒนาเว็บไซต์\";s:2:\"en\";s:39:\"พัฒนาเว็บไซต์\";}', '2019-10-17 07:47:16', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(4, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:12:\"Landing Page\";s:2:\"th\";s:12:\"Landing Page\";}', 'a:2:{s:2:\"th\";s:12:\"Landing Page\";s:2:\"en\";s:12:\"Landing Page\";}', '2019-10-17 07:47:18', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(4, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:12:\"Landing Page\";s:2:\"th\";s:12:\"Landing Page\";}', 'a:2:{s:2:\"en\";s:12:\"landing-page\";s:2:\"th\";s:12:\"landing-page\";}', '2019-10-18 05:00:19', '2019-10-17 22:00:19', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -314,6 +314,17 @@ CREATE TABLE `logs` (
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `deleted_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `logs`
+--
+
+INSERT INTO `logs` (`id`, `event_id`, `detail`, `user_id`, `ip`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(60, 4, 'แก้ไข Category (Blogs Page)', 2, '::1', '2019-10-18 04:56:33', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(61, 4, 'แก้ไข Category (Blogs Page)', 2, '::1', '2019-10-18 04:57:39', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(62, 4, 'แก้ไข Category (Blogs Page)', 2, '::1', '2019-10-18 04:58:19', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(63, 4, 'แก้ไข Category (Blogs Page)', 2, '::1', '2019-10-18 04:59:47', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(64, 4, 'แก้ไข Category (Blogs Page)', 2, '::1', '2019-10-18 05:00:19', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -678,7 +689,7 @@ ALTER TABLE `home_page`
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 --
 -- AUTO_INCREMENT for table `log_events`
 --

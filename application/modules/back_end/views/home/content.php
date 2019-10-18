@@ -34,8 +34,6 @@
 							<!-- Tab panes -->
 							<form class="form-horizontal" method="post" action="<?php echo base_url($lang . '/backoffice/page/home/content/update/' . $page_content->id); ?>" enctype="multipart/form-data">
 								<div class="tab-content">
-
-									<!-- THAI -->
 									<div class="tab-pane active" id="handleTh">
 										<!-- Meta Tag -->
 										<div style="padding-top: 20px;"><h4><i class="fa fa-tag"></i> Meta Tag (SEO)</h4></div>
