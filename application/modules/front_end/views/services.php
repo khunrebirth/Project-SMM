@@ -235,7 +235,7 @@
 <section class="sec-service-content">
 	<div class="row wrap-service-content mb-5">
 		<div class="col-4">
-			<img src="<?php echo base_url('resources/front_end/images/service/dummy.jpg') ?>" alt="">
+			<img class="img-fluid" src="<?php echo base_url('resources/front_end/images/service/dummy.jpg') ?>" alt="">
 		</div>
 		<div class="col-8 row justify-content-end">
 			<div class="col-11">
@@ -250,13 +250,13 @@
 	</div>
 	<div class="row wrap-service-content flex-row-reverse">
 		<div class="col-4">
-			<img src="<?php echo base_url('resources/front_end/images/service/dummy.jpg') ?>" alt="">
+			<img class="img-fluid" src="<?php echo base_url('resources/front_end/images/service/dummy.jpg') ?>" alt="">
 		</div>
 		<div class="col-8 row">
 			<div class="col-11">
 				<h3 class="ttl-service-02">
 					Seo สำคัญอย่างไร
-				</h1>
+				</h3>
 				<p class="txt">คัตเอาต์อินเตอร์ดั๊มพ์ เฟิร์มป๊อป ทาวน์ดยุกสตริง รุมบ้าโหงวคอนเซปต์แฟนซีแพนงเชิญ ล้มเหลวเซลส์แมนอพาร์ทเมนท์ฟอร์มปักขคณนา ป๊อก แฟ้บโมเดิร์นกัมมันตะ
 				รุมบ้าโหงวคอนเซปต์แฟนซีแพนงเชิญ ล้มเหลวเซลส์แมนอพาร์ทเมนท์ฟอร์มปักขคณนา ป๊อก แฟ้บโมเดิร์นกัมมันตะรุมบ้าโหงวคอนเซปต์แฟนซีแพนงเชิญ ล้มเหลวเซลส์แมนอพาร์ทเมนท์ฟอร์มปักขคณนา ป๊อก แฟ้บโมเดิร์นกัมมันตะ
 				</p>
