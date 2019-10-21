@@ -36,8 +36,8 @@
     <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/animate.css'); ?>">
     
     <!-- OWL CAL CSS -->
-    <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/owl.theme.default.min.css'); ?>">
-    <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/owl.carousel.min.css'); ?>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 
     <!-- Customer CSS -->
     <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style.css'); ?>">
@@ -51,7 +51,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 
     <!-- OWL CAL JS -->
-    <script src="<?php echo base_url('resources/front_end/js/owl.carousel.min.js'); ?>"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 </head>
 <body>
 
