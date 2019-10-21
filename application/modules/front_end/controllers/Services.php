@@ -17,7 +17,8 @@ class Services extends MX_Controller
 		*/
 
 		// Model
-		$this->load->model('Service_page_model');
+//		$this->load->model('Service_page_model');
+		$this->load->model('About_page_model');
 
 		// Language
 		$this->lang = $this->config->item('language_abbr');
@@ -32,7 +33,7 @@ class Services extends MX_Controller
 		*/
 
 		$service_id = 1;
-		$page_content = $this->Service_page_model->get_service_page_by_id($service_id);
+		$page_content = $this->About_page_model->get_about_page_by_id($service_id);
 
 		/*
 		| -------------------------------------------------------------------------
