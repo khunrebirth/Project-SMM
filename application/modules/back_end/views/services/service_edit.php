@@ -100,7 +100,7 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Title *</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span>  Title</label>
 											<div class="col-sm-10">
 												<input class="form-control" name="title_th" placeholder="Title" type="text" value="<?php echo unserialize($service->title)['th']; ?>" required>
 											</div>
@@ -159,6 +159,13 @@
 											<label class="col-sm-2 col-form-label text-left text-md-right">Content Bottom Body</label>
 											<div class="col-sm-10">
 												<textarea class="summernote" name="content_bottom_body_th"><?php echo unserialize($service->content_bottom_body)['th']; ?></textarea>
+											</div>
+										</div>
+										<hr>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Text Button</label>
+											<div class="col-sm-10">
+												<input class="form-control" name="text_button_th" placeholder="Title" type="text" value="<?php echo unserialize($service->text_button)['th']; ?>">
 											</div>
 										</div>
 										<hr>
@@ -287,6 +294,13 @@
 											<label class="col-sm-2 col-form-label text-left text-md-right">Content Bottom Body</label>
 											<div class="col-sm-10">
 												<textarea class="summernote" name="content_bottom_body_en"><?php echo unserialize($service->content_bottom_body)['en']; ?></textarea>
+											</div>
+										</div>
+										<hr>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Text Button</label>
+											<div class="col-sm-10">
+												<input class="form-control" name="text_button_en" placeholder="Title" type="text" value="<?php echo unserialize($service->text_button)['en']; ?>">
 											</div>
 										</div>
 										<hr>

@@ -122,8 +122,9 @@ class Service extends MX_Controller
 		$input_content_bottom_title = ['en' => $this->input->post('content_bottom_title_en'), 'th' => $this->input->post('content_bottom_title_th')];
 		$input_content_bottom_img = ['en' => $content_bottom_img_en, 'th' => $content_bottom_img_th];
 		$input_content_bottom_body = ['en' => $this->input->post('content_bottom_body_en'), 'th' => $this->input->post('content_bottom_body_th')];
+		$input_text_button = ['en' => $this->input->post('text_button_en'), 'th' => $this->input->post('text_button_th')];
 		$slug_en = slugify($this->input->post('title_en'));
-		$slug_th = str_replace(" ","-", $this->input->post('title_th'));
+		$slug_th = str_replace(" ","-", strtolower($this->input->post('title_th')));
 		$slug_th = str_replace("/","-", $slug_th);
 		$slug_th = str_replace("&","and", $slug_th);
 		$slug = ['en' => $slug_en, 'th' => $slug_th];
@@ -139,10 +140,11 @@ class Service extends MX_Controller
 			'content_top_img' => serialize($input_content_top_img),
 			'content_top_title' => serialize($input_content_top_title),
 			'content_top_body' => serialize($input_content_top_body),
-			'slug' => unserialize($slug),
+			'slug' => serialize($slug),
 			'content_bottom_img' => serialize($input_content_bottom_img),
 			'content_bottom_title' => serialize($input_content_bottom_title),
-			'content_bottom_body' => serialize($input_content_bottom_body)
+			'content_bottom_body' => serialize($input_content_bottom_body),
+			'text_button' => serialize($input_text_button)
 		]);
 
 		// Set Session To View
@@ -234,8 +236,9 @@ class Service extends MX_Controller
 		$input_content_bottom_title = ['en' => $this->input->post('content_bottom_title_en'), 'th' => $this->input->post('content_bottom_title_th')];
 		$input_content_bottom_img = ['en' => $content_bottom_img_en, 'th' => $content_bottom_img_th];
 		$input_content_bottom_body = ['en' => $this->input->post('content_bottom_body_en'), 'th' => $this->input->post('content_bottom_body_th')];
+		$input_text_button = ['en' => $this->input->post('text_button_en'), 'th' => $this->input->post('text_button_th')];
 		$slug_en = slugify($this->input->post('title_en'));
-		$slug_th = str_replace(" ","-", $this->input->post('title_th'));
+		$slug_th = str_replace(" ","-", strtolower($this->input->post('title_th')));
 		$slug_th = str_replace("/","-", $slug_th);
 		$slug_th = str_replace("&","and", $slug_th);
 		$slug = ['en' => $slug_en, 'th' => $slug_th];
@@ -251,10 +254,11 @@ class Service extends MX_Controller
 			'content_top_img' => serialize($input_content_top_img),
 			'content_top_title' => serialize($input_content_top_title),
 			'content_top_body' => serialize($input_content_top_body),
-			'slug' => unserialize($slug),
+			'slug' => serialize($slug),
 			'content_bottom_img' => serialize($input_content_bottom_img),
 			'content_bottom_title' => serialize($input_content_bottom_title),
 			'content_bottom_body' => serialize($input_content_bottom_body),
+			'text_button' => serialize($input_text_button),
 			'updated_at' => date('Y-m-d H:i:s')
 		]);
 
@@ -450,6 +454,75 @@ class Service extends MX_Controller
 	 * Sorting (Using Ajax)
 	 * ********************************/
 
+	public function ajax_get_service_and_sort_show()
+	{
+		$status = 500;
+		$response['success'] = 0;
+
+		$services = $this->Service_model->get_service_all();
+
+		// Set Response
+		if ($services != false) {
+			$status = 200;
+			$response['success'] = 1;
+
+			$counter = 1;
+			$html = '<ul id="sortable">';
+			foreach ($services as $service) {
+				$html .= '<li id="' . $service->id . '" data-sort="' . $service->sort . '"><span style="padding: 0px 10px;">' . $counter . '</span>' . unserialize($service->title)['en'] . '&nbsp;|&nbsp;' . unserialize($service->title)['th'] . '</li>';
+				$counter++;
+			}
+			$html .= '</ul>';
+
+			$response['data'] = $html;
+		}
+
+		// Send Response
+		return $this->output
+			->set_status_header($status)
+			->set_content_type('application/json')
+			->set_output(json_encode($response));
+	}
+
+	public function ajax_get_service_and_sort_update()
+	{
+		$status = 500;
+		$response['success'] = 0;
+
+		// Set Response
+		if ($this->input->post()) {
+
+			$bundle_id = $this->input->post('id');
+			$bundle_sort = $this->input->post('sort');
+
+			$counter = 1;
+			foreach (array_combine($bundle_id, $bundle_sort) as $id => $sort) {
+
+				$this->Service_model->update_service_by_id($id, [
+					'sort' => $counter
+				]);
+
+				$counter++;
+			}
+
+			$status = 200;
+			$response['success'] = 1;
+
+			logger_store([
+				'user_id' => $this->data['user']->id,
+				'detail' => 'จัดเรียง Service (Services Page)',
+				'event' => 'sort_item',
+				'ip' => $this->input->ip_address(),
+			]);
+		}
+
+		// Send Response
+		return $this->output
+			->set_status_header($status)
+			->set_content_type('application/json')
+			->set_output(json_encode($response));
+	}
+
 	public function ajax_get_service_portfolio_and_sort_show($lang, $service_id)
 	{
 		$status = 500;
@@ -465,7 +538,7 @@ class Service extends MX_Controller
 			$counter = 1;
 			$html = '<ul id="sortable">';
 			foreach ($portfolios as $portfolio) {
-				$html .= '<li id="' . $portfolio->id . '" data-sort="' . $portfolio->sort . '"><span style="padding: 0px 10px;">' . $counter . ' . </span><img alt="en" width="120px;" src="' . base_url('storage/uploads/images/services/' . unserialize($portfolio->img)['en']) . '"> | <img alt="en" width="120px;" src="' . base_url('storage/uploads/images/services/' . unserialize($portfolio->img)['th']) . '"></li>';
+				$html .= '<li id="' . $portfolio->id . '" data-sort="' . $portfolio->sort . '"><span style="padding: 0px 10px;">' . $counter . ' . </span><img alt="en" width="120px;" src="' . base_url('storage/uploads/images/services/' . unserialize($portfolio->img)['en']) . '">&nbsp;|&nbsp;<img alt="en" width="120px;" src="' . base_url('storage/uploads/images/services/' . unserialize($portfolio->img)['th']) . '"></li>';
 				$counter++;
 			}
 			$html .= '</ul>';

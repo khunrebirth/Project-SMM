@@ -1,10 +1,4 @@
-<!-- Title -->
-<!--<section class="page-title" style="background-image:url(http://localhost/social.co.th/resources/front_end/images/slider-1.jpg)">-->
-<!--    <div class="container my-auto text-center wow fadeInUp">-->
-<!--        <h1>About Page</h1>-->
-<!--    </div>-->
-<!--</section>-->
-
+<!-- Push Custom Style -->
 <style>
     .test {
         overflow: hidden;
@@ -247,8 +241,11 @@
 <!-- SiteMap -->
 <?php include 'layouts/sitemap.php'; ?>
 
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
+
+<!-- Push Custom Scripts -->
 <script>
     var app = angular.module('app', []);
 

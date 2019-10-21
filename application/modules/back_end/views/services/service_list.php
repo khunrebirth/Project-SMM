@@ -3,6 +3,30 @@
 <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/datatables.net-select-bs4/css/select.bootstrap4.min.css'); ?>">
 <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/prismjs/themes/prism.css'); ?> ">
 
+<!-- Custom CSS -->
+<style>
+	#sortable{
+		padding: 0;
+	}
+
+	#sortable li{
+		cursor: move;
+		padding: 40px 0px;
+		list-style-type: none;
+		border-bottom: solid 1px #eee;
+		height: 70px;
+		display: flex;
+		align-items: center;
+	}
+
+	@media (min-width: 576px) {
+		.modal-dialog {
+			max-width: 800px;
+			margin: 1.75rem auto;
+		}
+	}
+</style>
+
 <!-- Main Content -->
 <div class="main-content">
 	<section class="section">
@@ -20,6 +44,7 @@
 						<div class="card-header">
 							<h4>List of Service</h4>
 							<div class="card-header-action">
+								<button class="btn btn-primary" id="btnSort"><i class="fas fa-sort"></i> Sort</button>
 								<a href="<?php echo base_url($lang . '/backoffice/page/services/list-services/create'); ?>" class="btn btn-primary">
 									<i class="fas fa-plus"></i> Add
 								</a>
@@ -39,6 +64,8 @@
 									<thead>
 									<tr>
 										<th class="text-center">#</th>
+										<th>Icon(en)</th>
+										<th>Icon(th)</th>
 										<th>Title(en)</th>
 										<th>Title(th)</th>
 										<th>Created at</th>
@@ -52,6 +79,8 @@
 										foreach ($services as $service) { ?>
 											<tr>
 												<td class="text-center"><?php echo $counter++; ?></td>
+												<td><img src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service->icon)['en']); ?>" width="40"></td>
+												<td><img src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service->icon)['th']); ?>" width="40"></td>
 												<td><?php echo unserialize($service->title)['en']; ?></td>
 												<td><?php echo unserialize($service->title)['th']; ?></td>
 												<td><?php echo $service->created_at; ?></td>
@@ -65,7 +94,7 @@
 														</button>
 														<div class="dropdown-menu">
 															<a class="dropdown-item has-icon" href="<?php echo base_url($lang . '/backoffice/page/services/list-services/edit/' . $service->id); ?>"><i class="far fa-edit"></i> Edit</a>
-															<a class="dropdown-item has-icon" onclick="deleteCategory('<?php echo base_url($lang . '/backoffice/page/services/list-services/destroy/' . $service->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
+															<a class="dropdown-item has-icon" onclick="deleteService('<?php echo base_url($lang . '/backoffice/page/services/list-services/destroy/' . $service->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
 														</div>
 													</div>
 												</td>
@@ -82,7 +111,28 @@
 	</section>
 </div>
 
+<!-- modal content -->
+<div id="custom-width-modal" class="modal fade modal-sort-gallery" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title" id="custom-width-modalLabel">Sorting</h4>
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			</div>
+			<div class="modal-body">
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" id="btnSaveSorting">Save changes</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
 <!-- JS Libraies -->
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 <script src="<?php echo base_url('resources/back_end/node_modules/datatables/media/js/jquery.dataTables.min.js'); ?>"></script>
 <script src="<?php echo base_url('resources/back_end/node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js'); ?>"></script>
 <script src="<?php echo base_url('resources/back_end/node_modules/datatables.net-select-bs4/js/select.bootstrap4.min.js'); ?>"></script>
@@ -105,7 +155,7 @@
         }, 1 * 1500)
     }
 
-    function deleteCategory(url) {
+    function deleteService(url) {
         swal({
             title: 'Are you sure ?',
             icon: 'warning',
@@ -140,4 +190,87 @@
                 }
             })
     }
+
+    function deleteTeam(url) {
+        swal({
+            title: 'Are you sure ?',
+            icon: 'warning',
+            buttons: true,
+            dangerMode: true
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    $.ajax({
+                        type: 'POST',
+                        url: url,
+                        success: function (res) {
+                            swal({
+                                title: 'Success',
+                                icon: 'success',
+                                button: 'Great!'
+                            })
+
+                            reload()
+                        },
+                        error: function (res) {
+                            swal({
+                                title: 'Oops...',
+                                text: 'Fail',
+                                icon: 'error',
+                                timer: '1500'
+                            })
+                        }
+                    })
+                } else {
+                    swal('Cancel')
+                }
+            })
+    }
+
+    $(document).ready(function() {
+        $('#btnSort').on('click', function() {
+
+            $.ajax({
+                type: "POST",
+                url: window.base_url + '/' + window.langSite +'/backoffice/page/services/list-services/ajax/get/services/sort/show',
+                success: function(res) {
+                    $('#custom-width-modal .modal-body').html(res.data)
+                    $("#custom-width-modal #sortable").sortable({ placeholder: "ui-state-highlight" })
+                    $("#custom-width-modal").modal('show')
+                },
+                error: function() {
+                    alert("failure")
+                }
+            })
+        })
+
+        $('#btnSaveSorting').click(function() {
+
+            $(".btnSaveSorting").text("Wait..")
+            $('.btnSaveSorting').addClass('disabled')
+
+            let selectedSort = []
+            let selectedID = []
+
+            $('#custom-width-modal ul#sortable li').each(function() {
+                selectedSort.push($(this).attr("data-sort"))
+                selectedID.push($(this).attr("id"))
+            })
+
+            $.ajax({
+                type: "POST",
+                url: window.base_url + '/' + window.langSite +'/backoffice/page/services/list-services/ajax/get/services/sort/update',
+                data: {
+                    id: selectedID,
+                    sort: selectedSort
+                },
+                success: function(res) {
+                    window.location.reload()
+                },
+                error: function(){
+                    alert("failure")
+                }
+            })
+        })
+    })
 </script>

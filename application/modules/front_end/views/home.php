@@ -20,7 +20,7 @@
 			<div class="col-md-6 col-lg-6 order-lg-2 showcase-img d-none d-sm-block" style="background-image: url('<?php echo base_url('storage/uploads/images/abouts/' . unserialize($about->img_section)[$lang]); ?>');"></div>
 			<div class="col-xs-12 col-md-6 col-lg-6 order-lg-1 my-auto showcase-text text-center wow fadeInLeft">
 				<div class="title-about" style="">
-					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/img-/images/title-about.png' : 'resources/front_end/images/img-/images/title-about.png'); ?>" alt="" class="img-fluid">
+					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/img-/images/title-about.png' : 'resources/front_end/images/img-/images/title-about.png'); ?>" class="img-fluid">
 				</div>
 				<h2 class="about__title--head mt-5 mb-4"><span>S</span>ocial Media Master</h2>
 				<div class="row justify-content-center">
@@ -40,60 +40,17 @@
 <section id="service" class="wow fadeInUp">
 	<div class="container-fluid text-center sec-home-service">
 		<div class="title-service" style="text-align: left; padding: 4rem 0;">
-			<img src="<?php echo base_url('resources/front_end/images/img-/images/title-service.png') ?>" alt="" class="img-fluid">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/img-/images/title-service.png' : 'resources/front_end/images/img-/images/title-service.png'); ?>" class="img-fluid">
 		</div>
 		<div class="row mb-5">
-			<a href="#" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
-				<img src="<?php echo base_url('resources/front_end/images/home/ico_facebook_01.png') ?>" alt="" class="img-fluid service__icon--resize">
-				<p class="service__title--body">
-					Social Media Marketing
-				</p>
-			</a>
-			<a href="#" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
-				<img src="<?php echo base_url('resources/front_end/images/home/ico_seo_01.png') ?>" alt="" class="img-fluid service__icon--resize">
-				<p class="service__title--body">
-					Search Engine Marketing
-				</p>
-			</a>
-			<a href="#" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
-				<img src="<?php echo base_url('resources/front_end/images/home/ico_line_01.png') ?>" alt="" class="img-fluid service__icon--resize">
-				<p class="service__title--body">
-					Line Marketing
-				</p>
-			</a>
-			<a href="#" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
-				<img src="<?php echo base_url('resources/front_end/images/home/ico_sem_01.png') ?>" alt="" class="img-fluid service__icon--resize">
-				<p class="service__title--body">
-					Search Engine Optimization
-				</p>
-			</a>
-			<a href="#" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
-				<img src="<?php echo base_url('resources/front_end/images/home/ico_production_01.png') ?>" alt="" class="img-fluid service__icon--resize">
-				<p class="service__title--body">
-					Creative & Production
-				</p>
-			</a>
-			<a href="#" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
-				<img src="<?php echo base_url('resources/front_end/images/home/ico_web_01.png') ?>" alt="" class="img-fluid service__icon--resize">
-				<p class="service__title--body">
-					Website design
-				</p>
-			</a>
-			<a href="#" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
-				<img src="<?php echo base_url('resources/front_end/images/home/ico_consult_01.png') ?>" alt="" class="img-fluid service__icon--resize">
-				<p class="service__title--body">
-					บริการให้คำแนะนำปรึกษา และวางแผนการตลาดออนไลน์
-				</p>
-			</a>
-			<a href="#" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
-				<img src="<?php echo base_url('resources/front_end/images/home/ico_speak_01.png') ?>" alt="" class="img-fluid service__icon--resize">
-				<p class="service__title--body">
-					Speaker
-				</p>
-			</a>
-			<a href="#" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
-				<img src="<?php echo base_url('resources/front_end/images/home/ico_setting_01.png') ?>" alt="" class="img-fluid service__icon--resize">
-			</a>
+			<?php foreach ($services as $service) { ?>
+				<a href="<?php echo base_url($lang . '/' . lang('menu_service') . '/' . unserialize($service->slug)[$lang] . '/' . hashids_encrypt($service->id)); ?>" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
+					<img src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service->icon)[$lang]); ?>" class="img-fluid service__icon--resize">
+					<p class="service__title--body">
+						<?php echo unserialize($service->title)[$lang]; ?>
+					</p>
+				</a>
+			<?php } ?>
 			<a href="#" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05 js-scroll-contact">
 				<img src="<?php echo base_url('resources/front_end/images/home/ico_contact_01.png') ?>" alt="" class="img-fluid service__icon--resize">
 			</a>
@@ -105,7 +62,7 @@
 <section id="client" class="wow fadeInUp">
 	<div class="container-fluid">
 		<div class="title-client" style="text-align: center; padding: 4rem;">
-			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/img-/images/title-cilent.png' : 'resources/front_end/images/img-/images/title-cilent.png'); ?>" alt="" class="img-fluid">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/img-/images/title-cilent.png' : 'resources/front_end/images/img-/images/title-cilent.png'); ?>" class="img-fluid">
 		</div>
 		<!-- tab -->
 		<div class="row justify-content-center">
@@ -159,7 +116,7 @@
 <section id="blog">
 	<div class="container-fluid">
 		<div class="title-client" style="text-align: center; padding: 4rem;">
-			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/img-/images/title-blog.png' : 'resources/front_end/images/img-/images/title-blog.png'); ?>" alt="" class="img-fluid">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/img-/images/title-blog.png' : 'resources/front_end/images/img-/images/title-blog.png'); ?>" class="img-fluid">
 		</div>
 		<div class="row row-60 row-sm">
 			<?php foreach ($blogs as $blog) { ?>
@@ -218,7 +175,7 @@
 <section id="contact" class="wow fadeInUp">
 	<div class="container">
 		<div class="title-contact" style="text-align: center; padding: 4rem;">
-			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/img-/images/title-contact.png' : 'resources/front_end/images/img-/images/title-contact.png'); ?>" alt="" class="img-fluid">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/img-/images/title-contact.png' : 'resources/front_end/images/img-/images/title-contact.png'); ?>" class="img-fluid">
 		</div>
 		<div class="row">
 			<div class="col-xs-12 col-md-6 col-lg-6 ">

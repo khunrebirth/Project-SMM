@@ -4,6 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Contact extends MX_Controller
 {
 
+	private $lang = 'th';
+
     public function __construct()
     {
         parent::__construct();
@@ -79,13 +81,12 @@ class Contact extends MX_Controller
 			'detail' => $this->input->post('detail')
 		]);
 
-        // TODO:: redirect to thank you page
         if ($add_contact) {
-            $this->session->set_flashdata('success', 'Thank you for contact');
+			redirect($this->lang == 'th' ?  $this->lang . '/thanks' : $this->lang . '/ขอบคุณ');
         } else {
             $this->session->set_flashdata('error', 'Something wrong');
         }
 
-        redirect('contact', 'refresh');
+		redirect('contact', 'refresh');
     }
 }

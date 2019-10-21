@@ -73,6 +73,8 @@ $route['(\w{2})/เกี่ยวกับเรา'] = 'front_end/About';
 // Services
 $route['(\w{2})/services'] = 'front_end/Services';
 $route['(\w{2})/บริการ'] = 'front_end/Services';
+$route['(\w{2})/services/(:any)/(:any)'] = 'front_end/Services/show/$1/$2/$3';
+$route['(\w{2})/บริการ/(:any)/(:any)'] = 'front_end/Services/show/$1/$2/$3';
 
 // Clients
 $route['(\w{2})/clients'] = 'front_end/Clients';
@@ -173,6 +175,8 @@ $route['(\w{2})/ขอบคุณ'] = 'front_end/Thank_you';
 		$route['(\w{2})/backoffice/page/services/list-services/edit/(:any)'] = "back_end/Service/service_edit/$1/$2";
 		$route['(\w{2})/backoffice/page/services/list-services/update/(:any)'] = "back_end/Service/service_update/$1/$2";
 		$route['(\w{2})/backoffice/page/services/list-services/destroy/(:any)'] = "back_end/Service/service_destroy/$1/$2";
+		$route['(\w{2})/backoffice/page/services/list-services/ajax/get/services/sort/show'] = 'back_end/Service/ajax_get_service_and_sort_show';
+		$route['(\w{2})/backoffice/page/services/list-services/ajax/get/services/sort/update'] = 'back_end/Service/ajax_get_service_and_sort_update';
 
 		// Port
 		$route['(\w{2})/backoffice/page/services/list-service-ports/(:any)'] = 'back_end/Service/list_service_portfolios/$1/$2';

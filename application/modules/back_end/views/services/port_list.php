@@ -27,7 +27,6 @@
 	}
 </style>
 
-
 <!-- Main Content -->
 <div class="main-content">
 	<section class="section">
@@ -44,7 +43,7 @@
 				<div class="col-12">
 					<div class="card">
 						<div class="card-header">
-							<h4>List of Service</h4>
+							<h4>List of Portfolio</h4>
 							<div class="card-header-action">
 								<button class="btn btn-primary" id="btnSort"><i class="fas fa-sort"></i> Sort Images</button>
 								<input type="hidden" id="serviceId" value="<?php echo $service->id; ?>">
@@ -193,7 +192,7 @@
 
             $.ajax({
                 type: "POST",
-                url: window.base_url + window.langSite +'/backoffice/page/services/list-service-ports/ajax/get/portfolios/sort/show/' + $serviceId,
+                url: window.base_url + '/' + window.langSite +'/backoffice/page/services/list-service-ports/ajax/get/portfolios/sort/show/' + $serviceId,
                 success: function(res) {
                     $('#custom-width-modal .modal-body').html(res.data)
                     $("#custom-width-modal #sortable").sortable({ placeholder: "ui-state-highlight" })

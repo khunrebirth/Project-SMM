@@ -272,7 +272,7 @@ class Team extends MX_Controller
 			$counter = 1;
 			$html = '<ul id="sortable">';
 			foreach ($teams as $team) {
-				$html .= '<li id="' . $team->id . '" data-sort="' . $team->sort . '"><span style="padding: 0px 10px;">' . $counter . '</span>' . unserialize($team->title)['en'] . ' | ' . unserialize($team->title)['th'] . '</li>';
+				$html .= '<li id="' . $team->id . '" data-sort="' . $team->sort . '"><span style="padding: 0px 10px;">' . $counter . '</span>' . unserialize($team->title)['en'] . '&nbsp;|&nbsp;' . unserialize($team->title)['th'] . '</li>';
 				$counter++;
 			}
 			$html .= '</ul>';

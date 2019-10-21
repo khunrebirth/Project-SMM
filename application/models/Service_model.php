@@ -7,10 +7,14 @@ class Service_model extends CI_Model {
     {
 		$sql = "
 			SELECT  services.id,
+					services.sort,
 					services.title,
+					services.icon,
+					services.slug,
             		services.created_at,
             		(SELECT COUNT(*) FROM service_ports WHERE services.id = service_ports.service_id) as counter
 			FROM services
+			ORDER BY sort ASC
         ";
 
 		$query = $this->db->query($sql);

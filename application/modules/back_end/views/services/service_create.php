@@ -162,6 +162,13 @@
 											</div>
 										</div>
 										<hr>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Text Button</label>
+											<div class="col-sm-10">
+												<input class="form-control" name="text_button_th" placeholder="Title" type="text" value="">
+											</div>
+										</div>
+										<hr>
 									</div>
 									<div class="tab-pane fade" id="handleEn">
 										<!-- Meta Tag -->
@@ -290,6 +297,12 @@
 											</div>
 										</div>
 										<hr>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Text Button</label>
+											<div class="col-sm-10">
+												<input class="form-control" name="text_button_en" placeholder="Title" type="text" value="">
+											</div>
+										</div>
 										<hr>
 									</div>
 								</div>

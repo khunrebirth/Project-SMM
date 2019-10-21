@@ -6,6 +6,7 @@
     padding: 0 104px;
     margin: 0 auto;
 }
+
 .box-slide-team .owl-nav {
     position: absolute;
     top: 30%;
@@ -14,6 +15,7 @@
     width: 100%;
     left: 0;
 }
+
 .box-slide-team .owl-nav .owl-prev, 
 .box-slide-team .owl-nav .owl-next {
     position: absolute;
@@ -26,27 +28,31 @@
     -ms-transition: all 0.3s;
     -o-transition: all 0.3s;
 }
+
 .box-slide-team .owl-nav .owl-prev:focus, 
 .box-slide-team .owl-nav .owl-next:focus {
     outline: none;
 }
+
 .box-slide-team .owl-nav .owl-prev:hover, 
 .box-slide-team .owl-nav .owl-next:hover {
     opacity: 0.7;
 }
+
 .box-slide-team .owl-nav .owl-prev span, 
 .box-slide-team .owl-nav .owl-next span {
     display: none;
 }
+
 .box-slide-team .owl-nav .owl-prev {
     left: 0;
     background: url(<?php echo base_url($lang == 'th' ? 'resources/front_end/images/team/btn_arrow_left.png' : 'resources/front_end/images/team/btn_arrow_left.png'); ?>) !important;
 }
+
 .box-slide-team .owl-nav .owl-next {
     right: 0;
     background: url(<?php echo base_url($lang == 'th' ? 'resources/front_end/images/team/btn_arrow_right.png' : 'resources/front_end/images/team/btn_arrow_right.png'); ?>) !important;
 }
-
 </style>
 
 <!-- Title -->

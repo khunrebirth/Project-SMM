@@ -44,7 +44,7 @@
 						<div class="card-header">
 							<h4>List of Team</h4>
 							<div class="card-header-action">
-								<button class="btn btn-primary" id="btnSort"><i class="fas fa-sort"></i> Sort Images</button>
+								<button class="btn btn-primary" id="btnSort"><i class="fas fa-sort"></i> Sort</button>
 								<a href="<?php echo base_url($lang . '/backoffice/page/teams/list-teams/create'); ?>" class="btn btn-primary">
 									<i class="fas fa-plus"></i> Add
 								</a>

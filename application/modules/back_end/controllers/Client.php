@@ -387,7 +387,7 @@ class Client extends MX_Controller
 			$counter = 1;
 			$html = '<ul id="sortable">';
 			foreach ($clients as $client) {
-				$html .= '<li id="' . $client->id . '" data-sort="' . $client->sort . '"><span style="padding: 0px 10px;">' . $counter . ' . </span><img alt="en" width="120px;" src="' . base_url('storage/uploads/images/clients/' . unserialize($client->image)['en']) . '"> | <img alt="en" width="120px;" src="' . base_url('storage/uploads/images/clients/' . unserialize($client->image)['th']) . '"></li>';
+				$html .= '<li id="' . $client->id . '" data-sort="' . $client->sort . '"><span style="padding: 0px 10px;">' . $counter . ' . </span><img alt="en" width="120px;" src="' . base_url('storage/uploads/images/clients/' . unserialize($client->image)['en']) . '">&nbsp;|&nbsp;<img alt="en" width="120px;" src="' . base_url('storage/uploads/images/clients/' . unserialize($client->image)['th']) . '"></li>';
 				$counter++;
 			}
 			$html .= '</ul>';
