@@ -94,7 +94,7 @@
 			<a href="#" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
 				<img src="<?php echo base_url('resources/front_end/images/home/ico_setting_01.png') ?>" alt="" class="img-fluid service__icon--resize">
 			</a>
-			<a href="#" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
+			<a href="#" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05 js-scroll-contact">
 				<img src="<?php echo base_url('resources/front_end/images/home/ico_contact_01.png') ?>" alt="" class="img-fluid service__icon--resize">
 			</a>
 		</div>
@@ -295,4 +295,11 @@
     $(function () {
         $(".client__navs a:first").tab('show')
     });
+
+	$(".js-scroll-contact").click(function(event) {
+		event.preventDefault();
+    	$('html,body').animate({
+        	scrollTop: $("#contact").offset().top},
+        'slow');
+	});
 </script>
