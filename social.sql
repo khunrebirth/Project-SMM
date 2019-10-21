@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 21, 2019 at 08:46 AM
+-- Generation Time: Oct 21, 2019 at 10:49 AM
 -- Server version: 5.7.17-log
 -- PHP Version: 5.6.30
 
@@ -315,13 +315,6 @@ CREATE TABLE `logs` (
   `deleted_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `logs`
---
-
-INSERT INTO `logs` (`id`, `event_id`, `detail`, `user_id`, `ip`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(83, 3, 'เพิ่ม Category (Client Page)', 2, '::1', '2019-10-21 08:35:49', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
-
 -- --------------------------------------------------------
 
 --
@@ -379,6 +372,7 @@ INSERT INTO `roles` (`id`, `title`, `created_at`, `updated_at`, `deleted_at`) VA
 
 CREATE TABLE `services` (
   `id` int(11) NOT NULL,
+  `sort` int(11) NOT NULL,
   `meta_tag_title` text NOT NULL,
   `meta_tag_description` text NOT NULL,
   `meta_tag_keywords` text NOT NULL,
@@ -392,6 +386,7 @@ CREATE TABLE `services` (
   `content_bottom_img` text NOT NULL,
   `content_bottom_title` text NOT NULL,
   `content_bottom_body` longtext NOT NULL,
+  `text_button` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `deleted_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
@@ -401,15 +396,15 @@ CREATE TABLE `services` (
 -- Dumping data for table `services`
 --
 
-INSERT INTO `services` (`id`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `icon`, `title`, `slug`, `content_top_img`, `content_top_title`, `content_top_body`, `content_bottom_img`, `content_bottom_title`, `content_bottom_body`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:19:\"ico_facebook_01.png\";s:2:\"th\";s:19:\"ico_facebook_01.png\";}', 'a:2:{s:2:\"en\";s:22:\"Social Media Marketing\";s:2:\"th\";s:22:\"Social Media Marketing\";}', 'a:2:{s:2:\"en\";s:22:\"social-media-marketing\";s:2:\"th\";s:22:\"social-media-marketing\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:22:\"Social Media Marketing\";s:2:\"th\";s:22:\"Social Media Marketing\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:42:\"SEO สำคัญอย่างไร ?\";s:2:\"th\";s:42:\"SEO สำคัญอย่างไร ?\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-10-18 10:10:36', '2019-10-17 21:59:47', '0000-00-00 00:00:00'),
-(2, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:14:\"ico_seo_01.png\";s:2:\"th\";s:14:\"ico_seo_01.png\";}', 'a:2:{s:2:\"en\";s:23:\"Search Engine Marketing\";s:2:\"th\";s:23:\"Search Engine Marketing\";}', 'a:2:{s:2:\"en\";s:23:\"search-engine-marketing\";s:2:\"th\";s:23:\"search-engine-marketing\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:23:\"Search Engine Marketing\";s:2:\"th\";s:23:\"Search Engine Marketing\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-10-18 10:10:37', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(3, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:15:\"ico_line_01.png\";s:2:\"th\";s:15:\"ico_line_01.png\";}', 'a:2:{s:2:\"en\";s:14:\"Line Marketing\";s:2:\"th\";s:14:\"Line Marketing\";}', 'a:2:{s:2:\"en\";s:14:\"line-marketing\";s:2:\"th\";s:14:\"line-marketing\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:14:\"Line Marketing\";s:2:\"th\";s:14:\"Line Marketing\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-10-18 10:10:38', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(4, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:14:\"ico_sem_01.png\";s:2:\"th\";s:14:\"ico_sem_01.png\";}', 'a:2:{s:2:\"en\";s:26:\"Search Engine Optimization\";s:2:\"th\";s:26:\"Search Engine Optimization\";}', 'a:2:{s:2:\"en\";s:26:\"search-engine-optimization\";s:2:\"th\";s:26:\"search-engine-optimization\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:26:\"Search Engine Optimization\";s:2:\"th\";s:26:\"Search Engine Optimization\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-10-18 10:10:39', '2019-10-17 22:00:19', '0000-00-00 00:00:00'),
-(5, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:21:\"ico_production_01.png\";s:2:\"th\";s:21:\"ico_production_01.png\";}', 'a:2:{s:2:\"en\";s:21:\"Creative & Production\";s:2:\"th\";s:21:\"Creative & Production\";}', 'a:2:{s:2:\"en\";s:23:\"creative-and-production\";s:2:\"th\";s:23:\"creative-and-production\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:21:\"Creative & Production\";s:2:\"th\";s:21:\"Creative & Production\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-10-18 10:10:39', '2019-10-17 22:00:19', '0000-00-00 00:00:00'),
-(6, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:14:\"ico_web_01.png\";s:2:\"th\";s:14:\"ico_web_01.png\";}', 'a:2:{s:2:\"en\";s:14:\"Website design\";s:2:\"th\";s:14:\"Website design\";}', 'a:2:{s:2:\"en\";s:14:\"website-design\";s:2:\"th\";s:14:\"website-design\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:14:\"Website design\";s:2:\"th\";s:14:\"Website design\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-10-18 10:10:40', '2019-10-17 22:00:19', '0000-00-00 00:00:00'),
-(7, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:18:\"ico_consult_01.png\";s:2:\"th\";s:18:\"ico_consult_01.png\";}', 'a:2:{s:2:\"en\";s:136:\"บริการให้คำแนะนำปรึกษา และวางแผนการตลาดออนไลน์\";s:2:\"th\";s:136:\"บริการให้คำแนะนำปรึกษา และวางแผนการตลาดออนไลน์\";}', 'a:2:{s:2:\"en\";s:136:\"บริการให้คำแนะนำปรึกษา-และวางแผนการตลาดออนไลน์\";s:2:\"th\";s:136:\"บริการให้คำแนะนำปรึกษา-และวางแผนการตลาดออนไลน์\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:136:\"บริการให้คำแนะนำปรึกษา และวางแผนการตลาดออนไลน์\";s:2:\"th\";s:136:\"บริการให้คำแนะนำปรึกษา และวางแผนการตลาดออนไลน์\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-10-18 10:10:41', '2019-10-17 22:00:19', '0000-00-00 00:00:00'),
-(8, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:16:\"ico_speak_01.png\";s:2:\"th\";s:16:\"ico_speak_01.png\";}', 'a:2:{s:2:\"en\";s:7:\"Speaker\";s:2:\"th\";s:7:\"Speaker\";}', 'a:2:{s:2:\"en\";s:7:\"speaker\";s:2:\"th\";s:7:\"speaker\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:7:\"Speaker\";s:2:\"th\";s:7:\"Speaker\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-10-18 10:10:42', '2019-10-17 22:00:19', '0000-00-00 00:00:00');
+INSERT INTO `services` (`id`, `sort`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `icon`, `title`, `slug`, `content_top_img`, `content_top_title`, `content_top_body`, `content_bottom_img`, `content_bottom_title`, `content_bottom_body`, `text_button`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 1, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:19:\"ico_facebook_01.png\";s:2:\"th\";s:19:\"ico_facebook_01.png\";}', 'a:2:{s:2:\"en\";s:22:\"Social Media Marketing\";s:2:\"th\";s:22:\"Social Media Marketing\";}', 'a:2:{s:2:\"en\";s:22:\"social-media-marketing\";s:2:\"th\";s:22:\"social-media-marketing\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:22:\"Social Media Marketing\";s:2:\"th\";s:22:\"Social Media Marketing\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:42:\"SEO สำคัญอย่างไร ?\";s:2:\"th\";s:42:\"SEO สำคัญอย่างไร ?\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:41:\"สนใจทำ SEO กับเรา\";s:2:\"th\";s:41:\"สนใจทำ SEO กับเรา\";}', '2019-10-21 10:11:31', '2019-10-17 21:59:47', '0000-00-00 00:00:00'),
+(2, 2, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:14:\"ico_seo_01.png\";s:2:\"th\";s:14:\"ico_seo_01.png\";}', 'a:2:{s:2:\"en\";s:23:\"Search Engine Marketing\";s:2:\"th\";s:23:\"Search Engine Marketing\";}', 'a:2:{s:2:\"en\";s:23:\"search-engine-marketing\";s:2:\"th\";s:23:\"search-engine-marketing\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:23:\"Search Engine Marketing\";s:2:\"th\";s:23:\"Search Engine Marketing\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:41:\"สนใจทำ SEO กับเรา\";s:2:\"th\";s:41:\"สนใจทำ SEO กับเรา\";}', '2019-10-21 10:11:31', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(3, 3, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:15:\"ico_line_01.png\";s:2:\"th\";s:15:\"ico_line_01.png\";}', 'a:2:{s:2:\"en\";s:14:\"Line Marketing\";s:2:\"th\";s:14:\"Line Marketing\";}', 'a:2:{s:2:\"en\";s:14:\"line-marketing\";s:2:\"th\";s:14:\"line-marketing\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:14:\"Line Marketing\";s:2:\"th\";s:14:\"Line Marketing\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:41:\"สนใจทำ SEO กับเรา\";s:2:\"th\";s:41:\"สนใจทำ SEO กับเรา\";}', '2019-10-21 10:07:33', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(4, 4, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:14:\"ico_sem_01.png\";s:2:\"th\";s:14:\"ico_sem_01.png\";}', 'a:2:{s:2:\"en\";s:26:\"Search Engine Optimization\";s:2:\"th\";s:26:\"Search Engine Optimization\";}', 'a:2:{s:2:\"en\";s:26:\"search-engine-optimization\";s:2:\"th\";s:26:\"search-engine-optimization\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:26:\"Search Engine Optimization\";s:2:\"th\";s:26:\"Search Engine Optimization\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:528:\"<p><span style=\"color: rgb(33, 37, 41); font-family: Prompt, sans-serif; font-size: 16px;\">คัตเอาต์อินเตอร์ดั๊มพ์ เฟิร์มป๊อป ทาวน์ดยุกสตริง รุมบ้าโหงวคอนเซปต์แฟนซีแพนงเชิญ ล้มเหลวเซลส์แมนอพาร์ทเมนท์ฟอร์มปักขคณนา ป๊อก แฟ้บโมเดิร์นกัมมันตะ</span></p>\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:40:\"Seo สำคัญอย่างไร\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:1103:\"<p><span style=\"color: rgb(33, 37, 41); font-family: Prompt, sans-serif; font-size: 16px;\">คัตเอาต์อินเตอร์ดั๊มพ์ เฟิร์มป๊อป ทาวน์ดยุกสตริง รุมบ้าโหงวคอนเซปต์แฟนซีแพนงเชิญ ล้มเหลวเซลส์แมนอพาร์ทเมนท์ฟอร์มปักขคณนา ป๊อก แฟ้บโมเดิร์นกัมมันตะ รุมบ้าโหงวคอนเซปต์แฟนซีแพนงเชิญ ล้มเหลวเซลส์แมนอพาร์ทเมนท์ฟอร์มปักขคณนา ป๊อก แฟ้บโมเดิร์นกัมมันตะรุมบ้าโหงวคอนเซปต์แฟนซีแพนงเชิญ ล้มเหลวเซลส์แมนอพาร์ทเมนท์ฟอร์มปักขคณนา ป๊อก แฟ้บโมเดิร์นกัมมันตะ</span><br></p>\";}', 'a:2:{s:2:\"en\";s:41:\"สนใจทำ SEO กับเรา\";s:2:\"th\";s:41:\"สนใจทำ SEO กับเรา\";}', '2019-10-21 10:07:36', '2019-10-21 02:42:25', '0000-00-00 00:00:00'),
+(5, 5, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:21:\"ico_production_01.png\";s:2:\"th\";s:21:\"ico_production_01.png\";}', 'a:2:{s:2:\"en\";s:21:\"Creative & Production\";s:2:\"th\";s:21:\"Creative & Production\";}', 'a:2:{s:2:\"en\";s:23:\"creative-and-production\";s:2:\"th\";s:23:\"creative-and-production\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:21:\"Creative & Production\";s:2:\"th\";s:21:\"Creative & Production\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:41:\"สนใจทำ SEO กับเรา\";s:2:\"th\";s:41:\"สนใจทำ SEO กับเรา\";}', '2019-10-21 10:07:38', '2019-10-17 22:00:19', '0000-00-00 00:00:00'),
+(6, 6, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:14:\"ico_web_01.png\";s:2:\"th\";s:14:\"ico_web_01.png\";}', 'a:2:{s:2:\"en\";s:14:\"Website design\";s:2:\"th\";s:14:\"Website design\";}', 'a:2:{s:2:\"en\";s:14:\"website-design\";s:2:\"th\";s:14:\"website-design\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:14:\"Website design\";s:2:\"th\";s:14:\"Website design\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:41:\"สนใจทำ SEO กับเรา\";s:2:\"th\";s:41:\"สนใจทำ SEO กับเรา\";}', '2019-10-21 10:07:40', '2019-10-17 22:00:19', '0000-00-00 00:00:00'),
+(7, 7, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:18:\"ico_consult_01.png\";s:2:\"th\";s:18:\"ico_consult_01.png\";}', 'a:2:{s:2:\"en\";s:136:\"บริการให้คำแนะนำปรึกษา และวางแผนการตลาดออนไลน์\";s:2:\"th\";s:136:\"บริการให้คำแนะนำปรึกษา และวางแผนการตลาดออนไลน์\";}', 'a:2:{s:2:\"en\";s:136:\"บริการให้คำแนะนำปรึกษา-และวางแผนการตลาดออนไลน์\";s:2:\"th\";s:136:\"บริการให้คำแนะนำปรึกษา-และวางแผนการตลาดออนไลน์\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:136:\"บริการให้คำแนะนำปรึกษา และวางแผนการตลาดออนไลน์\";s:2:\"th\";s:136:\"บริการให้คำแนะนำปรึกษา และวางแผนการตลาดออนไลน์\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:41:\"สนใจทำ SEO กับเรา\";s:2:\"th\";s:41:\"สนใจทำ SEO กับเรา\";}', '2019-10-21 10:07:42', '2019-10-17 22:00:19', '0000-00-00 00:00:00'),
+(8, 8, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:16:\"ico_speak_01.png\";s:2:\"th\";s:16:\"ico_speak_01.png\";}', 'a:2:{s:2:\"en\";s:7:\"Speaker\";s:2:\"th\";s:7:\"Speaker\";}', 'a:2:{s:2:\"en\";s:7:\"speaker\";s:2:\"th\";s:7:\"speaker\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:7:\"Speaker\";s:2:\"th\";s:7:\"Speaker\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:41:\"สนใจทำ SEO กับเรา\";s:2:\"th\";s:41:\"สนใจทำ SEO กับเรา\";}', '2019-10-21 10:07:43', '2019-10-17 22:00:19', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -433,7 +428,54 @@ CREATE TABLE `service_ports` (
 --
 
 INSERT INTO `service_ports` (`id`, `sort`, `service_id`, `img`, `img_title_alt`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 1, 1, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL);
+(1, 1, 4, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(5, 2, 4, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(6, 3, 4, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(7, 4, 4, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(8, 5, 4, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(9, 6, 4, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(10, 1, 1, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(11, 2, 1, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(12, 3, 1, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(13, 4, 1, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(14, 5, 1, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(15, 6, 1, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(16, 1, 2, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(17, 2, 2, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(18, 3, 2, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(19, 4, 2, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(20, 5, 2, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(21, 6, 2, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(22, 1, 3, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(23, 2, 3, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(24, 3, 3, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(25, 4, 3, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(26, 5, 3, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(27, 6, 3, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(28, 1, 5, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(29, 2, 5, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(30, 3, 5, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(31, 4, 5, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(32, 5, 5, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(33, 6, 5, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(34, 1, 6, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(35, 2, 6, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(36, 3, 6, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(37, 4, 6, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(38, 5, 6, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(39, 6, 6, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(40, 1, 7, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(41, 2, 7, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(42, 3, 7, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(43, 4, 7, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(44, 5, 7, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(45, 6, 7, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(46, 1, 8, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(47, 2, 8, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(48, 3, 8, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(49, 4, 8, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(50, 5, 8, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL),
+(51, 6, 8, 'a:2:{s:2:\"en\";s:13:\"portfolio.png\";s:2:\"th\";s:13:\"portfolio.png\";}', '', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL);
 
 -- --------------------------------------------------------
 
@@ -679,7 +721,7 @@ ALTER TABLE `client_page`
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `contact_page`
 --
@@ -699,7 +741,7 @@ ALTER TABLE `home_page`
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 --
 -- AUTO_INCREMENT for table `log_events`
 --
@@ -719,7 +761,7 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT for table `service_ports`
 --
 ALTER TABLE `service_ports`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 --
 -- AUTO_INCREMENT for table `teams`
 --
