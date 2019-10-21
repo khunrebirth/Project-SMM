@@ -7,12 +7,12 @@
 <div class="main-content">
 	<section class="section">
 		<div class="section-header">
-			<h1>Add New</h1>
+			<h1>Edit: <?php echo unserialize($team->title)['th']; ?></h1>
 			<div class="section-header-breadcrumb">
 				<div class="breadcrumb-item"><a href="<?php echo base_url($lang . '/backoffice/dashboard'); ?>">Dashboard</a></div>
 				<div class="breadcrumb-item"><a href="#">Page: Teams</a></div>
 				<div class="breadcrumb-item"><a href="<?php echo base_url($lang . '/backoffice/page/teams/list-teams'); ?>">Teams</a></div>
-				<div class="breadcrumb-item active">Add New</div>
+				<div class="breadcrumb-item active">Edit: <?php echo unserialize($team->title)['th']; ?></div>
 			</div>
 		</div>
 		<div class="section-body">
@@ -55,7 +55,7 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Title</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> Title</label>
 											<div class="col-sm-10">
 												<input class="form-control" name="title_th" placeholder="Title" type="text" value="<?php echo unserialize($team->title)['th']; ?>" required>
 											</div>
@@ -88,7 +88,7 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Title</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> Title</label>
 											<div class="col-sm-10">
 												<input class="form-control" name="title_en" placeholder="Title" type="text" value="<?php echo unserialize($team->title)['en']; ?>">
 											</div>

@@ -22,25 +22,25 @@
                                 <div style="padding-top: 20px;"><h6><i class="fa fa-tag"></i> Information</h6></div>
                                 <hr>
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">* Username</label>
+                                    <label class="col-sm-3 col-form-label"><span class="text-danger">*</span> Username</label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control" name="username" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">* Password</label>
+                                    <label class="col-sm-3 col-form-label"><span class="text-danger">*</span> Password</label>
                                     <div class="col-sm-4">
                                         <input id="txtNewPassword" type="password" class="form-control" name="password" required>
                                     </div>
                                 </div>
 								<div class="form-group row">
-									<label class="col-sm-3 col-form-label">* Confirm Password</label>
+									<label class="col-sm-3 col-form-label"><span class="text-danger">*</span> Confirm Password</label>
 									<div class="col-sm-4">
 										<input id="txtConfirmPassword" type="password" class="form-control" name="confirm_password" required><span id="divCheckPasswordMatch"></span>
 									</div>
 								</div>
 								<div class="form-group row">
-									<label class="col-sm-3 col-form-label">* Role</label>
+									<label class="col-sm-3 col-form-label"><span class="text-danger">*</span> Role</label>
 									<div class="col-sm-4">
 										<select class="form-control" name="role" required>
 											<option value="2">Admin</option>

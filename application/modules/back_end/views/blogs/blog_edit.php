@@ -72,7 +72,7 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> File Upload</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right">File Upload</label>
 											<div class="col-sm-10">
 												<div class="custom-file input-file-w-30">
 													<input type="file" name="meta_og_image_th" class="custom-file-input" onchange="PreviewImage(this, 'previewMetaOgImgTh');">
@@ -105,9 +105,9 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Title</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> Title</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="title_th" placeholder="Title" type="text" value="<?php echo unserialize($blog->title)['th']; ?>">
+												<input class="form-control" name="title_th" placeholder="Title" type="text" value="<?php echo unserialize($blog->title)['th']; ?>" required>
 											</div>
 										</div>
 										<div class="form-group row">
@@ -162,7 +162,7 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> File Upload</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right">File Upload</label>
 											<div class="col-sm-10">
 												<div class="custom-file input-file-w-30">
 													<input type="file" name="meta_og_image_en" class="custom-file-input" onchange="PreviewImage(this, 'previewMetaOgImgEn');">
@@ -195,7 +195,7 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Title</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> Title</label>
 											<div class="col-sm-10">
 												<input class="form-control" name="title_en" placeholder="Title" type="text" value="<?php echo unserialize($blog->title)['en']; ?>">
 											</div>

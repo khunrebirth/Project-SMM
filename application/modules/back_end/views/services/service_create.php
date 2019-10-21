@@ -73,7 +73,7 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> File Upload</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right">File Upload</label>
 											<div class="col-sm-10">
 												<div class="custom-file input-file-w-30">
 													<input type="file" name="meta_og_image_th" class="custom-file-input" onchange="PreviewImage(this, 'previewMetaOgImgTh');">
@@ -91,7 +91,7 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> Icon</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right">Icon</label>
 											<div class="col-sm-10">
 												<div class="custom-file input-file-w-30">
 													<input type="file" name="icon_th" class="custom-file-input" onchange="PreviewImage(this, 'previewIconTh');">
@@ -100,7 +100,7 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Title</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> Title</label>
 											<div class="col-sm-10">
 												<input class="form-control" name="title_th" placeholder="Title" type="text" value="" required>
 											</div>
@@ -109,7 +109,7 @@
 										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Content Top Title</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="content_top_title_th" placeholder="Title" type="text" value="" required>
+												<input class="form-control" name="content_top_title_th" placeholder="Title" type="text" value="">
 											</div>
 										</div>
 										<div class="form-group row">
@@ -119,7 +119,7 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> Content Top Image</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right">Content Top Image</label>
 											<div class="col-sm-10">
 												<div class="custom-file input-file-w-30">
 													<input type="file" name="content_top_img_th" class="custom-file-input" onchange="PreviewImage(this, 'previewContentTopImgTh');">
@@ -137,7 +137,7 @@
 										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Content Bottom Title</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="content_bottom_title_th" placeholder="Title" type="text" value="" required>
+												<input class="form-control" name="content_bottom_title_th" placeholder="Title" type="text" value="">
 											</div>
 										</div>
 										<div class="form-group row">
@@ -147,7 +147,7 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> Content Bottom Image</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right">Content Bottom Image</label>
 											<div class="col-sm-10">
 												<div class="custom-file input-file-w-30">
 													<input type="file" name="content_bottom_img_th" class="custom-file-input" onchange="PreviewImage(this, 'previewContentBottomImgTh');">
@@ -201,7 +201,7 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> File Upload</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right">File Upload</label>
 											<div class="col-sm-10">
 												<div class="custom-file input-file-w-30">
 													<input type="file" name="meta_og_image_en" class="custom-file-input" onchange="PreviewImage(this, 'previewMetaOgImgEn');">
@@ -219,7 +219,7 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> Icon</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right">Icon</label>
 											<div class="col-sm-10">
 												<div class="custom-file input-file-w-30">
 													<input type="file" name="icon_en" class="custom-file-input" onchange="PreviewImage(this, 'previewIconEn');">
@@ -228,7 +228,7 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Title</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> Title</label>
 											<div class="col-sm-10">
 												<input class="form-control" name="title_en" placeholder="Title" type="text" value="" required>
 											</div>
@@ -237,7 +237,7 @@
 										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Content Top Title</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="content_top_title_en" placeholder="Title" type="text" value="" required>
+												<input class="form-control" name="content_top_title_en" placeholder="Title" type="text" value="">
 											</div>
 										</div>
 										<div class="form-group row">
@@ -247,7 +247,7 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> Content Top Image</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right">Content Top Image</label>
 											<div class="col-sm-10">
 												<div class="custom-file input-file-w-30">
 													<input type="file" name="content_top_img_en" class="custom-file-input" onchange="PreviewImage(this, 'previewContentTopImgEn');">
@@ -265,7 +265,7 @@
 										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Content Bottom Title</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="content_bottom_title_en" placeholder="Title" type="text" value="" required>
+												<input class="form-control" name="content_bottom_title_en" placeholder="Title" type="text" value="">
 											</div>
 										</div>
 										<div class="form-group row">
@@ -275,7 +275,7 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> Content Bottom Image</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right">Content Bottom Image</label>
 											<div class="col-sm-10">
 												<div class="custom-file input-file-w-30">
 													<input type="file" name="content_bottom_img_en" class="custom-file-input" onchange="PreviewImage(this, 'previewContentBottomImgEn');">

@@ -73,7 +73,7 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> File Upload</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right">File Upload</label>
 											<div class="col-sm-10">
 												<div class="custom-file input-file-w-30">
 													<input type="file" name="meta_og_image_th" class="custom-file-input" onchange="PreviewImage(this, 'previewMetaOgImgTh');">
@@ -85,7 +85,7 @@
 										<div style="padding-top: 20px;"><h4><i class="fa fa-tag"></i> Information</h4></div>
 										<hr>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Title</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> Title</label>
 											<div class="col-sm-10">
 												<input class="form-control" name="title_th" placeholder="Title" type="text" value="<?php echo unserialize($category->title)['th']; ?>" required>
 											</div>
@@ -130,7 +130,7 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> File Upload</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right">File Upload</label>
 											<div class="col-sm-10">
 												<div class="custom-file input-file-w-30">
 													<input type="file" name="meta_og_image_en" class="custom-file-input" onchange="PreviewImage(this, 'previewMetaOgImgEn');">
@@ -142,9 +142,9 @@
 										<div style="padding-top: 20px;"><h4><i class="fa fa-tag"></i> Information</h4></div>
 										<hr>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Title</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> Title</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="title_en" placeholder="Title" type="text" value="<?php echo unserialize($category->title)['en']; ?>">
+												<input class="form-control" name="title_en" placeholder="Title" type="text" value="<?php echo unserialize($category->title)['en']; ?>" required>
 											</div>
 										</div>
 										<hr>

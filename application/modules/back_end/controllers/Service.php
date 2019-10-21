@@ -28,6 +28,7 @@ class Service extends MX_Controller
 		// Model
 		$this->load->model('User_model');
 		$this->load->model('Service_model');
+		$this->load->model('Service_portfolio_model');
 
 		// Language
 		$this->lang = $this->config->item('language_abbr');
@@ -66,16 +67,86 @@ class Service extends MX_Controller
 
 	public function service_store()
 	{
+		// Handle Image
+		$meta_og_image_en = '';
+		$meta_og_image_th = '';
+		$icon_en = '';
+		$icon_th = '';
+		$content_top_img_en = '';
+		$content_top_img_th = '';
+		$content_bottom_img_en = '';
+		$content_bottom_img_th = '';
+
+		if (isset($_FILES['meta_og_image_en']) && $_FILES['meta_og_image_en']['name'] != '') {
+			$meta_og_image_en = $this->ddoo_upload_service('meta_og_image_en');
+		}
+
+		if (isset($_FILES['meta_og_image_th']) && $_FILES['meta_og_image_th']['name'] != '') {
+			$meta_og_image_th = $this->ddoo_upload_service('meta_og_image_th');
+		}
+
+		if (isset($_FILES['icon_en']) && $_FILES['icon_en']['name'] != '') {
+			$icon_en = $this->ddoo_upload_service('icon_en');
+		}
+
+		if (isset($_FILES['icon_th']) && $_FILES['icon_th']['name'] != '') {
+			$icon_th = $this->ddoo_upload_service('icon_th');
+		}
+
+		if (isset($_FILES['content_top_img_en']) && $_FILES['content_top_img_en']['name'] != '') {
+			$content_top_img_en = $this->ddoo_upload_service('content_top_img_en');
+		}
+
+		if (isset($_FILES['content_top_img_th']) && $_FILES['content_top_img_th']['name'] != '') {
+			$content_top_img_th = $this->ddoo_upload_service('content_top_img_th');
+		}
+
+		if (isset($_FILES['content_bottom_img_en']) && $_FILES['content_bottom_img_en']['name'] != '') {
+			$content_bottom_img_en = $this->ddoo_upload_service('content_bottom_img_en');
+		}
+
+		if (isset($_FILES['content_bottom_img_th']) && $_FILES['content_bottom_img_th']['name'] != '') {
+			$content_bottom_img_th = $this->ddoo_upload_service('content_bottom_img_th');
+		}
+
 		// Filter Data
+		$input_meta_title = ['en' => $this->input->post('meta_tag_title_en'), 'th' => $this->input->post('meta_tag_title_th')];
+		$input_meta_description = ['en' => $this->input->post('meta_tag_description_en'), 'th' => $this->input->post('meta_tag_description_th')];
+		$input_meta_keyword = ['en' => $this->input->post('meta_tag_keywords_en'), 'th' => $this->input->post('meta_tag_keywords_th')];
+		$input_img_og_twitter = ['en' => $meta_og_image_en, 'th' => $meta_og_image_th];
+		$input_icon = ['en' => $icon_en, 'th' => $icon_th];
 		$input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
+		$input_content_top_title = ['en' => $this->input->post('content_top_title_en'), 'th' => $this->input->post('content_top_title_th')];
+		$input_content_top_img = ['en' => $content_top_img_en, 'th' => $content_top_img_th];
+		$input_content_top_body = ['en' => $this->input->post('content_top_body_en'), 'th' => $this->input->post('content_top_body_th')];
+		$input_content_bottom_title = ['en' => $this->input->post('content_bottom_title_en'), 'th' => $this->input->post('content_bottom_title_th')];
+		$input_content_bottom_img = ['en' => $content_bottom_img_en, 'th' => $content_bottom_img_th];
+		$input_content_bottom_body = ['en' => $this->input->post('content_bottom_body_en'), 'th' => $this->input->post('content_bottom_body_th')];
+		$slug_en = slugify($this->input->post('title_en'));
+		$slug_th = str_replace(" ","-", $this->input->post('title_th'));
+		$slug_th = str_replace("/","-", $slug_th);
+		$slug_th = str_replace("&","and", $slug_th);
+		$slug = ['en' => $slug_en, 'th' => $slug_th];
 
 		// Add Data
-		$add_category = $this->Client_category_model->insert_client_category([
-			'title' => serialize($input_title)
+		$add_service = $this->Service_model->insert_service([
+			'meta_tag_title' => serialize($input_meta_title),
+			'meta_tag_description' => serialize($input_meta_description),
+			'meta_tag_keywords' => serialize($input_meta_keyword),
+			'img_og_twitter' => serialize($input_img_og_twitter),
+			'icon' => serialize($input_icon),
+			'title' => serialize($input_title),
+			'content_top_img' => serialize($input_content_top_img),
+			'content_top_title' => serialize($input_content_top_title),
+			'content_top_body' => serialize($input_content_top_body),
+			'slug' => unserialize($slug),
+			'content_bottom_img' => serialize($input_content_bottom_img),
+			'content_bottom_title' => serialize($input_content_bottom_title),
+			'content_bottom_body' => serialize($input_content_bottom_body)
 		]);
 
 		// Set Session To View
-		if ($add_category) {
+		if ($add_service) {
 
 			logger_store([
 				'user_id' => $this->data['user']->id,
@@ -92,34 +163,107 @@ class Service extends MX_Controller
 		redirect($this->lang . '/backoffice/page/services/list-services');
 	}
 
-	public function service_edit($lang, $client_id)
+	public function service_edit($lang, $service_id)
 	{
-		$category = $this->Client_category_model->get_client_category_by_id($client_id);
+		$service = $this->Service_model->get_service_by_id($service_id);
 		$this->data['lang'] = $this->lang;
-		$this->data['title'] = 'Page: Clients - Category - Edit ('. unserialize($category->title)['th'] . ')';
-		$this->data['content'] = 'clients/category_edit';
-		$this->data['category'] = $category;
+		$this->data['title'] = 'Page: Services - Service - Edit ('. unserialize($service->title)['th'] . ')';
+		$this->data['content'] = 'services/service_edit';
+		$this->data['service'] = $service;
 
 		$this->load->view('app', $this->data);
 	}
 
-	public function service_update($lang, $client_id)
+	public function service_update($lang, $service_id)
 	{
-		// Filter Data
-		$input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
+		// Get Old Data
+		$service = $this->Service_model->get_service_by_id($service_id);
 
-		// Add Data
-		$update_category = $this->Client_category_model->update_client_category_by_id($client_id, [
+		// Handle Image
+		$meta_og_image_en = unserialize($service->img_og_twitter)['en'];
+		$meta_og_image_th = unserialize($service->img_og_twitter)['en'];
+		$icon_en = unserialize($service->icon)['en'];
+		$icon_th = unserialize($service->icon)['en'];
+		$content_top_img_en = unserialize($service->content_top_img)['en'];
+		$content_top_img_th = unserialize($service->content_top_img)['en'];
+		$content_bottom_img_en = unserialize($service->content_bottom_img)['en'];
+		$content_bottom_img_th = unserialize($service->content_bottom_img)['en'];
+
+		if (isset($_FILES['meta_og_image_en']) && $_FILES['meta_og_image_en']['name'] != '') {
+			$meta_og_image_en = $this->ddoo_upload_service('meta_og_image_en');
+		}
+
+		if (isset($_FILES['meta_og_image_th']) && $_FILES['meta_og_image_th']['name'] != '') {
+			$meta_og_image_th = $this->ddoo_upload_service('meta_og_image_th');
+		}
+
+		if (isset($_FILES['icon_en']) && $_FILES['icon_en']['name'] != '') {
+			$icon_en = $this->ddoo_upload_service('icon_en');
+		}
+
+		if (isset($_FILES['icon_th']) && $_FILES['icon_th']['name'] != '') {
+			$icon_th = $this->ddoo_upload_service('icon_th');
+		}
+
+		if (isset($_FILES['content_top_img_en']) && $_FILES['content_top_img_en']['name'] != '') {
+			$content_top_img_en = $this->ddoo_upload_service('content_top_img_en');
+		}
+
+		if (isset($_FILES['content_top_img_th']) && $_FILES['content_top_img_th']['name'] != '') {
+			$content_top_img_th = $this->ddoo_upload_service('content_top_img_th');
+		}
+
+		if (isset($_FILES['content_bottom_img_en']) && $_FILES['content_bottom_img_en']['name'] != '') {
+			$content_bottom_img_en = $this->ddoo_upload_service('content_bottom_img_en');
+		}
+
+		if (isset($_FILES['content_bottom_img_th']) && $_FILES['content_bottom_img_th']['name'] != '') {
+			$content_bottom_img_th = $this->ddoo_upload_service('content_bottom_img_th');
+		}
+
+		// Filter Data
+		$input_meta_title = ['en' => $this->input->post('meta_tag_title_en'), 'th' => $this->input->post('meta_tag_title_th')];
+		$input_meta_description = ['en' => $this->input->post('meta_tag_description_en'), 'th' => $this->input->post('meta_tag_description_th')];
+		$input_meta_keyword = ['en' => $this->input->post('meta_tag_keywords_en'), 'th' => $this->input->post('meta_tag_keywords_th')];
+		$input_img_og_twitter = ['en' => $meta_og_image_en, 'th' => $meta_og_image_th];
+		$input_icon = ['en' => $icon_en, 'th' => $icon_th];
+		$input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
+		$input_content_top_title = ['en' => $this->input->post('content_top_title_en'), 'th' => $this->input->post('content_top_title_th')];
+		$input_content_top_img = ['en' => $content_top_img_en, 'th' => $content_top_img_th];
+		$input_content_top_body = ['en' => $this->input->post('content_top_body_en'), 'th' => $this->input->post('content_top_body_th')];
+		$input_content_bottom_title = ['en' => $this->input->post('content_bottom_title_en'), 'th' => $this->input->post('content_bottom_title_th')];
+		$input_content_bottom_img = ['en' => $content_bottom_img_en, 'th' => $content_bottom_img_th];
+		$input_content_bottom_body = ['en' => $this->input->post('content_bottom_body_en'), 'th' => $this->input->post('content_bottom_body_th')];
+		$slug_en = slugify($this->input->post('title_en'));
+		$slug_th = str_replace(" ","-", $this->input->post('title_th'));
+		$slug_th = str_replace("/","-", $slug_th);
+		$slug_th = str_replace("&","and", $slug_th);
+		$slug = ['en' => $slug_en, 'th' => $slug_th];
+
+		// Update Data
+		$update_service = $this->Service_model->update_service_by_id($service_id, [
+			'meta_tag_title' => serialize($input_meta_title),
+			'meta_tag_description' => serialize($input_meta_description),
+			'meta_tag_keywords' => serialize($input_meta_keyword),
+			'img_og_twitter' => serialize($input_img_og_twitter),
+			'icon' => serialize($input_icon),
 			'title' => serialize($input_title),
+			'content_top_img' => serialize($input_content_top_img),
+			'content_top_title' => serialize($input_content_top_title),
+			'content_top_body' => serialize($input_content_top_body),
+			'slug' => unserialize($slug),
+			'content_bottom_img' => serialize($input_content_bottom_img),
+			'content_bottom_title' => serialize($input_content_bottom_title),
+			'content_bottom_body' => serialize($input_content_bottom_body),
 			'updated_at' => date('Y-m-d H:i:s')
 		]);
 
 		// Set Session To View
-		if ($update_category) {
+		if ($update_service) {
 
 			logger_store([
 				'user_id' => $this->data['user']->id,
-				'detail' => 'แก้ไข Category (Client Page)',
+				'detail' => 'แก้ไข Service (Services Page)',
 				'event' => 'update',
 				'ip' => $this->input->ip_address(),
 			]);
@@ -129,17 +273,17 @@ class Service extends MX_Controller
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
 
-		redirect($this->lang . '/backoffice/page/clients/list-category-clients');
+		redirect($this->lang . '/backoffice/page/services/list-services');
 	}
 
-	public function service_destroy($lang, $client_id)
+	public function service_destroy($lang, $service_id)
 	{
 		$status = 500;
 		$response['success'] = 0;
 
-		$category = $this->Client_category_model->delete_client_category_by_id($client_id);
+		$service = $this->Service_model->delete_service_by_id($service_id);
 
-		if ($category != false) {
+		if ($service != false) {
 			$status = 200;
 			$response['success'] = 1;
 		}
@@ -154,39 +298,39 @@ class Service extends MX_Controller
 	 * Ports
 	 * ********************************/
 
-	public function list_service_ports($lang, $client_category_id)
+	public function list_service_portfolios($lang, $service_id)
 	{
 		$this->data['lang'] = $this->lang;
-		$this->data['title'] = 'Page: Clients';
-		$this->data['content'] = 'clients/client_list';
-		$this->data['clients'] = $this->Client_model->get_client_by_category_id($client_category_id);
-		$this->data['category'] =  $this->Client_category_model->get_client_category_by_id($client_category_id);
+		$this->data['title'] = 'Page: Services';
+		$this->data['content'] = 'services/port_list';
+		$this->data['service'] = $service = $this->Service_model->get_service_by_id($service_id);
+		$this->data['portfolios'] =  $this->Service_portfolio_model->get_service_portfolio_by_service_id($service_id);
 
 		$this->load->view('app', $this->data);
 	}
 
-	public function service_port_create($lang, $client_category_id)
+	public function service_portfolio_create($lang, $service_id)
 	{
 		$this->data['lang'] = $this->lang;
-		$this->data['title'] = 'Page: Clients - Clients - Add';
-		$this->data['content'] = 'clients/client_create';
-		$this->data['category'] =  $this->Client_category_model->get_client_category_by_id($client_category_id);
+		$this->data['title'] = 'Page: Services - Portfolio - Add';
+		$this->data['content'] = 'services/port_create';
+		$this->data['service'] = $service = $this->Service_model->get_service_by_id($service_id);
 
 		$this->load->view('app', $this->data);
 	}
 
-	public function service_port_store($lang, $client_category_id)
+	public function service_portfolio_store($lang, $service_id)
 	{
 		// Handle Image
 		$img_en = '';
 		$img_th = '';
 
 		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
-			$img_en = $this->ddoo_upload_client('img_en');
+			$img_en = $this->ddoo_upload_service('img_en');
 		}
 
 		if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
-			$img_th = $this->ddoo_upload_client('img_th');
+			$img_th = $this->ddoo_upload_service('img_th');
 		}
 
 		// Filter Data
@@ -194,18 +338,18 @@ class Service extends MX_Controller
 		$input_title = ['en' => $this->input->post('img_title_alt_en'), 'th' => $this->input->post('img_title_alt_th')];
 
 		// Add Data
-		$add_client = $this->Client_model->insert_client([
-			'image' => serialize($input_img),
-			'title' => serialize($input_title),
-			'category_id' => $client_category_id
+		$add_service = $this->Service_portfolio_model->insert_service_port([
+			'img' => serialize($input_img),
+			'img_title_alt' => serialize($input_title),
+			'service_id' => $service_id
 		]);
 
 		// Set Session To View
-		if ($add_client) {
+		if ($add_service) {
 
 			logger_store([
 				'user_id' => $this->data['user']->id,
-				'detail' => 'เพิ่ม Client (Clients Page)',
+				'detail' => 'เพิ่ม Portfolio (Services Page)',
 				'event' => 'add',
 				'ip' => $this->input->ip_address(),
 			]);
@@ -215,37 +359,37 @@ class Service extends MX_Controller
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
 
-		redirect($this->lang . '/backoffice/page/clients/list-clients/' . $client_category_id);
+		redirect($this->lang . '/backoffice/page/services/list-service-ports/' . $service_id);
 	}
 
-	public function service_port_edit($lang, $client_category_id, $client_id)
+	public function service_portfolio_edit($lang, $service_id, $portfolio_id)
 	{
-		$client = $this->Client_model->get_client_by_id($client_id);
+		$service = $this->Service_model->get_service_by_id($service_id);
 
 		$this->data['lang'] = $this->lang;
-		$this->data['title'] = 'Page: Clients - Clients - Edit(' . unserialize($client->title)['th'] . ')';
-		$this->data['content'] = 'clients/client_edit';
-		$this->data['client'] = $client;
-		$this->data['category'] =  $this->Client_category_model->get_client_category_by_id($client_category_id);
+		$this->data['title'] = 'Page: Services - Portfolio - Edit';
+		$this->data['content'] = 'services/port_edit';
+		$this->data['service'] = $service;
+		$this->data['portfolio'] =  $this->Service_portfolio_model->get_service_portfolio_by_id($portfolio_id);
 
 		$this->load->view('app', $this->data);
 	}
 
-	public function service_port_update($lang, $client_category_id, $client_id)
+	public function service_portfolio_update($lang, $service_id, $portfolio_id)
 	{
 		// Get Old data
-		$client = $this->Client_model->get_client_by_id($client_id);
+		$portfolio = $this->Service_portfolio_model->get_service_portfolio_by_id($portfolio_id);
 
 		// Handle Image
-		$img_en = unserialize($client->image)['en'];
-		$img_th = unserialize($client->image)['th'];
+		$img_en = unserialize($portfolio->image)['en'];
+		$img_th = unserialize($portfolio->image)['th'];
 
 		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
-			$img_en = $this->ddoo_upload_client('img_en');
+			$img_en = $this->ddoo_upload_service('img_en');
 		}
 
 		if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
-			$img_th = $this->ddoo_upload_client('img_th');
+			$img_th = $this->ddoo_upload_service('img_th');
 		}
 
 		// Filter Data
@@ -253,9 +397,9 @@ class Service extends MX_Controller
 		$input_title = ['en' => $this->input->post('img_title_alt_en'), 'th' => $this->input->post('img_title_alt_th')];
 
 		// Update Data
-		$update_client = $this->Client_model->update_client_by_id($client_id, [
-			'image' => serialize($input_img),
-			'title' => serialize($input_title),
+		$update_client = $this->Service_portfolio_model->update_service_portfolio_by_id($portfolio_id, [
+			'img' => serialize($input_img),
+			'img_title_alt' => serialize($input_title),
 			'updated_at' => date('Y-m-d H:i:s')
 		]);
 
@@ -264,7 +408,7 @@ class Service extends MX_Controller
 
 			logger_store([
 				'user_id' => $this->data['user']->id,
-				'detail' => 'แก้ไข Client (Clients Page)',
+				'detail' => 'แก้ไข Portfolio (Services Page)',
 				'event' => 'update',
 				'ip' => $this->input->ip_address(),
 			]);
@@ -274,23 +418,23 @@ class Service extends MX_Controller
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
 
-		redirect($this->lang . '/backoffice/page/clients/list-clients/' . $client_category_id);
+		redirect($this->lang . '/backoffice/page/services/list-service-ports/' . $service_id);
 	}
 
-	public function service_port_destroy($lang, $client_id)
+	public function service_portfolio_destroy($lang, $portfolio_id)
 	{
 		$status = 500;
 		$response['success'] = 0;
 
-		$client = $this->Client_model->delete_client_by_id($client_id);
+		$portfolio = $this->Service_portfolio_model->delete_service_portfolio_by_id($portfolio_id);
 
-		if ($client != false) {
+		if ($portfolio != false) {
 			$status = 200;
 			$response['success'] = 1;
 
 			logger_store([
 				'user_id' => $this->data['user']->id,
-				'detail' => 'ลบ Client (Client Page)',
+				'detail' => 'ลบ Portfolio (Services Page)',
 				'event' => 'delete',
 				'ip' => $this->input->ip_address(),
 			]);
@@ -306,22 +450,22 @@ class Service extends MX_Controller
 	 * Sorting (Using Ajax)
 	 * ********************************/
 
-	public function ajax_get_client_and_sort_show($lang, $category_id)
+	public function ajax_get_service_portfolio_and_sort_show($lang, $service_id)
 	{
 		$status = 500;
 		$response['success'] = 0;
 
-		$clients = $this->Client_model->get_client_by_category_id($category_id);
+		$portfolios = $this->Service_portfolio_model->get_service_portfolio_by_service_id($service_id);
 
 		// Set Response
-		if ($clients != false) {
+		if ($portfolios != false) {
 			$status = 200;
 			$response['success'] = 1;
 
 			$counter = 1;
 			$html = '<ul id="sortable">';
-			foreach ($clients as $client) {
-				$html .= '<li id="' . $client->id . '" data-sort="' . $client->sort . '"><span style="padding: 0px 10px;">' . $counter . ' . </span><img alt="en" width="120px;" src="' . base_url('storage/uploads/images/clients/' . unserialize($client->image)['en']) . '"> | <img alt="en" width="120px;" src="' . base_url('storage/uploads/images/clients/' . unserialize($client->image)['th']) . '"></li>';
+			foreach ($portfolios as $portfolio) {
+				$html .= '<li id="' . $portfolio->id . '" data-sort="' . $portfolio->sort . '"><span style="padding: 0px 10px;">' . $counter . ' . </span><img alt="en" width="120px;" src="' . base_url('storage/uploads/images/services/' . unserialize($portfolio->img)['en']) . '"> | <img alt="en" width="120px;" src="' . base_url('storage/uploads/images/services/' . unserialize($portfolio->img)['th']) . '"></li>';
 				$counter++;
 			}
 			$html .= '</ul>';
@@ -336,7 +480,7 @@ class Service extends MX_Controller
 			->set_output(json_encode($response));
 	}
 
-	public function ajax_get_client_and_sort_update()
+	public function ajax_get_service_portfolio_and_sort_update()
 	{
 		$status = 500;
 		$response['success'] = 0;
@@ -350,7 +494,7 @@ class Service extends MX_Controller
 			$counter = 1;
 			foreach (array_combine($bundle_id, $bundle_sort) as $id => $sort) {
 
-				$this->Client_model->update_client_by_id($id, [
+				$this->Service_portfolio_model->update_service_portfolio_by_id($id, [
 					'sort' => $counter
 				]);
 
@@ -362,7 +506,7 @@ class Service extends MX_Controller
 
 			logger_store([
 				'user_id' => $this->data['user']->id,
-				'detail' => 'จัดเรียง Client (Clients Page)',
+				'detail' => 'จัดเรียง Portfolio (Services Page)',
 				'event' => 'sort_item',
 				'ip' => $this->input->ip_address(),
 			]);
@@ -375,9 +519,9 @@ class Service extends MX_Controller
 			->set_output(json_encode($response));
 	}
 
-	private function ddoo_upload_client($filename)
+	private function ddoo_upload_service($filename)
 	{
-		$config['upload_path'] = './storage/uploads/images/clients';
+		$config['upload_path'] = './storage/uploads/images/services';
 		$config['allowed_types'] = 'gif|jpg|png';
 		$config['encrypt_name'] = TRUE;
 

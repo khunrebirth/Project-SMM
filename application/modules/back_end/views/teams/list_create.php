@@ -55,7 +55,7 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Title</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> Title</label>
 											<div class="col-sm-10">
 												<input class="form-control" name="title_th" placeholder="Title" type="text" value="" required>
 											</div>
@@ -88,7 +88,7 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Title</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> Title</label>
 											<div class="col-sm-10">
 												<input class="form-control" name="title_en" placeholder="Title" type="text" value="">
 											</div>

@@ -175,14 +175,14 @@ $route['(\w{2})/ขอบคุณ'] = 'front_end/Thank_you';
 		$route['(\w{2})/backoffice/page/services/list-services/destroy/(:any)'] = "back_end/Service/service_destroy/$1/$2";
 
 		// Port
-		$route['(\w{2})/backoffice/page/services/list-service-ports/(:any)'] = 'back_end/Service/list_service_ports/$1/$2';
-		$route['(\w{2})/backoffice/page/services/list-service-ports/create/(:any)'] = 'back_end/Service/service_port_create/$1/$2';
-		$route['(\w{2})/backoffice/page/services/list-service-ports/store/(:any)'] = 'back_end/Service/service_port_store/$1/$2';
-		$route['(\w{2})/backoffice/page/services/list-service-ports/edit/(:any)/(:any)'] = "back_end/Service/service_port_edit/$1/$2/$3";
-		$route['(\w{2})/backoffice/page/services/list-service-ports/update/(:any)/(:any)'] = "back_end/Service/service_port_update/$1/$2/$3";
-		$route['(\w{2})/backoffice/page/services/list-service-ports/destroy/(:any)'] = "back_end/Service/service_port_destroy/$1/$2";
-		$route['(\w{2})/backoffice/page/services/list-service-ports/ajax/get/services/sort/show/(:any)'] = 'back_end/Service/ajax_get_service_port_and_sort_show/$1/$2';
-		$route['(\w{2})/backoffice/page/services/list-service-ports/ajax/get/services/sort/update'] = 'back_end/Service/ajax_get_service_port_and_sort_update';
+		$route['(\w{2})/backoffice/page/services/list-service-ports/(:any)'] = 'back_end/Service/list_service_portfolios/$1/$2';
+		$route['(\w{2})/backoffice/page/services/list-service-ports/create/(:any)'] = 'back_end/Service/service_portfolio_create/$1/$2';
+		$route['(\w{2})/backoffice/page/services/list-service-ports/store/(:any)'] = 'back_end/Service/service_portfolio_store/$1/$2';
+		$route['(\w{2})/backoffice/page/services/list-service-ports/edit/(:any)/(:any)'] = "back_end/Service/service_portfolio_edit/$1/$2/$3";
+		$route['(\w{2})/backoffice/page/services/list-service-ports/update/(:any)/(:any)'] = "back_end/Service/service_portfolio_update/$1/$2/$3";
+		$route['(\w{2})/backoffice/page/services/list-service-ports/destroy/(:any)'] = "back_end/Service/service_portfolio_destroy/$1/$2";
+		$route['(\w{2})/backoffice/page/services/list-service-ports/ajax/get/portfolios/sort/show/(:any)'] = 'back_end/Service/ajax_get_service_portfolio_and_sort_show/$1/$2';
+		$route['(\w{2})/backoffice/page/services/list-service-ports/ajax/get/portfolios/sort/update'] = 'back_end/Service/ajax_get_service_portfolio_and_sort_update';
 
 		/*
 		| -------------------------------------------------------------------------

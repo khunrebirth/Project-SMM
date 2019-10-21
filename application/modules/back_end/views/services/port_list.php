@@ -3,6 +3,31 @@
 <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/datatables.net-select-bs4/css/select.bootstrap4.min.css'); ?>">
 <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/prismjs/themes/prism.css'); ?> ">
 
+<!-- Custom CSS -->
+<style>
+	#sortable{
+		padding: 0;
+	}
+
+	#sortable li{
+		cursor: move;
+		padding: 40px 0px;
+		list-style-type: none;
+		border-bottom: solid 1px #eee;
+		height: 70px;
+		display: flex;
+		align-items: center;
+	}
+
+	@media (min-width: 576px) {
+		.modal-dialog {
+			max-width: 800px;
+			margin: 1.75rem auto;
+		}
+	}
+</style>
+
+
 <!-- Main Content -->
 <div class="main-content">
 	<section class="section">
@@ -10,7 +35,8 @@
 			<div class="section-header-breadcrumb">
 				<div class="breadcrumb-item"><a href="<?php echo base_url($lang . '/backoffice/dashboard'); ?>">Dashboard</a></div>
 				<div class="breadcrumb-item"><a href="#">Page: Services</a></div>
-				<div class="breadcrumb-item active">Services</div>
+				<div class="breadcrumb-item"><a href="<?php echo base_url($lang . '/backoffice/page/services/list-services'); ?>">Services</a></div>
+				<div class="breadcrumb-item active">Portfolios (Service: <?php echo unserialize($service->title)['th']; ?>)</div>
 			</div>
 		</div>
 		<div class="section-body">
@@ -20,7 +46,9 @@
 						<div class="card-header">
 							<h4>List of Service</h4>
 							<div class="card-header-action">
-								<a href="<?php echo base_url($lang . '/backoffice/page/services/list-services/create'); ?>" class="btn btn-primary">
+								<button class="btn btn-primary" id="btnSort"><i class="fas fa-sort"></i> Sort Images</button>
+								<input type="hidden" id="serviceId" value="<?php echo $service->id; ?>">
+								<a href="<?php echo base_url($lang . '/backoffice/page/services/list-service-ports/create/' . $service->id); ?>" class="btn btn-primary">
 									<i class="fas fa-plus"></i> Add
 								</a>
 							</div>
@@ -39,33 +67,29 @@
 									<thead>
 									<tr>
 										<th class="text-center">#</th>
-										<th>Title(en)</th>
-										<th>Title(th)</th>
+										<th>Img(en)</th>
+										<th>Img(th)</th>
 										<th>Created at</th>
-										<th>Portfolio</th>
 										<th>Action</th>
 									</tr>
 									</thead>
 									<tbody>
 									<?php
 										$counter = 1;
-										foreach ($services as $service) { ?>
+										foreach ($portfolios as $portfolio) { ?>
 											<tr>
 												<td class="text-center"><?php echo $counter++; ?></td>
-												<td><?php echo unserialize($service->title)['en']; ?></td>
-												<td><?php echo unserialize($service->title)['th']; ?></td>
-												<td><?php echo $service->created_at; ?></td>
-												<td>
-													<a class="btn btn-warning" href="<?php echo base_url($lang . '/backoffice/page/services/list-service-ports/' . $service->id); ?>"><i class="far fa-view"></i> Items (<?php echo $service->counter; ?>)</a>
-												</td>
+												<td><img src="<?php echo base_url('storage/uploads/images/services/' . unserialize($portfolio->img)['en']); ?>" width="120"></td>
+												<td><img src="<?php echo base_url('storage/uploads/images/services/' . unserialize($portfolio->img)['th']); ?>" width="120"></td>
+												<td><?php echo $portfolio->created_at; ?></td>
 												<td>
 													<div class="dropdown d-inline">
 														<button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 															<i class="fas fa-cog"></i> Manage
 														</button>
 														<div class="dropdown-menu">
-															<a class="dropdown-item has-icon" href="<?php echo base_url($lang . '/backoffice/page/services/list-services/edit/' . $service->id); ?>"><i class="far fa-edit"></i> Edit</a>
-															<a class="dropdown-item has-icon" onclick="deleteCategory('<?php echo base_url($lang . '/backoffice/page/services/list-services/destroy/' . $service->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
+															<a class="dropdown-item has-icon" href="<?php echo base_url($lang . '/backoffice/page/services/list-service-ports/edit/' . $service->id . '/' . $portfolio->id); ?>"><i class="far fa-edit"></i> Edit</a>
+															<a class="dropdown-item has-icon" onclick="deletePortfolio('<?php echo base_url($lang . '/backoffice/page/services/list-service-ports/destroy/' . $portfolio->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
 														</div>
 													</div>
 												</td>
@@ -82,7 +106,28 @@
 	</section>
 </div>
 
+<!-- modal content -->
+<div id="custom-width-modal" class="modal fade modal-sort-gallery" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title" id="custom-width-modalLabel">Sorting</h4>
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			</div>
+			<div class="modal-body">
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" id="btnSaveSorting">Save changes</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
 <!-- JS Libraies -->
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 <script src="<?php echo base_url('resources/back_end/node_modules/datatables/media/js/jquery.dataTables.min.js'); ?>"></script>
 <script src="<?php echo base_url('resources/back_end/node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js'); ?>"></script>
 <script src="<?php echo base_url('resources/back_end/node_modules/datatables.net-select-bs4/js/select.bootstrap4.min.js'); ?>"></script>
@@ -105,7 +150,7 @@
         }, 1 * 1500)
     }
 
-    function deleteCategory(url) {
+    function deletePortfolio(url) {
         swal({
             title: 'Are you sure ?',
             icon: 'warning',
@@ -140,4 +185,53 @@
                 }
             })
     }
+
+    $(document).ready(function() {
+        $('#btnSort').on('click', function() {
+
+            let $serviceId = $('#serviceId').val()
+
+            $.ajax({
+                type: "POST",
+                url: window.base_url + window.langSite +'/backoffice/page/services/list-service-ports/ajax/get/portfolios/sort/show/' + $serviceId,
+                success: function(res) {
+                    $('#custom-width-modal .modal-body').html(res.data)
+                    $("#custom-width-modal #sortable").sortable({ placeholder: "ui-state-highlight" })
+                    $("#custom-width-modal").modal('show')
+                },
+                error: function() {
+                    alert("failure")
+                }
+            })
+        })
+
+        $('#btnSaveSorting').click(function() {
+
+            $(".btnSaveSorting").text("Wait..")
+            $('.btnSaveSorting').addClass('disabled')
+
+            let selectedSort = []
+            let selectedID = []
+
+            $('#custom-width-modal ul#sortable li').each(function() {
+                selectedSort.push($(this).attr("data-sort"))
+                selectedID.push($(this).attr("id"))
+            })
+
+            $.ajax({
+                type: "POST",
+                url: window.base_url + '/' + window.langSite +'/backoffice/page/services/list-service-ports/ajax/get/portfolios/sort/update',
+                data: {
+                    id: selectedID,
+                    sort: selectedSort
+                },
+                success: function(res) {
+                    window.location.reload()
+                },
+                error: function(){
+                    alert("failure")
+                }
+            })
+        })
+    })
 </script>
