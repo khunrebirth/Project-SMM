@@ -93,7 +93,7 @@
 				<ul class="sidebar-menu">
 					<li class="menu-header">General</li>
 					<li class="<?php if ($this->uri->segment(1) == "dashboard") { echo 'active'; } ?>">
-						<a class="nav-link" href="<?php echo base_url('backoffice/dashboard'); ?>"><i class="fas fa-fire"></i> <span>Dashboard</span></a>
+						<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/dashboard'); ?>"><i class="fas fa-fire"></i> <span>Dashboard</span></a>
 					</li>
 					<li class="menu-header">Pages</li>
 					</li>
@@ -102,7 +102,7 @@
 						<a href="#" class="nav-link has-dropdown"><i class="fas fa-home"></i><span>Home</span></a>
 						<ul class="dropdown-menu">
 							<li class="<?php if ($this->uri->segment(2) == "home" && $this->uri->segment(3) == "content") { echo 'active'; } ?>">
-								<a class="nav-link" href="<?php echo base_url('backoffice/page/home/content/1'); ?>">&#9679; Content</a>
+								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/home/content/1'); ?>">&#9679; Content</a>
 							</li>
 						</ul>
 					</li>
@@ -110,15 +110,15 @@
 						<a href="#" class="nav-link has-dropdown"><i class="fas fa-address-card"></i><span>Abouts</span></a>
 						<ul class="dropdown-menu">
 							<li class="<?php if ($this->uri->segment(2) == "abouts" && $this->uri->segment(3) == "content") { echo 'active'; } ?>">
-								<a class="nav-link" href="<?php echo base_url('backoffice/page/abouts/content/1'); ?>">&#9679; Content</a>
+								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/abouts/content/1'); ?>">&#9679; Content</a>
 							</li>
 						</ul>
 					</li>
 					<li class="nav-item dropdown <?php if ($this->uri->segment(1) == "page" && $this->uri->segment(2) == "services") { echo 'active'; } ?>">
 						<a href="#" class="nav-link has-dropdown"><i class="fab fa-servicestack"></i><span>Services</span></a>
 						<ul class="dropdown-menu">
-							<li class="<?php if ($this->uri->segment(2) == "services" && $this->uri->segment(3) == "content") { echo 'active'; } ?>">
-								<a class="nav-link" href="<?php echo base_url('backoffice/page/services/content/1'); ?>">&#9679; Content</a>
+							<li class="<?php if ($this->uri->segment(2) == "services" && $this->uri->segment(3) == "list-services" || $this->uri->segment(3) == 'list-service-ports') { echo 'active'; } ?>">
+								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/services/list-services'); ?>">&#9679; Services</a>
 							</li>
 						</ul>
 					</li>
@@ -126,10 +126,10 @@
 						<a href="#" class="nav-link has-dropdown"><i class="fas fa-user-astronaut"></i><span>Clients</span></a>
 						<ul class="dropdown-menu">
 							<li class="<?php if ($this->uri->segment(2) == "clients" && $this->uri->segment(3) == "content") { echo 'active'; } ?>">
-								<a class="nav-link" href="<?php echo base_url('backoffice/page/clients/content/1'); ?>">&#9679; Content</a>
+								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/clients/content/1'); ?>">&#9679; Content</a>
 							</li>
 							<li class="<?php if ($this->uri->segment(2) == "clients" && $this->uri->segment(3) == "list-category-clients" || $this->uri->segment(3) == 'list-clients') { echo 'active'; } ?>">
-								<a class="nav-link" href="<?php echo base_url('backoffice/page/clients/list-category-clients'); ?>">&#9679; Clients</a>
+								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/clients/list-category-clients'); ?>">&#9679; Clients</a>
 							</li>
 						</ul>
 					</li>
@@ -137,7 +137,7 @@
 						<a href="#" class="nav-link has-dropdown"><i class="fas fa-pen-alt"></i><span>Blogs</span></a>
 						<ul class="dropdown-menu">
 							<li class="<?php if ($this->uri->segment(2) == "blogs" && $this->uri->segment(3) == "list-category-blogs" || $this->uri->segment(3) == 'list-blogs') { echo 'active'; } ?>">
-								<a class="nav-link" href="<?php echo base_url('backoffice/page/blogs/list-category-blogs'); ?>">&#9679; Blogs</a>
+								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/blogs/list-category-blogs'); ?>">&#9679; Blogs</a>
 							</li>
 						</ul>
 					</li>
@@ -145,10 +145,10 @@
 						<a href="#" class="nav-link has-dropdown"><i class="fas fa-building"></i><span>Teams</span></a>
 						<ul class="dropdown-menu">
 							<li class="<?php if ($this->uri->segment(2) == "teams" && $this->uri->segment(3) == "content") { echo 'active'; } ?>">
-								<a class="nav-link" href="<?php echo base_url('backoffice/page/teams/content/1'); ?>">&#9679; Content</a>
+								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/teams/content/1'); ?>">&#9679; Content</a>
 							</li>
 							<li class="<?php if ($this->uri->segment(2) == "teams" && $this->uri->segment(3) == "list-teams") { echo 'active'; } ?>">
-								<a class="nav-link" href="<?php echo base_url('backoffice/page/teams/list-teams'); ?>">&#9679; Teams</a>
+								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/teams/list-teams'); ?>">&#9679; Teams</a>
 							</li>
 						</ul>
 					</li>
@@ -156,14 +156,14 @@
 						<a href="#" class="nav-link has-dropdown"><i class="fas fa-file-signature"></i><span>Contact</span></a>
 						<ul class="dropdown-menu">
 							<li class="<?php if ($this->uri->segment(2) == "contact" && $this->uri->segment(3) == "content") { echo 'active'; } ?>">
-								<a class="nav-link" href="<?php echo base_url('backoffice/page/contact/content/1'); ?>">&#9679; Content</a>
+								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/contact/content/1'); ?>">&#9679; Content</a>
 							</li>
 						</ul>
 					</li>
 					<?php if ($user->role_id == 1) { ?>
 						<li class="menu-header">Settings</li>
 						<li class="<?php if ($this->uri->segment(1) == "setting" && $this->uri->segment(2) == "users") { echo 'active'; } ?>">
-							<a class="nav-link" href="<?php echo base_url('backoffice/setting/users') ?>"><i class="fas fa-user"></i> <span>Users</span></a>
+							<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/setting/users') ?>"><i class="fas fa-user"></i> <span>Users</span></a>
 						</li>
 					<?php } ?>
 				</ul>
