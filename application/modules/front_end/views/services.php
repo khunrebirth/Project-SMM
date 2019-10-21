@@ -239,10 +239,12 @@
 		</div>
 		<div class="col-8 row justify-content-end">
 			<div class="col-11">
-				<h1 class="ttl-01">
+				<h1 class="ttl-service-01">
 					SEARCH<br>ENGINE<br>OPTIMIZATION
 				</h1>
 				<p class="txt">คัตเอาต์อินเตอร์ดั๊มพ์ เฟิร์มป๊อป ทาวน์ดยุกสตริง รุมบ้าโหงวคอนเซปต์แฟนซีแพนงเชิญ ล้มเหลวเซลส์แมนอพาร์ทเมนท์ฟอร์มปักขคณนา ป๊อก แฟ้บโมเดิร์นกัมมันตะ</p>
+				<!-- <p class="text-sm-center text-lg-left"><button class="btn btn-primary btn-tooltip" data-tooltip-content="#tooltip_content" >สนใจทำSeoกับเรา</button><p> -->
+				<p class="text-sm-center text-lg-left"><button class="btn btn-primary btn-tooltip" data-tippy>สนใจทำSeoกับเรา</button><p>
 			</div>
 		</div>
 	</div>
@@ -252,7 +254,7 @@
 		</div>
 		<div class="col-8 row">
 			<div class="col-11">
-				<h3 class="ttl-02">
+				<h3 class="ttl-service-02">
 					Seo สำคัญอย่างไร
 				</h1>
 				<p class="txt">คัตเอาต์อินเตอร์ดั๊มพ์ เฟิร์มป๊อป ทาวน์ดยุกสตริง รุมบ้าโหงวคอนเซปต์แฟนซีแพนงเชิญ ล้มเหลวเซลส์แมนอพาร์ทเมนท์ฟอร์มปักขคณนา ป๊อก แฟ้บโมเดิร์นกัมมันตะ
@@ -262,6 +264,12 @@
 		</div>
 	</div>
 </section>
+
+<div class="" id="template">
+  <h3>Popover Example</h3>
+</div>
+
+
 
 <!-- SiteMap -->
 <div id="accordion">
@@ -288,6 +296,7 @@
 </div>
 <!-- Push Custom Scripts -->
 <script>
+
     $(function () {
         $('.wrap-slide-port').owlCarousel({
             items:5,
@@ -297,4 +306,41 @@
             margin:15,
         });
     });
+</script>
+<script>
+	$(function () {
+		const template = document.getElementById('template');
+		// console.log(template);
+		// // template.style.display = 'block';
+		new Tippy('.btn-tooltip',{
+			interactive: true,
+			position:'bottom',
+			animation:'scale',
+			arrow:'true',
+			theme:'light',
+			trigger:'click',
+			allowHTML: false,
+			content: template
+		});
+	});
+</script>
+
+<script>
+// $(document).ready(function () {
+//   $('.btn-tooltip').each(function(){
+// 	tippy(this, {
+// 		delay: 100,
+// 		arrow: true,
+// 		arrowType: 'round',
+// 		size: 'large',
+// 		duration: 500,
+// 		animation: 'scale',
+// 		placement: 'left',
+// 		interactive: true,
+// 		trigger: 'click',
+// 		theme: 'honeybee',
+// 		content: document.querySelector('#tooltip_content').cloneNode(true)
+// 	});
+//   });
+// });
 </script>

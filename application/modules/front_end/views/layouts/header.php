@@ -38,6 +38,11 @@
     <!-- OWL CAL CSS -->
     <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/owl.theme.default.min.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/owl.carousel.min.css'); ?>">
+
+    <!-- Tippy css -->
+    <!-- <link rel="stylesheet" href="<?php // echo base_url('resources/front_end/css/tooltipster.bundle.min.css'); ?>">
+    <link rel="stylesheet" href="<?php // echo base_url('resources/front_end/css/tooltipster-sideTip-light.min.css'); ?>"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/0.3.0/tippy.css">
     
 
     <!-- Customer CSS -->
@@ -49,9 +54,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="<?php echo base_url('resources/front_end/js/bootstrap.min.js'); ?>"></script>
     <script src="<?php echo base_url('resources/front_end/js/wow.js'); ?>"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 
     <!-- OWL CAL JS -->
     <script src="<?php echo base_url('resources/front_end/js/owl.carousel.min.js'); ?>"></script>
+
+    <!-- Tippy js -->
+    <script src="<?php echo base_url('resources/front_end/js/tippy.min.js'); ?>"></script>
+    <!-- <script src="https://unpkg.com/tippy.js@2.1.1/dist/tippy.standalone.min.js"></script> -->
+    <script src="<?php echo base_url('resources/front_end/js/tippy.standalone.min.js'); ?>"></script>
 
 </head>
 <body>

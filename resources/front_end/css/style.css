@@ -722,3 +722,8 @@ a:hover {
     max-width: 1440px;
     margin: 0 auto;
 }
+
+.ttl-service-01,
+.ttl-service-02 {
+    color: #127dbc;
+}
