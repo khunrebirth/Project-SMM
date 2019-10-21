@@ -124,7 +124,7 @@ class Service extends MX_Controller
 		$input_content_bottom_body = ['en' => $this->input->post('content_bottom_body_en'), 'th' => $this->input->post('content_bottom_body_th')];
 		$input_text_button = ['en' => $this->input->post('text_button_en'), 'th' => $this->input->post('text_button_th')];
 		$slug_en = slugify($this->input->post('title_en'));
-		$slug_th = str_replace(" ","-", strtolower($this->input->post('title_th')));
+		$slug_th = str_replace(" ","-", mb_strtolower($this->input->post('title_th')));
 		$slug_th = str_replace("/","-", $slug_th);
 		$slug_th = str_replace("&","and", $slug_th);
 		$slug = ['en' => $slug_en, 'th' => $slug_th];
@@ -238,7 +238,7 @@ class Service extends MX_Controller
 		$input_content_bottom_body = ['en' => $this->input->post('content_bottom_body_en'), 'th' => $this->input->post('content_bottom_body_th')];
 		$input_text_button = ['en' => $this->input->post('text_button_en'), 'th' => $this->input->post('text_button_th')];
 		$slug_en = slugify($this->input->post('title_en'));
-		$slug_th = str_replace(" ","-", strtolower($this->input->post('title_th')));
+		$slug_th = str_replace(" ","-", mb_strtolower($this->input->post('title_th')));
 		$slug_th = str_replace("/","-", $slug_th);
 		$slug_th = str_replace("&","and", $slug_th);
 		$slug = ['en' => $slug_en, 'th' => $slug_th];
