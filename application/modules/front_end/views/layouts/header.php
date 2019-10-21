@@ -39,9 +39,6 @@
     <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/owl.theme.default.min.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/owl.carousel.min.css'); ?>">
 
-
-    
-
     <!-- Customer CSS -->
     <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style.css'); ?>">
 
@@ -55,7 +52,6 @@
 
     <!-- OWL CAL JS -->
     <script src="<?php echo base_url('resources/front_end/js/owl.carousel.min.js'); ?>"></script>
-
 </head>
 <body>
 
