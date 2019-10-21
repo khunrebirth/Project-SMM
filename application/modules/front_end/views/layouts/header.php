@@ -56,7 +56,6 @@
     <!-- OWL CAL JS -->
     <script src="<?php echo base_url('resources/front_end/js/owl.carousel.min.js'); ?>"></script>
 
-
 </head>
 <body>
 
@@ -77,7 +76,66 @@
                 <a class="nav-link <?php if ($this->uri->segment(0) == "about" || $this->uri->segment(0) == "เกี่ยวกับเรา") { echo 'active'; }?>" href="<?php echo base_url($lang . '/' . lang('menu_about')); ?>"><?php echo lang('menu_about'); ?></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php if ($this->uri->segment(0) == "services" || $this->uri->segment(0) == "บริการ") { echo 'active'; }?>" href="<?php echo base_url($lang . '/' . lang('menu_service')); ?>"><?php echo lang('menu_service'); ?></a>
+                <a class="nav-link <?php if ($this->uri->segment(0) == "services" || $this->uri->segment(0) == "บริการ") { echo 'active'; }?>" 
+                data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" ><?php echo lang('menu_service'); ?></a>
+                <div class="collapse wrap-sub-gnav" id="collapseExample" >
+                    <ul class="list-sub-gnav row">
+                        <li class="item col-lg-2 col-md-3 col-sm-12">
+                            <a class="d-flex flex-column text-center" href="">
+                                <img class="d-sm-none d-none img-gnavi d-md-block" src="https://dummyimage.com/200x80/cccccc/fff" alt="">
+                                <span>Search Engine Optimization</span>
+                            </a>
+                        </li>
+                        <li class="item col-lg-2 col-md-3 col-sm-12">
+                            <a class="d-flex flex-column text-center" href="">
+                                <img class="d-sm-none d-none img-gnavi d-md-block" src="https://dummyimage.com/200x80/cccccc/fff" alt="">
+                                <span>Social Media Marketing</span>
+                            </a>
+                        </li>
+                        <li class="item col-lg-2 col-md-3 col-sm-12">
+                            <a class="d-flex flex-column text-center" href="">
+                                <img class="d-sm-none d-none img-gnavi d-md-block" src="https://dummyimage.com/200x80/cccccc/fff" alt="">
+                                <span>Search Engine Marketing</span>
+                            </a>
+                        </li>
+                        <li class="item col-lg-2 col-md-3 col-sm-12">
+                            <a class="d-flex flex-column text-center" href="">
+                                <img class="d-sm-none d-none img-gnavi d-md-block" src="https://dummyimage.com/200x80/cccccc/fff" alt="">
+                                <span>Website Design</span>
+                            </a>
+                        </li>
+                        <li class="item col-lg-2 col-md-3 col-sm-12">
+                            <a class="d-flex flex-column text-center" href="">
+                                <img class="d-sm-none d-none img-gnavi d-md-block" src="https://dummyimage.com/200x80/cccccc/fff" alt="">
+                                <span>Line Marketing</span>
+                            </a>
+                        </li>
+                        <li class="item col-lg-2 col-md-3 col-sm-12">
+                            <a class="d-flex flex-column text-center" href="">
+                                <img class="d-sm-none d-none img-gnavi d-md-block" src="https://dummyimage.com/200x80/cccccc/fff" alt="">
+                                <span>Creative & Production</span>
+                            </a>
+                        </li>
+                        <li class="item col-lg-2 col-md-3 col-sm-12">
+                            <a class="d-flex flex-column text-center" href="">
+                                <img class="d-sm-none d-none img-gnavi d-md-block" src="https://dummyimage.com/200x80/cccccc/fff" alt="">
+                                <span>Strategy Consultancy  Service</span>
+                            </a>
+                        </li>
+                        <li class="item col-lg-2 col-md-3 col-sm-12">
+                            <a class="d-flex flex-column text-center" href="">
+                                <img class="d-sm-none d-none img-gnavi d-md-block" src="https://dummyimage.com/200x80/cccccc/fff" alt="">
+                                <span>Digital Speaker  Service</span>
+                            </a>
+                        </li>
+                        <li class="item col-lg-2 col-md-3 col-sm-12">
+                            <a class="d-flex flex-column text-center" href="">
+                                <img class="d-sm-none d-none img-gnavi d-md-block" src="https://dummyimage.com/200x80/cccccc/fff" alt="">
+                                <span>Domain Hosting  Service</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link <?php if ($this->uri->segment(0) == "clients" || $this->uri->segment(0) == "ลูกค้าของเรา") { echo 'active'; }?>" href="<?php echo base_url($lang . '/' . lang('menu_our_clients')); ?>"><?php echo lang('menu_our_clients'); ?></a>

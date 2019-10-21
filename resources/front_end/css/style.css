@@ -647,7 +647,7 @@ a:hover {
             -moz-transition: all 0.4s;
             -ms-transition: all 0.4s;
             -o-transition: all 0.4s;
-}
+        }
         .list-lang li .active,
         .list-lang li a:hover {
             background-color: #127dbc;
@@ -655,9 +655,90 @@ a:hover {
             border-radius: 20px;
         }
 
+@media (max-width: 576px) {
+    .list-lang {
+        margin: 0;
+    }
+} 
 .sec-client {
     max-width: 1440px;
     width: 100%;
     margin: 0 auto; 
 }
-        
+
+/* sub menu gnav
+------------------*/
+.wrap-sub-gnav {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    padding: 28px 0 0;
+
+    
+}   
+.fixed-top .navbar-collapse {
+    max-height: calc(100vh - 4.5em);
+    overflow-y: auto;
+} 
+    .list-sub-gnav {
+        position: relative;
+        display: flex;
+        margin: 0 auto;
+        list-style: none;
+        padding: 15px;
+        transition: background-color 0.5s;
+        -webkit-transition: background-color 0.5s;
+        -moz-transition: background-color 0.5s;
+        -ms-transition: background-color 0.5s;
+        -o-transition: background-color 0.5s;
+    }
+        .img-gnavi {
+            width: 100%;
+        }
+    .scrolled .list-sub-gnav {
+        background-color: #fff;
+    }
+        .list-sub-gnav .item {
+            margin-bottom: 10px;
+        }
+                .list-sub-gnav .item a {
+                    padding: 0;
+                    color: #127dbc;
+                    background-color: #fff;
+                    height: 100%;
+                }
+                    .list-sub-gnav .item a span{
+                        padding: 3px;
+                        text-transform: none;
+                    }
+    .scrolled .list-sub-gnav::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        box-shadow: 3px 3px 10px 1px black;
+        z-index: -1;
+    }
+
+@media (max-width: 768px) { 
+    .wrap-sub-gnav {
+        position: relative;
+        position: relative;
+        padding: 0;
+    }
+        .list-sub-gnav {
+            padding: 5px 0;
+            border-top: 1px solid #e2e2e2;
+            border-bottom: 1px solid #e2e2e2;
+        }
+        .scrolled .list-sub-gnav::after {
+            display: none;
+        }
+            .list-sub-gnav .item {
+                margin: 0 0 5px;
+            }
+                .list-sub-gnav .item a {
+                    padding: 0;
+                }
+}
