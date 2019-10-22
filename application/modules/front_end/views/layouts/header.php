@@ -7,7 +7,7 @@
     <title><?php echo $title; ?></title>
 	<meta name="description" content="<?php echo $meta['description']; ?>">
 	<meta name="keywords" content="<?php echo $meta['keyword']; ?>">
-	<link rel="shortcut icon" href="<?php echo base_url('resources/front_end/images/favicon.png'); ?>">
+	<link rel="shortcut icon" href="<?php echo base_url('resources/front_end/images/favicon.ico'); ?>">
 	<link rel="canonical" href="<?php echo current_url(); ?>" />
 	<meta property="og:locale" content="th_TH" />
 	<meta property="og:locale:alternate" content="en_US" />
