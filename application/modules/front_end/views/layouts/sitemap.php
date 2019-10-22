@@ -14,7 +14,7 @@
 					<div class="row">
 						<div class="col-sm-12 col-lg-4">
 							<p class="text-left"><img class="img-fluid" src="<?php echo base_url('resources/front_end/images/logo-smm.png');?>" alt=""></p>
-							<p class="text-left">บริษัท โซเซียล มีเดีย มาสเตอร์ จำกัด</p>
+							<h4 class="text-left">บริษัท โซเซียล มีเดีย มาสเตอร์ จำกัด</h4>
 							<p class="text-left">290/25 หมู่บ้านกลางเมืองเอสเซ้น ลาดพร้าว 84 ถ.ประดิษฐ์มนูธรรม
 							เขตวังทองหลาง แขวงวังทองหลาง กรุงเทพฯ 10310</p>
 						</div>
