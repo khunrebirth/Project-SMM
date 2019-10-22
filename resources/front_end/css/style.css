@@ -780,3 +780,22 @@ a:hover {
 		padding: 0;
 	}
 }
+
+.sec-sitemap {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+}
+.sec-sitemap a {
+    color: #fff;
+}
+.list-sitemap {
+    padding: 0 0 0 15px;
+    list-style: none;
+}
+    .list-sitemap li {
+        text-align: left;
+    }
+        .list-sitemap li a {
+            color: #b9b9b9;
+        }

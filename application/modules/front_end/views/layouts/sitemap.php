@@ -10,12 +10,39 @@
 		</div>
 		<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
 			<div class="card-body">
-				Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-				moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-				Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-				shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-				proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-				aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+				<div class="sec-sitemap">
+					<div class="row">
+						<div class="col-sm-12 col-lg-4">
+							<p class="text-left"><img class="img-fluid" src="<?php echo base_url('resources/front_end/images/logo-smm.png');?>" alt=""></p>
+							<p class="text-left">บริษัท โซเซียล มีเดีย มาสเตอร์ จำกัด</p>
+							<p class="text-left">290/25 หมู่บ้านกลางเมืองเอสเซ้น ลาดพร้าว 84 ถ.ประดิษฐ์มนูธรรม
+							เขตวังทองหลาง แขวงวังทองหลาง กรุงเทพฯ 10310</p>
+						</div>
+						<div class="col-sm-12 col-lg-4">
+							<a class="d-block text-left" href="">หน้าแรก</a>
+							<a class="d-block text-left" href="">เกี่ยวกับเรา</a>
+							<a class="d-block text-left" href="">บริการ</a>
+							<ul class="list-sitemap">
+								<li><a class="text-left" href="">บริการทำการตลาดผ่านโซเชียลมีเดีย</a></li>
+								<li><a class="text-left" href="">บริการทำการตลาดผ่านเครือข่าย Google</a></li>
+								<li><a class="text-left" href="">บริการทำการตลาดผ่าน LINE</a></li>
+								<li><a class="text-left" href="">บริการทำการตลาดผ่านโปรแกรมค้นหา</a></li>
+								<li><a class="text-left" href="">บริการทำคอนเทนต์</a></li>
+								<li><a class="text-left" href="">บริการออกแบบเว็บไซต์</a></li>
+								<li><a class="text-left" href="">บริการให้คำแนะนำปรึกษา และวางแผนการตลาดออนไลน์</a></li>
+								<li><a class="text-left" href="">Speaker</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-12 col-lg-4">
+							<a class="d-block text-left" href="">ลูกค้าของเรา</a>
+							<a class="d-block text-left" href="">บทความ</a>
+							<a class="d-block text-left" href="">ทีมงาน</a>
+							<ul class="list-social">
+
+							</ul>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
