@@ -52,7 +52,7 @@
 				</a>
 			<?php } ?>
 			<a href="#" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05 js-scroll-contact">
-				<img src="<?php echo base_url('resources/front_end/images/home/ico_contact_01.png') ?>" alt="" class="img-fluid service__icon--resize">
+				<img src="<?php echo base_url('resources/front_end/images/ico_contact_01.png') ?>" alt="" class="img-fluid service__icon--resize">
 			</a>
 		</div>
 	</div>
