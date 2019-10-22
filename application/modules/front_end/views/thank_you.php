@@ -37,7 +37,7 @@
 			</p>
 		</div>
 		<div class="col-xs-12 col-md-6 col-lg-6 pl-md-5 text-left text-lg-left text-sm-center  thank-you-img">
-			<img src="<?php echo base_url('resources/front_end/images/img-/images/title-service.png')?>" class="img-fluid">
+			<img src="<?php echo base_url('resources/front_end/images/title-service.png')?>" class="img-fluid">
 			<div class="col text-left mt-5">
 				<button type="submit" class="btn btn-primary text-center col-lg-6 col-sm-12"><?php echo lang('page_thanks_btn_back'); ?></button>
 			</div>

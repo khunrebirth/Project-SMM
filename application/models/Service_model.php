@@ -10,6 +10,7 @@ class Service_model extends CI_Model {
 					services.sort,
 					services.title,
 					services.icon,
+					services.img_on_navbar,
 					services.slug,
             		services.created_at,
             		(SELECT COUNT(*) FROM service_ports WHERE services.id = service_ports.service_id) as counter

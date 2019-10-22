@@ -53,7 +53,7 @@
                         </div>
 
                         <div class="mt-5 text-center">
-                            Back to Website <a href="<?php echo base_url('home') ?>" target="_blank">social.co.th</a>
+                            Back to Website <a href="<?php echo base_url($lang . '/' . lang('menu_home')); ?>" target="_blank">social.co.th</a>
                         </div>
                     </form>
 
