@@ -42,7 +42,7 @@ class Authentication extends MX_Controller
 
 					logger_store([
 						'user_id' => $user->id,
-						'detail' => 'เข้าสู่ระบบ SSM Backoffice',
+						'detail' => 'เข้าสู่ระบบ SMM Backoffice',
 						'event' => 'login',
 						'ip' => $this->input->ip_address(),
 					]);
@@ -61,7 +61,7 @@ class Authentication extends MX_Controller
 	{
 		logger_store([
 			'user_id' => $this->session->userdata('user_id'),
-			'detail' => 'ออกจากระบบ SSM Backoffice',
+			'detail' => 'ออกจากระบบ SMM Backoffice',
 			'event' => 'logout',
 			'ip' => $this->input->ip_address(),
 		]);
