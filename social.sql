@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Oct 22, 2019 at 03:55 AM
--- Server version: 5.7.17-log
--- PHP Version: 5.6.30
+-- Host: 127.0.0.1
+-- Generation Time: Oct 22, 2019 at 10:08 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -338,7 +340,15 @@ INSERT INTO `logs` (`id`, `event_id`, `detail`, `user_id`, `ip`, `created_at`, `
 (107, 4, 'แก้ไข Service (Services Page)', 2, '::1', '2019-10-22 03:15:59', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (108, 3, 'เพิ่ม Service (Services Page)', 2, '::1', '2019-10-22 03:50:35', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (109, 3, 'เพิ่ม Service (Services Page)', 2, '::1', '2019-10-22 03:51:02', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(110, 3, 'เพิ่ม Service (Services Page)', 2, '::1', '2019-10-22 03:52:45', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(110, 3, 'เพิ่ม Service (Services Page)', 2, '::1', '2019-10-22 03:52:45', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(111, 1, 'เข้าสู่ระบบ SSM Backoffice', 2, '::1', '2019-10-22 07:53:19', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(112, 4, 'แก้ไข Service (Services Page)', 2, '::1', '2019-10-22 07:53:53', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(113, 4, 'แก้ไข Service (Services Page)', 2, '::1', '2019-10-22 07:54:32', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(114, 4, 'แก้ไข Service (Services Page)', 2, '::1', '2019-10-22 07:54:43', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(115, 4, 'แก้ไข Service (Services Page)', 2, '::1', '2019-10-22 07:55:05', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(116, 4, 'แก้ไข Service (Services Page)', 2, '::1', '2019-10-22 07:55:19', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(117, 4, 'แก้ไข Service (Services Page)', 2, '::1', '2019-10-22 07:55:31', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(118, 4, 'แก้ไข Service (Services Page)', 2, '::1', '2019-10-22 07:56:14', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -423,13 +433,13 @@ CREATE TABLE `services` (
 --
 
 INSERT INTO `services` (`id`, `sort`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `icon`, `img_on_navbar`, `title`, `slug`, `content_top_img`, `content_top_title`, `content_top_body`, `content_bottom_img`, `content_bottom_title`, `content_bottom_body`, `text_button`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 1, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:19:\"ico_facebook_01.png\";s:2:\"th\";s:19:\"ico_facebook_01.png\";}', 'a:2:{s:2:\"en\";s:26:\"img_on_nav_facebook_01.jpg\";s:2:\"th\";s:26:\"img_on_nav_facebook_01.jpg\";}', 'a:2:{s:2:\"en\";s:22:\"Social Media Marketing\";s:2:\"th\";s:96:\"บริการทำการตลาดผ่านโซเชียลมีเดีย\";}', 'a:2:{s:2:\"en\";s:22:\"social-media-marketing\";s:2:\"th\";s:96:\"บริการทำการตลาดผ่านโซเชียลมีเดีย\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:22:\"Social Media Marketing\";s:2:\"th\";s:183:\"บริการทำการตลาดผ่านโซเชียลมีเดีย แพลตฟอร์มออนไลน์ต่าง ๆ อาทิ Facebook\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:42:\"SEO สำคัญอย่างไร ?\";s:2:\"th\";s:42:\"SEO สำคัญอย่างไร ?\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:41:\"สนใจทำ SEO กับเรา\";s:2:\"th\";s:41:\"สนใจทำ SEO กับเรา\";}', '2019-10-22 03:24:46', '2019-10-21 20:13:39', '0000-00-00 00:00:00'),
-(2, 2, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:14:\"ico_seo_01.png\";s:2:\"th\";s:14:\"ico_seo_01.png\";}', 'a:2:{s:2:\"en\";s:21:\"img_on_nav_seo_01.jpg\";s:2:\"th\";s:21:\"img_on_nav_seo_01.jpg\";}', 'a:2:{s:2:\"en\";s:23:\"Search Engine Marketing\";s:2:\"th\";s:91:\"บริการทำการตลาดผ่านเครือข่าย Google\";}', 'a:2:{s:2:\"en\";s:23:\"search-engine-marketing\";s:2:\"th\";s:91:\"บริการทำการตลาดผ่านเครือข่าย-google\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:23:\"Search Engine Marketing\";s:2:\"th\";s:91:\"บริการทำการตลาดผ่านเครือข่าย Google\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:41:\"สนใจทำ SEO กับเรา\";s:2:\"th\";s:41:\"สนใจทำ SEO กับเรา\";}', '2019-10-22 03:27:04', '2019-10-21 04:04:54', '0000-00-00 00:00:00'),
-(3, 3, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:15:\"ico_line_01.png\";s:2:\"th\";s:15:\"ico_line_01.png\";}', 'a:2:{s:2:\"en\";s:22:\"img_on_nav_line_01.jpg\";s:2:\"th\";s:22:\"img_on_nav_line_01.jpg\";}', 'a:2:{s:2:\"en\";s:14:\"Line Marketing\";s:2:\"th\";s:62:\"บริการทำการตลาดผ่าน LINE\";}', 'a:2:{s:2:\"en\";s:14:\"line-marketing\";s:2:\"th\";s:62:\"บริการทำการตลาดผ่าน-line\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:14:\"Line Marketing\";s:2:\"th\";s:99:\"บริการทำการตลาดผ่าน LINE แอปพลิเคชั่น\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:41:\"สนใจทำ SEO กับเรา\";s:2:\"th\";s:41:\"สนใจทำ SEO กับเรา\";}', '2019-10-22 03:25:17', '2019-10-21 20:15:33', '0000-00-00 00:00:00'),
-(4, 4, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:14:\"ico_sem_01.png\";s:2:\"th\";s:14:\"ico_sem_01.png\";}', 'a:2:{s:2:\"en\";s:21:\"img_on_nav_sem_01.jpg\";s:2:\"th\";s:21:\"img_on_nav_sem_01.jpg\";}', 'a:2:{s:2:\"en\";s:26:\"Search Engine Optimization\";s:2:\"th\";s:93:\"บริการทำการตลาดผ่านโปรแกรมค้นหา\";}', 'a:2:{s:2:\"en\";s:26:\"search-engine-optimization\";s:2:\"th\";s:93:\"บริการทำการตลาดผ่านโปรแกรมค้นหา\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:26:\"Search Engine Optimization\";s:2:\"th\";s:232:\"บริการทำการตลาดผ่านโปรแกรมค้นหา ด้วยคีย์เวิร์ดที่มีคุณภาพและสร้างยอดขายได้จริง\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:528:\"<p><span style=\"color: rgb(33, 37, 41); font-family: Prompt, sans-serif; font-size: 16px;\">คัตเอาต์อินเตอร์ดั๊มพ์ เฟิร์มป๊อป ทาวน์ดยุกสตริง รุมบ้าโหงวคอนเซปต์แฟนซีแพนงเชิญ ล้มเหลวเซลส์แมนอพาร์ทเมนท์ฟอร์มปักขคณนา ป๊อก แฟ้บโมเดิร์นกัมมันตะ</span></p>\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:40:\"Seo สำคัญอย่างไร\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:1103:\"<p><span style=\"color: rgb(33, 37, 41); font-family: Prompt, sans-serif; font-size: 16px;\">คัตเอาต์อินเตอร์ดั๊มพ์ เฟิร์มป๊อป ทาวน์ดยุกสตริง รุมบ้าโหงวคอนเซปต์แฟนซีแพนงเชิญ ล้มเหลวเซลส์แมนอพาร์ทเมนท์ฟอร์มปักขคณนา ป๊อก แฟ้บโมเดิร์นกัมมันตะ รุมบ้าโหงวคอนเซปต์แฟนซีแพนงเชิญ ล้มเหลวเซลส์แมนอพาร์ทเมนท์ฟอร์มปักขคณนา ป๊อก แฟ้บโมเดิร์นกัมมันตะรุมบ้าโหงวคอนเซปต์แฟนซีแพนงเชิญ ล้มเหลวเซลส์แมนอพาร์ทเมนท์ฟอร์มปักขคณนา ป๊อก แฟ้บโมเดิร์นกัมมันตะ</span><br></p>\";}', 'a:2:{s:2:\"en\";s:41:\"สนใจทำ SEO กับเรา\";s:2:\"th\";s:41:\"สนใจทำ SEO กับเรา\";}', '2019-10-22 03:26:39', '2019-10-21 20:14:07', '0000-00-00 00:00:00'),
-(5, 5, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:21:\"ico_production_01.png\";s:2:\"th\";s:21:\"ico_production_01.png\";}', 'a:2:{s:2:\"en\";s:28:\"img_on_nav_production_01.jpg\";s:2:\"th\";s:28:\"img_on_nav_production_01.jpg\";}', 'a:2:{s:2:\"en\";s:21:\"Creative & Production\";s:2:\"th\";s:48:\"บริการทำคอนเทนต์\";}', 'a:2:{s:2:\"en\";s:19:\"creative-production\";s:2:\"th\";s:48:\"บริการทำคอนเทนต์\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:21:\"Creative & Production\";s:2:\"th\";s:195:\"บริการทำคอนเทนต์ในรูปแบบต่าง ๆ ผ่านสื่อทั้ง อาร์ตเวิร์ค | Motion Graphic | VDO คลิป\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:41:\"สนใจทำ SEO กับเรา\";s:2:\"th\";s:41:\"สนใจทำ SEO กับเรา\";}', '2019-10-22 03:26:21', '2019-10-21 20:15:59', '0000-00-00 00:00:00'),
-(6, 6, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:14:\"ico_web_01.png\";s:2:\"th\";s:14:\"ico_web_01.png\";}', 'a:2:{s:2:\"en\";s:21:\"img_on_nav_web_01.jpg\";s:2:\"th\";s:21:\"img_on_nav_web_01.jpg\";}', 'a:2:{s:2:\"en\";s:14:\"Website design\";s:2:\"th\";s:60:\"บริการออกแบบเว็บไซต์\";}', 'a:2:{s:2:\"en\";s:14:\"website-design\";s:2:\"th\";s:60:\"บริการออกแบบเว็บไซต์\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:14:\"Website design\";s:2:\"th\";s:152:\"บริการออกแบบเว็บไซต์และหน้า Landing Page ให้เหมาะสมกับธุรกิจ\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:41:\"สนใจทำ SEO กับเรา\";s:2:\"th\";s:41:\"สนใจทำ SEO กับเรา\";}', '2019-10-22 03:27:33', '2019-10-21 20:14:35', '0000-00-00 00:00:00'),
-(7, 7, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:18:\"ico_consult_01.png\";s:2:\"th\";s:18:\"ico_consult_01.png\";}', 'a:2:{s:2:\"en\";s:22:\"img_on_nav_plan_01.jpg\";s:2:\"th\";s:22:\"img_on_nav_plan_01.jpg\";}', 'a:2:{s:2:\"en\";s:136:\"บริการให้คำแนะนำปรึกษา และวางแผนการตลาดออนไลน์\";s:2:\"th\";s:136:\"บริการให้คำแนะนำปรึกษา และวางแผนการตลาดออนไลน์\";}', 'a:2:{s:2:\"en\";s:136:\"บริการให้คำแนะนำปรึกษา-และวางแผนการตลาดออนไลน์\";s:2:\"th\";s:136:\"บริการให้คำแนะนำปรึกษา-และวางแผนการตลาดออนไลน์\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:136:\"บริการให้คำแนะนำปรึกษา และวางแผนการตลาดออนไลน์\";s:2:\"th\";s:136:\"บริการให้คำแนะนำปรึกษา และวางแผนการตลาดออนไลน์\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:41:\"สนใจทำ SEO กับเรา\";s:2:\"th\";s:41:\"สนใจทำ SEO กับเรา\";}', '2019-10-22 03:25:57', '2019-10-17 22:00:19', '0000-00-00 00:00:00'),
+(1, 1, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:19:\"ico_facebook_01.png\";s:2:\"th\";s:19:\"ico_facebook_01.png\";}', 'a:2:{s:2:\"en\";s:26:\"img_on_nav_facebook_01.jpg\";s:2:\"th\";s:26:\"img_on_nav_facebook_01.jpg\";}', 'a:2:{s:2:\"en\";s:22:\"Social Media Marketing\";s:2:\"th\";s:78:\"ทำการตลาดผ่านโซเชียลมีเดีย\";}', 'a:2:{s:2:\"en\";s:22:\"social-media-marketing\";s:2:\"th\";s:78:\"ทำการตลาดผ่านโซเชียลมีเดีย\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:22:\"Social Media Marketing\";s:2:\"th\";s:183:\"บริการทำการตลาดผ่านโซเชียลมีเดีย แพลตฟอร์มออนไลน์ต่าง ๆ อาทิ Facebook\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:42:\"SEO สำคัญอย่างไร ?\";s:2:\"th\";s:42:\"SEO สำคัญอย่างไร ?\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:41:\"สนใจทำ SEO กับเรา\";s:2:\"th\";s:41:\"สนใจทำ SEO กับเรา\";}', '2019-10-22 07:53:53', '2019-10-22 02:53:53', '0000-00-00 00:00:00'),
+(2, 2, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:14:\"ico_seo_01.png\";s:2:\"th\";s:14:\"ico_seo_01.png\";}', 'a:2:{s:2:\"en\";s:21:\"img_on_nav_seo_01.jpg\";s:2:\"th\";s:21:\"img_on_nav_seo_01.jpg\";}', 'a:2:{s:2:\"en\";s:23:\"Search Engine Marketing\";s:2:\"th\";s:73:\"ทำการตลาดผ่านเครือข่าย Google\";}', 'a:2:{s:2:\"en\";s:23:\"search-engine-marketing\";s:2:\"th\";s:73:\"ทำการตลาดผ่านเครือข่าย-google\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:23:\"Search Engine Marketing\";s:2:\"th\";s:91:\"บริการทำการตลาดผ่านเครือข่าย Google\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:41:\"สนใจทำ SEO กับเรา\";s:2:\"th\";s:41:\"สนใจทำ SEO กับเรา\";}', '2019-10-22 07:54:32', '2019-10-22 02:54:32', '0000-00-00 00:00:00'),
+(3, 3, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:15:\"ico_line_01.png\";s:2:\"th\";s:15:\"ico_line_01.png\";}', 'a:2:{s:2:\"en\";s:22:\"img_on_nav_line_01.jpg\";s:2:\"th\";s:22:\"img_on_nav_line_01.jpg\";}', 'a:2:{s:2:\"en\";s:14:\"Line Marketing\";s:2:\"th\";s:44:\"ทำการตลาดผ่าน LINE\";}', 'a:2:{s:2:\"en\";s:14:\"line-marketing\";s:2:\"th\";s:44:\"ทำการตลาดผ่าน-line\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:14:\"Line Marketing\";s:2:\"th\";s:99:\"บริการทำการตลาดผ่าน LINE แอปพลิเคชั่น\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:41:\"สนใจทำ SEO กับเรา\";s:2:\"th\";s:41:\"สนใจทำ SEO กับเรา\";}', '2019-10-22 07:54:43', '2019-10-22 02:54:43', '0000-00-00 00:00:00'),
+(4, 4, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:14:\"ico_sem_01.png\";s:2:\"th\";s:14:\"ico_sem_01.png\";}', 'a:2:{s:2:\"en\";s:21:\"img_on_nav_sem_01.jpg\";s:2:\"th\";s:21:\"img_on_nav_sem_01.jpg\";}', 'a:2:{s:2:\"en\";s:26:\"Search Engine Optimization\";s:2:\"th\";s:75:\"ทำการตลาดผ่านโปรแกรมค้นหา\";}', 'a:2:{s:2:\"en\";s:26:\"search-engine-optimization\";s:2:\"th\";s:75:\"ทำการตลาดผ่านโปรแกรมค้นหา\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:26:\"Search Engine Optimization\";s:2:\"th\";s:232:\"บริการทำการตลาดผ่านโปรแกรมค้นหา ด้วยคีย์เวิร์ดที่มีคุณภาพและสร้างยอดขายได้จริง\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:528:\"<p><span style=\"color: rgb(33, 37, 41); font-family: Prompt, sans-serif; font-size: 16px;\">คัตเอาต์อินเตอร์ดั๊มพ์ เฟิร์มป๊อป ทาวน์ดยุกสตริง รุมบ้าโหงวคอนเซปต์แฟนซีแพนงเชิญ ล้มเหลวเซลส์แมนอพาร์ทเมนท์ฟอร์มปักขคณนา ป๊อก แฟ้บโมเดิร์นกัมมันตะ</span></p>\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:40:\"Seo สำคัญอย่างไร\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:1103:\"<p><span style=\"color: rgb(33, 37, 41); font-family: Prompt, sans-serif; font-size: 16px;\">คัตเอาต์อินเตอร์ดั๊มพ์ เฟิร์มป๊อป ทาวน์ดยุกสตริง รุมบ้าโหงวคอนเซปต์แฟนซีแพนงเชิญ ล้มเหลวเซลส์แมนอพาร์ทเมนท์ฟอร์มปักขคณนา ป๊อก แฟ้บโมเดิร์นกัมมันตะ รุมบ้าโหงวคอนเซปต์แฟนซีแพนงเชิญ ล้มเหลวเซลส์แมนอพาร์ทเมนท์ฟอร์มปักขคณนา ป๊อก แฟ้บโมเดิร์นกัมมันตะรุมบ้าโหงวคอนเซปต์แฟนซีแพนงเชิญ ล้มเหลวเซลส์แมนอพาร์ทเมนท์ฟอร์มปักขคณนา ป๊อก แฟ้บโมเดิร์นกัมมันตะ</span><br></p>\";}', 'a:2:{s:2:\"en\";s:41:\"สนใจทำ SEO กับเรา\";s:2:\"th\";s:41:\"สนใจทำ SEO กับเรา\";}', '2019-10-22 07:55:05', '2019-10-22 02:55:05', '0000-00-00 00:00:00'),
+(5, 5, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:21:\"ico_production_01.png\";s:2:\"th\";s:21:\"ico_production_01.png\";}', 'a:2:{s:2:\"en\";s:28:\"img_on_nav_production_01.jpg\";s:2:\"th\";s:28:\"img_on_nav_production_01.jpg\";}', 'a:2:{s:2:\"en\";s:21:\"Creative & Production\";s:2:\"th\";s:30:\"ทำคอนเทนต์\";}', 'a:2:{s:2:\"en\";s:19:\"creative-production\";s:2:\"th\";s:30:\"ทำคอนเทนต์\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:21:\"Creative & Production\";s:2:\"th\";s:195:\"บริการทำคอนเทนต์ในรูปแบบต่าง ๆ ผ่านสื่อทั้ง อาร์ตเวิร์ค | Motion Graphic | VDO คลิป\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:41:\"สนใจทำ SEO กับเรา\";s:2:\"th\";s:41:\"สนใจทำ SEO กับเรา\";}', '2019-10-22 07:55:19', '2019-10-22 02:55:19', '0000-00-00 00:00:00'),
+(6, 6, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:14:\"ico_web_01.png\";s:2:\"th\";s:14:\"ico_web_01.png\";}', 'a:2:{s:2:\"en\";s:21:\"img_on_nav_web_01.jpg\";s:2:\"th\";s:21:\"img_on_nav_web_01.jpg\";}', 'a:2:{s:2:\"en\";s:14:\"Website design\";s:2:\"th\";s:42:\"ออกแบบเว็บไซต์\";}', 'a:2:{s:2:\"en\";s:14:\"website-design\";s:2:\"th\";s:42:\"ออกแบบเว็บไซต์\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:14:\"Website design\";s:2:\"th\";s:152:\"บริการออกแบบเว็บไซต์และหน้า Landing Page ให้เหมาะสมกับธุรกิจ\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:41:\"สนใจทำ SEO กับเรา\";s:2:\"th\";s:41:\"สนใจทำ SEO กับเรา\";}', '2019-10-22 07:55:31', '2019-10-22 02:55:31', '0000-00-00 00:00:00'),
+(7, 7, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:18:\"ico_consult_01.png\";s:2:\"th\";s:18:\"ico_consult_01.png\";}', 'a:2:{s:2:\"en\";s:22:\"img_on_nav_plan_01.jpg\";s:2:\"th\";s:22:\"img_on_nav_plan_01.jpg\";}', 'a:2:{s:2:\"en\";s:136:\"บริการให้คำแนะนำปรึกษา และวางแผนการตลาดออนไลน์\";s:2:\"th\";s:117:\"ให้คำแนะนำปรึกษาและวางแผนการตลาดออนไลน์\";}', 'a:2:{s:2:\"en\";s:124:\"บรการใหคำแนะนำปรกษา-และวางแผนการตลาดออนไลน\";s:2:\"th\";s:117:\"ให้คำแนะนำปรึกษาและวางแผนการตลาดออนไลน์\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:136:\"บริการให้คำแนะนำปรึกษา และวางแผนการตลาดออนไลน์\";s:2:\"th\";s:136:\"บริการให้คำแนะนำปรึกษา และวางแผนการตลาดออนไลน์\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:41:\"สนใจทำ SEO กับเรา\";s:2:\"th\";s:41:\"สนใจทำ SEO กับเรา\";}', '2019-10-22 07:56:14', '2019-10-22 02:56:14', '0000-00-00 00:00:00'),
 (8, 8, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:16:\"ico_speak_01.png\";s:2:\"th\";s:16:\"ico_speak_01.png\";}', 'a:2:{s:2:\"en\";s:25:\"img_on_nav_speaker_01.jpg\";s:2:\"th\";s:25:\"img_on_nav_speaker_01.jpg\";}', 'a:2:{s:2:\"en\";s:7:\"Speaker\";s:2:\"th\";s:7:\"Speaker\";}', 'a:2:{s:2:\"en\";s:7:\"speaker\";s:2:\"th\";s:7:\"speaker\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:7:\"Speaker\";s:2:\"th\";s:7:\"Speaker\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:9:\"dummy.jpg\";s:2:\"th\";s:9:\"dummy.jpg\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:41:\"สนใจทำ SEO กับเรา\";s:2:\"th\";s:41:\"สนใจทำ SEO กับเรา\";}', '2019-10-22 03:27:31', '2019-10-17 22:00:19', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
@@ -713,96 +723,116 @@ ALTER TABLE `users`
 --
 ALTER TABLE `about_page`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `blogs`
 --
 ALTER TABLE `blogs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT for table `blog_categories`
 --
 ALTER TABLE `blog_categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
 -- AUTO_INCREMENT for table `blog_page`
 --
 ALTER TABLE `blog_page`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
 --
 -- AUTO_INCREMENT for table `client_categories`
 --
 ALTER TABLE `client_categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT for table `client_page`
 --
 ALTER TABLE `client_page`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `contact_page`
 --
 ALTER TABLE `contact_page`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `contents`
 --
 ALTER TABLE `contents`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `home_page`
 --
 ALTER TABLE `home_page`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
+
 --
 -- AUTO_INCREMENT for table `log_events`
 --
 ALTER TABLE `log_events`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
 --
 -- AUTO_INCREMENT for table `service_ports`
 --
 ALTER TABLE `service_ports`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+
 --
 -- AUTO_INCREMENT for table `teams`
 --
 ALTER TABLE `teams`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
 --
 -- AUTO_INCREMENT for table `team_page`
 --
 ALTER TABLE `team_page`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

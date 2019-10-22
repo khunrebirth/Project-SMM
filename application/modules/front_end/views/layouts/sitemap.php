@@ -14,29 +14,31 @@
 					<div class="row">
 						<div class="col-sm-12 col-lg-4">
 							<p class="text-left"><img class="img-fluid" src="<?php echo base_url('resources/front_end/images/logo-smm.png');?>" alt=""></p>
-							<h4 class="text-left">บริษัท โซเซียล มีเดีย มาสเตอร์ จำกัด</h4>
-							<p class="text-left">290/25 หมู่บ้านกลางเมืองเอสเซ้น ลาดพร้าว 84 ถ.ประดิษฐ์มนูธรรม
-							เขตวังทองหลาง แขวงวังทองหลาง กรุงเทพฯ 10310</p>
+							<h4 class="text-left"><?php echo lang('page_contact_company'); ?></h4>
+							<p class="text-left"><?php echo lang('page_contact_address_detail'); ?></p>
 						</div>
 						<div class="col-sm-12 col-lg-4">
-							<a class="d-block text-left" href="">หน้าแรก</a>
-							<a class="d-block text-left" href="">เกี่ยวกับเรา</a>
-							<a class="d-block text-left" href="">บริการ</a>
+							<a class="d-block text-left" href="<?php echo base_url($lang . '/' . lang('menu_home')); ?>"><?php echo lang('menu_home'); ?></a>
+							<a class="d-block text-left" href="<?php echo base_url($lang . '/' . lang('menu_about')); ?>"><?php echo lang('menu_about'); ?></a>
+							<a class="d-block text-left" href=""><?php echo lang('menu_service'); ?></a>
 							<ul class="list-sitemap">
-								<li><a class="text-left" href="">บริการทำการตลาดผ่านโซเชียลมีเดีย</a></li>
-								<li><a class="text-left" href="">บริการทำการตลาดผ่านเครือข่าย Google</a></li>
-								<li><a class="text-left" href="">บริการทำการตลาดผ่าน LINE</a></li>
-								<li><a class="text-left" href="">บริการทำการตลาดผ่านโปรแกรมค้นหา</a></li>
-								<li><a class="text-left" href="">บริการทำคอนเทนต์</a></li>
-								<li><a class="text-left" href="">บริการออกแบบเว็บไซต์</a></li>
-								<li><a class="text-left" href="">บริการให้คำแนะนำปรึกษา และวางแผนการตลาดออนไลน์</a></li>
-								<li><a class="text-left" href="">Speaker</a></li>
+								<?php
+									$CI =& get_instance();
+
+									$CI->load->model('Service_model');
+
+									$services = $CI->Service_model->get_service_all();
+								?>
+								<?php foreach ($services as $service) { ?>
+									<li><a class="text-left" href="<?php echo base_url($lang . '/' . lang('menu_service') . '/' . unserialize($service->slug)[$lang] . '/' . hashids_encrypt($service->id)); ?>"><?php echo unserialize($service->title)[$lang]; ?></a></li>
+								<?php } ?>
+								
 							</ul>
 						</div>
 						<div class="col-sm-12 col-lg-4">
-							<a class="d-block text-left" href="">ลูกค้าของเรา</a>
-							<a class="d-block text-left" href="">บทความ</a>
-							<a class="d-block text-left" href="">ทีมงาน</a>
+							<a class="d-block text-left" href="<?php echo base_url($lang . '/' . lang('menu_our_clients')); ?>"><?php echo lang('menu_our_clients'); ?></a>
+							<a class="d-block text-left" href="<?php echo base_url($lang . '/' . lang('menu_blogs')); ?>"><?php echo lang('menu_blogs'); ?></a>
+							<a class="d-block text-left" href="<?php echo base_url($lang . '/' . lang('menu_teams')); ?>"><?php echo lang('menu_teams'); ?></a>
 							<ul class="list-social">
 
 							</ul>
