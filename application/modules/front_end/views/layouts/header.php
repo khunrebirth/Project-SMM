@@ -1,9 +1,3 @@
-<?php
-$CI =& get_instance();
-$CI->load->model('Service_model');
-
-$services = $CI->Service_model->get_service_all();
-?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -82,6 +76,13 @@ $services = $CI->Service_model->get_service_all();
                 data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" ><?php echo lang('menu_service'); ?></a>
                 <div class="collapse wrap-sub-gnav" id="collapseExample" >
                     <ul class="list-sub-gnav row">
+						<?php
+							$CI =& get_instance();
+
+							$CI->load->model('Service_model');
+
+							$services = $CI->Service_model->get_service_all();
+						?>
 						<?php foreach ($services as $service) { ?>
 							<li class="item col-lg-2 col-md-3 col-sm-12">
 								<a class="d-flex flex-column text-center" href="<?php echo base_url($lang . '/' . lang('menu_service') . '/' . unserialize($service->slug)[$lang] . '/' . hashids_encrypt($service->id)); ?>">
