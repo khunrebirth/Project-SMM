@@ -314,6 +314,13 @@ class Service extends MX_Controller
 		if ($service != false) {
 			$status = 200;
 			$response['success'] = 1;
+
+			logger_store([
+				'user_id' => $this->data['user']->id,
+				'detail' => 'ลบ Service (Services Page)',
+				'event' => 'delete',
+				'ip' => $this->input->ip_address(),
+			]);
 		}
 
 		return $this->output
