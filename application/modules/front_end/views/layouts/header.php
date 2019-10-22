@@ -62,7 +62,7 @@ $services = $CI->Service_model->get_service_all();
 <body>
 
 <nav class="navbar navbar-light fixed-top navbar-expand-md navbar-no-bg">
-    <a class="navbar-brand" href="<?php echo base_url('home'); ?>">
+    <a class="navbar-brand" href="<?php echo base_url($lang . '/' . lang('menu_home')); ?>">
         <img src="<?php echo base_url('resources/front_end/images/logo-smm.png'); ?>" alt="logo-ssm">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -78,7 +78,7 @@ $services = $CI->Service_model->get_service_all();
                 <a class="nav-link <?php if ($this->uri->segment(0) == "about" || $this->uri->segment(0) == "เกี่ยวกับเรา") { echo 'active'; }?>" href="<?php echo base_url($lang . '/' . lang('menu_about')); ?>"><?php echo lang('menu_about'); ?></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php if ($this->uri->segment(0) == "services" || $this->uri->segment(0) == "บริการ") { echo 'active'; }?>" 
+                <a class="nav-link <?php if ($this->uri->segment(0) == "services" || $this->uri->segment(0) == "บริการ") { echo 'active'; }?>  dropdown-toggle"
                 data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" ><?php echo lang('menu_service'); ?></a>
                 <div class="collapse wrap-sub-gnav" id="collapseExample" >
                     <ul class="list-sub-gnav row">
