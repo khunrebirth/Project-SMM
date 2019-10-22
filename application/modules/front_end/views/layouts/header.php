@@ -78,56 +78,56 @@
                     <ul class="list-sub-gnav row">
                         <li class="item col-lg-2 col-md-3 col-sm-12">
                             <a class="d-flex flex-column text-center" href="">
-                                <img class="d-sm-none d-none img-gnavi d-md-block" src="https://dummyimage.com/200x80/cccccc/fff" alt="">
-                                <span>Search Engine Optimization</span>
-                            </a>
-                        </li>
-                        <li class="item col-lg-2 col-md-3 col-sm-12">
-                            <a class="d-flex flex-column text-center" href="">
-                                <img class="d-sm-none d-none img-gnavi d-md-block" src="https://dummyimage.com/200x80/cccccc/fff" alt="">
+                                <img class="d-sm-none d-none img-gnavi d-md-block" src="<?php echo base_url('resources/front_end/images/img-/images/icon/icon_facebook_01.jpg' );?>" alt="">
                                 <span>Social Media Marketing</span>
                             </a>
                         </li>
                         <li class="item col-lg-2 col-md-3 col-sm-12">
                             <a class="d-flex flex-column text-center" href="">
-                                <img class="d-sm-none d-none img-gnavi d-md-block" src="https://dummyimage.com/200x80/cccccc/fff" alt="">
+                                <img class="d-sm-none d-none img-gnavi d-md-block" src="<?php echo base_url('resources/front_end/images/img-/images/icon/ico_seo_01.jpg' );?>" alt="">
+                                <span>Search Engine Optimization</span>
+                            </a>
+                        </li>
+                        <li class="item col-lg-2 col-md-3 col-sm-12">
+                            <a class="d-flex flex-column text-center" href="">
+                                <img class="d-sm-none d-none img-gnavi d-md-block" src="<?php echo base_url('resources/front_end/images/img-/images/icon/ico_sem_01.jpg' );?>" alt="">
                                 <span>Search Engine Marketing</span>
                             </a>
                         </li>
                         <li class="item col-lg-2 col-md-3 col-sm-12">
                             <a class="d-flex flex-column text-center" href="">
-                                <img class="d-sm-none d-none img-gnavi d-md-block" src="https://dummyimage.com/200x80/cccccc/fff" alt="">
+                                <img class="d-sm-none d-none img-gnavi d-md-block" src="<?php echo base_url('resources/front_end/images/img-/images/icon/ico_web_01.jpg' );?>" alt="">
                                 <span>Website Design</span>
                             </a>
                         </li>
                         <li class="item col-lg-2 col-md-3 col-sm-12">
                             <a class="d-flex flex-column text-center" href="">
-                                <img class="d-sm-none d-none img-gnavi d-md-block" src="https://dummyimage.com/200x80/cccccc/fff" alt="">
+                                <img class="d-sm-none d-none img-gnavi d-md-block" src="<?php echo base_url('resources/front_end/images/img-/images/icon/ico_line_01.jpg' );?>" alt="">
                                 <span>Line Marketing</span>
                             </a>
                         </li>
                         <li class="item col-lg-2 col-md-3 col-sm-12">
                             <a class="d-flex flex-column text-center" href="">
-                                <img class="d-sm-none d-none img-gnavi d-md-block" src="https://dummyimage.com/200x80/cccccc/fff" alt="">
+                                <img class="d-sm-none d-none img-gnavi d-md-block" src="<?php echo base_url('resources/front_end/images/img-/images/icon/ico_production_01.jpg' );?>" alt="">
                                 <span>Creative & Production</span>
                             </a>
                         </li>
                         <li class="item col-lg-2 col-md-3 col-sm-12">
                             <a class="d-flex flex-column text-center" href="">
-                                <img class="d-sm-none d-none img-gnavi d-md-block" src="https://dummyimage.com/200x80/cccccc/fff" alt="">
-                                <span>Strategy Consultancy  Service</span>
+                                <img class="d-sm-none d-none img-gnavi d-md-block" src="<?php echo base_url('resources/front_end/images/img-/images/icon/ico_plan_01.jpg' );?>" alt="">
+                                <span>Strategy Consultancy Service</span>
                             </a>
                         </li>
                         <li class="item col-lg-2 col-md-3 col-sm-12">
                             <a class="d-flex flex-column text-center" href="">
-                                <img class="d-sm-none d-none img-gnavi d-md-block" src="https://dummyimage.com/200x80/cccccc/fff" alt="">
-                                <span>Digital Speaker  Service</span>
+                                <img class="d-sm-none d-none img-gnavi d-md-block" src="<?php echo base_url('resources/front_end/images/img-/images/icon/ico_speaker_01.jpg' );?>" alt="">
+                                <span>Digital Speaker Service</span>
                             </a>
                         </li>
                         <li class="item col-lg-2 col-md-3 col-sm-12">
                             <a class="d-flex flex-column text-center" href="">
-                                <img class="d-sm-none d-none img-gnavi d-md-block" src="https://dummyimage.com/200x80/cccccc/fff" alt="">
-                                <span>Domain Hosting  Service</span>
+                                <img class="d-sm-none d-none img-gnavi d-md-block" src="<?php echo base_url('resources/front_end/images/img-/images/icon/ico_setting_01.jpg' );?>" alt="">
+                                <span>Domain Hosting Service</span>
                             </a>
                         </li>
                     </ul>
