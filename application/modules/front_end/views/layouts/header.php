@@ -1,3 +1,9 @@
+<?php
+$CI =& get_instance();
+$CI->load->model('Service_model');
+
+$services = $CI->Service_model->get_service_all();
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -57,7 +63,7 @@
 
 <nav class="navbar navbar-light fixed-top navbar-expand-md navbar-no-bg">
     <a class="navbar-brand" href="<?php echo base_url('home'); ?>">
-        <img src="<?php echo base_url('resources/front_end/images/img-/logo-smm.png'); ?>" alt="">
+        <img src="<?php echo base_url('resources/front_end/images/logo-smm.png'); ?>" alt="logo-ssm">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -76,60 +82,14 @@
                 data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" ><?php echo lang('menu_service'); ?></a>
                 <div class="collapse wrap-sub-gnav" id="collapseExample" >
                     <ul class="list-sub-gnav row">
-                        <li class="item col-lg-2 col-md-3 col-sm-12">
-                            <a class="d-flex flex-column text-center" href="">
-                                <img class="d-sm-none d-none img-gnavi d-md-block" src="<?php echo base_url('resources/front_end/images/img-/images/icon/icon_facebook_01.jpg' );?>" alt="">
-                                <span>Social Media Marketing</span>
-                            </a>
-                        </li>
-                        <li class="item col-lg-2 col-md-3 col-sm-12">
-                            <a class="d-flex flex-column text-center" href="">
-                                <img class="d-sm-none d-none img-gnavi d-md-block" src="<?php echo base_url('resources/front_end/images/img-/images/icon/ico_seo_01.jpg' );?>" alt="">
-                                <span>Search Engine Optimization</span>
-                            </a>
-                        </li>
-                        <li class="item col-lg-2 col-md-3 col-sm-12">
-                            <a class="d-flex flex-column text-center" href="">
-                                <img class="d-sm-none d-none img-gnavi d-md-block" src="<?php echo base_url('resources/front_end/images/img-/images/icon/ico_sem_01.jpg' );?>" alt="">
-                                <span>Search Engine Marketing</span>
-                            </a>
-                        </li>
-                        <li class="item col-lg-2 col-md-3 col-sm-12">
-                            <a class="d-flex flex-column text-center" href="">
-                                <img class="d-sm-none d-none img-gnavi d-md-block" src="<?php echo base_url('resources/front_end/images/img-/images/icon/ico_web_01.jpg' );?>" alt="">
-                                <span>Website Design</span>
-                            </a>
-                        </li>
-                        <li class="item col-lg-2 col-md-3 col-sm-12">
-                            <a class="d-flex flex-column text-center" href="">
-                                <img class="d-sm-none d-none img-gnavi d-md-block" src="<?php echo base_url('resources/front_end/images/img-/images/icon/ico_line_01.jpg' );?>" alt="">
-                                <span>Line Marketing</span>
-                            </a>
-                        </li>
-                        <li class="item col-lg-2 col-md-3 col-sm-12">
-                            <a class="d-flex flex-column text-center" href="">
-                                <img class="d-sm-none d-none img-gnavi d-md-block" src="<?php echo base_url('resources/front_end/images/img-/images/icon/ico_production_01.jpg' );?>" alt="">
-                                <span>Creative & Production</span>
-                            </a>
-                        </li>
-                        <li class="item col-lg-2 col-md-3 col-sm-12">
-                            <a class="d-flex flex-column text-center" href="">
-                                <img class="d-sm-none d-none img-gnavi d-md-block" src="<?php echo base_url('resources/front_end/images/img-/images/icon/ico_plan_01.jpg' );?>" alt="">
-                                <span>Strategy Consultancy Service</span>
-                            </a>
-                        </li>
-                        <li class="item col-lg-2 col-md-3 col-sm-12">
-                            <a class="d-flex flex-column text-center" href="">
-                                <img class="d-sm-none d-none img-gnavi d-md-block" src="<?php echo base_url('resources/front_end/images/img-/images/icon/ico_speaker_01.jpg' );?>" alt="">
-                                <span>Digital Speaker Service</span>
-                            </a>
-                        </li>
-                        <li class="item col-lg-2 col-md-3 col-sm-12">
-                            <a class="d-flex flex-column text-center" href="">
-                                <img class="d-sm-none d-none img-gnavi d-md-block" src="<?php echo base_url('resources/front_end/images/img-/images/icon/ico_setting_01.jpg' );?>" alt="">
-                                <span>Domain Hosting Service</span>
-                            </a>
-                        </li>
+						<?php foreach ($services as $service) { ?>
+							<li class="item col-lg-2 col-md-3 col-sm-12">
+								<a class="d-flex flex-column text-center" href="<?php echo base_url($lang . '/' . lang('menu_service') . '/' . unserialize($service->slug)[$lang] . '/' . hashids_encrypt($service->id)); ?>">
+									<img class="d-sm-none d-none img-gnavi d-md-block" src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service->img_on_navbar)[$lang]); ?>">
+									<span><?php echo unserialize($service->title)[$lang]; ?></span>
+								</a>
+							</li>
+						<?php } ?>
                     </ul>
                 </div>
             </li>

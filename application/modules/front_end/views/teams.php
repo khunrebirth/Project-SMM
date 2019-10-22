@@ -66,7 +66,7 @@
 <section id="team">
     <div class="container-fluid ">
         <div class="title-team" style="text-align: center; padding: 4rem;">
-			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/img-/images/title-team.png' : 'resources/front_end/images/img-/images/title-team.png'); ?>" alt="" class="img-fluid">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-team.png' : 'resources/front_end/images/title-team.png'); ?>" alt="" class="img-fluid">
         </div>
         
         <div class="owl-carousel owl-theme box-slide-team" id="box-slide-team">

@@ -68,7 +68,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="title-client col-12" style="text-align: center; padding: 4rem;">
-				<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/img-/images/title-blog.png' : 'resources/front_end/images/img-/images/title-blog.png'); ?>" alt="" class="img-fluid">
+				<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-blog.png' : 'resources/front_end/images/title-blog.png'); ?>" alt="" class="img-fluid">
 			</div>
 		</div>
 		<div class="sec-blogs_content-01 row  flex-sm-column-reverse flex-column-reverse flex-md-column-reverse flex-lg-row">

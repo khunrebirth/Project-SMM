@@ -72,6 +72,8 @@ class Service extends MX_Controller
 		$meta_og_image_th = '';
 		$icon_en = '';
 		$icon_th = '';
+		$img_on_navbar_en = '';
+		$img_on_navbar_th = '';
 		$content_top_img_en = '';
 		$content_top_img_th = '';
 		$content_bottom_img_en = '';
@@ -91,6 +93,14 @@ class Service extends MX_Controller
 
 		if (isset($_FILES['icon_th']) && $_FILES['icon_th']['name'] != '') {
 			$icon_th = $this->ddoo_upload_service('icon_th');
+		}
+
+		if (isset($_FILES['img_on_navbar_en']) && $_FILES['img_on_navbar_en']['name'] != '') {
+			$img_on_navbar_en = $this->ddoo_upload_service('img_on_navbar_en');
+		}
+
+		if (isset($_FILES['img_on_navbar_th']) && $_FILES['img_on_navbar_th']['name'] != '') {
+			$img_on_navbar_th = $this->ddoo_upload_service('img_on_navbar_th');
 		}
 
 		if (isset($_FILES['content_top_img_en']) && $_FILES['content_top_img_en']['name'] != '') {
@@ -115,6 +125,7 @@ class Service extends MX_Controller
 		$input_meta_keyword = ['en' => $this->input->post('meta_tag_keywords_en'), 'th' => $this->input->post('meta_tag_keywords_th')];
 		$input_img_og_twitter = ['en' => $meta_og_image_en, 'th' => $meta_og_image_th];
 		$input_icon = ['en' => $icon_en, 'th' => $icon_th];
+		$input_img_on_navbar = ['en' => $img_on_navbar_en, 'th' => $img_on_navbar_th];
 		$input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
 		$input_content_top_title = ['en' => $this->input->post('content_top_title_en'), 'th' => $this->input->post('content_top_title_th')];
 		$input_content_top_img = ['en' => $content_top_img_en, 'th' => $content_top_img_th];
@@ -136,6 +147,7 @@ class Service extends MX_Controller
 			'meta_tag_keywords' => serialize($input_meta_keyword),
 			'img_og_twitter' => serialize($input_img_og_twitter),
 			'icon' => serialize($input_icon),
+			'img_on_navbar' => serialize($input_img_on_navbar),
 			'title' => serialize($input_title),
 			'content_top_img' => serialize($input_content_top_img),
 			'content_top_title' => serialize($input_content_top_title),
@@ -186,6 +198,8 @@ class Service extends MX_Controller
 		$meta_og_image_th = unserialize($service->img_og_twitter)['en'];
 		$icon_en = unserialize($service->icon)['en'];
 		$icon_th = unserialize($service->icon)['en'];
+		$img_on_navbar_en = unserialize($service->img_on_navbar)['en'];
+		$img_on_navbar_th = unserialize($service->img_on_navbar)['en'];
 		$content_top_img_en = unserialize($service->content_top_img)['en'];
 		$content_top_img_th = unserialize($service->content_top_img)['en'];
 		$content_bottom_img_en = unserialize($service->content_bottom_img)['en'];
@@ -205,6 +219,14 @@ class Service extends MX_Controller
 
 		if (isset($_FILES['icon_th']) && $_FILES['icon_th']['name'] != '') {
 			$icon_th = $this->ddoo_upload_service('icon_th');
+		}
+
+		if (isset($_FILES['img_on_navbar_en']) && $_FILES['img_on_navbar_en']['name'] != '') {
+			$icon_en = $this->ddoo_upload_service('img_on_navbar_en');
+		}
+
+		if (isset($_FILES['img_on_navbar_th']) && $_FILES['img_on_navbar_th']['name'] != '') {
+			$icon_th = $this->ddoo_upload_service('img_on_navbar_th');
 		}
 
 		if (isset($_FILES['content_top_img_en']) && $_FILES['content_top_img_en']['name'] != '') {
@@ -229,6 +251,7 @@ class Service extends MX_Controller
 		$input_meta_keyword = ['en' => $this->input->post('meta_tag_keywords_en'), 'th' => $this->input->post('meta_tag_keywords_th')];
 		$input_img_og_twitter = ['en' => $meta_og_image_en, 'th' => $meta_og_image_th];
 		$input_icon = ['en' => $icon_en, 'th' => $icon_th];
+		$input_img_on_navbar = ['en' => $img_on_navbar_en, 'th' => $img_on_navbar_th];
 		$input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
 		$input_content_top_title = ['en' => $this->input->post('content_top_title_en'), 'th' => $this->input->post('content_top_title_th')];
 		$input_content_top_img = ['en' => $content_top_img_en, 'th' => $content_top_img_th];
@@ -250,6 +273,7 @@ class Service extends MX_Controller
 			'meta_tag_keywords' => serialize($input_meta_keyword),
 			'img_og_twitter' => serialize($input_img_og_twitter),
 			'icon' => serialize($input_icon),
+			'img_on_navbar' => serialize($input_img_on_navbar),
 			'title' => serialize($input_title),
 			'content_top_img' => serialize($input_content_top_img),
 			'content_top_title' => serialize($input_content_top_title),

@@ -123,7 +123,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="title-client col-12" style="text-align: center; padding: 4rem;">
-				<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/img-/images/title-blog.png' : 'resources/front_end/images/img-/images/title-blog.png'); ?>" alt="" class="img-fluid">
+				<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-blog.png' : 'resources/front_end/images/title-blog.png'); ?>" alt="" class="img-fluid">
 			</div>
 			<div class="box-blog_catagory col-12">
 				<ul class="list-blog_catagory row">

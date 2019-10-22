@@ -20,7 +20,7 @@
 			<div class="col-md-6 col-lg-6 order-lg-2 showcase-img d-none d-sm-block" style="background-image: url('<?php echo base_url('storage/uploads/images/abouts/' . unserialize($about->img_section)[$lang]); ?>');"></div>
 			<div class="col-xs-12 col-md-6 col-lg-6 order-lg-1 my-auto showcase-text text-center wow fadeInLeft">
 				<div class="title-about" style="">
-					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/img-/images/title-about.png' : 'resources/front_end/images/img-/images/title-about.png'); ?>" class="img-fluid">
+					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-about.png' : 'resources/front_end/images/title-about.png'); ?>" class="img-fluid">
 				</div>
 				<h2 class="about__title--head mt-5 mb-4"><span>S</span>ocial Media Master</h2>
 				<div class="row justify-content-center">
@@ -40,7 +40,7 @@
 <section id="service" class="wow fadeInUp">
 	<div class="container-fluid text-center sec-home-service">
 		<div class="title-service" style="text-align: left; padding: 4rem 0;">
-			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/img-/images/title-service.png' : 'resources/front_end/images/img-/images/title-service.png'); ?>" class="img-fluid">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-service.png' : 'resources/front_end/images/title-service.png'); ?>" class="img-fluid">
 		</div>
 		<div class="row mb-5">
 			<?php foreach ($services as $service) { ?>
@@ -62,7 +62,7 @@
 <section id="client" class="wow fadeInUp">
 	<div class="container-fluid">
 		<div class="title-client" style="text-align: center; padding: 4rem;">
-			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/img-/images/title-cilent.png' : 'resources/front_end/images/img-/images/title-cilent.png'); ?>" class="img-fluid">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-cilent.png' : 'resources/front_end/images/title-cilent.png'); ?>" class="img-fluid">
 		</div>
 		<!-- tab -->
 		<div class="row justify-content-center">
@@ -116,7 +116,7 @@
 <section id="blog">
 	<div class="container-fluid">
 		<div class="title-client" style="text-align: center; padding: 4rem;">
-			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/img-/images/title-blog.png' : 'resources/front_end/images/img-/images/title-blog.png'); ?>" class="img-fluid">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-blog.png' : 'resources/front_end/images/title-blog.png'); ?>" class="img-fluid">
 		</div>
 		<div class="row row-60 row-sm">
 			<?php foreach ($blogs as $blog) { ?>
@@ -164,7 +164,7 @@
 			</div>
 			<div class="item-team-ttl col-lg-4 col-sm-12">
 				<div class="title-team" style="text-align: center; padding: 4rem;">
-					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/img-/images/title-team.png' : 'resources/front_end/images/img-/images/title-team.png'); ?>" alt="" class="img-fluid">
+					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-team.png' : 'resources/front_end/images/title-team.png'); ?>" alt="" class="img-fluid">
 				</div>
 			</div>
 		</div>
@@ -175,7 +175,7 @@
 <section id="contact" class="wow fadeInUp">
 	<div class="container">
 		<div class="title-contact" style="text-align: center; padding: 4rem;">
-			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/img-/images/title-contact.png' : 'resources/front_end/images/img-/images/title-contact.png'); ?>" class="img-fluid">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-contact.png' : 'resources/front_end/images/title-contact.png'); ?>" class="img-fluid">
 		</div>
 		<div class="row">
 			<div class="col-xs-12 col-md-6 col-lg-6 ">
