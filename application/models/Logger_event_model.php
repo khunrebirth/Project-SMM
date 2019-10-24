@@ -6,7 +6,7 @@ class Logger_event_model extends CI_Model {
     {
         $query = $this->db->get('log_events');
 
-        return $query->num_rows() > 0 ? $query->result() : false;
+        return $query->num_rows() > 0 ? $query->result() : [];
     }
 
     public function get_log_events_by_id($id)

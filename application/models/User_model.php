@@ -9,7 +9,7 @@ class User_model extends CI_Model
 			->join('roles', 'users.role_id = roles.id')
 			->get('users');
 
-		return $query->num_rows() > 0 ? $query->result() : false;
+		return $query->num_rows() > 0 ? $query->result() : [];
 	}
 
 	public function insert_user($data)

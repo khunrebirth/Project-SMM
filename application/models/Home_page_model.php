@@ -7,7 +7,7 @@ class Home_page_model extends CI_Model {
     {
         $query = $this->db->get('home_page');
 
-        return $query->num_rows() > 0 ? $query->result() : false;
+        return $query->num_rows() > 0 ? $query->result() : [];
     }
 
     public function get_home_page_by_id($id)

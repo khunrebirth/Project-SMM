@@ -277,13 +277,15 @@ $route['(\w{2})/ขอบคุณ'] = 'front_end/Thank_you';
     // Setting
     $route['(\w{2})/backoffice/settings'] = 'back_end/settings';
 
+	// Banner
+	$route['(\w{2})/backoffice/setting/banners'] = 'back_end/Banner';
+	$route['(\w{2})/backoffice/setting/banners/edit/(:any)'] = "back_end/Banner/edit/$1/$2";
+	$route['(\w{2})/backoffice/setting/banners/update/(:any)'] = "back_end/Banner/update/$1/$2";
+
 	// Users
 	$route['(\w{2})/backoffice/setting/users'] = 'back_end/User';
-	$route['(\w{2})/backoffice/setting/users/create'] = 'back_end/User/create';
-	$route['(\w{2})/backoffice/setting/users/store'] = 'back_end/User/store';
 	$route['(\w{2})/backoffice/setting/users/edit/(:any)'] = "back_end/User/edit/$1/$2";
 	$route['(\w{2})/backoffice/setting/users/update/(:any)'] = "back_end/User/update/$1/$2";
-	$route['(\w{2})/backoffice/setting/users/destroy/(:any)'] = "back_end/User/destroy/$1/$2";
 
 	/*
 	| -------------------------------------------------------------------------

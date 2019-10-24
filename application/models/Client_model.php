@@ -11,7 +11,7 @@ class Client_model extends CI_Model {
 			->order_by('clients.sort', 'asc')
             ->get('clients');
 
-        return $query->num_rows() > 0 ? $query->result() : false;
+        return $query->num_rows() > 0 ? $query->result() : [];
     }
 
     public function get_client_by_id($id)

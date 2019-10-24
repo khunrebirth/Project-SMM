@@ -160,8 +160,11 @@
 							</li>
 						</ul>
 					</li>
+					<li class="menu-header">Settings</li>
+					<li class="<?php if ($this->uri->segment(1) == "setting" && $this->uri->segment(2) == "banners") { echo 'active'; } ?>">
+						<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/setting/banners') ?>"><i class="fas fa-images"></i> <span>Banners</span></a>
+					</li>
 					<?php if ($user->role_id == 1) { ?>
-						<li class="menu-header">Settings</li>
 						<li class="<?php if ($this->uri->segment(1) == "setting" && $this->uri->segment(2) == "users") { echo 'active'; } ?>">
 							<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/setting/users') ?>"><i class="fas fa-user"></i> <span>Users</span></a>
 						</li>

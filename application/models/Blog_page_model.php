@@ -7,7 +7,7 @@ class Blog_page_model extends CI_Model {
     {
         $query = $this->db->get('blog_page');
 
-        return $query->num_rows() > 0 ? $query->result() : false;
+        return $query->num_rows() > 0 ? $query->result() : [];
     }
 
     public function get_blog_page_by_id($id)

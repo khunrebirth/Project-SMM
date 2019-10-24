@@ -7,7 +7,7 @@ class Contact_page_model extends CI_Model {
     {
         $query = $this->db->get('contact_page');
 
-        return $query->num_rows() > 0 ? $query->result() : false;
+        return $query->num_rows() > 0 ? $query->result() : [];
     }
 
     public function get_contact_page_by_id($id)

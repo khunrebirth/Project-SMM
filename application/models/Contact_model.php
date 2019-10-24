@@ -7,7 +7,7 @@ class Contact_model extends CI_Model {
     {
         $query = $this->db->get('contacts');
 
-        return $query->num_rows() > 0 ? $query->result() : false;
+        return $query->num_rows() > 0 ? $query->result() : [];
     }
 
     public function get_contact_by_id($id)
