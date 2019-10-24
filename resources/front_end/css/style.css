@@ -786,26 +786,46 @@ a:hover {
 	width: 100%;
 }
 
-.sec-sitemap a {
-	color: #fff;
-	text-transform: uppercase;
-}
+	.sec-sitemap a {
+		color: #fff;
+		text-transform: uppercase;
+	}
 
 .list-sitemap {
 	padding: 0 0 0 15px;
 	list-style: none;
+	margin-bottom: 5px;
 }
 
-.list-sitemap li {
-	text-align: left;
+	.list-sitemap li {
+		text-align: left;
+	}
+
+		.list-sitemap li a {
+			color: #b9b9b9;
+		}
+
+footer {
+	background-color: #00264c;
+	padding: 20px 0;
+	border-top: 1px solid #fff;
 }
-
-.list-sitemap li a {
-	color: #b9b9b9;
+	footer p {
+		margin: 0;
+		color: #fff;
+	}
+	.sec-site-link {
+		border-right: 1px solid #fff;
+		
+	}
+		.ttl-facebook {
+			font-size: 2rem;
+			margin: 0;
+			padding: 15px 0;
+		}
+.sec-footer-sitemap .card-body {
+	padding: 60px 0;
 }
-
-
-
 .wrap-social {
 	width: 100%;
 	overflow: hidden;
