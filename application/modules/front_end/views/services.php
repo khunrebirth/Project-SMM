@@ -221,7 +221,7 @@
 </style>
 
 <!-- Title -->
-<section class="page-title" style="background-image:url(http://localhost/social-dev/resources/front_end/images/slider-1.jpg)">
+<section class="page-title" style="background-image:url(<?php echo base_url('resources/front_end/images/service/banner-seo.jpg') ?>">
 	<div class="container my-auto text-center wow fadeInUp">
 		<h1><?php echo lang('page_services'); ?></h1>
 	</div>
@@ -230,7 +230,7 @@
 <section class="sec-service-port row">
 	<div class="col row sec-service-port--inner">
 		<div class=" col-md-12 col-lg-3">
-			<img class="img-fluid" src="<?php echo base_url('resources/front_end/images/service/portfolio.png') ?>" alt="">
+			<img class="img-fluid" src="<?php echo base_url('resources/front_end/images/portfolio.png') ?>" alt="">
 		</div>
 		<?php if (count($service['portfolios']) > 0) { ?>
 			<div class=" col-md-12  col-lg-9">
