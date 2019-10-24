@@ -803,3 +803,22 @@ a:hover {
 .list-sitemap li a {
 	color: #b9b9b9;
 }
+
+
+
+.wrap-social {
+	width: 100%;
+	overflow: hidden;
+	background-color: #133f6b;
+	margin-bottom: 16px;
+}
+.wrap-list-social {
+	max-width: 1190px;
+	margin: 0 auto;
+}
+.list-social {
+	padding: 50px 0 45px;
+}
+.img-main-social {
+	background-color: #fff;
+}
