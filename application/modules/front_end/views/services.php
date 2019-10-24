@@ -216,14 +216,12 @@
 		right: 0;
 		background: url(<?php echo base_url('resources/front_end/images/service/fw.png'); ?>) !important;
 	}
-
-
 </style>
 
 <!-- Title -->
-<section class="page-title" style="background-image:url(<?php echo base_url('resources/front_end/images/service/banner-seo.jpg') ?>">
+<section class="page-title" style="background-image:url(<?php echo base_url('storage/uploads/images/banners/' . unserialize($banner->img)[$lang]); ?>">
 	<div class="container my-auto text-center wow fadeInUp">
-		<h1><?php echo lang('page_services'); ?></h1>
+		<h1><?php echo unserialize($banner->title)[$lang]; ?></h1>
 	</div>
 </section>
 

@@ -112,9 +112,9 @@
 </style>
 
 <!-- Title -->
-<section class="page-title" style="background-image:url(http://localhost/social-dev/resources/front_end/images/slider-1.jpg)">
+<section class="page-title" style="background-image:url(<?php echo base_url('storage/uploads/images/banners/' . unserialize($banner->img)[$lang]); ?>)">
 	<div class="container my-auto text-center wow fadeInUp">
-		<h1><?php echo lang('page_blog'); ?></h1>
+		<h1><?php echo unserialize($banner->title)[$lang]; ?></h1>
 	</div>
 </section>
 
