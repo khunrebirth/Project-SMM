@@ -195,15 +195,15 @@ class Service extends MX_Controller
 
 		// Handle Image
 		$meta_og_image_en = unserialize($service->img_og_twitter)['en'];
-		$meta_og_image_th = unserialize($service->img_og_twitter)['en'];
+		$meta_og_image_th = unserialize($service->img_og_twitter)['th'];
 		$icon_en = unserialize($service->icon)['en'];
-		$icon_th = unserialize($service->icon)['en'];
+		$icon_th = unserialize($service->icon)['th'];
 		$img_on_navbar_en = unserialize($service->img_on_navbar)['en'];
-		$img_on_navbar_th = unserialize($service->img_on_navbar)['en'];
+		$img_on_navbar_th = unserialize($service->img_on_navbar)['th'];
 		$content_top_img_en = unserialize($service->content_top_img)['en'];
-		$content_top_img_th = unserialize($service->content_top_img)['en'];
+		$content_top_img_th = unserialize($service->content_top_img)['th'];
 		$content_bottom_img_en = unserialize($service->content_bottom_img)['en'];
-		$content_bottom_img_th = unserialize($service->content_bottom_img)['en'];
+		$content_bottom_img_th = unserialize($service->content_bottom_img)['th'];
 
 		if (isset($_FILES['meta_og_image_en']) && $_FILES['meta_og_image_en']['name'] != '') {
 			$meta_og_image_en = $this->ddoo_upload_service('meta_og_image_en');
@@ -296,7 +296,7 @@ class Service extends MX_Controller
 				'ip' => $this->input->ip_address(),
 			]);
 
-			$this->session->set_flashdata('success', 'Add Done');
+			$this->session->set_flashdata('success', 'Update Done');
 		} else {
 			$this->session->set_flashdata('error', 'Something wrong');
 		}

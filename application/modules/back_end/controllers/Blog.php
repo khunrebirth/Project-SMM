@@ -182,7 +182,7 @@ class Blog extends MX_Controller {
 				'ip' => $this->input->ip_address(),
 			]);
 
-			$this->session->set_flashdata('success', 'Add Done');
+			$this->session->set_flashdata('success', 'Update Done');
 		} else {
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
@@ -270,6 +270,7 @@ class Blog extends MX_Controller {
 		$slug_th = str_replace(" ","-", strtolower($this->input->post('title_th')));
 		$slug_th = str_replace("/","-", $slug_th);
 		$slug_th = str_replace("&","-", $slug_th);
+		$slug_th = str_replace("?","", $slug_th);
 		$slug = ['en' => $slug_en, 'th' => $slug_th];
 
 		// Add Data
@@ -357,6 +358,7 @@ class Blog extends MX_Controller {
 		$slug_th = str_replace(" ","-", strtolower($this->input->post('title_th')));
 		$slug_th = str_replace("/","-", $slug_th);
 		$slug_th = str_replace("&","-", $slug_th);
+		$slug_th = str_replace("?","", $slug_th);
 		$slug = ['en' => $slug_en, 'th' => $slug_th];
 
 		// Update Data

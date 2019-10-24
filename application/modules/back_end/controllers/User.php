@@ -115,7 +115,7 @@ class User extends MX_Controller
                 'ip' => $this->input->ip_address(),
             ]);
 
-            $this->session->set_flashdata('success', 'Add Done');
+            $this->session->set_flashdata('success', 'Update Done');
 		} else {
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
