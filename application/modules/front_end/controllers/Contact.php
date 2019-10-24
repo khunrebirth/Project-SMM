@@ -19,6 +19,7 @@ class Contact extends MX_Controller
         // Model
         $this->load->model('Contact_model');
 		$this->load->model('Contact_page_model');
+		$this->load->model('Banner_model');
 
 		// Language
 		$this->lang = $this->config->item('language_abbr');
@@ -61,6 +62,7 @@ class Contact extends MX_Controller
 		$data['content'] = 'contact';
 
 		// Utilities
+		$data['banner'] = $this->Banner_model->get_banner_by_id(5);
 
 		/*
 		| -------------------------------------------------------------------------

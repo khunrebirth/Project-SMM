@@ -20,6 +20,7 @@ class Clients extends MX_Controller
 		$this->load->model('Client_page_model');
 		$this->load->model('Client_category_model');
 		$this->load->model('Client_model');
+		$this->load->model('Banner_model');
 
 		// Language
 		$this->lang = $this->config->item('language_abbr');
@@ -65,6 +66,7 @@ class Clients extends MX_Controller
 		// Utilities
 		$data['client_categories'] = $this->Client_category_model->get_client_category_all();
 		$data['clients'] = $this->filter_data_clients($this->Client_category_model->get_client_category_all());
+		$data['banner'] = $this->Banner_model->get_banner_by_id(2);
 
 		/*
 		| -------------------------------------------------------------------------

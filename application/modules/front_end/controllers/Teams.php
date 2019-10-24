@@ -18,6 +18,7 @@ class Teams extends MX_Controller
 		$this->load->model('Contact_model');
 		$this->load->model('Team_model');
 		$this->load->model('Team_page_model');
+		$this->load->model('Banner_model');
 
 		// Language
 		$this->lang = $this->config->item('language_abbr');
@@ -62,6 +63,7 @@ class Teams extends MX_Controller
 
 		// Utilities
 		$data['teams'] = $this->Team_model->get_team_all();
+		$data['banner'] = $this->Banner_model->get_banner_by_id(4);
 
 		/*
 		| -------------------------------------------------------------------------

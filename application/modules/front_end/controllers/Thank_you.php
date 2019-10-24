@@ -18,6 +18,7 @@ class Thank_you extends MX_Controller
 
 		// Model
 		$this->load->model('Home_page_model');
+		$this->load->model('Banner_model');
 
 		// Language
 		$this->lang = $this->config->item('language_abbr');
@@ -61,6 +62,7 @@ class Thank_you extends MX_Controller
 		$data['content'] = 'thank_you';
 
 		// Utilities
+		$data['banner'] = $this->Banner_model->get_banner_by_id(6);
 
 		/*
 		| -------------------------------------------------------------------------

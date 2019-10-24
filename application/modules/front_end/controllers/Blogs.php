@@ -20,6 +20,7 @@ class Blogs extends MX_Controller
 		$this->load->model('Blog_page_model');
 		$this->load->model('Blog_category_model');
 		$this->load->model('Blog_model');
+		$this->load->model('Banner_model');
 
 		// Language
 		$this->lang = $this->config->item('language_abbr');
@@ -64,6 +65,7 @@ class Blogs extends MX_Controller
 		// Utilities
 		$data['blog_categories'] = $this->Blog_category_model->get_blog_category_all();
 		$data['blogs'] = $this->Blog_model->get_blog_by_category_blog_id($data['blog_categories'][0]->id);
+		$data['banner'] = $this->Banner_model->get_banner_by_id(3);
 
 		/*
 		| -------------------------------------------------------------------------
@@ -113,6 +115,7 @@ class Blogs extends MX_Controller
 		// Utilities
 		$data['blog_categories'] = $this->Blog_category_model->get_blog_category_all();
 		$data['blogs'] = $this->Blog_model->get_blog_by_category_blog_id($blog_category_id);
+		$data['banner'] = $this->Banner_model->get_banner_by_id(3);
 
 		/*
 		| -------------------------------------------------------------------------
@@ -162,6 +165,7 @@ class Blogs extends MX_Controller
 		// Utilities
 		$data['last_blogs'] = $this->Blog_model->get_last_blog(5);
 		$data['blog'] = $this->Blog_model->get_blog_by_id($blog_id);
+		$data['banner'] = $this->Banner_model->get_banner_by_id(3);
 
 		/*
 		| -------------------------------------------------------------------------
