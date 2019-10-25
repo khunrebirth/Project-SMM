@@ -91,6 +91,7 @@ class Clients extends MX_Controller
 
 			if ($clients) {
 				foreach ($clients as $key_client => $client) {
+					$data[$key_category]['clients'][$key_client]['category_id'] = $client->category_id;
 					$data[$key_category]['clients'][$key_client]['img'] = unserialize($client->image)[$this->lang];
 					$data[$key_category]['clients'][$key_client]['title'] = unserialize($client->title)[$this->lang];
 				}

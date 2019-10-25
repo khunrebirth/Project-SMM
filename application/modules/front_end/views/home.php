@@ -80,34 +80,18 @@
 		<!-- content tab-->
 		<div class="tab-content sec-client" id="pills-tabContent">
 			<?php foreach ($clients as $client) { ?>
-			<div class="tab-pane fade" id="pills-<?php echo $client['category_id']; ?>" role="tabpanel" aria-labelledby="pills-<?php echo $client['category_id']; ?>-tab">
+				<div class="tab-pane fade" id="pills-<?php echo $client['category_id']; ?>" role="tabpanel" aria-labelledby="pills-<?php echo $client['category_id']; ?>-tab">
 				<?php if (count($client['clients']) > 0) { ?>
-			<?php
-			$counter = 1;
-			$total = count($client['clients']);
-			?>
-			<?php foreach ($client['clients'] as $key => $client_specific) { ?>
-			<?php if ($counter == 1) { ?>
-				<div class="row mt-5">
-					<?php } ?>
-					<div class="col text-center">
-						<img src="<?php echo base_url('storage/uploads/images/clients/' . $client_specific['img']) ?>" alt="<?php echo $client_specific['title']; ?>" class="img-clients">
+					<div class="row my-3">
+						<?php foreach ($client['clients'] as $key => $client_specific) { ?>
+							<div class="col-md-<?php if ($client_specific['category_id'] == 1) { echo '2'; } else { echo '3'; } ?> my-3">
+								<img src="<?php echo base_url('storage/uploads/images/clients/' . $client_specific['img']) ?>" alt="<?php echo $client_specific['title']; ?>" class="img-fluid img-clients">
+							</div>
+						<?php } ?>
 					</div>
-					<?php
-					if ($counter == 5) {
-						echo '</div>';
-						$counter = 1;
-					} else {
-						if ($total == ($key + 1)) {
-							echo '</div>';
-						}
-
-						$counter++;
-					} ?>
-					<?php } ?>
-					<?php } ?>
-				</div>
 				<?php } ?>
+				</div>
+			<?php } ?>
 		</div>
 	</div>
 </section>
