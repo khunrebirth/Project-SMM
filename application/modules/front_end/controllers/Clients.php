@@ -89,7 +89,7 @@ class Clients extends MX_Controller
 			$data[$key_category]['category_name'] = unserialize($category->title)[$this->lang];
 			$data[$key_category]['clients'] = [];
 
-			if (count($category) > 0) {
+			if ($clients) {
 				foreach ($clients as $key_client => $client) {
 					$data[$key_category]['clients'][$key_client]['img'] = unserialize($client->image)[$this->lang];
 					$data[$key_category]['clients'][$key_client]['title'] = unserialize($client->title)[$this->lang];

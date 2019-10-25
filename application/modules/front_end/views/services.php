@@ -218,9 +218,9 @@
 	}
 </style>
 
-<!-- Title -->
-<section class="page-title" style="background-image:url(<?php echo base_url('storage/uploads/images/banners/' . unserialize($banner->img)[$lang]); ?>">
-	<div class="container my-auto text-center wow fadeInUp">
+<section class="page-title main-hero-service" style="padding:0;">
+	<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/banners/' . unserialize($banner->img)[$lang]); ?>" alt="">
+	<div class="ttl-header-hero wow">
 		<h1><?php echo unserialize($banner->title)[$lang]; ?></h1>
 	</div>
 </section>
@@ -287,7 +287,9 @@
 	</div>
 </section>
 
-<section style="background-image:url(http://localhost/social-dev/resources/front_end/images/slider-1.jpg); height:500px; background-size: cover;"></section>
+<section style="padding:0;">
+	<img class="img-fluid" src="<?php echo base_url('resources/front_end/images/service/banner-footer.jpg');?>" alt="">
+</section>
 
 <div class="" id="template" style="display:none;">
 	<h2 class="text-secondary contact__form--title"><?php echo lang('page_contact_title_first'); ?><span><?php echo lang('page_contact_title_center'); ?></span><?php echo lang('page_contact_title_end'); ?></h2>
