@@ -32,32 +32,26 @@
 					<?php if (count($client['clients']) > 0) { ?>
 						<div class="my-3 wrap-client-slide owl-carousel owl-theme">
 							<?php 
-								$n = 0; 
+								$counter = 0;
 								$totle_client = count($client['clients']);
 							?>
 							<?php foreach ($client['clients'] as $key => $client_specific) { ?>
-								<?php $count_point = ($client_specific['category_id'] == 1)? 12 : 8 ;?>
-								<?php if ($n == 0) {?>
+
+								<?php $count_point = ($client_specific['category_id'] == 1) ? 12 : 8; ?>
+
+								<?php if ($counter == 0) { ?>
 									<div class="row">
 								<?php } ?>
-									<div class="col-md-<?php if ($client_specific['category_id'] == 1) { echo '2'; } else { echo '3'; } ?> my-3" <?=$n?>>
-										<img src="<?php echo base_url('storage/uploads/images/clients/' . $client_specific['img']) ?>" alt="<?php echo $client_specific['title']; ?>" class="img-fluid img-clients">
+										<div class="col-md-<?php if ($client_specific['category_id'] == 1) { echo '2'; } else { echo '3'; } ?> my-3">
+											<img src="<?php echo base_url('storage/uploads/images/clients/' . $client_specific['img']) ?>" alt="<?php echo $client_specific['title']; ?>" class="img-fluid img-clients">
+										</div>
+								<?php $counter++; ?>
+								<?php if ($counter == $count_point) { ?>
 									</div>
-								<?php 
-									$n++;
-									if($n == $count_point){
-								?>
+									<?php $counter = 0; ?>
+								<?php } else { if ($key == ($totle_client - 1)) { ?>
 									</div>
-								<?php
-									$n = 0;
-									}else{
-										if($key == ( $totle_client - 1 ) ){
-								?>
-									</div>
-								<?php
-										}
-									}
-								?>
+								<?php } } ?>
 							<?php } ?>
 						</div>
 					<?php } ?>
