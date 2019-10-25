@@ -46,7 +46,7 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Image (ขนาดที่แนะนำ 1920*1080 หรือ 1920*454)</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right">Image (ขนาดที่แนะนำ 1920*650)</label>
 											<div class="col-sm-10">
 												<div class="custom-file input-file-w-30">
 													<input type="file" name="img_th" class="custom-file-input" onchange="PreviewImage(this, 'previewImgTh');">
