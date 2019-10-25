@@ -81,12 +81,14 @@ class Banner extends MX_Controller
 		}
 
 		// Filter Data
-		$input_title = ['en' => $this->input->post('img_title_alt_en'), 'th' => $this->input->post('img_title_alt_th')];
+		$input_img_title_alt = ['en' => $this->input->post('img_title_alt_en'), 'th' => $this->input->post('img_title_alt_th')];
+		$input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
 		$input_img = ['en' => $img_en, 'th' => $img_th];
 
 		// Add Data
 		$update_banner = $this->Banner_model->update_banner_by_id($id, [
-			'img_title_alt' => serialize($input_title),
+			'title' => serialize($input_title),
+			'img_title_alt' => serialize($input_img_title_alt),
 			'img' => serialize($input_img),
 			'updated_at' => date('Y-m-d H:i:s')
 		]);

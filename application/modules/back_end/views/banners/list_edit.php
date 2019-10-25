@@ -60,6 +60,12 @@
 												<input class="form-control" name="img_title_alt_th" placeholder="Image Title &amp; Alt" type="text" value="<?php echo unserialize($banner->img_title_alt)['th']; ?>" required>
 											</div>
 										</div>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Text</label>
+											<div class="col-sm-10">
+												<input class="form-control" name="title_th" placeholder="Text" type="text" value="<?php echo unserialize($banner->title)['th']; ?>">
+											</div>
+										</div>
 										<hr>
 									</div>
 									<div class="tab-pane fade" id="handleEn">
@@ -85,6 +91,12 @@
 											<label class="col-sm-2 col-form-label text-left text-md-right">Image Title &amp; Alt</label>
 											<div class="col-sm-10">
 												<input class="form-control" name="img_title_alt_en" placeholder="Image Title &amp; Alt" type="text" value="<?php echo unserialize($banner->img_title_alt)['en']; ?>">
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Text</label>
+											<div class="col-sm-10">
+												<input class="form-control" name="title_en" placeholder="Text" type="text" value="<?php echo unserialize($banner->title)['th']; ?>">
 											</div>
 										</div>
 										<hr>
