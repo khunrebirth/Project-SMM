@@ -19,7 +19,7 @@ class Services extends MX_Controller
 		// Model
 		$this->load->model('Service_model');
 		$this->load->model('Service_portfolio_model');
-		$this->load->model('Banner_model');
+//		$this->load->model('Banner_model');
 
 		// Language
 		$this->lang = $this->config->item('language_abbr');
@@ -65,7 +65,7 @@ class Services extends MX_Controller
 
 		// Utilities
 		$data['service'] = $this->filter_data_service($this->Service_model->get_service_by_id($service_id));
-		$data['banner'] = $this->Banner_model->get_banner_by_id(1);
+//		$data['banner'] = $this->Banner_model->get_banner_by_id(1);
 
 		/*
 		| -------------------------------------------------------------------------
@@ -82,6 +82,9 @@ class Services extends MX_Controller
 
 		$data['id'] = $service->id;
 		$data['title'] = $service->title;
+		$data['banner_img'] = $service->banner_img;
+		$data['banner_img_title_alt'] = $service->banner_img_title_alt;
+		$data['banner_title'] = $service->banner_title;
 		$data['content_top_img'] = $service->content_top_img;
 		$data['content_top_title'] = $service->content_top_title;
 		$data['content_top_body'] = $service->content_top_body;

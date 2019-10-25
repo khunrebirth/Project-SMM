@@ -206,7 +206,6 @@
 		top: -18px;
 	}
 
-
 	.wrap-slide-port .owl-nav .owl-prev {
 		left: 0;
 		background: url(<?php echo base_url('resources/front_end/images/service/bw.png');?>) !important;
@@ -220,9 +219,9 @@
 
 <!-- Title -->
 <section class="page-title main-hero-service" style="padding:0;">
-	<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/banners/' . unserialize($banner->img)[$lang]); ?>" alt="<?php echo unserialize($banner->img_title_alt)[$lang]; ?>">
+	<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/banners/' . unserialize($service['banner_img'])[$lang]); ?>" alt="<?php echo unserialize($service['banner_img_title_alt'])[$lang]; ?>">
 	<div class="ttl-header-hero wow">
-		<h1><?php echo unserialize($banner->title)[$lang]; ?></h1>
+		<h1><?php echo unserialize($service['banner_title'])[$lang]; ?></h1>
 	</div>
 </section>
 
@@ -288,9 +287,9 @@
 	</div>
 </section>
 
-<section style="padding:0;">
-	<img class="img-fluid" src="<?php echo base_url('resources/front_end/images/service/banner-footer.jpg');?>" alt="">
-</section>
+<!--<section style="padding:0;">-->
+<!--	<img class="img-fluid" src="--><?php //echo base_url('resources/front_end/images/service/banner-footer.jpg');?><!--" alt="">-->
+<!--</section>-->
 
 <div class="" id="template" style="display:none;">
 	<h2 class="text-secondary contact__form--title"><?php echo lang('page_contact_title_first'); ?><span><?php echo lang('page_contact_title_center'); ?></span><?php echo lang('page_contact_title_end'); ?></h2>

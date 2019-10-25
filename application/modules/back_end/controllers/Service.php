@@ -78,6 +78,8 @@ class Service extends MX_Controller
 		$content_top_img_th = '';
 		$content_bottom_img_en = '';
 		$content_bottom_img_th = '';
+		$banner_img_en = '';
+		$banner_img_th = '';
 
 		if (isset($_FILES['meta_og_image_en']) && $_FILES['meta_og_image_en']['name'] != '') {
 			$meta_og_image_en = $this->ddoo_upload_service('meta_og_image_en');
@@ -119,6 +121,14 @@ class Service extends MX_Controller
 			$content_bottom_img_th = $this->ddoo_upload_service('content_bottom_img_th');
 		}
 
+		if (isset($_FILES['banner_img_en']) && $_FILES['banner_img_en']['name'] != '') {
+			$banner_img_en = $this->ddoo_upload_banner('banner_img_en');
+		}
+
+		if (isset($_FILES['banner_img_th']) && $_FILES['banner_img_th']['name'] != '') {
+			$banner_img_th = $this->ddoo_upload_banner('banner_img_th');
+		}
+
 		// Filter Data
 		$input_meta_title = ['en' => $this->input->post('meta_tag_title_en'), 'th' => $this->input->post('meta_tag_title_th')];
 		$input_meta_description = ['en' => $this->input->post('meta_tag_description_en'), 'th' => $this->input->post('meta_tag_description_th')];
@@ -134,6 +144,9 @@ class Service extends MX_Controller
 		$input_content_bottom_img = ['en' => $content_bottom_img_en, 'th' => $content_bottom_img_th];
 		$input_content_bottom_body = ['en' => $this->input->post('content_bottom_body_en'), 'th' => $this->input->post('content_bottom_body_th')];
 		$input_text_button = ['en' => $this->input->post('text_button_en'), 'th' => $this->input->post('text_button_th')];
+		$input_banner_img = ['en' => $banner_img_en, 'th' => $banner_img_th];
+		$input_banner_img_title_alt = ['en' => $this->input->post('banner_img_title_alt_en'), 'th' => $this->input->post('banner_img_title_alt_th')];
+		$input_banner_title = ['en' => $this->input->post('banner_title_en'), 'th' => $this->input->post('banner_title_th')];
 		$slug_en = slugify($this->input->post('title_en'));
 		$slug_th = str_replace(" ","-", mb_strtolower($this->input->post('title_th')));
 		$slug_th = str_replace("/","-", $slug_th);
@@ -146,6 +159,9 @@ class Service extends MX_Controller
 			'meta_tag_description' => serialize($input_meta_description),
 			'meta_tag_keywords' => serialize($input_meta_keyword),
 			'img_og_twitter' => serialize($input_img_og_twitter),
+			'banner_img' => serialize($input_banner_img),
+			'banner_img_title_alt' => serialize($input_banner_img_title_alt),
+			'banner_title' => serialize($input_banner_title),
 			'icon' => serialize($input_icon),
 			'img_on_navbar' => serialize($input_img_on_navbar),
 			'title' => serialize($input_title),
@@ -204,6 +220,8 @@ class Service extends MX_Controller
 		$content_top_img_th = unserialize($service->content_top_img)['th'];
 		$content_bottom_img_en = unserialize($service->content_bottom_img)['en'];
 		$content_bottom_img_th = unserialize($service->content_bottom_img)['th'];
+		$banner_img_en = unserialize($service->banner_img)['th'];
+		$banner_img_th = unserialize($service->banner_img)['th'];
 
 		if (isset($_FILES['meta_og_image_en']) && $_FILES['meta_og_image_en']['name'] != '') {
 			$meta_og_image_en = $this->ddoo_upload_service('meta_og_image_en');
@@ -245,6 +263,14 @@ class Service extends MX_Controller
 			$content_bottom_img_th = $this->ddoo_upload_service('content_bottom_img_th');
 		}
 
+		if (isset($_FILES['banner_img_en']) && $_FILES['banner_img_en']['name'] != '') {
+			$banner_img_en = $this->ddoo_upload_banner('banner_img_en');
+		}
+
+		if (isset($_FILES['banner_img_th']) && $_FILES['banner_img_th']['name'] != '') {
+			$banner_img_th = $this->ddoo_upload_banner('banner_img_th');
+		}
+
 		// Filter Data
 		$input_meta_title = ['en' => $this->input->post('meta_tag_title_en'), 'th' => $this->input->post('meta_tag_title_th')];
 		$input_meta_description = ['en' => $this->input->post('meta_tag_description_en'), 'th' => $this->input->post('meta_tag_description_th')];
@@ -260,6 +286,9 @@ class Service extends MX_Controller
 		$input_content_bottom_img = ['en' => $content_bottom_img_en, 'th' => $content_bottom_img_th];
 		$input_content_bottom_body = ['en' => $this->input->post('content_bottom_body_en'), 'th' => $this->input->post('content_bottom_body_th')];
 		$input_text_button = ['en' => $this->input->post('text_button_en'), 'th' => $this->input->post('text_button_th')];
+		$input_banner_img = ['en' => $banner_img_en, 'th' => $banner_img_th];
+		$input_banner_img_title_alt = ['en' => $this->input->post('banner_img_title_alt_en'), 'th' => $this->input->post('banner_img_title_alt_th')];
+		$input_banner_title = ['en' => $this->input->post('banner_title_en'), 'th' => $this->input->post('banner_title_th')];
 		$slug_en = slugify($this->input->post('title_en'));
 		$slug_th = str_replace(" ","-", mb_strtolower($this->input->post('title_th')));
 		$slug_th = str_replace("/","-", $slug_th);
@@ -272,6 +301,9 @@ class Service extends MX_Controller
 			'meta_tag_description' => serialize($input_meta_description),
 			'meta_tag_keywords' => serialize($input_meta_keyword),
 			'img_og_twitter' => serialize($input_img_og_twitter),
+			'banner_img' => serialize($input_banner_img),
+			'banner_img_title_alt' => serialize($input_banner_img_title_alt),
+			'banner_title' => serialize($input_banner_title),
 			'icon' => serialize($input_icon),
 			'img_on_navbar' => serialize($input_img_on_navbar),
 			'title' => serialize($input_title),
@@ -416,8 +448,8 @@ class Service extends MX_Controller
 		$portfolio = $this->Service_portfolio_model->get_service_portfolio_by_id($portfolio_id);
 
 		// Handle Image
-		$img_en = unserialize($portfolio->image)['en'];
-		$img_th = unserialize($portfolio->image)['th'];
+		$img_en = unserialize($portfolio->img)['en'];
+		$img_th = unserialize($portfolio->img)['th'];
 
 		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
 			$img_en = $this->ddoo_upload_service('img_en');
@@ -626,6 +658,26 @@ class Service extends MX_Controller
 	private function ddoo_upload_service($filename)
 	{
 		$config['upload_path'] = './storage/uploads/images/services';
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['encrypt_name'] = TRUE;
+
+		$this->load->library('upload', $config);
+
+		if ( ! $this->upload->do_upload($filename)) {
+			$error = array('error' => $this->upload->display_errors());
+
+			return false;
+
+		} else {
+			$data = array('upload_data' => $this->upload->data());
+
+			return $data['upload_data']['file_name'];
+		}
+	}
+
+	private function ddoo_upload_banner($filename)
+	{
+		$config['upload_path'] = './storage/uploads/images/banners';
 		$config['allowed_types'] = 'gif|jpg|png';
 		$config['encrypt_name'] = TRUE;
 
