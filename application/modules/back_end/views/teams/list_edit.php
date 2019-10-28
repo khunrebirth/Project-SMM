@@ -114,7 +114,7 @@
 											<label class="col-sm-2 col-form-label text-left text-md-right">Image <b>(On Hover)</b></label>
 											<div class="col-sm-10">
 												<div class="custom-file input-file-w-30">
-													<input type="file" name="img_hover_th" class="custom-file-input" onchange="PreviewImage(this, 'previewImgHoverEn');">
+													<input type="file" name="img_hover_en" class="custom-file-input" onchange="PreviewImage(this, 'previewImgHoverEn');">
 													<label class="custom-file-label">Choose file (.gif | .jpg | .png)</label>
 												</div>
 											</div>
