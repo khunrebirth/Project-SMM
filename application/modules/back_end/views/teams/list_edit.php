@@ -104,6 +104,7 @@
 												</div>
 											</div>
 										</div>
+										<hr>
 										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Preview</label>
 											<div class="col-sm-10">
