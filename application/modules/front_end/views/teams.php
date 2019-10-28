@@ -3,7 +3,7 @@
 .box-slide-team {
     max-width: 1730px;
     width: 100%;
-    padding: 0 104px;
+    padding: 0 30px;
     margin: 0 auto;
 }
 
@@ -53,6 +53,56 @@
     right: 0;
     background: url(<?php echo base_url($lang == 'th' ? 'resources/front_end/images/team/btn_arrow_right.png' : 'resources/front_end/images/team/btn_arrow_right.png'); ?>) !important;
 }
+.team__card--parent .is-hover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.2s;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	-o-transition: all 0.2s;
+}
+.team__card--parent .is-hover:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(255,255,255,.5);
+}
+
+.team__card--parent:hover .is-hover { 
+	visibility: visible;
+	opacity: 1;
+}
+
+@media (min-width: 576px) { 
+	.box-slide-team {
+		padding: 0 30px !important;
+	}
+}
+
+@media (min-width: 768px) { 
+	.box-slide-team {
+		padding: 0 50px !important;
+	}
+}
+
+@media (min-width: 992px) { 
+	.box-slide-team {
+		padding: 0 80px !important;
+	}
+}
+
+@media (min-width: 1200px) { 
+	.box-slide-team {
+		padding: 0 140px !important;
+	}
+}
 </style>
 
 <!-- Title -->
@@ -81,6 +131,7 @@
 				<div>
 					<div class="card team__card--parent mx-auto" >
 						<img class="card-img-top" src="<?php echo base_url('storage/uploads/images/teams/' . unserialize($team->image)[$lang]); ?>" alt="">
+						<img class="card-img-top is-hover" src="http://localhost/social-dev/storage/uploads/images/teams/img-krissana.jpg" alt="">
 						<div class="card-body pl-0">
 							<h5 class="card-title team__crad--title"><?php echo $first_name; ?> <br><?php echo $last_name; ?></h5>
 							<p class="card-text team__crad--body"><?php echo unserialize($team->body)[$lang]; ?></p>
@@ -104,6 +155,20 @@
             loop:true,
             dots:false,
             margin:15,
+            responsive : {
+                0 : {
+                    items:1,
+                },
+                576 : {
+                    items:2,
+                },
+                768 : {
+                    items:3,
+                },
+                1200 : {
+                    items:5,
+                }
+            }
         });
     });
 </script>
