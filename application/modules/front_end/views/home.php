@@ -37,15 +37,20 @@
 </section>
 
 <!-- Service -->
-<section id="service" class="wow fadeInUp">
+<section id="service" class="wow fadeInUp" style="overflow:hidden">
 	<div class="container-fluid text-center sec-home-service">
 		<div class="title-service" style="text-align: left; padding: 4rem 0;">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-service.png' : 'resources/front_end/images/title-service.png'); ?>" class="img-fluid">
 		</div>
 		<div class="row mb-5">
 			<?php foreach ($services as $service) { ?>
-				<a href="<?php echo base_url($lang . '/' . lang('menu_service') . '/' . unserialize($service->slug)[$lang] . '/' . hashids_encrypt($service->id)); ?>" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05">
-					<img src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service->icon)[$lang]); ?>" class="img-fluid service__icon--resize">
+				<a href="<?php echo base_url($lang . '/' . lang('menu_service') . '/' . unserialize($service->slug)[$lang] . '/' . hashids_encrypt($service->id)); ?>" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05 ico-service">
+				
+					<div class="wrap-icon-flip">
+						<img src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service->icon)[$lang]); ?>" class="img-fluid service__icon--resize">
+					</div>
+					<img src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service->icon)[$lang]); ?>" class="img-fluid service__icon--resize ico-service__img">
+					
 					<p class="service__title--body">
 						<?php echo unserialize($service->title)[$lang]; ?>
 					</p>

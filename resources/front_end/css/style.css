@@ -894,3 +894,47 @@ footer p {
 		transform: translate3d(-50%, -50%, 0);
 	}
 }
+
+
+	.ico-service:hover .wrap-icon-flip {
+		transform: rotateY(0deg) rotatex(0deg) translate3d(-50%,0,0);
+		-webkit-transform: rotateY(0deg) rotatex(0deg) translate3d(-50%,0,0);
+		-moz-transform: rotateY(0deg) rotatex(0deg) translate3d(-50%,0,0);
+		-ms-transform: rotateY(0deg) rotatex(0deg) translate3d(-50%,0,0);
+		-o-transform: rotateY(0deg) rotatex(0deg) translate3d(-50%,0,0);
+}
+	.ico-service .ico-service__img { 
+		position: relative; 
+		text-align: center;
+		transition: transform 0.8s; 
+		transform-style: preserve-3d; 
+		-webkit-transition: transform 0.8s; 
+		-moz-transition: transform 0.8s; 
+		-ms-transition: transform 0.8s;
+		-o-transition: transform 0.8s;
+		backface-visibility: hidden;
+	}
+	.ico-service:hover .ico-service__img {
+		transform: rotateY(180deg) rotatex(0deg);
+		-webkit-transform: rotateY(180deg) rotatex(0deg);
+		-moz-transform: rotateY(180deg) rotatex(0deg);
+		-ms-transform: rotateY(180deg) rotatex(0deg);
+		-o-transform: rotateY(180deg) rotatex(0deg);
+}
+	.ico-service .wrap-icon-flip {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		width: 100%;
+		transform-style: preserve-3d;
+		transition: transform 0.8s;
+		-webkit-transition: transform 0.8s;
+		-moz-transition: transform 0.8s;
+		-ms-transition: transform 0.8s;
+		-o-transition: transform 0.8s;
+		transform: translate3d(-50%, 0, 0) rotateX(0) rotateY(180deg);
+		-webkit-transform: translate3d(-50%, 0, 0) rotateX(0) rotateY(180deg);
+		-moz-transform: translate3d(-50%, 0, 0) rotateX(0) rotateY(180deg);
+		-ms-transform: translate3d(-50%, 0, 0) rotateX(0) rotateY(180deg);
+		-o-transform: translate3d(-50%, 0, 0) rotateX(0) rotateY(180deg);
+	}

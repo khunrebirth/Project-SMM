@@ -99,7 +99,7 @@
 <script>
     $(function () {
         $('#box-slide-team').owlCarousel({
-            items:4,
+            items:5,
             nav:true,
             loop:true,
             dots:false,

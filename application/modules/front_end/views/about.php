@@ -15,7 +15,7 @@
 
     .test::before {
         content: '';
-        background: rgba(0, 0, 0, 0.2);
+        background: rgba(0, 0, 0, 0.07);
         position: absolute;
         top: 0;
         bottom: 0;
@@ -165,7 +165,8 @@
         text-align: left;
         font-size: 1.3rem;
         padding: 33px 90px 0;
-        color: #fff;
+        color: #00264c;
+        font-weight: normal;
     }
 </style>
 
