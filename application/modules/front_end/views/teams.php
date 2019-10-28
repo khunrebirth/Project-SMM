@@ -19,14 +19,15 @@
 .box-slide-team .owl-nav .owl-prev, 
 .box-slide-team .owl-nav .owl-next {
     position: absolute;
-    width: 76px;
-    height: 76px;
+    width: 45px;
+    height: 45px;
     background-color: #fff !important;
     transition: all 0.3s;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -ms-transition: all 0.3s;
     -o-transition: all 0.3s;
+    
 }
 
 .box-slide-team .owl-nav .owl-prev:focus, 
@@ -47,11 +48,13 @@
 .box-slide-team .owl-nav .owl-prev {
     left: 0;
     background: url(<?php echo base_url($lang == 'th' ? 'resources/front_end/images/team/btn_arrow_left.png' : 'resources/front_end/images/team/btn_arrow_left.png'); ?>) !important;
+    background-size: cover !important;
 }
 
 .box-slide-team .owl-nav .owl-next {
     right: 0;
     background: url(<?php echo base_url($lang == 'th' ? 'resources/front_end/images/team/btn_arrow_right.png' : 'resources/front_end/images/team/btn_arrow_right.png'); ?>) !important;
+    background-size: cover !important;
 }
 .team__card--parent .is-hover {
 	position: absolute;
@@ -65,16 +68,6 @@
 	-ms-transition: all 0.2s;
 	-o-transition: all 0.2s;
 }
-.team__card--parent .is-hover:before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	background-color: rgba(255,255,255,.5);
-}
-
 .team__card--parent:hover .is-hover { 
 	visibility: visible;
 	opacity: 1;
@@ -89,7 +82,12 @@
 @media (min-width: 768px) { 
 	.box-slide-team {
 		padding: 0 50px !important;
-	}
+    }
+    .box-slide-team .owl-nav .owl-prev, 
+    .box-slide-team .owl-nav .owl-next {
+        width: 76px;
+        height: 76px;
+    }
 }
 
 @media (min-width: 992px) { 
@@ -131,7 +129,7 @@
 				<div>
 					<div class="card team__card--parent mx-auto" >
 						<img class="card-img-top" src="<?php echo base_url('storage/uploads/images/teams/' . unserialize($team->image)[$lang]); ?>" alt="">
-						<img class="card-img-top is-hover" src="http://localhost/social-dev/storage/uploads/images/teams/img-krissana.jpg" alt="">
+						<img class="card-img-top is-hover" src="<?php echo base_url('storage/uploads/images/teams/' . unserialize($team->image_hover)[$lang]); ?>" alt="">
 						<div class="card-body pl-0">
 							<h5 class="card-title team__crad--title"><?php echo $first_name; ?> <br><?php echo $last_name; ?></h5>
 							<p class="card-text team__crad--body"><?php echo unserialize($team->body)[$lang]; ?></p>

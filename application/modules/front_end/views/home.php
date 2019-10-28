@@ -160,6 +160,7 @@
 					<div class="col-xs-12 col-md-3 col-lg-3">
 						<div class="card team__card--parent mb-0" style="width: 18rem;">
 							<img class="card-img-top" src="<?php echo base_url('storage/uploads/images/teams/' . unserialize($team->image)[$lang]); ?>">
+							<img class="card-img-top is-hover" src="<?php echo base_url('storage/uploads/images/teams/' . unserialize($team->image_hover)[$lang]); ?>">
 							<div class="card-body pl-0 pt-2 pb-2">
 								<h5 class="card-title team__crad--title"><?php echo $first_name; ?> <br><?php echo $last_name; ?></h5>
 								<p class="card-text team__crad--body"><?php echo unserialize($team->body)[$lang]; ?></p>
