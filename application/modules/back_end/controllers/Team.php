@@ -67,6 +67,8 @@ class Team extends MX_Controller
 		// Handle Image
 		$img_en = '';
 		$img_th = '';
+		$img_hover_en = '';
+		$img_hover_th = '';
 
 		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
 			$img_en = $this->ddoo_upload_team('img_en');
@@ -76,16 +78,26 @@ class Team extends MX_Controller
 			$img_th = $this->ddoo_upload_team('img_th');
 		}
 
+		if (isset($_FILES['img_hover_en']) && $_FILES['img_hover_en']['name'] != '') {
+			$img_hover_en = $this->ddoo_upload_team('img_hover_en');
+		}
+
+		if (isset($_FILES['img_hover_th']) && $_FILES['img_hover_th']['name'] != '') {
+			$img_hover_th = $this->ddoo_upload_team('img_hover_th');
+		}
+
 		// Filter Data
 		$input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
 		$input_body = ['en' => $this->input->post('body_en'), 'th' => $this->input->post('body_th')];
 		$input_img = ['en' => $img_en, 'th' => $img_th];
+		$input_img_hover = ['en' => $img_hover_en, 'th' => $img_hover_th];
 
 		// Add Data
 		$add_team = $this->Team_model->insert_team([
 			'title' => serialize($input_title),
 			'body' => serialize($input_body),
-			'image' => serialize($input_img)
+			'image' => serialize($input_img),
+			'image_hover' => serialize($input_img_hover)
 		]);
 
 		// Set Session To View
@@ -128,6 +140,8 @@ class Team extends MX_Controller
 		// Handle Image
 		$img_en = unserialize($team->image)['en'];
 		$img_th = unserialize($team->image)['th'];
+		$img_hover_en = unserialize($team->image_hover)['en'];
+		$img_hover_th = unserialize($team->image_hover)['th'];
 
 		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
 			$img_en = $this->ddoo_upload_team('img_en');
@@ -137,16 +151,26 @@ class Team extends MX_Controller
 			$img_th = $this->ddoo_upload_team('img_th');
 		}
 
+		if (isset($_FILES['img_hover_en']) && $_FILES['img_hover_en']['name'] != '') {
+			$img_hover_en = $this->ddoo_upload_team('img_hover_en');
+		}
+
+		if (isset($_FILES['img_hover_th']) && $_FILES['img_hover_th']['name'] != '') {
+			$img_hover_th = $this->ddoo_upload_team('img_hover_th');
+		}
+
 		// Filter Data
 		$input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
 		$input_body = ['en' => $this->input->post('body_en'), 'th' => $this->input->post('body_th')];
 		$input_img = ['en' => $img_en, 'th' => $img_th];
+		$input_img_hover = ['en' => $img_hover_en, 'th' => $img_hover_th];
 
 		// Add Data
 		$update_team = $this->Team_model->update_team_by_id($id, [
 			'title' => serialize($input_title),
 			'body' => serialize($input_body),
 			'image' => serialize($input_img),
+			'image_hover' => serialize($input_img_hover),
 			'updated_at' => date('Y-m-d H:i:s')
 		]);
 
