@@ -445,7 +445,8 @@ class Client extends MX_Controller
 	{
 		$config['upload_path'] = './storage/uploads/images/clients';
 		$config['allowed_types'] = 'gif|jpg|png';
-		$config['encrypt_name'] = TRUE;
+//		$config['encrypt_name'] = TRUE;
+		$config['file_name'] = pathinfo($_FILES[$filename]['name'], PATHINFO_FILENAME) . '_' . time();
 
 		$this->load->library('upload', $config);
 
