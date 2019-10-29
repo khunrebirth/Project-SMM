@@ -139,6 +139,7 @@ a:hover {
 	color: #127dbc;
 	text-transform: uppercase;
 }
+
 @media (max-width: 540px) {
 	.navbar-light .navbar-nav {
 		margin-bottom: 50px;
@@ -917,6 +918,7 @@ footer p {
 	margin: 0;
 	padding: 15px 0;
 }
+
 @media (max-width: 768px) {
 	.ttl-facebook {
 		font-size: 1.5rem;
