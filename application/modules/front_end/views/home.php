@@ -270,6 +270,32 @@
 
 
     $(function () {
+		
+		if($( window ).width() < 787){
+			var $owl = $('.wrap-client-slide-owl-sp');
+			var $optionSlide = {
+				items: 1,
+				nav: false,
+				loop: true,
+				dots: true,
+				margin: 15,
+				autoplay: false,
+				autoplayTimeout: 2000,
+				autoplaySpeed: 1000,
+			}
+		}else{
+			var $owl = $('.wrap-client-slide-owl-pc');
+			var $optionSlide = {
+				items: 1,
+				nav: false,
+				loop: true,
+				dots: true,
+				margin: 15,
+				autoplay: false,
+				autoplayTimeout: 2000,
+				autoplaySpeed: 1000,
+			}
+		}
 
 		$('.wrap-client-slide').owlCarousel({
 			items: 1,
