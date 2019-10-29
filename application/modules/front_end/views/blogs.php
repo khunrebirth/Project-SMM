@@ -81,7 +81,17 @@
 
 	.list-blog_catagory li {
 		margin-bottom: 5px;
+		border-right: 1px solid #fff;
 	}
+	@media (max-width: 768px) {
+		.list-blog_catagory li {
+			border-right: none;
+		}
+	}
+	.list-blog_catagory li:last-of-type {
+		border-right: none;
+	}
+
 
 	.list-blog_catagory li a {
 		padding: 10px;

@@ -24,7 +24,7 @@
 	<meta name="twitter:image" content="<?php echo $og_twitter['image']; ?>" />
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Prompt:300,400,500,700,900&subset=thai">
     <!-- CSS Bootstrap 4 -->
@@ -105,6 +105,9 @@
             </li>
             <li class="nav-item wrap-btn-centact">
                 <a class="btn btn-link btn__contact" href="<?php echo base_url($lang . '/' . lang('menu_contact')); ?>"><?php echo lang('menu_contact'); ?></a>
+            </li>
+            <li class="nav-item wrap-btn-centact wrap-btn__tel ">
+                <a class="btn__tel" href="tel:021939062"><i class="fas fa-phone-alt"></i> <?php echo lang('page_contact_phone'); ?>. 0-2193-9062</a>
             </li>
             <li class="nav-item">
                 <ul class="list-lang">

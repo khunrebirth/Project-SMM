@@ -42,7 +42,7 @@
 		<div class="title-service" style="text-align: left; padding: 4rem 0;">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-service.png' : 'resources/front_end/images/title-service.png'); ?>" class="img-fluid">
 		</div>
-		<div class="row mb-5">
+		<div class="row">
 			<?php foreach ($services as $service) { ?>
 				<a href="<?php echo base_url($lang . '/' . lang('menu_service') . '/' . unserialize($service->slug)[$lang] . '/' . hashids_encrypt($service->id)); ?>" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05 ico-service">
 				
@@ -269,14 +269,17 @@
 
 
 
-	$('.wrap-client-slide').owlCarousel({
-		items: 1,
-		nav: false,
-		loop: true,
-		dots: true,
-		margin: 15,
-		autoplay: false,
-		autoplayTimeout: 2000,
-		autoplaySpeed: 1000,
+    $(function () {
+
+		$('.wrap-client-slide').owlCarousel({
+			items: 1,
+			nav: false,
+			loop: true,
+			dots: true,
+			margin: 15,
+			autoplay: false,
+			autoplayTimeout: 2000,
+			autoplaySpeed: 1000,
+		});
 	});
 </script>

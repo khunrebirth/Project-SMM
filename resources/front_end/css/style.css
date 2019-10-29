@@ -16,6 +16,11 @@ html, body {
 section {
 	padding: 60px 0px;
 }
+@media (max-width: 540px) {
+	section {
+		padding: 20px 0px;
+	}
+}
 
 .col-cmn-05 {
 	-webkit-box-flex: 0;
@@ -168,6 +173,25 @@ a:hover {
 	-ms-flex-pack: center;
 	justify-content: center;
 }
+@media (max-width: 768px) {
+	.navbar-light ul.navbar-nav li.wrap-btn-centact {
+		padding: 5px 0px;
+	}
+}
+.wrap-btn__tel {
+	display: none !important;
+}
+@media (max-width: 768px) {
+	.wrap-btn__tel {
+		display: block !important;
+	}
+}
+.btn__tel {
+	padding: 5px 15px;
+	background-color: #eaeaea;
+	color:#127dbc;
+	display: inline-block;
+}
 
 .navbar-light ul.navbar-nav li a.btn-link {
 	display: inline-block;
@@ -184,7 +208,11 @@ a:hover {
 	transition: .3s;
 	margin: 0 0 0 15px;
 }
-
+@media (max-width: 768px) {
+	.navbar-light ul.navbar-nav li a.btn-link {
+		font-size: 14px;
+	}
+}
 .navbar-light ul.navbar-nav li a.btn-link:hover,
 .navbar-light ul.navbar-nav li a.btn-link:focus,
 .navbar-light ul.navbar-nav li a.btn-link:active,
@@ -303,6 +331,11 @@ a:hover {
 	padding-top: 0px;
 	padding-bottom: 60px;
 }
+@media (max-width: 768px) {
+	#about {
+		padding-bottom: 0;
+	}
+}
 
 .showcase-img {
 	height: 100vh;
@@ -361,6 +394,13 @@ a:hover {
 	max-width: 1440px;
 	margin: 0 auto;
 	position: relative;
+}
+@media (max-width: 540px) {
+	.sec-home-service .ico-service ,
+	.sec-home-service .js-scroll-contact {
+		margin-bottom: 10px !important;
+	}
+	
 }
 
 .sec-home-service .service__icon--resize {
@@ -751,6 +791,13 @@ a:hover {
 .list-sub-gnav .item a span {
 	padding: 3px;
 	text-transform: none;
+	font-size: 14px;
+}
+@media (max-width: 768px) {
+	.list-sub-gnav .item a span::before {
+		content: '•';
+		padding-right: 5px;
+	}
 }
 
 
@@ -785,10 +832,11 @@ a:hover {
 }
 
 .sec-sitemap {
-	max-width: 1440px;
+	max-width: 1470px;
 	margin: 0 auto;
 	width: 100%;
 	overflow: hidden;
+	padding: 0 15px;
 }
 
 .sec-sitemap a {
@@ -808,6 +856,20 @@ a:hover {
 
 .list-sitemap li a {
 	color: #b9b9b9;
+	font-size: 14px;
+	position: relative;
+	transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+}
+.list-sitemap li a:hover {
+	color: #fff;
+}
+.list-sitemap li a::before {
+	content: '•';
+	padding-right: 5px;
 }
 
 footer {
@@ -824,6 +886,12 @@ footer p {
 .sec-site-link {
 	border-right: 1px solid #fff;
 
+}
+@media (max-width: 768px) {
+	.sec-site-link {
+		border-right: none;
+	
+	}
 }
 
 .ttl-facebook {
@@ -957,4 +1025,5 @@ footer p {
 	visibility: visible;
 	opacity: 1;
 }
+
 
