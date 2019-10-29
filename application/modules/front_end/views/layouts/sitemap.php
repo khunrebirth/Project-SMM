@@ -98,7 +98,6 @@
 							<div class="row">
 								<div class="col-12 mb-4">
 									<h2 class="ttl-facebook">Our Facebook Page</h2>
-									<!-- <img class="img-fluid" src="http://localhost/social-dev/resources/front_end/images/title-about.png" alt=""> -->
 								</div>
 								<div class="col-lg-4 item-fb-page">
 									<div class="fb-page" data-href="https://www.facebook.com/iSEO.SEM/" data-width=""
