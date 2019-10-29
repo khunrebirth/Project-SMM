@@ -97,7 +97,7 @@
 							<?php
 								$count_point = ($client_specific['category_id'] == 1 ) ? 12 : 8;
 
-								if (ssm_is_mobile()) {
+								if (smm_is_mobile()) {
 									$count_point = ($client_specific['category_id'] == 1 ) ? 6 : 4;
 								}
 							?>
@@ -264,27 +264,24 @@
 <script>
     $(function () {
         $(".client__navs a:first").tab('show')
+
+        $('.wrap-client-slide').owlCarousel({
+            items: 1,
+            nav: false,
+            loop: true,
+            dots: true,
+            margin: 15,
+            autoplay: false,
+            autoplayTimeout: 2000,
+            autoplaySpeed: 1000,
+        });
+
+        $(".js-scroll-contact").click(function(event) {
+            event.preventDefault();
+
+            $('html,body').animate({
+				scrollTop: $("#contact").offset().top
+			}, 'slow');
+        });
     });
-
-	$(".js-scroll-contact").click(function(event) {
-		event.preventDefault();
-    	$('html,body').animate({
-        	scrollTop: $("#contact").offset().top},
-        'slow');
-	});
-
-
-
-    $(function () {
-		$('.wrap-client-slide').owlCarousel({
-			items: 1,
-			nav: false,
-			loop: true,
-			dots: true,
-			margin: 15,
-			autoplay: false,
-			autoplayTimeout: 2000,
-			autoplaySpeed: 1000,
-		});
-	});
 </script>
