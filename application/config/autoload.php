@@ -89,7 +89,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array('url', 'authenticate', 'hashids', 'time', 'ssm_url_helper', 'logger', 'ssm_function');
+$autoload['helper'] = array('url', 'authenticate', 'hashids', 'time', 'smm_url_helper', 'logger', 'smm_function');
 
 /*
 | -------------------------------------------------------------------
