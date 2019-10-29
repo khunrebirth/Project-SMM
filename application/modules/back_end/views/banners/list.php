@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css'); ?>">
 <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/datatables.net-select-bs4/css/select.bootstrap4.min.css'); ?>">
 <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/prismjs/themes/prism.css'); ?> ">
+<link href="<?php echo base_url('resources/back_end/assets/css/notiny.min.css'); ?>" rel="stylesheet">
 
 <!-- Main Content -->
 <div class="main-content">
@@ -34,6 +35,7 @@
 									<thead>
 									<tr>
 										<th class="text-center">#</th>
+										<th>Status</th>
 										<th>Page(en)</th>
 										<th>Page(th)</th>
 										<th>Image(en)</th>
@@ -47,6 +49,12 @@
 										foreach ($banners as $banner) { ?>
 											<tr>
 												<td class="text-center"><?php echo $counter++; ?></td>
+												<td>
+													<label class="custom-switch p-0">
+														<input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input cbToggleStatus" data-id="<?php echo $banner->id; ?>" <?php if ($banner->status == 'Y') { echo 'checked'; } else { echo ''; } ?>>
+														<span class="custom-switch-indicator"></span>
+													</label>
+												</td>
 												<td><?php echo unserialize($banner->page)['en']; ?></td>
 												<td><?php echo unserialize($banner->page)['th']; ?></td>
 												<td><img src="<?php echo base_url('storage/uploads/images/banners/' . unserialize($banner->img)['en']); ?>" width="120"></td>
@@ -80,3 +88,58 @@
 <script src="<?php echo base_url('resources/back_end/assets/js/vfs_fonts.js'); ?>"></script>
 <script src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.print.min.js"></script>
+<script src="<?php echo base_url('resources/back_end/assets/js/notiny.min.js'); ?>"></script>
+
+<script>
+	function notify(event, message) {
+
+	    let eventResponse = ''
+
+	    switch (event) {
+			case 'success':
+                eventResponse = 'success'
+			    break
+
+			case 'warning':
+                eventResponse = 'warning'
+			    break
+
+			case 'error':
+                eventResponse = 'error'
+				break
+
+			default:
+                eventResponse = 'error'
+        }
+
+        $.notiny({ text: message, image: 'https://cdn2.iconfinder.com/data/icons/meeting-11/64/alarm-remind-bell-reminder-ring-512.png' });
+	}
+
+    $(document).ready(function() {
+        $('.cbToggleStatus').on('click', function() {
+
+			let $data = {
+                id: $(this).attr('data-id'),
+				status: this.checked == false ? 'N' : 'Y',
+				table: 'banner_pages'
+			}
+
+            $.ajax({
+                type: "POST",
+                url: window.base_url + '/' + window.langSite + '/backoffice/helper/change/status',
+                data: $data,
+                success: function(res) {
+                    setTimeout(function () {
+                        location.reload()
+                    }, 1 * 2000)
+
+                    notify('success', 'Save Change Successfully')
+                },
+                error: function() {
+                    alert("failure")
+                }
+            })
+
+        })
+    })
+</script>

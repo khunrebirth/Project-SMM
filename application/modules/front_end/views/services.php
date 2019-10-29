@@ -225,24 +225,24 @@
 	</div>
 </section>
 
+<?php if (count($service['portfolios']) > 0) { ?>
 <section class="sec-service-port row">
 	<div class="col row sec-service-port--inner">
 		<div class=" col-md-12 col-lg-3">
 			<img class="img-fluid" src="<?php echo base_url('resources/front_end/images/portfolio.png') ?>" alt="">
 		</div>
-		<?php if (count($service['portfolios']) > 0) { ?>
-			<div class=" col-md-12  col-lg-9">
-				<div class="wrap-slide-port owl-carousel owl-theme">
-					<?php foreach ($service['portfolios'] as $portfolio) { ?>
-						<div class="item">
-							<img src="<?php echo base_url('storage/uploads/images/services/' . unserialize($portfolio->img)[$lang]) ?>" alt="<?php echo unserialize($portfolio->img_title_alt)[$lang]; ?>">
-						</div>
-					<?php } ?>
-				</div>
+		<div class=" col-md-12  col-lg-9">
+			<div class="wrap-slide-port owl-carousel owl-theme">
+				<?php foreach ($service['portfolios'] as $portfolio) { ?>
+					<div class="item">
+						<img src="<?php echo base_url('storage/uploads/images/services/' . unserialize($portfolio->img)[$lang]) ?>" alt="<?php echo unserialize($portfolio->img_title_alt)[$lang]; ?>">
+					</div>
+				<?php } ?>
 			</div>
-		<?php } ?>
+		</div>
 	</div>
 </section>
+<?php } ?>
 
 <section class="sec-service-content">
 	<div class="row wrap-service-content mb-5">

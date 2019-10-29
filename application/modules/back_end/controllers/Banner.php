@@ -87,6 +87,7 @@ class Banner extends MX_Controller
 
 		// Add Data
 		$update_banner = $this->Banner_model->update_banner_by_id($id, [
+			'status' => $this->input->post('status') ? 'Y' : 'N',
 			'title' => serialize($input_title),
 			'img_title_alt' => serialize($input_img_title_alt),
 			'img' => serialize($input_img),

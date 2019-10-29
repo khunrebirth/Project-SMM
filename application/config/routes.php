@@ -296,3 +296,11 @@ $route['(\w{2})/ขอบคุณ'] = 'front_end/Thank_you';
 	$route['(\w{2})/backoffice/setting/profile'] = 'back_end/Profile';
 	$route['(\w{2})/backoffice/setting/profile/edit/(:any)'] = 'back_end/Profile/edit/$1/$2';
 	$route['(\w{2})/backoffice/setting/profile/update/(:any)'] = "back_end/Profile/update/$1/$2";
+
+	/*
+	| -------------------------------------------------------------------------
+	| Helper
+	| -------------------------------------------------------------------------
+	*/
+
+	$route['(\w{2})/backoffice/helper/change/status'] = 'back_end/Helper/changeStatus';

@@ -16,6 +16,7 @@ html, body {
 section {
 	padding: 60px 0px;
 }
+
 @media (max-width: 540px) {
 	section {
 		padding: 20px 0px;
@@ -173,23 +174,27 @@ a:hover {
 	-ms-flex-pack: center;
 	justify-content: center;
 }
+
 @media (max-width: 768px) {
 	.navbar-light ul.navbar-nav li.wrap-btn-centact {
 		padding: 5px 0px;
 	}
 }
+
 .wrap-btn__tel {
 	display: none !important;
 }
+
 @media (max-width: 768px) {
 	.wrap-btn__tel {
 		display: block !important;
 	}
 }
+
 .btn__tel {
 	padding: 5px 15px;
 	background-color: #eaeaea;
-	color:#127dbc;
+	color: #127dbc;
 	display: inline-block;
 }
 
@@ -208,11 +213,13 @@ a:hover {
 	transition: .3s;
 	margin: 0 0 0 15px;
 }
+
 @media (max-width: 768px) {
 	.navbar-light ul.navbar-nav li a.btn-link {
 		font-size: 14px;
 	}
 }
+
 .navbar-light ul.navbar-nav li a.btn-link:hover,
 .navbar-light ul.navbar-nav li a.btn-link:focus,
 .navbar-light ul.navbar-nav li a.btn-link:active,
@@ -331,6 +338,7 @@ a:hover {
 	padding-top: 0px;
 	padding-bottom: 60px;
 }
+
 @media (max-width: 768px) {
 	#about {
 		padding-bottom: 0;
@@ -395,12 +403,13 @@ a:hover {
 	margin: 0 auto;
 	position: relative;
 }
+
 @media (max-width: 540px) {
-	.sec-home-service .ico-service ,
+	.sec-home-service .ico-service,
 	.sec-home-service .js-scroll-contact {
 		margin-bottom: 10px !important;
 	}
-	
+
 }
 
 .sec-home-service .service__icon--resize {
@@ -793,6 +802,7 @@ a:hover {
 	text-transform: none;
 	font-size: 14px;
 }
+
 @media (max-width: 768px) {
 	.list-sub-gnav .item a span::before {
 		content: '•';
@@ -864,9 +874,11 @@ a:hover {
 	-ms-transition: all 0.3s;
 	-o-transition: all 0.3s;
 }
+
 .list-sitemap li a:hover {
 	color: #fff;
 }
+
 .list-sitemap li a::before {
 	content: '•';
 	padding-right: 5px;
@@ -887,10 +899,11 @@ footer p {
 	border-right: 1px solid #fff;
 
 }
+
 @media (max-width: 768px) {
 	.sec-site-link {
 		border-right: none;
-	
+
 	}
 }
 
@@ -965,23 +978,25 @@ footer p {
 
 
 .ico-service:hover .wrap-icon-flip {
-	transform: rotateY(0deg) rotatex(0deg) translate3d(-50%,0,0);
-	-webkit-transform: rotateY(0deg) rotatex(0deg) translate3d(-50%,0,0);
-	-moz-transform: rotateY(0deg) rotatex(0deg) translate3d(-50%,0,0);
-	-ms-transform: rotateY(0deg) rotatex(0deg) translate3d(-50%,0,0);
-	-o-transform: rotateY(0deg) rotatex(0deg) translate3d(-50%,0,0);
+	transform: rotateY(0deg) rotatex(0deg) translate3d(-50%, 0, 0);
+	-webkit-transform: rotateY(0deg) rotatex(0deg) translate3d(-50%, 0, 0);
+	-moz-transform: rotateY(0deg) rotatex(0deg) translate3d(-50%, 0, 0);
+	-ms-transform: rotateY(0deg) rotatex(0deg) translate3d(-50%, 0, 0);
+	-o-transform: rotateY(0deg) rotatex(0deg) translate3d(-50%, 0, 0);
 }
-.ico-service .ico-service__img { 
-	position: relative; 
+
+.ico-service .ico-service__img {
+	position: relative;
 	text-align: center;
-	transition: transform 0.8s; 
-	transform-style: preserve-3d; 
-	-webkit-transition: transform 0.8s; 
-	-moz-transition: transform 0.8s; 
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+	-webkit-transition: transform 0.8s;
+	-moz-transition: transform 0.8s;
 	-ms-transition: transform 0.8s;
 	-o-transition: transform 0.8s;
 	backface-visibility: hidden;
 }
+
 .ico-service:hover .ico-service__img {
 	transform: rotateY(180deg) rotatex(0deg);
 	-webkit-transform: rotateY(180deg) rotatex(0deg);
@@ -989,6 +1004,7 @@ footer p {
 	-ms-transform: rotateY(180deg) rotatex(0deg);
 	-o-transform: rotateY(180deg) rotatex(0deg);
 }
+
 .ico-service .wrap-icon-flip {
 	position: absolute;
 	top: 0;
@@ -1007,8 +1023,6 @@ footer p {
 	-o-transform: translate3d(-50%, 0, 0) rotateX(0) rotateY(180deg);
 }
 
-
-
 .team__card--parent .is-hover {
 	position: absolute;
 	top: 0;
@@ -1021,9 +1035,8 @@ footer p {
 	-ms-transition: all 0.2s;
 	-o-transition: all 0.2s;
 }
-.team__card--parent:hover .is-hover { 
+
+.team__card--parent:hover .is-hover {
 	visibility: visible;
 	opacity: 1;
 }
-
-

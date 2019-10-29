@@ -102,6 +102,15 @@
 										<hr>
 									</div>
 								</div>
+								<div class="form-group row">
+									<label class="col-sm-2 col-form-label text-left text-md-right">Status</label>
+									<div class="col-sm-10">
+										<label class="custom-switch mt-2 p-0">
+											<input type="checkbox" name="status" class="custom-switch-input" <?php if ($banner->status == 'Y') { echo 'checked'; } else { echo ''; } ?>>
+											<span class="custom-switch-indicator"></span>
+										</label>
+									</div>
+								</div>
 								<div class="row">
 									<div class="col-sm-12 col-md-12 text-left text-md-right">
 										<button type="submit" class="btn btn-primary">Save changes</button>

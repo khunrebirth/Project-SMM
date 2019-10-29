@@ -43,6 +43,10 @@
 			width: 30%;
 		}
 
+		.custom-switch-indicator {
+			cursor: pointer;
+		}
+
 		@media (max-width: 767px) {
 			.input-file-w-30 {
 				width: 100% !important;

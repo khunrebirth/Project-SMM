@@ -21,12 +21,14 @@
 </style>
 
 <!-- Title -->
+<?php if ($banner) { ?>
 <section class="page-title main-hero-service" style="padding:0;">
 	<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/banners/' . unserialize($banner->img)[$lang]); ?>" alt="<?php echo unserialize($banner->img_title_alt)[$lang]; ?>">
 	<div class="ttl-header-hero wow">
 		<h1><?php echo unserialize($banner->title)[$lang]; ?></h1>
 	</div>
 </section>
+<?php } ?>
 
 <!-- Content -->
 <section class="sec-thank-you">
