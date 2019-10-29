@@ -69,7 +69,7 @@
 		<div class="title-client" style="text-align: center; padding: 4rem;">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-cilent.png' : 'resources/front_end/images/title-cilent.png'); ?>" class="img-fluid">
 		</div>
-		<!-- tab -->
+		<!-- tab pc -->
 		<div class="row justify-content-center">
 			<div class="col-xs-12 col-sm-12 col-md-10 col-lg-8">
 				<!-- Nav tabs -->
@@ -82,8 +82,8 @@
 				</ul>
 			</div>
 		</div>
-		<!-- content tab-->
-		<div class="tab-content sec-client" id="pills-tabContent">
+		<!-- content tab pc-->
+		<div class="tab-content sec-client " id="pills-tabContent">
 			<?php foreach ($clients as $client) { ?>
 				<div class="tab-pane fade" id="pills-<?php echo $client['category_id']; ?>" role="tabpanel" aria-labelledby="pills-<?php echo $client['category_id']; ?>-tab">
 				<?php if (count($client['clients']) > 0) { ?>
@@ -94,12 +94,18 @@
 						?>
 						<?php foreach ($client['clients'] as $key => $client_specific) { ?>
 
-							<?php $count_point = ($client_specific['category_id'] == 1 ) ? 12 : 8 ; ?>
+							<?php
+								$count_point = ($client_specific['category_id'] == 1 ) ? 12 : 8;
+
+								if (ssm_is_mobile()) {
+									$count_point = ($client_specific['category_id'] == 1 ) ? 6 : 4;
+								}
+							?>
 
 							<?php if ($counter == 0) { ?>
 								<div class="row">
 							<?php } ?>
-									<div class="col-md-<?php if ($client_specific['category_id'] == 1) { echo '2'; } else { echo '3'; } ?> my-3">
+									<div class="<?php echo ($client_specific['category_id'] == 1)?'col-6':'col-12'; ?> col-md-<?php if ($client_specific['category_id'] == 1) { echo '2'; } else { echo '3'; } ?> my-3">
 										<img src="<?php echo base_url('storage/uploads/images/clients/' . $client_specific['img']) ?>" alt="<?php echo $client_specific['title']; ?>" class="img-fluid img-clients">
 									</div>
 							<?php $counter++; ?>
