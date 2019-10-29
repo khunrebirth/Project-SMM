@@ -139,6 +139,11 @@ a:hover {
 	color: #127dbc;
 	text-transform: uppercase;
 }
+@media (max-width: 540px) {
+	.navbar-light .navbar-nav {
+		margin-bottom: 50px;
+	}
+}
 
 .navbar-light .navbar-nav .nav-link {
 	color: #127dbc;
@@ -912,6 +917,12 @@ footer p {
 	margin: 0;
 	padding: 15px 0;
 }
+@media (max-width: 768px) {
+	.ttl-facebook {
+		font-size: 1.5rem;
+	}
+}
+
 
 .sec-footer-sitemap .card-body {
 	padding: 60px 0;
