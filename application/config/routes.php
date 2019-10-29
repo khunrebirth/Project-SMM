@@ -92,6 +92,10 @@ $route['(\w{2})/บทความ/(:any)/(:any)/(:any)'] = 'front_end/Blogs/blo
 $route['(\w{2})/teams'] = 'front_end/Teams';
 $route['(\w{2})/ทีมงาน'] = 'front_end/Teams';
 
+// Join Us
+$route['(\w{2})/test'] = 'front_end/Job';
+$route['(\w{2})/ร่วมงานกับเรา'] = 'front_end/Job';
+
 // Contact
 $route['(\w{2})/contact'] = 'front_end/Contact';
 $route['(\w{2})/ติดต่อเรา'] = 'front_end/Contact';

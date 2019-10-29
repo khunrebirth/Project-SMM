@@ -103,6 +103,9 @@
             <li class="nav-item">
                 <a class="nav-link <?php if ($this->uri->segment(0) == "teams" || $this->uri->segment(0) == "ทีมงาน") { echo 'active'; }?>" href="<?php echo base_url($lang . '/' . lang('menu_teams')); ?>"><?php echo lang('menu_teams'); ?></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link <?php if ($this->uri->segment(0) == "join-us" || $this->uri->segment(0) == "ร่วมงานกับเรา") { echo 'active'; }?>" href="<?php echo base_url($lang . '/' . lang('menu_join_us')); ?>"><?php echo lang('menu_join_us'); ?></a>
+            </li>
             <li class="nav-item wrap-btn-centact">
                 <a class="btn btn-link btn__contact" href="<?php echo base_url($lang . '/' . lang('menu_contact')); ?>"><?php echo lang('menu_contact'); ?></a>
             </li>

@@ -20,6 +20,7 @@ $lang['menu_service'] = 'services';
 $lang['menu_our_clients'] = 'clients';
 $lang['menu_blogs'] = 'blogs';
 $lang['menu_teams'] = 'teams';
+$lang['menu_join_us'] = 'join us';
 $lang['menu_contact'] = 'contact';
 
 /*
