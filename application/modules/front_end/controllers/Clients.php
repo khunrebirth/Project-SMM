@@ -66,7 +66,7 @@ class Clients extends MX_Controller
 		// Utilities
 		$data['client_categories'] = $this->Client_category_model->get_client_category_all();
 		$data['clients'] = $this->filter_data_clients($this->Client_category_model->get_client_category_all());
-		$data['banner'] = $this->Banner_model->get_banner_by_id(2);
+		$data['banner'] = $this->Banner_model->get_banner_active_by_id(2);
 
 		/*
 		| -------------------------------------------------------------------------

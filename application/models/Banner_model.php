@@ -12,10 +12,17 @@ class Banner_model extends CI_Model {
 
     public function get_banner_by_id($id)
     {
-        $query = $this->db->where('status', 'Y')->where('id', $id)->get('banner_pages');
+        $query = $this->db->where('id', $id)->get('banner_pages');
 
         return $query->num_rows() > 0 ? $query->row() : false;
     }
+
+	public function get_banner_active_by_id($id)
+	{
+		$query = $this->db->where('status', 'Y')->where('id', $id)->get('banner_pages');
+
+		return $query->num_rows() > 0 ? $query->row() : false;
+	}
 
     public function insert_banner($data)
     {

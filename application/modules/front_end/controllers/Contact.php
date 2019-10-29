@@ -62,7 +62,7 @@ class Contact extends MX_Controller
 		$data['content'] = 'contact';
 
 		// Utilities
-		$data['banner'] = $this->Banner_model->get_banner_by_id(5);
+		$data['banner'] = $this->Banner_model->get_banner_active_by_id(5);
 
 		/*
 		| -------------------------------------------------------------------------

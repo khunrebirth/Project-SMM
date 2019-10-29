@@ -62,7 +62,7 @@ class Thank_you extends MX_Controller
 		$data['content'] = 'thank_you';
 
 		// Utilities
-		$data['banner'] = $this->Banner_model->get_banner_by_id(6);
+		$data['banner'] = $this->Banner_model->get_banner_active_by_id(6);
 
 		/*
 		| -------------------------------------------------------------------------

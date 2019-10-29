@@ -63,7 +63,7 @@ class Teams extends MX_Controller
 
 		// Utilities
 		$data['teams'] = $this->Team_model->get_team_all();
-		$data['banner'] = $this->Banner_model->get_banner_by_id(4);
+		$data['banner'] = $this->Banner_model->get_banner_active_by_id(4);
 
 		/*
 		| -------------------------------------------------------------------------
