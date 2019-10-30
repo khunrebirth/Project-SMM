@@ -45,35 +45,51 @@
         <div class="row sec-job sec-job-activity">
 			<h2 class="ttl-cmn-job"><?php echo lang('page_join_us_benefits'); ?></h2>
             <div class="col-4 col-md-3 d-flex flex-column align-items-center">
-                <img class="img-fluid" src="https://dummyimage.com/100x100/b8b8b8/ffffff.jpg" alt="">
+                <figure>
+                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_time.png');?>" alt="">
+                </figure>
                 <p class="text-center">เวลาการทำงานที่ยืดยุ่น</p>
             </div>
             <div class="col-4 col-md-3 d-flex flex-column align-items-center">
-                <img src="https://dummyimage.com/100x100/b8b8b8/ffffff.jpg" alt="">
+                <figure>
+                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_dress.png');?>" alt="">
+                </figure>
                 <p class="text-center">แต่งตัวตามสบาย</p>
             </div>
             <div class="col-4 col-md-3 d-flex flex-column align-items-center">
-                <img src="https://dummyimage.com/100x100/b8b8b8/ffffff.jpg" alt="">
+                <figure>
+                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_money_03.png');?>" alt="">
+                </figure>
                 <p class="text-center">กองทุนสำรองเลี้ยงชีพ</p>
             </div>
             <div class="col-4 col-md-3 d-flex flex-column align-items-center">
-                <img src="https://dummyimage.com/100x100/b8b8b8/ffffff.jpg" alt="">
+                <figure>
+                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_security_02.png');?>" alt="">
+                </figure>
                 <p class="text-center">ประกันสังคม</p>
             </div>
             <div class="col-4 col-md-3 d-flex flex-column align-items-center">
-                <img src="https://dummyimage.com/100x100/b8b8b8/ffffff.jpg" alt="">
+                <figure>
+                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_people.png');?>" alt="">
+                </figure>
                 <p class="text-center">ประกันภัยกลุ่ม</p>
             </div>
             <div class="col-4 col-md-3 d-flex flex-column align-items-center">
-                <img src="https://dummyimage.com/100x100/b8b8b8/ffffff.jpg" alt="">
+                <figure>
+                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_date.png');?>" alt="">
+                </figure>
                 <p class="text-center">วันหยุดพักผ่อนประจำปี</p>
             </div>
 			<div class="col-4 col-md-3 d-flex flex-column align-items-center">
-				<img src="https://dummyimage.com/100x100/b8b8b8/ffffff.jpg" alt="">
+                <figure>
+				    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_money_02.png');?>" alt="">
+                </figure>
 				<p class="text-center">โบนัสประจำปี</p>
 			</div>
 			<div class="col-4 col-md-3 d-flex flex-column align-items-center">
-				<img src="https://dummyimage.com/100x100/b8b8b8/ffffff.jpg" alt="">
+                <figure>
+				    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_money_04.png');?>" alt="">
+                </figure>
 				<p class="text-center">ปรับเงินเดือนประจำปี</p>
 			</div>
         </div>
