@@ -81,6 +81,13 @@
 											</div>
 										</div>
 										<hr>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Content Left</label>
+											<div class="col-sm-10">
+												<textarea class="summernote" name="content_left_th"><?php echo unserialize($page_content->content_left)['th']; ?></textarea>
+											</div>
+										</div>
+										<hr>
 									</div>
 									<div class="tab-pane fade" id="handleEn">
 										<!-- Meta Tag -->
@@ -126,6 +133,13 @@
 													<input type="file" name="meta_og_image_en" class="custom-file-input" onchange="PreviewImage(this, 'previewMetaOgImgEn');">
 													<label class="custom-file-label">Choose file (.gif | .jpg | .png)</label>
 												</div>
+											</div>
+										</div>
+										<hr>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Content Left</label>
+											<div class="col-sm-10">
+												<textarea class="summernote" name="content_left_en"><?php echo unserialize($page_content->content_left)['en']; ?></textarea>
 											</div>
 										</div>
 										<hr>

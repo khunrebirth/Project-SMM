@@ -34,9 +34,8 @@ class Join_us extends MX_Controller
 		| -------------------------------------------------------------------------
 		*/
 
-		$team_id = 1;
-		
-		$page_content = $this->Join_us_page_model->get_join_us_page_by_id($team_id);
+		$page_id = 1;
+		$page_content = $this->Join_us_page_model->get_join_us_page_by_id($page_id);
 
 
 		/*
@@ -68,6 +67,7 @@ class Join_us extends MX_Controller
 		// Utilities
 		$data['banner'] = $this->Banner_model->get_banner_active_by_id(7);
 		$data['careers'] = $this->Career_model->get_career_all();
+		$data['join_us'] = $this->Join_us_page_model->get_join_us_page_by_id($page_id);
 
 		/*
 		| -------------------------------------------------------------------------
