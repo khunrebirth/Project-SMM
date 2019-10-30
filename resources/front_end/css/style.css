@@ -1081,7 +1081,7 @@ footer p {
 .sec-job-info {
 	padding-bottom: 60px;
 	margin-bottom: 60px;
-	border-bottom: 1px solid #ececec;
+	border-bottom: 1px solid #e6e6e6;
 }
 @media (max-width: 768px) {
 	.sec-job-info {
@@ -1102,11 +1102,14 @@ footer p {
 
 .sec-job-img {
 	max-width: 998px;
-	margin-bottom: 60px;
+	margin-bottom: 30px;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #e6e6e6;
 }
 @media (max-width: 768px) {
 	.sec-job-img {
-		margin-bottom: 30px;
+		margin-bottom: 15px;
+		padding-bottom: 15px;
 	}
 }
 .sec-job-img img {
@@ -1295,4 +1298,42 @@ footer p {
 	width: 100%;
 	max-width: 300px;
 	padding: 50px 0;
+}
+.vdo-fancybox {
+	display: block;
+	position: relative;
+}
+.vdo-fancybox::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%,-50%,0);
+	-webkit-transform: translate3d(-50%,-50%,0);
+	-moz-transform: translate3d(-50%,-50%,0);
+	-ms-transform: translate3d(-50%,-50%,0);
+	-o-transform: translate3d(-50%,-50%,0);
+
+}
+
+.ico-play-btn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 20%;
+    height: auto;
+    transform: translate3d(-50%, -50%, 0);
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -moz-transform: translate3d(-50%, -50%, 0);
+    -ms-transform: translate3d(-50%, -50%, 0);
+    -o-transform: translate3d(-50%, -50%, 0);
+}
+
+.ttl-cmn-job {
+	font-size: 2rem;
+    margin-bottom: 20px;
+    color: #127dbc;
+    display: block;
+    text-align: center;
+    width: 100%;
 }

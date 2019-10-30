@@ -30,7 +30,10 @@
                 </p>
             </div>
             <div class="col-sm-12 col-md-6 wrap-video">
-                <iframe width="560" height="349" src="https://www.youtube.com/embed/keqd4RUQK4s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <a class="vdo-fancybox" data-fancybox href="https://www.youtube.com/embed/keqd4RUQK4s">
+                <img class="img-fluid" src="https://img.youtube.com/vi/keqd4RUQK4s/maxresdefault.jpg" alt="">
+                <img class="ico-play-btn" src="<?php echo base_url('resources/front_end/images/join_us/play-button.png'); ?>" alt="">
+            </a>
             </div>
         </div>
         <div class="row sec-job sec-job-activity">
@@ -106,7 +109,7 @@
         </div>
 
         <div class="row sec-job sec-job-item">
-			<?php echo lang('page_join_us_career_title'); ?>
+			<h2 class="ttl-cmn-job"><?php echo lang('page_join_us_career_title'); ?></h2>
             <ul class="list-cmn-job">
 				<?php foreach ($careers as $career) { ?>
 					<li>
@@ -134,5 +137,15 @@
         $("a.fancybox").fancybox({ 
             animationEffect : 'fade'
         }).attr('data-fancybox', 'group1');
+
+        $('.vdo-fancybox').fancybox({
+            youtube : {
+                controls : 0,
+                showinfo : 0
+            },
+            vimeo : {
+                color : 'f00'
+            }
+        });
     });
 </script>

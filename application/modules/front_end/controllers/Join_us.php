@@ -35,7 +35,9 @@ class Join_us extends MX_Controller
 		*/
 
 		$team_id = 1;
+		
 		$page_content = $this->Join_us_page_model->get_join_us_page_by_id($team_id);
+
 
 		/*
 		| -------------------------------------------------------------------------
@@ -57,6 +59,7 @@ class Join_us extends MX_Controller
 		// OG & Twitter
 		$data['og_twitter']['title'] = unserialize($page_content->meta_tag_title)[$this->lang];
 		$data['og_twitter']['description'] = unserialize($page_content->meta_tag_description)[$this->lang];
+		
 		$data['og_twitter']['image'] = base_url('storage/uploads/images/join_us/'. unserialize($page_content->img_og_twitter)[$this->lang]);
 
 		// Content
