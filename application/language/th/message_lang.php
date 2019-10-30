@@ -63,8 +63,10 @@ $lang['page_team'] = 'ทีมงาน';
 | -------------------------------------------------------------------------
 */
 
+$lang['page_join_us_benefits'] = 'สวัสดิการที่คุณจะได้รับ';
 $lang['page_join_us_btn_apply'] = 'สมัคร';
 $lang['page_join_us_location'] = 'กรุงเทพ';
+$lang['page_join_us_unit'] = 'ตำแหน่ง';
 $lang['page_join_us_career_title'] = 'ตำแหน่งที่เปิดรับ';
 $lang['page_join_us_btn_apply_to_position'] = 'สมัครตำแหน่งนี้';
 $lang['page_join_us_title_first'] = 'กรอกแบบ';
