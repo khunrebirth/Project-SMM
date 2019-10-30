@@ -42,6 +42,9 @@
     <!-- Customer CSS -->
     <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style.css'); ?>">
 
+    <!-- fancybox CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous" />
+
 
     <!-- JS Library -->
     <script src="<?php echo base_url('resources/front_end/js/jquery-3.4.1.min.js'); ?>"></script>
@@ -52,6 +55,10 @@
 
     <!-- OWL CAL JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <!-- fancybox js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+    
 </head>
 <body>
 

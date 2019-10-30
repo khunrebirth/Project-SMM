@@ -51,29 +51,45 @@
                     services that power more than just payments; we help our clients to reach 
                     more buyers around the world, unlocking their full potential.
                 </p>
+
+                <div class="sec-btn-footer d-none d-md-block">
+                   <button type="button" class="btn btn-join-job col-12" data-toggle="modal" data-target=".bd-example-modal-lg">Apply To Position</button>
+                </div>
             </div>
             <div class="col-sm-12 col-md-3">
                 <button type="button" class="btn btn-join-job col-12" data-toggle="modal" data-target=".bd-example-modal-lg">Apply To Position</button>
-                <div class="row">
-                    <div class="col-12 col-md-6">
-                        <img class="nav-job-img" src="https://dummyimage.com/600x400/dbdbdb/fff" alt="">
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <img class="nav-job-img" src="https://dummyimage.com/600x400/dbdbdb/fff" alt="">
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <img class="nav-job-img" src="https://dummyimage.com/600x400/dbdbdb/fff" alt="">
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <img class="nav-job-img" src="https://dummyimage.com/600x400/dbdbdb/fff" alt="">
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <img class="nav-job-img" src="https://dummyimage.com/600x400/dbdbdb/fff" alt="">
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <img class="nav-job-img" src="https://dummyimage.com/600x400/dbdbdb/fff" alt="">
-                    </div>
-                </div>
+                <ul class="list-side-gallery">
+                    <li class="item">
+                       <a data-fancybox="group1" rel="gallery" class="fancybox" href="https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy">
+                            <img class="nav-job-img" src="https://dummyimage.com/600x400/dbdbdb/fff" alt="">
+                        </a>
+                    </li>
+                    <li class="item">
+                       <a data-fancybox="group1" rel="gallery" class="fancybox" href="https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy">
+                            <img class="nav-job-img" src="https://dummyimage.com/600x400/dbdbdb/fff" alt="">
+                        </a>
+                    </li>
+                    <li class="item">
+                       <a data-fancybox="group1" rel="gallery" class="fancybox" href="https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy">
+                            <img class="nav-job-img" src="https://dummyimage.com/600x400/dbdbdb/fff" alt="">
+                        </a>
+                    </li>
+                    <li class="item">
+                       <a data-fancybox="group1" rel="gallery" class="fancybox" href="https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy">
+                            <img class="nav-job-img" src="https://dummyimage.com/600x400/dbdbdb/fff" alt="">
+                        </a>
+                    </li>
+                    <li class="item">
+                       <a data-fancybox="group1" rel="gallery" class="fancybox" href="https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy">
+                            <img class="nav-job-img" src="https://dummyimage.com/600x400/dbdbdb/fff" alt="">
+                        </a>
+                    </li>
+                    <li class="item">
+                       <a data-fancybox="group1" rel="gallery" class="fancybox" href="https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy">
+                            <img class="nav-job-img" src="https://dummyimage.com/600x400/dbdbdb/fff" alt="">
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
@@ -131,6 +147,8 @@
 <!-- Push Custom Scripts -->
 <script>
     $(function () {
-       
+        $("a.fancybox").fancybox({ 
+            animationEffect : 'fade'
+        }).attr('data-fancybox', 'group1');
     });
 </script>

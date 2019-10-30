@@ -67,12 +67,46 @@
         <div class="row sec-job sec-job-img">
             <ul class="list-img-team">
                 <li>
-                    <a href="">
-                        <div></div>
+                    <a data-fancybox="group1" rel="gallery" href="https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy" class="fancybox">
+                        <div style="background-image:url(https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy);"></div>
                     </a>
-                </li>
+                </li><!--/li-->
+                <li>
+                    <a data-fancybox="group1" rel="gallery" href="https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy" class="fancybox">
+                        <div style="background-image:url(https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy);"></div>
+                    </a>
+                </li><!--/li-->
+                <li>
+                    <a data-fancybox="group1" rel="gallery" href="https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy" class="fancybox">
+                        <div style="background-image:url(https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy);"></div>
+                    </a>
+                </li><!--/li-->
+                <li>
+                    <a data-fancybox="group1" rel="gallery" href="https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy" class="fancybox">
+                        <div style="background-image:url(https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy);"></div>
+                    </a>
+                </li><!--/li-->
+                <li>
+                    <a data-fancybox="group1" rel="gallery" href="https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy" class="fancybox">
+                        <div style="background-image:url(https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy);"></div>
+                    </a>
+                </li><!--/li-->
+                <li>
+                    <a data-fancybox="group1" rel="gallery" href="https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy" class="fancybox">
+                        <div style="background-image:url(https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy);"></div>
+                    </a>
+                </li><!--/li-->
+                <li>
+                    <a data-fancybox="group1" rel="gallery" href="https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy" class="fancybox">
+                        <div style="background-image:url(https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy);"></div>
+                    </a>
+                </li><!--/li-->
+                <li>
+                    <a data-fancybox="group1" rel="gallery" href="https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy" class="fancybox">
+                        <div style="background-image:url(https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy);"></div>
+                    </a>
+                </li><!--/li-->
             </ul>
-            <img src="https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy" alt="">
         </div>
         <div class="row sec-job sec-job-item">
             <ul class="list-cmn-job">
@@ -153,6 +187,8 @@
 <!-- Push Custom Scripts -->
 <script>
     $(function () {
-       
+        $("a.fancybox").fancybox({ 
+            animationEffect : 'fade'
+        }).attr('data-fancybox', 'group1');
     });
 </script>
