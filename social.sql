@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 29, 2019 at 02:33 PM
+-- Generation Time: Oct 30, 2019 at 08:02 AM
 -- Server version: 5.7.17-log
 -- PHP Version: 5.6.30
 
@@ -71,11 +71,12 @@ CREATE TABLE `banner_pages` (
 --
 
 INSERT INTO `banner_pages` (`id`, `status`, `title`, `page`, `img`, `img_title_alt`, `bottom`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(2, 'N', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:7:\"clients\";s:2:\"th\";s:36:\"ลูกค้าของเรา\";}', 'a:2:{s:2:\"en\";s:28:\"banner-client_1572246396.jpg\";s:2:\"th\";s:29:\"banner-client_15722463961.jpg\";}', 'a:2:{s:2:\"en\";s:12:\"slider-1.jpg\";s:2:\"th\";s:12:\"slider-1.jpg\";}', '', '2019-10-28 07:06:36', '2019-10-28 07:06:36', '0000-00-00 00:00:00'),
+(2, 'Y', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:7:\"clients\";s:2:\"th\";s:36:\"ลูกค้าของเรา\";}', 'a:2:{s:2:\"en\";s:28:\"banner-client_1572246396.jpg\";s:2:\"th\";s:29:\"banner-client_15722463961.jpg\";}', 'a:2:{s:2:\"en\";s:12:\"slider-1.jpg\";s:2:\"th\";s:12:\"slider-1.jpg\";}', '', '2019-10-28 07:06:36', '2019-10-29 00:48:16', '0000-00-00 00:00:00'),
 (3, 'Y', 'a:2:{s:2:\"en\";s:5:\"Blogs\";s:2:\"th\";s:18:\"บทความ\";}', 'a:2:{s:2:\"en\";s:5:\"blogs\";s:2:\"th\";s:18:\"บทความ\";}', 'a:2:{s:2:\"en\";s:36:\"2ee9c1275f58f1acf520f0ea7d865d84.jpg\";s:2:\"th\";s:36:\"3255777830299b806ac0eee6f221bfe6.jpg\";}', 'a:2:{s:2:\"en\";s:12:\"slider-1.jpg\";s:2:\"th\";s:12:\"slider-1.jpg\";}', '', '2019-10-25 04:07:38', '2019-10-25 04:07:38', '0000-00-00 00:00:00'),
 (4, 'Y', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:5:\"teams\";s:2:\"th\";s:9:\"ทีม\";}', 'a:2:{s:2:\"en\";s:26:\"banner-team_1572247737.jpg\";s:2:\"th\";s:27:\"banner-team_15722477371.jpg\";}', 'a:2:{s:2:\"en\";s:15:\"banner-team.jpg\";s:2:\"th\";s:15:\"banner-team.jpg\";}', '', '2019-10-28 07:28:57', '2019-10-28 07:28:57', '0000-00-00 00:00:00'),
 (5, 'Y', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:7:\"contact\";s:2:\"th\";s:18:\"ติดต่อ\";}', 'a:2:{s:2:\"en\";s:28:\"banne-contact_1572248871.jpg\";s:2:\"th\";s:29:\"banne-contact_15722488711.jpg\";}', 'a:2:{s:2:\"en\";s:12:\"slider-1.jpg\";s:2:\"th\";s:12:\"slider-1.jpg\";}', '', '2019-10-28 07:47:51', '2019-10-28 07:47:51', '0000-00-00 00:00:00'),
-(6, 'Y', 'a:2:{s:2:\"en\";s:14:\"Thank you page\";s:2:\"th\";s:18:\"ขอบคุณ\";}', 'a:2:{s:2:\"en\";s:6:\"thanks\";s:2:\"th\";s:18:\"ขอบคุณ\";}', 'a:2:{s:2:\"en\";s:36:\"fde9a47418ec527b2c48b0988b6aa603.jpg\";s:2:\"th\";s:36:\"7fd22ff06e7576b292f48b4f48cd86bc.jpg\";}', 'a:2:{s:2:\"en\";s:12:\"slider-1.jpg\";s:2:\"th\";s:12:\"slider-1.jpg\";}', '', '2019-10-25 04:07:11', '2019-10-25 04:07:11', '0000-00-00 00:00:00');
+(6, 'Y', 'a:2:{s:2:\"en\";s:14:\"Thank you page\";s:2:\"th\";s:18:\"ขอบคุณ\";}', 'a:2:{s:2:\"en\";s:6:\"thanks\";s:2:\"th\";s:18:\"ขอบคุณ\";}', 'a:2:{s:2:\"en\";s:36:\"fde9a47418ec527b2c48b0988b6aa603.jpg\";s:2:\"th\";s:36:\"7fd22ff06e7576b292f48b4f48cd86bc.jpg\";}', 'a:2:{s:2:\"en\";s:12:\"slider-1.jpg\";s:2:\"th\";s:12:\"slider-1.jpg\";}', '', '2019-10-25 04:07:11', '2019-10-25 04:07:11', '0000-00-00 00:00:00'),
+(7, 'Y', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:5:\"teams\";s:2:\"th\";s:9:\"ทีม\";}', 'a:2:{s:2:\"en\";s:26:\"banner-team_1572247737.jpg\";s:2:\"th\";s:27:\"banner-team_15722477371.jpg\";}', 'a:2:{s:2:\"en\";s:15:\"banner-team.jpg\";s:2:\"th\";s:15:\"banner-team.jpg\";}', '', '2019-10-28 07:28:57', '2019-10-28 07:28:57', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -163,6 +164,90 @@ CREATE TABLE `blog_page` (
 
 INSERT INTO `blog_page` (`id`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 'a:2:{s:2:\"en\";s:20:\"Contact | social.com\";s:2:\"th\";s:31:\"ติดต่อ | social.com\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-10-02 09:16:29', '2019-10-15 00:47:42', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `careers`
+--
+
+CREATE TABLE `careers` (
+  `id` int(11) NOT NULL,
+  `sort` int(11) NOT NULL,
+  `meta_tag_title` text NOT NULL,
+  `meta_tag_description` text NOT NULL,
+  `meta_tag_keywords` text NOT NULL,
+  `img_og_twitter` text NOT NULL,
+  `img_cover` text NOT NULL,
+  `title` text NOT NULL,
+  `slug` text NOT NULL,
+  `comment` text NOT NULL,
+  `type` text NOT NULL,
+  `num` text NOT NULL,
+  `content` longtext NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `careers`
+--
+
+INSERT INTO `careers` (`id`, `sort`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `img_cover`, `title`, `slug`, `comment`, `type`, `num`, `content`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 1, 'a:2:{s:2:\"en\";s:18:\"Teams | social.com\";s:2:\"th\";s:22:\"ทีม | social.com\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";N;s:2:\"th\";N;}', 'a:2:{s:2:\"en\";s:16:\"Content Creator \";s:2:\"th\";s:15:\"Content Creator\";}', 'a:2:{s:2:\"en\";s:15:\"content-creator\";s:2:\"th\";s:15:\"content-creator\";}', 'a:2:{s:2:\"en\";s:24:\"ด่วนมาก !!\";s:2:\"th\";s:24:\"ด่วนมาก !!\";}', 'a:2:{s:2:\"en\";s:9:\"Full Time\";s:2:\"th\";s:9:\"Full Time\";}', 'a:2:{s:2:\"en\";s:1:\"1\";s:2:\"th\";s:1:\"1\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-10-30 02:41:25', '2019-10-30 00:54:53', NULL),
+(2, 2, 'a:2:{s:2:\"en\";s:18:\"Teams | social.com\";s:2:\"th\";s:22:\"ทีม | social.com\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";N;s:2:\"th\";N;}', 'a:2:{s:2:\"en\";s:30:\"Accounting & Financial Manager\";s:2:\"th\";s:76:\"ผู้จัดการฝ่ายบัญชี การเงิน\";}', 'a:2:{s:2:\"en\";s:28:\"accounting-financial-manager\";s:2:\"th\";s:76:\"ผู้จัดการฝ่ายบัญบี-การเงิน\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:9:\"Full Time\";s:2:\"th\";s:9:\"Full Time\";}', 'a:2:{s:2:\"en\";s:1:\"1\";s:2:\"th\";s:1:\"1\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-10-30 02:41:25', '2019-10-30 00:34:40', NULL),
+(3, 3, 'a:2:{s:2:\"en\";s:18:\"Teams | social.com\";s:2:\"th\";s:22:\"ทีม | social.com\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";N;s:2:\"th\";N;}', 'a:2:{s:2:\"en\";s:15:\"Project Manager\";s:2:\"th\";s:15:\"Project Manager\";}', 'a:2:{s:2:\"en\";s:15:\"project-manager\";s:2:\"th\";s:15:\"project-manager\";}', 'a:2:{s:2:\"en\";s:24:\"ด่วนมาก !!\";s:2:\"th\";s:24:\"ด่วนมาก !!\";}', 'a:2:{s:2:\"en\";s:9:\"Full Time\";s:2:\"th\";s:9:\"Full Time\";}', 'a:2:{s:2:\"en\";s:1:\"1\";s:2:\"th\";s:1:\"1\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-10-30 02:41:25', '2019-10-30 00:22:05', NULL),
+(4, 4, 'a:2:{s:2:\"en\";s:18:\"Teams | social.com\";s:2:\"th\";s:22:\"ทีม | social.com\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";N;s:2:\"th\";N;}', 'a:2:{s:2:\"en\";s:20:\"Internship Marketing\";s:2:\"th\";s:98:\"นักศึกษาฝึกงาน(ด้านการตลาดออนไลน์)\";}', 'a:2:{s:2:\"en\";s:20:\"internship-marketing\";s:2:\"th\";s:98:\"นักศึกษาฝึกงาน-ด้านการตลาดออนไลน๜-\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:9:\"Full Time\";s:2:\"th\";s:9:\"Full Time\";}', 'a:2:{s:2:\"en\";s:1:\"2\";s:2:\"th\";s:1:\"2\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-10-30 02:41:25', '2019-10-30 00:25:11', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `career_contacts`
+--
+
+CREATE TABLE `career_contacts` (
+  `id` int(11) NOT NULL,
+  `fullname` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `phone` varchar(10) NOT NULL,
+  `detail` text NOT NULL,
+  `file` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `deleted_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `career_galleries`
+--
+
+CREATE TABLE `career_galleries` (
+  `id` int(11) NOT NULL,
+  `sort` int(11) NOT NULL,
+  `img` text NOT NULL,
+  `img_title_alt` text NOT NULL,
+  `career_id` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `career_galleries`
+--
+
+INSERT INTO `career_galleries` (`id`, `sort`, `img`, `img_title_alt`, `career_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 2, 'a:2:{s:2:\"en\";s:5:\"1.jpg\";s:2:\"th\";s:5:\"1.jpg\";}', '', 1, '2019-10-30 05:02:44', '2019-10-29 23:43:32', NULL),
+(2, 1, 'a:2:{s:2:\"en\";s:5:\"2.jpg\";s:2:\"th\";s:5:\"2.jpg\";}', '', 1, '2019-10-30 05:02:44', '2019-10-29 23:43:32', NULL),
+(3, 3, 'a:2:{s:2:\"en\";s:5:\"3.jpg\";s:2:\"th\";s:5:\"3.jpg\";}', '', 1, '2019-10-30 05:02:44', '2019-10-29 23:43:32', NULL),
+(4, 4, 'a:2:{s:2:\"en\";s:5:\"4.jpg\";s:2:\"th\";s:5:\"4.jpg\";}', '', 1, '2019-10-30 05:02:44', '2019-10-29 23:43:32', NULL),
+(5, 5, 'a:2:{s:2:\"en\";s:5:\"5.jpg\";s:2:\"th\";s:5:\"5.jpg\";}', '', 1, '2019-10-30 05:02:44', '2019-10-29 23:43:32', NULL),
+(6, 6, 'a:2:{s:2:\"en\";s:5:\"6.jpg\";s:2:\"th\";s:5:\"6.jpg\";}', '', 1, '2019-10-30 05:02:44', '2019-10-29 23:43:32', NULL),
+(7, 7, 'a:2:{s:2:\"en\";s:5:\"7.jpg\";s:2:\"th\";s:5:\"7.jpg\";}', '', 1, '2019-10-30 05:02:44', '2019-10-29 23:43:33', NULL),
+(8, 0, 'a:2:{s:2:\"en\";s:7:\"1-1.jpg\";s:2:\"th\";s:7:\"1-1.jpg\";}', '', 2, '2019-10-30 05:02:44', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -439,6 +524,30 @@ INSERT INTO `home_page` (`id`, `meta_tag_title`, `meta_tag_description`, `meta_t
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `join_us_page`
+--
+
+CREATE TABLE `join_us_page` (
+  `id` int(11) NOT NULL,
+  `meta_tag_title` text CHARACTER SET utf8 NOT NULL,
+  `meta_tag_description` text CHARACTER SET utf8 NOT NULL,
+  `meta_tag_keywords` text CHARACTER SET utf8 NOT NULL,
+  `img_og_twitter` text CHARACTER SET utf8 NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `join_us_page`
+--
+
+INSERT INTO `join_us_page` (`id`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'a:2:{s:2:\"en\";s:20:\"Join us | social.com\";s:2:\"th\";s:52:\"ร่วมงานกับเรา | social.com\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-10-02 09:16:29', '2019-10-29 20:25:04', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `logs`
 --
 
@@ -458,67 +567,15 @@ CREATE TABLE `logs` (
 --
 
 INSERT INTO `logs` (`id`, `event_id`, `detail`, `user_id`, `ip`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(482, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.7', '2019-10-28 09:49:10', NULL, NULL),
-(483, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.7', '2019-10-28 09:49:33', NULL, NULL),
-(484, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.109', '2019-10-28 10:24:21', NULL, NULL),
-(485, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.109', '2019-10-28 10:24:52', NULL, NULL),
-(486, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.109', '2019-10-28 10:25:30', NULL, NULL),
-(487, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.109', '2019-10-28 10:25:53', NULL, NULL),
-(488, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.109', '2019-10-28 10:26:16', NULL, NULL),
-(489, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.109', '2019-10-28 10:26:41', NULL, NULL),
-(490, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.7', '2019-10-28 10:59:52', NULL, NULL),
-(491, 1, 'เข้าสู่ระบบ SMM Backoffice', 2, '192.168.1.7', '2019-10-29 02:52:51', NULL, NULL),
-(492, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.7', '2019-10-29 03:33:31', NULL, NULL),
-(493, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.7', '2019-10-29 03:33:57', NULL, NULL),
-(494, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.7', '2019-10-29 03:37:15', NULL, NULL),
-(495, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.7', '2019-10-29 03:42:16', NULL, NULL),
-(496, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.7', '2019-10-29 03:43:01', NULL, NULL),
-(497, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.7', '2019-10-29 03:43:31', NULL, NULL),
-(498, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.7', '2019-10-29 03:44:11', NULL, NULL),
-(499, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.7', '2019-10-29 03:44:51', NULL, NULL),
-(500, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.7', '2019-10-29 03:45:41', NULL, NULL),
-(501, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.7', '2019-10-29 03:46:08', NULL, NULL),
-(502, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.7', '2019-10-29 04:11:48', NULL, NULL),
-(503, 5, 'ลบ Portfolio (Services Page)', 2, '192.168.1.7', '2019-10-29 04:12:57', NULL, NULL),
-(504, 5, 'ลบ Portfolio (Services Page)', 2, '192.168.1.7', '2019-10-29 04:13:02', NULL, NULL),
-(505, 5, 'ลบ Portfolio (Services Page)', 2, '192.168.1.7', '2019-10-29 04:13:06', NULL, NULL),
-(506, 4, 'แก้ไข Portfolio (Services Page)', 2, '192.168.1.7', '2019-10-29 04:13:36', NULL, NULL),
-(507, 4, 'แก้ไข Portfolio (Services Page)', 2, '192.168.1.7', '2019-10-29 04:14:03', NULL, NULL),
-(508, 5, 'ลบ Portfolio (Services Page)', 2, '192.168.1.7', '2019-10-29 04:19:52', NULL, NULL),
-(509, 5, 'ลบ Portfolio (Services Page)', 2, '192.168.1.7', '2019-10-29 04:19:57', NULL, NULL),
-(510, 5, 'ลบ Portfolio (Services Page)', 2, '192.168.1.7', '2019-10-29 04:20:01', NULL, NULL),
-(511, 5, 'ลบ Portfolio (Services Page)', 2, '192.168.1.7', '2019-10-29 04:20:06', NULL, NULL),
-(512, 5, 'ลบ Portfolio (Services Page)', 2, '192.168.1.7', '2019-10-29 04:20:11', NULL, NULL),
-(513, 5, 'ลบ Portfolio (Services Page)', 2, '192.168.1.7', '2019-10-29 04:20:15', NULL, NULL),
-(514, 3, 'เพิ่ม Portfolio (Services Page)', 2, '192.168.1.7', '2019-10-29 04:23:11', NULL, NULL),
-(515, 3, 'เพิ่ม Portfolio (Services Page)', 2, '192.168.1.7', '2019-10-29 04:26:34', NULL, NULL),
-(516, 3, 'เพิ่ม Portfolio (Services Page)', 2, '192.168.1.7', '2019-10-29 04:28:44', NULL, NULL),
-(517, 6, 'จัดเรียง Portfolio (Services Page)', 2, '192.168.1.7', '2019-10-29 04:29:03', NULL, NULL),
-(518, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.7', '2019-10-29 04:44:28', NULL, NULL),
-(519, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.7', '2019-10-29 04:45:35', NULL, NULL),
-(520, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.7', '2019-10-29 04:52:49', NULL, NULL),
-(521, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.7', '2019-10-29 04:53:20', NULL, NULL),
-(522, 1, 'เข้าสู่ระบบ SMM Backoffice', 2, '192.168.1.115', '2019-10-29 04:54:29', NULL, NULL),
-(523, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.115', '2019-10-29 04:54:46', NULL, NULL),
-(524, 4, 'แก้ไข Portfolio (Services Page)', 2, '192.168.1.7', '2019-10-29 06:21:26', NULL, NULL),
-(525, 4, 'แก้ไข Portfolio (Services Page)', 2, '192.168.1.7', '2019-10-29 06:22:10', NULL, NULL),
-(526, 4, 'แก้ไข Portfolio (Services Page)', 2, '192.168.1.7', '2019-10-29 06:22:32', NULL, NULL),
-(527, 4, 'แก้ไข Portfolio (Services Page)', 2, '192.168.1.7', '2019-10-29 06:22:59', NULL, NULL),
-(528, 4, 'แก้ไข Portfolio (Services Page)', 2, '192.168.1.7', '2019-10-29 06:25:25', NULL, NULL),
-(529, 4, 'แก้ไข Portfolio (Services Page)', 2, '192.168.1.7', '2019-10-29 06:25:49', NULL, NULL),
-(530, 4, 'แก้ไข Portfolio (Services Page)', 2, '192.168.1.7', '2019-10-29 06:26:13', NULL, NULL),
-(531, 3, 'เพิ่ม Portfolio (Services Page)', 2, '192.168.1.7', '2019-10-29 06:53:44', NULL, NULL),
-(532, 3, 'เพิ่ม Portfolio (Services Page)', 2, '192.168.1.7', '2019-10-29 06:59:05', NULL, NULL),
-(533, 3, 'เพิ่ม Portfolio (Services Page)', 2, '192.168.1.7', '2019-10-29 07:12:16', NULL, NULL),
-(534, 4, 'แก้ไข Portfolio (Services Page)', 2, '192.168.1.7', '2019-10-29 07:23:31', NULL, NULL),
-(535, 4, 'แก้ไข Portfolio (Services Page)', 2, '192.168.1.7', '2019-10-29 07:23:51', NULL, NULL),
-(536, 4, 'แก้ไข Portfolio (Services Page)', 2, '192.168.1.7', '2019-10-29 07:24:19', NULL, NULL),
-(537, 4, 'แก้ไข Portfolio (Services Page)', 2, '192.168.1.7', '2019-10-29 07:24:39', NULL, NULL),
-(538, 5, 'ลบ Portfolio (Services Page)', 2, '192.168.1.7', '2019-10-29 07:24:50', NULL, NULL),
-(539, 5, 'ลบ Portfolio (Services Page)', 2, '192.168.1.7', '2019-10-29 07:24:55', NULL, NULL),
-(540, 3, 'เพิ่ม Portfolio (Services Page)', 2, '192.168.1.7', '2019-10-29 07:27:07', NULL, NULL),
-(541, 4, 'แก้ไข Portfolio (Services Page)', 2, '192.168.1.7', '2019-10-29 07:27:55', NULL, NULL),
-(542, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.7', '2019-10-29 07:29:17', NULL, NULL);
+(561, 4, 'แก้ไข Career (Join Us Page)', 2, '::1', '2019-10-30 07:19:57', NULL, NULL),
+(562, 4, 'แก้ไข Career (Join Us Page)', 2, '::1', '2019-10-30 07:21:47', NULL, NULL),
+(563, 4, 'แก้ไข Career (Join Us Page)', 2, '::1', '2019-10-30 07:22:05', NULL, NULL),
+(564, 4, 'แก้ไข Career (Join Us Page)', 2, '::1', '2019-10-30 07:22:26', NULL, NULL),
+(565, 4, 'แก้ไข Career (Join Us Page)', 2, '::1', '2019-10-30 07:22:58', NULL, NULL),
+(566, 4, 'แก้ไข Career (Join Us Page)', 2, '::1', '2019-10-30 07:23:08', NULL, NULL),
+(567, 4, 'แก้ไข Career (Join Us Page)', 2, '::1', '2019-10-30 07:25:11', NULL, NULL),
+(568, 4, 'แก้ไข Career (Join Us Page)', 2, '::1', '2019-10-30 07:34:40', NULL, NULL),
+(569, 4, 'แก้ไข Career (Join Us Page)', 2, '::1', '2019-10-30 07:54:53', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -802,6 +859,24 @@ ALTER TABLE `blog_page`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `careers`
+--
+ALTER TABLE `careers`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `career_contacts`
+--
+ALTER TABLE `career_contacts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `career_galleries`
+--
+ALTER TABLE `career_galleries`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `clients`
 --
 ALTER TABLE `clients`
@@ -841,6 +916,12 @@ ALTER TABLE `contents`
 -- Indexes for table `home_page`
 --
 ALTER TABLE `home_page`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `join_us_page`
+--
+ALTER TABLE `join_us_page`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -904,7 +985,7 @@ ALTER TABLE `about_page`
 -- AUTO_INCREMENT for table `banner_pages`
 --
 ALTER TABLE `banner_pages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `blogs`
 --
@@ -920,6 +1001,21 @@ ALTER TABLE `blog_categories`
 --
 ALTER TABLE `blog_page`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `careers`
+--
+ALTER TABLE `careers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT for table `career_contacts`
+--
+ALTER TABLE `career_contacts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `career_galleries`
+--
+ALTER TABLE `career_galleries`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `clients`
 --
@@ -956,10 +1052,15 @@ ALTER TABLE `contents`
 ALTER TABLE `home_page`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
+-- AUTO_INCREMENT for table `join_us_page`
+--
+ALTER TABLE `join_us_page`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=543;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=570;
 --
 -- AUTO_INCREMENT for table `log_events`
 --
