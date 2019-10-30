@@ -96,6 +96,10 @@ $route['(\w{2})/ทีมงาน'] = 'front_end/Teams';
 $route['(\w{2})/test'] = 'front_end/Job';
 $route['(\w{2})/ร่วมงานกับเรา'] = 'front_end/Job';
 
+// Join Us
+$route['(\w{2})/test/detail'] = 'front_end/Job/detail';
+$route['(\w{2})/ร่วมงานกับเรา/รายละเอียด'] = 'front_end/Job/detail';
+
 // Contact
 $route['(\w{2})/contact'] = 'front_end/Contact';
 $route['(\w{2})/ติดต่อเรา'] = 'front_end/Contact';

@@ -74,9 +74,8 @@ class Job extends MX_Controller
 		$this->load->view('app', $data);
 	}
 	
-	public function job()
+	public function detail()
 	{
-
 		/*
 		| -------------------------------------------------------------------------
 		| HANDLE
@@ -109,7 +108,7 @@ class Job extends MX_Controller
 		$data['og_twitter']['image'] = base_url('storage/uploads/images/teams/'. unserialize($page_content->img_og_twitter)[$this->lang]);
 
 		// Content
-		$data['content'] = 'job';
+		$data['content'] = 'job_detail';
 
 		// // Utilities
 		// $data['teams'] = $this->Team_model->get_team_all();

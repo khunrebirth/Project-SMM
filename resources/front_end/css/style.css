@@ -1191,3 +1191,32 @@ footer p {
 	-o-transition: all 0.5s;
 
 }
+
+.btn-join-job {
+	color: #fff;
+	background-color: #127dbc;
+}
+
+
+.nav-job-img {
+	width: 100%;
+	height: auto;
+}
+.list-img-team {
+	position: relative;
+	height: 400px;
+}
+.list-img-team li {
+	position: absolute;
+}
+.list-img-team li:nth-child(1) { left: 0; top: 0; }
+.list-img-team li a {
+	padding: 5px;
+	width: 200px;
+	height: 200px;
+}
+.list-img-team li a>div {
+	height: 100%;
+	width: 100%;
+
+}

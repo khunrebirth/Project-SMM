@@ -65,6 +65,13 @@
             </div>
         </div>
         <div class="row sec-job sec-job-img">
+            <ul class="list-img-team">
+                <li>
+                    <a href="">
+                        <div></div>
+                    </a>
+                </li>
+            </ul>
             <img src="https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy" alt="">
         </div>
         <div class="row sec-job sec-job-item">
