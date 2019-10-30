@@ -84,8 +84,7 @@
 												<td><?php echo unserialize($career->title)['en']; ?></td>
 												<td><?php echo unserialize($career->title)['th']; ?></td>
 												<td>
-<!--													<a class="btn btn-warning" href="--><?php //echo base_url($lang . '/backoffice/page/join-us/list-career-galleries/' . $career->id); ?><!--"><i class="far fa-view"></i> Items (--><?php //echo $career->counter; ?><!--)</a>-->
-													<a class="btn btn-warning" href="<?php echo base_url($lang . '/backoffice/page/join-us/list-career-galleries/' . $career->id); ?>"><i class="far fa-view"></i> Items (0)</a>
+													<a class="btn btn-warning" href="<?php echo base_url($lang . '/backoffice/page/join-us/list-career-galleries/' . $career->id); ?>"><i class="far fa-view"></i> Items (<?php echo $career->counter; ?>)</a>
 												</td>
 												<td><?php echo $career->created_at; ?></td>
 												<td>

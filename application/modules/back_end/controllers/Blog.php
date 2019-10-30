@@ -89,7 +89,7 @@ class Blog extends MX_Controller {
 		$slug_en = slugify($this->input->post('title_en'));
 		$slug_th = str_replace(" ","-", strtolower($this->input->post('title_th')));
 		$slug_th = str_replace("/","-", $slug_th);
-		$slug_th = str_replace("&","-", $slug_th);
+		$slug_th = str_replace("&","and", $slug_th);
 		$slug = ['en' => $slug_en, 'th' => $slug_th];
 
 		// Add Data
@@ -158,7 +158,7 @@ class Blog extends MX_Controller {
 		$slug_en = slugify($this->input->post('title_en'));
 		$slug_th = str_replace(" ","-", strtolower($this->input->post('title_th')));
 		$slug_th = str_replace("/","-", $slug_th);
-		$slug_th = str_replace("&","-", $slug_th);
+		$slug_th = str_replace("&","and", $slug_th);
 		$slug = ['en' => $slug_en, 'th' => $slug_th];
 
 		// Add Data
@@ -269,7 +269,7 @@ class Blog extends MX_Controller {
 		$slug_en = slugify($this->input->post('title_en'));
 		$slug_th = str_replace(" ","-", strtolower($this->input->post('title_th')));
 		$slug_th = str_replace("/","-", $slug_th);
-		$slug_th = str_replace("&","-", $slug_th);
+		$slug_th = str_replace("&","and", $slug_th);
 		$slug_th = str_replace("?","", $slug_th);
 		$slug = ['en' => $slug_en, 'th' => $slug_th];
 
@@ -357,7 +357,7 @@ class Blog extends MX_Controller {
 		$slug_en = slugify($this->input->post('title_en'));
 		$slug_th = str_replace(" ","-", strtolower($this->input->post('title_th')));
 		$slug_th = str_replace("/","-", $slug_th);
-		$slug_th = str_replace("&","-", $slug_th);
+		$slug_th = str_replace("&","and", $slug_th);
 		$slug_th = str_replace("?","", $slug_th);
 		$slug = ['en' => $slug_en, 'th' => $slug_th];
 

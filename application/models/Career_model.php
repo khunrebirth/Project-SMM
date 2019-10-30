@@ -5,9 +5,26 @@ class Career_model extends CI_Model {
 
     public function get_career_all()
     {
-        $query = $this->db->order_by('sort', 'asc')->get('careers');
+		$sql = "
+			SELECT 
+			careers.id,
+			careers.sort,
+			careers.img_cover,
+			careers.title,
+			careers.slug,
+			careers.comment,
+			careers.type,
+			careers.num,
+			careers.content,
+            careers.created_at,
+            (SELECT COUNT(*) FROM career_images WHERE careers.id = career_images.career_id) as counter
+			FROM careers
+			ORDER BY careers.sort ASC
+        ";
 
-        return $query->num_rows() > 0 ? $query->result() : [];
+		$query = $this->db->query($sql);
+
+		return $query->num_rows() > 0 ? $query->result() : [];
     }
 
 	public function get_career_by_id($id)
