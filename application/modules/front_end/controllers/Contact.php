@@ -91,4 +91,25 @@ class Contact extends MX_Controller
 
 		redirect('contact', 'refresh');
     }
+
+	public function career_contact()
+	{
+//		$add_contact = $this->Contact_model->insert_contact([
+//			'name' => $this->input->post('name'),
+//			'email' => $this->input->post('email'),
+//			'phone' => $this->input->post('phone'),
+//			'company' => $this->input->post('company'),
+//			'detail' => $this->input->post('detail')
+//		]);
+
+		$add_contact = true;
+
+		if ($add_contact) {
+			redirect($this->lang == 'th' ?  $this->lang . '/thanks' : $this->lang . '/ขอบคุณ');
+		} else {
+			$this->session->set_flashdata('error', 'Something wrong');
+		}
+
+		redirect('contact', 'refresh');
+	}
 }

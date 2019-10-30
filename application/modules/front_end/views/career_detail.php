@@ -48,7 +48,7 @@
             <div class="modal-body">
                 <div class="col-12">
                     <p class="text-secondary contact__form--body mb-4"><?php echo lang('page_join_us_desc'); ?></p>
-                    <form class="mt-4" action="#" method="post">
+                    <form class="mt-4" action="<?php echo base_url($lang . '/'. 'career-contact/send') ?>" method="post">
                         <div class="form-group">
                             <input type="text" class="form-control" name="name" placeholder="<?php echo lang('page_join_us_form_txt_name'); ?>" required="">
                         </div>

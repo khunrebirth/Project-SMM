@@ -102,6 +102,7 @@ $route['(\w{2})/ร่วมงานกับเรา/(:any)/(:any)'] = 'front
 $route['(\w{2})/contact'] = 'front_end/Contact';
 $route['(\w{2})/ติดต่อเรา'] = 'front_end/Contact';
 $route['(\w{2})/contact/send'] = 'front_end/Contact/send';
+$route['(\w{2})/career-contact/send'] = 'front_end/Contact/career_contact';
 
 // Thank You
 $route['(\w{2})/thanks'] = 'front_end/Thank_you';
