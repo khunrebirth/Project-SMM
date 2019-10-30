@@ -62,16 +62,16 @@
 							<div class="table-responsive">
 								<table class="table table-striped" id="ssmDataTable">
 									<thead>
-									<tr>
-										<th class="text-center">#</th>
-										<th>Img cover(en)</th>
-										<th>Img cover(th)</th>
-										<th>Title(en)</th>
-										<th>Title(th)</th>
-										<th>Galleries</th>
-										<th>Created at</th>
-										<th>Action</th>
-									</tr>
+										<tr>
+											<th class="text-center">#</th>
+											<th>Img cover(en)</th>
+											<th>Img cover(th)</th>
+											<th>Title(en)</th>
+											<th>Title(th)</th>
+											<th>Galleries</th>
+											<th>Created at</th>
+											<th>Action</th>
+										</tr>
 									</thead>
 									<tbody>
 									<?php
@@ -79,8 +79,8 @@
 										foreach ($careers as $career) { ?>
 											<tr>
 												<td class="text-center"><?php echo $counter++; ?></td>
-												<td><img src="<?php echo base_url('storage/uploads/images/joni_us/' . unserialize($career->img_cover)['en']); ?>" width="120"></td>
-												<td><img src="<?php echo base_url('storage/uploads/images/joni_us/' . unserialize($career->img_cover)['th']); ?>" width="120"></td>
+												<td><img src="<?php echo base_url('storage/uploads/images/join_us/' . unserialize($career->img_cover)['en']); ?>" width="120"></td>
+												<td><img src="<?php echo base_url('storage/uploads/images/join_us/' . unserialize($career->img_cover)['th']); ?>" width="120"></td>
 												<td><?php echo unserialize($career->title)['en']; ?></td>
 												<td><?php echo unserialize($career->title)['th']; ?></td>
 												<td>
