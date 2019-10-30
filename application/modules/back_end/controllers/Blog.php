@@ -87,9 +87,7 @@ class Blog extends MX_Controller {
 		$input_img_og_twitter= ['en' => $meta_og_image_en, 'th' => $meta_og_image_th];
 		$input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
 		$slug_en = slugify($this->input->post('title_en'));
-		$slug_th = str_replace(" ","-", strtolower($this->input->post('title_th')));
-		$slug_th = str_replace("/","-", $slug_th);
-		$slug_th = str_replace("&","and", $slug_th);
+		$slug_th = smm_slug_th($this->input->post('title_th'));
 		$slug = ['en' => $slug_en, 'th' => $slug_th];
 
 		// Add Data
@@ -156,9 +154,7 @@ class Blog extends MX_Controller {
 		$input_img_og_twitter= ['en' => $meta_og_image_en, 'th' => $meta_og_image_th];
 		$input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
 		$slug_en = slugify($this->input->post('title_en'));
-		$slug_th = str_replace(" ","-", strtolower($this->input->post('title_th')));
-		$slug_th = str_replace("/","-", $slug_th);
-		$slug_th = str_replace("&","and", $slug_th);
+		$slug_th = smm_slug_th($this->input->post('title_th'));
 		$slug = ['en' => $slug_en, 'th' => $slug_th];
 
 		// Add Data
@@ -267,10 +263,7 @@ class Blog extends MX_Controller {
 		$input_description_section = ['en' => $this->input->post('description_section_en'), 'th' => $this->input->post('description_section_th')];
 		$input_body = ['en' => $this->input->post('body_en'), 'th' => $this->input->post('body_th')];
 		$slug_en = slugify($this->input->post('title_en'));
-		$slug_th = str_replace(" ","-", strtolower($this->input->post('title_th')));
-		$slug_th = str_replace("/","-", $slug_th);
-		$slug_th = str_replace("&","and", $slug_th);
-		$slug_th = str_replace("?","", $slug_th);
+		$slug_th = smm_slug_th($this->input->post('title_th'));
 		$slug = ['en' => $slug_en, 'th' => $slug_th];
 
 		// Add Data
@@ -355,10 +348,7 @@ class Blog extends MX_Controller {
 		$input_description_section = ['en' => $this->input->post('description_section_en'), 'th' => $this->input->post('description_section_th')];
 		$input_body = ['en' => $this->input->post('body_en'), 'th' => $this->input->post('body_th')];
 		$slug_en = slugify($this->input->post('title_en'));
-		$slug_th = str_replace(" ","-", strtolower($this->input->post('title_th')));
-		$slug_th = str_replace("/","-", $slug_th);
-		$slug_th = str_replace("&","and", $slug_th);
-		$slug_th = str_replace("?","", $slug_th);
+		$slug_th = smm_slug_th($this->input->post('title_th'));
 		$slug = ['en' => $slug_en, 'th' => $slug_th];
 
 		// Update Data

@@ -93,12 +93,10 @@ $route['(\w{2})/teams'] = 'front_end/Teams';
 $route['(\w{2})/ทีมงาน'] = 'front_end/Teams';
 
 // Join Us
-$route['(\w{2})/test'] = 'front_end/Job';
-$route['(\w{2})/ร่วมงานกับเรา'] = 'front_end/Job';
-
-// Join Us
-$route['(\w{2})/test/detail'] = 'front_end/Job/detail';
-$route['(\w{2})/ร่วมงานกับเรา/รายละเอียด'] = 'front_end/Job/detail';
+$route['(\w{2})/join-us'] = 'front_end/Join_us';
+$route['(\w{2})/ร่วมงานกับเรา'] = 'front_end/Join_us';
+$route['(\w{2})/join-us/(:any)/(:any)'] = 'front_end/Join_us/detail/$1/$2/$3';
+$route['(\w{2})/ร่วมงานกับเรา/(:any)/(:any)'] = 'front_end/Join_us/detail/$1/$2/$3';
 
 // Contact
 $route['(\w{2})/contact'] = 'front_end/Contact';

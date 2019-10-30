@@ -148,9 +148,7 @@ class Service extends MX_Controller
 		$input_banner_img_title_alt = ['en' => $this->input->post('banner_img_title_alt_en'), 'th' => $this->input->post('banner_img_title_alt_th')];
 		$input_banner_title = ['en' => $this->input->post('banner_title_en'), 'th' => $this->input->post('banner_title_th')];
 		$slug_en = slugify($this->input->post('title_en'));
-		$slug_th = str_replace(" ","-", mb_strtolower($this->input->post('title_th')));
-		$slug_th = str_replace("/","-", $slug_th);
-		$slug_th = str_replace("&","and", $slug_th);
+		$slug_th = smm_slug_th($this->input->post('title_th'));
 		$slug = ['en' => $slug_en, 'th' => $slug_th];
 
 		// Add Data
@@ -290,9 +288,7 @@ class Service extends MX_Controller
 		$input_banner_img_title_alt = ['en' => $this->input->post('banner_img_title_alt_en'), 'th' => $this->input->post('banner_img_title_alt_th')];
 		$input_banner_title = ['en' => $this->input->post('banner_title_en'), 'th' => $this->input->post('banner_title_th')];
 		$slug_en = slugify($this->input->post('title_en'));
-		$slug_th = str_replace(" ","-", mb_strtolower($this->input->post('title_th')));
-		$slug_th = str_replace("/","-", $slug_th);
-		$slug_th = str_replace("&","and", $slug_th);
+		$slug_th = smm_slug_th($this->input->post('title_th'));
 		$slug = ['en' => $slug_en, 'th' => $slug_th];
 
 		// Update Data

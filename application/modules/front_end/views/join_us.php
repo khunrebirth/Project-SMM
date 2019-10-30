@@ -1,8 +1,3 @@
-<!-- Push Custom Style -->
-<style>
-
-</style>
-
 <!-- Title -->
 <?php if ($banner) { ?>
 <section class="page-title main-hero-service" style="padding:0;">
@@ -64,6 +59,7 @@
                 <p class="text-center">Remote work</p>
             </div>
         </div>
+
         <div class="row sec-job sec-job-img">
             <ul class="list-img-team">
                 <li>
@@ -108,74 +104,22 @@
                 </li><!--/li-->
             </ul>
         </div>
+
         <div class="row sec-job sec-job-item">
+			<?php echo lang('page_join_us_career_title'); ?>
             <ul class="list-cmn-job">
-                <li>
-                    <a class="col-12 d-flex justify-content-between align-items-center" href="#dummy">
-                        <div class="txt">
-                            <p class="ttl">Customer Support Specialist (Japanese & English speaking)</p>
-                            <span><i class="fas fa-map-marker-alt"></i>Bangkok</span>
-                            <span><i class="far fa-calendar-alt"></i>FullTime</span>
-                            <span><i class="far fa-building"></i>Marketing</span>
-                        </div>
-                        <span class="job-btn d-md-block d-none">apply</span>
-                    </a>
-                </li><!--/li-->
-                <li>
-                    <a class="col-12 d-flex justify-content-between align-items-center" href="#dummy">
-                        <div class="txt">
-                            <p class="ttl">Customer Support Specialist (Japanese & English speaking)</p>
-                            <span><i class="fas fa-map-marker-alt"></i>Bangkok</span>
-                            <span><i class="far fa-calendar-alt"></i>FullTime</span>
-                            <span><i class="far fa-building"></i>Marketing</span>
-                        </div>
-                        <span class="job-btn d-md-block d-none">apply</span>
-                    </a>
-                </li><!--/li-->
-                <li>
-                    <a class="col-12 d-flex justify-content-between align-items-center" href="#dummy">
-                        <div class="txt">
-                            <p class="ttl">Customer Support Specialist (Japanese & English speaking)</p>
-                            <span><i class="fas fa-map-marker-alt"></i>Bangkok</span>
-                            <span><i class="far fa-calendar-alt"></i>FullTime</span>
-                            <span><i class="far fa-building"></i>Marketing</span>
-                        </div>
-                        <span class="job-btn d-md-block d-none">apply</span>
-                    </a>
-                </li><!--/li-->
-                <li>
-                    <a class="col-12 d-flex justify-content-between align-items-center" href="#dummy">
-                        <div class="txt">
-                            <p class="ttl">Customer Support Specialist (Japanese & English speaking)</p>
-                            <span><i class="fas fa-map-marker-alt"></i>Bangkok</span>
-                            <span><i class="far fa-calendar-alt"></i>FullTime</span>
-                            <span><i class="far fa-building"></i>Marketing</span>
-                        </div>
-                        <span class="job-btn d-md-block d-none">apply</span>
-                    </a>
-                </li><!--/li-->
-                <li>
-                    <a class="col-12 d-flex justify-content-between align-items-center" href="#dummy">
-                        <div class="txt">
-                            <p class="ttl">Customer Support Specialist (Japanese & English speaking)</p>
-                            <span><i class="fas fa-map-marker-alt"></i>Bangkok</span>
-                            <span><i class="far fa-calendar-alt"></i>FullTime</span>
-                            <span><i class="far fa-building"></i>Marketing</span>
-                        </div>
-                        <span class="job-btn d-md-block d-none">apply</span>
-                    </a>
-                </li><!--/li-->
-                <li>
-                    <a class="col-12 d-flex justify-content-between align-items-center" href="#dummy">
-                        <div class="txt">
-                            <p class="ttl">Customer Support Specialist (Japanese & English speaking)</p>
-                            <span><i class="fas fa-map-marker-alt"></i>Bangkok</span>
-                            <span><i class="far fa-calendar-alt"></i>FullTime</span>
-                            <span><i class="far fa-building"></i>Marketing</span>
-                        </div>
-                        <span class="job-btn d-md-block d-none">apply</span>
-                    </a>
-                </li><!--/li-->
+				<?php foreach ($careers as $career) { ?>
+					<li>
+						<a class="col-12 d-flex justify-content-between align-items-center" href="<?php echo base_url($lang . '/' . lang('menu_join_us') . '/' . unserialize($career->slug)[$lang] . '/' . hashids_encrypt($career->id)); ?>">
+							<div class="txt">
+								<p class="ttl"><?php echo unserialize($career->title)[$lang]; ?></p>
+								<span><i class="fas fa-map-marker-alt"></i><?php echo lang('page_join_us_location'); ?></span>
+								<span><i class="far fa-calendar-alt"></i><?php echo unserialize($career->type)[$lang]; ?></span>
+							</div>
+							<span class="job-btn d-md-block d-none"><?php echo lang('page_join_us_btn_apply'); ?></span>
+						</a>
+					</li>
+				<?php } ?>
             </ul>
         </div>
     </div>

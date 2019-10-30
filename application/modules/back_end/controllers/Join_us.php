@@ -166,9 +166,7 @@ class Join_us extends MX_Controller
 		$input_num = ['en' => $this->input->post('num_en'), 'th' => $this->input->post('num_th')];
 		$input_content = ['en' => $this->input->post('content_en'), 'th' => $this->input->post('content_th')];
 		$slug_en = slugify($this->input->post('title_en'));
-		$slug_th = str_replace(" ","-", strtolower($this->input->post('title_th')));
-		$slug_th = str_replace("/","-", $slug_th);
-		$slug_th = str_replace("&","and", $slug_th);
+		$slug_th = smm_slug_th($this->input->post('title_th'));
 		$slug = ['en' => $slug_en, 'th' => $slug_th];
 
 		// Add Data
@@ -255,9 +253,7 @@ class Join_us extends MX_Controller
 		$input_num = ['en' => $this->input->post('num_en'), 'th' => $this->input->post('num_th')];
 		$input_content = ['en' => $this->input->post('content_en'), 'th' => $this->input->post('content_th')];
 		$slug_en = slugify($this->input->post('title_en'));
-		$slug_th = str_replace(" ","-", strtolower($this->input->post('title_th')));
-		$slug_th = str_replace("/","-", $slug_th);
-		$slug_th = str_replace("&","and", $slug_th);
+		$slug_th = smm_slug_th($this->input->post('title_th'));
 		$slug = ['en' => $slug_en, 'th' => $slug_th];
 
 		// Update Data
