@@ -341,8 +341,8 @@ a:hover {
 ====================================*/
 
 #about {
-	padding-top: 0px;
-	padding-bottom: 60px;
+	padding-top: 0;
+	padding-bottom: 0;
 }
 
 @media (max-width: 768px) {
@@ -1061,6 +1061,12 @@ footer p {
 	padding-top: 25px;
 	height: 0;
 }
+@media (max-width: 768px) {
+	.wrap-video {
+		padding-bottom: 55%;
+	}
+}
+	
 .wrap-video iframe {
 	position: absolute;
 	top: 0;
@@ -1072,6 +1078,116 @@ footer p {
 	max-width: 1440px;
 	margin: 0 auto;
 }
+.sec-job-info {
+	padding-bottom: 60px;
+	margin-bottom: 60px;
+	border-bottom: 1px solid #ececec;
+}
+@media (max-width: 768px) {
+	.sec-job-info {
+		padding-bottom: 30px;
+		margin-bottom: 30px;
+	}
+}
+
 .sec-job-activity {
 	max-width: 998px;
+	margin-bottom: 60px;
+}
+@media (max-width: 768px) {
+	.sec-job-activity {
+		margin-bottom: 30px;
+	}
+}
+
+.sec-job-img {
+	max-width: 998px;
+	margin-bottom: 60px;
+}
+@media (max-width: 768px) {
+	.sec-job-img {
+		margin-bottom: 30px;
+	}
+}
+.sec-job-img img {
+	width: 100%;
+	height: auto;
+}
+.sec-job-item {
+	max-width: 998px;
+	margin-bottom: 0;
+}
+.list-cmn-job {
+	list-style: none;
+	width: 100%;
+	padding: 0;
+	margin: 0 0 20px;
+}
+.list-cmn-job li {
+	width: 100%;
+	margin: 0 0 30px;
+	padding: 0;
+}
+.list-cmn-job li:last-of-type {
+	margin-bottom: 0;
+}
+.list-cmn-job li a {
+	border: 1px solid transparent;
+	color: #127dbc;
+	position: relative;
+	transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.list-cmn-job li a::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 0;
+	height: calc( 100% + 2px);
+	width: 3px;
+	background-color: #127dbc;
+	transform: translate3d(0,-50%,0);
+	-webkit-transform: translate3d(0,-50%,0);
+	-moz-transform: translate3d(0,-50%,0);
+	-ms-transform: translate3d(0,-50%,0);
+	-o-transform: translate3d(0,-50%,0);
+}
+.list-cmn-job li a:hover {
+	border: 1px solid #c5e2ff;
+	border-left: 1px solid transparent;
+}
+.list-cmn-job li a:hover .job-btn {
+	background-color: #8cc5ff;
+	color: #fff;
+}
+.list-cmn-job li a .txt .ttl{
+	font-size: 1.2rem;
+	margin-bottom: 8px;
+}
+.list-cmn-job li a .txt span {
+	margin-right: 10px;
+	font-size: 14px;
+}
+.list-cmn-job li a .txt span i {
+	padding-right: 5px;
+}
+.job-btn {
+	padding: 5px 10px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	background-color: #cbe1f7;
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-o-transition: all 0.5s;
+
 }
