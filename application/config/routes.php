@@ -264,7 +264,7 @@ $route['(\w{2})/ขอบคุณ'] = 'front_end/Thank_you';
 
 		/*
 		| -------------------------------------------------------------------------
-		| Careers
+		| Join Us
 		| -------------------------------------------------------------------------
 		*/
 
@@ -272,7 +272,7 @@ $route['(\w{2})/ขอบคุณ'] = 'front_end/Thank_you';
 		$route['(\w{2})/backoffice/page/join-us/content/(:any)'] = 'back_end/Join_us/edit_content/$1/$2';
 		$route['(\w{2})/backoffice/page/join-us/content/update/(:any)'] = 'back_end/Join_us/update_content/$1/$2';
 
-		// Lists
+		// Lists Career
 		$route['(\w{2})/backoffice/page/join-us/list-careers'] = 'back_end/Join_us/list_careers';
 		$route['(\w{2})/backoffice/page/join-us/list-careers/create'] = 'back_end/Join_us/career_create';
 		$route['(\w{2})/backoffice/page/join-us/list-careers/store'] = 'back_end/Join_us/career_store';
