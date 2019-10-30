@@ -262,6 +262,26 @@ $route['(\w{2})/ขอบคุณ'] = 'front_end/Thank_you';
 		$route['(\w{2})/backoffice/page/teams/list-teams/ajax/get/teams/sort/show'] = 'back_end/Team/ajax_get_team_and_sort_show';
 		$route['(\w{2})/backoffice/page/teams/list-teams/ajax/get/teams/sort/update'] = 'back_end/Team/ajax_get_team_and_sort_update';
 
+		/*
+		| -------------------------------------------------------------------------
+		| Careers
+		| -------------------------------------------------------------------------
+		*/
+
+		// Content
+		$route['(\w{2})/backoffice/page/join-us/content/(:any)'] = 'back_end/Join_us/edit_content/$1/$2';
+		$route['(\w{2})/backoffice/page/join-us/content/update/(:any)'] = 'back_end/Join_us/update_content/$1/$2';
+
+		// Lists
+		$route['(\w{2})/backoffice/page/join-us/list-careers'] = 'back_end/Join_us/list_careers';
+		$route['(\w{2})/backoffice/page/join-us/list-careers/create'] = 'back_end/Join_us/career_create';
+		$route['(\w{2})/backoffice/page/join-us/list-careers/store'] = 'back_end/Join_us/career_store';
+		$route['(\w{2})/backoffice/page/join-us/list-careers/edit/(:any)'] = "back_end/Join_us/career_edit/$1/$2";
+		$route['(\w{2})/backoffice/page/join-us/list-careers/update/(:any)'] = "back_end/Join_us/career_update/$1/$2";
+		$route['(\w{2})/backoffice/page/join-us/list-careers/destroy/(:any)'] = "back_end/Join_us/career_destroy/$1/$2";
+		$route['(\w{2})/backoffice/page/join-us/list-careers/ajax/get/careers/sort/show'] = 'back_end/Join_us/ajax_get_career_and_sort_show';
+		$route['(\w{2})/backoffice/page/join-us/list-careers/ajax/get/careers/sort/update'] = 'back_end/Join_us/ajax_get_career_and_sort_update';
+
         /*
         | -------------------------------------------------------------------------
         | Contacts
