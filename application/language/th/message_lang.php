@@ -21,6 +21,7 @@ $lang['menu_our_clients'] = 'ลูกค้าของเรา';
 $lang['menu_blogs'] = 'บทความ';
 $lang['menu_teams'] = 'ทีมงาน';
 $lang['menu_join_us'] = 'ร่วมงานกับเรา';
+$lang['menu_join_us_slug'] = 'ร่วมงานกับเรา';
 $lang['menu_contact'] = 'ติดต่อเรา';
 
 /*
