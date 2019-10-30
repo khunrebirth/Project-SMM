@@ -21,6 +21,7 @@ $lang['menu_our_clients'] = 'ลูกค้าของเรา';
 $lang['menu_blogs'] = 'บทความ';
 $lang['menu_teams'] = 'ทีมงาน';
 $lang['menu_join_us'] = 'ร่วมงานกับเรา';
+$lang['menu_join_us_slug'] = 'ร่วมงานกับเรา';
 $lang['menu_contact'] = 'ติดต่อเรา';
 
 /*
@@ -65,6 +66,16 @@ $lang['page_team'] = 'ทีมงาน';
 $lang['page_join_us_btn_apply'] = 'สมัคร';
 $lang['page_join_us_location'] = 'กรุงเทพ';
 $lang['page_join_us_career_title'] = 'ตำแหน่งที่เปิดรับ';
+$lang['page_join_us_btn_apply_to_position'] = 'สมัครตำแหน่งนี้';
+$lang['page_join_us_title_first'] = 'กรอกแบบ';
+$lang['page_join_us_title_center'] = 'ฟอร์ม';
+$lang['page_join_us_title_end'] = 'เพื่อร่วมงานกับเรา';
+$lang['page_join_us_desc'] = 'เราจะติดต่อกลับโดยด่วนที่สุด';
+$lang['page_join_us_form_txt_name'] = 'ชื่อ*';
+$lang['page_join_us_form_txt_email'] = 'อีเมล์*';
+$lang['page_join_us_form_txt_phone'] = 'เบอร์ติดต่อ*';
+$lang['page_join_us_form_txt_detail'] = 'รายละเอียด';
+$lang['page_join_us_button_send'] = 'ตกลง';
 
 /*
 | -------------------------------------------------------------------------

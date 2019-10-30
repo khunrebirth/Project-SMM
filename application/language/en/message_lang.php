@@ -21,6 +21,7 @@ $lang['menu_our_clients'] = 'clients';
 $lang['menu_blogs'] = 'blogs';
 $lang['menu_teams'] = 'teams';
 $lang['menu_join_us'] = 'join us';
+$lang['menu_join_us_slug'] = 'join-us';
 $lang['menu_contact'] = 'contact';
 
 /*
@@ -65,6 +66,16 @@ $lang['page_team'] = 'Team Page';
 $lang['page_join_us_btn_apply'] = 'Apply';
 $lang['page_join_us_location'] = 'Bangkok';
 $lang['page_join_us_career_title'] = 'Position';
+$lang['page_join_us_btn_apply_to_position'] = 'Apply To Position';
+$lang['page_join_us_title_first'] = 'กรอกแบบ';
+$lang['page_join_us_title_center'] = 'ฟอร์ม';
+$lang['page_join_us_title_end'] = 'เพื่อร่วมงานกับเรา';
+$lang['page_join_us_desc'] = 'เราจะติดต่อกลับโดยด่วนที่สุด';
+$lang['page_join_us_form_txt_name'] = 'Name*';
+$lang['page_join_us_form_txt_email'] = 'Email*';
+$lang['page_join_us_form_txt_phone'] = 'Phone*';
+$lang['page_join_us_form_txt_detail'] = 'Detail';
+$lang['page_join_us_button_send'] = 'Send';
 
 /*
 | -------------------------------------------------------------------------

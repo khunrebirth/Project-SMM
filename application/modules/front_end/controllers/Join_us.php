@@ -65,7 +65,7 @@ class Join_us extends MX_Controller
 		// Content
 		$data['content'] = 'join_us';
 
-		// // Utilities
+		// Utilities
 		$data['banner'] = $this->Banner_model->get_banner_active_by_id(7);
 		$data['careers'] = $this->Career_model->get_career_all();
 
@@ -112,10 +112,11 @@ class Join_us extends MX_Controller
 		$data['og_twitter']['image'] = base_url('storage/uploads/images/join_us/'. unserialize($page_content->img_og_twitter)[$this->lang]);
 
 		// Content
-		$data['content'] = 'job_detail';
+		$data['content'] = 'career_detail';
 
-		// // Utilities
-		$data['banner'] = $this->Career_model->get_career_by_id($career_id);
+		// Utilities
+		$data['career'] = $this->Career_model->get_career_by_id($career_id);
+		$data['career_galleries'] = $this->Career_gallery_model->get_career_gallery_by_career_id($career_id);
 
 		/*
 		| -------------------------------------------------------------------------
