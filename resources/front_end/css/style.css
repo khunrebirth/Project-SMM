@@ -1104,6 +1104,20 @@ footer p {
 		margin-bottom: 30px;
 	}
 }
+.sec-job-activity figure {
+    background: #127dbc;
+    padding: 15px;
+    margin: 5px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+.sec-job-activity figure img {
+	width: 70px;
+	height: auto;
+}
 
 .sec-job-img {
 	max-width: 998px;
