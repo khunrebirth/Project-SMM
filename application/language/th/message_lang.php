@@ -78,6 +78,14 @@ $lang['page_join_us_form_txt_email'] = 'อีเมล์*';
 $lang['page_join_us_form_txt_phone'] = 'เบอร์ติดต่อ*';
 $lang['page_join_us_form_txt_detail'] = 'รายละเอียด';
 $lang['page_join_us_button_send'] = 'ตกลง';
+$lang['page_join_us_benefit_1'] = 'เวลาการทำงานที่ยืดยุ่น';
+$lang['page_join_us_benefit_2'] = 'แต่งตัวตามสบาย';
+$lang['page_join_us_benefit_3'] = 'กองทุนสำรองเลี้ยงชีพ';
+$lang['page_join_us_benefit_4'] = 'ประกันสังคม';
+$lang['page_join_us_benefit_5'] = 'ประกันภัยกลุ่ม';
+$lang['page_join_us_benefit_6'] = 'วันหยุดพักผ่อนประจำปี';
+$lang['page_join_us_benefit_7'] = 'โบนัสประจำปี';
+$lang['page_join_us_benefit_8'] = 'ปรับเงินเดือนประจำปี';
 
 /*
 | -------------------------------------------------------------------------
