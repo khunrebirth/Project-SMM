@@ -29,49 +29,49 @@
 			<h2 class="ttl-cmn-job"><?php echo lang('page_join_us_benefits'); ?></h2>
             <div class="col-4 col-md-3 d-flex flex-column align-items-center">
                 <figure>
-                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_time.png');?>" alt="">
+                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_time.png');?>">
                 </figure>
                 <p class="text-center"><?php echo lang('page_join_us_benefit_1'); ?></p>
             </div>
             <div class="col-4 col-md-3 d-flex flex-column align-items-center">
                 <figure>
-                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_dress.png');?>" alt="">
+                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_dress.png');?>">
                 </figure>
                 <p class="text-center"><?php echo lang('page_join_us_benefit_2'); ?></p>
             </div>
             <div class="col-4 col-md-3 d-flex flex-column align-items-center">
                 <figure>
-                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_money_03.png');?>" alt="">
+                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_money_03.png');?>">
                 </figure>
                 <p class="text-center"><?php echo lang('page_join_us_benefit_3'); ?></p>
             </div>
             <div class="col-4 col-md-3 d-flex flex-column align-items-center">
                 <figure>
-                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_security_02.png');?>" alt="">
+                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_security_02.png');?>">
                 </figure>
                 <p class="text-center"><?php echo lang('page_join_us_benefit_4'); ?></p>
             </div>
             <div class="col-4 col-md-3 d-flex flex-column align-items-center">
                 <figure>
-                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_people.png');?>" alt="">
+                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_people.png');?>">
                 </figure>
                 <p class="text-center"><?php echo lang('page_join_us_benefit_5'); ?></p>
             </div>
             <div class="col-4 col-md-3 d-flex flex-column align-items-center">
                 <figure>
-                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_date.png');?>" alt="">
+                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_date.png');?>">
                 </figure>
                 <p class="text-center"><?php echo lang('page_join_us_benefit_6'); ?></p>
             </div>
 			<div class="col-4 col-md-3 d-flex flex-column align-items-center">
                 <figure>
-				    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_money_02.png');?>" alt="">
+				    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_money_02.png');?>">
                 </figure>
 				<p class="text-center"><?php echo lang('page_join_us_benefit_7'); ?></p>
 			</div>
 			<div class="col-4 col-md-3 d-flex flex-column align-items-center">
                 <figure>
-				    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_money_04.png');?>" alt="">
+				    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_money_04.png');?>">
                 </figure>
 				<p class="text-center"><?php echo lang('page_join_us_benefit_8'); ?></p>
 			</div>
