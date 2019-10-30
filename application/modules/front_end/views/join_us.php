@@ -19,8 +19,8 @@
         <div class="title-team" style="text-align: center; padding: 4rem;">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-team.png' : 'resources/front_end/images/title-team.png'); ?>" alt="" class="img-fluid">
         </div>  
-        <div class="row sec-job sec-job-info mb-5">
-            <div class="col-sm-6">
+        <div class="row sec-job sec-job-info">
+            <div class="col-sm-12 col-md-6">
                 <p> 
                     We’re Omisians. We’re firm believers in the idea that “payment acceptance” 
                     is fundamental to developing a successful business. We build tools and provide 
@@ -34,49 +34,107 @@
                     more buyers around the world, unlocking their full potential.
                 </p>
             </div>
-            <div class="col-sm-6 wrap-video">
+            <div class="col-sm-12 col-md-6 wrap-video">
                 <iframe width="560" height="349" src="https://www.youtube.com/embed/keqd4RUQK4s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
         <div class="row sec-job sec-job-activity">
-            <div class="col-6 col-md-4 item-activity d-flex justify-content-center flex-column">
-                <img src="https://dummyimage.com/100x100/b8b8b8/ffffff.jpg" alt="">
-                <p>dummy text</p>
+            <div class="col-6 col-md-4 d-flex flex-column align-items-center">
+                <img class="img-fluid" src="https://dummyimage.com/100x100/b8b8b8/ffffff.jpg" alt="">
+                <p class="text-center">Flexible working hours</p>
             </div>
-            <div class="col-6 col-md-4 item-activity d-flex justify-content-center flex-column">
+            <div class="col-6 col-md-4 d-flex flex-column align-items-center">
                 <img src="https://dummyimage.com/100x100/b8b8b8/ffffff.jpg" alt="">
-                <p>dummy text</p>
+                <p class="text-center">A MacBook to work at coffee shops</p>
             </div>
-            <div class="col-6 col-md-4 item-activity d-flex justify-content-center flex-column">
+            <div class="col-6 col-md-4 d-flex flex-column align-items-center">
                 <img src="https://dummyimage.com/100x100/b8b8b8/ffffff.jpg" alt="">
-                <p>dummy text</p>
+                <p class="text-center">A friendly bunch of colleagues</p>
             </div>
-            <div class="col-6 col-md-4 item-activity d-flex justify-content-center flex-column">
+            <div class="col-6 col-md-4 d-flex flex-column align-items-center">
                 <img src="https://dummyimage.com/100x100/b8b8b8/ffffff.jpg" alt="">
-                <p>dummy text</p>
+                <p class="text-center">Above-market salary</p>
             </div>
-            <div class="col-6 col-md-4 item-activity d-flex justify-content-center flex-column">
+            <div class="col-6 col-md-4 d-flex flex-column align-items-center">
                 <img src="https://dummyimage.com/100x100/b8b8b8/ffffff.jpg" alt="">
-                <p>dummy text</p>
+                <p class="text-center">A healthcare plan</p>
             </div>
-            <div class="col-6 col-md-4 item-activity d-flex justify-content-center flex-column">
+            <div class="col-6 col-md-4 d-flex flex-column align-items-center">
                 <img src="https://dummyimage.com/100x100/b8b8b8/ffffff.jpg" alt="">
-                <p>dummy text</p>
+                <p class="text-center">Remote work</p>
             </div>
         </div>
         <div class="row sec-job sec-job-img">
-            <img src="" alt="">
+            <img src="https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy" alt="">
         </div>
         <div class="row sec-job sec-job-item">
-            <ul class="list-cmn-job col-12">
-                <li class="mb-2">
-                    <a class="col-12" href="">
+            <ul class="list-cmn-job">
+                <li>
+                    <a class="col-12 d-flex justify-content-between align-items-center" href="#dummy">
                         <div class="txt">
-                            <p class="ttl"></p>
+                            <p class="ttl">Customer Support Specialist (Japanese & English speaking)</p>
+                            <span><i class="fas fa-map-marker-alt"></i>Bangkok</span>
+                            <span><i class="far fa-calendar-alt"></i>FullTime</span>
+                            <span><i class="far fa-building"></i>Marketing</span>
                         </div>
-                        <span>apply</span>
+                        <span class="job-btn d-md-block d-none">apply</span>
                     </a>
-                </li>
+                </li><!--/li-->
+                <li>
+                    <a class="col-12 d-flex justify-content-between align-items-center" href="#dummy">
+                        <div class="txt">
+                            <p class="ttl">Customer Support Specialist (Japanese & English speaking)</p>
+                            <span><i class="fas fa-map-marker-alt"></i>Bangkok</span>
+                            <span><i class="far fa-calendar-alt"></i>FullTime</span>
+                            <span><i class="far fa-building"></i>Marketing</span>
+                        </div>
+                        <span class="job-btn d-md-block d-none">apply</span>
+                    </a>
+                </li><!--/li-->
+                <li>
+                    <a class="col-12 d-flex justify-content-between align-items-center" href="#dummy">
+                        <div class="txt">
+                            <p class="ttl">Customer Support Specialist (Japanese & English speaking)</p>
+                            <span><i class="fas fa-map-marker-alt"></i>Bangkok</span>
+                            <span><i class="far fa-calendar-alt"></i>FullTime</span>
+                            <span><i class="far fa-building"></i>Marketing</span>
+                        </div>
+                        <span class="job-btn d-md-block d-none">apply</span>
+                    </a>
+                </li><!--/li-->
+                <li>
+                    <a class="col-12 d-flex justify-content-between align-items-center" href="#dummy">
+                        <div class="txt">
+                            <p class="ttl">Customer Support Specialist (Japanese & English speaking)</p>
+                            <span><i class="fas fa-map-marker-alt"></i>Bangkok</span>
+                            <span><i class="far fa-calendar-alt"></i>FullTime</span>
+                            <span><i class="far fa-building"></i>Marketing</span>
+                        </div>
+                        <span class="job-btn d-md-block d-none">apply</span>
+                    </a>
+                </li><!--/li-->
+                <li>
+                    <a class="col-12 d-flex justify-content-between align-items-center" href="#dummy">
+                        <div class="txt">
+                            <p class="ttl">Customer Support Specialist (Japanese & English speaking)</p>
+                            <span><i class="fas fa-map-marker-alt"></i>Bangkok</span>
+                            <span><i class="far fa-calendar-alt"></i>FullTime</span>
+                            <span><i class="far fa-building"></i>Marketing</span>
+                        </div>
+                        <span class="job-btn d-md-block d-none">apply</span>
+                    </a>
+                </li><!--/li-->
+                <li>
+                    <a class="col-12 d-flex justify-content-between align-items-center" href="#dummy">
+                        <div class="txt">
+                            <p class="ttl">Customer Support Specialist (Japanese & English speaking)</p>
+                            <span><i class="fas fa-map-marker-alt"></i>Bangkok</span>
+                            <span><i class="far fa-calendar-alt"></i>FullTime</span>
+                            <span><i class="far fa-building"></i>Marketing</span>
+                        </div>
+                        <span class="job-btn d-md-block d-none">apply</span>
+                    </a>
+                </li><!--/li-->
             </ul>
         </div>
     </div>
