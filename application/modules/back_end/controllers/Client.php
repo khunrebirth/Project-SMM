@@ -417,7 +417,8 @@ class Client extends MX_Controller
 			foreach (array_combine($bundle_id, $bundle_sort) as $id => $sort) {
 
 				$this->Client_model->update_client_by_id($id, [
-					'sort' => $counter
+					'sort' => $counter,
+					'updated_at' => date('Y-m-d H:i:s')
 				]);
 
 				$counter++;

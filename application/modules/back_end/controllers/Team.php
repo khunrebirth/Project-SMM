@@ -42,6 +42,66 @@ class Team extends MX_Controller
 		$this->data['user'] = $this->User_model->get_user_by_id($this->session->userdata('user_id'));
 	}
 
+	public function edit_content($lang, $id)
+	{
+		$this->data['lang'] = $this->lang;
+		$this->data['title'] = 'Page: Teams - Content - Edit';
+		$this->data['content'] = 'teams/content';
+		$this->data['page_content'] =  $this->Team_page_model->get_team_page_by_id($id);
+
+		$this->load->view('app', $this->data);
+	}
+
+	public function update_content($lang, $id)
+	{
+		// Get Old data
+		$page_content = $this->Team_page_model->get_team_page_by_id($id);
+
+		// Handle Image
+		$meta_og_image_en = unserialize($page_content->img_og_twitter)['en'];
+		$meta_og_image_th = unserialize($page_content->img_og_twitter)['th'];
+
+		if (isset($_FILES['meta_og_image_en']) && $_FILES['meta_og_image_en']['name'] != '') {
+			$meta_og_image_en = $this->ddoo_upload_team('meta_og_image_en');
+		}
+
+		if (isset($_FILES['meta_og_image_th']) && $_FILES['meta_og_image_th']['name'] != '') {
+			$meta_og_image_th = $this->ddoo_upload_team('meta_og_image_th');
+		}
+
+		// Filter Data
+		$input_meta_tag_title = ['en' => $this->input->post('meta_tag_title_en'), 'th' => $this->input->post('meta_tag_title_th')];
+		$input_meta_tag_description = ['en' => $this->input->post('meta_tag_description_en'), 'th' => $this->input->post('meta_tag_description_th')];
+		$input_meta_tag_keywords = ['en' => $this->input->post('meta_tag_keywords_en'), 'th' => $this->input->post('meta_tag_keywords_th')];
+		$input_img_og_twitter = ['en' => $meta_og_image_en, 'th' => $meta_og_image_th];
+
+		// Update Data
+		$update_page_content = $this->Team_page_model->update_team_page_by_id($id, [
+			'meta_tag_title' => serialize($input_meta_tag_title),
+			'meta_tag_description' => serialize($input_meta_tag_description),
+			'meta_tag_keywords' => serialize($input_meta_tag_keywords),
+			'img_og_twitter' => serialize($input_img_og_twitter),
+			'updated_at' => date('Y-m-d H:i:s')
+		]);
+
+		// Set Session To View
+		if ($update_page_content) {
+
+			logger_store([
+				'user_id' => $this->data['user']->id,
+				'detail' => 'แก้ไข Content (Team Page)',
+				'event' => 'update',
+				'ip' => $this->input->ip_address(),
+			]);
+
+			$this->session->set_flashdata('success', 'Update Done');
+		} else {
+			$this->session->set_flashdata('error', 'Something wrong');
+		}
+
+		redirect($lang . '/backoffice/page/teams/content/' . $id);
+	}
+
 	public function index()
 	{
 		$this->data['lang'] = $this->lang;
@@ -125,7 +185,7 @@ class Team extends MX_Controller
 		$team = $this->Team_model->get_team_by_id($id);
 
 		$this->data['lang'] = $this->lang;
-		$this->data['title'] = 'Page: Teams - Edit (' . $team->title . ')';
+		$this->data['title'] = 'Page: Teams - Edit (' . unserialize($team->title)['th'] . ')';
 		$this->data['content'] = 'teams/list_edit';
 		$this->data['team'] = $team;
 
@@ -165,7 +225,7 @@ class Team extends MX_Controller
 		$input_img = ['en' => $img_en, 'th' => $img_th];
 		$input_img_hover = ['en' => $img_hover_en, 'th' => $img_hover_th];
 
-		// Add Data
+		// Update Data
 		$update_team = $this->Team_model->update_team_by_id($id, [
 			'title' => serialize($input_title),
 			'body' => serialize($input_body),
@@ -197,9 +257,9 @@ class Team extends MX_Controller
 		$status = 500;
 		$response['success'] = 0;
 
-		$team = $this->Team_model->delete_team_by_id($id);
+		$delete_team = $this->Team_model->delete_team_by_id($id);
 
-		if ($team != false) {
+		if ($delete_team != false) {
 			$status = 200;
 			$response['success'] = 1;
 
@@ -215,66 +275,6 @@ class Team extends MX_Controller
 			->set_status_header($status)
 			->set_content_type('application/json')
 			->set_output(json_encode($response));
-	}
-
-	public function edit_content($lang, $id)
-	{
-		$this->data['lang'] = $this->lang;
-		$this->data['title'] = 'Page: Teams - Content - Edit';
-		$this->data['content'] = 'teams/content';
-		$this->data['page_content'] =  $this->Team_page_model->get_team_page_by_id($id);
-
-		$this->load->view('app', $this->data);
-	}
-
-	public function update_content($lang, $id)
-	{
-		// Get Old data
-		$page_content = $this->Team_page_model->get_team_page_by_id($id);
-
-		// Handle Image
-		$meta_og_image_en = unserialize($page_content->img_og_twitter)['en'];
-		$meta_og_image_th = unserialize($page_content->img_og_twitter)['th'];
-
-		if (isset($_FILES['meta_og_image_en']) && $_FILES['meta_og_image_en']['name'] != '') {
-			$meta_og_image_en = $this->ddoo_upload_team('meta_og_image_en');
-		}
-
-		if (isset($_FILES['meta_og_image_th']) && $_FILES['meta_og_image_th']['name'] != '') {
-			$meta_og_image_th = $this->ddoo_upload_team('meta_og_image_th');
-		}
-
-		// Filter Data
-		$input_meta_tag_title = ['en' => $this->input->post('meta_tag_title_en'), 'th' => $this->input->post('meta_tag_title_th')];
-		$input_meta_tag_description = ['en' => $this->input->post('meta_tag_description_en'), 'th' => $this->input->post('meta_tag_description_th')];
-		$input_meta_tag_keywords = ['en' => $this->input->post('meta_tag_keywords_en'), 'th' => $this->input->post('meta_tag_keywords_th')];
-		$input_img_og_twitter = ['en' => $meta_og_image_en, 'th' => $meta_og_image_th];
-
-		// Update Data
-		$update_page_content = $this->Team_page_model->update_team_page_by_id($id, [
-			'meta_tag_title' => serialize($input_meta_tag_title),
-			'meta_tag_description' => serialize($input_meta_tag_description),
-			'meta_tag_keywords' => serialize($input_meta_tag_keywords),
-			'img_og_twitter' => serialize($input_img_og_twitter),
-			'updated_at' => date('Y-m-d H:i:s')
-		]);
-
-		// Set Session To View
-		if ($update_page_content) {
-
-			logger_store([
-				'user_id' => $this->data['user']->id,
-				'detail' => 'แก้ไข Content (Team Page)',
-				'event' => 'update',
-				'ip' => $this->input->ip_address(),
-			]);
-
-			$this->session->set_flashdata('success', 'Update Done');
-		} else {
-			$this->session->set_flashdata('error', 'Something wrong');
-		}
-
-		redirect($lang . '/backoffice/page/teams/content/' . $id);
 	}
 
 	/***********************************
@@ -326,7 +326,8 @@ class Team extends MX_Controller
 			foreach (array_combine($bundle_id, $bundle_sort) as $id => $sort) {
 
 				$this->Team_model->update_team_by_id($id, [
-					'sort' => $counter
+					'sort' => $counter,
+					'updated_at' => date('Y-m-d H:i:s')
 				]);
 
 				$counter++;

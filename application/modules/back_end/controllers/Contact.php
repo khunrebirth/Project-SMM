@@ -85,6 +85,14 @@ class Contact extends MX_Controller
 
         // Set Session To View
         if ($update_page_content) {
+
+			logger_store([
+				'user_id' => $this->data['user']->id,
+				'detail' => 'แก้ไข Content (Contact Page)',
+				'event' => 'update',
+				'ip' => $this->input->ip_address(),
+			]);
+
             $this->session->set_flashdata('success', 'Update Done');
         } else {
             $this->session->set_flashdata('error', 'Something wrong');

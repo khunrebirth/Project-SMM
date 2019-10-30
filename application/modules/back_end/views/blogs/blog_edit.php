@@ -21,12 +21,14 @@
 				<div class="col-12">
 					<div class="card">
 						<div class="card-body">
+
 							<?php if ($this->session->flashdata('success')) { ?>
 								<div class="alert alert-success"><?php echo $this->session->flashdata('success'); ?></div>
 							<?php } ?>
 							<?php if ($this->session->flashdata('error')) { ?>
 								<div class="alert alert-danger"><?php echo $this->session->flashdata('error'); ?></div>
 							<?php } ?>
+
 							<ul class="nav nav-tabs">
 								<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#handleTh">TH</a></li>
 								<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#handleEn">EN</a></li>
