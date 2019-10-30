@@ -286,6 +286,16 @@ $route['(\w{2})/ขอบคุณ'] = 'front_end/Thank_you';
 		$route['(\w{2})/backoffice/page/join-us/list-careers/ajax/get/careers/sort/show'] = 'back_end/Join_us/ajax_get_career_and_sort_show';
 		$route['(\w{2})/backoffice/page/join-us/list-careers/ajax/get/careers/sort/update'] = 'back_end/Join_us/ajax_get_career_and_sort_update';
 
+		// List Career Galleries
+		$route['(\w{2})/backoffice/page/join-us/list-career-galleries/(:any)'] = 'back_end/Join_us/list_career_galleries/$1/$2';
+		$route['(\w{2})/backoffice/page/join-us/list-career-galleries/create/(:any)'] = 'back_end/Join_us/career_gallery_create/$1/$2';
+		$route['(\w{2})/backoffice/page/join-us/list-career-galleries/store/(:any)'] = 'back_end/Join_us/career_gallery_store/$1/$2';
+		$route['(\w{2})/backoffice/page/join-us/list-career-galleries/edit/(:any)/(:any)'] = "back_end/Join_us/career_gallery_edit/$1/$2/$3";
+		$route['(\w{2})/backoffice/page/join-us/list-career-galleries/update/(:any)/(:any)'] = "back_end/Join_us/career_gallery_update/$1/$2/$3";
+		$route['(\w{2})/backoffice/page/join-us/list-career-galleries/destroy/(:any)'] = "back_end/Join_us/career_gallery_destroy/$1/$2";
+		$route['(\w{2})/backoffice/page/join-us/list-career-galleries/ajax/get/career-galleries/sort/show/(:any)'] = 'back_end/Join_us/ajax_get_career_gallery_and_sort_show/$1/$2';
+		$route['(\w{2})/backoffice/page/join-us/list-career-galleries/ajax/get/career-galleries/sort/update'] = 'back_end/Join_us/ajax_get_career_gallery_and_sort_update';
+
         /*
         | -------------------------------------------------------------------------
         | Contacts

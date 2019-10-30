@@ -9,7 +9,7 @@
 		padding: 0;
 	}
 
-	#sortable li{
+	#sortable li {
 		cursor: move;
 		padding: 40px 0px;
 		list-style-type: none;

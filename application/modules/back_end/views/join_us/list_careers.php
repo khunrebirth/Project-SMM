@@ -5,11 +5,11 @@
 
 <!-- Custom CSS -->
 <style>
-	#sortable{
+	#sortable {
 		padding: 0;
 	}
 
-	#sortable li{
+	#sortable li {
 		cursor: move;
 		padding: 40px 0px;
 		list-style-type: none;
@@ -84,8 +84,7 @@
 												<td><?php echo unserialize($career->title)['en']; ?></td>
 												<td><?php echo unserialize($career->title)['th']; ?></td>
 												<td>
-<!--													<a class="btn btn-warning" href="--><?php //echo base_url($lang . '/backoffice/page/join-us/list-career-galleries/' . $career->id); ?><!--"><i class="far fa-view"></i> Items (--><?php //echo $career->counter; ?><!--)</a>-->
-													<a class="btn btn-warning" href="<?php echo base_url($lang . '/backoffice/page/join-us/list-career-galleries/' . $career->id); ?>"><i class="far fa-view"></i> Items (0)</a>
+													<a class="btn btn-warning" href="<?php echo base_url($lang . '/backoffice/page/join-us/list-career-galleries/' . $career->id); ?>"><i class="far fa-view"></i> Items (<?php echo $career->counter; ?>)</a>
 												</td>
 												<td><?php echo $career->created_at; ?></td>
 												<td>
@@ -95,7 +94,7 @@
 														</button>
 														<div class="dropdown-menu">
 															<a class="dropdown-item has-icon" href="<?php echo base_url($lang . '/backoffice/page/join-us/list-careers/edit/' . $career->id); ?>"><i class="far fa-edit"></i> Edit</a>
-															<a class="dropdown-item has-icon" onclick="deleteTeam('<?php echo base_url($lang . '/backoffice/page/join-us/list-careers/destroy/' . $career->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
+															<a class="dropdown-item has-icon" onclick="deleteCareer('<?php echo base_url($lang . '/backoffice/page/join-us/list-careers/destroy/' . $career->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
 														</div>
 													</div>
 												</td>
@@ -155,7 +154,7 @@
         }, 1 * 1500)
     }
 
-    function deleteTeam(url) {
+    function deleteCareer(url) {
         swal({
             title: 'Are you sure ?',
             icon: 'warning',

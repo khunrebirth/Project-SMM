@@ -162,7 +162,7 @@
 							<li class="<?php if ($this->uri->segment(2) == "join-us" && $this->uri->segment(3) == "content") { echo 'active'; } ?>">
 								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/join-us/content/1'); ?>">&#9679; Content</a>
 							</li>
-							<li class="<?php if ($this->uri->segment(2) == "join-us" && $this->uri->segment(3) == "list-careers") { echo 'active'; } ?>">
+							<li class="<?php if ($this->uri->segment(2) == "join-us" && $this->uri->segment(3) == "list-careers" || $this->uri->segment(3) == "list-career-galleries") { echo 'active'; } ?>">
 								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/join-us/list-careers'); ?>">&#9679; Careers</a>
 							</li>
 						</ul>
