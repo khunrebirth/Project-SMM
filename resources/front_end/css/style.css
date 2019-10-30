@@ -1337,3 +1337,19 @@ footer p {
     text-align: center;
     width: 100%;
 }
+.txt-detail-job {
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+}
+.txt-detail-job span {
+	color: #fff;
+    text-shadow: 3px 3px 6px #00000066;
+    margin-right: 37px;
+}
+.txt-detail-job span:last-of-type {
+    margin-right: 0;
+}
+.txt-detail-job span i {
+	margin-right: 5px;
+}

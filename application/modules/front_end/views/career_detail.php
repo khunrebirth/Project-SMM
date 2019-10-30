@@ -2,7 +2,11 @@
 <section class="page-title main-hero-service" style="padding:0;">
 	<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/join_us/' . unserialize($career->img_cover)[$lang]); ?>">
 	<div class="ttl-header-hero wow">
-		<h1><?php echo unserialize($career->title)[$lang]; ?></h1>
+        <h1><?php echo unserialize($career->title)[$lang]; ?></h1>
+        <p class="txt-detail-job">
+            <span><i class="fas fa-map-marker-alt"></i><?php echo lang('page_join_us_location'); ?></span>
+			<span><i class="far fa-calendar-alt"></i><?php echo unserialize($career->type)[$lang]; ?></span>
+        </p>
 	</div>
 </section>
 
