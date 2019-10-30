@@ -562,7 +562,8 @@ class Service extends MX_Controller
 			foreach (array_combine($bundle_id, $bundle_sort) as $id => $sort) {
 
 				$this->Service_model->update_service_by_id($id, [
-					'sort' => $counter
+					'sort' => $counter,
+					'updated_at' => date('Y-m-d H:i:s')
 				]);
 
 				$counter++;
@@ -631,7 +632,8 @@ class Service extends MX_Controller
 			foreach (array_combine($bundle_id, $bundle_sort) as $id => $sort) {
 
 				$this->Service_portfolio_model->update_service_portfolio_by_id($id, [
-					'sort' => $counter
+					'sort' => $counter,
+					'updated_at' => date('Y-m-d H:i:s')
 				]);
 
 				$counter++;

@@ -156,6 +156,17 @@
 							</li>
 						</ul>
 					</li>
+					<li class="nav-item dropdown <?php if ($this->uri->segment(1) == "page" && $this->uri->segment(2) == "join-us") { echo 'active'; } ?>">
+						<a href="#" class="nav-link has-dropdown"><i class="fas fa-users"></i><span>Join Us</span></a>
+						<ul class="dropdown-menu">
+							<li class="<?php if ($this->uri->segment(2) == "join-us" && $this->uri->segment(3) == "content") { echo 'active'; } ?>">
+								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/join-us/content/1'); ?>">&#9679; Content</a>
+							</li>
+							<li class="<?php if ($this->uri->segment(2) == "join-us" && $this->uri->segment(3) == "list-careers") { echo 'active'; } ?>">
+								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/join-us/list-careers'); ?>">&#9679; Careers</a>
+							</li>
+						</ul>
+					</li>
 					<li class="nav-item dropdown <?php if ($this->uri->segment(1) == "page" && $this->uri->segment(2) == "contact") { echo 'active'; } ?>">
 						<a href="#" class="nav-link has-dropdown"><i class="fas fa-file-signature"></i><span>Contact</span></a>
 						<ul class="dropdown-menu">
