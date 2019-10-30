@@ -17,6 +17,7 @@
 		height: 70px;
 		display: flex;
 		align-items: center;
+		margin-bottom: 20px;
 	}
 
 	@media (min-width: 576px) {
@@ -33,9 +34,9 @@
 		<div class="section-header">
 			<div class="section-header-breadcrumb">
 				<div class="breadcrumb-item"><a href="<?php echo base_url($lang . '/backoffice/dashboard'); ?>">Dashboard</a></div>
-				<div class="breadcrumb-item"><a href="#">Page: Services</a></div>
-				<div class="breadcrumb-item"><a href="<?php echo base_url($lang . '/backoffice/page/services/list-services'); ?>">Services</a></div>
-				<div class="breadcrumb-item active">Portfolios (Service: <?php echo unserialize($service->title)['th']; ?>)</div>
+				<div class="breadcrumb-item"><a href="#">Page: Join Us</a></div>
+				<div class="breadcrumb-item"><a href="<?php echo base_url($lang . '/backoffice/page/join-us/list-careers'); ?>">Careers</a></div>
+				<div class="breadcrumb-item active">Gallery (Career: <?php echo unserialize($career->title)['th']; ?>)</div>
 			</div>
 		</div>
 		<div class="section-body">
@@ -43,11 +44,11 @@
 				<div class="col-12">
 					<div class="card">
 						<div class="card-header">
-							<h4>List of Portfolio</h4>
+							<h4>List of Career Galleries</h4>
 							<div class="card-header-action">
 								<button class="btn btn-primary" id="btnSort"><i class="fas fa-sort"></i> Sort Images</button>
-								<input type="hidden" id="serviceId" value="<?php echo $service->id; ?>">
-								<a href="<?php echo base_url($lang . '/backoffice/page/services/list-service-ports/create/' . $service->id); ?>" class="btn btn-primary">
+								<input type="hidden" id="careerId" value="<?php echo $career->id; ?>">
+								<a href="<?php echo base_url($lang . '/backoffice/page/join-us/list-career-galleries/create/' . $career->id); ?>" class="btn btn-primary">
 									<i class="fas fa-plus"></i> Add
 								</a>
 							</div>
@@ -62,7 +63,7 @@
 							<?php } ?>
 
 							<div class="table-responsive">
-								<table class="table table-striped" id="ssmDataTable">
+								<table class="table table-striped" id="table-1">
 									<thead>
 									<tr>
 										<th class="text-center">#</th>
@@ -75,20 +76,20 @@
 									<tbody>
 									<?php
 										$counter = 1;
-										foreach ($portfolios as $portfolio) { ?>
+										foreach ($career_galleries as $career_gallery) { ?>
 											<tr>
 												<td class="text-center"><?php echo $counter++; ?></td>
-												<td><img src="<?php echo base_url('storage/uploads/images/services/' . unserialize($portfolio->img)['en']); ?>" width="120"></td>
-												<td><img src="<?php echo base_url('storage/uploads/images/services/' . unserialize($portfolio->img)['th']); ?>" width="120"></td>
-												<td><?php echo $portfolio->created_at; ?></td>
+												<td><img src="<?php echo base_url('storage/uploads/images/join_us/' . unserialize($career_gallery->img)['en']); ?>" width="120"></td>
+												<td><img src="<?php echo base_url('storage/uploads/images/join_us/' . unserialize($career_gallery->img)['th']); ?>" width="120"></td>
+												<td><?php echo $career_gallery->created_at; ?></td>
 												<td>
 													<div class="dropdown d-inline">
 														<button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 															<i class="fas fa-cog"></i> Manage
 														</button>
 														<div class="dropdown-menu">
-															<a class="dropdown-item has-icon" href="<?php echo base_url($lang . '/backoffice/page/services/list-service-ports/edit/' . $service->id . '/' . $portfolio->id); ?>"><i class="far fa-edit"></i> Edit</a>
-															<a class="dropdown-item has-icon" onclick="deletePortfolio('<?php echo base_url($lang . '/backoffice/page/services/list-service-ports/destroy/' . $portfolio->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
+															<a class="dropdown-item has-icon" href="<?php echo base_url($lang . '/backoffice/page/join-us/list-career-galleries/edit/' . $career_gallery->career_id . '/' . $career_gallery->id); ?>"><i class="far fa-edit"></i> Edit</a>
+															<a class="dropdown-item has-icon" onclick="deleteCareerGallery('<?php echo base_url($lang . '/backoffice/page/join-us/list-career-galleries/destroy/' . $career_gallery->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
 														</div>
 													</div>
 												</td>
@@ -134,14 +135,6 @@
 <!-- Page Specific JS File -->
 <script src="<?php echo base_url('resources/back_end/assets/js/page/modules-datatables.js'); ?>"></script>
 
-<script src="https://cdn.datatables.net/buttons/1.6.0/js/dataTables.buttons.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.flash.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-<script src="<?php echo base_url('resources/back_end/assets/js/pdfmake.min.js'); ?>"></script>
-<script src="<?php echo base_url('resources/back_end/assets/js/vfs_fonts.js'); ?>"></script>
-<script src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.html5.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.print.min.js"></script>
-
 <script>
     function reload() {
         setTimeout(function () {
@@ -149,7 +142,7 @@
         }, 1 * 1500)
     }
 
-    function deletePortfolio(url) {
+    function deleteCareerGallery(url) {
         swal({
             title: 'Are you sure ?',
             icon: 'warning',
@@ -188,11 +181,11 @@
     $(document).ready(function() {
         $('#btnSort').on('click', function() {
 
-            let $serviceId = $('#serviceId').val()
+            let $careerId = $('#careerId').val()
 
             $.ajax({
                 type: "POST",
-                url: window.base_url + '/' + window.langSite +'/backoffice/page/services/list-service-ports/ajax/get/portfolios/sort/show/' + $serviceId,
+                url: window.base_url + '/' + window.langSite + '/backoffice/page/join-us/list-career-galleries/ajax/get/career-galleries/sort/show/' + $careerId,
                 success: function(res) {
                     $('#custom-width-modal .modal-body').html(res.data)
                     $("#custom-width-modal #sortable").sortable({ placeholder: "ui-state-highlight" })
@@ -219,7 +212,7 @@
 
             $.ajax({
                 type: "POST",
-                url: window.base_url + '/' + window.langSite +'/backoffice/page/services/list-service-ports/ajax/get/portfolios/sort/update',
+                url: window.base_url + '/' + window.langSite + '/backoffice/page/join-us/list-career-galleries/ajax/get/career-galleries/sort/update',
                 data: {
                     id: selectedID,
                     sort: selectedSort

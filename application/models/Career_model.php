@@ -17,7 +17,7 @@ class Career_model extends CI_Model {
 			careers.num,
 			careers.content,
             careers.created_at,
-            (SELECT COUNT(*) FROM career_images WHERE careers.id = career_images.career_id) as counter
+            (SELECT COUNT(*) FROM career_galleries WHERE careers.id = career_galleries.career_id) as counter
 			FROM careers
 			ORDER BY careers.sort ASC
         ";
@@ -32,13 +32,6 @@ class Career_model extends CI_Model {
 		$query = $this->db->where('id', $id)->get('careers');
 
 		return $query->num_rows() > 0 ? $query->row() : false;
-	}
-
-	public function get_career_by_limit($limit)
-	{
-		$query = $this->db->order_by('sort', 'asc')->limit($limit)->get('careers');
-
-		return $query->num_rows() > 0 ? $query->result() : [];
 	}
 
     public function insert_career($data)
