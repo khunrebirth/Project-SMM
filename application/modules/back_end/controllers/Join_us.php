@@ -79,6 +79,7 @@ class Join_us extends MX_Controller
 		$input_meta_tag_description = ['en' => $this->input->post('meta_tag_description_en'), 'th' => $this->input->post('meta_tag_description_th')];
 		$input_meta_tag_keywords = ['en' => $this->input->post('meta_tag_keywords_en'), 'th' => $this->input->post('meta_tag_keywords_th')];
 		$input_img_og_twitter = ['en' => $meta_og_image_en, 'th' => $meta_og_image_th];
+		$input_content_left = ['en' => $this->input->post('content_left_en'), 'th' => $this->input->post('content_left_th')];
 
 		// Update Data
 		$update_page_content = $this->Join_us_page_model->update_join_us_page_by_id($id, [
@@ -86,6 +87,7 @@ class Join_us extends MX_Controller
 			'meta_tag_description' => serialize($input_meta_tag_description),
 			'meta_tag_keywords' => serialize($input_meta_tag_keywords),
 			'img_og_twitter' => serialize($input_img_og_twitter),
+			'content_left' => serialize($input_content_left),
 			'updated_at' => date('Y-m-d H:i:s')
 		]);
 
