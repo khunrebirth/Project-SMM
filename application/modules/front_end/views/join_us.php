@@ -1,4 +1,10 @@
+<style>
+    .sec-job-activity__type-6-item {
+        max-width: 720px;
+    }
+</style>
 <!-- Title -->
+
 <?php if ($banner) { ?>
 <section class="page-title main-hero-service" style="padding:0;">
 	<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/banners/' . unserialize($banner->img)[$lang]); ?>" alt="<?php echo unserialize($banner->img_title_alt)[$lang]; ?>">
@@ -12,28 +18,11 @@
 <section id="job">
     <div class="container-fluid ">
         <div class="title-team" style="text-align: center; padding: 4rem;">
-			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-team.png' : 'resources/front_end/images/title-team.png'); ?>" alt="" class="img-fluid">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-joinus.png' : 'resources/front_end/images/title-joinus.png'); ?>" alt="" class="img-fluid">
         </div>  
         <div class="row sec-job sec-job-info">
             <div class="col-sm-12 col-md-6">
-                <p> 
-                    We’re Omisians. We’re firm believers in the idea that “payment acceptance” 
-                    is fundamental to developing a successful business. We build tools and provide 
-                    services that power more than just payments; we help our clients to reach 
-                    more buyers around the world, unlocking their full potential.
-                </p>
-                <p> 
-                    We’re Omisians. We’re firm believers in the idea that “payment acceptance” 
-                    is fundamental to developing a successful business. We build tools and provide 
-                    services that power more than just payments; we help our clients to reach 
-                    more buyers around the world, unlocking their full potential.
-                </p>
-				<p>
-					We’re Omisians. We’re firm believers in the idea that “payment acceptance”
-					is fundamental to developing a successful business. We build tools and provide
-					services that power more than just payments; we help our clients to reach
-					more buyers around the world, unlocking their full potential.
-				</p>
+                <?php echo unserialize($join_us->content_left)[$lang]; ?>
             </div>
             <div class="col-sm-12 col-md-6 wrap-video">
             <a class="vdo-fancybox" data-fancybox href="https://www.youtube.com/embed/keqd4RUQK4s">
@@ -42,56 +31,56 @@
             </a>
             </div>
         </div>
-        <div class="row sec-job sec-job-activity">
+        <div class="row sec-job sec-job-activity sec-job-activity__type-6-item">
 			<h2 class="ttl-cmn-job"><?php echo lang('page_join_us_benefits'); ?></h2>
-            <div class="col-4 col-md-3 d-flex flex-column align-items-center">
+            <div class="col-6 col-md-4 d-flex flex-column align-items-center">
                 <figure>
-                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_time.png');?>" alt="">
+                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_security_02.png');?>">
                 </figure>
-                <p class="text-center">เวลาการทำงานที่ยืดยุ่น</p>
+                <p class="text-center"><?php echo lang('page_join_us_benefit_1'); ?></p>
             </div>
-            <div class="col-4 col-md-3 d-flex flex-column align-items-center">
+            <div class="col-6 col-md-4 d-flex flex-column align-items-center">
                 <figure>
-                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_dress.png');?>" alt="">
+                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_money_03.png');?>">
                 </figure>
-                <p class="text-center">แต่งตัวตามสบาย</p>
+                <p class="text-center"><?php echo lang('page_join_us_benefit_2'); ?></p>
             </div>
-            <div class="col-4 col-md-3 d-flex flex-column align-items-center">
+            <div class="col-6 col-md-4 d-flex flex-column align-items-center">
                 <figure>
-                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_money_03.png');?>" alt="">
+                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_date.png');?>">
                 </figure>
-                <p class="text-center">กองทุนสำรองเลี้ยงชีพ</p>
+                <p class="text-center"><?php echo lang('page_join_us_benefit_3'); ?></p>
             </div>
-            <div class="col-4 col-md-3 d-flex flex-column align-items-center">
+            <div class="col-6 col-md-4 d-flex flex-column align-items-center">
                 <figure>
-                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_security_02.png');?>" alt="">
+                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_people.png');?>">
                 </figure>
-                <p class="text-center">ประกันสังคม</p>
+                <p class="text-center"><?php echo lang('page_join_us_benefit_4'); ?></p>
             </div>
-            <div class="col-4 col-md-3 d-flex flex-column align-items-center">
+            <div class="col-6 col-md-4 d-flex flex-column align-items-center">
                 <figure>
-                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_people.png');?>" alt="">
+                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_money_02.png');?>">
                 </figure>
-                <p class="text-center">ประกันภัยกลุ่ม</p>
+                <p class="text-center"><?php echo lang('page_join_us_benefit_5'); ?></p>
             </div>
-            <div class="col-4 col-md-3 d-flex flex-column align-items-center">
+            <div class="col-6 col-md-4 d-flex flex-column align-items-center">
                 <figure>
-                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_date.png');?>" alt="">
+                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_money_04.png');?>">
                 </figure>
-                <p class="text-center">วันหยุดพักผ่อนประจำปี</p>
+                <p class="text-center"><?php echo lang('page_join_us_benefit_6'); ?></p>
             </div>
-			<div class="col-4 col-md-3 d-flex flex-column align-items-center">
+			<!-- <div class="col-4 col-md-3 d-flex flex-column align-items-center">
                 <figure>
-				    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_money_02.png');?>" alt="">
+				    <img src="<?php // echo base_url('resources/front_end/images/join_us/ico_money_02.png');?>">
                 </figure>
-				<p class="text-center">โบนัสประจำปี</p>
+				<p class="text-center"><?php // echo lang('page_join_us_benefit_7'); ?></p>
 			</div>
 			<div class="col-4 col-md-3 d-flex flex-column align-items-center">
                 <figure>
-				    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_money_04.png');?>" alt="">
+				    <img src="<?php // echo base_url('resources/front_end/images/join_us/ico_money_04.png');?>">
                 </figure>
-				<p class="text-center">ปรับเงินเดือนประจำปี</p>
-			</div>
+				<p class="text-center"><?php // echo lang('page_join_us_benefit_8'); ?></p>
+			</div> -->
         </div>
 
         <div class="row sec-job sec-job-img">

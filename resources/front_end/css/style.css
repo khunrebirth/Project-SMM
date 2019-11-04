@@ -267,6 +267,14 @@ a:hover {
 	line-height: 1.2em;
 	margin-bottom: 5px;
 	text-transform: capitalize;
+	text-align: center;
+}
+
+@media (max-width: 768px) {
+	.page-title h1 {
+		font-size: 40px;
+		padding: 15px;
+	}
 }
 
 .page-title:before {
@@ -288,7 +296,7 @@ a:hover {
 #home {
 	height: 100vh;
 	min-height: 500px;
-	background-image: url('http://localhost/social-dev/resources/front_end/images/brn_top_01.jpg');
+	background-image: url('http://192.168.1.7/web/khun/social.co.th/resources/front_end/images/brn_top_01.jpg');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -968,6 +976,12 @@ footer p {
 	opacity: 0;
 }
 
+@media (max-width: 768px) {
+	.ttl-header-hero {
+		width: 100%;
+	}
+}
+
 .ttl-header-hero.animated {
 	top: 50% !important;
 	opacity: 1;
@@ -1104,16 +1118,18 @@ footer p {
 		margin-bottom: 30px;
 	}
 }
+
 .sec-job-activity figure {
-    background: #127dbc;
-    padding: 15px;
-    margin: 5px;
-    border-radius: 15px;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
+	background: #127dbc;
+	padding: 15px;
+	margin: 5px;
+	border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px;
 }
+
 .sec-job-activity figure img {
 	width: 70px;
 	height: auto;

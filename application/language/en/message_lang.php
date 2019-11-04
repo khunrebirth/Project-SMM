@@ -78,6 +78,15 @@ $lang['page_join_us_form_txt_email'] = 'Email*';
 $lang['page_join_us_form_txt_phone'] = 'Phone*';
 $lang['page_join_us_form_txt_detail'] = 'Detail';
 $lang['page_join_us_button_send'] = 'Send';
+$lang['page_join_us_benefit_1'] = 'ประกันสังคม';
+$lang['page_join_us_benefit_2'] = 'กองทุนสำรองเลี้ยงชีพ 2.5%';
+$lang['page_join_us_benefit_3'] = 'ประกันกลุ่ม AIA';
+$lang['page_join_us_benefit_4'] = 'พักร้อน 6 วัน / ปี';
+$lang['page_join_us_benefit_5'] = 'โบนัส ประจำปี (ขึ้นอยู่กับผลประกอบการของบริษัท)';
+$lang['page_join_us_benefit_6'] = 'ปรับเงินเดือนประจำปี';
+$lang['page_join_us_benefit_7'] = 'โบนัสประจำปี';
+$lang['page_join_us_benefit_8'] = 'ปรับเงินเดือนประจำปี';
+
 
 /*
 | -------------------------------------------------------------------------
