@@ -62,7 +62,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-light fixed-top navbar-expand-md navbar-no-bg">
+<nav class="navbar navbar-light fixed-top navbar-expand-lg navbar-no-bg">
     <a class="navbar-brand" href="<?php echo base_url($lang . '/' . lang('menu_home')); ?>">
         <img src="<?php echo base_url('resources/front_end/images/logo-smm.png'); ?>" alt="logo-ssm">
     </a>
@@ -73,13 +73,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link <?php if ($this->uri->segment(0) == "home" || $this->uri->segment(0) == "หน้าแรก") { echo 'active'; }?>" href="<?php echo base_url($lang . '/' . lang('menu_home')); ?>"><?php echo lang('menu_home'); ?> <span class="sr-only">(current)</span></a>
+                <a class="nav-link text-md-center <?php if ($this->uri->segment(0) == "home" || $this->uri->segment(0) == "หน้าแรก") { echo 'active'; }?>" href="<?php echo base_url($lang . '/' . lang('menu_home')); ?>"><?php echo lang('menu_home'); ?> <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php if ($this->uri->segment(0) == "about" || $this->uri->segment(0) == "เกี่ยวกับเรา") { echo 'active'; }?>" href="<?php echo base_url($lang . '/' . lang('menu_about')); ?>"><?php echo lang('menu_about'); ?></a>
+                <a class="nav-link text-md-center <?php if ($this->uri->segment(0) == "about" || $this->uri->segment(0) == "เกี่ยวกับเรา") { echo 'active'; }?>" href="<?php echo base_url($lang . '/' . lang('menu_about')); ?>"><?php echo lang('menu_about'); ?></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php if ($this->uri->segment(0) == "services" || $this->uri->segment(0) == "บริการ") { echo 'active'; }?>  dropdown-toggle"
+                <a class="nav-link text-md-center <?php if ($this->uri->segment(0) == "services" || $this->uri->segment(0) == "บริการ") { echo 'active'; }?>  dropdown-toggle"
                 data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" ><?php echo lang('menu_service'); ?></a>
                 <div class="collapse wrap-sub-gnav" id="collapseExample" >
                     <ul class="list-sub-gnav row">
@@ -91,9 +91,9 @@
 							$services = $CI->Service_model->get_service_all();
 						?>
 						<?php foreach ($services as $service) { ?>
-							<li class="item col-lg-2 col-md-3 col-sm-12">
+							<li class="item col-lg-2 col-md-12 col-sm-12">
 								<a class="d-flex flex-column text-center" href="<?php echo base_url($lang . '/' . lang('menu_service') . '/' . unserialize($service->slug)[$lang] . '/' . hashids_encrypt($service->id)); ?>">
-									<img class="d-sm-none d-none img-gnavi d-md-block" src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service->img_on_navbar)[$lang]); ?>">
+									<img class="d-md-none d-none img-gnavi d-lg-block" src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service->img_on_navbar)[$lang]); ?>">
 									<span><?php echo unserialize($service->title)[$lang]; ?></span>
 								</a>
 							</li>
@@ -102,23 +102,29 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php if ($this->uri->segment(0) == "clients" || $this->uri->segment(0) == "ลูกค้าของเรา") { echo 'active'; }?>" href="<?php echo base_url($lang . '/' . lang('menu_our_clients')); ?>"><?php echo lang('menu_our_clients'); ?></a>
+                <a class="nav-link text-md-center <?php if ($this->uri->segment(0) == "clients" || $this->uri->segment(0) == "ลูกค้าของเรา") { echo 'active'; }?>" href="<?php echo base_url($lang . '/' . lang('menu_our_clients')); ?>"><?php echo lang('menu_our_clients'); ?></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php if ($this->uri->segment(0) == "blogs" || $this->uri->segment(0) == "บทความ") { echo 'active'; }?>" href="<?php echo base_url($lang . '/' . lang('menu_blogs')); ?>"><?php echo lang('menu_blogs'); ?></a>
+                <a class="nav-link text-md-center <?php if ($this->uri->segment(0) == "blogs" || $this->uri->segment(0) == "บทความ") { echo 'active'; }?>" href="<?php echo base_url($lang . '/' . lang('menu_blogs')); ?>"><?php echo lang('menu_blogs'); ?></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php if ($this->uri->segment(0) == "teams" || $this->uri->segment(0) == "ทีมงาน") { echo 'active'; }?>" href="<?php echo base_url($lang . '/' . lang('menu_teams')); ?>"><?php echo lang('menu_teams'); ?></a>
+                <a class="nav-link text-md-center <?php if ($this->uri->segment(0) == "teams" || $this->uri->segment(0) == "ทีมงาน") { echo 'active'; }?>" href="<?php echo base_url($lang . '/' . lang('menu_teams')); ?>"><?php echo lang('menu_teams'); ?></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php if ($this->uri->segment(0) == "join-us" || $this->uri->segment(0) == "ร่วมงานกับเรา") { echo 'active'; }?>" href="<?php echo base_url($lang . '/' . lang('menu_join_us_slug')); ?>"><?php echo lang('menu_join_us'); ?></a>
+                <a class="nav-link text-md-center <?php if ($this->uri->segment(0) == "join-us" || $this->uri->segment(0) == "ร่วมงานกับเรา") { echo 'active'; }?>" href="<?php echo base_url($lang . '/' . lang('menu_join_us_slug')); ?>"><?php echo lang('menu_join_us'); ?></a>
+            </li>
+            <li class="nav-item wrap-btn-centact">
+                <a class="btn btn-link btn__contact btn__contact--type-icon" href="tel:021939062"><i class="fas fa-phone-alt"></i></a>
+            </li>
+            <li class="nav-item wrap-btn-centact">
+                <a class="btn btn-link btn__contact btn__contact--type-icon" target="_blank" href="http://line.me/ti/p/~todayspark"><i class="far fa-comment-dots"></i></a>
             </li>
             <li class="nav-item wrap-btn-centact">
                 <a class="btn btn-link btn__contact" href="<?php echo base_url($lang . '/' . lang('menu_contact')); ?>"><?php echo lang('menu_contact'); ?></a>
             </li>
-            <li class="nav-item wrap-btn-centact wrap-btn__tel ">
+            <!-- <li class="nav-item wrap-btn-centact wrap-btn__tel ">
                 <a class="btn__tel" href="tel:021939062"><i class="fas fa-phone-alt"></i> <?php echo lang('page_contact_phone'); ?>. 0-2193-9062</a>
-            </li>
+            </li> -->
             <li class="nav-item">
                 <ul class="list-lang">
                     <li><a href="<?php echo base_url('th'); ?>">TH</a></li>

@@ -53,6 +53,49 @@
 		border-color: #00264c;
 
 	}
+	.ttl-blog-relate {
+		padding: 15px 0;
+	}
+	.txt-date-blog {
+		text-align: right;
+    	color: #127dbc;
+	}
+	
+	.wrap-tag-blog {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 20px 0 20px;
+		margin: 20px 0 30px;
+		border-top: 1px solid #dadada;;
+		border-bottom: 1px solid #dadada;;
+	}
+	.ttl-tag-blog {
+		font-size: 20px;
+		margin-right: 20px;
+	}
+	.list-tag-blog {
+		display: flex;
+		justify-content: flex-start;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		align-items: center;
+		flex: 0 1 auto;
+		flex-wrap: wrap;
+	}
+	.list-tag-blog li {
+		padding: 0 10px;
+		position: relative;
+	}
+	.list-tag-blog li::after {
+		content: ',';
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+	.list-tag-blog li:last-of-type::after {
+		display: none;
+	}
 </style>
 
 <!-- Title -->
@@ -84,11 +127,68 @@
 			</div>
 			<div class="col-lg-9 col-md-12 col-sm-12">
 				<h3 class="text-center"><?php echo unserialize($blog->title)[$lang]; ?></h3>
+				<p class="txt-date-blog"><i class="far fa-calendar-alt"></i> October 24,2019</p>
 				<figure class="text-center">
 					<img src="<?php echo base_url('storage/uploads/images/blogs/' . unserialize($blog->img)[$lang]); ?>" class="img-fluid" alt="">
 				</figure>
 				<?php echo unserialize($blog->body)[$lang]; ?>
+				<div class="wrap-tag-blog">
+					<span class="ttl-tag-blog"><i class="fas fa-tags"></i> TAG</span>
+					<ul class="list-tag-blog">
+						<li><a href="#">Online Marketing</a></li>
+						<li><a href="#">E-Mail</a></li>
+						<li><a href="#">Carousel ads</a></li>
+						<li><a href="#">Hashtag</a></li>
+						<li><a href="#">Instagram</a></li>
+						<li><a href="#">Ads</a></li>
+					</ul>
+				</div>
+				<div class="sec-blog-relate">
+					<h3 class="ttl-blog-relate">บทความแนะนำ</h3>
+					<div class="row row-60 row-sm">
+						<div class="col-xs-12 col-sm-6 col-lg-4" style="visibility: visible; animation-name: fadeInLeft;">
+							<article class="blog blog__modern">
+								<a class="blog__modern--figure" href="http://localhost/social-dev/th/บทความ/seo---sem/สื่อสารกับผู้คนผ่าน-facebook-stories/jR">
+									<img src="http://localhost/social-dev/storage/uploads/images/blogs/smm_facebook-stories-contact_1572237952.jpg" alt="" width="370" height="307">
+									<div class="blog__modern--time">
+										<time datetime="2019-08-28 15:21:52"><span class="blog__modern--time--month">08</span><span class="blog__modern--time--number">28</span></time>
+									</div>
+								</a>
+								<h4 class="blog__modern--title"><a href="#">สื่อสารกับผู้คนผ่าน Facebook Stories</a></h4>
+								<p class="blog__modern--text">
+									ฟีเจอร์ Stories ของทาง Facebook เพิ่งจะมีการเพิ่มเข้ามาเมื่อไม่นานแต่กลับไม่เป็นที่นิยมเหมือนกับ Stories ของฝั่ง Instagram ที่มีมาก่อน แต่ในช่วงระยะหลังมานี้มีผู้ใช้งาน Facebook Stories เพิ่มขึ้นมาก							</p>
+							</article>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-lg-4" style="visibility: visible; animation-name: fadeInLeft;">
+							<article class="blog blog__modern">
+								<a class="blog__modern--figure" href="http://localhost/social-dev/th/บทความ/seo---sem/สื่อสารกับผู้คนผ่าน-facebook-stories/jR">
+									<img src="http://localhost/social-dev/storage/uploads/images/blogs/smm_facebook-stories-contact_1572237952.jpg" alt="" width="370" height="307">
+									<div class="blog__modern--time">
+										<time datetime="2019-08-28 15:21:52"><span class="blog__modern--time--month">08</span><span class="blog__modern--time--number">28</span></time>
+									</div>
+								</a>
+								<h4 class="blog__modern--title"><a href="#">สื่อสารกับผู้คนผ่าน Facebook Stories</a></h4>
+								<p class="blog__modern--text">
+									ฟีเจอร์ Stories ของทาง Facebook เพิ่งจะมีการเพิ่มเข้ามาเมื่อไม่นานแต่กลับไม่เป็นที่นิยมเหมือนกับ Stories ของฝั่ง Instagram ที่มีมาก่อน แต่ในช่วงระยะหลังมานี้มีผู้ใช้งาน Facebook Stories เพิ่มขึ้นมาก							</p>
+							</article>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-lg-4" style="visibility: visible; animation-name: fadeInLeft;">
+							<article class="blog blog__modern">
+								<a class="blog__modern--figure" href="http://localhost/social-dev/th/บทความ/seo---sem/สื่อสารกับผู้คนผ่าน-facebook-stories/jR">
+									<img src="http://localhost/social-dev/storage/uploads/images/blogs/smm_facebook-stories-contact_1572237952.jpg" alt="" width="370" height="307">
+									<div class="blog__modern--time">
+										<time datetime="2019-08-28 15:21:52"><span class="blog__modern--time--month">08</span><span class="blog__modern--time--number">28</span></time>
+									</div>
+								</a>
+								<h4 class="blog__modern--title"><a href="#">สื่อสารกับผู้คนผ่าน Facebook Stories</a></h4>
+								<p class="blog__modern--text">
+									ฟีเจอร์ Stories ของทาง Facebook เพิ่งจะมีการเพิ่มเข้ามาเมื่อไม่นานแต่กลับไม่เป็นที่นิยมเหมือนกับ Stories ของฝั่ง Instagram ที่มีมาก่อน แต่ในช่วงระยะหลังมานี้มีผู้ใช้งาน Facebook Stories เพิ่มขึ้นมาก							</p>
+							</article>
+						</div>
+					</div>
+				</div>
 			</div>
+
 		</div>
 	</div>
 </section>

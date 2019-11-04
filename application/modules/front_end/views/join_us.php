@@ -63,15 +63,7 @@
                     <img src="<?php echo base_url('resources/front_end/images/join_us/ico_date.png');?>" alt="">                </figure>
                 <p class="text-center"><?php echo lang('page_join_us_benefit_6'); ?></p>
             </div>
-			<!-- <div class="col-4 col-md-3 d-flex flex-column align-items-center">
-                <figure>
-				    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_money_02.png');?>" alt="">                </figure>
-				<p class="text-center">âº¹ÑÊ»ÃÐ¨Ó»Õ</p>			</div>
-			<div class="col-4 col-md-3 d-flex flex-column align-items-center">
-                <figure>
-				    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_money_04.png');?>" alt="">                </figure>
         </div>
-
         <div class="row sec-job sec-job-img">
 <!--            <ul class="list-img-team">-->
 <!--                <li>-->
