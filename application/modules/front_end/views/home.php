@@ -165,7 +165,7 @@
 <!-- portfolio -->
 <section id="portfolio" class="wow fadeInUp">
 	<div class="container-fluid">
-		<div class="title-client" style="text-align: center; padding: 4rem;">
+		<div class="title-client" style="text-align: center; padding: 0 4rem 4rem;">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-cilent.png' : 'resources/front_end/images/title-cilent.png'); ?>"
 				class="img-fluid">
 		</div>
@@ -402,7 +402,7 @@
 				class="img-fluid">
 		</div>
 		<div class="row">
-			<div class="col-xs-12 col-md-6 col-lg-6 ">
+			<div class="col-xs-12 col-md-7 col-lg-7 ">
 				<div class="row">
 					<div class="col-xs-12 col-md-4 col-lg-4 d-none d-sm-block">
 						<img src="https://www.anchorwave.com/wp-content/uploads/2016/04/google-partner358x138.png"
@@ -450,7 +450,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-12 col-md-6 col-lg-6">
+			<div class="col-xs-12 col-md-5 col-lg-5">
 
 			</div>
 		</div>

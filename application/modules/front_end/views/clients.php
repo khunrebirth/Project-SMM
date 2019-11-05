@@ -14,25 +14,27 @@
         <div class="title-client" style="text-align: center; padding: 4rem;">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-cilent.png' : 'resources/front_end/images/title-cilent.png'); ?>" alt="" class="img-fluid">
         </div>
-        <!-- tab -->
-        <div class="row justify-content-center">
-            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8">
-                <!-- Nav tabs -->
-                <ul class="nav nav-fill client__navs bg-gray pt-2 pb-2">
-					<?php foreach ($client_categories as $client_category) { ?>
-						<li class="nav-item">
-							<a class="nav-link client__navs--border--right pt-0 pb-0" id="pills-<?php echo $client_category->id; ?>-tab" data-toggle="pill" href="#pills-<?php echo $client_category->id; ?>" role="tab" aria-controls="pills-<?php echo $client_category->id; ?>"><?php echo unserialize($client_category->title)[$lang]; ?></a>
-						</li>
-					<?php } ?>
-                </ul>
-            </div>
-        </div>
-        <!-- content tab-->
-        <div class="tab-content" id="pills-tabContent">
-			<?php foreach ($clients as $client) { ?>
-				<div class="tab-pane fade" id="pills-<?php echo $client['category_id']; ?>" role="tabpanel" aria-labelledby="pills-<?php echo $client['category_id']; ?>-tab">
+		<div class="row sec-client">
+			<div class="col-3">
+				<ul class="list-catagory-client">
+					<li><h3 class="ttl-catagory-client text-center">catagory</h3></li>
+					<li><a href="#all">0001</a></li>
+					<li><a href="#col-md-3">0002</a></li>
+					<li><a href="#col-md-4">0003</a></li>
+					<li><a href="">0004</a></li>
+					<li><a href="">0005</a></li>
+					<li><a href="">0006</a></li>
+					<li><a href="">0007</a></li>
+					<li><a href="">0008</a></li>
+					<li><a href="">0009</a></li>
+					<li><a href="">0010</a></li>
+
+				</ul>
+			</div>
+			<div class="col-9 wrap-logo">
+				<?php foreach ($clients as $client) { ?>
 					<?php if (count($client['clients']) > 0) { ?>
-						<div class="my-3 wrap-client-slide owl-carousel owl-theme">
+						<div class="my-3 wrap-client-slide">
 							<?php 
 								$counter = 0;
 								$totle_client = count($client['clients']);
@@ -44,8 +46,9 @@
 								<?php if ($counter == 0) { ?>
 									<div class="row">
 								<?php } ?>
-										<div class="col-md-<?php if ($client_specific['category_id'] == 1) { echo '2'; } else { echo '3'; } ?> my-3">
+										<div class="item-client col-md-<?php if ($client_specific['category_id'] == 1) { echo '3'; } else { echo '4'; } ?> my-3">
 											<img src="<?php echo base_url('storage/uploads/images/clients/' . $client_specific['img']) ?>" alt="<?php echo $client_specific['title']; ?>" class="img-fluid img-clients">
+											<span class="txt-decs-client text-center col-12 d-block">ใช้บริการXXX,XXX,XXX</span>
 										</div>
 								<?php $counter++; ?>
 								<?php if ($counter == $count_point) { ?>
@@ -57,9 +60,9 @@
 							<?php } ?>
 						</div>
 					<?php } ?>
-				</div>
-			<?php } ?>
-        </div>
+				<?php } ?>
+			</div>
+		</div>
     </div>
 </section>
 
@@ -72,15 +75,31 @@
     $(function () {
         $(".client__navs a:first").tab('show');
 
-		$('.wrap-client-slide').owlCarousel({
-            items: 1,
-            nav: false,
-            loop: true,
-            dots: true,
-            margin: 15,
-            autoplay: false,
-            autoplayTimeout: 2000,
-            autoplaySpeed: 1000,
-        });
+		// $('.wrap-client-slide').owlCarousel({
+        //     items: 1,
+        //     nav: false,
+        //     loop: true,
+        //     dots: true,
+        //     margin: 15,
+        //     autoplay: false,
+        //     autoplayTimeout: 2000,
+        //     autoplaySpeed: 1000,
+        // });
+
+		$('.list-catagory-client li a').click(function(e){
+			e.preventDefault();
+			if(!$(this).hasClass('is-active')){
+				var hash = $(this).attr('href');
+				var filter = hash.split("#")[1];
+				if(filter == 'all'){
+					$('.item-client').fadeIn( "slow" );
+				}else{
+					$('.item-client').fadeOut( "slow" );
+					$('.'+filter).fadeIn( "slow" );
+				}
+			}
+			$('.list-catagory-client li a').removeClass('is-active');
+			$(this).addClass('is-active');
+		});
     });
 </script>

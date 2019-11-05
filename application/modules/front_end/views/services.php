@@ -1,7 +1,7 @@
 <!-- CSS Libraries -->
 <script src="https://unpkg.com/popper.js@1"></script>
 <script src="https://unpkg.com/tippy.js@5"></script>
-<link rel="stylesheet" href="https://unpkg.com/tippy.js@5/dist/backdrop.css"/>
+<link rel="stylesheet" href="https://unpkg.com/tippy.js@5/dist/backdrop.css" />
 
 <!-- Push Custom Style -->
 <style>
@@ -117,6 +117,7 @@
 	}
 
 	@media (min-width: 576px) {
+
 		.ttl-service-01,
 		.ttl-service-02 {
 			font-size: 20px;
@@ -126,6 +127,7 @@
 	}
 
 	@media (min-width: 768px) {
+
 		.ttl-service-01,
 		.ttl-service-02 {
 			font-size: 20px;
@@ -135,6 +137,7 @@
 	}
 
 	@media (min-width: 992px) {
+
 		.ttl-service-01,
 		.ttl-service-02 {
 			margin-bottom: 20px;
@@ -151,6 +154,7 @@
 	}
 
 	@media (min-width: 1200px) {
+
 		.ttl-service-01,
 		.ttl-service-02 {
 			margin-bottom: 20px;
@@ -196,58 +200,45 @@
 		padding: 10px 0px 10px !important;
 	}
 
-	.tippy-tooltip[data-placement^=top] > .tippy-arrow {
-		bottom: -20px;
+	.tippy-tooltip[data-placement^=top]>.tippy-arrow {
+		bottom: -29px;
 		border-top-color: #b4b4b4 !important;
 	}
 
-	.tippy-tooltip[data-placement^=bottom] > .tippy-arrow {
+	.tippy-tooltip[data-placement^=bottom]>.tippy-arrow {
 		border-bottom-color: #b4b4b4 !important;
-		top: -18px;
+		top: -28px;
 	}
 
 	.wrap-slide-port .owl-nav .owl-prev {
 		left: 0;
-		background: url(<?php echo base_url('resources/front_end/images/service/bw.png');?>) !important;
+		background: url(<?php echo base_url('resources/front_end/images/service/bw.png');
+		?>) !important;
 	}
 
 	.wrap-slide-port .owl-nav .owl-next {
 		right: 0;
-		background: url(<?php echo base_url('resources/front_end/images/service/fw.png'); ?>) !important;
+		background: url(<?php echo base_url('resources/front_end/images/service/fw.png');
+		?>) !important;
 	}
+
 </style>
 
 <!-- Title -->
 <section class="page-title main-hero-service" style="padding:0;">
-	<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/banners/' . unserialize($service['banner_img'])[$lang]); ?>" alt="<?php echo unserialize($service['banner_img_title_alt'])[$lang]; ?>">
+	<img class="img-fluid"
+		src="<?php echo base_url('storage/uploads/images/banners/' . unserialize($service['banner_img'])[$lang]); ?>"
+		alt="<?php echo unserialize($service['banner_img_title_alt'])[$lang]; ?>">
 	<div class="ttl-header-hero wow">
 		<h1><?php echo unserialize($service['banner_title'])[$lang]; ?></h1>
 	</div>
 </section>
 
-<?php if (count($service['portfolios']) > 0) { ?>
-<section class="sec-service-port row">
-	<div class="col row sec-service-port--inner">
-		<div class=" col-md-12 col-lg-3">
-			<img class="img-fluid" src="<?php echo base_url('resources/front_end/images/portfolio.png') ?>" alt="">
-		</div>
-		<div class=" col-md-12  col-lg-9">
-			<div class="wrap-slide-port owl-carousel owl-theme">
-				<?php foreach ($service['portfolios'] as $portfolio) { ?>
-					<div class="item">
-						<img src="<?php echo base_url('storage/uploads/images/services/' . unserialize($portfolio->img)[$lang]) ?>" alt="<?php echo unserialize($portfolio->img_title_alt)[$lang]; ?>">
-					</div>
-				<?php } ?>
-			</div>
-		</div>
-	</div>
-</section>
-<?php } ?>
-
 <section class="sec-service-content">
 	<div class="row wrap-service-content mb-5">
 		<div class="col-lg-4 col-sm-12 text-center">
-			<img class="img-fluid" style="width:100%;" src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service['content_top_img'])[$lang]); ?>">
+			<img class="img-fluid" style="width:100%;"
+				src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service['content_top_img'])[$lang]); ?>">
 		</div>
 		<div class="col-lg-8 col-sm-12 d-flex justify-content-end">
 			<div class="col-lg-11 col-sm-12 d-flex justify-content-between flex-column">
@@ -260,14 +251,16 @@
 
 				</div>
 				<p class="text-sm-center text-lg-left mb-0">
-					<button class="btn btn-primary btn-tooltip"><?php echo unserialize($service['text_button'])[$lang]; ?></button>
+					<button
+						class="btn btn-primary btn-tooltip"><?php echo unserialize($service['text_button'])[$lang]; ?></button>
 				</p>
 			</div>
 		</div>
 	</div>
 	<div class="row wrap-service-content mb-5 flex-row-reverse flex-sm-column flex-lg-row-reverse">
 		<div class="col-lg-4 col-sm-12 text-center">
-			<img class="img-fluid" style="width:100%;" src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service['content_bottom_img'])[$lang]); ?>" >
+			<img class="img-fluid" style="width:100%;"
+				src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service['content_bottom_img'])[$lang]); ?>">
 		</div>
 		<div class="col-lg-8 col-sm-12 d-flex">
 			<div class="col-11 col-lg-11 col-sm-12 d-flex justify-content-between flex-column">
@@ -280,7 +273,8 @@
 
 				</div>
 				<p class="text-sm-center text-lg-left mb-0">
-					<button class="btn btn-primary btn-tooltip"><?php echo unserialize($service['text_button'])[$lang]; ?></button>
+					<button
+						class="btn btn-primary btn-tooltip"><?php echo unserialize($service['text_button'])[$lang]; ?></button>
 				</p>
 			</div>
 		</div>
@@ -288,33 +282,178 @@
 </section>
 
 <!--<section style="padding:0;">-->
-<!--	<img class="img-fluid" src="--><?php //echo base_url('resources/front_end/images/service/banner-footer.jpg');?><!--" alt="">-->
+<!--	<img class="img-fluid" src="--><?php //echo base_url('resources/front_end/images/service/banner-footer.jpg');?>
+<!--" alt="">-->
 <!--</section>-->
 
 <div class="" id="template" style="display:none;">
-	<h2 class="text-secondary contact__form--title"><?php echo lang('page_contact_title_first'); ?><span><?php echo lang('page_contact_title_center'); ?></span><?php echo lang('page_contact_title_end'); ?></h2>
+	<h2 class="text-secondary contact__form--title">
+		<?php echo lang('page_contact_title_first'); ?><span><?php echo lang('page_contact_title_center'); ?></span><?php echo lang('page_contact_title_end'); ?>
+	</h2>
 	<p class="text-secondary contact__form--body mb-4"><?php echo lang('page_contact_desc'); ?></p>
 	<form class="mt-4" action="<?php echo base_url($lang . '/'. 'contact/send') ?>" method="post">
 		<div class="form-group">
-			<input type="text" class="form-control" name="name" placeholder="<?php echo lang('page_contact_form_txt_name'); ?>" required>
+			<input type="text" class="form-control" name="name"
+				placeholder="<?php echo lang('page_contact_form_txt_name'); ?>" required>
 		</div>
 		<div class="form-group">
-			<input type="text" class="form-control" name="email" placeholder="<?php echo lang('page_contact_form_txt_email'); ?>" required>
+			<input type="text" class="form-control" name="email"
+				placeholder="<?php echo lang('page_contact_form_txt_email'); ?>" required>
 		</div>
 		<div class="form-group">
-			<input type="text" class="form-control" name="company" placeholder="<?php echo lang('page_contact_form_txt_company'); ?>" required>
+			<input type="text" class="form-control" name="company"
+				placeholder="<?php echo lang('page_contact_form_txt_company'); ?>" required>
 		</div>
 		<div class="form-group">
-			<input type="text" class="form-control" name="phone" placeholder="<?php echo lang('page_contact_form_txt_phone'); ?>" required>
+			<input type="text" class="form-control" name="phone"
+				placeholder="<?php echo lang('page_contact_form_txt_phone'); ?>" required>
 		</div>
 		<div class="form-group">
-			<textarea class="form-control" rows="5" name="detail" placeholder="<?php echo lang('page_contact_form_txt_detail'); ?>"></textarea>
+			<textarea class="form-control" rows="5" name="detail"
+				placeholder="<?php echo lang('page_contact_form_txt_detail'); ?>"></textarea>
 		</div>
 		<div class="col text-center">
-			<button type="submit" class="btn btn-primary text-center"><?php echo lang('page_contact_button_send'); ?></button>
+			<button type="submit"
+				class="btn btn-primary text-center"><?php echo lang('page_contact_button_send'); ?></button>
 		</div>
 	</form>
 </div>
+
+<?php if (count($service['portfolios']) > 0) { ?>
+<section class="sec-service-port row">
+	<div class="col row sec-service-port--inner">
+		<div class="col-md-12 col-lg-3 d-flex  justify-content-start justify-content-lg-end">
+			<img class="img-fluid" src="<?php echo base_url('resources/front_end/images/title-our-client.png') ?>"
+				alt="">
+		</div>
+		<div class=" col-md-12  col-lg-9">
+			<div class="wrap-slide-port owl-carousel owl-theme">
+				<?php foreach ($service['portfolios'] as $portfolio) { ?>
+				<div class="item">
+					<img src="<?php echo base_url('storage/uploads/images/services/' . unserialize($portfolio->img)[$lang]) ?>"
+						alt="<?php echo unserialize($portfolio->img_title_alt)[$lang]; ?>">
+				</div>
+				<?php } ?>
+			</div>
+		</div>
+	</div>
+</section>
+<?php } ?>
+
+<section class="wow fadeInUp" style="overflow: hidden; visibility: visible; animation-name: fadeInUp;">
+	<div class="container-fluid text-center sec-home-service">
+		<div class="row">
+			<a href="http://localhost/social-dev/en/services/social-media-marketing/jR"
+				class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05 ico-service">
+
+				<div class="wrap-icon-flip">
+					<img src="http://localhost/social-dev/storage/uploads/images/services/ico_facebook_01.png"
+						class="img-fluid service__icon--resize">
+				</div>
+				<img src="http://localhost/social-dev/storage/uploads/images/services/ico_facebook_01.png"
+					class="img-fluid service__icon--resize ico-service__img">
+
+				<p class="service__title--body">
+					Social Media Marketing </p>
+			</a>
+			<a href="http://localhost/social-dev/en/services/search-engine-marketing/k5"
+				class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05 ico-service">
+
+				<div class="wrap-icon-flip">
+					<img src="http://localhost/social-dev/storage/uploads/images/services/ico_seo_01.png"
+						class="img-fluid service__icon--resize">
+				</div>
+				<img src="http://localhost/social-dev/storage/uploads/images/services/ico_seo_01.png"
+					class="img-fluid service__icon--resize ico-service__img">
+
+				<p class="service__title--body">
+					Search Engine Marketing </p>
+			</a>
+			<a href="http://localhost/social-dev/en/services/line-marketing/l5"
+				class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05 ico-service">
+
+				<div class="wrap-icon-flip">
+					<img src="http://localhost/social-dev/storage/uploads/images/services/ico_line_01.png"
+						class="img-fluid service__icon--resize">
+				</div>
+				<img src="http://localhost/social-dev/storage/uploads/images/services/ico_line_01.png"
+					class="img-fluid service__icon--resize ico-service__img">
+
+				<p class="service__title--body">
+					Line Marketing </p>
+			</a>
+			<a href="http://localhost/social-dev/en/services/search-engine-optimization/mO"
+				class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05 ico-service">
+
+				<div class="wrap-icon-flip">
+					<img src="http://localhost/social-dev/storage/uploads/images/services/ico_sem_01.png"
+						class="img-fluid service__icon--resize">
+				</div>
+				<img src="http://localhost/social-dev/storage/uploads/images/services/ico_sem_01.png"
+					class="img-fluid service__icon--resize ico-service__img">
+
+				<p class="service__title--body">
+					Search Engine Optimization </p>
+			</a>
+			<a href="http://localhost/social-dev/en/services/creative-production/nR"
+				class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05 ico-service">
+
+				<div class="wrap-icon-flip">
+					<img src="http://localhost/social-dev/storage/uploads/images/services/ico_production_01.png"
+						class="img-fluid service__icon--resize">
+				</div>
+				<img src="http://localhost/social-dev/storage/uploads/images/services/ico_production_01.png"
+					class="img-fluid service__icon--resize ico-service__img">
+
+				<p class="service__title--body">
+					Creative &amp; Production </p>
+			</a>
+			<a href="http://localhost/social-dev/en/services/website-design/oj"
+				class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05 ico-service">
+
+				<div class="wrap-icon-flip">
+					<img src="http://localhost/social-dev/storage/uploads/images/services/ico_web_01.png"
+						class="img-fluid service__icon--resize">
+				</div>
+				<img src="http://localhost/social-dev/storage/uploads/images/services/ico_web_01.png"
+					class="img-fluid service__icon--resize ico-service__img">
+
+				<p class="service__title--body">
+					Website design </p>
+			</a>
+			<a href="http://localhost/social-dev/en/services/บรการใหคำแนะนำปรกษา-และวางแผนการตลาดออนไลน/p2"
+				class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05 ico-service">
+
+				<div class="wrap-icon-flip">
+					<img src="http://localhost/social-dev/storage/uploads/images/services/ico_consult_01.png"
+						class="img-fluid service__icon--resize">
+				</div>
+				<img src="http://localhost/social-dev/storage/uploads/images/services/ico_consult_01.png"
+					class="img-fluid service__icon--resize ico-service__img">
+
+				<p class="service__title--body">
+					บริการให้คำแนะนำปรึกษา และวางแผนการตลาดออนไลน์ </p>
+			</a>
+			<a href="http://localhost/social-dev/en/services/speaker/q2"
+				class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05 ico-service">
+
+				<div class="wrap-icon-flip">
+					<img src="http://localhost/social-dev/storage/uploads/images/services/ico_speak_01.png"
+						class="img-fluid service__icon--resize">
+				</div>
+				<img src="http://localhost/social-dev/storage/uploads/images/services/ico_speak_01.png"
+					class="img-fluid service__icon--resize ico-service__img">
+
+				<p class="service__title--body">
+					Speaker </p>
+			</a>
+			<a href="#" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05 js-scroll-contact">
+				<img src="http://localhost/social-dev/resources/front_end/images/ico_contact_01.png" alt=""
+					class="img-fluid service__icon--resize">
+			</a>
+		</div>
+	</div>
+</section>
 
 <!-- SiteMap -->
 <?php include 'layouts/sitemap.php'; ?>
@@ -322,44 +461,45 @@
 
 <!-- Push Custom Scripts -->
 <script>
-    $(function () {
+	$(function () {
 
-        /** Config Page **/
+		/** Config Page **/
 
 		// Tippy
-        tippy('.btn-tooltip', {
-            interactive: true,
-            theme: 'light',
-            trigger: 'click',
-            content: document.getElementById('template').innerHTML,
-            animation: 'fade',
-            placement: "top",
-            arrow: true,
-        });
+		tippy('.btn-tooltip', {
+			interactive: true,
+			theme: 'light',
+			trigger: 'click',
+			content: document.getElementById('template').innerHTML,
+			animation: 'fade',
+			placement: "top",
+			arrow: true,
+		});
 
-        // Owl Carousel
-        $('.wrap-slide-port').owlCarousel({
-            items: 5,
-            nav: true,
-            loop: true,
-            dots: false,
-            margin: 15,
-            autoplay: true,
-            autoplayTimeout: 2000,
-            autoplaySpeed: 1000,
-            responsive: {
-                0: {
-                    items: 3,
-                    nav: false,
-                },
-                576: {
-                    items: 3,
-                    nav: true,
-                },
-                1000: {
-                    items: 5
-                }
-            }
-        });
-    });
+		// Owl Carousel
+		$('.wrap-slide-port').owlCarousel({
+			items: 5,
+			nav: true,
+			loop: true,
+			dots: false,
+			margin: 15,
+			autoplay: true,
+			autoplayTimeout: 2000,
+			autoplaySpeed: 1000,
+			responsive: {
+				0: {
+					items: 3,
+					nav: false,
+				},
+				576: {
+					items: 3,
+					nav: true,
+				},
+				1000: {
+					items: 5
+				}
+			}
+		});
+	});
+
 </script>

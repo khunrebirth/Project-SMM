@@ -119,6 +119,16 @@
 		max-width: 1440px;
 		margin: 0 auto;
 	}
+	.list-catagory-client--type-top {
+		top: -30%;
+	}
+		
+	@media (max-width: 992px) {
+		.list-catagory-client--type-top {
+			top: 0;
+			margin: 0 0 30px;
+		}
+	}
 </style>
 
 <!-- Title -->
@@ -138,32 +148,49 @@
 			<div class="title-client col-12" style="text-align: center; padding: 4rem;">
 				<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-blog.png' : 'resources/front_end/images/title-blog.png'); ?>" alt="" class="img-fluid">
 			</div>
-			<div class="box-blog_catagory col-12">
+			<!-- <div class="box-blog_catagory col-12">
 				<ul class="list-blog_catagory row">
-					<?php foreach ($blog_categories as $blog_category) { ?>
+					<?php // foreach ($blog_categories as $blog_category) { ?>
 						<li class="col-lg-2 col-md-3 col-sm-12"><a href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/' . unserialize($blog_category->slug)[$lang] . '/' . hashids_encrypt($blog_category->id)); ?>"><?php echo unserialize($blog_category->title)[$lang]; ?></a></li>
-					<?php } ?>
+					<?php // } ?>
+				</ul>
+			</div> -->
+		</div>
+		<div class="sec-blogs-01 row">
+			<div class="col-lg-3">
+				<ul class="list-catagory-client list-catagory-client--type-top">
+					<li><h3 class="ttl-catagory-client text-center">catagory</h3></li>
+					<li><a href="">0001</a></li>
+					<li><a href="">0002</a></li>
+					<li><a href="">0003</a></li>
+					<li><a href="">0004</a></li>
+					<li><a href="">0005</a></li>
+					<li><a href="">0006</a></li>
+					<li><a href="">0007</a></li>
+					<li><a href="">0008</a></li>
+					<li><a href="">0009</a></li>
+					<li><a href="">0010</a></li>
 				</ul>
 			</div>
-		</div>
-		<div class="sec-blogs-01">
-			<div class="row row-60 row-sm">
-				<?php foreach ($blogs as $blog) { ?>
-					<div class="col-xs-12 col-sm-6 col-lg-3" style="visibility: visible; animation-name: fadeInLeft;">
-						<article class="blog blog__modern">
-							<a class="blog__modern--figure" href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/' . unserialize($blog->blog_category_slug)[$lang] . '/' .  unserialize($blog->slug)[$lang] . '/' . hashids_encrypt($blog->id)); ?>">
-								<img src="<?php echo base_url('storage/uploads/images/blogs/' . unserialize($blog->img)[$lang]) ?>" alt="<?php echo unserialize($blog->img_title_alt)[$lang]; ?>" width="370" height="307">
-								<div class="blog__modern--time">
-									<time datetime="<?php echo $blog->created_at; ?>"><span class="blog__modern--time--month"><?php echo date_format(date_create($blog->created_at), 'm'); ?></span><span class="blog__modern--time--number"><?php echo date_format(date_create($blog->created_at), 'd'); ?></span></time>
-								</div>
-							</a>
-							<h4 class="blog__modern--title"><a href="#"><?php echo unserialize($blog->title)[$lang]; ?></a></h4>
-							<p class="blog__modern--text">
-								<?php echo unserialize($blog->description_section)[$lang]; ?>
-							</p>
-						</article>
-					</div>
-				<?php } ?>
+			<div class="col-lg-9">
+				<div class="row row-60 row-sm">
+					<?php foreach ($blogs as $blog) { ?>
+						<div class="col-xs-12 col-sm-6 col-lg-3" style="visibility: visible; animation-name: fadeInLeft;">
+							<article class="blog blog__modern">
+								<a class="blog__modern--figure" href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/' . unserialize($blog->blog_category_slug)[$lang] . '/' .  unserialize($blog->slug)[$lang] . '/' . hashids_encrypt($blog->id)); ?>">
+									<img src="<?php echo base_url('storage/uploads/images/blogs/' . unserialize($blog->img)[$lang]) ?>" alt="<?php echo unserialize($blog->img_title_alt)[$lang]; ?>" width="370" height="307">
+									<div class="blog__modern--time">
+										<time datetime="<?php echo $blog->created_at; ?>"><span class="blog__modern--time--month"><?php echo date_format(date_create($blog->created_at), 'm'); ?></span><span class="blog__modern--time--number"><?php echo date_format(date_create($blog->created_at), 'd'); ?></span></time>
+									</div>
+								</a>
+								<h4 class="blog__modern--title"><a href="#"><?php echo unserialize($blog->title)[$lang]; ?></a></h4>
+								<p class="blog__modern--text">
+									<?php echo unserialize($blog->description_section)[$lang]; ?>
+								</p>
+							</article>
+						</div>
+					<?php } ?>
+				</div>
 			</div>
 		</div>
 	</div>
