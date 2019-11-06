@@ -31,9 +31,7 @@
 				</div>
 			</div>
 			<div class="col-sm-12 col-md-3">
-				<button type="button" class="btn btn-join-job col-12" data-toggle="modal"
-					data-target=".bd-example-modal-lg"><?php echo lang('page_join_us_btn_apply_to_position'); ?></button>
-				<hr>
+				<hr class="d-block d-md-none">
 				<?php if (count($career_galleries) > 0) { ?>
 				<ul class="list-side-gallery">
 					<?php foreach ($career_galleries as $career_gallery) { ?>
@@ -103,161 +101,170 @@
 						<div class="carousel-item active">
 							<div class="col-12">
 								<h3 class="ttl-form-regist">ข้อมูลส่วนตัว</h3>
-								<form class="mt-2 row"
+								<form class="mt-2"
 									action="<?php echo base_url($lang . '/'. 'career-contact/send') ?>" method="post">
-									<div class="col-md-6 col-12">
-										<div class="form-group">
-											<input type="text" class="form-control" name="name"
-												placeholder="<?php echo lang('page_join_us_form_txt_name'); ?>"
-												required="">
+									<div class="row">
+										<div class="col-md-12 col-12">
+											<div class="form-group">
+												<input type="text" class="form-control" name="id"
+													placeholder="เลขบัตรประชาชน" required="">
+											</div>
+										</div>
+										<div class="col-md-6 col-12">
+											<div class="form-group">
+												<input type="text" class="form-control" name="name"
+													placeholder="<?php echo lang('page_join_us_form_txt_name'); ?>"
+													required="">
+											</div>
+										</div>
+										<div class="col-md-6 col-12">
+											<div class="form-group">
+												<input type="text" class="form-control" name="surname" placeholder="นามสกุล"
+													required="">
+											</div>
 										</div>
 									</div>
-									<div class="col-md-6 col-12">
-										<div class="form-group">
-											<input type="text" class="form-control" name="surname" placeholder="นามสกุล"
-												required="">
+									<div class="row">
+										<label class="col-12" for="">วัน/เดือน/ปี เกิด</label>
+										<div class="col-md-4 col-4">
+											<div class="form-group">
+												<select class="form-control" id="">
+													<option>1</option>
+													<option>2</option>
+													<option>3</option>
+													<option>4</option>
+													<option>5</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-md-4 col-4">
+											<div class="form-group">
+												<select class="form-control" id="">
+													<option>มกราคม</option>
+													<option>กุมภาพันธ์</option>
+													<option>เมษายน</option>
+													<option>มีนาคม</option>
+													<option>พฤศภาคม</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-md-4 col-4">
+											<div class="form-group">
+												<select class="form-control" id="">
+													<option>2544</option>
+													<option>2543</option>
+													<option>2542</option>
+													<option>2541</option>
+													<option>2540</option>
+												</select>
+											</div>
 										</div>
 									</div>
-									<div class="col-md-12 col-12">
-										<div class="form-group">
-											<input type="text" class="form-control" name="id"
-												placeholder="เลขบัตรประชาชน" required="">
+									<div class="row">
+										<div class="col-md-6 col-12">
+											<div class="form-group">
+												<input type="text" class="form-control" name="email"
+													placeholder="<?php echo lang('page_join_us_form_txt_email'); ?>"
+													required="">
+											</div>
+										</div>
+										<div class="col-md-6 col-12">
+											<div class="form-group">
+												<input type="text" class="form-control" name="phone"
+													placeholder="<?php echo lang('page_join_us_form_txt_phone'); ?>"
+													required="">
+											</div>
 										</div>
 									</div>
-									<div class="col-md-4 col-4">
-										<div class="form-group">
-											<label for="">วัน/เดือน/ปี เกิด</label>
-											<select class="form-control" id="">
-												<option>1</option>
-												<option>2</option>
-												<option>3</option>
-												<option>4</option>
-												<option>5</option>
-											</select>
+									<div class="row">
+										<div class="col-md-6 col-12">
+											<div class="form-group">
+												<label for="">สถานภาพ</label>
+												<select class="form-control" id="">
+													<option>โสด</option>
+													<option>แต่งงาน</option>
+													<option>หย่าร้าง</option>
+													<option>หม้าย</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-md-6 col-12">
+											<div class="form-group">
+												<label class="ttl-form">เพศ</label>
+												<label class="radio-inline pl-4" for="">
+													<input type="radio" name="gender" value=""> ชาย
+												</label>
+												<label class="radio-inline ml-2" for="">
+													<input type="radio" name="gender" value=""> หญิง
+												</label>
+												<label class="radio-inline ml-2" for="">
+													<input type="radio" name="gender" value=""> อื่นๆ
+												</label>
+											</div>
 										</div>
 									</div>
-									<div class="col-md-4 col-4">
-										<div class="form-group">
-											<label for="">&nbsp;</label>
-											<select class="form-control" id="">
-												<option>มกราคม</option>
-												<option>กุมภาพันธ์</option>
-												<option>เมษายน</option>
-												<option>มีนาคม</option>
-												<option>พฤศภาคม</option>
-											</select>
+									<div class="row">
+										<label class="col-12" for="">ที่อยู่</label>
+										<div class="col-md-6 col-12">
+											<div class="form-group">
+												<input type="text" class="form-control" name="phone"
+													placeholder="บ้านเลขที่ / หมู่บ้าน / คอนโด" required="">
+											</div>
+										</div>
+										<div class="col-md-6 col-12">
+											<div class="form-group">
+												<input type="text" class="form-control" name="phone" placeholder="ซอย"
+													required="">
+											</div>
 										</div>
 									</div>
-									<div class="col-md-4 col-4">
-										<div class="form-group">
-											<label for="">&nbsp;</label>
-											<select class="form-control" id="">
-												<option>2544</option>
-												<option>2543</option>
-												<option>2542</option>
-												<option>2541</option>
-												<option>2540</option>
-											</select>
+									<div class="row">
+										<div class="col-md-6 col-12">
+											<div class="form-group">
+												<input type="text" class="form-control" name="phone" placeholder="ถนน"
+													required="">
+											</div>
+										</div>
+										<div class="col-md-6 col-12">
+											<div class="form-group">
+												<input type="text" class="form-control" name="phone" placeholder="อำเภอ"
+													required="">
+											</div>
 										</div>
 									</div>
-									<div class="col-md-6 col-12">
-										<div class="form-group">
-											<input type="text" class="form-control" name="email"
-												placeholder="<?php echo lang('page_join_us_form_txt_email'); ?>"
-												required="">
+									<div class="row">
+										<div class="col-md-6 col-12">
+											<div class="form-group">
+												<input type="text" class="form-control" name="phone" placeholder="ตำบล"
+													required="">
+											</div>
+										</div>
+										<div class="col-md-6 col-12">
+											<div class="form-group">
+												<input type="text" class="form-control" name="phone" placeholder="จังหวัด"
+													required="">
+											</div>
+										</div>
+										<div class="col-md-6 col-12">
+											<div class="form-group">
+												<input type="text" class="form-control" name="phone"
+													placeholder="รหัสไปรษณี" required="">
+											</div>
 										</div>
 									</div>
-									<div class="col-md-6 col-12">
-										<div class="form-group">
-											<input type="text" class="form-control" name="phone"
-												placeholder="<?php echo lang('page_join_us_form_txt_phone'); ?>"
-												required="">
+									<div class="row">
+										<div class="col-md-6 col-12">
+											<div class="form-group">
+												<input type="text" class="form-control" name="phone"
+													placeholder="โทรศัพท์บ้าน" required="">
+											</div>
 										</div>
-									</div>
-									<div class="col-md-6 col-4">
-										<div class="form-group">
-											<label for="">สถานภาพ</label>
-											<select class="form-control" id="">
-												<option>โสด</option>
-												<option>แต่งงาน</option>
-												<option>หย่าร้าง</option>
-												<option>หม้าย</option>
-											</select>
+										<div class="col-md-6 col-12">
+											<div class="form-group">
+												<input type="text" class="form-control" name="phone"
+													placeholder="โทรศัพท์มือถือ" required="">
+											</div>
 										</div>
-									</div>
-									<div class="col-md-6 col-12">
-										<div class="form-group">
-											<label class="ttl-form">เพศ</label>
-											<label class="radio-inline pl-4" for="">
-												<input type="radio" name="gender" value=""> ชาย
-											</label>
-											<label class="radio-inline ml-2" for="">
-												<input type="radio" name="gender" value=""> หญิง
-											</label>
-											<label class="radio-inline ml-2" for="">
-												<input type="radio" name="gender" value=""> อื่นๆ
-											</label>
-										</div>
-									</div>
-									<div class="col-md-6 col-12">
-										<div class="form-group">
-											<label for="">ที่อยู่</label>
-											<input type="text" class="form-control" name="phone"
-												placeholder="บ้านเลขที่ / หมู่บ้าน / คอนโด" required="">
-										</div>
-									</div>
-									<div class="col-md-6 col-12">
-										<div class="form-group">
-											<label for="">&nbsp;</label>
-											<input type="text" class="form-control" name="phone" placeholder="ซอย"
-												required="">
-										</div>
-									</div>
-									<div class="col-md-6 col-12">
-										<div class="form-group">
-											<input type="text" class="form-control" name="phone" placeholder="ถนน"
-												required="">
-										</div>
-									</div>
-									<div class="col-md-6 col-12">
-										<div class="form-group">
-											<input type="text" class="form-control" name="phone" placeholder="อำเภอ"
-												required="">
-										</div>
-									</div>
-									<div class="col-md-6 col-12">
-										<div class="form-group">
-											<input type="text" class="form-control" name="phone" placeholder="ตำบล"
-												required="">
-										</div>
-									</div>
-									<div class="col-md-6 col-12">
-										<div class="form-group">
-											<input type="text" class="form-control" name="phone" placeholder="จังหวัด"
-												required="">
-										</div>
-									</div>
-									<div class="col-md-12 col-12">
-										<div class="form-group">
-											<input type="text" class="form-control" name="phone"
-												placeholder="รหัสไปรษณี" required="">
-										</div>
-									</div>
-									<div class="col-md-6 col-12">
-										<div class="form-group">
-											<input type="text" class="form-control" name="phone"
-												placeholder="โทรศัพท์บ้าน" required="">
-										</div>
-									</div>
-									<div class="col-md-6 col-12">
-										<div class="form-group">
-											<input type="text" class="form-control" name="phone"
-												placeholder="โทรศัพท์มือถือ" required="">
-										</div>
-									</div>
-
-									<div class="col-md-6 col-12">
-
 									</div>
 									<div class="col-12 text-center">
 										<span class="btn btn-primary text-center btn-next">ต่อไป</span>
@@ -268,90 +275,98 @@
 						<div class="carousel-item">
 							<div class="col-12">
 								<h3 class="ttl-form-regist">ประวัติการทำงานล่าสุด</h3>
-								<form class="mt-2 row"
+								<form class="mt-2"
 									action="<?php echo base_url($lang . '/'. 'career-contact/send') ?>" method="post">
-									<div class="col-md-4 col-12">
-										<div class="form-group">
-											<label for="">&nbsp;</label>
-											<input type="text" class="form-control" name="name" placeholder="ชื่อบริษัท"
-												required="">
+									<div class="row">
+										<div class="col-md-6 col-12">
+											<div class="form-group">
+												<input type="text" class="form-control" name="name" placeholder="ชื่อบริษัท"
+													required="">
+											</div>
+										</div>
+										<div class="col-md-6 col-12">
+											<div class="form-group">
+												<input type="text" class="form-control" name="surname" placeholder="ตำแหน่ง"
+													required="">
+											</div>
 										</div>
 									</div>
-									<div class="col-md-4 col-12">
-										<div class="form-group">
-											<label for="">&nbsp;</label>
-											<input type="text" class="form-control" name="surname" placeholder="ตำแหน่ง"
-												required="">
+									<div class="row">
+										<label class="col-12" for="">สถานะการทำงาน</label>
+										<div class="col-md-6 col-12">
+											<div class="form-group">
+												<select class="form-control" id="">
+													<option>ลูกจ้าง</option>
+													<option>ว่างงาน</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-md-6 col-12">
+											<div class="form-group">
+												<input type="text" class="form-control" name="surname"
+													placeholder="เงินเดือน" required="">
+											</div>
 										</div>
 									</div>
-									<div class="col-md-4 col-12">
-										<div class="form-group">
-											<label for="">สถานะการทำงาน</label>
-											<select class="form-control" id="">
-												<option>ลูกจ้าง</option>
-												<option>ว่างงาน</option>
-											</select>
+									<div class="row">
+										<label class="col-12" for="">ตั้งแต่ วัน/เดือน/ปี</label>
+										<div class="col-md-4 col-4">
+											<div class="form-group">
+												<select class="form-control" id="">
+													<option>1</option>
+													<option>2</option>
+													<option>3</option>
+													<option>4</option>
+													<option>5</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-md-4 col-4">
+											<div class="form-group">
+												<select class="form-control" id="">
+													<option>มกราคม</option>
+													<option>กุมภาพันธ์</option>
+													<option>เมษายน</option>
+													<option>มีนาคม</option>
+													<option>พฤศภาคม</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-md-4 col-4">
+											<div class="form-group">
+												<select class="form-control" id="">
+													<option>2544</option>
+													<option>2543</option>
+													<option>2542</option>
+													<option>2541</option>
+													<option>2540</option>
+												</select>
+											</div>
 										</div>
 									</div>
-									<div class="col-md-12 col-12">
-										<div class="form-group">
-											<input type="text" class="form-control" name="surname"
-												placeholder="เงินเดือน" required="">
+									<div class="row">
+										<label class="col-12" for="">ประสบการณ์การทำงาน</label>
+										<div class="col-md-6 col-12">
+											<div class="form-group">
+												<input type="text" class="form-control" name="email" placeholder="ปี"
+													required="">
+											</div>
 										</div>
 									</div>
-									<div class="col-md-3 col-4">
-										<div class="form-group">
-											<label for="">ตั้งแต่ วัน/เดือน/ปี</label>
-											<select class="form-control" id="">
-												<option>1</option>
-												<option>2</option>
-												<option>3</option>
-												<option>4</option>
-												<option>5</option>
-											</select>
+									<div class="row">
+										<div class="col-md-12 col-12">
+											<div class="form-group">
+												<label for="">กรุณาใส่ประวัติการทำงานทั้งหมด
+													ตำแหน่ง/ชื่อบริษัท/ระยะเวลา</label>
+												<textarea class="form-control" name="" required="" rows="8"></textarea>
+											</div>
 										</div>
 									</div>
-									<div class="col-md-3 col-4">
-										<div class="form-group">
-											<label for="">&nbsp;</label>
-											<select class="form-control" id="">
-												<option>มกราคม</option>
-												<option>กุมภาพันธ์</option>
-												<option>เมษายน</option>
-												<option>มีนาคม</option>
-												<option>พฤศภาคม</option>
-											</select>
+									<div class="row">
+										<div class="col-12 text-center">
+											<span class="btn btn-primary text-center btn-prev">ย้อนกลับ</span>
+											<span class="btn btn-primary text-center btn-next">ต่อไป</span>
 										</div>
-									</div>
-									<div class="col-md-3 col-4">
-										<div class="form-group">
-											<label for="">&nbsp;</label>
-											<select class="form-control" id="">
-												<option>2544</option>
-												<option>2543</option>
-												<option>2542</option>
-												<option>2541</option>
-												<option>2540</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-md-3 col-12">
-										<div class="form-group">
-											<label for="">ประสบการณ์การทำงาน</label>
-											<input type="text" class="form-control" name="email" placeholder="ปี"
-												required="">
-										</div>
-									</div>
-									<div class="col-md-12 col-12">
-										<div class="form-group">
-											<label for="">กรุณาใส่ประวัติการทำงานทั้งหมด
-												ตำแหน่ง/ชื่อบริษัท/ระยะเวลา</label>
-											<textarea class="form-control" name="" required="" rows="8"></textarea>
-										</div>
-									</div>
-									<div class="col-12 text-center">
-										<span class="btn btn-primary text-center btn-prev">ย้อนกลับ</span>
-										<span class="btn btn-primary text-center btn-next">ต่อไป</span>
 									</div>
 								</form>
 							</div>
@@ -361,7 +376,7 @@
 								<h3 class="ttl-form-regist">ประวัติการศึกษา</h3>
 								<form class="mt-2 row"
 									action="<?php echo base_url($lang . '/'. 'career-contact/send') ?>" method="post">
-									<div class="col-md-6 col-6">
+									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for="">ระดับ</label>
 											<select class="form-control" id="">
@@ -373,28 +388,28 @@
 											</select>
 										</div>
 									</div>
-									<div class="col-md-6 col-6">
+									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for="">สถาบัน</label>
 											<input type="text" class="form-control" name="surname" placeholder="สถาบัน"
 												required="">
 										</div>
 									</div>
-									<div class="col-md-6 col-6">
+									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for="">คณะ</label>
 											<input type="text" class="form-control" name="surname" placeholder="คณะ"
 												required="">
 										</div>
 									</div>
-									<div class="col-md-6 col-6">
+									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for="">ปี (เริ่ม-จบ)</label>
 											<input type="text" class="form-control" name="surname"
 												placeholder="ปี (เริ่ม-จบ)" required="">
 										</div>
 									</div>
-									<div class="col-md-6 col-6">
+									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for="">เกรดเฉลี่ย</label>
 											<input type="text" class="form-control" name="surname"
@@ -402,7 +417,7 @@
 										</div>
 									</div>
 									<hr>
-									<div class="col-md-6 col-6">
+									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for="">ระดับ</label>
 											<select class="form-control" id="">
@@ -414,28 +429,28 @@
 											</select>
 										</div>
 									</div>
-									<div class="col-md-6 col-6">
+									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for="">สถาบัน</label>
 											<input type="text" class="form-control" name="surname" placeholder="สถาบัน"
 												required="">
 										</div>
 									</div>
-									<div class="col-md-6 col-6">
+									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for="">คณะ</label>
 											<input type="text" class="form-control" name="surname" placeholder="คณะ"
 												required="">
 										</div>
 									</div>
-									<div class="col-md-6 col-6">
+									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for="">ปี (เริ่ม-จบ)</label>
 											<input type="text" class="form-control" name="surname"
 												placeholder="ปี (เริ่ม-จบ)" required="">
 										</div>
 									</div>
-									<div class="col-md-6 col-6">
+									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for="">เกรดเฉลี่ย</label>
 											<input type="text" class="form-control" name="surname"
@@ -443,7 +458,7 @@
 										</div>
 									</div>
 									<hr>
-									<div class="col-md-6 col-6">
+									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for="">ระดับ</label>
 											<select class="form-control" id="">
@@ -455,28 +470,28 @@
 											</select>
 										</div>
 									</div>
-									<div class="col-md-6 col-6">
+									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for="">สถาบัน</label>
 											<input type="text" class="form-control" name="surname" placeholder="สถาบัน"
 												required="">
 										</div>
 									</div>
-									<div class="col-md-6 col-6">
+									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for="">คณะ</label>
 											<input type="text" class="form-control" name="surname" placeholder="คณะ"
 												required="">
 										</div>
 									</div>
-									<div class="col-md-6 col-6">
+									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for="">ปี (เริ่ม-จบ)</label>
 											<input type="text" class="form-control" name="surname"
 												placeholder="ปี (เริ่ม-จบ)" required="">
 										</div>
 									</div>
-									<div class="col-md-6 col-6">
+									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for="">เกรดเฉลี่ย</label>
 											<input type="text" class="form-control" name="surname"
@@ -484,7 +499,7 @@
 										</div>
 									</div>
 									<hr>
-									<div class="col-md-6 col-6">
+									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for="">ระดับ</label>
 											<select class="form-control" id="">
@@ -496,28 +511,28 @@
 											</select>
 										</div>
 									</div>
-									<div class="col-md-6 col-6">
+									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for="">สถาบัน</label>
 											<input type="text" class="form-control" name="surname" placeholder="สถาบัน"
 												required="">
 										</div>
 									</div>
-									<div class="col-md-6 col-6">
+									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for="">คณะ</label>
 											<input type="text" class="form-control" name="surname" placeholder="คณะ"
 												required="">
 										</div>
 									</div>
-									<div class="col-md-6 col-6">
+									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for="">ปี (เริ่ม-จบ)</label>
 											<input type="text" class="form-control" name="surname"
 												placeholder="ปี (เริ่ม-จบ)" required="">
 										</div>
 									</div>
-									<div class="col-md-6 col-6">
+									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for="">เกรดเฉลี่ย</label>
 											<input type="text" class="form-control" name="surname"
@@ -525,7 +540,7 @@
 										</div>
 									</div>
 									<hr>
-									<div class="col-md-6 col-6">
+									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for="">ระดับ</label>
 											<select class="form-control" id="">
@@ -537,28 +552,28 @@
 											</select>
 										</div>
 									</div>
-									<div class="col-md-6 col-6">
+									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for="">สถาบัน</label>
 											<input type="text" class="form-control" name="surname" placeholder="สถาบัน"
 												required="">
 										</div>
 									</div>
-									<div class="col-md-6 col-6">
+									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for="">คณะ</label>
 											<input type="text" class="form-control" name="surname" placeholder="คณะ"
 												required="">
 										</div>
 									</div>
-									<div class="col-md-6 col-6">
+									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for="">ปี (เริ่ม-จบ)</label>
 											<input type="text" class="form-control" name="surname"
 												placeholder="ปี (เริ่ม-จบ)" required="">
 										</div>
 									</div>
-									<div class="col-md-6 col-6">
+									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for="">เกรดเฉลี่ย</label>
 											<input type="text" class="form-control" name="surname"
@@ -642,11 +657,12 @@
 		$('.btn-next').on('click', function () {
 			$('.carousel').carousel('next');
 			$('.carousel').carousel('pause');
-            console.log($('.carousel .active').index('.carousel .item'));
+			$(".modal").animate({ scrollTop: 0}, 600);
 		});
 		$('.btn-prev').on('click', function () {
 			$('.carousel').carousel('prev');
 			$('.carousel').carousel('pause');
+			$(".modal").animate({ scrollTop: 0}, 600);
 		});
 
 	});
