@@ -118,7 +118,7 @@ class Blogs extends MX_Controller
 		// Utilities
 		$data['blog_categories'] = $this->Blog_category_model->get_blog_category_all();
 		$data['blogs'] = $this->Blog_model->get_blog_by_category_blog_id($blog_category_id);
-		$data['banner'] = $this->Banner_model->get_banner_by_id(3);
+		$data['banner'] = $this->Banner_model->get_banner_active_by_id(3);
 
 		/*
 		| -------------------------------------------------------------------------
@@ -168,7 +168,7 @@ class Blogs extends MX_Controller
 		// Utilities
 		$data['last_blogs'] = $this->Blog_model->get_last_blog(5);
 		$data['blog'] = $this->Blog_model->get_blog_by_id($blog_id);
-		$data['banner'] = $this->Banner_model->get_banner_by_id(3);
+		$data['banner'] = $this->Banner_model->get_banner_active_by_id(3);
 
 		/*
 		| -------------------------------------------------------------------------
