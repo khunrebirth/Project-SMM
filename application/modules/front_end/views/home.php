@@ -43,7 +43,7 @@
 				<h2 class="about__title--head mt-5 mb-4"><span>S</span>ocial Media Master</h2>
 				<div class="row justify-content-center">
 					<div class="col-xs-12 col-md-10 col-lg-8">
-						<p class="lead about__title--body mt-4 mb-4">
+						<p class="lead about__title--body mt-2 mb-4">
 							<?php echo unserialize($about->content_left)[$lang]; ?>
 						</p>
 						<a href="<?php echo base_url($lang . '/' . lang('menu_about')); ?>"

@@ -105,6 +105,9 @@
                 <a class="nav-link text-md-center <?php if ($this->uri->segment(0) == "clients" || $this->uri->segment(0) == "ลูกค้าของเรา") { echo 'active'; }?>" href="<?php echo base_url($lang . '/' . lang('menu_our_clients')); ?>"><?php echo lang('menu_our_clients'); ?></a>
             </li>
             <li class="nav-item">
+                <a class="nav-link text-md-center <?php if ($this->uri->segment(0) == "portfolio" || $this->uri->segment(0) == "ผลงานของเรา") { echo 'active'; }?>" href="<?php echo base_url($lang . '/' . lang('menu_portfolio')); ?>"><?php echo lang('menu_portfolio'); ?></a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link text-md-center <?php if ($this->uri->segment(0) == "blogs" || $this->uri->segment(0) == "บทความ") { echo 'active'; }?>" href="<?php echo base_url($lang . '/' . lang('menu_blogs')); ?>"><?php echo lang('menu_blogs'); ?></a>
             </li>
             <li class="nav-item">

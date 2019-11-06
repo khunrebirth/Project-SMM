@@ -119,16 +119,6 @@
 		max-width: 1440px;
 		margin: 0 auto;
 	}
-	.list-catagory-client--type-top {
-		top: -30%;
-	}
-		
-	@media (max-width: 992px) {
-		.list-catagory-client--type-top {
-			top: 0;
-			margin: 0 0 30px;
-		}
-	}
 </style>
 
 <!-- Title -->
@@ -157,12 +147,12 @@
 			</div> -->
 		</div>
 		<div class="sec-blogs-01 row">
-			<div class="col-lg-3">
-				<ul class="list-catagory-client list-catagory-client--type-top">
+			<div class="col-12 col-lg-3 mb-5">
+				<ul class="list-catagory-client">
 					<li><h3 class="ttl-catagory-client text-center">catagory</h3></li>
-					<li><a href="">0001</a></li>
-					<li><a href="">0002</a></li>
-					<li><a href="">0003</a></li>
+					<li><a href="#all">0001</a></li>
+					<li><a href="#catagory">0002</a></li>
+					<li><a href="#catagory">0003</a></li>
 					<li><a href="">0004</a></li>
 					<li><a href="">0005</a></li>
 					<li><a href="">0006</a></li>
@@ -172,10 +162,10 @@
 					<li><a href="">0010</a></li>
 				</ul>
 			</div>
-			<div class="col-lg-9">
+			<div class="col-12 col-lg-9">
 				<div class="row row-60 row-sm">
 					<?php foreach ($blogs as $blog) { ?>
-						<div class="col-xs-12 col-sm-6 col-lg-3" style="visibility: visible; animation-name: fadeInLeft;">
+						<div class="col-xs-12 col-sm-6 col-lg-3 item-blog " style="visibility: visible; animation-name: fadeInLeft;">
 							<article class="blog blog__modern">
 								<a class="blog__modern--figure" href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/' . unserialize($blog->blog_category_slug)[$lang] . '/' .  unserialize($blog->slug)[$lang] . '/' . hashids_encrypt($blog->id)); ?>">
 									<img src="<?php echo base_url('storage/uploads/images/blogs/' . unserialize($blog->img)[$lang]) ?>" alt="<?php echo unserialize($blog->img_title_alt)[$lang]; ?>" width="370" height="307">
@@ -198,3 +188,22 @@
 
 <!-- SiteMap -->
 <?php include 'layouts/sitemap.php'; ?>
+<script>
+$(function() {
+	$('.list-catagory-client li a').click(function(e){
+		e.preventDefault();
+		if(!$(this).hasClass('is-active')){
+			var hash = $(this).attr('href');
+			var filter = hash.split("#")[1];
+			if(filter == 'all'){
+				$('.item-blog').fadeIn( "slow" );
+			}else{
+				$('.item-blog').fadeOut( "slow" );
+				$('.'+filter).fadeIn( "slow" );
+			}
+		}
+		$('.list-catagory-client li a').removeClass('is-active');
+		$(this).addClass('is-active');
+	});
+});
+</script>
