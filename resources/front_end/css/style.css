@@ -14,15 +14,19 @@ html, body {
 	font-size: 20px;
 	line-height: 1;
 }
-p,a,label,div {
+
+p, a, label, div {
 	font-family: 'CordiaUPC', sans-serif;
 }
+
 h1, h2, h3, h4, h5 {
 	font-family: "Prompt", sans-serif;
 }
+
 .h1, h1, .h2, h2 {
 	font-size: 2.5rem;
 }
+
 section {
 	padding: 60px 0px;
 }
@@ -534,7 +538,7 @@ a:hover {
 .blog__modern--time * + .blog__modern--time--number {
 	margin-left: 2px;
 	font-size: 1.5rem;
-	
+
 }
 
 .blog__modern--text {
@@ -552,8 +556,8 @@ a:hover {
 
 .blog__modern--title a {
 	color: #000;
-    font-weight: bold;
-    line-height: 0;
+	font-weight: bold;
+	line-height: 0;
 }
 
 
@@ -614,6 +618,7 @@ a:hover {
 	font-size: 1.6rem;
 	font-weight: 400;
 }
+
 .text-secondary {
 	font-size: 1.1rem;
 }
@@ -765,14 +770,17 @@ a:hover {
 .btn__contact {
 
 }
+
 .btn__contact--type-icon {
 	text-align: center;
 	margin: 0 0 0 10px !important;
 }
+
 @media (max-width: 992px) {
 	.btn__contact--type-icon {
 		margin: 0 0 10px !important;
 	}
+
 	.navbar-light ul.navbar-nav li a.btn-link {
 		margin: 0;
 	}
@@ -793,7 +801,8 @@ a:hover {
 	-ms-transition: all 0.3s;
 	-o-transition: all 0.3s;
 }
-@media (max-width: 992px){
+
+@media (max-width: 992px) {
 	.wrap-sub-gnav {
 		margin-top: 0;
 	}
@@ -918,7 +927,7 @@ a:hover {
 
 .list-sitemap li {
 	text-align: left;
-    margin-bottom: 3px;
+	margin-bottom: 3px;
 }
 
 .list-sitemap li a {
@@ -963,6 +972,7 @@ footer p {
 		padding-left: 30px;
 	}
 }
+
 @media (max-width: 768px) {
 	.sec-site-link {
 		border-right: none;
@@ -970,10 +980,12 @@ footer p {
 		margin-top: 30px;
 	}
 }
+
 .txt-decs-client {
 	color: #929ba5;
 	font-size: 0.9rem;
 }
+
 @media (max-width: 576px) {
 	.txt-decs-client {
 		font-size: 12px;
@@ -991,7 +1003,6 @@ footer p {
 		font-size: 1.5rem;
 	}
 }
-
 
 
 .sec-footer-sitemap .card-body {
@@ -1524,73 +1535,77 @@ footer p {
 }
 
 
-
-
 .box-teams-slide {
 	padding: 0 15px;
 }
 
 .box-teams-slide .owl-nav {
-    position: absolute;
-    top: 30%;
-    -webkit-transform: translate3d(0,-50%,0);
-            transform: translate3d(0,-50%,0);
-    width: 100%;
-    left: 0;
+	position: absolute;
+	top: 30%;
+	-webkit-transform: translate3d(0, -50%, 0);
+	transform: translate3d(0, -50%, 0);
+	width: 100%;
+	left: 0;
 }
 
-.box-teams-slide .owl-nav .owl-prev, 
+.box-teams-slide .owl-nav .owl-prev,
 .box-teams-slide .owl-nav .owl-next {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    background-color: #fff !important;
-    transition: all 0.3s;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    margin: 0;
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	background-color: #fff !important;
+	transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	margin: 0;
 }
 
-.box-teams-slide .owl-nav .owl-prev:focus, 
+.box-teams-slide .owl-nav .owl-prev:focus,
 .box-teams-slide .owl-nav .owl-next:focus {
-    outline: none;
+	outline: none;
 }
 
-.box-teams-slide .owl-nav .owl-prev:hover, 
+.box-teams-slide .owl-nav .owl-prev:hover,
 .box-teams-slide .owl-nav .owl-next:hover {
-    opacity: 0.7;
+	opacity: 0.7;
 }
 
-.box-teams-slide .owl-nav .owl-prev span, 
+.box-teams-slide .owl-nav .owl-prev span,
 .box-teams-slide .owl-nav .owl-next span {
-    display: none;
+	display: none;
 }
-@media (min-width: 576px) { 
+
+@media (min-width: 576px) {
 	.box-teams-slide {
 		padding: 0 15px;
 	}
-	.box-teams-slide .owl-nav .owl-prev, 
+
+	.box-teams-slide .owl-nav .owl-prev,
 	.box-teams-slide .owl-nav .owl-next {
 		width: 40px;
 		height: 40px;
 	}
 }
-@media (min-width: 768px) { 
+
+@media (min-width: 768px) {
 	.box-teams-slide {
 		padding: 0 60px;
 	}
-	.box-teams-slide .owl-nav .owl-prev, 
+
+	.box-teams-slide .owl-nav .owl-prev,
 	.box-teams-slide .owl-nav .owl-next {
 		width: 50px;
 		height: 50px;
 	}
 }
+
 @media (min-width: 992px) {
 
-} 
-@media (min-width: 1200px) { 
+}
+
+@media (min-width: 1200px) {
 
 }
 
@@ -1608,7 +1623,10 @@ footer p {
     border-radius: 15px;
     overflow: hidden;
 }
-.list-catagory-client li { }
+
+.list-catagory-client li {
+}
+
 .list-catagory-client li a {
 	position: relative;
 	display: block;
@@ -1623,6 +1641,7 @@ footer p {
 	color: #00264c;
 	font-size: 1.2rem;
 }
+
 .list-catagory-client li a:hover,
 .list-catagory-client li a.is-active {
 	background-color: #00264c;
@@ -1631,11 +1650,12 @@ footer p {
 
 .ttl-form-regist {
 	font-size: 1.5rem;
-	color: #00264c ;
+	color: #00264c;
 	display: block;
 	width: 100%;
 
 }
+
 .ttl-form {
 	width: 100%;
 }
