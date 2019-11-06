@@ -170,13 +170,15 @@
     }
     .sec-about-vdo {
         background-color: #00264c;
-        min-height: 500px;
+        min-height: auto;
     }
     .sec-about-story {
-        margin-top: 80px;
+        margin-top: 52px;
     }
     .sec-about-story .item-story {
         flex: 0 0 20%;
+        position: relative;
+        padding-top: 40px
     }
     @media (max-width: 992px) {
         .sec-about-story .item-story {
@@ -184,9 +186,23 @@
         } 
     }
     .sec-about-story .item-story .txt {
-        padding: 20px 10px 0;
+        padding: 26px 8px 0;
         font-size: 1.1rem;
-        line-height: 1.2;
+        line-height: 1.28;
+    }
+    .sec-about-story .item-story .ttl {
+        font-size: 1.8rem;
+        font-weight: bold;
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        transform: translate3d(-50%,0,0);
+        top: 0;
+    }
+    .sec-about-story .item-story .ttl.ttl--now {
+        font-size: 2.5rem;
+        color: #3780ab;
+        margin-top: -10px;
     }
     .sec-about-story .item-story img {
         display: block;
@@ -195,7 +211,7 @@
 </style>
 
 <!-- About -->
-<section id="about" style="padding-top: 160px; padding-bottom: 160px;">
+<section id="about" style="padding-top: 160px; padding-bottom: 120px;">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
@@ -218,11 +234,13 @@
     </div>
     <div class="sec-about-vdo">
         <div class="container">
-
+        <video width="100%" height="auto" autoplay loop>
+            <source src="<?php echo base_url('resources/front_end/video/VDO.mp4'); ?>" type="video/mp4">
+        </video>
         </div>
     </div>
     <div class="container">
-        <div class="row mt-5">
+        <div class="row mt-3">
             <div class="col-md-12 test d-none d-sm-none d-md-block d-ld-block d-lx-block" style="background-image: url('<?php echo base_url("resources/front_end/images/about/about-smm1.jpg") ?>');">
                 <div class="structure" ng-app="app" ng-controller="HomeController">
 
@@ -269,31 +287,36 @@
         </div>
         <div class="d-block d-lg-flex sec-about-story">
             <div class="item-story">
-                <img class="img-fluid" src="https://dummyimage.com/600x400/000/fff" alt="">
+                <p class="ttl">2011</p>
+                <img class="img-fluid" src="<?php echo base_url('resources/front_end/images/about/about1.jpg'); ?>" alt="">
                 <p class="txt">
                     Social Media Master ได้เริ่มก่อตั้งบริษัทที่ให้บริการวางแผนและประชาสัมพันธ์ผ่านสื่อออนไลน์ซึ่งถือได้ว่า เราคือดิจิทัล เอเจนซี่เจ้าแรก ๆ ในยุคนั้น
                 </p>
             </div>
             <div class="item-story">
-                <img class="img-fluid" src="https://dummyimage.com/600x400/000/fff" alt="">
+                <p class="ttl">2013</p>
+                <img class="img-fluid" src="<?php echo base_url('resources/front_end/images/about/about2.jpg'); ?>" alt="">
                 <p class="txt">
                     เราคือผู้เชี่ยวชาญในเรื่อง SEOด้วยประสบการณ์กว่า 15 ปีในการคลุกคลีกับการเพิ่มประสิทธิภาพของเว็บไซต์เพื่อให้ติดอันดับในการค้นหาของกูเกิล ทำให้เรากลายเป็นผู้เชี่ยวชาญและเป็น Google Partners จากจุดเริ่มต้นนี้เราได้พัฒนาระบบการทำเว็บไซต์เพื่อรองรับการค้นหาจาก 3 เสิร์ชเอ็นจิ้นชั้นนำอย่าง Google Yahoo และ Bing โดยเน้นไปที่การทำ SEO และ SEM
                 </p>
             </div>
             <div class="item-story">
-                <img class="img-fluid" src="https://dummyimage.com/600x400/000/fff" alt="">
+                <p class="ttl">2015</p>
+                <img class="img-fluid" src="<?php echo base_url('resources/front_end/images/about/about3.jpg'); ?>" alt="">
                 <p class="txt">
                     เราเชื่อมั่นในพลังของความสร้างสรรค์การตลาดผ่านคอนเทนต์ไม่ใช่แนวคิดที่แปลกใหม่ในโลกการตลาดดิจิทัลอีกต่อไป แต่กำลังกลายเป็นขุมพลังที่มีความสำคัญมากกว่าที่เคย ดังคำเปรียบเปรยที่ว่า "Content is the king" เพราะคอนเทนต์ที่มีประสิทธิภาพนอกจากจะช่วยให้การวางกลยุทธ์ทางการตลาดออนไลน์ประสบผลสำเร็จได้แล้ว ยังช่วยส่งผลลัพธ์ที่ดีต่อเว็บไซต์อีกด้วย
                 </p>
             </div>
             <div class="item-story">
-                <img class="img-fluid" src="https://dummyimage.com/600x400/000/fff" alt="">
+                <p class="ttl">2017</p>
+                <img class="img-fluid" src="<?php echo base_url('resources/front_end/images/about/about4.jpg'); ?>" alt="">
                 <p class="txt">
                     ผู้เชี่ยวชาญและให้คำปรึกษาการวางแผนกลยุทธ์ดิจิทัลออนไลน์ด้วยทักษะและประสบการณ์ในหลากหลายธุรกิจของเราจึงทำให้เรามีทีมงานที่เข้าถึงข้อมูลสามารถช่วยวิเคราะห์แผนการลงโฆษณาออนไลน์เพื่อให้ลูกค้าของเราเข้าถึงกลุ่มเป้าหมายได้อย่างตรงจุดที่สุด
                 </p>
             </div>
             <div class="item-story">
-                <img class="img-fluid" src="https://dummyimage.com/600x400/000/fff" alt="">
+                <p class="ttl ttl--now">NOW</p>
+                <img class="img-fluid" src="<?php echo base_url('resources/front_end/images/about/about5.jpg'); ?>" alt="">
                 <p class="txt">
                     ดิจิทัลเอเจนซี่ชั้นนำเพราะยุคปัจจุบันผู้บริโภคมีพฤติกรรมที่เปลี่ยนไป หันหน้าเข้าสู่โลกออนไลน์มากขึ้น เราคือดิจิทัลเอเจนซี่ตัวจริงที่ติดตามความเคลื่อนไหวของโลกออนไลน์ทุกลมหายใจ เราพร้อมแล้วที่จะช่วยให้ธุรกิจของคุณโลดแล่นบนโลกออนไลน์อย่างมีประสิทธิภาพ
                 </p>
@@ -398,5 +421,6 @@
             }).fadeTo('slow', 1);
             $("#test").html('ดิจิทัลเอเจนซี่ชั้นนำเพราะยุคปัจจุบันผู้บริโภคมีพฤติกรรมที่เปลี่ยนไป หันหน้าเข้าสู่โลกออนไลน์มากขึ้น เราคือดิจิทัลเอเจนซี่ตัวจริงที่ติดตามความเคลื่อนไหวของโลกออนไลน์ทุกลมหายใจ เราพร้อมแล้วที่จะช่วยให้ธุรกิจของคุณโลดแล่นบนโลกออนไลน์อย่างมีประสิทธิภาพ')
         });
+
     });
 </script>
