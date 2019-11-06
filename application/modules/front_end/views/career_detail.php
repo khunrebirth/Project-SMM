@@ -27,6 +27,7 @@
 		}
 	}
 </style>
+
 <!-- Title -->
 <section class="page-title main-hero-service" style="padding:0;">
 	<img class="img-fluid"
@@ -58,11 +59,8 @@
 				<ul class="list-side-gallery">
 					<?php foreach ($career_galleries as $career_gallery) { ?>
 					<li class="item">
-						<a data-fancybox="group1" rel="gallery" class="fancybox"
-							href="<?php echo base_url('storage/uploads/images/join_us/' . unserialize($career_gallery->img)[$lang]); ?>">
-							<img class="nav-job-img"
-								src="<?php  echo base_url('storage/uploads/images/join_us/' . unserialize($career_gallery->img)[$lang]); ?>"
-								alt="<?php echo unserialize($career_gallery->img_title_alt)[$lang]; ?>">
+						<a data-fancybox="group1" rel="gallery" class="fancybox" href="<?php echo base_url('storage/uploads/images/join_us/' . unserialize($career_gallery->img)[$lang]); ?>">
+							<img class="nav-job-img" src="<?php  echo base_url('storage/uploads/images/join_us/' . unserialize($career_gallery->img)[$lang]); ?>" alt="<?php echo unserialize($career_gallery->img_title_alt)[$lang]; ?>">
 						</a>
 					</li>
 					<?php } ?>
