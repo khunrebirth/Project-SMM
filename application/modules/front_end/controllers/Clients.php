@@ -68,7 +68,7 @@ class Clients extends MX_Controller
 
 		// Utilities
 		$data['client_categories'] = $this->Client_category_model->get_client_category_all();
-		$data['clients'] = $this->filter_data_clients($this->Client_category_model->get_client_category_all());
+		$data['clients'] = $this->Client_model->get_client_all();
 		$data['banner'] = $this->Banner_model->get_banner_active_by_id(2);
 
 		/*
@@ -78,29 +78,5 @@ class Clients extends MX_Controller
 		*/
 
 		$this->load->view('app', $data);
-	}
-
-	private function filter_data_clients($client_categories)
-	{
-		$data = [];
-
-		foreach ($client_categories as $key_category => $category) {
-
-			$clients = $this->Client_model->get_client_by_category_id($category->id);
-
-			$data[$key_category]['category_id'] = $category->id;
-			$data[$key_category]['category_name'] = unserialize($category->title)[$this->lang];
-			$data[$key_category]['clients'] = [];
-
-			if ($clients) {
-				foreach ($clients as $key_client => $client) {
-					$data[$key_category]['clients'][$key_client]['category_id'] = $client->category_id;
-					$data[$key_category]['clients'][$key_client]['img'] = unserialize($client->image)[$this->lang];
-					$data[$key_category]['clients'][$key_client]['title'] = unserialize($client->title)[$this->lang];
-				}
-			}
-		}
-
-		return $data;
 	}
 }

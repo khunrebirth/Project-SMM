@@ -146,13 +146,13 @@
 			<?php $slice_portfolios = array_slice($portfolios, count($portfolios) - 4); ?>
 			<?php foreach ($slice_portfolios as $portfolio) { ?>
 				<div class="col-12 col-md-6 col-lg-3 mb-4">
-					<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/clients/'.unserialize($portfolio->image)[$lang]); ?>" alt="">
+					<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/portfolios/'.unserialize($portfolio->image)[$lang]); ?>" alt="">
 				</div>
 			<?php } ?>
 		</div>
 
 		<p class="text-center col-12 mb-0">
-			<a href="<?php echo base_url($lang . '/' . lang('menu_portfolios') . '/'); ?>" class="btn btn-primary"><?php echo lang('btn_read_more_portfolio'); ?></a>
+			<a href="<?php echo base_url($lang . '/' . lang('menu_portfolios')); ?>" class="btn btn-primary"><?php echo lang('btn_read_more_portfolio'); ?></a>
 		</p>
 	</div>
 </section>

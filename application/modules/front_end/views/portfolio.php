@@ -17,50 +17,19 @@
 		<div class="row sec-client">
 			<div class="col-12 col-lg-3 mb-5">
 				<ul class="list-catagory-client">
-					<li><h3 class="ttl-catagory-client text-center">catagory</h3></li>
-					<li><a href="#all">0001</a></li>
-					<li><a href="#col-md-3">0002</a></li>
-					<li><a href="#col-md-4">0003</a></li>
-					<li><a href="">0004</a></li>
-					<li><a href="">0005</a></li>
-					<li><a href="">0006</a></li>
-					<li><a href="">0007</a></li>
-					<li><a href="">0008</a></li>
-					<li><a href="">0009</a></li>
-					<li><a href="">0010</a></li>
-
+					<?php foreach ($portfolio_categories as $key => $portfolio_category) { ?>
+						<li><a class="<?php if ($key == 5) { echo 'is-active'; } ?>" href="#categoryGroup-<?php echo $portfolio_category->id; ?>"><?php echo unserialize($portfolio_category->title)[$lang]; ?></a></li>
+					<?php } ?>
 				</ul>
 			</div>
 			<div class="col-12 col-lg-9 wrap-logo">
-				<?php foreach ($clients as $client) { ?>
-					<?php if (count($client['clients']) > 0) { ?>
-						<div class="wrap-client-slide">
-							<?php 
-								$counter = 0;
-								$totle_client = count($client['clients']);
-							?>
-							<?php foreach ($client['clients'] as $key => $client_specific) { ?>
-
-								<?php $count_point = ($client_specific['category_id'] == 1) ? 12 : 8; ?>
-
-								<?php if ($counter == 0) { ?>
-									<div class="row">
-								<?php } ?>
-										<div class="item-client col-md-4 mb-4">
-											<img src="<?php echo base_url('storage/uploads/images/clients/' . $client_specific['img']) ?>" alt="<?php echo $client_specific['title']; ?>" class="img-fluid img-clients">
-											<!-- <span class="txt-decs-client text-center col-12 d-block">ใช้บริการXXX,XXX,XXX</span> -->
-										</div>
-								<?php $counter++; ?>
-								<?php if ($counter == $count_point) { ?>
-									</div>
-									<?php $counter = 0; ?>
-								<?php } else { if ($key == ($totle_client - 1)) { ?>
-									</div>
-								<?php } } ?>
-							<?php } ?>
+				<div class="row">
+					<?php foreach ($portfolios as $portfolio) { ?>
+						<div class="item-client col-md-4 mb-4 categoryGroup-<?php echo $portfolio->category_id; ?>">
+							<img src="<?php echo base_url('storage/uploads/images/portfolios/' . unserialize($portfolio->image)[$lang]); ?>" alt="<?php echo unserialize($portfolio->title)[$lang]; ?>" class="img-fluid img-clients">
 						</div>
 					<?php } ?>
-				<?php } ?>
+				</div>
 			</div>
 		</div>
     </div>
@@ -74,17 +43,6 @@
 <script>
     $(function () {
         $(".client__navs a:first").tab('show');
-
-		// $('.wrap-client-slide').owlCarousel({
-        //     items: 1,
-        //     nav: false,
-        //     loop: true,
-        //     dots: true,
-        //     margin: 15,
-        //     autoplay: false,
-        //     autoplayTimeout: 2000,
-        //     autoplaySpeed: 1000,
-        // });
 
 		$('.list-catagory-client li a').click(function(e){
 			e.preventDefault();
@@ -101,5 +59,18 @@
 			$('.list-catagory-client li a').removeClass('is-active');
 			$(this).addClass('is-active');
 		});
+
+        $(".list-catagory-client li a").each(function( index ) {
+            if ($(this).hasClass('is-active')) {
+                var hash = $(this).attr('href');
+                var filter = hash.split("#")[1];
+                if (filter == 'all') {
+                    $('.item-client').fadeIn( "slow" );
+                } else {
+                    $('.item-client').fadeOut( "slow" );
+                    $('.'+filter).fadeIn( "slow" );
+                }
+            }
+        });
     });
 </script>
