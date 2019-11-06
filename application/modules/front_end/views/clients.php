@@ -20,7 +20,7 @@
 					<li><h3 class="ttl-catagory-client text-center">catagory</h3></li>
 					<li><a href="#all">0001</a></li>
 					<li><a href="#col-md-3">0002</a></li>
-					<li><a href="#col-md-4">0003</a></li>
+					<li><a class="is-active" href="#col-md-4">0003</a></li>
 					<li><a href="">0004</a></li>
 					<li><a href="">0005</a></li>
 					<li><a href="">0006</a></li>
@@ -84,6 +84,19 @@
         //     autoplayTimeout: 2000,
         //     autoplaySpeed: 1000,
         // });
+
+		$(".list-catagory-client li a").each(function( index ) {
+			if($(this).hasClass('is-active')){
+				var hash = $(this).attr('href');
+				var filter = hash.split("#")[1];
+				if(filter == 'all'){
+					$('.item-client').fadeIn( "slow" );
+				}else{
+					$('.item-client').fadeOut( "slow" );
+					$('.'+filter).fadeIn( "slow" );
+				}
+			}
+		});
 
 		$('.list-catagory-client li a').click(function(e){
 			e.preventDefault();
