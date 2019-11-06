@@ -234,7 +234,7 @@
     </div>
     <div class="sec-about-vdo">
         <div class="container">
-        <video width="100%" height="auto" autoplay loop>
+        <video id="videoId" width="100%" height="auto" autoplay loop>
             <source src="<?php echo base_url('resources/front_end/video/VDO.mp4'); ?>" type="video/mp4">
         </video>
         </div>
@@ -421,6 +421,8 @@
             }).fadeTo('slow', 1);
             $("#test").html('ดิจิทัลเอเจนซี่ชั้นนำเพราะยุคปัจจุบันผู้บริโภคมีพฤติกรรมที่เปลี่ยนไป หันหน้าเข้าสู่โลกออนไลน์มากขึ้น เราคือดิจิทัลเอเจนซี่ตัวจริงที่ติดตามความเคลื่อนไหวของโลกออนไลน์ทุกลมหายใจ เราพร้อมแล้วที่จะช่วยให้ธุรกิจของคุณโลดแล่นบนโลกออนไลน์อย่างมีประสิทธิภาพ')
         });
+
+
 
     });
 </script>
