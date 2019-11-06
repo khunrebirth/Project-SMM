@@ -263,11 +263,11 @@ class Service extends MX_Controller
 		}
 
 		if (isset($_FILES['img_on_navbar_en']) && $_FILES['img_on_navbar_en']['name'] != '') {
-			$icon_en = $this->ddoo_upload_service('img_on_navbar_en');
+			$img_on_navbar_en = $this->ddoo_upload_service('img_on_navbar_en');
 		}
 
 		if (isset($_FILES['img_on_navbar_th']) && $_FILES['img_on_navbar_th']['name'] != '') {
-			$icon_th = $this->ddoo_upload_service('img_on_navbar_th');
+			$img_on_navbar_th = $this->ddoo_upload_service('img_on_navbar_th');
 		}
 
 		if (isset($_FILES['content_top_img_en']) && $_FILES['content_top_img_en']['name'] != '') {
