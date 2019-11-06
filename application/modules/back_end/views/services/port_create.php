@@ -12,7 +12,7 @@
 				<div class="breadcrumb-item"><a href="<?php echo base_url($lang . '/backoffice/dashboard'); ?>">Dashboard</a></div>
 				<div class="breadcrumb-item"><a href="#">Page: Services</a></div>
 				<div class="breadcrumb-item"><a href="<?php echo base_url($lang . '/backoffice/page/services/list-services'); ?>">Services</a></div>
-				<div class="breadcrumb-item"><a href="<?php echo base_url($lang . '/backoffice/page/services/list-service-ports/' . $service->id); ?>">Portfolios (Service: <?php echo unserialize($service->title)['th']; ?>)</div>
+				<div class="breadcrumb-item"><a href="<?php echo base_url($lang . '/backoffice/page/services/list-service-ports/' . $service->id); ?>">Portfolios (Service: <?php echo unserialize($service->title)['th']; ?>)</a></div>
 				<div class="breadcrumb-item active">Add</div>
 			</div>
 		</div>
@@ -47,7 +47,7 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> Image</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> Upload Image</label>
 											<div class="col-sm-10">
 												<div class="custom-file input-file-w-30">
 													<input type="file" name="img_th" class="custom-file-input" onchange="PreviewImage(this, 'previewImgTh');">
@@ -74,7 +74,7 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> Image</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> Upload Image</label>
 											<div class="col-sm-10">
 												<div class="custom-file input-file-w-30">
 													<input type="file" name="img_en" class="custom-file-input" onchange="PreviewImage(this, 'previewImgEn');">

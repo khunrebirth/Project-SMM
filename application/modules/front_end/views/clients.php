@@ -12,7 +12,7 @@
 <section id="client">
     <div class="container-fluid">
         <div class="title-client" style="text-align: center; padding: 4rem;">
-			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-cilent.png' : 'resources/front_end/images/title-cilent.png'); ?>" alt="" class="img-fluid">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-cilent.png' : 'resources/front_end/images/title-cilent.png'); ?>" class="img-fluid">
         </div>
 		<div class="row sec-client">
 			<div class="col-3">
@@ -28,7 +28,6 @@
 					<li><a href="">0008</a></li>
 					<li><a href="">0009</a></li>
 					<li><a href="">0010</a></li>
-
 				</ul>
 			</div>
 			<div class="col-9 wrap-logo">

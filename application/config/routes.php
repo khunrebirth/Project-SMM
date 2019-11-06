@@ -185,7 +185,7 @@ $route['(\w{2})/ขอบคุณ'] = 'front_end/Thank_you';
 		$route['(\w{2})/backoffice/page/services/list-services/ajax/get/services/sort/show'] = 'back_end/Service/ajax_get_service_and_sort_show';
 		$route['(\w{2})/backoffice/page/services/list-services/ajax/get/services/sort/update'] = 'back_end/Service/ajax_get_service_and_sort_update';
 
-		// Port
+		// Portfolios
 		$route['(\w{2})/backoffice/page/services/list-service-ports/(:any)'] = 'back_end/Service/list_service_portfolios/$1/$2';
 		$route['(\w{2})/backoffice/page/services/list-service-ports/create/(:any)'] = 'back_end/Service/service_portfolio_create/$1/$2';
 		$route['(\w{2})/backoffice/page/services/list-service-ports/store/(:any)'] = 'back_end/Service/service_portfolio_store/$1/$2';
@@ -194,6 +194,16 @@ $route['(\w{2})/ขอบคุณ'] = 'front_end/Thank_you';
 		$route['(\w{2})/backoffice/page/services/list-service-ports/destroy/(:any)'] = "back_end/Service/service_portfolio_destroy/$1/$2";
 		$route['(\w{2})/backoffice/page/services/list-service-ports/ajax/get/portfolios/sort/show/(:any)'] = 'back_end/Service/ajax_get_service_portfolio_and_sort_show/$1/$2';
 		$route['(\w{2})/backoffice/page/services/list-service-ports/ajax/get/portfolios/sort/update'] = 'back_end/Service/ajax_get_service_portfolio_and_sort_update';
+
+		// Clients
+		$route['(\w{2})/backoffice/page/services/list-service-clients/(:any)'] = 'back_end/Service/list_service_clients/$1/$2';
+		$route['(\w{2})/backoffice/page/services/list-service-clients/create/(:any)'] = 'back_end/Service/service_client_create/$1/$2';
+		$route['(\w{2})/backoffice/page/services/list-service-clients/store/(:any)'] = 'back_end/Service/service_client_store/$1/$2';
+		$route['(\w{2})/backoffice/page/services/list-service-clients/edit/(:any)/(:any)'] = "back_end/Service/service_client_edit/$1/$2/$3";
+		$route['(\w{2})/backoffice/page/services/list-service-clients/update/(:any)/(:any)'] = "back_end/Service/service_client_update/$1/$2/$3";
+		$route['(\w{2})/backoffice/page/services/list-service-clients/destroy/(:any)'] = "back_end/Service/service_client_destroy/$1/$2";
+		$route['(\w{2})/backoffice/page/services/list-service-clients/ajax/get/clients/sort/show/(:any)'] = 'back_end/Service/ajax_get_service_client_and_sort_show/$1/$2';
+		$route['(\w{2})/backoffice/page/services/list-service-clients/ajax/get/clients/sort/update'] = 'back_end/Service/ajax_get_service_client_and_sort_update';
 
 		/*
 		| -------------------------------------------------------------------------
@@ -212,6 +222,8 @@ $route['(\w{2})/ขอบคุณ'] = 'front_end/Thank_you';
 		$route['(\w{2})/backoffice/page/clients/list-category-clients/edit/(:any)'] = "back_end/Client/category_client_edit/$1/$2";
 		$route['(\w{2})/backoffice/page/clients/list-category-clients/update/(:any)'] = "back_end/Client/category_client_update/$1/$2";
 		$route['(\w{2})/backoffice/page/clients/list-category-clients/destroy/(:any)'] = "back_end/Client/category_client_destroy/$1/$2";
+		$route['(\w{2})/backoffice/page/clients/list-category-clients/ajax/get/category-clients/sort/show'] = 'back_end/Client/ajax_get_category_client_and_sort_show';
+		$route['(\w{2})/backoffice/page/clients/list-category-clients/ajax/get/category-clients/sort/update'] = 'back_end/Client/ajax_get_category_client_and_sort_update';
 
 		// Client
 		$route['(\w{2})/backoffice/page/clients/list-clients/(:any)'] = 'back_end/Client/list_client/$1/$2';
@@ -225,9 +237,49 @@ $route['(\w{2})/ขอบคุณ'] = 'front_end/Thank_you';
 
 		/*
 		| -------------------------------------------------------------------------
+		| Portfolio
+		| -------------------------------------------------------------------------
+		*/
+
+		// Content
+		$route['(\w{2})/backoffice/page/portfolios/content/(:any)'] = 'back_end/Portfolio/edit_content/$1/$2';
+		$route['(\w{2})/backoffice/page/portfolios/content/update/(:any)'] = 'back_end/Portfolio/update_content/$1/$2';
+
+		// Category
+		$route['(\w{2})/backoffice/page/portfolios/list-category-portfolios'] = 'back_end/Portfolio/list_category_portfolio';
+		$route['(\w{2})/backoffice/page/portfolios/list-category-portfolios/create'] = 'back_end/Portfolio/category_portfolio_create';
+		$route['(\w{2})/backoffice/page/portfolios/list-category-portfolios/store'] = 'back_end/Portfolio/category_portfolio_store';
+		$route['(\w{2})/backoffice/page/portfolios/list-category-portfolios/edit/(:any)'] = "back_end/Portfolio/category_portfolio_edit/$1/$2";
+		$route['(\w{2})/backoffice/page/portfolios/list-category-portfolios/update/(:any)'] = "back_end/Portfolio/category_portfolio_update/$1/$2";
+		$route['(\w{2})/backoffice/page/portfolios/list-category-portfolios/destroy/(:any)'] = "back_end/Portfolio/category_portfolio_destroy/$1/$2";
+		$route['(\w{2})/backoffice/page/portfolios/list-category-portfolios/ajax/get/category-clients/sort/show'] = 'back_end/Portfolio/ajax_get_category_portfolio_and_sort_show';
+		$route['(\w{2})/backoffice/page/portfolios/list-category-portfolios/ajax/get/category-clients/sort/update'] = 'back_end/Portfolio/ajax_get_category_portfolio_and_sort_update';
+
+		// Portfolio
+		$route['(\w{2})/backoffice/page/portfolios/list-portfolios/(:any)'] = 'back_end/Portfolio/list_portfolio/$1/$2';
+		$route['(\w{2})/backoffice/page/portfolios/list-portfolios/create/(:any)'] = 'back_end/Portfolio/portfolio_create/$1/$2';
+		$route['(\w{2})/backoffice/page/portfolios/list-portfolios/store/(:any)'] = 'back_end/Portfolio/portfolio_store/$1/$2';
+		$route['(\w{2})/backoffice/page/portfolios/list-portfolios/edit/(:any)/(:any)'] = "back_end/Portfolio/portfolio_edit/$1/$2/$3";
+		$route['(\w{2})/backoffice/page/portfolios/list-portfolios/update/(:any)/(:any)'] = "back_end/Portfolio/portfolio_update/$1/$2/$3";
+		$route['(\w{2})/backoffice/page/portfolios/list-portfolios/destroy/(:any)'] = "back_end/Portfolio/portfolio_destroy/$1/$2";
+		$route['(\w{2})/backoffice/page/portfolios/list-portfolios/ajax/get/clients/sort/show/(:any)'] = 'back_end/Portfolio/ajax_get_portfolio_and_sort_show/$1/$2';
+		$route['(\w{2})/backoffice/page/portfolios/list-portfolios/ajax/get/clients/sort/update'] = 'back_end/Portfolio/ajax_get_portfolio_and_sort_update';
+
+		/*
+		| -------------------------------------------------------------------------
 		| Blogs
 		| -------------------------------------------------------------------------
 		*/
+
+		// Tags
+		$route['(\w{2})/backoffice/page/blogs/list-tags'] = 'back_end/Tag/list_tag';
+		$route['(\w{2})/backoffice/page/blogs/list-tags/create'] = 'back_end/Tag/create';
+		$route['(\w{2})/backoffice/page/blogs/list-tags/store'] = 'back_end/Tag/store';
+		$route['(\w{2})/backoffice/page/blogs/list-tags/edit/(:any)'] = "back_end/Tag/edit/$1/$2";
+		$route['(\w{2})/backoffice/page/blogs/list-tags/update/(:any)'] = "back_end/Tag/update/$1/$2";
+		$route['(\w{2})/backoffice/page/blogs/list-tags/destroy/(:any)'] = "back_end/Tag/destroy/$1/$2";
+		$route['(\w{2})/backoffice/page/blogs/list-tags/ajax/get/tags/sort/show'] = 'back_end/Tag/ajax_get_tag_and_sort_show';
+		$route['(\w{2})/backoffice/page/blogs/list-tags/ajax/get/tags/sort/update'] = 'back_end/Tag/ajax_get_tag_and_sort_update';
 
 		// Category
 		$route['(\w{2})/backoffice/page/blogs/list-category-blogs'] = 'back_end/Blog/list_category_blog';
@@ -236,6 +288,8 @@ $route['(\w{2})/ขอบคุณ'] = 'front_end/Thank_you';
 		$route['(\w{2})/backoffice/page/blogs/list-category-blogs/edit/(:any)'] = "back_end/Blog/category_blog_edit/$1/$2";
 		$route['(\w{2})/backoffice/page/blogs/list-category-blogs/update/(:any)'] = "back_end/Blog/category_blog_update/$1/$2";
 		$route['(\w{2})/backoffice/page/blogs/list-category-blogs/destroy/(:any)'] = "back_end/Blog/category_blog_destroy/$1/$2";
+		$route['(\w{2})/backoffice/page/blogs/list-category-blogs/ajax/get/category-blogs/sort/show'] = 'back_end/Blog/ajax_get_category_blog_and_sort_show';
+		$route['(\w{2})/backoffice/page/blogs/list-category-blogs/ajax/get/category-blogs/sort/update'] = 'back_end/Blog/ajax_get_category_blog_and_sort_update';
 
 		// Blog
 		$route['(\w{2})/backoffice/page/blogs/list-blogs/(:any)'] = 'back_end/Blog/list_blog/$1/$2';

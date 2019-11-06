@@ -71,6 +71,8 @@ class Banner extends MX_Controller
 		// Handle Image
 		$img_en = unserialize($banner->img)['en'];
 		$img_th = unserialize($banner->img)['th'];
+		$img_moblie_en = unserialize($banner->img_moblie)['en'];
+		$img_moblie_th = unserialize($banner->img_moblie)['th'];
 
 		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
 			$img_en = $this->ddoo_upload_banner('img_en');
@@ -80,10 +82,19 @@ class Banner extends MX_Controller
 			$img_th = $this->ddoo_upload_banner('img_th');
 		}
 
+		if (isset($_FILES['img_moblie_en']) && $_FILES['img_moblie_en']['name'] != '') {
+			$img_moblie_en = $this->ddoo_upload_banner('img_moblie_en');
+		}
+
+		if (isset($_FILES['img_moblie_th']) && $_FILES['img_moblie_th']['name'] != '') {
+			$img_moblie_th = $this->ddoo_upload_banner('img_moblie_th');
+		}
+
 		// Filter Data
 		$input_img_title_alt = ['en' => $this->input->post('img_title_alt_en'), 'th' => $this->input->post('img_title_alt_th')];
 		$input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
 		$input_img = ['en' => $img_en, 'th' => $img_th];
+		$input_img_moblie = ['en' => $img_moblie_en, 'th' => $img_moblie_th];
 
 		// Add Data
 		$update_banner = $this->Banner_model->update_banner_by_id($id, [
@@ -91,6 +102,7 @@ class Banner extends MX_Controller
 			'title' => serialize($input_title),
 			'img_title_alt' => serialize($input_img_title_alt),
 			'img' => serialize($input_img),
+			'img_moblie' => serialize($input_img_moblie),
 			'updated_at' => date('Y-m-d H:i:s')
 		]);
 
@@ -116,7 +128,6 @@ class Banner extends MX_Controller
 	{
 		$config['upload_path'] = './storage/uploads/images/banners';
 		$config['allowed_types'] = 'gif|jpg|png';
-//		$config['encrypt_name'] = TRUE;
 		$config['file_name'] = pathinfo($_FILES[$filename]['name'], PATHINFO_FILENAME) . '_' . time();
 
 		$this->load->library('upload', $config);

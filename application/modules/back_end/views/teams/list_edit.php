@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css'); ?>">
 <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/datatables.net-select-bs4/css/select.bootstrap4.min.css'); ?>">
 <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/prismjs/themes/prism.css'); ?> ">
+<link href="<?php echo base_url('resources/back_end/assets/css/notiny.min.css'); ?>" rel="stylesheet">
 
 <!-- Main Content -->
 <div class="main-content">
@@ -54,6 +55,12 @@
 												</div>
 											</div>
 										</div>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Image Title &amp; Alt</label>
+											<div class="col-sm-10">
+												<input class="form-control input-file-w-30" name="img_title_alt_th" placeholder="Image Title &amp; Alt" type="text" value="<?php echo unserialize($team->img_title_alt)['th']; ?>">
+											</div>
+										</div>
 										<hr>
 										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Preview</label>
@@ -68,6 +75,12 @@
 													<input type="file" name="img_hover_th" class="custom-file-input" onchange="PreviewImage(this, 'previewImgHoverTh');">
 													<label class="custom-file-label">Choose file (.gif | .jpg | .png)</label>
 												</div>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Image Title &amp; Alt<b>(On Hover)</b></label>
+											<div class="col-sm-10">
+												<input class="form-control input-file-w-30" name="img_title_alt_hover_th" placeholder="Image Title &amp; Alt" type="text" value="<?php echo unserialize($team->img_title_alt_hover)['th']; ?>">
 											</div>
 										</div>
 										<hr>
@@ -104,6 +117,12 @@
 												</div>
 											</div>
 										</div>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Image Title &amp; Alt</label>
+											<div class="col-sm-10">
+												<input class="form-control input-file-w-30" name="img_title_alt_en" placeholder="Image Title &amp; Alt" type="text" value="<?php echo unserialize($team->img_title_alt)['en']; ?>">
+											</div>
+										</div>
 										<hr>
 										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Preview</label>
@@ -118,6 +137,12 @@
 													<input type="file" name="img_hover_en" class="custom-file-input" onchange="PreviewImage(this, 'previewImgHoverEn');">
 													<label class="custom-file-label">Choose file (.gif | .jpg | .png)</label>
 												</div>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Image Title &amp; Alt<b>(On Hover)</b></label>
+											<div class="col-sm-10">
+												<input class="form-control input-file-w-30" name="img_title_alt_hover_en" placeholder="Image Title &amp; Alt" type="text" value="<?php echo unserialize($team->img_title_alt_hover)['en']; ?>">
 											</div>
 										</div>
 										<div class="form-group row">
@@ -156,6 +181,7 @@
 
 <!-- Page Specific JS File -->
 <script src="<?php echo base_url('resources/back_end/assets/js/page/modules-datatables.js'); ?>"></script>
+<script src="<?php echo base_url('resources/back_end/assets/js/notiny.min.js'); ?>"></script>
 
 <script>
     function PreviewImage(input, previewImage) {
@@ -169,4 +195,46 @@
             reader.readAsDataURL(input.files[0]);
         }
     }
+
+    function notify(event, message) {
+
+        let eventResponse = ''
+
+        switch (event) {
+            case 'success':
+                eventResponse = 'success'
+                break
+
+            case 'warning':
+                eventResponse = 'warning'
+                break
+
+            case 'error':
+                eventResponse = 'error'
+                break
+
+            default:
+                eventResponse = 'error'
+        }
+
+        $.notiny({
+            text: message,
+            image: 'http://devel.ag-projects.com/repositories/blink-qt/resources/icons/invalid.png',
+            width: '320',
+            delay: 5000
+        });
+    }
+
+    $(document).ready(function () {
+
+        $('button[type="submit"]').on('click', function (e) {
+
+            let titleTh = $('input[name="title_th"]').val(),
+                titleEn = $('input[name="title_en"]').val();
+
+            if (titleTh == '' || titleEn == '') {
+                notify('error', 'Title ทั้ง TH และ EN ไม่สามารถใส่เป็นค่าว่างได้');
+            }
+        })
+    })
 </script>

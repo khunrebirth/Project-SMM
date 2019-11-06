@@ -69,7 +69,8 @@
 										<th>Title(en)</th>
 										<th>Title(th)</th>
 										<th>Created at</th>
-										<th>Portfolio</th>
+										<th>Portfolios</th>
+										<th>Clients</th>
 										<th>Action</th>
 									</tr>
 									</thead>
@@ -86,6 +87,9 @@
 												<td><?php echo $service->created_at; ?></td>
 												<td>
 													<a class="btn btn-warning" href="<?php echo base_url($lang . '/backoffice/page/services/list-service-ports/' . $service->id); ?>"><i class="far fa-view"></i> Items (<?php echo $service->counter; ?>)</a>
+												</td>
+												<td>
+													<a class="btn btn-warning" href="<?php echo base_url($lang . '/backoffice/page/services/list-service-clients/' . $service->id); ?>"><i class="far fa-view"></i> Items (<?php echo $service->counter; ?>)</a>
 												</td>
 												<td>
 													<div class="dropdown d-inline">
@@ -191,48 +195,12 @@
             })
     }
 
-    function deleteTeam(url) {
-        swal({
-            title: 'Are you sure ?',
-            icon: 'warning',
-            buttons: true,
-            dangerMode: true
-        })
-            .then((willDelete) => {
-                if (willDelete) {
-                    $.ajax({
-                        type: 'POST',
-                        url: url,
-                        success: function (res) {
-                            swal({
-                                title: 'Success',
-                                icon: 'success',
-                                button: 'Great!'
-                            })
-
-                            reload()
-                        },
-                        error: function (res) {
-                            swal({
-                                title: 'Oops...',
-                                text: 'Fail',
-                                icon: 'error',
-                                timer: '1500'
-                            })
-                        }
-                    })
-                } else {
-                    swal('Cancel')
-                }
-            })
-    }
-
     $(document).ready(function() {
         $('#btnSort').on('click', function() {
 
             $.ajax({
                 type: "POST",
-                url: window.base_url + '/' + window.langSite +'/backoffice/page/services/list-services/ajax/get/services/sort/show',
+                url: window.base_url + '/' + window.langSite + '/backoffice/page/services/list-services/ajax/get/services/sort/show',
                 success: function(res) {
                     $('#custom-width-modal .modal-body').html(res.data)
                     $("#custom-width-modal #sortable").sortable({ placeholder: "ui-state-highlight" })
@@ -259,7 +227,7 @@
 
             $.ajax({
                 type: "POST",
-                url: window.base_url + '/' + window.langSite +'/backoffice/page/services/list-services/ajax/get/services/sort/update',
+                url: window.base_url + '/' + window.langSite + '/backoffice/page/services/list-services/ajax/get/services/sort/update',
                 data: {
                     id: selectedID,
                     sort: selectedSort

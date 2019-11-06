@@ -47,7 +47,7 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> Image</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> Upload Image</label>
 											<div class="col-sm-10">
 												<div class="custom-file input-file-w-30">
 													<input type="file" name="img_th" class="custom-file-input" onchange="PreviewImage(this, 'previewImgTh');">
@@ -74,7 +74,7 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> Image</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> Upload Image</label>
 											<div class="col-sm-10">
 												<div class="custom-file input-file-w-30">
 													<input type="file" name="img_en" class="custom-file-input" onchange="PreviewImage(this, 'previewImgEn');">

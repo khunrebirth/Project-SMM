@@ -8,10 +8,12 @@ class Client_category_model extends CI_Model {
 		$sql = "
 			SELECT 
 			client_categories.id,
+			client_categories.sort,
 			client_categories.title,
             client_categories.created_at,
             (SELECT COUNT(*) FROM clients WHERE client_categories.id = clients.category_id) as counter
 			FROM client_categories
+			ORDER BY client_categories.sort ASC
         ";
 
 		$query = $this->db->query($sql);

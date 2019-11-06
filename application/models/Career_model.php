@@ -10,6 +10,7 @@ class Career_model extends CI_Model {
 			careers.id,
 			careers.sort,
 			careers.img_cover,
+			careers.img_cover_moblie,
 			careers.title,
 			careers.slug,
 			careers.comment,

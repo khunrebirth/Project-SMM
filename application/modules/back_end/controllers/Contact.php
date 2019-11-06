@@ -27,7 +27,7 @@ class Contact extends MX_Controller
 
         // Model
         $this->load->model('User_model');
-        $this->load->model('Contact_page_model');
+		$this->load->model('Page_model');
 
 		// Language
 		$this->lang = $this->config->item('language_abbr');
@@ -43,18 +43,22 @@ class Contact extends MX_Controller
 
     public function edit_content($lang, $id)
     {
+		$page_contact_id = 9;
+
 		$this->data['lang'] = $this->lang;
         $this->data['title'] = 'Page: Contact - Content - Edit';
         $this->data['content'] = 'contact/content';
-        $this->data['page_content'] = $this->Contact_page_model->get_contact_page_by_id($id);
+        $this->data['page_content'] = $this->Page_model->get_page_by_id($page_contact_id);
 
         $this->load->view('app', $this->data);
     }
 
     public function update_content($lang, $id)
     {
+		$page_contact_id = $id;
+
         // Get Old data
-        $page_content = $this->Contact_page_model->get_contact_page_by_id($id);
+        $page_content = $this->Page_model->get_page_by_id($page_contact_id);
 
         // Handle Image
         $meta_og_image_en = unserialize($page_content->img_og_twitter)['en'];
@@ -72,13 +76,19 @@ class Contact extends MX_Controller
         $input_meta_tag_title = ['en' => $this->input->post('meta_tag_title_en'), 'th' => $this->input->post('meta_tag_title_th')];
         $input_meta_tag_description = ['en' => $this->input->post('meta_tag_description_en'), 'th' => $this->input->post('meta_tag_description_th')];
         $input_meta_tag_keywords = ['en' => $this->input->post('meta_tag_keywords_en'), 'th' => $this->input->post('meta_tag_keywords_th')];
+		$input_meta_tag_moblie_title = ['en' => $this->input->post('meta_tag_moblie_title_en'), 'th' => $this->input->post('meta_tag_moblie_title_th')];
+		$input_meta_tag_moblie_description = ['en' => $this->input->post('meta_tag_moblie_description_en'), 'th' => $this->input->post('meta_tag_moblie_description_th')];
+		$input_meta_tag_moblie_keywords = ['en' => $this->input->post('meta_tag_moblie_keywords_en'), 'th' => $this->input->post('meta_tag_moblie_keywords_th')];
         $input_img_og_twitter = ['en' => $meta_og_image_en, 'th' => $meta_og_image_th];
 
         // Update Data
-        $update_page_content = $this->Contact_page_model->update_contact_page_by_id($id, [
+        $update_page_content = $this->Page_model->update_page_by_id($page_contact_id, [
             'meta_tag_title' => serialize($input_meta_tag_title),
             'meta_tag_description' => serialize($input_meta_tag_description),
             'meta_tag_keywords' => serialize($input_meta_tag_keywords),
+			'meta_tag_moblie_title' => serialize($input_meta_tag_moblie_title),
+			'meta_tag_moblie_description' => serialize($input_meta_tag_moblie_description),
+			'meta_tag_moblie_keywords' => serialize($input_meta_tag_moblie_keywords),
             'img_og_twitter' => serialize($input_img_og_twitter),
             'updated_at' => date('Y-m-d H:i:s')
         ]);
@@ -98,7 +108,7 @@ class Contact extends MX_Controller
             $this->session->set_flashdata('error', 'Something wrong');
         }
 
-        redirect($lang . '/backoffice/page/contact/content/' . $id);
+        redirect($lang . '/backoffice/page/contact/content/' . $page_contact_id);
     }
 
     private function do_upload_contact($filename)

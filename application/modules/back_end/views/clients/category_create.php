@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css'); ?>">
 <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/datatables.net-select-bs4/css/select.bootstrap4.min.css'); ?>">
 <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/prismjs/themes/prism.css'); ?> ">
+<link href="<?php echo base_url('resources/back_end/assets/css/notiny.min.css'); ?>" rel="stylesheet">
 
 <!-- Main Content -->
 <div class="main-content">
@@ -10,7 +11,7 @@
 			<h1>Add New</h1>
 			<div class="section-header-breadcrumb">
 				<div class="breadcrumb-item"><a href="<?php echo base_url($lang . '/backoffice/dashboard'); ?>">Dashboard</a></div>
-				<div class="breadcrumb-item"><a href="#">Page: Blogs</a></div>
+				<div class="breadcrumb-item"><a href="#">Page: Clients</a></div>
 				<div class="breadcrumb-item"><a href="<?php echo base_url($lang . '/backoffice/page/clients/list-category-clients'); ?>">Categories</a></div>
 				<div class="breadcrumb-item active">Add New</div>
 			</div>
@@ -20,12 +21,14 @@
 				<div class="col-12">
 					<div class="card">
 						<div class="card-body">
+
 							<?php if ($this->session->flashdata('success')) { ?>
 								<div class="alert alert-success"><?php echo $this->session->flashdata('success'); ?></div>
 							<?php } ?>
 							<?php if ($this->session->flashdata('error')) { ?>
 								<div class="alert alert-danger"><?php echo $this->session->flashdata('error'); ?></div>
 							<?php } ?>
+
 							<ul class="nav nav-tabs">
 								<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#handleTh">TH</a></li>
 								<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#handleEn">EN</a></li>
@@ -79,6 +82,7 @@
 
 <!-- Page Specific JS File -->
 <script src="<?php echo base_url('resources/back_end/assets/js/page/modules-datatables.js'); ?>"></script>
+<script src="<?php echo base_url('resources/back_end/assets/js/notiny.min.js'); ?>"></script>
 
 <script>
     function PreviewImage(input, previewImage) {
@@ -92,4 +96,46 @@
             reader.readAsDataURL(input.files[0]);
         }
     }
+
+    function notify(event, message) {
+
+        let eventResponse = ''
+
+        switch (event) {
+            case 'success':
+                eventResponse = 'success'
+                break
+
+            case 'warning':
+                eventResponse = 'warning'
+                break
+
+            case 'error':
+                eventResponse = 'error'
+                break
+
+            default:
+                eventResponse = 'error'
+        }
+
+        $.notiny({
+            text: message,
+            image: 'http://devel.ag-projects.com/repositories/blink-qt/resources/icons/invalid.png',
+            width: '320',
+            delay: 5000
+        });
+    }
+
+    $(document).ready(function () {
+
+        $('button[type="submit"]').on('click', function (e) {
+
+            let titleTh = $('input[name="title_th"]').val(),
+                titleEn = $('input[name="title_en"]').val();
+
+            if (titleTh == '' || titleEn == '') {
+                notify('error', 'Title ทั้ง TH และ EN ไม่สามารถใส่เป็นค่าว่างได้');
+            }
+        })
+    })
 </script>

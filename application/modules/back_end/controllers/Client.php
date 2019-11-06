@@ -29,7 +29,7 @@ class Client extends MX_Controller
 		$this->load->model('User_model');
 		$this->load->model('Client_category_model');
 		$this->load->model('Client_model');
-		$this->load->model('Client_page_model');
+		$this->load->model('Page_model');
 
 		// Language
 		$this->lang = $this->config->item('language_abbr');
@@ -49,18 +49,22 @@ class Client extends MX_Controller
 
 	public function edit_content($lang, $id)
 	{
+		$page_client_id = 5;
+
 		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Page: Clients - Content - Edit';
 		$this->data['content'] = 'clients/content';
-		$this->data['page_content'] =  $this->Client_page_model->get_client_page_by_id($id);
+		$this->data['page_content'] =  $this->Page_model->get_page_by_id($page_client_id);
 
 		$this->load->view('app', $this->data);
 	}
 
 	public function update_content($lang, $id)
 	{
+		$page_client_id = $id;
+
 		// Get Old data
-		$page_content = $this->Client_page_model->get_client_page_by_id($id);
+		$page_content = $this->Page_model->get_page_by_id($page_client_id);
 
 		// Handle Image
 		$meta_og_image_en = unserialize($page_content->img_og_twitter)['en'];
@@ -78,13 +82,19 @@ class Client extends MX_Controller
 		$input_meta_tag_title = ['en' => $this->input->post('meta_tag_title_en'), 'th' => $this->input->post('meta_tag_title_th')];
 		$input_meta_tag_description = ['en' => $this->input->post('meta_tag_description_en'), 'th' => $this->input->post('meta_tag_description_th')];
 		$input_meta_tag_keywords = ['en' => $this->input->post('meta_tag_keywords_en'), 'th' => $this->input->post('meta_tag_keywords_th')];
+		$input_meta_tag_moblie_title = ['en' => $this->input->post('meta_tag_moblie_title_en'), 'th' => $this->input->post('meta_tag_moblie_title_th')];
+		$input_meta_tag_moblie_description = ['en' => $this->input->post('meta_tag_moblie_description_en'), 'th' => $this->input->post('meta_tag_moblie_description_th')];
+		$input_meta_tag_moblie_keywords = ['en' => $this->input->post('meta_tag_moblie_keywords_en'), 'th' => $this->input->post('meta_tag_moblie_keywords_th')];
 		$input_img_og_twitter = ['en' => $meta_og_image_en, 'th' => $meta_og_image_th];
 
 		// Update Data
-		$update_page_content = $this->Client_page_model->update_client_page_by_id($id, [
+		$update_page_content = $this->Page_model->update_page_by_id($page_client_id, [
 			'meta_tag_title' => serialize($input_meta_tag_title),
 			'meta_tag_description' => serialize($input_meta_tag_description),
 			'meta_tag_keywords' => serialize($input_meta_tag_keywords),
+			'meta_tag_moblie_title' => serialize($input_meta_tag_moblie_title),
+			'meta_tag_moblie_description' => serialize($input_meta_tag_moblie_description),
+			'meta_tag_moblie_keywords' => serialize($input_meta_tag_moblie_keywords),
 			'img_og_twitter' => serialize($input_img_og_twitter),
 			'updated_at' => date('Y-m-d H:i:s')
 		]);
@@ -104,7 +114,7 @@ class Client extends MX_Controller
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
 
-		redirect($this->lang . '/backoffice/page/clients/content/' . $id);
+		redirect($this->lang . '/backoffice/page/clients/content/' . $page_client_id);
 	}
 
 	/***********************************
@@ -145,7 +155,7 @@ class Client extends MX_Controller
 
 			logger_store([
 				'user_id' => $this->data['user']->id,
-				'detail' => 'เพิ่ม Category (Client Page)',
+				'detail' => 'เพิ่ม Category (Clients Page)',
 				'event' => 'add',
 				'ip' => $this->input->ip_address(),
 			]);
@@ -158,9 +168,9 @@ class Client extends MX_Controller
 		redirect($this->lang . '/backoffice/page/clients/list-category-clients');
 	}
 
-	public function category_client_edit($lang, $client_id)
+	public function category_client_edit($lang, $client_category_id)
 	{
-		$category = $this->Client_category_model->get_client_category_by_id($client_id);
+		$category = $this->Client_category_model->get_client_category_by_id($client_category_id);
 		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Page: Clients - Category - Edit ('. unserialize($category->title)['th'] . ')';
 		$this->data['content'] = 'clients/category_edit';
@@ -169,13 +179,13 @@ class Client extends MX_Controller
 		$this->load->view('app', $this->data);
 	}
 
-	public function category_client_update($lang, $client_id)
+	public function category_client_update($lang, $client_category_id)
 	{
 		// Filter Data
 		$input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
 
 		// Add Data
-		$update_category = $this->Client_category_model->update_client_category_by_id($client_id, [
+		$update_category = $this->Client_category_model->update_client_category_by_id($client_category_id, [
 			'title' => serialize($input_title),
 			'updated_at' => date('Y-m-d H:i:s')
 		]);
@@ -185,7 +195,7 @@ class Client extends MX_Controller
 
 			logger_store([
 				'user_id' => $this->data['user']->id,
-				'detail' => 'แก้ไข Category (Client Page)',
+				'detail' => 'แก้ไข Category (Clients Page)',
 				'event' => 'update',
 				'ip' => $this->input->ip_address(),
 			]);
@@ -198,16 +208,23 @@ class Client extends MX_Controller
 		redirect($this->lang . '/backoffice/page/clients/list-category-clients');
 	}
 
-	public function category_client_destroy($lang, $client_id)
+	public function category_client_destroy($lang, $client_category_id)
 	{
 		$status = 500;
 		$response['success'] = 0;
 
-		$category = $this->Client_category_model->delete_client_category_by_id($client_id);
+		$delete_client_category = $this->Client_category_model->delete_client_category_by_id($client_category_id);
 
-		if ($category != false) {
+		if ($delete_client_category != false) {
 			$status = 200;
 			$response['success'] = 1;
+
+			logger_store([
+				'user_id' => $this->data['user']->id,
+				'detail' => 'ลบ Category (Clients Page)',
+				'event' => 'delete',
+				'ip' => $this->input->ip_address(),
+			]);
 		}
 
 		return $this->output
@@ -237,6 +254,7 @@ class Client extends MX_Controller
 		$this->data['title'] = 'Page: Clients - Clients - Add';
 		$this->data['content'] = 'clients/client_create';
 		$this->data['category'] =  $this->Client_category_model->get_client_category_by_id($client_category_id);
+		$this->data['client_categories'] = $this->Client_category_model->get_client_category_all();
 
 		$this->load->view('app', $this->data);
 	}
@@ -258,13 +276,20 @@ class Client extends MX_Controller
 		// Filter Data
 		$input_img = ['en' => $img_en, 'th' => $img_th];
 		$input_title = ['en' => $this->input->post('img_title_alt_en'), 'th' => $this->input->post('img_title_alt_th')];
+		$input_text = ['en' => $this->input->post('text_en'), 'th' => $this->input->post('text_th')];
+		$input_categories = $this->input->post('categories');
+
+		$add_client = false;
 
 		// Add Data
-		$add_client = $this->Client_model->insert_client([
-			'image' => serialize($input_img),
-			'title' => serialize($input_title),
-			'category_id' => $client_category_id
-		]);
+		foreach ($input_categories as $key_input_category => $input_category) {
+			$add_client = $this->Client_model->insert_client([
+				'image' => serialize($input_img),
+				'title' => serialize($input_title),
+				'text' => serialize($input_text),
+				'category_id' => $key_input_category
+			]);
+		}
 
 		// Set Session To View
 		if ($add_client) {
@@ -317,11 +342,13 @@ class Client extends MX_Controller
 		// Filter Data
 		$input_img = ['en' => $img_en, 'th' => $img_th];
 		$input_title = ['en' => $this->input->post('img_title_alt_en'), 'th' => $this->input->post('img_title_alt_th')];
+		$input_text = ['en' => $this->input->post('text_en'), 'th' => $this->input->post('text_th')];
 
 		// Update Data
 		$update_client = $this->Client_model->update_client_by_id($client_id, [
 			'image' => serialize($input_img),
 			'title' => serialize($input_title),
+			'text' => serialize($input_text),
 			'updated_at' => date('Y-m-d H:i:s')
 		]);
 
@@ -356,7 +383,7 @@ class Client extends MX_Controller
 
 			logger_store([
 				'user_id' => $this->data['user']->id,
-				'detail' => 'ลบ Client (Client Page)',
+				'detail' => 'ลบ Client (Clients Page)',
 				'event' => 'delete',
 				'ip' => $this->input->ip_address(),
 			]);
@@ -371,6 +398,76 @@ class Client extends MX_Controller
 	/***********************************
 	 * Sorting (Using Ajax)
 	 * ********************************/
+
+	public function ajax_get_category_client_and_sort_show()
+	{
+		$status = 500;
+		$response['success'] = 0;
+
+		$client_categories = $this->Client_category_model->get_client_category_all();
+
+		// Set Response
+		if ($client_categories != false) {
+			$status = 200;
+			$response['success'] = 1;
+
+			$counter = 1;
+			$html = '<ul id="sortable">';
+			foreach ($client_categories as $client_category) {
+				$html .= '<li id="' . $client_category->id . '" data-sort="' . $client_category->sort . '"><span style="padding: 0px 10px;">' . $counter . '</span>' . unserialize($client_category->title)['en'] . '&nbsp;|&nbsp;' . unserialize($client_category->title)['th'] . '</li>';
+				$counter++;
+			}
+			$html .= '</ul>';
+
+			$response['data'] = $html;
+		}
+
+		// Send Response
+		return $this->output
+			->set_status_header($status)
+			->set_content_type('application/json')
+			->set_output(json_encode($response));
+	}
+
+	public function ajax_get_category_client_and_sort_update()
+	{
+		$status = 500;
+		$response['success'] = 0;
+
+		// Set Response
+		if ($this->input->post()) {
+
+			$bundle_id = $this->input->post('id');
+			$bundle_sort = $this->input->post('sort');
+
+			$counter = 1;
+			foreach (array_combine($bundle_id, $bundle_sort) as $id => $sort) {
+
+				$this->Client_category_model->update_client_category_by_id($id, [
+					'sort' => $counter,
+					'updated_at' => date('Y-m-d H:i:s')
+				]);
+
+				$counter++;
+			}
+
+			$status = 200;
+			$response['success'] = 1;
+
+			logger_store([
+				'user_id' => $this->data['user']->id,
+				'detail' => 'จัดเรียง Client Category (Clients Page)',
+				'event' => 'sort_item',
+				'ip' => $this->input->ip_address(),
+			]);
+		}
+
+		// Send Response
+		return $this->output
+			->set_status_header($status)
+			->set_content_type('application/json')
+			->set_output(json_encode($response));
+	}
 
 	public function ajax_get_client_and_sort_show($lang, $category_id)
 	{
@@ -446,7 +543,6 @@ class Client extends MX_Controller
 	{
 		$config['upload_path'] = './storage/uploads/images/clients';
 		$config['allowed_types'] = 'gif|jpg|png';
-//		$config['encrypt_name'] = TRUE;
 		$config['file_name'] = pathinfo($_FILES[$filename]['name'], PATHINFO_FILENAME) . '_' . time();
 
 		$this->load->library('upload', $config);

@@ -18,8 +18,8 @@ class Services extends MX_Controller
 
 		// Model
 		$this->load->model('Service_model');
+		$this->load->model('Service_client_model');
 		$this->load->model('Service_portfolio_model');
-//		$this->load->model('Banner_model');
 
 		// Language
 		$this->lang = $this->config->item('language_abbr');
@@ -65,7 +65,7 @@ class Services extends MX_Controller
 
 		// Utilities
 		$data['service'] = $this->filter_data_service($this->Service_model->get_service_by_id($service_id));
-//		$data['banner'] = $this->Banner_model->get_banner_by_id(1);
+		$data['services'] = $this->Service_model->get_service_by_custom($service_id);
 
 		/*
 		| -------------------------------------------------------------------------
@@ -86,13 +86,16 @@ class Services extends MX_Controller
 		$data['banner_img_title_alt'] = $service->banner_img_title_alt;
 		$data['banner_title'] = $service->banner_title;
 		$data['content_top_img'] = $service->content_top_img;
+		$data['content_top_img_title_alt'] = $service->content_top_img_title_alt;
 		$data['content_top_title'] = $service->content_top_title;
 		$data['content_top_body'] = $service->content_top_body;
 		$data['content_bottom_img'] = $service->content_bottom_img;
+		$data['content_bottom_img_title_alt'] = $service->content_bottom_img_title_alt;
 		$data['content_bottom_title'] = $service->content_bottom_title;
 		$data['content_bottom_body'] = $service->content_bottom_body;
 		$data['created_at'] = $service->created_at;
 		$data['text_button'] = $service->text_button;
+		$data['our_clients'] = $this->Service_client_model->get_service_client_by_service_id($service->id);
 		$data['portfolios'] = $this->Service_portfolio_model->get_service_portfolio_by_service_id($service->id);
 
 		return $data;

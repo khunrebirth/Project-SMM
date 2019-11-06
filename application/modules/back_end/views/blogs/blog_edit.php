@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css'); ?>">
 <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/datatables.net-select-bs4/css/select.bootstrap4.min.css'); ?>">
 <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/prismjs/themes/prism.css'); ?> ">
+<link href="<?php echo base_url('resources/back_end/assets/css/notiny.min.css'); ?>" rel="stylesheet">
 
 <!-- Main Content -->
 <div class="main-content">
@@ -41,21 +42,60 @@
 										<div style="padding-top: 20px;"><h4><i class="fa fa-tag"></i> Meta Tag (SEO)</h4></div>
 										<hr>
 										<div class="form-group row">
+											<div class="col-sm-2"></div>
+											<div class="col-sm-10 text-danger">
+												กรุณาใส่ให้ถูกตามมาตรฐานการสร้าง slug (สำหรับภาษาไทย ต้องเป็นตัวอักขระไทย และ - (ขีด) เท่านั่น! ห้ามเว้นวรรค)
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> URL Slug</label>
+											<div class="col-sm-10">
+												<div class="form-group">
+													<div class="input-group mb-2">
+														<div class="input-group-prepend">
+															<div class="input-group-text"><?php echo base_url('th/บทความ/'); ?></div>
+														</div>
+														<input class="form-control" name="slug_th" placeholder="Enter URL Slug" type="text" value="<?php echo unserialize($blog->slug)['th']; ?>">
+													</div>
+												</div>
+											</div>
+										</div>
+										<hr>
+										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Title</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="meta_title_th" placeholder="Meta Title" type="text" value="<?php echo unserialize($blog->meta_tag_title)['th']; ?>">
+												<input class="form-control" name="meta_tag_title_th" placeholder="Enter Meta Title" type="text" value="<?php echo unserialize($blog->meta_tag_title)['th']; ?>">
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Description</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="meta_description_th" placeholder="Meta Description" type="text" value="<?php echo unserialize($blog->meta_tag_description)['th']; ?>">
+												<input class="form-control" name="meta_tag_description_th" placeholder="Enter Meta Description" type="text" value="<?php echo unserialize($blog->meta_tag_description)['th']; ?>">
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Keywords</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="meta_keyword_th" placeholder="Meta Keywords" type="text" value="<?php echo unserialize($blog->meta_tag_keywords)['th']; ?>">
+												<input class="form-control" name="meta_tag_keywords_th" placeholder="Enter Meta Keywords" type="text" value="<?php echo unserialize($blog->meta_tag_keywords)['th']; ?>">
+											</div>
+										</div>
+										<hr>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Title(Moblie)</label>
+											<div class="col-sm-10">
+												<input class="form-control" name="meta_tag_moblie_title_th" placeholder="Enter Meta Title" type="text" value="<?php echo unserialize($blog->meta_tag_moblie_title)['th']; ?>">
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Description(Moblie)</label>
+											<div class="col-sm-10">
+												<input class="form-control" name="meta_tag_moblie_description_th" placeholder="Enter Meta Description" type="text" value="<?php echo unserialize($blog->meta_tag_moblie_description)['th']; ?>">
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Keywords(Moblie)</label>
+											<div class="col-sm-10">
+												<input class="form-control" name="meta_tag_moblie_keywords_th" placeholder="Enter Meta Keywords" type="text" value="<?php echo unserialize($blog->meta_tag_moblie_keywords)['th']; ?>">
 											</div>
 										</div>
 										<!-- OG & Twitter -->
@@ -92,7 +132,7 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Image</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right">Upload Image (หน้าปก ขนาดที่แนะนำ 1040*1040)</label>
 											<div class="col-sm-10">
 												<div class="custom-file input-file-w-30">
 													<input type="file" name="img_th" class="custom-file-input" onchange="PreviewImage(this, 'previewImgTh');">
@@ -131,21 +171,60 @@
 										<div style="padding-top: 20px;"><h4><i class="fa fa-tag"></i> Meta Tag (SEO)</h4></div>
 										<hr>
 										<div class="form-group row">
+											<div class="col-sm-2"></div>
+											<div class="col-sm-10 text-danger">
+												กรุณาใส่ให้ถูกตามมาตรฐานการสร้าง slug (สำหรับภาษาอังกฤษ ต้องเป็นตัวอักษร a-z A-Z 0-9 และ - (ขีด) เท่านั่น! ห้ามเว้นวรรค)
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> URL Slug</label>
+											<div class="col-sm-10">
+												<div class="form-group">
+													<div class="input-group mb-2">
+														<div class="input-group-prepend">
+															<div class="input-group-text"><?php echo base_url('en/blogs/'); ?></div>
+														</div>
+														<input class="form-control" name="slug_en" placeholder="Enter URL Slug" type="text" value="<?php echo unserialize($blog->slug)['en']; ?>">
+													</div>
+												</div>
+											</div>
+										</div>
+										<hr>
+										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Title</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="meta_title_en" placeholder="Meta Title" type="text" value="">
+												<input class="form-control" name="meta_tag_title_en" placeholder="Enter Meta Title" type="text" value="<?php echo unserialize($blog->meta_tag_title)['en']; ?>">
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Description</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="meta_description_en" placeholder="Meta Description" type="text" value="">
+												<input class="form-control" name="meta_tag_description_en" placeholder="Enter Meta Description" type="text" value="<?php echo unserialize($blog->meta_tag_description)['en']; ?>">
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Keywords</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="meta_keyword_en" placeholder="Meta Keywords" type="text" value="">
+												<input class="form-control" name="meta_tag_keywords_en" placeholder="Enter Meta Keywords" type="text" value="<?php echo unserialize($blog->meta_tag_keywords)['en']; ?>">
+											</div>
+										</div>
+										<hr>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Title(Moblie)</label>
+											<div class="col-sm-10">
+												<input class="form-control" name="meta_tag_moblie_title_en" placeholder="Enter Meta Title" type="text" value="<?php echo unserialize($blog->meta_tag_moblie_title)['en']; ?>">
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Description(Moblie)</label>
+											<div class="col-sm-10">
+												<input class="form-control" name="meta_tag_moblie_description_en" placeholder="Enter Meta Description" type="text" value="<?php echo unserialize($blog->meta_tag_moblie_description)['en']; ?>">
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Keywords(Moblie)</label>
+											<div class="col-sm-10">
+												<input class="form-control" name="meta_tag_moblie_keywords_en" placeholder="Enter Meta Keywords" type="text" value="<?php echo unserialize($blog->meta_tag_moblie_keywords)['en']; ?>">
 											</div>
 										</div>
 										<!-- OG & Twitter -->
@@ -182,7 +261,7 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Image</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right">Upload Image (หน้าปก ขนาดที่แนะนำ 1040*1040)</label>
 											<div class="col-sm-10">
 												<div class="custom-file input-file-w-30">
 													<input type="file" name="img_en" class="custom-file-input" onchange="PreviewImage(this, 'previewImgEn');">
@@ -217,9 +296,23 @@
 										<hr>
 									</div>
 								</div>
+								<div class="form-group row">
+									<label class="col-sm-2 col-form-label text-left text-md-right">Tag</label>
+									<div class="col-sm-10">
+										<div class="selectgroup selectgroup-pills">
+											<?php foreach ($tags as $tag) { ?>
+												<label class="selectgroup-item">
+													<input type="checkbox" name="tags[]" value="<?php echo $tag->id; ?>" class="selectgroup-input" <?php if (in_array($tag->id, explode(',', $blog->tag_id))) { echo 'checked'; } ?>>
+													<span class="selectgroup-button" data-toggle="tooltip" data-placement="top" title="en: <?php echo unserialize($tag->title)['en']; ?>"><?php echo unserialize($tag->title)['th']; ?></span>
+												</label>
+											<?php } ?>
+										</div>
+									</div>
+								</div>
+								<hr>
 								<div class="row">
 									<div class="col-sm-12 col-md-12 text-left text-md-right">
-										<button class="btn btn-primary">Save Changes</button>
+										<button type="submit" class="btn btn-primary">Save Changes</button>
 									</div>
 								</div>
 							</form>
@@ -238,6 +331,7 @@
 
 <!-- Page Specific JS File -->
 <script src="<?php echo base_url('resources/back_end/assets/js/page/modules-datatables.js'); ?>"></script>
+<script src="<?php echo base_url('resources/back_end/assets/js/notiny.min.js'); ?>"></script>
 
 <script>
     function PreviewImage(input, previewImage) {
@@ -251,4 +345,61 @@
             reader.readAsDataURL(input.files[0]);
         }
     }
+
+    function validateSlug(text) {
+
+        let formatSlug = /[ !@#$%^&*()_+\=\[\]{};':"\\|,.<>\/?]/
+
+        return formatSlug.test(text)
+    }
+
+    function notify(event, message) {
+
+        let eventResponse = ''
+
+        switch (event) {
+            case 'success':
+                eventResponse = 'success'
+                break
+
+            case 'warning':
+                eventResponse = 'warning'
+                break
+
+            case 'error':
+                eventResponse = 'error'
+                break
+
+            default:
+                eventResponse = 'error'
+        }
+
+        $.notiny({
+            text: message,
+            image: 'http://devel.ag-projects.com/repositories/blink-qt/resources/icons/invalid.png',
+            width: '320',
+            delay: 5000
+        });
+    }
+
+    $(document).ready(function () {
+
+        $('button[type="submit"]').on('click', function (e) {
+
+            console.log('asd');
+
+            let slugTh = $('input[name="slug_th"]').val(),
+                slugEn = $('input[name="slug_en"]').val(),
+                titleTh = $('input[name="title_th"]').val(),
+                titleEn = $('input[name="title_en"]').val();
+
+            if (slugTh == '' || slugEn == '') {
+                notify('error', 'Slug url ทั้ง TH และ EN จะต้องเป็นไม่เป็นค่าว่าง');
+            } else if (!validateSlug(slugTh.toString()) == false || !validateSlug(slugEn.toString()) == false) {
+                notify('error', 'Slug url ทั้ง TH และ EN จะต้องเป็น ภาษาไทย a-z A-Z 0-9 และ - (ขีด) เท่านั่น! ห้ามเว้นวรรค');
+            } else if (titleTh == '' || titleEn == '') {
+                notify('error', 'Title ทั้ง TH และ EN ไม่สามารถใส่เป็นค่าว่างได้');
+            }
+        })
+    })
 </script>

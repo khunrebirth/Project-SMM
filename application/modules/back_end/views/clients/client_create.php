@@ -47,7 +47,7 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> Image</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> Upload Image</label>
 											<div class="col-sm-10">
 												<div class="custom-file input-file-w-30">
 													<input type="file" name="img_th" class="custom-file-input" onchange="PreviewImage(this, 'previewImgTh');">
@@ -59,6 +59,13 @@
 											<label class="col-sm-2 col-form-label text-left text-md-right">Image Title &amp; Alt</label>
 											<div class="col-sm-10">
 												<input class="form-control input-file-w-30" name="img_title_alt_th" placeholder="Image Title &amp; Alt" type="text" value="">
+											</div>
+										</div>
+										<hr>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Text</label>
+											<div class="col-sm-10">
+												<input class="form-control input-file-w-30" name="text_th" placeholder="Text" type="text" value="">
 											</div>
 										</div>
 										<hr>
@@ -74,7 +81,7 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> Image</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> Upload Image</label>
 											<div class="col-sm-10">
 												<div class="custom-file input-file-w-30">
 													<input type="file" name="img_en" class="custom-file-input" onchange="PreviewImage(this, 'previewImgEn');">
@@ -89,8 +96,29 @@
 											</div>
 										</div>
 										<hr>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Text</label>
+											<div class="col-sm-10">
+												<input class="form-control input-file-w-30" name="text_en" placeholder="Text" type="text" value="">
+											</div>
+										</div>
+										<hr>
 									</div>
 								</div>
+								<div class="form-group row">
+									<label class="col-sm-2 col-form-label text-left text-md-right">Categories</label>
+									<div class="col-sm-10">
+										<?php foreach ($client_categories as $client_category) { ?>
+											<div class="form-check">
+												<label class="form-check-label">
+												<input class="form-check-input" type="checkbox" name="categories[<?php echo $client_category->id; ?>]" <?php if ($client_category->id == $category->id) { echo 'checked'; } ?> >
+													<?php echo unserialize($client_category->title)['th']; ?> <span style="font-size: 11px;">(en: <?php echo unserialize($client_category->title)['en']; ?>)</span>
+												</label>
+											</div>
+										<?php } ?>
+									</div>
+								</div>
+								<hr>
 								<div class="row">
 									<div class="col-sm-12 col-md-12 text-left text-md-right">
 										<button class="btn btn-primary">Save Changes</button>

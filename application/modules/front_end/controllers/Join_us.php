@@ -16,7 +16,7 @@ class Join_us extends MX_Controller
 
 		// Model
 		$this->load->model('Contact_model');
-		$this->load->model('Join_us_page_model');
+		$this->load->model('Page_model');
 		$this->load->model('Banner_model');
 		$this->load->model('Career_model');
 		$this->load->model('Career_gallery_model');
@@ -34,8 +34,7 @@ class Join_us extends MX_Controller
 		| -------------------------------------------------------------------------
 		*/
 
-		$page_id = 1;
-		$page_content = $this->Join_us_page_model->get_join_us_page_by_id($page_id);
+		$page_content = $this->Page_model->get_page_by_id(8);
 
 
 		/*
@@ -49,11 +48,15 @@ class Join_us extends MX_Controller
 
 		// Title Page
 		$data['title'] = unserialize($page_content->meta_tag_title)[$this->lang];
+		$data['title_moblie'] = unserialize($page_content->meta_tag_moblie_title)[$this->lang];
 
 		// Meta Tag
 		$data['meta']['title'] = unserialize($page_content->meta_tag_title)[$this->lang];
 		$data['meta']['description'] = unserialize($page_content->meta_tag_description)[$this->lang];
 		$data['meta']['keyword'] = unserialize($page_content->meta_tag_keywords)[$this->lang];
+		$data['meta']['title_moblie'] = unserialize($page_content->meta_tag_moblie_title)[$this->lang];
+		$data['meta']['description_moblie'] = unserialize($page_content->meta_tag_moblie_description)[$this->lang];
+		$data['meta']['keyword_moblie'] = unserialize($page_content->meta_tag_moblie_keywords)[$this->lang];
 
 		// OG & Twitter
 		$data['og_twitter']['title'] = unserialize($page_content->meta_tag_title)[$this->lang];
@@ -67,8 +70,7 @@ class Join_us extends MX_Controller
 		// Utilities
 		$data['banner'] = $this->Banner_model->get_banner_active_by_id(7);
 		$data['careers'] = $this->Career_model->get_career_all();
-		$data['join_us'] = $this->Join_us_page_model->get_join_us_page_by_id($page_id);
-		// test
+		$data['join_us'] = $this->Page_model->get_page_by_id(8);
 
 		/*
 		| -------------------------------------------------------------------------

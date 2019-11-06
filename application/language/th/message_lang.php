@@ -7,6 +7,10 @@
 */
 
 $lang['btn_read_more'] = 'อ่านเพิ่มเติม';
+$lang['btn_read_more_client'] = 'ไปยังหน้า Clients';
+$lang['btn_read_more_portfolio'] = 'ไปยังหน้า Portfolios';
+$lang['btn_read_more_blog'] = 'ไปยังหน้า Blogs';
+$lang['btn_read_more_team'] = 'ไปหน้า Teams';
 
 /*
 | -------------------------------------------------------------------------

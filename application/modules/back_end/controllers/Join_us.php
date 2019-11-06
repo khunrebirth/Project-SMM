@@ -27,7 +27,7 @@ class Join_us extends MX_Controller
 
 		// Model
 		$this->load->model('User_model');
-		$this->load->model('Join_us_page_model');
+		$this->load->model('Page_model');
 		$this->load->model('Career_model');
 		$this->load->model('Career_gallery_model');
 
@@ -49,18 +49,22 @@ class Join_us extends MX_Controller
 
 	public function edit_content($lang, $id)
 	{
+		$page_join_us_id = 8;
+
 		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Page: Join Us - Content - Edit';
 		$this->data['content'] = 'join_us/content';
-		$this->data['page_content'] =  $this->Join_us_page_model->get_join_us_page_by_id($id);
+		$this->data['page_content'] =  $this->Page_model->get_page_by_id($page_join_us_id);
 
 		$this->load->view('app', $this->data);
 	}
 
 	public function update_content($lang, $id)
 	{
+		$page_join_us_id = $id;
+
 		// Get Old data
-		$page_content = $this->Join_us_page_model->get_join_us_page_by_id($id);
+		$page_content = $this->Page_model->get_page_by_id($page_join_us_id);
 
 		// Handle Image
 		$meta_og_image_en = unserialize($page_content->img_og_twitter)['en'];
@@ -78,14 +82,20 @@ class Join_us extends MX_Controller
 		$input_meta_tag_title = ['en' => $this->input->post('meta_tag_title_en'), 'th' => $this->input->post('meta_tag_title_th')];
 		$input_meta_tag_description = ['en' => $this->input->post('meta_tag_description_en'), 'th' => $this->input->post('meta_tag_description_th')];
 		$input_meta_tag_keywords = ['en' => $this->input->post('meta_tag_keywords_en'), 'th' => $this->input->post('meta_tag_keywords_th')];
+		$input_meta_tag_moblie_title = ['en' => $this->input->post('meta_tag_moblie_title_en'), 'th' => $this->input->post('meta_tag_moblie_title_th')];
+		$input_meta_tag_moblie_description = ['en' => $this->input->post('meta_tag_moblie_description_en'), 'th' => $this->input->post('meta_tag_moblie_description_th')];
+		$input_meta_tag_moblie_keywords = ['en' => $this->input->post('meta_tag_moblie_keywords_en'), 'th' => $this->input->post('meta_tag_moblie_keywords_th')];
 		$input_img_og_twitter = ['en' => $meta_og_image_en, 'th' => $meta_og_image_th];
 		$input_content_left = ['en' => $this->input->post('content_left_en'), 'th' => $this->input->post('content_left_th')];
 
 		// Update Data
-		$update_page_content = $this->Join_us_page_model->update_join_us_page_by_id($id, [
+		$update_page_content = $this->Page_model->update_page_by_id($page_join_us_id, [
 			'meta_tag_title' => serialize($input_meta_tag_title),
 			'meta_tag_description' => serialize($input_meta_tag_description),
 			'meta_tag_keywords' => serialize($input_meta_tag_keywords),
+			'meta_tag_moblie_title' => serialize($input_meta_tag_moblie_title),
+			'meta_tag_moblie_description' => serialize($input_meta_tag_moblie_description),
+			'meta_tag_moblie_keywords' => serialize($input_meta_tag_moblie_keywords),
 			'img_og_twitter' => serialize($input_img_og_twitter),
 			'content_left' => serialize($input_content_left),
 			'updated_at' => date('Y-m-d H:i:s')
@@ -106,7 +116,7 @@ class Join_us extends MX_Controller
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
 
-		redirect($lang . '/backoffice/page/join-us/content/' . $id);
+		redirect($lang . '/backoffice/page/join-us/content/' . $page_join_us_id);
 	}
 
 	/***********************************
@@ -139,6 +149,8 @@ class Join_us extends MX_Controller
 		$meta_og_image_th = '';
 		$img_cover_en = '';
 		$img_cover_th = '';
+		$img_cover_moblie_en = '';
+		$img_cover_moblie_th = '';
 
 		if (isset($_FILES['meta_og_image_en']) && $_FILES['meta_og_image_en']['name'] != '') {
 			$meta_og_image_en = $this->ddoo_upload_join_us('meta_og_image_en');
@@ -156,19 +168,32 @@ class Join_us extends MX_Controller
 			$img_cover_th = $this->ddoo_upload_join_us('img_cover_th');
 		}
 
+		if (isset($_FILES['img_cover_moblie_en']) && $_FILES['img_cover_moblie_en']['name'] != '') {
+			$img_cover_moblie_en = $this->ddoo_upload_join_us('img_cover_moblie_en');
+		}
+
+		if (isset($_FILES['img_cover_moblie_th']) && $_FILES['img_cover_moblie_th']['name'] != '') {
+			$img_cover_moblie_th = $this->ddoo_upload_join_us('img_cover_moblie_th');
+		}
+
 		// Filter Data
 		$input_meta_tag_title = ['en' => $this->input->post('meta_tag_title_en'), 'th' => $this->input->post('meta_tag_title_th')];
 		$input_meta_tag_description = ['en' => $this->input->post('meta_tag_description_en'), 'th' => $this->input->post('meta_tag_description_th')];
 		$input_meta_tag_keywords = ['en' => $this->input->post('meta_tag_keywords_en'), 'th' => $this->input->post('meta_tag_keywords_th')];
+		$input_meta_tag_moblie_title = ['en' => $this->input->post('meta_tag_moblie_title_en'), 'th' => $this->input->post('meta_tag_moblie_title_th')];
+		$input_meta_tag_moblie_description = ['en' => $this->input->post('meta_tag_moblie_description_en'), 'th' => $this->input->post('meta_tag_moblie_description_th')];
+		$input_meta_tag_moblie_keywords = ['en' => $this->input->post('meta_tag_moblie_keywords_en'), 'th' => $this->input->post('meta_tag_moblie_keywords_th')];
 		$input_img_og_twitter = ['en' => $meta_og_image_en, 'th' => $meta_og_image_th];
 		$input_img_cover = ['en' => $img_cover_en, 'th' => $img_cover_th];
+		$input_img_cover_moblie = ['en' => $img_cover_moblie_en, 'th' => $img_cover_moblie_th];
+		$input_img_cover_title_alt = ['en' => $this->input->post('img_cover_title_alt_en'), 'th' => $this->input->post('img_cover_title_alt_th')];
 		$input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
 		$input_comment = ['en' => $this->input->post('comment_en'), 'th' => $this->input->post('comment_th')];
 		$input_type = ['en' => $this->input->post('type_en'), 'th' => $this->input->post('type_th')];
 		$input_num = ['en' => $this->input->post('num_en'), 'th' => $this->input->post('num_th')];
 		$input_content = ['en' => $this->input->post('content_en'), 'th' => $this->input->post('content_th')];
-		$slug_en = slugify($this->input->post('title_en'));
-		$slug_th = smm_slug_th($this->input->post('title_th'));
+		$slug_en = slugify($this->input->post('slug_en'));
+		$slug_th = smm_slug_th($this->input->post('slug_th'));
 		$slug = ['en' => $slug_en, 'th' => $slug_th];
 
 		// Add Data
@@ -176,8 +201,13 @@ class Join_us extends MX_Controller
 			'meta_tag_title' => serialize($input_meta_tag_title),
 			'meta_tag_description' => serialize($input_meta_tag_description),
 			'meta_tag_keywords' => serialize($input_meta_tag_keywords),
+			'meta_tag_moblie_title' => serialize($input_meta_tag_moblie_title),
+			'meta_tag_moblie_description' => serialize($input_meta_tag_moblie_description),
+			'meta_tag_moblie_keywords' => serialize($input_meta_tag_moblie_keywords),
 			'img_og_twitter' => serialize($input_img_og_twitter),
 			'img_cover' => serialize($input_img_cover),
+			'img_cover_moblie' => serialize($input_img_cover_moblie),
+			'img_cover_title_alt' => serialize($input_img_cover_title_alt),
 			'title' => serialize($input_title),
 			'comment' => serialize($input_comment),
 			'type' => serialize($input_type),
@@ -226,6 +256,8 @@ class Join_us extends MX_Controller
 		$meta_og_image_th = unserialize($career->img_og_twitter)['th'];
 		$img_cover_en = unserialize($career->img_cover)['en'];
 		$img_cover_th = unserialize($career->img_cover)['th'];
+		$img_cover_moblie_en = unserialize($career->img_cover_moblie)['en'];
+		$img_cover_moblie_th = unserialize($career->img_cover_moblie)['th'];
 
 		if (isset($_FILES['meta_og_image_en']) && $_FILES['meta_og_image_en']['name'] != '') {
 			$meta_og_image_en = $this->ddoo_upload_join_us('meta_og_image_en');
@@ -243,19 +275,32 @@ class Join_us extends MX_Controller
 			$img_cover_th = $this->ddoo_upload_join_us('img_cover_th');
 		}
 
+		if (isset($_FILES['img_cover_moblie_en']) && $_FILES['img_cover_moblie_en']['name'] != '') {
+			$img_cover_moblie_en = $this->ddoo_upload_join_us('img_cover_moblie_en');
+		}
+
+		if (isset($_FILES['img_cover_moblie_th']) && $_FILES['img_cover_moblie_th']['name'] != '') {
+			$img_cover_moblie_th = $this->ddoo_upload_join_us('img_cover_moblie_th');
+		}
+
 		// Filter Data
 		$input_meta_tag_title = ['en' => $this->input->post('meta_tag_title_en'), 'th' => $this->input->post('meta_tag_title_th')];
 		$input_meta_tag_description = ['en' => $this->input->post('meta_tag_description_en'), 'th' => $this->input->post('meta_tag_description_th')];
 		$input_meta_tag_keywords = ['en' => $this->input->post('meta_tag_keywords_en'), 'th' => $this->input->post('meta_tag_keywords_th')];
+		$input_meta_tag_moblie_title = ['en' => $this->input->post('meta_tag_moblie_title_en'), 'th' => $this->input->post('meta_tag_moblie_title_th')];
+		$input_meta_tag_moblie_description = ['en' => $this->input->post('meta_tag_moblie_description_en'), 'th' => $this->input->post('meta_tag_moblie_description_th')];
+		$input_meta_tag_moblie_keywords = ['en' => $this->input->post('meta_tag_moblie_keywords_en'), 'th' => $this->input->post('meta_tag_moblie_keywords_th')];
 		$input_img_og_twitter = ['en' => $meta_og_image_en, 'th' => $meta_og_image_th];
 		$input_img_cover = ['en' => $img_cover_en, 'th' => $img_cover_th];
+		$input_img_cover_moblie = ['en' => $img_cover_moblie_en, 'th' => $img_cover_moblie_th];
+		$input_img_cover_title_alt = ['en' => $this->input->post('img_cover_title_alt_en'), 'th' => $this->input->post('img_cover_title_alt_th')];
 		$input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
 		$input_comment = ['en' => $this->input->post('comment_en'), 'th' => $this->input->post('comment_th')];
 		$input_type = ['en' => $this->input->post('type_en'), 'th' => $this->input->post('type_th')];
 		$input_num = ['en' => $this->input->post('num_en'), 'th' => $this->input->post('num_th')];
 		$input_content = ['en' => $this->input->post('content_en'), 'th' => $this->input->post('content_th')];
-		$slug_en = slugify($this->input->post('title_en'));
-		$slug_th = smm_slug_th($this->input->post('title_th'));
+		$slug_en = slugify($this->input->post('slug_en'));
+		$slug_th = smm_slug_th($this->input->post('slug_th'));
 		$slug = ['en' => $slug_en, 'th' => $slug_th];
 
 		// Update Data
@@ -263,8 +308,13 @@ class Join_us extends MX_Controller
 			'meta_tag_title' => serialize($input_meta_tag_title),
 			'meta_tag_description' => serialize($input_meta_tag_description),
 			'meta_tag_keywords' => serialize($input_meta_tag_keywords),
+			'meta_tag_moblie_title' => serialize($input_meta_tag_moblie_title),
+			'meta_tag_moblie_description' => serialize($input_meta_tag_moblie_description),
+			'meta_tag_moblie_keywords' => serialize($input_meta_tag_moblie_keywords),
 			'img_og_twitter' => serialize($input_img_og_twitter),
 			'img_cover' => serialize($input_img_cover),
+			'img_cover_moblie' => serialize($input_img_cover_moblie),
+			'img_cover_title_alt' => serialize($input_img_cover_title_alt),
 			'title' => serialize($input_title),
 			'comment' => serialize($input_comment),
 			'type' => serialize($input_type),
@@ -617,7 +667,6 @@ class Join_us extends MX_Controller
 	{
 		$config['upload_path'] = './storage/uploads/images/join_us';
 		$config['allowed_types'] = 'gif|jpg|png';
-//		$config['encrypt_name'] = TRUE;
 		$config['file_name'] = pathinfo($_FILES[$filename]['name'], PATHINFO_FILENAME) . '_' . time();
 
 		$this->load->library('upload', $config);

@@ -45,7 +45,7 @@
 						<div class="card-header">
 							<h4>List of Portfolio</h4>
 							<div class="card-header-action">
-								<button class="btn btn-primary" id="btnSort"><i class="fas fa-sort"></i> Sort Images</button>
+								<button class="btn btn-primary" id="btnSort"><i class="fas fa-sort"></i> Sort</button>
 								<input type="hidden" id="serviceId" value="<?php echo $service->id; ?>">
 								<a href="<?php echo base_url($lang . '/backoffice/page/services/list-service-ports/create/' . $service->id); ?>" class="btn btn-primary">
 									<i class="fas fa-plus"></i> Add

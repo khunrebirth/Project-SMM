@@ -17,7 +17,7 @@ class Blogs extends MX_Controller
 		*/
 
 		// Model
-		$this->load->model('Blog_page_model');
+		$this->load->model('Page_model');
 		$this->load->model('Blog_category_model');
 		$this->load->model('Blog_model');
 		$this->load->model('Banner_model');
@@ -34,8 +34,7 @@ class Blogs extends MX_Controller
 		| -------------------------------------------------------------------------
 		*/
 
-		$blog_id = 1;
-		$page_content = $this->Blog_page_model->get_blog_page_by_id($blog_id);
+		$page_content = $this->Page_model->get_page_by_id(6);
 
 		/*
 		| -------------------------------------------------------------------------
@@ -48,11 +47,15 @@ class Blogs extends MX_Controller
 
 		// Title Page
 		$data['title'] = unserialize($page_content->meta_tag_title)[$this->lang];
+		$data['title_moblie'] = unserialize($page_content->meta_tag_moblie_title)[$this->lang];
 
 		// Meta Tag
 		$data['meta']['title'] = unserialize($page_content->meta_tag_title)[$this->lang];
 		$data['meta']['description'] = unserialize($page_content->meta_tag_description)[$this->lang];
 		$data['meta']['keyword'] = unserialize($page_content->meta_tag_keywords)[$this->lang];
+		$data['meta']['title_moblie'] = unserialize($page_content->meta_tag_moblie_title)[$this->lang];
+		$data['meta']['description_moblie'] = unserialize($page_content->meta_tag_moblie_description)[$this->lang];
+		$data['meta']['keyword_moblie'] = unserialize($page_content->meta_tag_moblie_keywords)[$this->lang];
 
 		// OG & Twitter
 		$data['og_twitter']['title'] = unserialize($page_content->meta_tag_title)[$this->lang];

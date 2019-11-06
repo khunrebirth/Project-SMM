@@ -28,7 +28,7 @@ class Team extends MX_Controller
 		// Model
 		$this->load->model('User_model');
 		$this->load->model('Team_model');
-		$this->load->model('Team_page_model');
+		$this->load->model('Page_model');
 
 		// Language
 		$this->lang = $this->config->item('language_abbr');
@@ -44,18 +44,22 @@ class Team extends MX_Controller
 
 	public function edit_content($lang, $id)
 	{
+		$page_team_id = 7;
+
 		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Page: Teams - Content - Edit';
 		$this->data['content'] = 'teams/content';
-		$this->data['page_content'] =  $this->Team_page_model->get_team_page_by_id($id);
+		$this->data['page_content'] =  $this->Page_model->get_page_by_id($page_team_id);
 
 		$this->load->view('app', $this->data);
 	}
 
 	public function update_content($lang, $id)
 	{
+		$page_team_id = $id;
+
 		// Get Old data
-		$page_content = $this->Team_page_model->get_team_page_by_id($id);
+		$page_content = $this->Page_model->get_page_by_id($page_team_id);
 
 		// Handle Image
 		$meta_og_image_en = unserialize($page_content->img_og_twitter)['en'];
@@ -73,13 +77,19 @@ class Team extends MX_Controller
 		$input_meta_tag_title = ['en' => $this->input->post('meta_tag_title_en'), 'th' => $this->input->post('meta_tag_title_th')];
 		$input_meta_tag_description = ['en' => $this->input->post('meta_tag_description_en'), 'th' => $this->input->post('meta_tag_description_th')];
 		$input_meta_tag_keywords = ['en' => $this->input->post('meta_tag_keywords_en'), 'th' => $this->input->post('meta_tag_keywords_th')];
+		$input_meta_tag_moblie_title = ['en' => $this->input->post('meta_tag_moblie_title_en'), 'th' => $this->input->post('meta_tag_moblie_title_th')];
+		$input_meta_tag_moblie_description = ['en' => $this->input->post('meta_tag_moblie_description_en'), 'th' => $this->input->post('meta_tag_moblie_description_th')];
+		$input_meta_tag_moblie_keywords = ['en' => $this->input->post('meta_tag_moblie_keywords_en'), 'th' => $this->input->post('meta_tag_moblie_keywords_th')];
 		$input_img_og_twitter = ['en' => $meta_og_image_en, 'th' => $meta_og_image_th];
 
 		// Update Data
-		$update_page_content = $this->Team_page_model->update_team_page_by_id($id, [
+		$update_page_content = $this->Page_model->update_page_by_id($page_team_id, [
 			'meta_tag_title' => serialize($input_meta_tag_title),
 			'meta_tag_description' => serialize($input_meta_tag_description),
 			'meta_tag_keywords' => serialize($input_meta_tag_keywords),
+			'meta_tag_moblie_title' => serialize($input_meta_tag_moblie_title),
+			'meta_tag_moblie_description' => serialize($input_meta_tag_moblie_description),
+			'meta_tag_moblie_keywords' => serialize($input_meta_tag_moblie_keywords),
 			'img_og_twitter' => serialize($input_img_og_twitter),
 			'updated_at' => date('Y-m-d H:i:s')
 		]);
@@ -89,7 +99,7 @@ class Team extends MX_Controller
 
 			logger_store([
 				'user_id' => $this->data['user']->id,
-				'detail' => 'แก้ไข Content (Team Page)',
+				'detail' => 'แก้ไข Content (Teams Page)',
 				'event' => 'update',
 				'ip' => $this->input->ip_address(),
 			]);
@@ -99,7 +109,7 @@ class Team extends MX_Controller
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
 
-		redirect($lang . '/backoffice/page/teams/content/' . $id);
+		redirect($lang . '/backoffice/page/teams/content/' . $page_team_id);
 	}
 
 	public function index()
@@ -150,14 +160,18 @@ class Team extends MX_Controller
 		$input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
 		$input_body = ['en' => $this->input->post('body_en'), 'th' => $this->input->post('body_th')];
 		$input_img = ['en' => $img_en, 'th' => $img_th];
+		$input_img_title_alt = ['en' => $this->input->post('img_title_alt_en'), 'th' => $this->input->post('img_title_alt_th')];
 		$input_img_hover = ['en' => $img_hover_en, 'th' => $img_hover_th];
+		$input_img_title_alt_hover = ['en' => $this->input->post('img_title_alt_hover_en'), 'th' => $this->input->post('img_title_alt_hover_th')];
 
 		// Add Data
 		$add_team = $this->Team_model->insert_team([
 			'title' => serialize($input_title),
 			'body' => serialize($input_body),
 			'image' => serialize($input_img),
-			'image_hover' => serialize($input_img_hover)
+			'img_title_alt' => serialize($input_img_title_alt),
+			'image_hover' => serialize($input_img_hover),
+			'img_title_alt_hover' => serialize($input_img_title_alt_hover)
 		]);
 
 		// Set Session To View
@@ -165,7 +179,7 @@ class Team extends MX_Controller
 
 			logger_store([
 				'user_id' => $this->data['user']->id,
-				'detail' => 'เพิ่ม Team (Team Page)',
+				'detail' => 'เพิ่ม Team (Teams Page)',
 				'event' => 'add',
 				'ip' => $this->input->ip_address(),
 			]);
@@ -223,14 +237,18 @@ class Team extends MX_Controller
 		$input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
 		$input_body = ['en' => $this->input->post('body_en'), 'th' => $this->input->post('body_th')];
 		$input_img = ['en' => $img_en, 'th' => $img_th];
+		$input_img_title_alt = ['en' => $this->input->post('img_title_alt_en'), 'th' => $this->input->post('img_title_alt_th')];
 		$input_img_hover = ['en' => $img_hover_en, 'th' => $img_hover_th];
+		$input_img_title_alt_hover = ['en' => $this->input->post('img_title_alt_hover_en'), 'th' => $this->input->post('img_title_alt_hover_th')];
 
 		// Update Data
 		$update_team = $this->Team_model->update_team_by_id($id, [
 			'title' => serialize($input_title),
 			'body' => serialize($input_body),
 			'image' => serialize($input_img),
+			'img_title_alt' => serialize($input_img_title_alt),
 			'image_hover' => serialize($input_img_hover),
+			'img_title_alt_hover' => serialize($input_img_title_alt_hover),
 			'updated_at' => date('Y-m-d H:i:s')
 		]);
 
@@ -239,7 +257,7 @@ class Team extends MX_Controller
 
 			logger_store([
 				'user_id' => $this->data['user']->id,
-				'detail' => 'แก้ไข Team (Team Page)',
+				'detail' => 'แก้ไข Team (Teams Page)',
 				'event' => 'update',
 				'ip' => $this->input->ip_address(),
 			]);
@@ -265,7 +283,7 @@ class Team extends MX_Controller
 
 			logger_store([
 				'user_id' => $this->data['user']->id,
-				'detail' => 'ลบ Team (Team Page)',
+				'detail' => 'ลบ Team (Teams Page)',
 				'event' => 'delete',
 				'ip' => $this->input->ip_address(),
 			]);
@@ -338,7 +356,7 @@ class Team extends MX_Controller
 
 			logger_store([
 				'user_id' => $this->data['user']->id,
-				'detail' => 'จัดเรียง Team (Team Page)',
+				'detail' => 'จัดเรียง Team (Teams Page)',
 				'event' => 'sort_item',
 				'ip' => $this->input->ip_address(),
 			]);

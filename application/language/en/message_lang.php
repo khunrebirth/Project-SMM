@@ -7,6 +7,10 @@
 */
 
 $lang['btn_read_more'] = 'READ MORE';
+$lang['btn_read_more_client'] = 'READ MORE';
+$lang['btn_read_more_portfolio'] = 'READ MORE';
+$lang['btn_read_more_blog'] = 'READ MORE';
+$lang['btn_read_more_team'] = 'READ MORE';
 
 /*
 | -------------------------------------------------------------------------

@@ -2,6 +2,31 @@
 <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css'); ?>">
 <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/datatables.net-select-bs4/css/select.bootstrap4.min.css'); ?>">
 <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/prismjs/themes/prism.css'); ?> ">
+<link href="<?php echo base_url('resources/back_end/assets/css/notiny.min.css'); ?>" rel="stylesheet">
+
+<!-- Custom CSS -->
+<style>
+	#sortable {
+		padding: 0;
+	}
+
+	#sortable li {
+		cursor: move;
+		padding: 40px 0px;
+		list-style-type: none;
+		border-bottom: solid 1px #eee;
+		height: 70px;
+		display: flex;
+		align-items: center;
+	}
+
+	@media (min-width: 576px) {
+		.modal-dialog {
+			max-width: 800px;
+			margin: 1.75rem auto;
+		}
+	}
+</style>
 
 <!-- Main Content -->
 <div class="main-content">
@@ -20,6 +45,7 @@
 						<div class="card-header">
 							<h4>List of Category</h4>
 							<div class="card-header-action">
+								<button class="btn btn-primary" id="btnSort"><i class="fas fa-sort"></i> Sort</button>
 								<a href="<?php echo base_url($lang . '/backoffice/page/blogs/list-category-blogs/create'); ?>" class="btn btn-primary">
 									<i class="fas fa-plus"></i> Add
 								</a>
@@ -39,6 +65,7 @@
 									<thead>
 									<tr>
 										<th class="text-center">#</th>
+										<th>Status</th>
 										<th>Title(en)</th>
 										<th>Title(th)</th>
 										<th>Items</th>
@@ -52,6 +79,12 @@
 										foreach ($categories as $category) { ?>
 											<tr>
 												<td class="text-center"><?php echo $counter++; ?></td>
+												<td>
+													<label class="custom-switch p-0">
+														<input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input cbToggleStatus" data-id="<?php echo $category->id; ?>" <?php if ($category->status == 'Y') { echo 'checked'; } else { echo ''; } ?>>
+														<span class="custom-switch-indicator"></span>
+													</label>
+												</td>
 												<td><?php echo unserialize($category->title)['en']; ?></td>
 												<td><?php echo unserialize($category->title)['th']; ?></td>
 												<td><?php echo $category->created_at; ?></td>
@@ -82,7 +115,28 @@
 	</section>
 </div>
 
+<!-- modal content -->
+<div id="custom-width-modal" class="modal fade modal-sort-gallery" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title" id="custom-width-modalLabel">Sorting</h4>
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			</div>
+			<div class="modal-body">
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" id="btnSaveSorting">Save changes</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
 <!-- JS Libraies -->
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 <script src="<?php echo base_url('resources/back_end/node_modules/datatables/media/js/jquery.dataTables.min.js'); ?>"></script>
 <script src="<?php echo base_url('resources/back_end/node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js'); ?>"></script>
 <script src="<?php echo base_url('resources/back_end/node_modules/datatables.net-select-bs4/js/select.bootstrap4.min.js'); ?>"></script>
@@ -97,6 +151,7 @@
 <script src="<?php echo base_url('resources/back_end/assets/js/vfs_fonts.js'); ?>"></script>
 <script src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.print.min.js"></script>
+<script src="<?php echo base_url('resources/back_end/assets/js/notiny.min.js'); ?>"></script>
 
 <script>
     function reload() {
@@ -140,4 +195,101 @@
                 }
             })
     }
+
+    function notify(event, message) {
+
+        let eventResponse = ''
+
+        switch (event) {
+            case 'success':
+                eventResponse = 'success'
+                break
+
+            case 'warning':
+                eventResponse = 'warning'
+                break
+
+            case 'error':
+                eventResponse = 'error'
+                break
+
+            default:
+                eventResponse = 'error'
+        }
+
+        $.notiny({ text: message, image: 'https://cdn2.iconfinder.com/data/icons/meeting-11/64/alarm-remind-bell-reminder-ring-512.png' });
+    }
+
+    $(document).ready(function() {
+        $('.cbToggleStatus').on('click', function() {
+
+            let $data = {
+                id: $(this).attr('data-id'),
+                status: this.checked == false ? 'N' : 'Y',
+                table: 'blog_categories'
+            }
+
+            $.ajax({
+                type: "POST",
+                url: window.base_url + '/' + window.langSite + '/backoffice/helper/change/status',
+                data: $data,
+                success: function(res) {
+                    setTimeout(function () {
+                        location.reload()
+                    }, 1 * 2000)
+
+                    notify('success', 'Save Change Successfully')
+                },
+                error: function() {
+                    alert("failure")
+                }
+            })
+
+        })
+
+        $('#btnSort').on('click', function() {
+
+            $.ajax({
+                type: "POST",
+                url: window.base_url + '/' + window.langSite + '/backoffice/page/blogs/list-category-blogs/ajax/get/category-blogs/sort/show',
+                success: function(res) {
+                    $('#custom-width-modal .modal-body').html(res.data)
+                    $("#custom-width-modal #sortable").sortable({ placeholder: "ui-state-highlight" })
+                    $("#custom-width-modal").modal('show')
+                },
+                error: function() {
+                    alert("failure")
+                }
+            })
+        })
+
+        $('#btnSaveSorting').click(function() {
+
+            $(".btnSaveSorting").text("Wait..")
+            $('.btnSaveSorting').addClass('disabled')
+
+            let selectedSort = []
+            let selectedID = []
+
+            $('#custom-width-modal ul#sortable li').each(function() {
+                selectedSort.push($(this).attr("data-sort"))
+                selectedID.push($(this).attr("id"))
+            })
+
+            $.ajax({
+                type: "POST",
+                url: window.base_url + '/' + window.langSite + '/backoffice/page/blogs/list-category-blogs/ajax/get/category-blogs/sort/update',
+                data: {
+                    id: selectedID,
+                    sort: selectedSort
+                },
+                success: function(res) {
+                    window.location.reload()
+                },
+                error: function(){
+                    alert("failure")
+                }
+            })
+        })
+    })
 </script>

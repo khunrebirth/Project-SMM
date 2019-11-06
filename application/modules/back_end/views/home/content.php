@@ -39,21 +39,54 @@
 										<div style="padding-top: 20px;"><h4><i class="fa fa-tag"></i> Meta Tag (SEO)</h4></div>
 										<hr>
 										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> URL Slug</label>
+											<div class="col-sm-10">
+												<div class="form-group">
+													<div class="input-group mb-2">
+														<div class="input-group-prepend">
+															<div class="input-group-text"><?php echo base_url('th/'); ?></div>
+														</div>
+														<input class="form-control" name="slug_th" placeholder="Enter URL Slug" type="text" value="<?php echo unserialize($page_content->page)['th']; ?>" disabled>
+													</div>
+												</div>
+											</div>
+										</div>
+										<hr>
+										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Title</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="meta_tag_title_th" placeholder="Meta Title" type="text" value="<?php echo unserialize($page_content->meta_tag_title)['th']; ?>">
+												<input class="form-control" name="meta_tag_title_th" placeholder="Enter Meta Title" type="text" value="<?php echo unserialize($page_content->meta_tag_title)['th']; ?>">
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Description</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="meta_tag_description_th" placeholder="Meta Description" type="text" value="<?php echo unserialize($page_content->meta_tag_description)['th']; ?>">
+												<input class="form-control" name="meta_tag_description_th" placeholder="Enter Meta Description" type="text" value="<?php echo unserialize($page_content->meta_tag_description)['th']; ?>">
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Keywords</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="meta_tag_keywords_th" placeholder="Meta Keywords" type="text" value="<?php echo unserialize($page_content->meta_tag_keywords)['th']; ?>">
+												<input class="form-control" name="meta_tag_keywords_th" placeholder="Enter Meta Keywords" type="text" value="<?php echo unserialize($page_content->meta_tag_keywords)['th']; ?>">
+											</div>
+										</div>
+										<hr>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Title(Moblie)</label>
+											<div class="col-sm-10">
+												<input class="form-control" name="meta_tag_moblie_title_th" placeholder="Enter Meta Title" type="text" value="<?php echo unserialize($page_content->meta_tag_moblie_title)['th']; ?>">
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Description(Moblie)</label>
+											<div class="col-sm-10">
+												<input class="form-control" name="meta_tag_moblie_description_th" placeholder="Enter Meta Description" type="text" value="<?php echo unserialize($page_content->meta_tag_moblie_description)['th']; ?>">
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Keywords(Moblie)</label>
+											<div class="col-sm-10">
+												<input class="form-control" name="meta_tag_moblie_keywords_th" placeholder="Enter Meta Keywords" type="text" value="<?php echo unserialize($page_content->meta_tag_moblie_keywords)['th']; ?>">
 											</div>
 										</div>
 										<!-- OG & Twitter -->
@@ -87,21 +120,54 @@
 										<div style="padding-top: 20px;"><h4><i class="fa fa-tag"></i> Meta Tag (SEO)</h4></div>
 										<hr>
 										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> URL Slug</label>
+											<div class="col-sm-10">
+												<div class="form-group">
+													<div class="input-group mb-2">
+														<div class="input-group-prepend">
+															<div class="input-group-text"><?php echo base_url('en/'); ?></div>
+														</div>
+														<input class="form-control" name="slug_en" placeholder="Enter URL Slug" type="text" value="<?php echo unserialize($page_content->page)['en']; ?>" disabled>
+													</div>
+												</div>
+											</div>
+										</div>
+										<hr>
+										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Title</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="meta_tag_title_en" placeholder="Meta Title" type="text" value="<?php echo unserialize($page_content->meta_tag_title)['en']; ?>">
+												<input class="form-control" name="meta_tag_title_en" placeholder="Enter Meta Title" type="text" value="<?php echo unserialize($page_content->meta_tag_title)['en']; ?>">
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Description</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="meta_tag_description_en" placeholder="Meta Description" type="text" value="<?php echo unserialize($page_content->meta_tag_description)['en']; ?>">
+												<input class="form-control" name="meta_tag_description_en" placeholder="Enter Meta Description" type="text" value="<?php echo unserialize($page_content->meta_tag_description)['en']; ?>">
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Keywords</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="meta_tag_keywords_en" placeholder="Meta Keywords" type="text" value="<?php echo unserialize($page_content->meta_tag_keywords)['en']; ?>">
+												<input class="form-control" name="meta_tag_keywords_en" placeholder="Enter Meta Keywords" type="text" value="<?php echo unserialize($page_content->meta_tag_keywords)['en']; ?>">
+											</div>
+										</div>
+										<hr>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Title(Moblie)</label>
+											<div class="col-sm-10">
+												<input class="form-control" name="meta_tag_moblie_title_en" placeholder="Enter Meta Title" type="text" value="<?php echo unserialize($page_content->meta_tag_moblie_title)['en']; ?>">
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Description(Moblie)</label>
+											<div class="col-sm-10">
+												<input class="form-control" name="meta_tag_moblie_description_en" placeholder="Enter Meta Description" type="text" value="<?php echo unserialize($page_content->meta_tag_moblie_description)['en']; ?>">
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Keywords(Moblie)</label>
+											<div class="col-sm-10">
+												<input class="form-control" name="meta_tag_moblie_keywords_en" placeholder="Enter Meta Keywords" type="text" value="<?php echo unserialize($page_content->meta_tag_moblie_keywords)['en']; ?>">
 											</div>
 										</div>
 										<!-- OG & Twitter -->

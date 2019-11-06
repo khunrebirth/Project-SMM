@@ -100,13 +100,11 @@
 						<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/dashboard'); ?>"><i class="fas fa-fire"></i> <span>Dashboard</span></a>
 					</li>
 					<li class="menu-header">Pages</li>
-					</li>
-					</li>
 					<li class="nav-item dropdown <?php if ($this->uri->segment(1) == "page" && $this->uri->segment(2) == "home") { echo 'active'; } ?>">
 						<a href="#" class="nav-link has-dropdown"><i class="fas fa-home"></i><span>Home</span></a>
 						<ul class="dropdown-menu">
 							<li class="<?php if ($this->uri->segment(2) == "home" && $this->uri->segment(3) == "content") { echo 'active'; } ?>">
-								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/home/content/1'); ?>">&#9679; Content</a>
+								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/home/content/2'); ?>">&#9679; Content</a>
 							</li>
 						</ul>
 					</li>
@@ -114,14 +112,14 @@
 						<a href="#" class="nav-link has-dropdown"><i class="fas fa-address-card"></i><span>Abouts</span></a>
 						<ul class="dropdown-menu">
 							<li class="<?php if ($this->uri->segment(2) == "abouts" && $this->uri->segment(3) == "content") { echo 'active'; } ?>">
-								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/abouts/content/1'); ?>">&#9679; Content</a>
+								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/abouts/content/3'); ?>">&#9679; Content</a>
 							</li>
 						</ul>
 					</li>
 					<li class="nav-item dropdown <?php if ($this->uri->segment(1) == "page" && $this->uri->segment(2) == "services") { echo 'active'; } ?>">
 						<a href="#" class="nav-link has-dropdown"><i class="fab fa-servicestack"></i><span>Services</span></a>
 						<ul class="dropdown-menu">
-							<li class="<?php if ($this->uri->segment(2) == "services" && $this->uri->segment(3) == "list-services" || $this->uri->segment(3) == 'list-service-ports') { echo 'active'; } ?>">
+							<li class="<?php if ($this->uri->segment(2) == "services" && $this->uri->segment(3) == "list-services" || $this->uri->segment(3) == 'list-service-ports' || $this->uri->segment(3) == 'list-service-clients') { echo 'active'; } ?>">
 								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/services/list-services'); ?>">&#9679; Services</a>
 							</li>
 						</ul>
@@ -130,16 +128,30 @@
 						<a href="#" class="nav-link has-dropdown"><i class="fas fa-user-astronaut"></i><span>Clients</span></a>
 						<ul class="dropdown-menu">
 							<li class="<?php if ($this->uri->segment(2) == "clients" && $this->uri->segment(3) == "content") { echo 'active'; } ?>">
-								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/clients/content/1'); ?>">&#9679; Content</a>
+								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/clients/content/5'); ?>">&#9679; Content</a>
 							</li>
 							<li class="<?php if ($this->uri->segment(2) == "clients" && $this->uri->segment(3) == "list-category-clients" || $this->uri->segment(3) == 'list-clients') { echo 'active'; } ?>">
 								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/clients/list-category-clients'); ?>">&#9679; Clients</a>
 							</li>
 						</ul>
 					</li>
+					<li class="nav-item dropdown <?php if ($this->uri->segment(1) == "page" && $this->uri->segment(2) == "portfolios") { echo 'active'; } ?>">
+						<a href="#" class="nav-link has-dropdown"><i class="fas fa-handshake"></i><span>Portfolios</span></a>
+						<ul class="dropdown-menu">
+							<li class="<?php if ($this->uri->segment(2) == "portfolios" && $this->uri->segment(3) == "content") { echo 'active'; } ?>">
+								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/portfolios/content/11'); ?>">&#9679; Content</a>
+							</li>
+							<li class="<?php if ($this->uri->segment(2) == "portfolios" && $this->uri->segment(3) == "list-category-portfolios" || $this->uri->segment(3) == 'list-portfolios') { echo 'active'; } ?>">
+								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/portfolios/list-category-portfolios'); ?>">&#9679; Portfolios</a>
+							</li>
+						</ul>
+					</li>
 					<li class="nav-item dropdown <?php if ($this->uri->segment(1) == "page" && $this->uri->segment(2) == "blogs") { echo 'active'; } ?>">
 						<a href="#" class="nav-link has-dropdown"><i class="fas fa-pen-alt"></i><span>Blogs</span></a>
 						<ul class="dropdown-menu">
+							<li class="<?php if ($this->uri->segment(2) == "blogs" && $this->uri->segment(3) == "list-tags") { echo 'active'; } ?>">
+								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/blogs/list-tags'); ?>">&#9679; Tags</a>
+							</li>
 							<li class="<?php if ($this->uri->segment(2) == "blogs" && $this->uri->segment(3) == "list-category-blogs" || $this->uri->segment(3) == 'list-blogs') { echo 'active'; } ?>">
 								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/blogs/list-category-blogs'); ?>">&#9679; Blogs</a>
 							</li>
@@ -149,7 +161,7 @@
 						<a href="#" class="nav-link has-dropdown"><i class="fas fa-building"></i><span>Teams</span></a>
 						<ul class="dropdown-menu">
 							<li class="<?php if ($this->uri->segment(2) == "teams" && $this->uri->segment(3) == "content") { echo 'active'; } ?>">
-								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/teams/content/1'); ?>">&#9679; Content</a>
+								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/teams/content/7'); ?>">&#9679; Content</a>
 							</li>
 							<li class="<?php if ($this->uri->segment(2) == "teams" && $this->uri->segment(3) == "list-teams") { echo 'active'; } ?>">
 								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/teams/list-teams'); ?>">&#9679; Teams</a>
@@ -160,7 +172,7 @@
 						<a href="#" class="nav-link has-dropdown"><i class="fas fa-users"></i><span>Join Us</span></a>
 						<ul class="dropdown-menu">
 							<li class="<?php if ($this->uri->segment(2) == "join-us" && $this->uri->segment(3) == "content") { echo 'active'; } ?>">
-								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/join-us/content/1'); ?>">&#9679; Content</a>
+								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/join-us/content/8'); ?>">&#9679; Content</a>
 							</li>
 							<li class="<?php if ($this->uri->segment(2) == "join-us" && $this->uri->segment(3) == "list-careers" || $this->uri->segment(3) == "list-career-galleries") { echo 'active'; } ?>">
 								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/join-us/list-careers'); ?>">&#9679; Careers</a>
@@ -171,7 +183,7 @@
 						<a href="#" class="nav-link has-dropdown"><i class="fas fa-file-signature"></i><span>Contact</span></a>
 						<ul class="dropdown-menu">
 							<li class="<?php if ($this->uri->segment(2) == "contact" && $this->uri->segment(3) == "content") { echo 'active'; } ?>">
-								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/contact/content/1'); ?>">&#9679; Content</a>
+								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/contact/content/9'); ?>">&#9679; Content</a>
 							</li>
 						</ul>
 					</li>

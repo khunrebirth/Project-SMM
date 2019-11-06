@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css'); ?>">
 <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/datatables.net-select-bs4/css/select.bootstrap4.min.css'); ?>">
 <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/prismjs/themes/prism.css'); ?> ">
+<link href="<?php echo base_url('resources/back_end/assets/css/notiny.min.css'); ?>" rel="stylesheet">
 
 <!-- Custom CSS -->
 <style>
@@ -45,7 +46,7 @@
 						<div class="card-header">
 							<h4>List of Clients</h4>
 							<div class="card-header-action">
-								<button class="btn btn-primary" id="btnSort"><i class="fas fa-sort"></i> Sort Images</button>
+								<button class="btn btn-primary" id="btnSort"><i class="fas fa-sort"></i> Sort</button>
 								<input type="hidden" id="categoryId" value="<?php echo $category->id; ?>">
 								<a href="<?php echo base_url($lang . '/backoffice/page/clients/list-clients/create/' . $category->id); ?>" class="btn btn-primary">
 									<i class="fas fa-plus"></i> Add

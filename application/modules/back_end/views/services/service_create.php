@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css'); ?>">
 <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/datatables.net-select-bs4/css/select.bootstrap4.min.css'); ?>">
 <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/prismjs/themes/prism.css'); ?> ">
+<link href="<?php echo base_url('resources/back_end/assets/css/notiny.min.css'); ?>" rel="stylesheet">
 
 <!-- Main Content -->
 <div class="main-content">
@@ -40,25 +41,64 @@
 										<div style="padding-top: 20px;"><h4><i class="fa fa-tag"></i> Meta Tag (SEO)</h4></div>
 										<hr>
 										<div class="form-group row">
+											<div class="col-sm-2"></div>
+											<div class="col-sm-10 text-danger">
+												กรุณาใส่ให้ถูกตามมาตรฐานการสร้าง slug (สำหรับภาษาไทย ต้องเป็นตัวอักขระไทย และ - (ขีด) เท่านั่น! ห้ามเว้นวรรค)
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> URL Slug</label>
+											<div class="col-sm-10">
+												<div class="form-group">
+													<div class="input-group mb-2">
+														<div class="input-group-prepend">
+															<div class="input-group-text"><?php echo base_url('th/บริการ/'); ?></div>
+														</div>
+														<input class="form-control" name="slug_th" placeholder="Enter URL Slug" type="text" value="" required>
+													</div>
+												</div>
+											</div>
+										</div>
+										<hr>
+										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Title</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="meta_tag_title_th" placeholder="Meta Title" type="text" value="">
+												<input class="form-control" name="meta_tag_title_th" placeholder="Enter Meta Title" type="text" value="">
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Description</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="meta_tag_description_th" placeholder="Meta Description" type="text" value="">
+												<input class="form-control" name="meta_tag_description_th" placeholder="Enter Meta Description" type="text" value="">
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Keywords</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="meta_tag_keywords_th" placeholder="Meta Keywords" type="text" value="">
+												<input class="form-control" name="meta_tag_keywords_th" placeholder="Enter Meta Keywords" type="text" value="">
+											</div>
+										</div>
+										<hr>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Title(Moblie)</label>
+											<div class="col-sm-10">
+												<input class="form-control" name="meta_tag_moblie_title_th" placeholder="Enter Meta Title" type="text" value="">
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Description(Moblie)</label>
+											<div class="col-sm-10">
+												<input class="form-control" name="meta_tag_moblie_description_th" placeholder="Enter Meta Description" type="text" value="">
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Keywords(Moblie)</label>
+											<div class="col-sm-10">
+												<input class="form-control" name="meta_tag_moblie_keywords_th" placeholder="Enter Meta Keywords" type="text" value="">
 											</div>
 										</div>
 										<!-- OG & Twitter -->
-										<div style="padding-top: 20px;"><h4><i class="fa fa-tag"></i> Image OG &amp; Twitter</h4></div>
+										<div style="padding-top: 20px;"><h4><i class="fa fa-tag"></i> Image OG &amp;Twitter</h4></div>
 										<hr>
 										<div class="form-group row">
 											<div class="col-sm-2"></div>
@@ -82,16 +122,17 @@
 											</div>
 										</div>
 										<!-- Information -->
-										<div style="padding-top: 20px;"><h4><i class="fa fa-tag"></i> Information</h4></div>
+										<div style="padding-top: 20px;"><h4><i class="fa fa-tag"></i> Information</h4>
+										</div>
 										<hr>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Preview</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right">Preview(Icon)</label>
 											<div class="col-sm-10">
 												<img id="previewIconTh" src="" style="background-color: #fff;" width="40px;" onerror="this.onerror=null;this.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAANlBMVEXz9Pa5vsq2u8jN0dnV2N/o6u7FydPi5Onw8fS+ws3f4ee6v8v29/jY2+Hu7/Ly9PbJztbQ1dxJagBAAAAC60lEQVR4nO3b2ZaCMBREUQbDJOP//2wbEGVIFCHKTa+zH7uVRVmBBJQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMCpdOzvQQqaq2KmuSrOzQ02lSeRem8rpsQq/ozg72Kj4UkAxEev8awnzs7P1yiIadsfpQXjfZCHhUCzbfmeurdNz6bDRsBWRsB+k0cXxdHjpa0wkTBn3hKnjzRZyEgYk3IeEv2RKWCt1cN9EJ0zjfm7Mq/rAVgUnbLpwnK/zA2tnuQmzJHquuqJq91blJuwmAW8rHbV3q2ITFrOAt7Xz3l2UmrBMlpcHe9fOUhOqRYVhFO/cqtSEy0H6bh/tJ1uhCctqlTB/NSnG9pOt1ISXjxLq825laVFowo9GaRPrF9talJqw3n6macaZ09yi1ISG2cLyriwePwxzi1ITru4s2naxma59TC2KTRjE83FqmQ6yeDaUDS3KTRhMV96h5TTSLD4HQ4uCE9bxePUU5pYL/3mD5o9CcMKgTONc39NNLrV5iK4aNLUoOWHQ38RQtW3nsm6db92i8ISvGBtct+hvwqyzBFxE9DehrcHlQPU1YWNvcNGirwlfNThv0ZOE9eJG1OsGZy36kVBdczU9e7RvAz5b9CFhqfIwSp4XwG+OwUWLPiRUV/33Z4tbGtTvGK635CfUDfb/SO5rt20N9t8m65fLT9g3GD5abDY2qC+lvEg4NjhEvLW4tUFvEj4a7OXq3TzoW8Jpg0PEzfk8SThv8EMeJFw1+O8SHmrQg4QHG/Qg4cEGxSc83KD4hIcblJ6w3L508TXh+vtDEpLw3GwDEpKQhOdznVD2fRr9tdpRw/1HqQndIeEvkXCXUlDC+1NBndsnge/fwyVnp9PGH3p95dm1WMKza4/fI37j+UPXR/c+2X9/hjQI0uO3LsyuMioM9A8Sjy/W1iIhY7Sn2tzpUahdWyXiNDNSxcWtSlCBAAAAAAAAAAAAAAAAAAAAAAAAAAAAwCn+AEXGNosxDBhFAAAAAElFTkSuQmCC';">
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Icon</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> Upload Icon</label>
 											<div class="col-sm-10">
 												<div class="custom-file input-file-w-30">
 													<input type="file" name="icon_th" class="custom-file-input" onchange="PreviewImage(this, 'previewIconTh');">
@@ -100,13 +141,13 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Preview</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right">Preview(Image on Navbar)</label>
 											<div class="col-sm-10">
 												<img id="previewImgOnNavBarTh" src="" style="background-color: #fff;" width="200px;" onerror="this.onerror=null;this.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAANlBMVEXz9Pa5vsq2u8jN0dnV2N/o6u7FydPi5Onw8fS+ws3f4ee6v8v29/jY2+Hu7/Ly9PbJztbQ1dxJagBAAAAC60lEQVR4nO3b2ZaCMBREUQbDJOP//2wbEGVIFCHKTa+zH7uVRVmBBJQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMCpdOzvQQqaq2KmuSrOzQ02lSeRem8rpsQq/ozg72Kj4UkAxEev8awnzs7P1yiIadsfpQXjfZCHhUCzbfmeurdNz6bDRsBWRsB+k0cXxdHjpa0wkTBn3hKnjzRZyEgYk3IeEv2RKWCt1cN9EJ0zjfm7Mq/rAVgUnbLpwnK/zA2tnuQmzJHquuqJq91blJuwmAW8rHbV3q2ITFrOAt7Xz3l2UmrBMlpcHe9fOUhOqRYVhFO/cqtSEy0H6bh/tJ1uhCctqlTB/NSnG9pOt1ISXjxLq825laVFowo9GaRPrF9talJqw3n6macaZ09yi1ISG2cLyriwePwxzi1ITru4s2naxma59TC2KTRjE83FqmQ6yeDaUDS3KTRhMV96h5TTSLD4HQ4uCE9bxePUU5pYL/3mD5o9CcMKgTONc39NNLrV5iK4aNLUoOWHQ38RQtW3nsm6db92i8ISvGBtct+hvwqyzBFxE9DehrcHlQPU1YWNvcNGirwlfNThv0ZOE9eJG1OsGZy36kVBdczU9e7RvAz5b9CFhqfIwSp4XwG+OwUWLPiRUV/33Z4tbGtTvGK635CfUDfb/SO5rt20N9t8m65fLT9g3GD5abDY2qC+lvEg4NjhEvLW4tUFvEj4a7OXq3TzoW8Jpg0PEzfk8SThv8EMeJFw1+O8SHmrQg4QHG/Qg4cEGxSc83KD4hIcblJ6w3L508TXh+vtDEpLw3GwDEpKQhOdznVD2fRr9tdpRw/1HqQndIeEvkXCXUlDC+1NBndsnge/fwyVnp9PGH3p95dm1WMKza4/fI37j+UPXR/c+2X9/hjQI0uO3LsyuMioM9A8Sjy/W1iIhY7Sn2tzpUahdWyXiNDNSxcWtSlCBAAAAAAAAAAAAAAAAAAAAAAAAAAAAwCn+AEXGNosxDBhFAAAAAElFTkSuQmCC';">
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Image on Navbar</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> Upload Image on Navbar</label>
 											<div class="col-sm-10">
 												<div class="custom-file input-file-w-30">
 													<input type="file" name="img_on_navbar_th" class="custom-file-input" onchange="PreviewImage(this, 'previewImgOnNavBarTh');">
@@ -143,6 +184,12 @@
 											</div>
 										</div>
 										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Image Title&amp; Alt(Content Top Image)</label>
+											<div class="col-sm-10">
+												<input class="form-control input-file-w-30" name="content_top_img_title_alt_th" placeholder="Image Title &amp; Alt" type="text" value="">
+											</div>
+										</div>
+										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Content Top Body</label>
 											<div class="col-sm-10">
 												<textarea class="summernote" name="content_top_body_th"></textarea>
@@ -171,6 +218,12 @@
 											</div>
 										</div>
 										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Image Title&amp; Alt(Content Bottom Image)</label>
+											<div class="col-sm-10">
+												<input class="form-control input-file-w-30" name="content_bottom_img_title_alt_th" placeholder="Image Title &amp; Alt" type="text" value="">
+											</div>
+										</div>
+										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Content Bottom Body</label>
 											<div class="col-sm-10">
 												<textarea class="summernote" name="content_bottom_body_th"></textarea>
@@ -180,7 +233,7 @@
 										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Text Button</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="text_button_th" placeholder="Title" type="text" value="">
+												<input class="form-control" name="text_button_th" placeholder="Text" type="text" value="">
 											</div>
 										</div>
 										<hr>
@@ -188,13 +241,13 @@
 										<div style="padding-top: 20px;"><h4><i class="fa fa-tag"></i> Banner</h4></div>
 										<hr>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Preview</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right">Preview(Banner)</label>
 											<div class="col-sm-10">
 												<img id="previewBannerImgTh" src="" style="background-color: #fff;" width="18%" onerror="this.onerror=null;this.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAANlBMVEXz9Pa5vsq2u8jN0dnV2N/o6u7FydPi5Onw8fS+ws3f4ee6v8v29/jY2+Hu7/Ly9PbJztbQ1dxJagBAAAAC60lEQVR4nO3b2ZaCMBREUQbDJOP//2wbEGVIFCHKTa+zH7uVRVmBBJQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMCpdOzvQQqaq2KmuSrOzQ02lSeRem8rpsQq/ozg72Kj4UkAxEev8awnzs7P1yiIadsfpQXjfZCHhUCzbfmeurdNz6bDRsBWRsB+k0cXxdHjpa0wkTBn3hKnjzRZyEgYk3IeEv2RKWCt1cN9EJ0zjfm7Mq/rAVgUnbLpwnK/zA2tnuQmzJHquuqJq91blJuwmAW8rHbV3q2ITFrOAt7Xz3l2UmrBMlpcHe9fOUhOqRYVhFO/cqtSEy0H6bh/tJ1uhCctqlTB/NSnG9pOt1ISXjxLq825laVFowo9GaRPrF9talJqw3n6macaZ09yi1ISG2cLyriwePwxzi1ITru4s2naxma59TC2KTRjE83FqmQ6yeDaUDS3KTRhMV96h5TTSLD4HQ4uCE9bxePUU5pYL/3mD5o9CcMKgTONc39NNLrV5iK4aNLUoOWHQ38RQtW3nsm6db92i8ISvGBtct+hvwqyzBFxE9DehrcHlQPU1YWNvcNGirwlfNThv0ZOE9eJG1OsGZy36kVBdczU9e7RvAz5b9CFhqfIwSp4XwG+OwUWLPiRUV/33Z4tbGtTvGK635CfUDfb/SO5rt20N9t8m65fLT9g3GD5abDY2qC+lvEg4NjhEvLW4tUFvEj4a7OXq3TzoW8Jpg0PEzfk8SThv8EMeJFw1+O8SHmrQg4QHG/Qg4cEGxSc83KD4hIcblJ6w3L508TXh+vtDEpLw3GwDEpKQhOdznVD2fRr9tdpRw/1HqQndIeEvkXCXUlDC+1NBndsnge/fwyVnp9PGH3p95dm1WMKza4/fI37j+UPXR/c+2X9/hjQI0uO3LsyuMioM9A8Sjy/W1iIhY7Sn2tzpUahdWyXiNDNSxcWtSlCBAAAAAAAAAAAAAAAAAAAAAAAAAAAAwCn+AEXGNosxDBhFAAAAAElFTkSuQmCC';">
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Image(Banner) (ขนาดที่แนะนำ 1920*650)</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right">Upload Image(Banner) (ขนาดที่แนะนำ 1920*650)</label>
 											<div class="col-sm-10">
 												<div class="custom-file input-file-w-30">
 													<input type="file" name="banner_img_th" class="custom-file-input" onchange="PreviewImage(this, 'previewBannerImgTh');">
@@ -202,14 +255,31 @@
 												</div>
 											</div>
 										</div>
+										<hr>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Image Title &amp; Alt(Banner)</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right">Preview(Banner(Moblie))</label>
+											<div class="col-sm-10">
+												<img id="previewBannerImgMoblieTh" src="" style="background-color: #fff;" width="18%" onerror="this.onerror=null;this.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAANlBMVEXz9Pa5vsq2u8jN0dnV2N/o6u7FydPi5Onw8fS+ws3f4ee6v8v29/jY2+Hu7/Ly9PbJztbQ1dxJagBAAAAC60lEQVR4nO3b2ZaCMBREUQbDJOP//2wbEGVIFCHKTa+zH7uVRVmBBJQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMCpdOzvQQqaq2KmuSrOzQ02lSeRem8rpsQq/ozg72Kj4UkAxEev8awnzs7P1yiIadsfpQXjfZCHhUCzbfmeurdNz6bDRsBWRsB+k0cXxdHjpa0wkTBn3hKnjzRZyEgYk3IeEv2RKWCt1cN9EJ0zjfm7Mq/rAVgUnbLpwnK/zA2tnuQmzJHquuqJq91blJuwmAW8rHbV3q2ITFrOAt7Xz3l2UmrBMlpcHe9fOUhOqRYVhFO/cqtSEy0H6bh/tJ1uhCctqlTB/NSnG9pOt1ISXjxLq825laVFowo9GaRPrF9talJqw3n6macaZ09yi1ISG2cLyriwePwxzi1ITru4s2naxma59TC2KTRjE83FqmQ6yeDaUDS3KTRhMV96h5TTSLD4HQ4uCE9bxePUU5pYL/3mD5o9CcMKgTONc39NNLrV5iK4aNLUoOWHQ38RQtW3nsm6db92i8ISvGBtct+hvwqyzBFxE9DehrcHlQPU1YWNvcNGirwlfNThv0ZOE9eJG1OsGZy36kVBdczU9e7RvAz5b9CFhqfIwSp4XwG+OwUWLPiRUV/33Z4tbGtTvGK635CfUDfb/SO5rt20N9t8m65fLT9g3GD5abDY2qC+lvEg4NjhEvLW4tUFvEj4a7OXq3TzoW8Jpg0PEzfk8SThv8EMeJFw1+O8SHmrQg4QHG/Qg4cEGxSc83KD4hIcblJ6w3L508TXh+vtDEpLw3GwDEpKQhOdznVD2fRr9tdpRw/1HqQndIeEvkXCXUlDC+1NBndsnge/fwyVnp9PGH3p95dm1WMKza4/fI37j+UPXR/c+2X9/hjQI0uO3LsyuMioM9A8Sjy/W1iIhY7Sn2tzpUahdWyXiNDNSxcWtSlCBAAAAAAAAAAAAAAAAAAAAAAAAAAAAwCn+AEXGNosxDBhFAAAAAElFTkSuQmCC';">
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Upload Image(Banner(Moblie)) (ขนาดที่แนะนำ สูง 500px)</label>
+											<div class="col-sm-10">
+												<div class="custom-file input-file-w-30">
+													<input type="file" name="banner_img_moblie_th" class="custom-file-input" onchange="PreviewImage(this, 'previewBannerImgMoblieTh');">
+													<label class="custom-file-label">Choose file (.gif | .jpg | .png)</label>
+												</div>
+											</div>
+										</div>
+										<hr>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Image Title&amp; Alt(Banner)</label>
 											<div class="col-sm-10">
 												<input class="form-control input-file-w-30" name="banner_img_title_alt_th" placeholder="Image Title &amp; Alt" type="text" value="">
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Text(Banner)</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right">Text no(Banner)</label>
 											<div class="col-sm-10">
 												<input class="form-control" name="banner_title_th" placeholder="Text" type="text" value="">
 											</div>
@@ -221,25 +291,64 @@
 										<div style="padding-top: 20px;"><h4><i class="fa fa-tag"></i> Meta Tag (SEO)</h4></div>
 										<hr>
 										<div class="form-group row">
+											<div class="col-sm-2"></div>
+											<div class="col-sm-10 text-danger">
+												กรุณาใส่ให้ถูกตามมาตรฐานการสร้าง slug (สำหรับภาษาอังกฤษ ต้องเป็นตัวอักษร a-z A-Z 0-9 และ - (ขีด) เท่านั่น! ห้ามเว้นวรรค)
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> URL Slug</label>
+											<div class="col-sm-10">
+												<div class="form-group">
+													<div class="input-group mb-2">
+														<div class="input-group-prepend">
+															<div class="input-group-text"><?php echo base_url('en/services/'); ?></div>
+														</div>
+														<input class="form-control" name="slug_en" placeholder="Enter URL Slug" type="text" value="" required>
+													</div>
+												</div>
+											</div>
+										</div>
+										<hr>
+										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Title</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="meta_tag_title_en" placeholder="Meta Title" type="text" value="">
+												<input class="form-control" name="meta_tag_title_en" placeholder="Enter Meta Title" type="text" value="">
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Description</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="meta_tag_description_en" placeholder="Meta Description" type="text" value="">
+												<input class="form-control" name="meta_tag_description_en" placeholder="Enter Meta Description" type="text" value="">
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Keywords</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="meta_tag_keywords_en" placeholder="Meta Keywords" type="text" value="">
+												<input class="form-control" name="meta_tag_keywords_en" placeholder="Enter Meta Keywords" type="text" value="">
+											</div>
+										</div>
+										<hr>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Title(Moblie)</label>
+											<div class="col-sm-10">
+												<input class="form-control" name="meta_tag_moblie_title_en" placeholder="Enter Meta Title" type="text" value="">
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Description(Moblie)</label>
+											<div class="col-sm-10">
+												<input class="form-control" name="meta_tag_moblie_description_en" placeholder="Enter Meta Description" type="text" value="">
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Meta Keywords(Moblie)</label>
+											<div class="col-sm-10">
+												<input class="form-control" name="meta_tag_moblie_keywords_en" placeholder="Enter Meta Keywords" type="text" value="">
 											</div>
 										</div>
 										<!-- OG & Twitter -->
-										<div style="padding-top: 20px;"><h4><i class="fa fa-tag"></i> Image OG &amp; Twitter</h4></div>
+										<div style="padding-top: 20px;"><h4><i class="fa fa-tag"></i> Image OG &amp;Twitter</h4></div>
 										<hr>
 										<div class="form-group row">
 											<div class="col-sm-2"></div>
@@ -263,16 +372,17 @@
 											</div>
 										</div>
 										<!-- Information -->
-										<div style="padding-top: 20px;"><h4><i class="fa fa-tag"></i> Information</h4></div>
+										<div style="padding-top: 20px;"><h4><i class="fa fa-tag"></i> Information</h4>
+										</div>
 										<hr>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Preview</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right">Preview(Icon)</label>
 											<div class="col-sm-10">
 												<img id="previewIconEn" src="" style="background-color: #fff;" width="40px;" onerror="this.onerror=null;this.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAANlBMVEXz9Pa5vsq2u8jN0dnV2N/o6u7FydPi5Onw8fS+ws3f4ee6v8v29/jY2+Hu7/Ly9PbJztbQ1dxJagBAAAAC60lEQVR4nO3b2ZaCMBREUQbDJOP//2wbEGVIFCHKTa+zH7uVRVmBBJQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMCpdOzvQQqaq2KmuSrOzQ02lSeRem8rpsQq/ozg72Kj4UkAxEev8awnzs7P1yiIadsfpQXjfZCHhUCzbfmeurdNz6bDRsBWRsB+k0cXxdHjpa0wkTBn3hKnjzRZyEgYk3IeEv2RKWCt1cN9EJ0zjfm7Mq/rAVgUnbLpwnK/zA2tnuQmzJHquuqJq91blJuwmAW8rHbV3q2ITFrOAt7Xz3l2UmrBMlpcHe9fOUhOqRYVhFO/cqtSEy0H6bh/tJ1uhCctqlTB/NSnG9pOt1ISXjxLq825laVFowo9GaRPrF9talJqw3n6macaZ09yi1ISG2cLyriwePwxzi1ITru4s2naxma59TC2KTRjE83FqmQ6yeDaUDS3KTRhMV96h5TTSLD4HQ4uCE9bxePUU5pYL/3mD5o9CcMKgTONc39NNLrV5iK4aNLUoOWHQ38RQtW3nsm6db92i8ISvGBtct+hvwqyzBFxE9DehrcHlQPU1YWNvcNGirwlfNThv0ZOE9eJG1OsGZy36kVBdczU9e7RvAz5b9CFhqfIwSp4XwG+OwUWLPiRUV/33Z4tbGtTvGK635CfUDfb/SO5rt20N9t8m65fLT9g3GD5abDY2qC+lvEg4NjhEvLW4tUFvEj4a7OXq3TzoW8Jpg0PEzfk8SThv8EMeJFw1+O8SHmrQg4QHG/Qg4cEGxSc83KD4hIcblJ6w3L508TXh+vtDEpLw3GwDEpKQhOdznVD2fRr9tdpRw/1HqQndIeEvkXCXUlDC+1NBndsnge/fwyVnp9PGH3p95dm1WMKza4/fI37j+UPXR/c+2X9/hjQI0uO3LsyuMioM9A8Sjy/W1iIhY7Sn2tzpUahdWyXiNDNSxcWtSlCBAAAAAAAAAAAAAAAAAAAAAAAAAAAAwCn+AEXGNosxDBhFAAAAAElFTkSuQmCC';">
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Icon</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> Upload Icon</label>
 											<div class="col-sm-10">
 												<div class="custom-file input-file-w-30">
 													<input type="file" name="icon_en" class="custom-file-input" onchange="PreviewImage(this, 'previewIconEn');">
@@ -281,13 +391,13 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Preview</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right">Preview(Image on Navbar)</label>
 											<div class="col-sm-10">
 												<img id="previewImgOnNavBarEn" src="" style="background-color: #fff;" width="200px;" onerror="this.onerror=null;this.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAANlBMVEXz9Pa5vsq2u8jN0dnV2N/o6u7FydPi5Onw8fS+ws3f4ee6v8v29/jY2+Hu7/Ly9PbJztbQ1dxJagBAAAAC60lEQVR4nO3b2ZaCMBREUQbDJOP//2wbEGVIFCHKTa+zH7uVRVmBBJQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMCpdOzvQQqaq2KmuSrOzQ02lSeRem8rpsQq/ozg72Kj4UkAxEev8awnzs7P1yiIadsfpQXjfZCHhUCzbfmeurdNz6bDRsBWRsB+k0cXxdHjpa0wkTBn3hKnjzRZyEgYk3IeEv2RKWCt1cN9EJ0zjfm7Mq/rAVgUnbLpwnK/zA2tnuQmzJHquuqJq91blJuwmAW8rHbV3q2ITFrOAt7Xz3l2UmrBMlpcHe9fOUhOqRYVhFO/cqtSEy0H6bh/tJ1uhCctqlTB/NSnG9pOt1ISXjxLq825laVFowo9GaRPrF9talJqw3n6macaZ09yi1ISG2cLyriwePwxzi1ITru4s2naxma59TC2KTRjE83FqmQ6yeDaUDS3KTRhMV96h5TTSLD4HQ4uCE9bxePUU5pYL/3mD5o9CcMKgTONc39NNLrV5iK4aNLUoOWHQ38RQtW3nsm6db92i8ISvGBtct+hvwqyzBFxE9DehrcHlQPU1YWNvcNGirwlfNThv0ZOE9eJG1OsGZy36kVBdczU9e7RvAz5b9CFhqfIwSp4XwG+OwUWLPiRUV/33Z4tbGtTvGK635CfUDfb/SO5rt20N9t8m65fLT9g3GD5abDY2qC+lvEg4NjhEvLW4tUFvEj4a7OXq3TzoW8Jpg0PEzfk8SThv8EMeJFw1+O8SHmrQg4QHG/Qg4cEGxSc83KD4hIcblJ6w3L508TXh+vtDEpLw3GwDEpKQhOdznVD2fRr9tdpRw/1HqQndIeEvkXCXUlDC+1NBndsnge/fwyVnp9PGH3p95dm1WMKza4/fI37j+UPXR/c+2X9/hjQI0uO3LsyuMioM9A8Sjy/W1iIhY7Sn2tzpUahdWyXiNDNSxcWtSlCBAAAAAAAAAAAAAAAAAAAAAAAAAAAAwCn+AEXGNosxDBhFAAAAAElFTkSuQmCC';">
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Image on Navbar</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right"><span class="text-danger">*</span> Upload Image on Navbar</label>
 											<div class="col-sm-10">
 												<div class="custom-file input-file-w-30">
 													<input type="file" name="img_on_navbar_en" class="custom-file-input" onchange="PreviewImage(this, 'previewImgOnNavBarEn');">
@@ -324,6 +434,12 @@
 											</div>
 										</div>
 										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Image Title&amp; Alt(Content Top Image)</label>
+											<div class="col-sm-10">
+												<input class="form-control input-file-w-30" name="content_top_img_title_alt_en" placeholder="Image Title &amp; Alt" type="text" value="">
+											</div>
+										</div>
+										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Content Top Body</label>
 											<div class="col-sm-10">
 												<textarea class="summernote" name="content_top_body_en"></textarea>
@@ -352,6 +468,12 @@
 											</div>
 										</div>
 										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Image Title&amp; Alt(Content Bottom Image)</label>
+											<div class="col-sm-10">
+												<input class="form-control input-file-w-30" name="content_bottom_img_title_alt_en" placeholder="Image Title &amp; Alt" type="text" value="">
+											</div>
+										</div>
+										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Content Bottom Body</label>
 											<div class="col-sm-10">
 												<textarea class="summernote" name="content_bottom_body_en"></textarea>
@@ -361,7 +483,7 @@
 										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Text Button</label>
 											<div class="col-sm-10">
-												<input class="form-control" name="text_button_en" placeholder="Title" type="text" value="">
+												<input class="form-control" name="text_button_en" placeholder="Text" type="text" value="">
 											</div>
 										</div>
 										<hr>
@@ -375,7 +497,7 @@
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Image(Banner) (ขนาดที่แนะนำ 1920*650)</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right">Upload Image(Banner) (ขนาดที่แนะนำ 1920*650)</label>
 											<div class="col-sm-10">
 												<div class="custom-file input-file-w-30">
 													<input type="file" name="banner_img_en" class="custom-file-input" onchange="PreviewImage(this, 'previewBannerImgEn');">
@@ -383,14 +505,31 @@
 												</div>
 											</div>
 										</div>
+										<hr>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Image Title &amp; Alt(Banner)</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right">Preview(Banner(Moblie))</label>
+											<div class="col-sm-10">
+												<img id="previewBannerImgMoblieEn" src="" style="background-color: #fff;" width="18%" onerror="this.onerror=null;this.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAANlBMVEXz9Pa5vsq2u8jN0dnV2N/o6u7FydPi5Onw8fS+ws3f4ee6v8v29/jY2+Hu7/Ly9PbJztbQ1dxJagBAAAAC60lEQVR4nO3b2ZaCMBREUQbDJOP//2wbEGVIFCHKTa+zH7uVRVmBBJQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMCpdOzvQQqaq2KmuSrOzQ02lSeRem8rpsQq/ozg72Kj4UkAxEev8awnzs7P1yiIadsfpQXjfZCHhUCzbfmeurdNz6bDRsBWRsB+k0cXxdHjpa0wkTBn3hKnjzRZyEgYk3IeEv2RKWCt1cN9EJ0zjfm7Mq/rAVgUnbLpwnK/zA2tnuQmzJHquuqJq91blJuwmAW8rHbV3q2ITFrOAt7Xz3l2UmrBMlpcHe9fOUhOqRYVhFO/cqtSEy0H6bh/tJ1uhCctqlTB/NSnG9pOt1ISXjxLq825laVFowo9GaRPrF9talJqw3n6macaZ09yi1ISG2cLyriwePwxzi1ITru4s2naxma59TC2KTRjE83FqmQ6yeDaUDS3KTRhMV96h5TTSLD4HQ4uCE9bxePUU5pYL/3mD5o9CcMKgTONc39NNLrV5iK4aNLUoOWHQ38RQtW3nsm6db92i8ISvGBtct+hvwqyzBFxE9DehrcHlQPU1YWNvcNGirwlfNThv0ZOE9eJG1OsGZy36kVBdczU9e7RvAz5b9CFhqfIwSp4XwG+OwUWLPiRUV/33Z4tbGtTvGK635CfUDfb/SO5rt20N9t8m65fLT9g3GD5abDY2qC+lvEg4NjhEvLW4tUFvEj4a7OXq3TzoW8Jpg0PEzfk8SThv8EMeJFw1+O8SHmrQg4QHG/Qg4cEGxSc83KD4hIcblJ6w3L508TXh+vtDEpLw3GwDEpKQhOdznVD2fRr9tdpRw/1HqQndIeEvkXCXUlDC+1NBndsnge/fwyVnp9PGH3p95dm1WMKza4/fI37j+UPXR/c+2X9/hjQI0uO3LsyuMioM9A8Sjy/W1iIhY7Sn2tzpUahdWyXiNDNSxcWtSlCBAAAAAAAAAAAAAAAAAAAAAAAAAAAAwCn+AEXGNosxDBhFAAAAAElFTkSuQmCC';">
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Upload Image(Banner(Moblie)) (ขนาดที่แนะนำ สูง 500px)</label>
+											<div class="col-sm-10">
+												<div class="custom-file input-file-w-30">
+													<input type="file" name="banner_img_moblie_en" class="custom-file-input" onchange="PreviewImage(this, 'previewBannerImgMoblieEn');">
+													<label class="custom-file-label">Choose file (.gif | .jpg | .png)</label>
+												</div>
+											</div>
+										</div>
+										<hr>
+										<div class="form-group row">
+											<label class="col-sm-2 col-form-label text-left text-md-right">Image Title&amp; Alt(Banner)</label>
 											<div class="col-sm-10">
 												<input class="form-control input-file-w-30" name="banner_img_title_alt_en" placeholder="Image Title &amp; Alt" type="text" value="">
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 col-form-label text-left text-md-right">Text(Banner)</label>
+											<label class="col-sm-2 col-form-label text-left text-md-right">Text no(Banner)</label>
 											<div class="col-sm-10">
 												<input class="form-control" name="banner_title_en" placeholder="Text" type="text" value="">
 											</div>
@@ -419,6 +558,7 @@
 
 <!-- Page Specific JS File -->
 <script src="<?php echo base_url('resources/back_end/assets/js/page/modules-datatables.js'); ?>"></script>
+<script src="<?php echo base_url('resources/back_end/assets/js/notiny.min.js'); ?>"></script>
 
 <script>
     function PreviewImage(input, previewImage) {
@@ -432,4 +572,59 @@
             reader.readAsDataURL(input.files[0]);
         }
     }
+
+    function validateSlug(text) {
+
+        let formatSlug = /[ !@#$%^&*()_+\=\[\]{};':"\\|,.<>\/?]/
+
+        return formatSlug.test(text)
+	}
+
+    function notify(event, message) {
+
+        let eventResponse = ''
+
+        switch (event) {
+            case 'success':
+                eventResponse = 'success'
+                break
+
+            case 'warning':
+                eventResponse = 'warning'
+                break
+
+            case 'error':
+                eventResponse = 'error'
+                break
+
+            default:
+                eventResponse = 'error'
+        }
+
+        $.notiny({
+            text: message,
+            image: 'http://devel.ag-projects.com/repositories/blink-qt/resources/icons/invalid.png',
+            width: '320',
+            delay: 5000
+        });
+    }
+
+    $(document).ready(function () {
+
+        $('button[type="submit"]').on('click', function (e) {
+
+            let slugTh = $('input[name="slug_th"]').val(),
+				slugEn = $('input[name="slug_en"]').val(),
+				titleTh = $('input[name="title_th"]').val(),
+				titleEn = $('input[name="title_en"]').val();
+
+			if (slugTh == '' || slugEn == '') {
+                notify('error', 'Slug url ทั้ง TH และ EN จะต้องเป็นไม่เป็นค่าว่าง');
+            } else if (!validateSlug(slugTh.toString()) == false || !validateSlug(slugEn.toString()) == false) {
+                notify('error', 'Slug url ทั้ง TH และ EN จะต้องเป็น ภาษาไทย a-z A-Z 0-9 และ - (ขีด) เท่านั่น! ห้ามเว้นวรรค');
+            } else if (titleTh == '' || titleEn == '') {
+                notify('error', 'Title ทั้ง TH และ EN ไม่สามารถใส่เป็นค่าว่างได้');
+            }
+        })
+    })
 </script>

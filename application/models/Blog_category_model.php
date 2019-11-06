@@ -8,11 +8,14 @@ class Blog_category_model extends CI_Model {
 		$sql = "
 			SELECT 
 			blog_categories.id,
+			blog_categories.status,
+			blog_categories.sort,
 			blog_categories.title,
 			blog_categories.slug,
             blog_categories.created_at,
             (SELECT COUNT(*) FROM blogs WHERE blog_categories.id = blogs.category_blog_id) as counter
 			FROM blog_categories
+			ORDER BY blog_categories.sort ASC
         ";
 
 		$query = $this->db->query($sql);

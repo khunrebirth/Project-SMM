@@ -40,6 +40,8 @@
 										<th>Page(th)</th>
 										<th>Image(en)</th>
 										<th>Image(th)</th>
+										<th>Image on moblie(en)</th>
+										<th>Image on moblie(th)</th>
 										<th>Action</th>
 									</tr>
 									</thead>
@@ -59,6 +61,8 @@
 												<td><?php echo unserialize($banner->page)['th']; ?></td>
 												<td><img src="<?php echo base_url('storage/uploads/images/banners/' . unserialize($banner->img)['en']); ?>" width="120"></td>
 												<td><img src="<?php echo base_url('storage/uploads/images/banners/' . unserialize($banner->img)['th']); ?>" width="120"></td>
+												<td><img src="<?php echo base_url('storage/uploads/images/banners/' . unserialize($banner->img_moblie)['en']); ?>" width="120"></td>
+												<td><img src="<?php echo base_url('storage/uploads/images/banners/' . unserialize($banner->img_moblie)['th']); ?>" width="120"></td>
 												<td><a href="<?php echo base_url($lang . '/backoffice/setting/banners/edit/' . $banner->id); ?>" class="btn btn-warning">Edit</a></td>
 											</tr>
 									<?php } ?>

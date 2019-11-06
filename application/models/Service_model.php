@@ -30,6 +30,13 @@ class Service_model extends CI_Model {
         return $query->num_rows() > 0 ? $query->row() : false;
     }
 
+	public function get_service_by_custom($id)
+	{
+		$query = $this->db->where('id !=', $id)->get('services');
+
+		return $query->num_rows() > 0 ? $query->result() : [];
+	}
+
     public function insert_service($data)
     {
         $this->db->insert('services', $data);

@@ -69,6 +69,29 @@ class Helper extends MX_Controller
 				}
 				break;
 
+			case 'blog_categories':
+
+				$this->load->model('Blog_category_model');
+
+				$update_blog_category = $this->Blog_category_model->update_blog_category_by_id($this->input->post('id'), [
+					'status' => $this->input->post('status'),
+					'updated_at' => date('Y-m-d H:i:s')
+				]);
+
+				if ($update_blog_category) {
+
+					$status = 200;
+					$response['success'] = 1;
+
+					logger_store([
+						'user_id' => $this->data['user']->id,
+						'detail' => 'แก้ไข Blog Category',
+						'event' => 'update',
+						'ip' => $this->input->ip_address()
+					]);
+				}
+				break;
+
 			default:
 				;
 		}

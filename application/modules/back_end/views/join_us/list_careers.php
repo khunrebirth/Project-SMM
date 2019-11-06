@@ -64,10 +64,12 @@
 									<thead>
 										<tr>
 											<th class="text-center">#</th>
-											<th>Img cover(en)</th>
-											<th>Img cover(th)</th>
 											<th>Title(en)</th>
 											<th>Title(th)</th>
+											<th>Img(en)</th>
+											<th>Img(th)</th>
+											<th>Img moblie(en)</th>
+											<th>Img moblie(th)</th>
 											<th>Galleries</th>
 											<th>Created at</th>
 											<th>Action</th>
@@ -79,10 +81,12 @@
 										foreach ($careers as $career) { ?>
 											<tr>
 												<td class="text-center"><?php echo $counter++; ?></td>
-												<td><img src="<?php echo base_url('storage/uploads/images/join_us/' . unserialize($career->img_cover)['en']); ?>" width="120"></td>
-												<td><img src="<?php echo base_url('storage/uploads/images/join_us/' . unserialize($career->img_cover)['th']); ?>" width="120"></td>
 												<td><?php echo unserialize($career->title)['en']; ?></td>
 												<td><?php echo unserialize($career->title)['th']; ?></td>
+												<td><img src="<?php echo base_url('storage/uploads/images/join_us/' . unserialize($career->img_cover)['en']); ?>" width="120"></td>
+												<td><img src="<?php echo base_url('storage/uploads/images/join_us/' . unserialize($career->img_cover)['th']); ?>" width="120"></td>
+												<td><img src="<?php echo base_url('storage/uploads/images/join_us/' . unserialize($career->img_cover_moblie)['en']); ?>" width="120"></td>
+												<td><img src="<?php echo base_url('storage/uploads/images/join_us/' . unserialize($career->img_cover_moblie)['th']); ?>" width="120"></td>
 												<td>
 													<a class="btn btn-warning" href="<?php echo base_url($lang . '/backoffice/page/join-us/list-career-galleries/' . $career->id); ?>"><i class="far fa-view"></i> Items (<?php echo $career->counter; ?>)</a>
 												</td>
