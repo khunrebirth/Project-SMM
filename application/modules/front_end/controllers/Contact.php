@@ -18,7 +18,7 @@ class Contact extends MX_Controller
 
         // Model
         $this->load->model('Contact_model');
-		$this->load->model('Contact_page_model');
+		$this->load->model('Page_model');
 		$this->load->model('Banner_model');
 
 		// Language
@@ -33,8 +33,7 @@ class Contact extends MX_Controller
 		| -------------------------------------------------------------------------
 		*/
 
-		$contact_id = 1;
-		$page_content = $this->Contact_page_model->get_contact_page_by_id($contact_id);
+		$page_content = $this->Page_model->get_page_by_id(9);
 
 		/*
 		| -------------------------------------------------------------------------
@@ -47,11 +46,15 @@ class Contact extends MX_Controller
 
 		// Title Page
 		$data['title'] = unserialize($page_content->meta_tag_title)[$this->lang];
+		$data['title_moblie'] = unserialize($page_content->meta_tag_moblie_title)[$this->lang];
 
 		// Meta Tag
 		$data['meta']['title'] = unserialize($page_content->meta_tag_title)[$this->lang];
 		$data['meta']['description'] = unserialize($page_content->meta_tag_description)[$this->lang];
 		$data['meta']['keyword'] = unserialize($page_content->meta_tag_keywords)[$this->lang];
+		$data['meta']['title_moblie'] = unserialize($page_content->meta_tag_moblie_title)[$this->lang];
+		$data['meta']['description_moblie'] = unserialize($page_content->meta_tag_moblie_description)[$this->lang];
+		$data['meta']['keyword_moblie'] = unserialize($page_content->meta_tag_moblie_keywords)[$this->lang];
 
 		// OG & Twitter
 		$data['og_twitter']['title'] = unserialize($page_content->meta_tag_title)[$this->lang];
@@ -94,13 +97,6 @@ class Contact extends MX_Controller
 
 	public function career_contact()
 	{
-//		$add_contact = $this->Contact_model->insert_contact([
-//			'name' => $this->input->post('name'),
-//			'email' => $this->input->post('email'),
-//			'phone' => $this->input->post('phone'),
-//			'company' => $this->input->post('company'),
-//			'detail' => $this->input->post('detail')
-//		]);
 
 		$add_contact = true;
 

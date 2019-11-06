@@ -69,10 +69,12 @@
 		border-top: 1px solid #dadada;;
 		border-bottom: 1px solid #dadada;;
 	}
+
 	.ttl-tag-blog {
 		font-size: 20px;
 		margin-right: 20px;
 	}
+
 	.list-tag-blog {
 		display: flex;
 		justify-content: flex-start;
@@ -83,16 +85,19 @@
 		flex: 0 1 auto;
 		flex-wrap: wrap;
 	}
+
 	.list-tag-blog li {
 		padding: 0 10px;
 		position: relative;
 	}
+
 	.list-tag-blog li::after {
 		content: ',';
 		position: absolute;
 		right: 0;
 		top: 0;
 	}
+
 	.list-tag-blog li:last-of-type::after {
 		display: none;
 	}
@@ -127,20 +132,17 @@
 			</div>
 			<div class="col-lg-9 col-md-12 col-sm-12">
 				<h3 class="text-center"><?php echo unserialize($blog->title)[$lang]; ?></h3>
-				<p class="txt-date-blog"><i class="far fa-calendar-alt"></i> October 24,2019</p>
+				<p class="txt-date-blog"><i class="far fa-calendar-alt"></i> <?php echo $blog->created_at; ?></p>
 				<figure class="text-center">
 					<img src="<?php echo base_url('storage/uploads/images/blogs/' . unserialize($blog->img)[$lang]); ?>" class="img-fluid" alt="">
 				</figure>
 				<?php echo unserialize($blog->body)[$lang]; ?>
 				<div class="wrap-tag-blog">
-					<span class="ttl-tag-blog"><i class="fas fa-tags"></i> TAG</span>
+					<span class="ttl-tag-blog"><i class="fas fa-tags"></i> <?php echo lang('page_blog_tag'); ?></span>
 					<ul class="list-tag-blog">
-						<li><a href="#">Online Marketing</a></li>
-						<li><a href="#">E-Mail</a></li>
-						<li><a href="#">Carousel ads</a></li>
-						<li><a href="#">Hashtag</a></li>
-						<li><a href="#">Instagram</a></li>
-						<li><a href="#">Ads</a></li>
+						<?php foreach ($tags as $tag) { ?>
+							<li><a href="#"><?php echo unserialize($tag->title)[$lang]; ?></a></li>
+						<?php } ?>
 					</ul>
 				</div>
 				<div class="sec-blog-relate">

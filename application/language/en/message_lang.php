@@ -53,6 +53,7 @@ $lang['page_client'] = 'Client Page';
 
 $lang['page_blog'] = 'Blog Page';
 $lang['page_last_blog'] = 'Last Blog';
+$lang['page_blog_tag'] = 'TAGS';
 
 /*
 | -------------------------------------------------------------------------

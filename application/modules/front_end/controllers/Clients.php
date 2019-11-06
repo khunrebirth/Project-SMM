@@ -18,9 +18,9 @@ class Clients extends MX_Controller
 
 		// Model
 		$this->load->model('Page_model');
+		$this->load->model('Banner_model');
 		$this->load->model('Client_category_model');
 		$this->load->model('Client_model');
-		$this->load->model('Banner_model');
 
 		// Language
 		$this->lang = $this->config->item('language_abbr');
