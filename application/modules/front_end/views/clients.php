@@ -45,17 +45,6 @@
     $(function () {
         $(".client__navs a:first").tab('show');
 
-		// $('.wrap-client-slide').owlCarousel({
-        //     items: 1,
-        //     nav: false,
-        //     loop: true,
-        //     dots: true,
-        //     margin: 15,
-        //     autoplay: false,
-        //     autoplayTimeout: 2000,
-        //     autoplaySpeed: 1000,
-        // });
-
 		$('.list-catagory-client li a').click(function(e){
 			e.preventDefault();
 			if(!$(this).hasClass('is-active')) {
