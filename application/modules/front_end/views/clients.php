@@ -45,7 +45,7 @@
     $(function () {
         $(".client__navs a:first").tab('show');
 
-		$('.list-catagory-client li a').click(function(e){
+		$('.list-catagory-client li a').click(function(e) {
 			e.preventDefault();
 			if(!$(this).hasClass('is-active')) {
 				var hash = $(this).attr('href');
