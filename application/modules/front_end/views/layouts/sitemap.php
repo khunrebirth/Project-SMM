@@ -111,8 +111,8 @@
 				<div class="sec-sitemap">
 					<div class="row">
 						<div class="col-lg-4 col-md-6 col-sm-12">
-							<h2 class="text-secondary contact__form--title"><?php echo lang('page_contact_title_first'); ?><span><?php echo lang('page_contact_title_center'); ?></span><?php echo lang('page_contact_title_end'); ?></h2>
-							<p class="text-secondary contact__form--body mb-4"><?php echo lang('page_contact_desc'); ?></p>
+							<h2 class="contact__form--title"><?php echo lang('page_contact_title_first'); ?><span><?php echo lang('page_contact_title_center'); ?></span><?php echo lang('page_contact_title_end'); ?></h2>
+							<p class="contact__form--body mb-4"><?php echo lang('page_contact_desc'); ?></p>
 							<form class="mt-4" action="<?php echo base_url('contact/send') ?>" method="post">
 								<div class="form-group">
 									<input type="text" class="form-control" name="name" placeholder="<?php echo lang('page_contact_form_txt_name'); ?>" required>
