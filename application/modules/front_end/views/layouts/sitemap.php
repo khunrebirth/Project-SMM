@@ -1,3 +1,13 @@
+<?php
+	$CI =& get_instance();
+
+	$CI->load->model('Blog_model');
+	$CI->load->model('Service_model');
+
+	$services = $CI->Service_model->get_service_all();
+	$last_blogs = $CI->Blog_model->get_last_blog(10);
+?>
+
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v4.0&appId=189754555007223&autoLogAppEvents=1"></script>
 
@@ -71,35 +81,19 @@
 			<h2 class="ttl-facebook text-center">Our Facebook Page</h2>
 		</div>
 		<div class="col-lg-3 col-md-3 col-sm-12 item-fb-page">
-			<div class="fb-page" data-href="https://www.facebook.com/iSEO.SEM/" data-width=""
-					data-height="" data-small-header="false" data-adapt-container-width="true"
-					data-hide-cover="false" data-show-facepile="false">
-				<blockquote cite="https://www.facebook.com/iSEO.SEM/"
-							class="fb-xfbml-parse-ignore"><a
-						href="https://www.facebook.com/iSEO.SEM/">รับบริการทำ SEO SEM</a>
+			<div class="fb-page" data-href="https://www.facebook.com/iSEO.SEM/" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
+				<blockquote cite="https://www.facebook.com/iSEO.SEM/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/iSEO.SEM/">รับบริการทำ SEO SEM</a>
 				</blockquote>
 			</div>
 		</div>
 		<div class="col-lg-3 col-md-3 col-sm-12 item-fb-page">
-			<div class="fb-page" data-href="https://www.facebook.com/SocialMediaMarketing/"
-					data-width="" data-height="" data-small-header="false"
-					data-adapt-container-width="true" data-hide-cover="false"
-					data-show-facepile="false">
-				<blockquote cite="https://www.facebook.com/SocialMediaMarketing/"
-							class="fb-xfbml-parse-ignore"><a
-						href="https://www.facebook.com/SocialMediaMarketing/">Social Media
-						Master</a></blockquote>
+			<div class="fb-page" data-href="https://www.facebook.com/SocialMediaMarketing/" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
+				<blockquote cite="https://www.facebook.com/SocialMediaMarketing/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/SocialMediaMarketing/">Social Media Master</a></blockquote>
 			</div>
 		</div>
 		<div class="col-lg-3 col-md-3 col-sm-12 item-fb-page">
-			<div class="fb-page" data-href="https://www.facebook.com/EmailDirectMarketing.EDM/"
-					data-width="" data-height="" data-small-header="false"
-					data-adapt-container-width="true" data-hide-cover="false"
-					data-show-facepile="false">
-				<blockquote cite="https://www.facebook.com/EmailDirectMarketing.EDM/"
-							class="fb-xfbml-parse-ignore"><a
-						href="https://www.facebook.com/EmailDirectMarketing.EDM/">บริการรับส่งอีเมล์
-						: Email Direct Marketing</a></blockquote>
+			<div class="fb-page" data-href="https://www.facebook.com/EmailDirectMarketing.EDM/" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
+				<blockquote cite="https://www.facebook.com/EmailDirectMarketing.EDM/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/EmailDirectMarketing.EDM/">บริการรับส่งอีเมล์ : Email Direct Marketing</a></blockquote>
 			</div>
 		</div>
 	</div>
@@ -137,98 +131,32 @@
 						<div class="col-sm-12 col-md-6 sec-site-link col-lg-8 mb-3 mb-md-0">
 							<div class="row">
 								<div class="col-lg-3 col-sm-12 col-md-12">
-									<a class="d-block text-left" href="">หน้าหลัก</a>
+									<a class="d-block text-left" href=""><?php echo lang('menu_home'); ?></a>
 									<ul class="list-sitemap">
-										<li><a class="text-left"
-											href="<?php echo base_url($lang . '/' . lang('menu_home')); ?>"><?php echo lang('menu_home'); ?></a>
-										</li>
-										<li><a class="text-left"
-											href="<?php echo base_url($lang . '/' . lang('menu_about')); ?>"><?php echo lang('menu_about'); ?></a>
-										</li>
-										<li><a class="text-left"
-											href="<?php echo base_url($lang . '/' . lang('menu_our_clients')); ?>"><?php echo lang('menu_our_clients'); ?></a>
-										</li>
-										<li><a class="text-left"
-											href="<?php echo base_url($lang . '/' . lang('menu_blogs')); ?>"><?php echo lang('menu_blogs'); ?></a>
-										</li>
-										<li><a class="text-left"
-											href="<?php echo base_url($lang . '/' . lang('menu_teams')); ?>"><?php echo lang('menu_teams'); ?></a>
-										</li>
+										<li><a class="text-left" href="<?php echo base_url($lang . '/' . lang('menu_home')); ?>"><?php echo lang('menu_home'); ?></a></li>
+										<li><a class="text-left" href="<?php echo base_url($lang . '/' . lang('menu_about')); ?>"><?php echo lang('menu_about'); ?></a></li>
+										<li><a class="text-left" href="<?php echo base_url($lang . '/' . lang('menu_our_clients')); ?>"><?php echo lang('menu_our_clients'); ?></a></li>
+										<li><a class="text-left" href="<?php echo base_url($lang . '/' . lang('menu_blogs')); ?>"><?php echo lang('menu_blogs'); ?></a></li>
+										<li><a class="text-left" href="<?php echo base_url($lang . '/' . lang('menu_teams')); ?>"><?php echo lang('menu_teams'); ?></a></li>
 									</ul>
 								</div>
 								<div class="col-lg-5 col-sm-12 col-md-12">
 									<a class="d-block text-left" href=""><?php echo lang('menu_service'); ?></a>
 									<ul class="list-sitemap">
-										<?php
-										$CI =& get_instance();
-
-										$CI->load->model('Service_model');
-
-										$services = $CI->Service_model->get_service_all();
-										?>
 										<?php foreach ($services as $service) { ?>
-											<li><a class="text-left"
-												href="<?php echo base_url($lang . '/' . lang('menu_service') . '/' . unserialize($service->slug)[$lang] . '/' . hashids_encrypt($service->id)); ?>"><?php echo unserialize($service->title)[$lang]; ?></a>
-											</li>
+											<li><a class="text-left" href="<?php echo base_url($lang . '/' . lang('menu_service') . '/' . unserialize($service->slug)[$lang] . '/' . hashids_encrypt($service->id)); ?>"><?php echo unserialize($service->title)[$lang]; ?></a></li>
 										<?php } ?>
 									</ul>
 								</div>
 								<div class="col-lg-4 col-sm-12 col-md-12">
-									<a class="d-block text-left" href="">สาระน่ารู้</a>
+									<a class="d-block text-left" href=""><?php echo lang('menu_blogs'); ?></a>
 									<ul class="list-sitemap">
-										<li><a class="text-left"
-											href="#">การทำการตลาดออนไลน์</a>
-										</li>
-										<li><a class="text-left"
-											href="#">การทำการตลาดออนไลน์</a>
-										</li>
-										<li><a class="text-left"
-											href="#">การทำการตลาดออนไลน์</a>
-										</li>
-										<li><a class="text-left"
-											href="#">การทำการตลาดออนไลน์</a>
-										</li>
-										<li><a class="text-left"
-											href="#">การทำการตลาดออนไลน์</a>
-										</li>
-										<li><a class="text-left"
-											href="#">การทำการตลาดออนไลน์</a>
-										</li>
-										<li><a class="text-left"
-											href="#">การทำการตลาดออนไลน์</a>
-										</li>
-										<li><a class="text-left"
-											href="#">การทำการตลาดออนไลน์</a>
-										</li>
+										<?php foreach ($last_blogs as $last_blog) { ?>
+											<li><a class="text-left" href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/' . unserialize($last_blog->blog_category_slug)[$lang] . '/' .  unserialize($last_blog->slug)[$lang] . '/' . hashids_encrypt($last_blog->id)); ?>"><?php echo unserialize($last_blog->title)[$lang]; ?></a></li>
+										<?php } ?>
 									</ul>
 								</div>
 							</div>
-							<!-- <a class="d-block text-left"
-							   href="<?php //echo base_url($lang . '/' . lang('menu_home')); ?>"><?php //echo lang('menu_home'); ?></a>
-							<a class="d-block text-left"
-							   href="<?php //echo base_url($lang . '/' . lang('menu_about')); ?>"><?php //echo lang('menu_about'); ?></a>
-							<a class="d-block text-left" href=""><?php //echo lang('menu_service'); ?></a>
-							<ul class="list-sitemap">
-								<?php
-								//$CI =& get_instance();
-
-								//$CI->load->model('Service_model');
-
-								//$services = $CI->Service_model->get_service_all();
-								?>
-								<?php// foreach ($services as $service) { ?>
-									<li><a class="text-left"
-										   href="<?php //echo base_url($lang . '/' . lang('menu_service') . '/' . unserialize($service->slug)[$lang] . '/' . hashids_encrypt($service->id)); ?>"><?php// echo unserialize($service->title)[$lang]; ?></a>
-									</li>
-								<?php// } ?>
-							</ul>
-							<a class="d-block text-left"
-							   href="<?php //echo base_url($lang . '/' . lang('menu_our_clients')); ?>"><?php //echo lang('menu_our_clients'); ?></a>
-							<a class="d-block text-left"
-							   href="<?php //echo base_url($lang . '/' . lang('menu_blogs')); ?>"><?php //echo lang('menu_blogs'); ?></a>
-							<a class="d-block text-left"
-							   href="<?php //echo base_url($lang . '/' . lang('menu_teams')); ?>"><?php //echo lang('menu_teams'); ?></a> -->
-
 						</div>
 					</div>
 				</div>
