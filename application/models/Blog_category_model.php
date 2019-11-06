@@ -30,6 +30,13 @@ class Blog_category_model extends CI_Model {
         return $query->num_rows() > 0 ? $query->row() : false;
     }
 
+	public function get_blog_category_active()
+	{
+		$query = $this->db->where('status', 'Y')->get('blog_categories');
+
+		return $query->num_rows() > 0 ? $query->result() : [];
+	}
+
     public function insert_blog_category($data)
     {
         $this->db->insert('blog_categories', $data);
