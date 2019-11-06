@@ -45,7 +45,7 @@
 								<?php if ($counter == 0) { ?>
 									<div class="row">
 								<?php } ?>
-										<div class="item-client col-md-<?php if ($client_specific['category_id'] == 1) { echo '3'; } else { echo '4'; } ?> mb-4">
+										<div class="item-client col-md-3 col-12 mb-4">
 											<img src="<?php echo base_url('storage/uploads/images/clients/' . $client_specific['img']) ?>" alt="<?php echo $client_specific['title']; ?>" class="img-fluid img-clients">
 											<span class="txt-decs-client text-center col-12 d-block">ใช้บริการXXX,XXX,XXX</span>
 										</div>

@@ -76,9 +76,9 @@
 				</p>
 			</a>
 			<?php } ?>
-			<a href="#" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05 js-scroll-contact">
-				<img src="<?php echo base_url('resources/front_end/images/ico_contact_01.png') ?>" class="img-fluid service__icon--resize">
-			</a>
+			<!-- <a href="#" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05 js-scroll-contact">
+				<img src="<?php // echo base_url('resources/front_end/images/ico_contact_01.png') ?>" class="img-fluid service__icon--resize">
+			</a> -->
 		</div>
 	</div>
 </section>
@@ -89,13 +89,33 @@
 		<div class="title-client" style="text-align: center; padding: 4rem;">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-cilent.png' : 'resources/front_end/images/title-cilent.png'); ?>" class="img-fluid">
 		</div>
-
-		<?php $slice_clients = array_slice($clients, count($clients) - 6); ?>
-		<?php foreach ($slice_clients as $client) { ?>
-
-			<?php echo $client->category_id; ?>
-
-		<?php } ?>
+		<div class="row">
+		
+			<div class="col-12 col-md-6 col-lg-2 mb-4">
+				<img src="<?php echo base_url('/storage/uploads/images/clients/smm_ava_15722370751.jpg');?>" alt="" class="img-fluid img-clients">
+			</div>
+			<div class="col-12 col-md-6 col-lg-2 mb-4">
+				<img src="<?php echo base_url('/storage/uploads/images/clients/smm_ava_15722370751.jpg');?>" alt="" class="img-fluid img-clients">
+			</div>
+			<div class="col-12 col-md-6 col-lg-2 mb-4">
+				<img src="<?php echo base_url('/storage/uploads/images/clients/smm_ava_15722370751.jpg');?>" alt="" class="img-fluid img-clients">
+			</div>
+			<div class="col-12 col-md-6 col-lg-2 mb-4">
+				<img src="<?php echo base_url('/storage/uploads/images/clients/smm_ava_15722370751.jpg');?>" alt="" class="img-fluid img-clients">
+			</div>
+			<div class="col-12 col-md-6 col-lg-2 mb-4">
+				<img src="<?php echo base_url('/storage/uploads/images/clients/smm_ava_15722370751.jpg');?>" alt="" class="img-fluid img-clients">
+			</div>
+			<div class="col-12 col-md-6 col-lg-2 mb-4">
+				<img src="<?php echo base_url('/storage/uploads/images/clients/smm_ava_15722370751.jpg');?>" alt="" class="img-fluid img-clients">
+			</div>
+			<?php $slice_clients = array_slice($clients, count($clients) - 6); ?>
+			<?php foreach ($slice_clients as $client) { ?>
+				<div class="col-12 col-md-6 col-lg-2 mb-4">
+					<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/clients/'.unserialize($client->image)[$lang]); ?>" alt="">
+				</div>
+			<?php } ?>
+		</div>
 
 	</div>
 		<p class="text-center col-12 mb-0">
@@ -110,68 +130,26 @@
 		<div class="title-client" style="text-align: center; padding: 0 4rem 4rem;">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-cilent.png' : 'resources/front_end/images/title-cilent.png'); ?>" class="img-fluid">
 		</div>
-
-		<div class="my-3 wrap-client-slide owl-carousel owl-theme">
-			<div class="row">
-				<div class="col-12 col-md-3 my-3">
-					<img src="http://localhost/social-dev/storage/uploads/images/clients/smm_ava_15722370751.jpg" alt="" class="img-fluid img-clients">
-				</div>
-				<div class="col-12 col-md-3 my-3">
-					<img src="http://localhost/social-dev/storage/uploads/images/clients/smm_balanze-by-hydrohealth_15722370841.jpg" alt="" class="img-fluid img-clients">
-				</div>
-				<div class="col-12 col-md-3 my-3">
-					<img src="http://localhost/social-dev/storage/uploads/images/clients/smm_blue-fish-solution_15722370921.jpg" alt="" class="img-fluid img-clients">
-				</div>
-				<div class="col-12 col-md-3 my-3">
-					<img src="http://localhost/social-dev/storage/uploads/images/clients/smm_dfsk_15722371011.jpg" alt="" class="img-fluid img-clients">
-				</div>
-				<div class="col-12 col-md-3 my-3">
-					<img src="http://localhost/social-dev/storage/uploads/images/clients/smm_fashionisland_15722371171.jpg" alt="" class="img-fluid img-clients">
-				</div>
-				<div class="col-12 col-md-3 my-3">
-					<img src="http://localhost/social-dev/storage/uploads/images/clients/smm_hatari-wireless_15722371271.jpg" alt="" class="img-fluid img-clients">
-				</div>
-				<div class="col-12 col-md-3 my-3">
-					<img src="http://localhost/social-dev/storage/uploads/images/clients/smm_infinityone-condo_15722371361.jpg" alt="" class="img-fluid img-clients">
-				</div>
-				<div class="col-12 col-md-3 my-3">
-					<img src="http://localhost/social-dev/storage/uploads/images/clients/smm_jvavathailand_15722371491.jpg" alt="" class="img-fluid img-clients">
-				</div>
+		<div class="row">
+			<div class="col-12 col-md-6 col-lg-3 mb-4">
+				<img src="<?php echo base_url('/storage/uploads/images/clients/smm_ava_15722370751.jpg');?>" alt="" class="img-fluid img-clients">
 			</div>
-			<div class="row">
-				<div class="col-12 col-md-3 my-3">
-					<img src="http://localhost/social-dev/storage/uploads/images/clients/smm_massproductsco_15722371581.jpg" alt="" class="img-fluid img-clients">
-				</div>
-				<div class="col-12 col-md-3 my-3">
-					<img src="http://localhost/social-dev/storage/uploads/images/clients/smm_mercurycardetailing_15722371661.jpg" alt="" class="img-fluid img-clients">
-				</div>
-				<div class="col-12 col-md-3 my-3">
-					<img src="http://localhost/social-dev/storage/uploads/images/clients/smm_pattieungworld_15722372141.jpg" alt="" class="img-fluid img-clients">
-				</div>
-				<div class="col-12 col-md-3 my-3">
-					<img src="http://localhost/social-dev/storage/uploads/images/clients/smm_sukniwate_15722372231.jpg" alt="" class="img-fluid img-clients">
-				</div>
-				<div class="col-12 col-md-3 my-3">
-					<img src="http://localhost/social-dev/storage/uploads/images/clients/smm_talutrips_15722372371.jpg" alt="" class="img-fluid img-clients">
-				</div>
-				<div class="col-12 col-md-3 my-3">
-					<img src="http://localhost/social-dev/storage/uploads/images/clients/smm_tcmthailand_15722372471.jpg" alt="" class="img-fluid img-clients">
-				</div>
-				<div class="col-12 col-md-3 my-3">
-					<img src="http://localhost/social-dev/storage/uploads/images/clients/smm_thebeautylover_15722372581.jpg" alt="" class="img-fluid img-clients">
-				</div>
-				<div class="col-12 col-md-3 my-3">
-					<img src="http://localhost/social-dev/storage/uploads/images/clients/smm_thepromenade_15722372691.jpg" alt="" class="img-fluid img-clients">
-				</div>
+			<div class="col-12 col-md-6 col-lg-3 mb-4">
+				<img src="<?php echo base_url('/storage/uploads/images/clients/smm_ava_15722370751.jpg');?>" alt="" class="img-fluid img-clients">
 			</div>
+			<div class="col-12 col-md-6 col-lg-3 mb-4">
+				<img src="<?php echo base_url('/storage/uploads/images/clients/smm_ava_15722370751.jpg');?>" alt="" class="img-fluid img-clients">
+			</div>
+			<div class="col-12 col-md-6 col-lg-3 mb-4">
+				<img src="<?php echo base_url('/storage/uploads/images/clients/smm_ava_15722370751.jpg');?>" alt="" class="img-fluid img-clients">
+			</div>
+			<?php $slice_portfolios = array_slice($portfolios, count($portfolios) - 4); ?>
+			<?php foreach ($slice_portfolios as $portfolio) { ?>
+				<div class="col-12 col-md-6 col-lg-3 mb-4">
+					<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/clients/'.unserialize($portfolio->image)[$lang]); ?>" alt="">
+				</div>
+			<?php } ?>
 		</div>
-
-		<?php $slice_portfolios = array_slice($portfolios, count($portfolios) - 6); ?>
-		<?php foreach ($slice_portfolios as $portfolio) { ?>
-
-			<?php echo $portfolio->category_id; ?>
-
-		<?php } ?>
 
 		<p class="text-center col-12 mb-0">
 			<a href="<?php echo base_url($lang . '/' . lang('menu_portfolios') . '/'); ?>" class="btn btn-primary"><?php echo lang('btn_read_more_portfolio'); ?></a>

@@ -29,7 +29,6 @@ class Portfolio extends MX_Controller
 	public function index()
 	{
 
-
 		/*
 		| -------------------------------------------------------------------------
 		| HANDLE

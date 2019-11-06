@@ -80,6 +80,10 @@ $route['(\w{2})/บริการ/(:any)/(:any)'] = 'front_end/Services/show/$1
 $route['(\w{2})/clients'] = 'front_end/Clients';
 $route['(\w{2})/ลูกค้าของเรา'] = 'front_end/Clients';
 
+// Clients
+$route['(\w{2})/portfolio'] = 'front_end/Portfolio';
+$route['(\w{2})/ผลงานของเรา'] = 'front_end/Portfolio';
+
 // Blogs
 $route['(\w{2})/blogs'] = 'front_end/Blogs';
 $route['(\w{2})/บทความ'] = 'front_end/Blogs';
