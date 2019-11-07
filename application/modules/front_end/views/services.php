@@ -126,7 +126,6 @@
 	}
 
 	@media (min-width: 768px) {
-
 		.ttl-service-01,
 		.ttl-service-02 {
 			font-size: 20px;
@@ -136,7 +135,6 @@
 	}
 
 	@media (min-width: 992px) {
-
 		.ttl-service-01,
 		.ttl-service-02 {
 			margin-bottom: 20px;
@@ -233,6 +231,7 @@
 		position: relative;
 		text-align: center;
 	}
+
 	.ttl-port-list span {
 		background-color: #fff;
 		padding: 0 15px;
@@ -241,6 +240,7 @@
 		font-size: 2.3rem;
 		color: #127dbc;
 	}
+
 	.ttl-port-list::before {
 		content: '';
 		position: absolute;
@@ -255,7 +255,6 @@
 		width: 100%;
 		background-color: #00264c;
 	}
-
 </style>
 
 <!-- Title -->
@@ -274,14 +273,10 @@
 		<div class="col-lg-8 col-sm-12 d-flex justify-content-end">
 			<div class="col-lg-11 col-sm-12 d-flex justify-content-between flex-column">
 				<div class="box-text-service">
-					<h1 class="ttl-service-01">
-						<?php echo unserialize($service['content_top_title'])[$lang]; ?>
-					</h1>
+					<h1 class="ttl-service-01"><?php echo unserialize($service['content_top_title'])[$lang]; ?></h1>
 					<?php echo unserialize($service['content_top_body'])[$lang]; ?>
 				</div>
-				<p class="text-sm-center text-lg-left mb-0">
-					<button class="btn btn-primary btn-tooltip"><?php echo unserialize($service['text_button'])[$lang]; ?></button>
-				</p>
+				<p class="text-sm-center text-lg-left mb-0"><button class="btn btn-primary btn-tooltip"><?php echo unserialize($service['text_button'])[$lang]; ?></button></p>
 			</div>
 		</div>
 	</div>
@@ -292,23 +287,17 @@
 		<div class="col-lg-8 col-sm-12 d-flex">
 			<div class="col-11 col-lg-11 col-sm-12 d-flex justify-content-between flex-column">
 				<div class="box-text-service">
-					<h3 class="ttl-service-02">
-						<?php echo unserialize($service['content_bottom_title'])[$lang]; ?>
-					</h3>
+					<h3 class="ttl-service-02"><?php echo unserialize($service['content_bottom_title'])[$lang]; ?></h3>
 					<?php echo unserialize($service['content_bottom_body'])[$lang]; ?>
 				</div>
-				<p class="text-sm-center text-lg-left mb-0">
-					<button class="btn btn-primary btn-tooltip"><?php echo unserialize($service['text_button'])[$lang]; ?></button>
-				</p>
+				<p class="text-sm-center text-lg-left mb-0"><button class="btn btn-primary btn-tooltip"><?php echo unserialize($service['text_button'])[$lang]; ?></button></p>
 			</div>
 		</div>
 	</div>
 </section>
 
 <div id="template" style="display:none;">
-	<h2 class="text-secondary contact__form--title">
-		<?php echo lang('page_contact_title_first'); ?><span><?php echo lang('page_contact_title_center'); ?></span><?php echo lang('page_contact_title_end'); ?>
-	</h2>
+	<h2 class="text-secondary contact__form--title"><?php echo lang('page_contact_title_first'); ?><span><?php echo lang('page_contact_title_center'); ?></span><?php echo lang('page_contact_title_end'); ?></h2>
 	<p class="text-secondary contact__form--body mb-4"><?php echo lang('page_contact_desc'); ?></p>
 	<form class="mt-4" action="<?php echo base_url($lang . '/'. 'contact/send') ?>" method="post">
 		<div class="form-group">
@@ -347,21 +336,17 @@
 	</section>
 <?php } ?>
 
-
 <!-- Service -->
 <section id="service" class="wow fadeInUp pb-0" style="overflow:hidden">
 	<div class="container-fluid text-center sec-home-service">
 		<div class="row">
 			<?php foreach ($services as $service_parent) { ?>
-				<a href="<?php echo base_url($lang . '/' . lang('menu_service') . '/' . unserialize($service_parent->slug)[$lang] . '/' . hashids_encrypt($service_parent->id)); ?>" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05 ico-service">
+				<a href="<?php echo base_url($lang . '/' . lang('menu_service') . '/' . unserialize($service_parent->slug)[$lang]); ?>" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05 ico-service">
 					<div class="wrap-icon-flip">
 						<img src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service_parent->icon)[$lang]); ?>" class="img-fluid service__icon--resize">
 					</div>
 					<img src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service_parent->icon)[$lang]); ?>" class="img-fluid service__icon--resize ico-service__img">
-
-					<p class="service__title--body">
-						<?php echo unserialize($service_parent->title)[$lang]; ?>
-					</p>
+					<p class="service__title--body"><?php echo unserialize($service_parent->title)[$lang]; ?></p>
 				</a>
 			<?php } ?>
 		</div>
@@ -386,8 +371,6 @@
 		</div>
 	</section>
 <?php } ?>
-
-
 
 <!-- SiteMap -->
 <?php include 'layouts/sitemap.php'; ?>

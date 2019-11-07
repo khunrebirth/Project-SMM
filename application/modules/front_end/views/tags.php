@@ -140,7 +140,6 @@
 			</div>
 		</div>
 		<div class="sec-blogs-01 row">
-			
 			<div class="col-12 ">
 				<h3 class="ttl-tags"><span><?php echo unserialize($tag->title)[$lang]; ?></span></h3>
 			</div>
