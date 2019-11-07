@@ -195,6 +195,7 @@ class Blogs extends MX_Controller
 		$this->load->view('app', $data);
 	}
 
+
 	private function filter_data_tags($blog)
 	{
 		$tags = [];

@@ -224,6 +224,10 @@
 	.sec-service-port-list {
 		padding-bottom: 0;
 	}
+	
+    .box-text-service p {
+        line-height: 1.5;
+    }
 </style>
 
 <!-- Title -->
@@ -300,25 +304,6 @@
 	</form>
 </div>
 
-<?php if (count($service['our_clients']) > 0) { ?>
-	<section class="sec-service-port row">
-		<div class="col row sec-service-port--inner">
-			<div class="col-md-12 col-lg-3 d-flex  justify-content-start justify-content-lg-end">
-				<img class="img-fluid" src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-our-client.png' : 'resources/front_end/images/title-our-client.png'); ?>">
-			</div>
-			<div class=" col-md-12  col-lg-9">
-				<div class="wrap-slide-port owl-carousel owl-theme">
-					<?php foreach ($service['our_clients'] as $client) { ?>
-						<div class="item">
-							<img src="<?php echo base_url('storage/uploads/images/services/' . unserialize($client->img)[$lang]) ?>" alt="<?php echo unserialize($client->img_title_alt)[$lang]; ?>">
-						</div>
-					<?php } ?>
-				</div>
-			</div>
-		</div>
-	</section>
-<?php } ?>
-
 <!-- Service -->
 <section id="service" class="wow fadeInUp pb-0" style="overflow:hidden">
 	<div class="container-fluid text-center sec-home-service">
@@ -352,6 +337,27 @@
 		</div>
 	</section>
 <?php } ?>
+
+
+<?php if (count($service['our_clients']) > 0) { ?>
+	<section class="sec-service-port row">
+		<div class="col row sec-service-port--inner">
+			<div class="col-md-12 col-lg-3 d-flex  justify-content-start justify-content-lg-end">
+				<img class="img-fluid" src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-our-client.png' : 'resources/front_end/images/title-our-client.png'); ?>">
+			</div>
+			<div class=" col-md-12  col-lg-9">
+				<div class="wrap-slide-port owl-carousel owl-theme">
+					<?php foreach ($service['our_clients'] as $client) { ?>
+						<div class="item">
+							<img src="<?php echo base_url('storage/uploads/images/services/' . unserialize($client->img)[$lang]) ?>" alt="<?php echo unserialize($client->img_title_alt)[$lang]; ?>">
+						</div>
+					<?php } ?>
+				</div>
+			</div>
+		</div>
+	</section>
+<?php } ?>
+
 
 
 <!-- SiteMap -->
