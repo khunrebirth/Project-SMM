@@ -4,24 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><?php echo $title; ?></title>
-	<meta name="description" content="<?php echo $meta['description']; ?>">
-	<meta name="keywords" content="<?php echo $meta['keyword']; ?>">
+    <title><?php if (!smm_is_mobile()) { echo $title; } else { echo $title_moblie; } ?></title>
+	<meta name="description" content="<?php if (!smm_is_mobile()) { echo $meta['description']; } else { echo $meta['description_moblie']; } ?>">
+	<meta name="keywords" content="<?php if (!smm_is_mobile()) { echo $meta['keyword']; } else { echo $meta['keyword_moblie']; } ?>">
 	<link rel="shortcut icon" href="<?php echo base_url('resources/front_end/images/favicon.ico'); ?>">
 	<link rel="canonical" href="<?php echo current_url(); ?>" />
 	<meta property="og:locale" content="th_TH" />
 	<meta property="og:locale:alternate" content="en_US" />
 	<meta property="og:type" content="website" />
-	<meta property="og:title" content="<?php echo $og_twitter['title']; ?>" />
-	<meta property="og:description" content="<?php echo $og_twitter['description']; ?>" />
+	<meta property="og:title" content="<?php if (!smm_is_mobile()) { echo $og_twitter['title']; } else { echo $og_twitter['title_moblie']; } ?>" />
+	<meta property="og:description" content="<?php if (!smm_is_mobile()) { echo $og_twitter['description']; } else { echo $og_twitter['description_moblie']; } ?>" />
 	<meta property="og:url" content="<?php echo current_url(); ?>" />
 	<meta property="og:site_name" content="<?php echo base_url(); ?>" />
 	<meta property="og:image" content="<?php echo $og_twitter['image']; ?>" />
 
 	<meta name="twitter:card" content="summary" />
-	<meta name="twitter:title" content="<?php echo $og_twitter['title']; ?>" />
+	<meta name="twitter:title" content="<?php if (!smm_is_mobile()) { echo $og_twitter['title']; } else { echo $og_twitter['title_moblie']; } ?>" />
 	<meta name="twitter:description" content="<?php echo $og_twitter['description']; ?>" />
-	<meta name="twitter:image" content="<?php echo $og_twitter['image']; ?>" />
+	<meta name="twitter:image" content="<?php if (!smm_is_mobile()) { echo $og_twitter['description']; } else { echo $og_twitter['description_moblie']; } ?>" />
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />

@@ -56,6 +56,7 @@
     background: url(<?php echo base_url($lang == 'th' ? 'resources/front_end/images/team/btn_arrow_right.png' : 'resources/front_end/images/team/btn_arrow_right.png'); ?>) !important;
     background-size: cover !important;
 }
+
 .team__card--parent .is-hover {
 	position: absolute;
 	top: 0;
@@ -68,6 +69,7 @@
 	-ms-transition: all 0.2s;
 	-o-transition: all 0.2s;
 }
+
 .team__card--parent:hover .is-hover { 
 	visibility: visible;
 	opacity: 1;
@@ -106,7 +108,7 @@
 <!-- Title -->
 <?php if ($banner) { ?>
 <section class="page-title main-hero-service" style="padding:0;">
-	<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/banners/' . unserialize($banner->img)[$lang]); ?>" alt="<?php echo unserialize($banner->img_title_alt)[$lang]; ?>">
+	<img class="img-fluid" src="<?php echo base_url((!smm_is_mobile()) ? 'storage/uploads/images/banners/' . unserialize($banner->img)[$lang] : 'storage/uploads/images/banners/' . unserialize($banner->img_moblie)[$lang]); ?>" alt="<?php echo unserialize($banner->img_title_alt)[$lang]; ?>">
 	<div class="ttl-header-hero wow">
 		<h1><?php echo unserialize($banner->title)[$lang]; ?></h1>
 	</div>

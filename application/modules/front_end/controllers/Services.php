@@ -62,6 +62,8 @@ class Services extends MX_Controller
 		// OG & Twitter
 		$data['og_twitter']['title'] = unserialize($page_content->meta_tag_title)[$this->lang];
 		$data['og_twitter']['description'] = unserialize($page_content->meta_tag_description)[$this->lang];
+		$data['og_twitter']['title_moblie'] = unserialize($page_content->meta_tag_moblie_title)[$this->lang];
+		$data['og_twitter']['description_moblie'] = unserialize($page_content->meta_tag_moblie_description)[$this->lang];
 		$data['og_twitter']['image'] = base_url('storage/uploads/images/services/'. unserialize($page_content->img_og_twitter)[$this->lang]);
 
 		// Content
@@ -87,6 +89,7 @@ class Services extends MX_Controller
 		$data['id'] = $service->id;
 		$data['title'] = $service->title;
 		$data['banner_img'] = $service->banner_img;
+		$data['banner_img_moblie'] = $service->banner_img;
 		$data['banner_img_title_alt'] = $service->banner_img_title_alt;
 		$data['banner_title'] = $service->banner_title;
 		$data['content_top_img'] = $service->content_top_img;

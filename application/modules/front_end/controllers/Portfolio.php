@@ -61,7 +61,9 @@ class Portfolio extends MX_Controller
 		// OG & Twitter
 		$data['og_twitter']['title'] = unserialize($page_content->meta_tag_title)[$this->lang];
 		$data['og_twitter']['description'] = unserialize($page_content->meta_tag_description)[$this->lang];
-		$data['og_twitter']['image'] = base_url('storage/uploads/images/clients/'. unserialize($page_content->img_og_twitter)[$this->lang]);
+		$data['og_twitter']['title_moblie'] = unserialize($page_content->meta_tag_moblie_title)[$this->lang];
+		$data['og_twitter']['description_moblie'] = unserialize($page_content->meta_tag_moblie_description)[$this->lang];
+		$data['og_twitter']['image'] = base_url('storage/uploads/images/portfolios/'. unserialize($page_content->img_og_twitter)[$this->lang]);
 
 		// Content
 		$data['content'] = 'portfolio';
@@ -69,7 +71,7 @@ class Portfolio extends MX_Controller
 		// Utilities
 		$data['portfolio_categories'] = $this->Portfolio_category_model->get_portfolio_category_all();
 		$data['portfolios'] = $this->Portfolio_model->get_portfolio_all();
-		$data['banner'] = $this->Banner_model->get_banner_active_by_id(2);
+		$data['banner'] = $this->Banner_model->get_banner_active_by_id(8);
 
 		/*
 		| -------------------------------------------------------------------------

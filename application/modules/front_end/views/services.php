@@ -117,7 +117,6 @@
 	}
 
 	@media (min-width: 576px) {
-
 		.ttl-service-01,
 		.ttl-service-02 {
 			font-size: 20px;
@@ -221,15 +220,15 @@
 		background: url(<?php echo base_url('resources/front_end/images/service/fw.png');
 		?>) !important;
 	}
+
 	.sec-service-port-list {
 		padding-bottom: 0;
 	}
-
 </style>
 
 <!-- Title -->
 <section class="page-title main-hero-service" style="padding:0;">
-	<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/banners/' . unserialize($service['banner_img'])[$lang]); ?>" alt="<?php echo unserialize($service['banner_img_title_alt'])[$lang]; ?>">
+	<img class="img-fluid" src="<?php echo base_url((!smm_is_mobile()) ? 'storage/uploads/images/banners/' . unserialize($service['banner_img'])[$lang] : 'storage/uploads/images/banners/' . unserialize($service['banner_img_moblie'])[$lang]); ?>" alt="<?php echo unserialize($service['banner_img_title_alt'])[$lang]; ?>">
 	<div class="ttl-header-hero wow">
 		<h1><?php echo unserialize($service['banner_title'])[$lang]; ?></h1>
 	</div>
