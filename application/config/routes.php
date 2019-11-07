@@ -73,8 +73,8 @@ $route['(\w{2})/เกี่ยวกับเรา'] = 'front_end/About';
 // Services
 $route['(\w{2})/services'] = 'front_end/Services';
 $route['(\w{2})/บริการ'] = 'front_end/Services';
-$route['(\w{2})/services/(:any)/(:any)'] = 'front_end/Services/show/$1/$2/$3';
-$route['(\w{2})/บริการ/(:any)/(:any)'] = 'front_end/Services/show/$1/$2/$3';
+$route['(\w{2})/services/(:any)'] = 'front_end/Services/show/$1/$2';
+$route['(\w{2})/บริการ/(:any)'] = 'front_end/Services/show/$1/$2';
 
 // Clients
 $route['(\w{2})/clients'] = 'front_end/Clients';
@@ -87,10 +87,10 @@ $route['(\w{2})/ผลงานของเรา'] = 'front_end/Portfolio';
 // Blogs
 $route['(\w{2})/blogs'] = 'front_end/Blogs';
 $route['(\w{2})/บทความ'] = 'front_end/Blogs';
-$route['(\w{2})/blogs/(:any)/(:any)'] = 'front_end/Blogs/category_show/$1/$2/$3';
-$route['(\w{2})/บทความ/(:any)/(:any)'] = 'front_end/Blogs/category_show/$1/$2/$3';
-$route['(\w{2})/blogs/(:any)/(:any)/(:any)'] = 'front_end/Blogs/blog_show/$1/$2/$3/$4';
-$route['(\w{2})/บทความ/(:any)/(:any)/(:any)'] = 'front_end/Blogs/blog_show/$1/$2/$3/$4';
+$route['(\w{2})/blogs/(:any)'] = 'front_end/Blogs/category_show/$1/$2';
+$route['(\w{2})/บทความ/(:any)'] = 'front_end/Blogs/category_show/$1/$2';
+$route['(\w{2})/blogs/(:any)/(:any)'] = 'front_end/Blogs/blog_show/$1/$2/$3';
+$route['(\w{2})/บทความ/(:any)/(:any)'] = 'front_end/Blogs/blog_show/$1/$2/$3';
 
 // Teams
 $route['(\w{2})/teams'] = 'front_end/Teams';
@@ -99,8 +99,8 @@ $route['(\w{2})/ทีมงาน'] = 'front_end/Teams';
 // Join Us
 $route['(\w{2})/join-us'] = 'front_end/Join_us';
 $route['(\w{2})/ร่วมงานกับเรา'] = 'front_end/Join_us';
-$route['(\w{2})/join-us/(:any)/(:any)'] = 'front_end/Join_us/detail/$1/$2/$3';
-$route['(\w{2})/ร่วมงานกับเรา/(:any)/(:any)'] = 'front_end/Join_us/detail/$1/$2/$3';
+$route['(\w{2})/join-us/(:any)'] = 'front_end/Join_us/detail/$1/$2';
+$route['(\w{2})/ร่วมงานกับเรา/(:any)'] = 'front_end/Join_us/detail/$1/$2';
 
 // Contact
 $route['(\w{2})/contact'] = 'front_end/Contact';

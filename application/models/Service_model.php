@@ -30,6 +30,20 @@ class Service_model extends CI_Model {
         return $query->num_rows() > 0 ? $query->row() : false;
     }
 
+	public function get_service_by_slug_th($slug)
+	{
+		$query = $this->db->where('slug_th', $slug)->get('services');
+
+		return $query->num_rows() > 0 ? $query->row() : false;
+	}
+
+	public function get_service_by_slug_en($slug)
+	{
+		$query = $this->db->where('slug_en', $slug)->get('services');
+
+		return $query->num_rows() > 0 ? $query->row() : false;
+	}
+
 	public function get_service_by_custom($id)
 	{
 		$query = $this->db->where('id !=', $id)->get('services');

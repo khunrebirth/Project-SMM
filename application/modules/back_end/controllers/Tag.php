@@ -99,7 +99,9 @@ class Tag extends MX_Controller
 			'meta_tag_moblie_keywords' => serialize($input_meta_tag_moblie_keywords),
 			'img_og_twitter' => serialize($input_img_og_twitter),
 			'title' => serialize($input_title),
-			'slug' => serialize($slug)
+			'slug' => serialize($slug),
+			'slug_en' => $slug_en,
+			'slug_th' => $slug_th
 		]);
 
 		// Set Session To View
@@ -175,6 +177,8 @@ class Tag extends MX_Controller
 			'img_og_twitter' => serialize($input_img_og_twitter),
 			'title' => serialize($input_title),
 			'slug' => serialize($slug),
+			'slug_en' => $slug_en,
+			'slug_th' => $slug_th,
 			'updated_at' => date('Y-m-d H:i:s')
 		]);
 

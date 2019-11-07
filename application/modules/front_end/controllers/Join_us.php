@@ -82,7 +82,7 @@ class Join_us extends MX_Controller
 		$this->load->view('app', $data);
 	}
 	
-	public function detail($lang, $career_slug, $career_id)
+	public function detail($lang, $career_slug)
 	{
 		/*
 		| -------------------------------------------------------------------------
@@ -90,8 +90,11 @@ class Join_us extends MX_Controller
 		| -------------------------------------------------------------------------
 		*/
 
-		$career_id = hashids_decrypt($career_id);
-		$page_content = $this->Career_model->get_career_by_id($career_id);
+		$page_content = $lang == 'th'
+			? $this->Career_model->get_career_by_slug_th($career_slug)
+			: $this->Career_model->get_career_by_slug_en($career_slug);
+
+		$career = $page_content;
 
 		/*
 		| -------------------------------------------------------------------------
@@ -119,8 +122,8 @@ class Join_us extends MX_Controller
 		$data['content'] = 'career_detail';
 
 		// Utilities
-		$data['career'] = $this->Career_model->get_career_by_id($career_id);
-		$data['career_galleries'] = $this->Career_gallery_model->get_career_gallery_by_career_id($career_id);
+		$data['career'] = $career;
+		$data['career_galleries'] = $this->Career_gallery_model->get_career_gallery_by_career_id($page_content->id);
 
 		/*
 		| -------------------------------------------------------------------------

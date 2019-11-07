@@ -152,7 +152,7 @@
 									<a class="d-block text-left" href=""><?php echo lang('menu_blogs'); ?></a>
 									<ul class="list-sitemap">
 										<?php foreach ($last_blogs as $last_blog) { ?>
-											<li><a class="text-left" href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/' . unserialize($last_blog->blog_category_slug)[$lang] . '/' .  unserialize($last_blog->slug)[$lang] . '/' . hashids_encrypt($last_blog->id)); ?>"><?php echo unserialize($last_blog->title)[$lang]; ?></a></li>
+											<li><a class="text-left" href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/' . unserialize($last_blog->blog_category_slug)[$lang] . '/' .  unserialize($last_blog->slug)[$lang]); ?>"><?php echo unserialize($last_blog->title)[$lang]; ?></a></li>
 										<?php } ?>
 									</ul>
 								</div>

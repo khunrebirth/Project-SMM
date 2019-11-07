@@ -17,6 +17,20 @@ class Blog_model extends CI_Model {
         return $query->num_rows() > 0 ? $query->row() : false;
     }
 
+	public function get_blog_by_slug_th($slug)
+	{
+		$query = $this->db->where('slug_th', $slug)->get('blogs');
+
+		return $query->num_rows() > 0 ? $query->row() : false;
+	}
+
+	public function get_blog_by_slug_en($slug)
+	{
+		$query = $this->db->where('slug_en', $slug)->get('blogs');
+
+		return $query->num_rows() > 0 ? $query->row() : false;
+	}
+
 	public function get_blog_by_category_blog_id($category_blog_id)
 	{
 		$query = $this->db

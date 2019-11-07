@@ -134,7 +134,7 @@ class Blogs extends MX_Controller
 		$this->load->view('app', $data);
 	}
 
-	public function blog_show($lang, $blog_category_slug, $blog_slug, $blog_id)
+	public function blog_show($lang, $blog_category_slug, $blog_slug)
 	{
 		/*
 		| -------------------------------------------------------------------------
@@ -142,9 +142,11 @@ class Blogs extends MX_Controller
 		| -------------------------------------------------------------------------
 		*/
 
-		$blog_id = hashids_decrypt($blog_id);
-		$page_content = $this->Blog_model->get_blog_by_id($blog_id);
-		$blog = $this->Blog_model->get_blog_by_id($blog_id);
+		$page_content = $lang == 'th'
+			? $this->Blog_model->get_blog_by_slug_th($blog_slug)
+			: $this->Blog_model->get_blog_by_slug_en($blog_slug);
+
+		$blog = $page_content;
 
 		/*
 		| -------------------------------------------------------------------------

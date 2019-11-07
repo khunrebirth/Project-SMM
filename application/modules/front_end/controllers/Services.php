@@ -27,7 +27,7 @@ class Services extends MX_Controller
 
 	public function index() {}
 
-	public function show($lang, $service_slug, $service_id)
+	public function show($lang, $service_slug)
 	{
 		/*
 		| -------------------------------------------------------------------------
@@ -35,8 +35,11 @@ class Services extends MX_Controller
 		| -------------------------------------------------------------------------
 		*/
 
-		$service_id = hashids_decrypt($service_id);
-		$page_content = $this->Service_model->get_service_by_id($service_id);
+		$page_content = $lang == 'th'
+			? $this->Service_model->get_service_by_slug_th($service_slug)
+			: $this->Service_model->get_service_by_slug_en($service_slug);
+
+		$service = $page_content;
 
 		/*
 		| -------------------------------------------------------------------------
@@ -70,8 +73,8 @@ class Services extends MX_Controller
 		$data['content'] = 'services';
 
 		// Utilities
-		$data['service'] = $this->filter_data_service($this->Service_model->get_service_by_id($service_id));
-		$data['services'] = $this->Service_model->get_service_by_custom($service_id);
+		$data['service'] = $this->filter_data_service($service);
+		$data['services'] = $this->Service_model->get_service_by_custom($service->id);
 
 		/*
 		| -------------------------------------------------------------------------

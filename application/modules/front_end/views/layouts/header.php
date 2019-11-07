@@ -92,7 +92,7 @@
 						?>
 						<?php foreach ($services as $service) { ?>
 							<li class="item col-lg-2 col-md-12 col-sm-12">
-								<a class="d-flex flex-column text-center" href="<?php echo base_url($lang . '/' . lang('menu_service') . '/' . unserialize($service->slug)[$lang] . '/' . hashids_encrypt($service->id)); ?>">
+								<a class="d-flex flex-column text-center" href="<?php echo base_url($lang . '/' . lang('menu_service') . '/' . unserialize($service->slug)[$lang]); ?>">
 									<img class="d-md-none d-none img-gnavi d-lg-block" src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service->img_on_navbar)[$lang]); ?>">
 									<span><?php echo unserialize($service->title)[$lang]; ?></span>
 								</a>
@@ -125,9 +125,6 @@
             <li class="nav-item wrap-btn-centact">
                 <a class="btn btn-link btn__contact" href="<?php echo base_url($lang . '/' . lang('menu_contact')); ?>"><?php echo lang('menu_contact'); ?></a>
             </li>
-            <!-- <li class="nav-item wrap-btn-centact wrap-btn__tel ">
-                <a class="btn__tel" href="tel:021939062"><i class="fas fa-phone-alt"></i> <?php echo lang('page_contact_phone'); ?>. 0-2193-9062</a>
-            </li> -->
             <li class="nav-item">
                 <ul class="list-lang">
                     <li><a href="<?php echo base_url('th'); ?>">TH</a></li>
