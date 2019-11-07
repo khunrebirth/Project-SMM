@@ -73,38 +73,46 @@
                 }
             }
         });
-		menuScroll();
+			
+		
+		// menuScroll();
+		
 		function menuScroll() {
-			var height_top = $('.title-client').innerHeight() + 60;
-			var height_nav = $('.navbar').innerHeight();
-			var height_wrap = $('.wrap-fixed-menu').innerHeight();
-			var height_ele = $('.list-catagory-client').innerHeight();
-			var position_footer = $('.sec-footer-sitemap').position();
-			var height_ele_content = $('.sec-client').innerHeight();
-			var height_doc = $( document ).height();
-			// console.log(height_ele);
-			$( window ).scroll(function() {
-				var scroll = $(window).scrollTop();
-				var scroll_fixed = scroll + 80;
-				console.log(scroll + height_doc);
-				if( scroll + height_doc  > position_footer.top) {
-					// console.log('01//'+scroll+'/'+position_footer.top);
-				}else{
-					// console.log('02//'+scroll+'/'+position_footer.top);
-				}
-
-				if(scroll > height_top - 150 ) {
-					$('.list-catagory-client').css({
-						"top": scroll_fixed
-					});
-					if(!$('.list-catagory-client').hasClass('is-fixed')){
-						$('.list-catagory-client').addClass('is-fixed');
+			if($(window).width() > 992 ){
+				//set ele
+				var ele_menu = $('.list-catagory-client');
+				var ele_top = $('.title-client');
+				var ele_foot_fix = $('.sec-footer-sitemap');
+				//get val
+				var height_top = ele_top.innerHeight() + 60;
+				var position_footer = ele_foot_fix.position();
+				var height_win = $( window ).height();
+				$( window ).scroll(function() {
+					var scroll = $(window).scrollTop();
+					var scroll_fixed = scroll + 80;
+					if(scroll > height_top - 150 ) {
+						if( scroll + height_win  > position_footer.top) {
+							ele_menu.css({
+								"top": 'auto',
+								"bottom": '0',
+								"transform": 'none'
+							});
+						}else{
+							ele_menu.css({
+								"top": scroll_fixed,
+								"bottom": 'auto',
+								"transform": 'translate3d(0,-50%,0)'
+							});
+						}
+						if(!ele_menu.hasClass('is-fixed')){
+							ele_menu.addClass('is-fixed');
+						}
+					}else{
+						ele_menu.removeAttr('style').removeClass('is-fixed');
 					}
-				}else{
-					$('.list-catagory-client').removeAttr('style').removeClass('is-fixed');
-				}
 
-			});
+				});
+			}
 		}
     });
 </script>

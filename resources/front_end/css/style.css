@@ -1697,11 +1697,11 @@ footer p {
 	background-color: #00264c;
 }
 .list-catagory-client {
-	transition: top 0.2s;
-	-webkit-transition: top 0.2s;
-	-moz-transition: top 0.2s;
-	-ms-transition: top 0.2s;
-	-o-transition: top 0.2s;
+	transition: all 0.1s;
+	-webkit-transition: all 0.1s;
+	-moz-transition: all 0.1s;
+	-ms-transition: all 0.1s;
+	-o-transition: all 0.1s;
 }
 .list-catagory-client.is-fixed {
 	position: absolute;
