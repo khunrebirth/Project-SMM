@@ -75,7 +75,7 @@
         });
 			
 		
-		// menuScroll();
+		menuScroll();
 		
 		function menuScroll() {
 			if($(window).width() > 992 ){
