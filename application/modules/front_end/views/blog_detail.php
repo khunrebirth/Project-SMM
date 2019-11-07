@@ -142,8 +142,10 @@
 				<div class="wrap-tag-blog">
 					<span class="ttl-tag-blog"><i class="fas fa-tags"></i> <?php echo lang('page_blog_tag'); ?></span>
 					<ul class="list-tag-blog">
-						<?php foreach ($tags as $tag) { ?>
-							<li><a href="#"><?php echo unserialize($tag->title)[$lang]; ?></a></li>
+						<?php if (count($tags) > 0) { ?>
+							<?php foreach ($tags as $tag) { ?>
+								<li><a href="#"><?php echo unserialize($tag->title)[$lang]; ?></a></li>
+							<?php } ?>
 						<?php } ?>
 					</ul>
 				</div>

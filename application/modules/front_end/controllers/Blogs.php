@@ -198,10 +198,14 @@ class Blogs extends MX_Controller
 	private function filter_data_tags($blog)
 	{
 		$tags = [];
-		$bundle_tag_id = explode(',' , $blog->tag_id);
 
-		foreach ($bundle_tag_id as $tag_id) {
-			$tags[] = $this->Tag_model->get_tag_by_id($tag_id);
+		if ($blog->tag_id != '') {
+
+			$bundle_tag_id = explode(',' , $blog->tag_id);
+
+			foreach ($bundle_tag_id as $tag_id) {
+				$tags[] = $this->Tag_model->get_tag_by_id($tag_id);
+			}
 		}
 
 		return $tags;
