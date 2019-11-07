@@ -38,6 +38,7 @@ $lang['menu_tags'] = 'tags';
 */
 
 $lang['page_services'] = 'Service Page';
+$lang['page_services_txt_portfolio'] = 'Portfolios';
 
 /*
 | -------------------------------------------------------------------------
