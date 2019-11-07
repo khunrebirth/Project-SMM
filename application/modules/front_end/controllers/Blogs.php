@@ -183,10 +183,11 @@ class Blogs extends MX_Controller
 		$data['content'] = 'blog_detail';
 
 		// Utilities
+		$data['banner'] = $this->Banner_model->get_banner_active_by_id(3);
 		$data['last_blogs'] = $this->Blog_model->get_last_blog(5);
 		$data['blog'] = $blog;
 		$data['tags'] = $this->filter_data_tags($blog);
-		$data['banner'] = $this->Banner_model->get_banner_active_by_id(3);
+		$data['suggest_blogs'] = $this->filter_data_suggest_blogs($blog);
 
 		/*
 		| -------------------------------------------------------------------------
@@ -211,5 +212,21 @@ class Blogs extends MX_Controller
 		}
 
 		return $tags;
+	}
+
+	private function filter_data_suggest_blogs($blog)
+	{
+		$suggest_blogs = [];
+
+//		if ($blog->tag_id != '') {
+//
+//			$bundle_tag_id = explode(',' , $blog->tag_id);
+//
+//			foreach ($bundle_tag_id as $tag_id) {
+//				$suggest_blogs[] = $this->Blog_model->get_tag_by_id($tag_id);
+//			}
+//		}
+
+		return $suggest_blogs;
 	}
 }
