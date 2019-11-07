@@ -21,9 +21,7 @@
                         <img src="https://www.anchorwave.com/wp-content/uploads/2016/04/google-partner358x138.png" alt="Follow Us on Facebook" class="img-fluid m-2">
                     </div>
                     <div class="col-xs-12 col-md-8 col-lg8 d-none d-sm-block">
-                        <h2 class="text-secondary d-none d-sm-none d-md-none d-lg-block" style="font-size:1.2rem;">
-                            specialized in :
-                        </h2>
+                        <h2 class="text-secondary d-none d-sm-none d-md-none d-lg-block" style="font-size:1.2rem;">specialized in :</h2>
                         <img src="http://www.clixmarketing.com/blog/wp-content/uploads/2015/02/photo.png" alt="Follow Us on Facebook" class="img-fluid m-2" style="width: 40px;">
                         <img src="https://knockconsulting.com/images/icon-sm-instagram-round.svg" alt="Follow Us on Instagram" class="img-fluid m-2" style="width: 40px;">
                         <img src="https://b2bm.s3.amazonaws.com/styles/default_image/s3/youtube-icon-full_color.png?itok=3QLCT4W_" alt="Follow Us on Youtube" class="img-fluid m-2" style="width: 40px;">
@@ -41,15 +39,9 @@
                 <div class="row mb-5">
                     <div class="col-12 col-sm-12 col-md-11 col-lg-12">
                         <h2 class="text-secondary contact__title--head"><?php echo lang('page_contact_follow'); ?></h2>
-                        <a href="#">
-                            <img src="https://knockconsulting.com/images/icon-sm-facebook-round.svg" alt="Follow Us on Facebook" width="40" class="img-fluid m-0">
-                        </a>
-                        <a href="#">
-                            <img src="https://knockconsulting.com/images/icon-sm-instagram-round.svg" alt="Follow Us on Instagram" width="40" class="img-fluid m-0">
-                        </a>
-                        <a href="#">
-                            <img src="https://knockconsulting.com/images/icon-sm-youtube-round.svg" alt="Follow Us on Youtube" width="40" class="img-fluid m-0">
-                        </a>
+                        <a href="#"><img src="https://knockconsulting.com/images/icon-sm-facebook-round.svg" alt="Follow Us on Facebook" width="40" class="img-fluid m-0"></a>
+                        <a href="#"><img src="https://knockconsulting.com/images/icon-sm-instagram-round.svg" alt="Follow Us on Instagram" width="40" class="img-fluid m-0"></a>
+                        <a href="#"><img src="https://knockconsulting.com/images/icon-sm-youtube-round.svg" alt="Follow Us on Youtube" width="40" class="img-fluid m-0"></a>
                     </div>
                 </div>
             </div>
