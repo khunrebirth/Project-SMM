@@ -11,6 +11,8 @@ $lang['btn_read_more_client'] = 'ไปยังหน้า Clients';
 $lang['btn_read_more_portfolio'] = 'ไปยังหน้า Portfolios';
 $lang['btn_read_more_blog'] = 'ไปยังหน้า Blogs';
 $lang['btn_read_more_team'] = 'ไปหน้า Teams';
+$lang['btn_read_all'] = 'ดูทั้งหมด';
+
 
 /*
 | -------------------------------------------------------------------------
@@ -116,7 +118,7 @@ $lang['page_contact_form_txt_email'] = 'อีเมล์*';
 $lang['page_contact_form_txt_company'] = 'บริษัท*';
 $lang['page_contact_form_txt_phone'] = 'เบอร์ติดต่อ*';
 $lang['page_contact_form_txt_detail'] = 'รายละเอียด';
-$lang['page_contact_button_send'] = 'ตกลง';
+$lang['page_contact_button_send'] = 'ส่งข้อความ';
 
 /*
 | -------------------------------------------------------------------------

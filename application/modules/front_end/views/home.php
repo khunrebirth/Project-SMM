@@ -89,8 +89,7 @@
 		<div class="title-client" style="text-align: center; padding: 4rem;">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-cilent.png' : 'resources/front_end/images/title-cilent.png'); ?>" class="img-fluid">
 		</div>
-		<div class="row">
-		
+		<div class="row sec-client">
 			<div class="col-12 col-md-6 col-lg-2 mb-4">
 				<img src="<?php echo base_url('/storage/uploads/images/clients/smm_ava_15722370751.jpg');?>" alt="" class="img-fluid img-clients">
 			</div>
@@ -119,7 +118,7 @@
 
 	</div>
 		<p class="text-center col-12 mb-0">
-			<a href="<?php echo base_url($lang . '/' . lang('menu_our_clients') . '/'); ?>" class="btn btn-primary"><?php echo lang('btn_read_more_client'); ?></a>
+			<a href="<?php echo base_url($lang . '/' . lang('menu_our_clients') . '/'); ?>" class="btn btn-primary"><?php echo lang('btn_read_all'); ?></a>
 		</p>
 	</div>
 </section>
@@ -130,7 +129,7 @@
 		<div class="title-client" style="text-align: center; padding: 0 4rem 4rem;">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-cilent.png' : 'resources/front_end/images/title-cilent.png'); ?>" class="img-fluid">
 		</div>
-		<div class="row">
+		<div class="row sec-client">
 			<div class="col-12 col-md-6 col-lg-3 mb-4">
 				<img src="<?php echo base_url('/storage/uploads/images/clients/smm_ava_15722370751.jpg');?>" alt="" class="img-fluid img-clients">
 			</div>
@@ -152,7 +151,7 @@
 		</div>
 
 		<p class="text-center col-12 mb-0">
-			<a href="<?php echo base_url($lang . '/' . lang('menu_portfolios')); ?>" class="btn btn-primary"><?php echo lang('btn_read_more_portfolio'); ?></a>
+			<a href="<?php echo base_url($lang . '/' . lang('menu_portfolios')); ?>" class="btn btn-primary"><?php echo lang('btn_read_all'); ?></a>
 		</p>
 	</div>
 </section>
@@ -182,7 +181,7 @@
 			</div>
 			<?php } ?>
 			<p class="text-center col-12 mb-0">
-				<a href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/'); ?>" class="btn btn-primary"><?php echo lang('btn_read_more_blog'); ?></a>
+				<a href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/'); ?>" class="btn btn-primary"><?php echo lang('btn_read_all'); ?></a>
 			</p>
 		</div>
 	</div>
@@ -217,7 +216,7 @@
 					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-team.png' : 'resources/front_end/images/title-team.png'); ?>" class="img-fluid">
 				</div>
 				<p class="text-center col-12 mb-2">
-					<a href="<?php echo base_url($lang . '/' . lang('menu_teams') . '/'); ?>" class="btn btn-primary"><?php echo lang('btn_read_more_team'); ?></a>
+					<a href="<?php echo base_url($lang . '/' . lang('menu_teams') . '/'); ?>" class="btn btn-primary"><?php echo lang('btn_read_all'); ?></a>
 				</p>
 			</div>
 		</div>
