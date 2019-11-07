@@ -12,7 +12,7 @@
 <section id="contact">
     <div class="container">
         <div class="title-contact" style="text-align: center; padding: 4rem;">
-            <img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-contact.png' : 'resources/front_end/images/title-contact.png'); ?>" alt="" class="img-fluid">
+            <img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-contact.png' : 'resources/front_end/images/title-contact.png'); ?>" class="img-fluid">
         </div>
         <div class="row">
             <div class="col-xs-12 col-md-6 col-lg-6 ">

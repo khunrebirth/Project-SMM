@@ -111,7 +111,7 @@
 			<?php $slice_clients = array_slice($clients, count($clients) - 6); ?>
 			<?php foreach ($slice_clients as $client) { ?>
 				<div class="col-12 col-md-6 col-lg-2 mb-4">
-					<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/clients/'.unserialize($client->image)[$lang]); ?>" alt="">
+					<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/clients/' . unserialize($client->image)[$lang]); ?>" alt="<?php echo unserialize($client->title)[$lang]; ?>">
 				</div>
 			<?php } ?>
 		</div>
@@ -145,7 +145,7 @@
 			<?php $slice_portfolios = array_slice($portfolios, count($portfolios) - 4); ?>
 			<?php foreach ($slice_portfolios as $portfolio) { ?>
 				<div class="col-12 col-md-6 col-lg-3 mb-4">
-					<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/portfolios/'.unserialize($portfolio->image)[$lang]); ?>" alt="">
+					<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/portfolios/' . unserialize($portfolio->image)[$lang]); ?>" alt="<?php echo unserialize($portfolio->title)[$lang]; ?>">
 				</div>
 			<?php } ?>
 		</div>

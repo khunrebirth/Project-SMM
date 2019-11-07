@@ -339,7 +339,7 @@
 				<h3 class="col-12 ttl-port-list"><span>ตัวอย่างผลงาน</span></h3>
 				<?php foreach ($service['portfolios'] as $portfolio) { ?>
 					<div class="col-12 col-md-6 col-lg-2 text-center mb-5">
-						<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/services/'.unserialize($portfolio->img)[$lang]); ?>" alt="">
+						<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/services/' . unserialize($portfolio->img)[$lang]); ?>" alt="<?php echo unserialize($portfolio->img_title_alt)[$lang]; ?>">
 					</div>
 				<?php } ?>
 			</div>

@@ -142,11 +142,25 @@ class Client extends MX_Controller
 
 	public function category_client_store()
 	{
+		// Handle Image
+		$icon_en = '';
+		$icon_th = '';
+
+		if (isset($_FILES['icon_en']) && $_FILES['icon_en']['name'] != '') {
+			$icon_en = $this->ddoo_upload_client('icon_en');
+		}
+
+		if (isset($_FILES['icon_th']) && $_FILES['icon_th']['name'] != '') {
+			$icon_th = $this->ddoo_upload_client('icon_th');
+		}
+
 		// Filter Data
+		$input_icon = ['en' => $icon_en, 'th' => $icon_th];
 		$input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
 
 		// Add Data
 		$add_category = $this->Client_category_model->insert_client_category([
+			'icon' => serialize($input_icon),
 			'title' => serialize($input_title)
 		]);
 
@@ -171,6 +185,7 @@ class Client extends MX_Controller
 	public function category_client_edit($lang, $client_category_id)
 	{
 		$category = $this->Client_category_model->get_client_category_by_id($client_category_id);
+
 		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Page: Clients - Category - Edit ('. unserialize($category->title)['th'] . ')';
 		$this->data['content'] = 'clients/category_edit';
@@ -181,11 +196,28 @@ class Client extends MX_Controller
 
 	public function category_client_update($lang, $client_category_id)
 	{
+		// Get Old Data
+		$category = $this->Client_category_model->get_client_category_by_id($client_category_id);
+
+		// Handle Image
+		$icon_en = unserialize($category->icon)['en'];
+		$icon_th = unserialize($category->icon)['th'];
+
+		if (isset($_FILES['icon_en']) && $_FILES['icon_en']['name'] != '') {
+			$icon_en = $this->ddoo_upload_client('icon_en');
+		}
+
+		if (isset($_FILES['icon_th']) && $_FILES['icon_th']['name'] != '') {
+			$icon_th = $this->ddoo_upload_client('icon_th');
+		}
+
 		// Filter Data
+		$input_icon = ['en' => $icon_en, 'th' => $icon_th];
 		$input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
 
 		// Add Data
 		$update_category = $this->Client_category_model->update_client_category_by_id($client_category_id, [
+			'icon' => serialize($input_icon),
 			'title' => serialize($input_title),
 			'updated_at' => date('Y-m-d H:i:s')
 		]);
