@@ -300,22 +300,6 @@
 	</form>
 </div>
 
-
-
-<?php if (count($service['portfolios']) > 0) { ?>
-<section class="sec-service-port-list">
-		<div class="col sec-service-port--inner">
-			<div class="row">
-			<?php foreach ($service['portfolios'] as $portfolio) { ?>
-				<div class="col-12 col-md-6 col-lg-3 text-center mb-5">
-					<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/services/'.unserialize($portfolio->img)[$lang]); ?>" alt="">
-				</div>
-			<?php } ?>
-			</div>
-		</div>
-	</section>
-<?php } ?>
-
 <?php if (count($service['our_clients']) > 0) { ?>
 	<section class="sec-service-port row">
 		<div class="col row sec-service-port--inner">
@@ -339,23 +323,38 @@
 <section id="service" class="wow fadeInUp pb-0" style="overflow:hidden">
 	<div class="container-fluid text-center sec-home-service">
 		<div class="row">
-			<?php foreach ($services as $service) { ?>
-				<a href="<?php echo base_url($lang . '/' . lang('menu_service') . '/' . unserialize($service->slug)[$lang] . '/' . hashids_encrypt($service->id)); ?>"
+			<?php foreach ($services as $service_parent) { ?>
+				<a href="<?php echo base_url($lang . '/' . lang('menu_service') . '/' . unserialize($service_parent->slug)[$lang] . '/' . hashids_encrypt($service_parent->id)); ?>"
 				   class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05 ico-service">
 
 					<div class="wrap-icon-flip">
-						<img src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service->icon)[$lang]); ?>" class="img-fluid service__icon--resize">
+						<img src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service_parent->icon)[$lang]); ?>" class="img-fluid service__icon--resize">
 					</div>
-					<img src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service->icon)[$lang]); ?>" class="img-fluid service__icon--resize ico-service__img">
+					<img src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service_parent->icon)[$lang]); ?>" class="img-fluid service__icon--resize ico-service__img">
 
 					<p class="service__title--body">
-						<?php echo unserialize($service->title)[$lang]; ?>
+						<?php echo unserialize($service_parent->title)[$lang]; ?>
 					</p>
 				</a>
 			<?php } ?>
 		</div>
 	</div>
 </section>
+
+<?php if (count($service['portfolios']) > 0) { ?>
+	<section class="sec-service-port-list">
+		<div class="col sec-service-port--inner">
+			<div class="row">
+				<?php foreach ($service['portfolios'] as $portfolio) { ?>
+					<div class="col-12 col-md-6 col-lg-3 text-center mb-5">
+						<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/services/'.unserialize($portfolio->img)[$lang]); ?>" alt="">
+					</div>
+				<?php } ?>
+			</div>
+		</div>
+	</section>
+<?php } ?>
+
 
 <!-- SiteMap -->
 <?php include 'layouts/sitemap.php'; ?>
