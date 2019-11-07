@@ -91,6 +91,8 @@ $route['(\w{2})/blogs/(:any)'] = 'front_end/Blogs/category_show/$1/$2';
 $route['(\w{2})/บทความ/(:any)'] = 'front_end/Blogs/category_show/$1/$2';
 $route['(\w{2})/blogs/(:any)/(:any)'] = 'front_end/Blogs/blog_show/$1/$2/$3';
 $route['(\w{2})/บทความ/(:any)/(:any)'] = 'front_end/Blogs/blog_show/$1/$2/$3';
+$route['(\w{2})/tags/(:any)'] = 'front_end/Blogs/tag_show/$1/$2/$3';
+$route['(\w{2})/แท็ก/(:any)'] = 'front_end/Blogs/tag_show/$1/$2/$3';
 
 // Teams
 $route['(\w{2})/teams'] = 'front_end/Teams';
