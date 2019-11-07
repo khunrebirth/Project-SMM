@@ -150,6 +150,8 @@ class Blogs extends MX_Controller
 			: $this->Blog_model->get_blog_by_slug_en($blog_slug);
 
 		$blog = $page_content;
+		$suggest_blogs = $this->Blog_model->get_suggest_blogs($blog->id, $blog->tag_id);
+		shuffle($suggest_blogs);
 
 		/*
 		| -------------------------------------------------------------------------
@@ -187,7 +189,7 @@ class Blogs extends MX_Controller
 		$data['last_blogs'] = $this->Blog_model->get_last_blog(5);
 		$data['blog'] = $blog;
 		$data['tags'] = $this->filter_data_tags($blog);
-		$data['suggest_blogs'] = $this->filter_data_suggest_blogs($blog);
+		$data['suggest_blogs'] = $suggest_blogs;
 
 		/*
 		| -------------------------------------------------------------------------
@@ -206,7 +208,11 @@ class Blogs extends MX_Controller
 		| -------------------------------------------------------------------------
 		*/
 
-		$page_content = $this->Page_model->get_page_by_id(6);
+		$page_content = $lang == 'th'
+			? $this->Tag_model->get_tag_by_slug_th($tag_slug)
+			: $this->Tag_model->get_tag_by_slug_en($tag_slug);
+
+		$tag = $page_content;
 
 		/*
 		| -------------------------------------------------------------------------
@@ -240,9 +246,9 @@ class Blogs extends MX_Controller
 		$data['content'] = 'tags';
 
 		// Utilities
-		$data['blog_categories'] = $this->Blog_category_model->get_blog_category_active();
-		$data['blogs'] = $this->Blog_model->get_blog_by_category_blog_id($data['blog_categories'][0]->id);
 		$data['banner'] = $this->Banner_model->get_banner_active_by_id(3);
+		$data['tag'] = $tag;
+		$data['blogs'] = $this->Blog_model->get_blog_by_tag_id($tag->id);
 
 		/*
 		| -------------------------------------------------------------------------
@@ -267,21 +273,5 @@ class Blogs extends MX_Controller
 		}
 
 		return $tags;
-	}
-
-	private function filter_data_suggest_blogs($blog)
-	{
-		$suggest_blogs = [];
-
-//		if ($blog->tag_id != '') {
-//
-//			$bundle_tag_id = explode(',' , $blog->tag_id);
-//
-//			foreach ($bundle_tag_id as $tag_id) {
-//				$suggest_blogs[] = $this->Blog_model->get_tag_by_id($tag_id);
-//			}
-//		}
-
-		return $suggest_blogs;
 	}
 }

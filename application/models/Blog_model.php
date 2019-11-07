@@ -17,6 +17,46 @@ class Blog_model extends CI_Model {
         return $query->num_rows() > 0 ? $query->row() : false;
     }
 
+	public function get_blog_by_tag_id($tag_id)
+	{
+		$sql = "SELECT blogs.*, blog_categories.slug as blog_category_slug 
+				FROM blogs
+				INNER JOIN blog_categories ON blogs.category_blog_id = blog_categories.id
+				WHERE FIND_IN_SET($tag_id, blogs.tag_id)
+				ORDER BY blogs.created_at DESC";
+
+		$query = $this->db->query($sql);
+
+		return $query->num_rows() > 0 ? $query->result() : [];
+	}
+
+	public function get_suggest_blogs($blog_id, $tags)
+	{
+		if ($tags == '') { return []; }
+
+		$bundle_tag_id = explode(',' , $tags);
+		$count_tag_id = count($bundle_tag_id);
+
+		$sql = "SELECT blogs.*, blog_categories.slug as blog_category_slug 
+					FROM blogs
+					INNER JOIN blog_categories ON blogs.category_blog_id = blog_categories.id
+					WHERE blogs.id != $blog_id AND (";
+
+		foreach ($bundle_tag_id as $key => $tag_id) {
+			$sql .= "FIND_IN_SET($tag_id, blogs.tag_id)";
+
+			if ($count_tag_id != ($key + 1)) {
+				$sql .= " OR ";
+			}
+		}
+
+		$sql .= ")";
+
+		$query = $this->db->query($sql);
+
+		return $query->num_rows() > 0 ? $query->result() : [];
+	}
+
 	public function get_blog_by_slug_th($slug)
 	{
 		$query = $this->db->where('slug_th', $slug)->get('blogs');

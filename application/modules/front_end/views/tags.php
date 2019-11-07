@@ -142,7 +142,7 @@
 		<div class="sec-blogs-01 row">
 			
 			<div class="col-12 ">
-				<h3 class="ttl-tags"><span>บริการทำการตลาดผ่านโซเบียลมีเดีย</span></h3>
+				<h3 class="ttl-tags"><span><?php echo unserialize($tag->title)[$lang]; ?></span></h3>
 			</div>
 			<div class="col-12 col-lg-12">
 				<div class="row row-60 row-sm">
