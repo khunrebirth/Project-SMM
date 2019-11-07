@@ -1696,4 +1696,19 @@ footer p {
 	width: 100%;
 	background-color: #00264c;
 }
-
+.list-catagory-client {
+	transition: top 0.2s;
+	-webkit-transition: top 0.2s;
+	-moz-transition: top 0.2s;
+	-ms-transition: top 0.2s;
+	-o-transition: top 0.2s;
+}
+.list-catagory-client.is-fixed {
+	position: absolute;
+	width: calc( 100% - 30px);
+	transform: translate3d(0,-50%,0);
+	-webkit-transform: translate3d(0,-50%,0);
+	-moz-transform: translate3d(0,-50%,0);
+	-ms-transform: translate3d(0,-50%,0);
+	-o-transform: translate3d(0,-50%,0);
+}

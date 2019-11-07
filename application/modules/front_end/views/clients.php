@@ -11,11 +11,11 @@
 <!-- Content -->
 <section id="client">
     <div class="container-fluid">
-        <div class="title-client" style="text-align: center; padding: 4rem;">
+        <div class="title-client" style="text-align: center; padding: 4rem;display: block;position: relative;">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-cilent.png' : 'resources/front_end/images/title-cilent.png'); ?>" class="img-fluid">
         </div>
 		<div class="row sec-client">
-			<div class="col-12 col-lg-3  mb-5">
+			<div class="col-12 col-lg-3 wrap-fixed-menu mb-5">
 				<ul class="list-catagory-client">
 					<?php foreach ($client_categories as $key => $client_category) { ?>
 						<li><a class="<?php if ($key == 1) { echo 'is-active'; } ?>" href="#categoryGroup-<?php echo $client_category->id; ?>"><?php echo unserialize($client_category->title)[$lang]; ?></a></li>
@@ -73,5 +73,38 @@
                 }
             }
         });
+		menuScroll();
+		function menuScroll() {
+			var height_top = $('.title-client').innerHeight() + 60;
+			var height_nav = $('.navbar').innerHeight();
+			var height_wrap = $('.wrap-fixed-menu').innerHeight();
+			var height_ele = $('.list-catagory-client').innerHeight();
+			var position_footer = $('.sec-footer-sitemap').position();
+			var height_ele_content = $('.sec-client').innerHeight();
+			var height_doc = $( document ).height();
+			// console.log(height_ele);
+			$( window ).scroll(function() {
+				var scroll = $(window).scrollTop();
+				var scroll_fixed = scroll + 80;
+				console.log(scroll + height_doc);
+				if( scroll + height_doc  > position_footer.top) {
+					// console.log('01//'+scroll+'/'+position_footer.top);
+				}else{
+					// console.log('02//'+scroll+'/'+position_footer.top);
+				}
+
+				if(scroll > height_top - 150 ) {
+					$('.list-catagory-client').css({
+						"top": scroll_fixed
+					});
+					if(!$('.list-catagory-client').hasClass('is-fixed')){
+						$('.list-catagory-client').addClass('is-fixed');
+					}
+				}else{
+					$('.list-catagory-client').removeAttr('style').removeClass('is-fixed');
+				}
+
+			});
+		}
     });
 </script>
