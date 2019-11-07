@@ -6,7 +6,7 @@
 <!-- Push Custom Style -->
 <style>
 	.sec-service-port {
-		background-color: #eee;
+		/* background-color: #eee; */
 		width: 100%;
 		margin: 0 !important;
 	}
@@ -227,7 +227,35 @@
 	
     .box-text-service p {
         line-height: 1.5;
-    }
+	}
+		
+	.ttl-port-list {
+		position: relative;
+		text-align: center;
+	}
+	.ttl-port-list span {
+		background-color: #fff;
+		padding: 0 15px;
+		position: relative;
+		font-family: 'CordiaUPC', sans-serif;
+		font-size: 2.3rem;
+		color: #127dbc;
+	}
+	.ttl-port-list::before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translate3d(0,-50%,0);
+		-webkit-transform: translate3d(0,-50%,0);
+		-moz-transform: translate3d(0,-50%,0);
+		-ms-transform: translate3d(0,-50%,0);
+		-o-transform: translate3d(0,-50%,0);
+		height: 2px;
+		width: 100%;
+		background-color: #00264c;
+	}
+
 </style>
 
 <!-- Title -->
@@ -304,6 +332,22 @@
 	</form>
 </div>
 
+<?php if (count($service['portfolios']) > 0) { ?>
+	<section class="sec-service-port-list">
+		<div class="col sec-service-port--inner">
+			<div class="row">
+				<h3 class="col-12 ttl-port-list"><span>ตัวอย่างผลงาน</span></h3>
+				<?php foreach ($service['portfolios'] as $portfolio) { ?>
+					<div class="col-12 col-md-6 col-lg-2 text-center mb-5">
+						<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/services/'.unserialize($portfolio->img)[$lang]); ?>" alt="">
+					</div>
+				<?php } ?>
+			</div>
+		</div>
+	</section>
+<?php } ?>
+
+
 <!-- Service -->
 <section id="service" class="wow fadeInUp pb-0" style="overflow:hidden">
 	<div class="container-fluid text-center sec-home-service">
@@ -323,21 +367,6 @@
 		</div>
 	</div>
 </section>
-
-<?php if (count($service['portfolios']) > 0) { ?>
-	<section class="sec-service-port-list">
-		<div class="col sec-service-port--inner">
-			<div class="row">
-				<?php foreach ($service['portfolios'] as $portfolio) { ?>
-					<div class="col-12 col-md-6 col-lg-3 text-center mb-5">
-						<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/services/'.unserialize($portfolio->img)[$lang]); ?>" alt="">
-					</div>
-				<?php } ?>
-			</div>
-		</div>
-	</section>
-<?php } ?>
-
 
 <?php if (count($service['our_clients']) > 0) { ?>
 	<section class="sec-service-port row">
