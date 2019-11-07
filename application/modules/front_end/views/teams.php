@@ -132,8 +132,8 @@
 				?>
 				<div class="col-12 col-lg-3">
 					<div class="card team__card--parent mx-auto" >
-						<img class="card-img-top" src="<?php echo base_url('storage/uploads/images/teams/' . unserialize($team->image)[$lang]); ?>" alt="">
-						<img class="card-img-top is-hover" src="<?php echo base_url('storage/uploads/images/teams/' . unserialize($team->image_hover)[$lang]); ?>" alt="">
+						<img class="card-img-top" src="<?php echo base_url('storage/uploads/images/teams/' . unserialize($team->image)[$lang]); ?>" alt="<?php echo unserialize($team->img_title_alt)[$lang]; ?>">
+						<img class="card-img-top is-hover" src="<?php echo base_url('storage/uploads/images/teams/' . unserialize($team->image_hover)[$lang]); ?>" alt="<?php echo unserialize($team->img_title_alt_hover)[$lang]; ?>">
 						<div class="card-body pl-0">
 							<h5 class="card-title team__crad--title"><?php echo $first_name; ?> <br><?php echo $last_name; ?></h5>
 							<p class="card-text team__crad--body"><?php echo unserialize($team->body)[$lang]; ?></p>
