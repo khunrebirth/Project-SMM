@@ -144,7 +144,7 @@
 					<ul class="list-tag-blog">
 						<?php if (count($tags) > 0) { ?>
 							<?php foreach ($tags as $tag) { ?>
-								<li><a href="#"><?php echo unserialize($tag->title)[$lang]; ?></a></li>
+								<li><a href="<?php echo base_url($lang . '/' . lang('menu_tags') . '/' . unserialize($tag->slug)[$lang]); ?>"><?php echo unserialize($tag->title)[$lang]; ?></a></li>
 							<?php } ?>
 						<?php } ?>
 					</ul>

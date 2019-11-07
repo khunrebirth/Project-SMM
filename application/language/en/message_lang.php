@@ -29,6 +29,7 @@ $lang['menu_teams'] = 'teams';
 $lang['menu_join_us'] = 'join us';
 $lang['menu_join_us_slug'] = 'join-us';
 $lang['menu_contact'] = 'contact';
+$lang['menu_tags'] = 'tags';
 
 /*
 | -------------------------------------------------------------------------
