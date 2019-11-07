@@ -1,12 +1,12 @@
 <!-- Push Custom Style -->
 <style>
 .box-slide-team {
-    max-width: 1730px;
+    max-width: 1470px;
     width: 100%;
     padding: 0 30px;
     margin: 0 auto;
 }
-
+/* 
 .box-slide-team .owl-nav {
     position: absolute;
     top: 30%;
@@ -47,15 +47,15 @@
 
 .box-slide-team .owl-nav .owl-prev {
     left: 0;
-    background: url(<?php echo base_url($lang == 'th' ? 'resources/front_end/images/team/btn_arrow_left.png' : 'resources/front_end/images/team/btn_arrow_left.png'); ?>) !important;
+    background: url(<?php // echo base_url($lang == 'th' ? 'resources/front_end/images/team/btn_arrow_left.png' : 'resources/front_end/images/team/btn_arrow_left.png'); ?>) !important;
     background-size: cover !important;
 }
 
 .box-slide-team .owl-nav .owl-next {
     right: 0;
-    background: url(<?php echo base_url($lang == 'th' ? 'resources/front_end/images/team/btn_arrow_right.png' : 'resources/front_end/images/team/btn_arrow_right.png'); ?>) !important;
+    background: url(<?php // echo base_url($lang == 'th' ? 'resources/front_end/images/team/btn_arrow_right.png' : 'resources/front_end/images/team/btn_arrow_right.png'); ?>) !important;
     background-size: cover !important;
-}
+} */
 
 .team__card--parent .is-hover {
 	position: absolute;
@@ -75,13 +75,13 @@
 	opacity: 1;
 }
 
-@media (min-width: 576px) { 
+/* @media (min-width: 576px) { 
 	.box-slide-team {
 		padding: 0 30px !important;
 	}
-}
+} */
 
-@media (min-width: 768px) { 
+/* @media (min-width: 768px) { 
 	.box-slide-team {
 		padding: 0 50px !important;
     }
@@ -90,9 +90,9 @@
         width: 76px;
         height: 76px;
     }
-}
+} */
 
-@media (min-width: 992px) { 
+/* @media (min-width: 992px) { 
 	.box-slide-team {
 		padding: 0 80px !important;
 	}
@@ -102,7 +102,7 @@
 	.box-slide-team {
 		padding: 0 140px !important;
 	}
-}
+} */
 </style>
 
 <!-- Title -->
@@ -122,7 +122,7 @@
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-team.png' : 'resources/front_end/images/title-team.png'); ?>" alt="" class="img-fluid">
         </div>
         
-        <div class="owl-carousel owl-theme box-slide-team" id="box-slide-team">
+        <div class="box-slide-team row">
 			<?php foreach ($teams as $team) { ?>
 				<?php
 					$fullname = unserialize($team->title)[$lang];
@@ -130,7 +130,7 @@
 					$first_name = substr($fullname, 0, $posBlankSpace);
 					$last_name = substr($fullname, $posBlankSpace, strlen($fullname));
 				?>
-				<div>
+				<div class="col-12 col-lg-3">
 					<div class="card team__card--parent mx-auto" >
 						<img class="card-img-top" src="<?php echo base_url('storage/uploads/images/teams/' . unserialize($team->image)[$lang]); ?>" alt="">
 						<img class="card-img-top is-hover" src="<?php echo base_url('storage/uploads/images/teams/' . unserialize($team->image_hover)[$lang]); ?>" alt="">

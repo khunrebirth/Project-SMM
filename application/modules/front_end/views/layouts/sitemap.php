@@ -14,56 +14,44 @@
 <!-- Push Custom Style -->
 <style>
 	.fb-page {
-		width: 300px;
+		width: 260px;
 	}
-
-	@media (min-width: 320px) {
+	@media (min-width: 320px) { 
 		.fb-page {
 			width: 280px;
 		}
-	}
-
-	@media (min-width: 360px) {
-		.fb-page {
-			width: 280px;
-		}
-	}
-
-	@media (min-width: 540px) {
-		.fb-page {
-			width: 350px;
-		}
-	}
-
-	@media (min-width: 720px) {
-		.fb-page {
-			width: 350px;
-		}
-	}
-
-	@media (min-width: 960px) {
-		.fb-page {
-			width: 200px;
-		}
-	}
-
-	@media (min-width: 1090px) {
-		.fb-page {
-			width: 200px;
-		}
-	}
-
-	@media (min-width: 1140px) {
-		.fb-page {
-			width: 250px;
-		}
-	}
-
-	@media (min-width: 1300px) {
+	 }
+	@media (min-width: 380px) { 
 		.fb-page {
 			width: 300px;
 		}
-	}
+	 }
+
+	@media (min-width: 576px) { 
+		.fb-page {
+			width: 380px;
+		}
+	 }
+
+	@media (min-width: 768px) { 
+		.fb-page {
+			width: 400px;
+		}
+	 }
+
+	@media (min-width: 992px) { 
+		.fb-page {
+			width: 200px;
+		}
+	 }
+
+	@media (min-width: 1200px) { 
+		.fb-page {
+			width: 260px;
+		}
+	 }
+	
+
 
 	.item-fb-page {
 		margin-bottom: 20px;
@@ -72,38 +60,68 @@
 	.sec-social-contact {
 		overflow: hidden;
 		max-width: 1440px;
-		margin: 0 auto;
+		margin: 0px auto 60px;
+		border-bottom: 1px solid #fff;
+		padding-bottom: 60px;
+	}
+	
+	@media (max-width: 768px) { 
+		.sec-social-contact {
+			padding-bottom: 30px;
+			margin: 0px auto 30px;
+		}
+	}
+	.col-cmn-5 {
+		flex: 0 0 20%;
+		padding: 0 10px;
+		margin: 0;
+		overflow: hidden;
+	}
+	
+	@media (max-width: 992px) {
+		.col-cmn-5 {
+			flex: 0 0 50%;
+			margin: 0 0 15px;
+		}
+	}
+	@media (max-width: 768px) {
+		.col-cmn-5 {
+			flex: 0 0 100%;
+		}
 	}
 </style>
-<div class="sec-social-contact col-12">
-	<div class="row">
-		<div class="col-12 mb-4">
-			<h2 class="ttl-facebook text-center">Our Facebook Page</h2>
-		</div>
-		<div class="col-lg-3 col-md-3 col-sm-12 item-fb-page">
-			<div class="fb-page" data-href="https://www.facebook.com/iSEO.SEM/" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
-				<blockquote cite="https://www.facebook.com/iSEO.SEM/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/iSEO.SEM/">รับบริการทำ SEO SEM</a>
-				</blockquote>
-			</div>
-		</div>
-		<div class="col-lg-3 col-md-3 col-sm-12 item-fb-page">
-			<div class="fb-page" data-href="https://www.facebook.com/SocialMediaMarketing/" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
-				<blockquote cite="https://www.facebook.com/SocialMediaMarketing/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/SocialMediaMarketing/">Social Media Master</a></blockquote>
-			</div>
-		</div>
-		<div class="col-lg-3 col-md-3 col-sm-12 item-fb-page">
-			<div class="fb-page" data-href="https://www.facebook.com/EmailDirectMarketing.EDM/" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
-				<blockquote cite="https://www.facebook.com/EmailDirectMarketing.EDM/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/EmailDirectMarketing.EDM/">บริการรับส่งอีเมล์ : Email Direct Marketing</a></blockquote>
-			</div>
-		</div>
-	</div>
-</div>
 <div class="sec-footer-sitemap" id="accordion">
 	<div class="card text-center" style="background: #00264c; color: #fff; border-radius: 0;margin:0;">
 		<div class="show">
 			<div class="card-body">
 				<div class="sec-sitemap">
 					<div class="row">
+						<div class="sec-social-contact col-12">
+							<div class="row">
+								<div class="col-cmn-5 item-fb-page">
+									<img src="<?php echo base_url('resources/front_end/images/title-social.png'); ?>" alt="">
+								</div>
+								<div class="col-cmn-5 item-fb-page">
+									<div class="fb-page" data-href="https://www.facebook.com/iSEO.SEM/" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
+										<blockquote cite="https://www.facebook.com/iSEO.SEM/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/iSEO.SEM/">รับบริการทำ SEO SEM</a>
+										</blockquote>
+									</div>
+								</div>
+								<div class="col-cmn-5 item-fb-page">
+									<div class="fb-page" data-href="https://www.facebook.com/SocialMediaMarketing/" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
+										<blockquote cite="https://www.facebook.com/SocialMediaMarketing/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/SocialMediaMarketing/">Social Media Master</a></blockquote>
+									</div>
+								</div>
+								<div class="col-cmn-5 item-fb-page">
+									<div class="fb-page" data-href="https://www.facebook.com/EmailDirectMarketing.EDM/" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
+										<blockquote cite="https://www.facebook.com/EmailDirectMarketing.EDM/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/EmailDirectMarketing.EDM/">บริการรับส่งอีเมล์ : Email Direct Marketing</a></blockquote>
+									</div>
+								</div>
+								<div class="col-cmn-5 item-fb-page">
+									<img src="<?php echo base_url('resources/front_end/images/title-social.png'); ?>" alt="">
+								</div>
+							</div>
+						</div>
 						<div class="col-lg-4 col-md-6 col-sm-12">
 							<h2 class="contact__form--title"><?php echo lang('page_contact_title_first'); ?><span><?php echo lang('page_contact_title_center'); ?></span><?php echo lang('page_contact_title_end'); ?></h2>
 							<p class="contact__form--body mb-4"><?php echo lang('page_contact_desc'); ?></p>
