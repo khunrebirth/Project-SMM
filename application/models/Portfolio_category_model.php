@@ -9,6 +9,7 @@ class Portfolio_category_model extends CI_Model {
 			SELECT 
 			portfolio_categories.id,
 			portfolio_categories.sort,
+			portfolio_categories.icon,
 			portfolio_categories.title,
             portfolio_categories.created_at,
             (SELECT COUNT(*) FROM portfolios WHERE portfolio_categories.id = portfolios.category_id) as counter

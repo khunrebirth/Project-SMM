@@ -9,6 +9,7 @@ class Client_category_model extends CI_Model {
 			SELECT 
 			client_categories.id,
 			client_categories.sort,
+			client_categories.icon,
 			client_categories.title,
             client_categories.created_at,
             (SELECT COUNT(*) FROM clients WHERE client_categories.id = clients.category_id) as counter

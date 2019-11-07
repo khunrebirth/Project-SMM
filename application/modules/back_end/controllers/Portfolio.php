@@ -142,11 +142,25 @@ class Portfolio extends MX_Controller
 
 	public function category_portfolio_store()
 	{
+		// Handle Image
+		$icon_en = '';
+		$icon_th = '';
+
+		if (isset($_FILES['icon_en']) && $_FILES['icon_en']['name'] != '') {
+			$icon_en = $this->ddoo_upload_portfolio('icon_en');
+		}
+
+		if (isset($_FILES['icon_th']) && $_FILES['icon_th']['name'] != '') {
+			$icon_th = $this->ddoo_upload_portfolio('icon_th');
+		}
+
 		// Filter Data
+		$input_icon = ['en' => $icon_en, 'th' => $icon_th];
 		$input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
 
 		// Add Data
 		$add_category = $this->Portfolio_category_model->insert_portfolio_category([
+			'icon' => serialize($input_icon),
 			'title' => serialize($input_title)
 		]);
 
@@ -171,6 +185,7 @@ class Portfolio extends MX_Controller
 	public function category_portfolio_edit($lang, $portfolio_category_id)
 	{
 		$category = $this->Portfolio_category_model->get_portfolio_category_by_id($portfolio_category_id);
+
 		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Page: Portfolios - Category - Edit ('. unserialize($category->title)['th'] . ')';
 		$this->data['content'] = 'portfolios/category_edit';
@@ -181,11 +196,28 @@ class Portfolio extends MX_Controller
 
 	public function category_portfolio_update($lang, $portfolio_category_id)
 	{
+		// Get Old Data
+		$category = $this->Portfolio_category_model->get_portfolio_category_by_id($portfolio_category_id);
+
+		// Handle Image
+		$icon_en = unserialize($category->icon)['en'];
+		$icon_th = unserialize($category->icon)['th'];
+
+		if (isset($_FILES['icon_en']) && $_FILES['icon_en']['name'] != '') {
+			$icon_en = $this->ddoo_upload_portfolio('icon_en');
+		}
+
+		if (isset($_FILES['icon_th']) && $_FILES['icon_th']['name'] != '') {
+			$icon_th = $this->ddoo_upload_portfolio('icon_th');
+		}
+
 		// Filter Data
+		$input_icon = ['en' => $icon_en, 'th' => $icon_th];
 		$input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
 
 		// Add Data
 		$update_category = $this->Portfolio_category_model->update_portfolio_category_by_id($portfolio_category_id, [
+			'icon' => serialize($input_icon),
 			'title' => serialize($input_title),
 			'updated_at' => date('Y-m-d H:i:s')
 		]);

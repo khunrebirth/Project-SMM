@@ -10,6 +10,7 @@ class Blog_category_model extends CI_Model {
 			blog_categories.id,
 			blog_categories.status,
 			blog_categories.sort,
+			blog_categories.icon,
 			blog_categories.title,
 			blog_categories.slug,
             blog_categories.created_at,

@@ -64,6 +64,8 @@
 									<thead>
 									<tr>
 										<th class="text-center">#</th>
+										<th>Icon(en)</th>
+										<th>Icon(th)</th>
 										<th>Title(en)</th>
 										<th>Title(th)</th>
 										<th>Items</th>
@@ -77,6 +79,8 @@
 										foreach ($categories as $category) { ?>
 											<tr>
 												<td class="text-center"><?php echo $counter++; ?></td>
+												<td><img src="<?php echo base_url('storage/uploads/images/clients/' . unserialize($category->icon)['en']); ?>" width="40"></td>
+												<td><img src="<?php echo base_url('storage/uploads/images/clients/' . unserialize($category->icon)['th']); ?>" width="40"></td>
 												<td><?php echo unserialize($category->title)['en']; ?></td>
 												<td><?php echo unserialize($category->title)['th']; ?></td>
 												<td><?php echo $category->created_at; ?></td>

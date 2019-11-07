@@ -72,6 +72,8 @@ class Blog extends MX_Controller {
 		// Handle Image
 		$meta_og_image_en = '';
 		$meta_og_image_th = '';
+		$icon_en = '';
+		$icon_th = '';
 
 		if (isset($_FILES['meta_og_image_en']) && $_FILES['meta_og_image_en']['name'] != '') {
 			$meta_og_image_en = $this->ddoo_upload_blog('meta_og_image_en');
@@ -79,6 +81,14 @@ class Blog extends MX_Controller {
 
 		if (isset($_FILES['meta_og_image_th']) && $_FILES['meta_og_image_th']['name'] != '') {
 			$meta_og_image_th = $this->ddoo_upload_blog('meta_og_image_th');
+		}
+
+		if (isset($_FILES['icon_en']) && $_FILES['icon_en']['name'] != '') {
+			$icon_en = $this->ddoo_upload_blog('icon_en');
+		}
+
+		if (isset($_FILES['icon_th']) && $_FILES['icon_th']['name'] != '') {
+			$icon_th = $this->ddoo_upload_blog('icon_th');
 		}
 
 		// Filter Data
@@ -89,6 +99,7 @@ class Blog extends MX_Controller {
 		$input_meta_tag_moblie_description = ['en' => $this->input->post('meta_tag_moblie_description_en'), 'th' => $this->input->post('meta_tag_moblie_description_th')];
 		$input_meta_tag_moblie_keywords = ['en' => $this->input->post('meta_tag_moblie_keywords_en'), 'th' => $this->input->post('meta_tag_moblie_keywords_th')];
 		$input_img_og_twitter= ['en' => $meta_og_image_en, 'th' => $meta_og_image_th];
+		$input_icon = ['en' => $icon_en, 'th' => $icon_th];
 		$input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
 		$slug_en = slugify($this->input->post('slug_en'));
 		$slug_th = smm_slug_th($this->input->post('slug_th'));
@@ -103,6 +114,7 @@ class Blog extends MX_Controller {
 			'meta_tag_moblie_description' => serialize($input_meta_tag_moblie_description),
 			'meta_tag_moblie_keywords' => serialize($input_meta_tag_moblie_keywords),
 			'img_og_twitter' => serialize($input_img_og_twitter),
+			'icon' => serialize($input_icon),
 			'title' => serialize($input_title),
 			'slug' => serialize($slug),
 			'slug_en' => $slug_en,
@@ -147,6 +159,8 @@ class Blog extends MX_Controller {
 		// Handle Image
 		$meta_og_image_en = unserialize($blog_category->img_og_twitter)['en'];
 		$meta_og_image_th = unserialize($blog_category->img_og_twitter)['en'];
+		$icon_en = unserialize($blog_category->icon)['en'];
+		$icon_th = unserialize($blog_category->icon)['th'];
 
 		if (isset($_FILES['meta_og_image_en']) && $_FILES['meta_og_image_en']['name'] != '') {
 			$meta_og_image_en = $this->ddoo_upload_blog('meta_og_image_en');
@@ -154,6 +168,14 @@ class Blog extends MX_Controller {
 
 		if (isset($_FILES['meta_og_image_th']) && $_FILES['meta_og_image_th']['name'] != '') {
 			$meta_og_image_th = $this->ddoo_upload_blog('meta_og_image_th');
+		}
+
+		if (isset($_FILES['icon_en']) && $_FILES['icon_en']['name'] != '') {
+			$icon_en = $this->ddoo_upload_blog('icon_en');
+		}
+
+		if (isset($_FILES['icon_th']) && $_FILES['icon_th']['name'] != '') {
+			$icon_th = $this->ddoo_upload_blog('icon_th');
 		}
 
 		// Filter Data
@@ -164,6 +186,7 @@ class Blog extends MX_Controller {
 		$input_meta_tag_moblie_description = ['en' => $this->input->post('meta_tag_moblie_description_en'), 'th' => $this->input->post('meta_tag_moblie_description_th')];
 		$input_meta_tag_moblie_keywords = ['en' => $this->input->post('meta_tag_moblie_keywords_en'), 'th' => $this->input->post('meta_tag_moblie_keywords_th')];
 		$input_img_og_twitter= ['en' => $meta_og_image_en, 'th' => $meta_og_image_th];
+		$input_icon = ['en' => $icon_en, 'th' => $icon_th];
 		$input_title = ['en' => $this->input->post('title_en'), 'th' => $this->input->post('title_th')];
 		$slug_en = slugify($this->input->post('slug_en'));
 		$slug_th = smm_slug_th($this->input->post('slug_th'));
@@ -178,6 +201,7 @@ class Blog extends MX_Controller {
 			'meta_tag_moblie_description' => serialize($input_meta_tag_moblie_description),
 			'meta_tag_moblie_keywords' => serialize($input_meta_tag_moblie_keywords),
 			'img_og_twitter' => serialize($input_img_og_twitter),
+			'icon' => serialize($input_icon),
 			'title' => serialize($input_title),
 			'slug' => serialize($slug),
 			'slug_en' => $slug_en,
