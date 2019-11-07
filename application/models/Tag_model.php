@@ -17,6 +17,20 @@ class Tag_model extends CI_Model {
 		return $query->num_rows() > 0 ? $query->row() : false;
 	}
 
+	public function get_tag_by_slug_th($slug)
+	{
+		$query = $this->db->where('slug_th', $slug)->get('tags');
+
+		return $query->num_rows() > 0 ? $query->row() : false;
+	}
+
+	public function get_tag_by_slug_en($slug)
+	{
+		$query = $this->db->where('slug_en', $slug)->get('tags');
+
+		return $query->num_rows() > 0 ? $query->row() : false;
+	}
+
 	public function get_tag_by_limit($limit)
 	{
 		$query = $this->db->order_by('sort', 'asc')->limit($limit)->get('tags');

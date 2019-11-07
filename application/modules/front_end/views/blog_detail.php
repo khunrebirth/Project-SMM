@@ -150,48 +150,28 @@
 					</ul>
 				</div>
 				<div class="sec-blog-relate">
-					<h3 class="ttl-blog-relate">บทความแนะนำ</h3>
-					<div class="row row-60 row-sm">
-						<div class="col-xs-12 col-sm-6 col-lg-4" style="visibility: visible; animation-name: fadeInLeft;">
-							<article class="blog blog__modern">
-								<a class="blog__modern--figure" href="http://localhost/social-dev/th/บทความ/seo---sem/สื่อสารกับผู้คนผ่าน-facebook-stories/jR">
-									<img src="http://localhost/social-dev/storage/uploads/images/blogs/smm_facebook-stories-contact_1572237952.jpg" alt="" width="370" height="307">
-									<div class="blog__modern--time">
-										<time datetime="2019-08-28 15:21:52"><span class="blog__modern--time--month">08</span><span class="blog__modern--time--number">28</span></time>
-									</div>
-								</a>
-								<h4 class="blog__modern--title"><a href="#">สื่อสารกับผู้คนผ่าน Facebook Stories</a></h4>
-								<p class="blog__modern--text">
-									ฟีเจอร์ Stories ของทาง Facebook เพิ่งจะมีการเพิ่มเข้ามาเมื่อไม่นานแต่กลับไม่เป็นที่นิยมเหมือนกับ Stories ของฝั่ง Instagram ที่มีมาก่อน แต่ในช่วงระยะหลังมานี้มีผู้ใช้งาน Facebook Stories เพิ่มขึ้นมาก							</p>
-							</article>
+					<?php if (count($suggest_blogs) > 0) { ?>
+					<h3 class="ttl-blog-relate"><?php echo lang('page_blog_txt_suggest_blog'); ?></h3>
+						<div class="row row-60 row-sm">
+							<?php $slice_suggest_blogs = array_slice($suggest_blogs, count($suggest_blogs) - 3); ?>
+							<?php foreach ($slice_suggest_blogs as $suggest_blog) { ?>
+								<div class="col-xs-12 col-sm-6 col-lg-4" style="visibility: visible; animation-name: fadeInLeft;">
+									<article class="blog blog__modern">
+										<a class="blog__modern--figure" href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/' . unserialize($suggest_blog->blog_category_slug)[$lang] . '/' .  unserialize($suggest_blog->slug)[$lang]); ?>">
+											<img src="<?php echo base_url('storage/uploads/images/blogs/' . unserialize($suggest_blog->img)[$lang]) ?>" alt="<?php echo unserialize($suggest_blog->img_title_alt)[$lang]; ?>" width="370" height="307">
+											<div class="blog__modern--time">
+												<time datetime="<?php echo $suggest_blog->created_at; ?>"><span class="blog__modern--time--month"><?php echo date_format(date_create($suggest_blog->created_at), 'm'); ?></span><span class="blog__modern--time--number"><?php echo date_format(date_create($suggest_blog->created_at), 'd'); ?></span></time>
+											</div>
+										</a>
+										<h4 class="blog__modern--title"><a href="#"><?php echo unserialize($suggest_blog->title)[$lang]; ?></a></h4>
+										<p class="blog__modern--text">
+											<?php echo unserialize($suggest_blog->description_section)[$lang]; ?>
+										</p>
+									</article>
+								</div>
+							<?php } ?>
 						</div>
-						<div class="col-xs-12 col-sm-6 col-lg-4" style="visibility: visible; animation-name: fadeInLeft;">
-							<article class="blog blog__modern">
-								<a class="blog__modern--figure" href="http://localhost/social-dev/th/บทความ/seo---sem/สื่อสารกับผู้คนผ่าน-facebook-stories/jR">
-									<img src="http://localhost/social-dev/storage/uploads/images/blogs/smm_facebook-stories-contact_1572237952.jpg" alt="" width="370" height="307">
-									<div class="blog__modern--time">
-										<time datetime="2019-08-28 15:21:52"><span class="blog__modern--time--month">08</span><span class="blog__modern--time--number">28</span></time>
-									</div>
-								</a>
-								<h4 class="blog__modern--title"><a href="#">สื่อสารกับผู้คนผ่าน Facebook Stories</a></h4>
-								<p class="blog__modern--text">
-									ฟีเจอร์ Stories ของทาง Facebook เพิ่งจะมีการเพิ่มเข้ามาเมื่อไม่นานแต่กลับไม่เป็นที่นิยมเหมือนกับ Stories ของฝั่ง Instagram ที่มีมาก่อน แต่ในช่วงระยะหลังมานี้มีผู้ใช้งาน Facebook Stories เพิ่มขึ้นมาก							</p>
-							</article>
-						</div>
-						<div class="col-xs-12 col-sm-6 col-lg-4" style="visibility: visible; animation-name: fadeInLeft;">
-							<article class="blog blog__modern">
-								<a class="blog__modern--figure" href="http://localhost/social-dev/th/บทความ/seo---sem/สื่อสารกับผู้คนผ่าน-facebook-stories/jR">
-									<img src="http://localhost/social-dev/storage/uploads/images/blogs/smm_facebook-stories-contact_1572237952.jpg" alt="" width="370" height="307">
-									<div class="blog__modern--time">
-										<time datetime="2019-08-28 15:21:52"><span class="blog__modern--time--month">08</span><span class="blog__modern--time--number">28</span></time>
-									</div>
-								</a>
-								<h4 class="blog__modern--title"><a href="#">สื่อสารกับผู้คนผ่าน Facebook Stories</a></h4>
-								<p class="blog__modern--text">
-									ฟีเจอร์ Stories ของทาง Facebook เพิ่งจะมีการเพิ่มเข้ามาเมื่อไม่นานแต่กลับไม่เป็นที่นิยมเหมือนกับ Stories ของฝั่ง Instagram ที่มีมาก่อน แต่ในช่วงระยะหลังมานี้มีผู้ใช้งาน Facebook Stories เพิ่มขึ้นมาก							</p>
-							</article>
-						</div>
-					</div>
+					<?php } ?>
 				</div>
 			</div>
 

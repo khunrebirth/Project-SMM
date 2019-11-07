@@ -57,6 +57,7 @@ $lang['page_client'] = 'ลูกค้าของเรา';
 $lang['page_blog'] = 'บทความ';
 $lang['page_last_blog'] = 'บทความล่าสุด';
 $lang['page_blog_tag'] = 'แท็ก';
+$lang['page_blog_txt_suggest_blog'] = 'บทความแนะนำ';
 
 /*
 | -------------------------------------------------------------------------

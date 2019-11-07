@@ -63,7 +63,7 @@
 		</div>
 		<div class="row">
 			<?php foreach ($services as $service) { ?>
-			<a href="<?php echo base_url($lang . '/' . lang('menu_service') . '/' . unserialize($service->slug)[$lang] . '/' . hashids_encrypt($service->id)); ?>"
+			<a href="<?php echo base_url($lang . '/' . lang('menu_service') . '/' . unserialize($service->slug)[$lang]); ?>"
 				class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05 ico-service">
 
 				<div class="wrap-icon-flip">
