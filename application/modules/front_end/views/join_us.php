@@ -114,7 +114,7 @@
             <ul class="list-cmn-job">
 				<?php foreach ($careers as $career) { ?>
 					<li>
-						<a class="col-12 d-flex justify-content-between align-items-center" href="<?php echo base_url($lang . '/' . lang('menu_join_us_slug') . '/' . unserialize($career->slug)[$lang] . '/' . hashids_encrypt($career->id)); ?>">
+						<a class="col-12 d-flex justify-content-between align-items-center" href="<?php echo base_url($lang . '/' . lang('menu_join_us_slug') . '/' . unserialize($career->slug)[$lang]); ?>">
 							<div class="txt">
 								<p class="ttl"><?php echo unserialize($career->title)[$lang]; ?></p>
 								<span><i class="fas fa-map-marker-alt"></i><?php echo lang('page_join_us_location'); ?></span>

@@ -213,7 +213,9 @@ class Join_us extends MX_Controller
 			'type' => serialize($input_type),
 			'num' => serialize($input_num),
 			'content' => serialize($input_content),
-			'slug' => serialize($slug)
+			'slug' => serialize($slug),
+			'slug_en' => $slug_en,
+			'slug_th' => $slug_th
 		]);
 
 		// Set Session To View
@@ -321,6 +323,8 @@ class Join_us extends MX_Controller
 			'num' => serialize($input_num),
 			'content' => serialize($input_content),
 			'slug' => serialize($slug),
+			'slug_en' => $slug_en,
+			'slug_th' => $slug_th,
 			'updated_at' => date('Y-m-d H:i:s')
 		]);
 

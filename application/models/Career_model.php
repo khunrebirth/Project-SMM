@@ -35,6 +35,20 @@ class Career_model extends CI_Model {
 		return $query->num_rows() > 0 ? $query->row() : false;
 	}
 
+	public function get_career_by_slug_th($slug)
+	{
+		$query = $this->db->where('slug_th', $slug)->get('careers');
+
+		return $query->num_rows() > 0 ? $query->row() : false;
+	}
+
+	public function get_career_by_slug_en($slug)
+	{
+		$query = $this->db->where('slug_en', $slug)->get('careers');
+
+		return $query->num_rows() > 0 ? $query->row() : false;
+	}
+
     public function insert_career($data)
     {
         $this->db->insert('careers', $data);

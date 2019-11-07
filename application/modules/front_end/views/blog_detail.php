@@ -53,9 +53,11 @@
 		border-color: #00264c;
 
 	}
+
 	.ttl-blog-relate {
 		padding: 15px 0;
 	}
+
 	.txt-date-blog {
 		text-align: right;
     	color: #127dbc;
@@ -126,7 +128,7 @@
 				<div class="list-group">
 					<span class="list-group-item list-group-item-action list-group-ttl"><?php echo lang('page_last_blog'); ?></span>
 					<?php foreach ($last_blogs as $last_blog) { ?>
-						<a href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/' . unserialize($last_blog->blog_category_slug)[$lang] . '/' .  unserialize($last_blog->slug)[$lang] . '/' . hashids_encrypt($last_blog->id)); ?>" class="list-group-item list-group-item-action"><?php echo unserialize($last_blog->title)[$lang]; ?></a>
+						<a href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/' . unserialize($last_blog->blog_category_slug)[$lang] . '/' .  unserialize($last_blog->slug)[$lang]); ?>" class="list-group-item list-group-item-action"><?php echo unserialize($last_blog->title)[$lang]; ?></a>
 					<?php } ?>
 				</div>
 			</div>

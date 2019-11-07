@@ -104,7 +104,9 @@ class Blog extends MX_Controller {
 			'meta_tag_moblie_keywords' => serialize($input_meta_tag_moblie_keywords),
 			'img_og_twitter' => serialize($input_img_og_twitter),
 			'title' => serialize($input_title),
-			'slug' => serialize($slug)
+			'slug' => serialize($slug),
+			'slug_en' => $slug_en,
+			'slug_th' => $slug_th
 		]);
 
 		// Set Session To View
@@ -178,6 +180,8 @@ class Blog extends MX_Controller {
 			'img_og_twitter' => serialize($input_img_og_twitter),
 			'title' => serialize($input_title),
 			'slug' => serialize($slug),
+			'slug_en' => $slug_en,
+			'slug_th' => $slug_th,
 			'updated_at' => date('Y-m-d H:i:s')
 		]);
 
@@ -304,6 +308,8 @@ class Blog extends MX_Controller {
 			'description_section' => serialize($input_description_section),
 			'body' => serialize($input_body),
 			'slug' => serialize($slug),
+			'slug_en' => $slug_en,
+			'slug_th' => $slug_th,
 			'category_blog_id' => $blog_category_id,
 			'tag_id' => count($this->input->post('tags')) > 0 ? implode(',', $this->input->post('tags')) : ''
 		]);
@@ -397,6 +403,8 @@ class Blog extends MX_Controller {
 			'description_section' => serialize($input_description_section),
 			'body' => serialize($input_body),
 			'slug' => serialize($slug),
+			'slug_en' => $slug_en,
+			'slug_th' => $slug_th,
 			'tag_id' => count($this->input->post('tags')) > 0 ? implode(',', $this->input->post('tags')) : '',
 			'updated_at' => date('Y-m-d H:i:s')
 		]);
