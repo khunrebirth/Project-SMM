@@ -162,7 +162,7 @@
 									<a class="d-block text-left" href=""><?php echo lang('menu_service'); ?></a>
 									<ul class="list-sitemap">
 										<?php foreach ($services as $service) { ?>
-											<li><a class="text-left" href="<?php echo base_url($lang . '/' . lang('menu_service') . '/' . unserialize($service->slug)[$lang] . '/' . hashids_encrypt($service->id)); ?>"><?php echo unserialize($service->title)[$lang]; ?></a></li>
+											<li><a class="text-left" href="<?php echo base_url($lang . '/' . lang('menu_service') . '/' . unserialize($service->slug)[$lang]); ?>"><?php echo unserialize($service->title)[$lang]; ?></a></li>
 										<?php } ?>
 									</ul>
 								</div>

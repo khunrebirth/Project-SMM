@@ -32,22 +32,17 @@
 <section id="about" class="showcase">
 	<div class="container-fluid p-0">
 		<div class="row no-gutters">
-			<div class="col-md-6 col-lg-6 order-lg-2 showcase-img d-none d-sm-block"
-				style="background-image: url('<?php echo base_url('storage/uploads/images/abouts/' . unserialize($about->img_section)[$lang]); ?>');">
+			<div class="col-md-6 col-lg-6 order-lg-2 showcase-img d-none d-sm-block" style="background-image: url('<?php echo base_url('storage/uploads/images/abouts/' . unserialize($about->img_section)[$lang]); ?>');">
 			</div>
 			<div class="col-xs-12 col-md-6 col-lg-6 order-lg-1 my-auto showcase-text text-center wow fadeInLeft">
 				<div class="title-about" style="">
-					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-about.png' : 'resources/front_end/images/title-about.png'); ?>"
-						class="img-fluid">
+					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-about.png' : 'resources/front_end/images/title-about.png'); ?>" class="img-fluid">
 				</div>
 				<h2 class="about__title--head mt-5 mb-4"><span>S</span>ocial Media Master</h2>
 				<div class="row justify-content-center">
 					<div class="col-xs-12 col-md-10 col-lg-8">
-						<p class="lead about__title--body mt-2 mb-4">
-							<?php echo unserialize($about->content_left)[$lang]; ?>
-						</p>
-						<a href="<?php echo base_url($lang . '/' . lang('menu_about')); ?>"
-							class="btn btn-primary"><?php echo lang('btn_read_more'); ?></a>
+						<p class="lead about__title--body mt-2 mb-4"><?php echo unserialize($about->content_left)[$lang]; ?></p>
+						<a href="<?php echo base_url($lang . '/' . lang('menu_about')); ?>" class="btn btn-primary"><?php echo lang('btn_read_more'); ?></a>
 					</div>
 				</div>
 			</div>
@@ -63,22 +58,14 @@
 		</div>
 		<div class="row">
 			<?php foreach ($services as $service) { ?>
-			<a href="<?php echo base_url($lang . '/' . lang('menu_service') . '/' . unserialize($service->slug)[$lang]); ?>"
-				class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05 ico-service">
-
+			<a href="<?php echo base_url($lang . '/' . lang('menu_service') . '/' . unserialize($service->slug)[$lang]); ?>" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05 ico-service">
 				<div class="wrap-icon-flip">
 					<img src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service->icon)[$lang]); ?>" class="img-fluid service__icon--resize">
 				</div>
 				<img src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service->icon)[$lang]); ?>" class="img-fluid service__icon--resize ico-service__img">
-
-				<p class="service__title--body">
-					<?php echo unserialize($service->title)[$lang]; ?>
-				</p>
+				<p class="service__title--body"><?php echo unserialize($service->title)[$lang]; ?></p>
 			</a>
 			<?php } ?>
-			<!-- <a href="#" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05 js-scroll-contact">
-				<img src="<?php // echo base_url('resources/front_end/images/ico_contact_01.png') ?>" class="img-fluid service__icon--resize">
-			</a> -->
 		</div>
 	</div>
 </section>
@@ -115,11 +102,8 @@
 				</div>
 			<?php } ?>
 		</div>
-
 	</div>
-		<p class="text-center col-12 mb-0">
-			<a href="<?php echo base_url($lang . '/' . lang('menu_our_clients') . '/'); ?>" class="btn btn-primary"><?php echo lang('btn_read_all'); ?></a>
-		</p>
+		<p class="text-center col-12 mb-0"><a href="<?php echo base_url($lang . '/' . lang('menu_our_clients') . '/'); ?>" class="btn btn-primary"><?php echo lang('btn_read_all'); ?></a></p>
 	</div>
 </section>
 
@@ -149,10 +133,7 @@
 				</div>
 			<?php } ?>
 		</div>
-
-		<p class="text-center col-12 mb-0">
-			<a href="<?php echo base_url($lang . '/' . lang('menu_portfolios')); ?>" class="btn btn-primary"><?php echo lang('btn_read_all'); ?></a>
-		</p>
+		<p class="text-center col-12 mb-0"><a href="<?php echo base_url($lang . '/' . lang('menu_portfolios')); ?>" class="btn btn-primary"><?php echo lang('btn_read_all'); ?></a></p>
 	</div>
 </section>
 
@@ -166,23 +147,18 @@
 			<?php foreach ($blogs as $blog) { ?>
 			<div class="col-xs-12 col-sm-6 col-lg-3" style="visibility: visible; animation-name: fadeInLeft;">
 				<article class="blog blog__modern">
-					<a class="blog__modern--figure" href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/' . unserialize($blog->blog_category_slug)[$lang] . '/' .  unserialize($blog->slug)[$lang] . '/' . hashids_encrypt($blog->id)); ?>">
-						<img src="<?php echo base_url('storage/uploads/images/blogs/' . unserialize($blog->img)[$lang]) ?>"
-							alt="<?php echo unserialize($blog->img_title_alt)[$lang]; ?>" width="370" height="307">
+					<a class="blog__modern--figure" href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/' . unserialize($blog->blog_category_slug)[$lang] . '/' .  unserialize($blog->slug)[$lang]); ?>">
+						<img src="<?php echo base_url('storage/uploads/images/blogs/' . unserialize($blog->img)[$lang]) ?>" alt="<?php echo unserialize($blog->img_title_alt)[$lang]; ?>" width="370" height="307">
 						<div class="blog__modern--time">
 							<time datetime="<?php echo $blog->created_at; ?>"><span class="blog__modern--time--month"><?php echo date_format(date_create($blog->created_at), 'm'); ?></span><span class="blog__modern--time--number"><?php echo date_format(date_create($blog->created_at), 'd'); ?></span></time>
 						</div>
 					</a>
 					<h4 class="blog__modern--title"><a href="#"><?php echo unserialize($blog->title)[$lang]; ?></a></h4>
-					<p class="blog__modern--text">
-						<?php echo unserialize($blog->description_section)[$lang]; ?>
-					</p>
+					<p class="blog__modern--text"><?php echo unserialize($blog->description_section)[$lang]; ?></p>
 				</article>
 			</div>
 			<?php } ?>
-			<p class="text-center col-12 mb-0">
-				<a href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/'); ?>" class="btn btn-primary"><?php echo lang('btn_read_all'); ?></a>
-			</p>
+			<p class="text-center col-12 mb-0"><a href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/'); ?>" class="btn btn-primary"><?php echo lang('btn_read_all'); ?></a></p>
 		</div>
 	</div>
 </section>
@@ -215,9 +191,7 @@
 				<div class="title-team" style="text-align: center; padding: 3rem 0.5rem 2rem;">
 					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-team.png' : 'resources/front_end/images/title-team.png'); ?>" class="img-fluid">
 				</div>
-				<p class="text-center col-12 mb-2">
-					<a href="<?php echo base_url($lang . '/' . lang('menu_teams') . '/'); ?>" class="btn btn-primary"><?php echo lang('btn_read_all'); ?></a>
-				</p>
+				<p class="text-center col-12 mb-2"><a href="<?php echo base_url($lang . '/' . lang('menu_teams') . '/'); ?>" class="btn btn-primary"><?php echo lang('btn_read_all'); ?></a></p>
 			</div>
 		</div>
 	</div>
@@ -255,15 +229,9 @@
 				<div class="row mb-5">
 					<div class="col-12 col-sm-12 col-md-11 col-lg-12">
 						<h2 class="text-secondary contact__title--head"><?php echo lang('page_contact_follow'); ?></h2>
-						<a href="#">
-							<img src="https://knockconsulting.com/images/icon-sm-facebook-round.svg" alt="Follow Us on Facebook" width="40" class="img-fluid m-0">
-						</a>
-						<a href="#">
-							<img src="https://knockconsulting.com/images/icon-sm-instagram-round.svg" alt="Follow Us on Instagram" width="40" class="img-fluid m-0">
-						</a>
-						<a href="#">
-							<img src="https://knockconsulting.com/images/icon-sm-youtube-round.svg" alt="Follow Us on Youtube" width="40" class="img-fluid m-0">
-						</a>
+						<a href="#"><img src="https://knockconsulting.com/images/icon-sm-facebook-round.svg" alt="Follow Us on Facebook" width="40" class="img-fluid m-0"></a>
+						<a href="#"><img src="https://knockconsulting.com/images/icon-sm-instagram-round.svg" alt="Follow Us on Instagram" width="40" class="img-fluid m-0"></a>
+						<a href="#"><img src="https://knockconsulting.com/images/icon-sm-youtube-round.svg" alt="Follow Us on Youtube" width="40" class="img-fluid m-0"></a>
 					</div>
 				</div>
 			</div>

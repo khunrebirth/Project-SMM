@@ -86,10 +86,10 @@
 												<td><?php echo unserialize($service->title)['th']; ?></td>
 												<td><?php echo $service->created_at; ?></td>
 												<td>
-													<a class="btn btn-warning" href="<?php echo base_url($lang . '/backoffice/page/services/list-service-ports/' . $service->id); ?>"><i class="far fa-view"></i> Items (<?php echo $service->counter; ?>)</a>
+													<a class="btn btn-warning" href="<?php echo base_url($lang . '/backoffice/page/services/list-service-ports/' . $service->id); ?>"><i class="far fa-view"></i> Items (<?php echo $service->counter_port; ?>)</a>
 												</td>
 												<td>
-													<a class="btn btn-warning" href="<?php echo base_url($lang . '/backoffice/page/services/list-service-clients/' . $service->id); ?>"><i class="far fa-view"></i> Items (<?php echo $service->counter; ?>)</a>
+													<a class="btn btn-warning" href="<?php echo base_url($lang . '/backoffice/page/services/list-service-clients/' . $service->id); ?>"><i class="far fa-view"></i> Items (<?php echo $service->counter_client; ?>)</a>
 												</td>
 												<td>
 													<div class="dropdown d-inline">
