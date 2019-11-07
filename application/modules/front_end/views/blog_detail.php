@@ -120,7 +120,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="title-client col-12" style="text-align: center; padding: 4rem;">
-				<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-blog.png' : 'resources/front_end/images/title-blog.png'); ?>" alt="" class="img-fluid">
+				<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-blog.png' : 'resources/front_end/images/title-blog.png'); ?>" class="img-fluid">
 			</div>
 		</div>
 		<div class="sec-blogs_content-01 row  flex-sm-column-reverse flex-column-reverse flex-md-column-reverse flex-lg-row">
@@ -136,7 +136,7 @@
 				<h3 class="text-center"><?php echo unserialize($blog->title)[$lang]; ?></h3>
 				<p class="txt-date-blog"><i class="far fa-calendar-alt"></i> <?php echo $blog->created_at; ?></p>
 				<figure class="text-center">
-					<img src="<?php echo base_url('storage/uploads/images/blogs/' . unserialize($blog->img)[$lang]); ?>" class="img-fluid" alt="">
+					<img src="<?php echo base_url('storage/uploads/images/blogs/' . unserialize($blog->img)[$lang]); ?>" class="img-fluid" alt="<?php echo unserialize($blog->img_title_alt)[$lang]; ?>">
 				</figure>
 				<?php echo unserialize($blog->body)[$lang]; ?>
 				<div class="wrap-tag-blog">
