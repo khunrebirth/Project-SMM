@@ -163,10 +163,11 @@
 
     .txt-about {
         text-align: left;
-        font-size: 1.3rem;
-        padding: 33px 90px 0;
+        font-size: 1.1rem;
+        padding: 33px 40px 0;
         color: #00264c;
         font-weight: normal;
+        line-height: 1.2;
     }
     .sec-about-vdo {
         background-color: #00264c;

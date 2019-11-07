@@ -7,7 +7,7 @@
     <title><?php if (!smm_is_mobile()) { echo $title; } else { echo $title_moblie; } ?></title>
 	<meta name="description" content="<?php if (!smm_is_mobile()) { echo $meta['description']; } else { echo $meta['description_moblie']; } ?>">
 	<meta name="keywords" content="<?php if (!smm_is_mobile()) { echo $meta['keyword']; } else { echo $meta['keyword_moblie']; } ?>">
-	<link rel="shortcut icon" href="<?php echo base_url('resources/front_end/images/favicon.ico'); ?>">
+    <link rel="icon" type="image/png" href="<?php echo base_url('resources/front_end/images/favicon.png'); ?>" />
 	<link rel="canonical" href="<?php echo current_url(); ?>" />
 	<meta property="og:locale" content="th_TH" />
 	<meta property="og:locale:alternate" content="en_US" />
