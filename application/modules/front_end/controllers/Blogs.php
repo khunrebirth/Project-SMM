@@ -109,6 +109,9 @@ class Blogs extends MX_Controller
 		$data['meta']['title'] = unserialize($page_content->meta_tag_title)[$this->lang];
 		$data['meta']['description'] = unserialize($page_content->meta_tag_description)[$this->lang];
 		$data['meta']['keyword'] = unserialize($page_content->meta_tag_keywords)[$this->lang];
+		$data['meta']['title_moblie'] = unserialize($page_content->meta_tag_moblie_title)[$this->lang];
+		$data['meta']['description_moblie'] = unserialize($page_content->meta_tag_moblie_description)[$this->lang];
+		$data['meta']['keyword_moblie'] = unserialize($page_content->meta_tag_moblie_keywords)[$this->lang];
 
 		// OG & Twitter
 		$data['og_twitter']['title'] = unserialize($page_content->meta_tag_title)[$this->lang];
@@ -183,7 +186,6 @@ class Blogs extends MX_Controller
 		$data['last_blogs'] = $this->Blog_model->get_last_blog(5);
 		$data['blog'] = $blog;
 		$data['tags'] = $this->filter_data_tags($blog);
-
 		$data['banner'] = $this->Banner_model->get_banner_active_by_id(3);
 
 		/*
