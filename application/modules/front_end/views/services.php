@@ -324,9 +324,7 @@
 	<div class="container-fluid text-center sec-home-service">
 		<div class="row">
 			<?php foreach ($services as $service_parent) { ?>
-				<a href="<?php echo base_url($lang . '/' . lang('menu_service') . '/' . unserialize($service_parent->slug)[$lang] . '/' . hashids_encrypt($service_parent->id)); ?>"
-				   class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05 ico-service">
-
+				<a href="<?php echo base_url($lang . '/' . lang('menu_service') . '/' . unserialize($service_parent->slug)[$lang] . '/' . hashids_encrypt($service_parent->id)); ?>" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05 ico-service">
 					<div class="wrap-icon-flip">
 						<img src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service_parent->icon)[$lang]); ?>" class="img-fluid service__icon--resize">
 					</div>
