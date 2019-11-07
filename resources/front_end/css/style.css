@@ -1664,3 +1664,35 @@ footer p {
 .goal_wrap i {
 	line-height: 1.5 !important;
 }
+
+.ttl-tags,
+.ttl-tags span {
+	position: relative;
+}
+.ttl-tags {
+	margin: 0 0 30px;
+}
+.ttl-tags span {
+	background-color: #fff;
+	padding: 0 15px;
+}
+.ttl-tags span::before {
+	content: '"';
+}
+.ttl-tags span::after {
+	content: '"';
+}
+.ttl-tags::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translate3d(0,-50%,0);
+	-webkit-transform: translate3d(0,-50%,0);
+	-moz-transform: translate3d(0,-50%,0);
+	-ms-transform: translate3d(0,-50%,0);
+	-o-transform: translate3d(0,-50%,0);
+	height: 1px;
+	width: 100%;
+	background-color: #00264c;
+}

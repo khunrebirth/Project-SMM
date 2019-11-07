@@ -140,17 +140,14 @@
 			</div>
 		</div>
 		<div class="sec-blogs-01 row">
-			<div class="col-12 col-lg-3 mb-5">
-				<ul class="list-catagory-client">
-					<?php foreach ($blog_categories as $key => $blog_category) { ?>
-						<li><a class="<?php if ($key == 0) { echo 'is-active'; } ?>" href="#categoryGroup-<?php echo $blog_category->id; ?>"><?php echo unserialize($blog_category->title)[$lang]; ?></a></li>
-					<?php } ?>
-				</ul>
+			
+			<div class="col-12 ">
+				<h3 class="ttl-tags"><span>บริการทำการตลาดผ่านโซเบียลมีเดีย</span></h3>
 			</div>
-			<div class="col-12 col-lg-9">
+			<div class="col-12 col-lg-12">
 				<div class="row row-60 row-sm">
 					<?php foreach ($blogs as $blog) { ?>
-						<div class="col-xs-12 col-sm-6 col-lg-4 item-blog categoryGroup-<?php echo $blog->category_blog_id; ?>" style="visibility: visible; animation-name: fadeInLeft;">
+						<div class="col-xs-12 col-sm-6 col-lg-3 item-blog categoryGroup-<?php echo $blog->category_blog_id; ?>" style="visibility: visible; animation-name: fadeInLeft;">
 							<article class="blog blog__modern">
 								<a class="blog__modern--figure" href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/' . unserialize($blog->blog_category_slug)[$lang] . '/' .  unserialize($blog->slug)[$lang]); ?>">
 									<img src="<?php echo base_url('storage/uploads/images/blogs/' . unserialize($blog->img)[$lang]) ?>" alt="<?php echo unserialize($blog->img_title_alt)[$lang]; ?>" width="370" height="307">
