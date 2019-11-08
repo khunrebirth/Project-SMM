@@ -17,15 +17,25 @@
 		<div class="row sec-client">
 			<div class="col-12 col-lg-3 wrap-fixed-menu mb-5">
 				<ul class="list-catagory-client">
+					<li class="ttl-list-catagory">
+						<img src="<?php echo base_url('resources/front_end/images/service-menu.png');?>" alt="">
+					</li>
 					<?php foreach ($client_categories as $key => $client_category) { ?>
-						<li><a class="<?php if ($key == 1) { echo 'is-active'; } ?>" href="#categoryGroup-<?php echo $client_category->id; ?>"><?php echo unserialize($client_category->title)[$lang]; ?></a></li>
+						<li>
+							<a class="<?php if ($key == 1) { echo 'is-active'; } ?>" href="#categoryGroup-<?php echo $client_category->id; ?>">
+								<figure>
+									<img src="<?php echo base_url('storage/uploads/images/clients/'.unserialize($client_category->icon)[$lang]); ?>" alt="">
+								</figure>
+								<span><?php echo unserialize($client_category->title)[$lang]; ?><span>
+							</a>
+						</li>
 					<?php } ?>
 				</ul>
 			</div>
 			<div class="col-12 col-lg-9 wrap-logo">
 				<div class="row">
 					<?php foreach ($clients as $client) { ?>
-						<div class="item-client col-md-3 col-12 mb-4 categoryGroup-<?php echo $client->category_id; ?>">
+						<div class="item-client col-md-3 col-4 mb-4 categoryGroup-<?php echo $client->category_id; ?>">
 							<img src="<?php echo base_url('storage/uploads/images/clients/' . unserialize($client->image)[$lang]); ?>" alt="<?php echo unserialize($client->title)[$lang]; ?>" class="img-fluid img-clients">
 							<span class="txt-decs-client text-center col-12 d-block"><?php echo unserialize($client->text)[$lang]; ?></span>
 						</div>

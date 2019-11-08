@@ -73,7 +73,7 @@
 <!-- Client -->
 <section id="client" class="wow fadeInUp">
 	<div class="container-fluid">
-		<div class="title-client" style="text-align: center; padding: 4rem;">
+		<div class="title-client" style="text-align: center; padding: 4rem 0;">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-cilent.png' : 'resources/front_end/images/title-cilent.png'); ?>" class="img-fluid">
 		</div>
 		<div class="row sec-client">
@@ -84,7 +84,7 @@
 			<?php } ?>
 			<?php $slice_clients = array_slice($clients, 0, 6); ?>
 			<?php foreach ($slice_clients as $client) { ?>
-				<div class="col-12 col-md-6 col-lg-2 mb-4">
+				<div class="col-6 col-md-3 col-lg-2 mb-4">
 					<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/clients/' . unserialize($client->image)[$lang]); ?>" alt="<?php echo unserialize($client->title)[$lang]; ?>">
 				</div>
 			<?php } ?>
@@ -98,7 +98,7 @@
 <section id="portfolio" class="wow fadeInUp">
 	<div class="container-fluid">
 		<div class="title-client" style="text-align: center; padding: 0 4rem 4rem;">
-			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-cilent.png' : 'resources/front_end/images/title-cilent.png'); ?>" class="img-fluid">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/our-port.png' : 'resources/front_end/images/our-port.png'); ?>" class="img-fluid">
 		</div>
 		<div class="row sec-client">
 			<?php foreach ($top_portfolios as $top_portfolio) { ?>
@@ -171,7 +171,7 @@
 				<div class="title-team" style="text-align: center; padding: 3rem 0.5rem 2rem;">
 					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-team.png' : 'resources/front_end/images/title-team.png'); ?>" class="img-fluid">
 				</div>
-				<p class="text-center col-12 mb-2"><a href="<?php echo base_url($lang . '/' . lang('menu_teams') . '/'); ?>" class="btn btn-primary"><?php echo lang('btn_read_all'); ?></a></p>
+				<p class="text-center col-12 mb-4"><a href="<?php echo base_url($lang . '/' . lang('menu_teams') . '/'); ?>" class="btn btn-primary"><?php echo lang('btn_read_all'); ?></a></p>
 			</div>
 		</div>
 	</div>
@@ -180,7 +180,7 @@
 <!-- Contact -->
 <section id="contact" class="wow fadeInUp">
 	<div class="container">
-		<div class="title-contact" style="text-align: center; padding: 4rem;">
+		<div class="title-contact" style="text-align: center; padding: 4rem 15px;">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-contact.png' : 'resources/front_end/images/title-contact.png'); ?>" class="img-fluid">
 		</div>
 		<div class="row">

@@ -15,17 +15,27 @@
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-cilent.png' : 'resources/front_end/images/title-cilent.png'); ?>" class="img-fluid">
         </div>
 		<div class="row sec-client">
-			<div class="col-12 col-lg-3 mb-5">
+			<div class="col-12 col-lg-3 mb-5 wrap-fixed-menu">
 				<ul class="list-catagory-client">
+					<li class="ttl-list-catagory">
+						<img src="<?php echo base_url('resources/front_end/images/service-menu.png');?>" alt="">
+					</li>
 					<?php foreach ($portfolio_categories as $key => $portfolio_category) { ?>
-						<li><a class="<?php if ($key == 5) { echo 'is-active'; } ?>" href="#categoryGroup-<?php echo $portfolio_category->id; ?>"><?php echo unserialize($portfolio_category->title)[$lang]; ?></a></li>
+						<li>
+							<a class="<?php if ($key == 5) { echo 'is-active'; } ?>" href="#categoryGroup-<?php echo $portfolio_category->id; ?>">
+								<figure>
+									<img src="<?php echo base_url('storage/uploads/images/portfolios/'.unserialize($portfolio_category->icon)[$lang]); ?>" alt="">
+								</figure>	
+								<span><?php echo unserialize($portfolio_category->title)[$lang]; ?></span>
+							</a>
+						</li>
 					<?php } ?>
 				</ul>
 			</div>
 			<div class="col-12 col-lg-9 wrap-logo">
 				<div class="row">
 					<?php foreach ($portfolios as $portfolio) { ?>
-						<div class="item-client col-md-4 mb-4 categoryGroup-<?php echo $portfolio->category_id; ?>">
+						<div class="item-client col-md-4 col-6 mb-4 categoryGroup-<?php echo $portfolio->category_id; ?>">
 							<img src="<?php echo base_url('storage/uploads/images/portfolios/' . unserialize($portfolio->image)[$lang]); ?>" alt="<?php echo unserialize($portfolio->title)[$lang]; ?>" class="img-fluid img-clients">
 						</div>
 					<?php } ?>
@@ -73,4 +83,16 @@
             }
         });
     });
+</script>
+<script>
+$(document).ready(function() {
+    $('.list-catagory-client').scrollToFixed({
+        marginTop: $('.navbar').outerHeight() + 30,
+        limit: function() {
+			var limit = $('.wrap-fixed-menu').offset().top + ( $('.wrap-fixed-menu').innerHeight() - $('.list-catagory-client').innerHeight());
+            return limit;
+        },
+		removeOffsets: true,
+    });
+});
 </script>
