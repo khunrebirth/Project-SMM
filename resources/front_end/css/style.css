@@ -1712,3 +1712,27 @@ footer p {
 	-ms-transform: translate3d(0,-50%,0);
 	-o-transform: translate3d(0,-50%,0);
 }
+
+
+/* .wrap-fixed-menu {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    height: auto;
+}
+.wrap-fixed-menu .list-catagory-client {
+	position: -webkit-sticky;
+    position: sticky;
+    bottom: 1rem;
+    -webkit-align-self: flex-end;
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+} */
