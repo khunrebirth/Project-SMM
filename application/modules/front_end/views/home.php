@@ -42,7 +42,7 @@
 				<div class="row justify-content-center">
 					<div class="col-xs-12 col-md-10 col-lg-8">
 						<p class="lead about__title--body mt-2 mb-4"><?php echo unserialize($about->content_left)[$lang]; ?></p>
-						<a href="<?php echo base_url($lang . '/' . lang('menu_about')); ?>" class="btn btn-primary"><?php echo lang('btn_read_more'); ?></a>
+						<a href="<?php echo base_url($lang . '/' . lang('menu_about')); ?>" class="btn btn-primary btn-full-sp"><?php echo lang('btn_read_more'); ?></a>
 					</div>
 				</div>
 			</div>
@@ -94,7 +94,7 @@
 			</div>
 		</div>
 	</div>
-		<p class="text-center col-12 mb-0"><a href="<?php echo base_url($lang . '/' . lang('menu_our_clients') . '/'); ?>" class="btn btn-primary"><?php echo lang('btn_read_all'); ?></a></p>
+		<p class="text-center col-12 mb-0"><a href="<?php echo base_url($lang . '/' . lang('menu_our_clients') . '/'); ?>" class="btn btn-primary btn-full-sp"><?php echo lang('btn_read_all'); ?></a></p>
 	</div>
 </section>
 
@@ -109,6 +109,10 @@
 				<?php foreach ($top_portfolios as $top_portfolio) { ?>
 					<div class="col-6 col-md-6 col-lg-3 mb-4">
 						<img src="<?php echo base_url('/storage/uploads/images/home/' . unserialize($top_portfolio->image)[$lang]); ?>" alt="<?php echo unserialize($top_portfolio->title)[$lang]; ?>" class="img-fluid img-clients">
+						<div class="caption-detail">
+							<p class="ttl">FashionIsland</p>
+							<p class="desc">เว็บไซต์</p>
+						</div>
 					</div>
 				<?php } ?>
 			</div>
@@ -117,11 +121,15 @@
 				<?php foreach ($slice_portfolios as $portfolio) { ?>
 					<div class="col-6 col-md-6 col-lg-3 mb-4">
 						<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/portfolios/' . unserialize($portfolio->image)[$lang]); ?>" alt="<?php echo unserialize($portfolio->title)[$lang]; ?>">
+						<div class="caption-detail">
+							<p class="ttl">FashionIsland</p>
+							<p class="desc">เว็บไซต์</p>
+						</div>
 					</div>
 				<?php } ?>
 			</div>
 		</div>
-		<p class="text-center col-12 mb-0"><a href="<?php echo base_url($lang . '/' . lang('menu_portfolios')); ?>" class="btn btn-primary"><?php echo lang('btn_read_all'); ?></a></p>
+		<p class="text-center col-12 mb-0"><a href="<?php echo base_url($lang . '/' . lang('menu_portfolios')); ?>" class="btn btn-primary btn-full-sp"><?php echo lang('btn_read_all'); ?></a></p>
 	</div>
 </section>
 
@@ -147,7 +155,7 @@
 				</article>
 			</div>
 			<?php } ?>
-			<p class="text-center col-12 mb-0"><a href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/'); ?>" class="btn btn-primary"><?php echo lang('btn_read_all'); ?></a></p>
+			<p class="text-center col-12 mb-0"><a href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/'); ?>" class="btn btn-primary btn-full-sp"><?php echo lang('btn_read_all'); ?></a></p>
 		</div>
 	</div>
 </section>
@@ -180,7 +188,7 @@
 				<div class="title-team ttl-home-img" style="text-align: center; padding: 3rem 0.5rem 2rem;">
 					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-team.png' : 'resources/front_end/images/title-team.png'); ?>" class="img-fluid">
 				</div>
-				<p class="text-center col-12 mb-4"><a href="<?php echo base_url($lang . '/' . lang('menu_teams') . '/'); ?>" class="btn btn-primary"><?php echo lang('btn_read_all'); ?></a></p>
+				<p class="text-center col-12 mb-4"><a href="<?php echo base_url($lang . '/' . lang('menu_teams') . '/'); ?>" class="btn btn-primary btn-full-sp"><?php echo lang('btn_read_all'); ?></a></p>
 			</div>
 		</div>
 	</div>

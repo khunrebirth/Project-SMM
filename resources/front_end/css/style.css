@@ -322,6 +322,12 @@ a:hover {
 	background-color: rgba(18, 125, 188, 0.1);
 }
 
+@media (max-width: 576px) {
+	.btn-full-sp{
+		width: 100%;
+	}
+}
+
 
 /* ==================================
  * SECTION (HOME)
@@ -352,6 +358,7 @@ a:hover {
 @media (max-width: 768px) {
 	.home__title--head {
 		padding: 0 15px;
+		font-size: 2.3rem;
 	}
 }
 @media (max-width: 992px) {
@@ -401,6 +408,7 @@ a:hover {
 	.home__title--body {
 		padding: 0 15px;
 		line-height: 1.4;
+		font-size: 1.4rem;
 	}
 }
 
@@ -1924,4 +1932,34 @@ footer p {
 		margin-top: 0 !important;
 		margin-bottom: 15px;
 	}
+}
+.caption-detail {
+	margin: 5px 0 0;
+}
+.caption-detail p {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	color: #555;
+}
+.caption-detail .ttl {
+	font-size: 1.3rem;
+	position: relative;
+}
+.caption-detail .ttl::after {
+	content: '';
+	width: 65%;
+	height: 1px;
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	transform: translate3d(-50%,0,0);
+	-webkit-transform: translate3d(-50%,0,0);
+	-moz-transform: translate3d(-50%,0,0);
+	-ms-transform: translate3d(-50%,0,0);
+	-o-transform: translate3d(-50%,0,0);
+	background-color: #d0d0d0;
+}
+.caption-detail .desc {
+	font-size: 1.1rem;
 }
