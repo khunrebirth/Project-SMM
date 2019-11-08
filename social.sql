@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 08, 2019 at 03:56 AM
+-- Generation Time: Nov 08, 2019 at 04:20 AM
 -- Server version: 5.7.17-log
 -- PHP Version: 5.6.30
 
@@ -749,6 +749,19 @@ CREATE TABLE `service_ports` (
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `service_ports`
+--
+
+INSERT INTO `service_ports` (`id`, `sort`, `service_id`, `img`, `img_title_alt`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(65, 0, 6, 'a:2:{s:2:\"en\";s:22:\"smm_ava_1572237075.jpg\";s:2:\"th\";s:23:\"smm_ava_15722370751.jpg\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-11-08 04:18:16', NULL, NULL),
+(66, 0, 6, 'a:2:{s:2:\"en\";s:41:\"smm_balanze-by-hydrohealth_1572237084.jpg\";s:2:\"th\";s:42:\"smm_balanze-by-hydrohealth_15722370841.jpg\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-11-08 04:18:16', NULL, NULL),
+(67, 0, 6, 'a:2:{s:2:\"en\";s:37:\"smm_blue-fish-solution_1572237092.jpg\";s:2:\"th\";s:38:\"smm_blue-fish-solution_15722370921.jpg\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-11-08 04:18:16', NULL, NULL),
+(68, 0, 6, 'a:2:{s:2:\"en\";s:23:\"smm_dfsk_1572237101.jpg\";s:2:\"th\";s:24:\"smm_dfsk_15722371011.jpg\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-11-08 04:18:16', NULL, NULL),
+(69, 0, 6, 'a:2:{s:2:\"en\";s:32:\"smm_fashionisland_1572237117.jpg\";s:2:\"th\";s:33:\"smm_fashionisland_15722371171.jpg\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-11-08 04:18:16', NULL, NULL),
+(70, 0, 6, 'a:2:{s:2:\"en\";s:34:\"smm_hatari-wireless_1572237127.jpg\";s:2:\"th\";s:35:\"smm_hatari-wireless_15722371271.jpg\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-11-08 04:18:16', NULL, NULL),
+(71, 0, 6, 'a:2:{s:2:\"en\";s:36:\"smm_infinityone-condo_1572237136.jpg\";s:2:\"th\";s:37:\"smm_infinityone-condo_15722371361.jpg\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', '2019-11-08 04:18:16', NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -1158,7 +1171,7 @@ ALTER TABLE `service_clients`
 -- AUTO_INCREMENT for table `service_ports`
 --
 ALTER TABLE `service_ports`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 --
 -- AUTO_INCREMENT for table `tags`
 --
