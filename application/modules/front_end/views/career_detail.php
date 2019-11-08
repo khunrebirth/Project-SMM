@@ -5,12 +5,19 @@
 		width: 100%;
 	}
 
-	.btn-back-job {
+	a.btn-back-job {
 		color: #fff;
 		background-color: #3d6d8a;
 		margin-right: 15px;
 		position: relative;
 		padding-left: 30px;
+		line-height: 1.5 !important;
+	}
+		
+	@media (max-width: 768px) {
+		a.btn-back-job {
+			margin-right: 0;
+		}
 	}
 
 	.btn-back-job:hover {
@@ -126,7 +133,7 @@
 								<form class="mt-2"
 									action="<?php echo base_url($lang . '/'. 'career-contact/send') ?>" method="post">
 									<div class="row">
-										<div class="col-md-12 col-12">
+										<div class="col-md-6 col-12">
 											<div class="form-group">
 												<input type="text" class="form-control" name="id"
 													placeholder="เลขบัตรประชาชน" required="">
@@ -139,46 +146,12 @@
 													required="">
 											</div>
 										</div>
-										<div class="col-md-6 col-12">
-											<div class="form-group">
-												<input type="text" class="form-control" name="surname" placeholder="นามสกุล"
-													required="">
-											</div>
-										</div>
 									</div>
 									<div class="row">
 										<label class="col-12" for="">วัน/เดือน/ปี เกิด</label>
-										<div class="col-md-4 col-4">
+										<div class="col-md-6 col-12">
 											<div class="form-group">
-												<select class="form-control" id="">
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
-												</select>
-											</div>
-										</div>
-										<div class="col-md-4 col-4">
-											<div class="form-group">
-												<select class="form-control" id="">
-													<option>มกราคม</option>
-													<option>กุมภาพันธ์</option>
-													<option>เมษายน</option>
-													<option>มีนาคม</option>
-													<option>พฤศภาคม</option>
-												</select>
-											</div>
-										</div>
-										<div class="col-md-4 col-4">
-											<div class="form-group">
-												<select class="form-control" id="">
-													<option>2544</option>
-													<option>2543</option>
-													<option>2542</option>
-													<option>2541</option>
-													<option>2540</option>
-												</select>
+												<input type="text" class="form-control inp_date_01" name="id"  required="">
 											</div>
 										</div>
 									</div>
@@ -274,20 +247,6 @@
 											</div>
 										</div>
 									</div>
-									<div class="row">
-										<div class="col-md-6 col-12">
-											<div class="form-group">
-												<input type="text" class="form-control" name="phone"
-													placeholder="โทรศัพท์บ้าน" required="">
-											</div>
-										</div>
-										<div class="col-md-6 col-12">
-											<div class="form-group">
-												<input type="text" class="form-control" name="phone"
-													placeholder="โทรศัพท์มือถือ" required="">
-											</div>
-										</div>
-									</div>
 									<div class="col-12 text-center">
 										<span class="btn btn-primary text-center btn-next">ต่อไป</span>
 									</div>
@@ -331,47 +290,24 @@
 										</div>
 									</div>
 									<div class="row">
-										<label class="col-12" for="">ตั้งแต่ วัน/เดือน/ปี</label>
-										<div class="col-md-4 col-4">
-											<div class="form-group">
-												<select class="form-control" id="">
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
-												</select>
+										<div class="col-12 col-md-6">
+											<div class="row">
+												<label class="col-12" for="">ตั้งแต่ วัน/เดือน/ปี</label>
+												<div class="col-md-12 col-12">
+													<div class="form-group">
+														<input type="text" class="form-control inp_date_02" name="surname" required="">
+													</div>
+												</div>
 											</div>
 										</div>
-										<div class="col-md-4 col-4">
-											<div class="form-group">
-												<select class="form-control" id="">
-													<option>มกราคม</option>
-													<option>กุมภาพันธ์</option>
-													<option>เมษายน</option>
-													<option>มีนาคม</option>
-													<option>พฤศภาคม</option>
-												</select>
-											</div>
-										</div>
-										<div class="col-md-4 col-4">
-											<div class="form-group">
-												<select class="form-control" id="">
-													<option>2544</option>
-													<option>2543</option>
-													<option>2542</option>
-													<option>2541</option>
-													<option>2540</option>
-												</select>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<label class="col-12" for="">ประสบการณ์การทำงาน</label>
-										<div class="col-md-6 col-12">
-											<div class="form-group">
-												<input type="text" class="form-control" name="email" placeholder="ปี"
-													required="">
+										<div class="col-12 col-md-6">
+											<div class="row">
+												<label class="col-12" for="">ประสบการณ์การทำงาน</label>
+												<div class="col-md-12 col-12">
+													<div class="form-group">
+														<input type="text" class="form-control " name="surname"  required="">
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -666,6 +602,7 @@
 <!-- SiteMap -->
 <?php include 'layouts/sitemap.php'; ?>
 
+
 <!-- Push Custom Scripts -->
 <script>
 	$(function () {
@@ -686,6 +623,13 @@
 			$('.carousel').carousel('pause');
 			$(".modal").animate({ scrollTop: 0}, 600);
 		});
+
+		$('.inp_date_01').datepicker({
+            uiLibrary: 'bootstrap4'
+        });
+		$('.inp_date_02').datepicker({
+            uiLibrary: 'bootstrap4'
+        });
 
 	});
 

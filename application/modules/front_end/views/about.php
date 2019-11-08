@@ -170,7 +170,7 @@
         line-height: 1.2;
     }
     .sec-about-vdo {
-        background-color: #00264c;
+        background-color: #01254e;
         min-height: auto;
     }
     .sec-about-story {
@@ -364,7 +364,7 @@
 
     $(document).ready(function(e) {
         var viewport =Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-        console.log(viewport);
+        // console.log(viewport);
 
 
         $('.btnDate').click(function(e){
@@ -375,8 +375,8 @@
             var diff = $(this).parent()[0].offsetLeft;
             $('.date .goal_wrap').removeClass('active bounce');
             $(this).addClass('active bounce');
-            console.log(diff);
-            console.log((viewport - diff));
+            // console.log(diff);
+            // console.log((viewport - diff));
             // TweenLite.to($('.date').parent(), 1, {x:((viewport*0.5) - diff), onComplete:function(){
             //         console.log('success');
             //         /*TweenLite.to($('.timeline'), 1, {top:"50%"});*/
@@ -384,7 +384,7 @@
         });
 
         $('.goal_real_estate').click(function(){
-            console.log('goal click');
+            // console.log('goal click');
             $('.test').fadeTo('ease', 0.3, function() {
                 $(this).css('background-image', 'url(<?php echo base_url('resources/front_end/images/about/about-smm1.jpg') ?>');
             }).fadeTo('slow', 1);
@@ -392,7 +392,7 @@
         });
 
         $('.goal_retirement').click(function(){
-            console.log('goal click');
+            // console.log('goal click');
             $('.test').fadeTo('ease', 0.3, function() {
                 $(this).css('background-image', 'url(<?php echo base_url('resources/front_end/images/about/about-smm2.jpg') ?>)');
             }).fadeTo('slow', 1);
@@ -400,7 +400,7 @@
         });
 
         $('.goal_involve').click(function(){
-            console.log('goal click');
+            // console.log('goal click');
             $('.test').fadeTo('ease', 0.3, function() {
                 $(this).css('background-image', 'url(<?php echo base_url('resources/front_end/images/about/about-smm3.jpg') ?>)');
             }).fadeTo('slow', 1);
@@ -409,7 +409,7 @@
 
 
         $('.goal_2017').click(function(){
-            console.log('goal click');
+            // console.log('goal click');
             $('.test').fadeTo('ease', 0.3, function() {
                 $(this).css('background-image', 'url(<?php echo base_url('resources/front_end/images/about/about-smm4.jpg') ?>)');
             }).fadeTo('slow', 1);
@@ -417,14 +417,15 @@
         });
 
         $('.goal_2019').click(function(){
-            console.log('goal click');
+            // console.log('goal click');
             $('.test').fadeTo('ease', 0.3, function() {
                 $(this).css('background-image', 'url(<?php echo base_url('resources/front_end/images/about/about-smm5.jpg') ?>)');
             }).fadeTo('slow', 1);
             $("#test").html('ดิจิทัลเอเจนซี่ชั้นนำเพราะยุคปัจจุบันผู้บริโภคมีพฤติกรรมที่เปลี่ยนไป หันหน้าเข้าสู่โลกออนไลน์มากขึ้น เราคือดิจิทัลเอเจนซี่ตัวจริงที่ติดตามความเคลื่อนไหวของโลกออนไลน์ทุกลมหายใจ เราพร้อมแล้วที่จะช่วยให้ธุรกิจของคุณโลดแล่นบนโลกออนไลน์อย่างมีประสิทธิภาพ')
         });
 
-
-
+    });
+    $(document).ready(function() {
+        document.getElementById('videoId').play();
     });
 </script>

@@ -3,7 +3,20 @@
  * Last Update  : 30/10/2019
  * Author       : Khun
  */
+ /* ==================================
+ * font-face  CordiaUPC
+====================================*/
+ @font-face {
+    font-family: 'CordiaUPC';
+    src: url('../font/CordiaUPC.eot');
+    src: url('../font/CordiaUPC.eot?#iefix') format('embedded-opentype'),
+         url('../font/CordiaUPC.woff') format('woff'),
+         url('../font/CordiaUPC.svg') format('svg'),
+         url('../font/CordiaUPC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 
+}
 
 /* ==================================
  * BASE
@@ -321,6 +334,11 @@ a:hover {
 	font-weight: 500;
 	line-height: 1;
 }
+@media (max-width: 768px) {
+	.home__title--head {
+		padding: 0 15px;
+	}
+}
 @media (max-width: 992px) {
 	.home__title--head {
 		font-size: 2rem;
@@ -353,6 +371,13 @@ a:hover {
 
 .home__title--body {
 	color: #666;
+}
+
+@media (max-width: 768px) {
+	.home__title--body {
+		padding: 0 15px;
+
+	}
 }
 
 @media (min-width: 992px) {
@@ -985,7 +1010,7 @@ a:hover {
 }
 
 .list-sitemap li a {
-	color: #b9b9b9;
+	color: #fff;
 	font-size: 1rem;
 	position: relative;
 	transition: all 0.3s;
@@ -996,7 +1021,7 @@ a:hover {
 }
 
 .list-sitemap li a:hover {
-	color: #fff;
+	color: #b9b9b9;
 }
 
 .list-sitemap li a::before {
@@ -1787,6 +1812,33 @@ footer p {
 	-o-transform: translate3d(0,-50%,0);
 }
 
+.sec-job-detail p ,
+.sec-job-detail font ,
+.sec-job-detail span ,
+.sec-job-detail a ,
+.sec-job-detail div,
+.sec-job-detail label,
+.sec-job-detail text,
+.sec-job-detail strong,
+.sec-job-detail b {
+	font-family: 'CordiaUPC', sans-serif !important;
+	font-size: 1rem !important;
+	line-height: 1.1 !important;
+}
+.sec-job-detail ul ,
+.sec-job-detail li ,
+.sec-job-detail ol {
+	font-family: 'CordiaUPC', sans-serif !important;
+	font-size: 1rem !important;
+	line-height: 1.1 !important;
+}
+.sec-job-detail h1, 
+.sec-job-detail h2, 
+.sec-job-detail h3, 
+.sec-job-detail h4, 
+.sec-job-detail h5 {
+	font-family: "Prompt", sans-serif !important;
+}
 
 /* .wrap-fixed-menu {
 	display: -webkit-box;
