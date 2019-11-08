@@ -35,7 +35,7 @@
 			<div class="section-header-breadcrumb">
 				<div class="breadcrumb-item"><a href="<?php echo base_url($lang . '/backoffice/dashboard'); ?>">Dashboard</a></div>
 				<div class="breadcrumb-item"><a href="#">Page: Home</a></div>
-				<div class="breadcrumb-item active">Portfolios</div>
+				<div class="breadcrumb-item active">Top Portfolios</div>
 			</div>
 		</div>
 		<div class="section-body">
@@ -43,7 +43,7 @@
 				<div class="col-12">
 					<div class="card">
 						<div class="card-header">
-							<h4>List of Portfolios</h4>
+							<h4>List of Top Portfolios (4 อันดับแรก จะถูกแสดงที่ Home Page)</h4>
 							<div class="card-header-action">
 								<button class="btn btn-primary" id="btnSort"><i class="fas fa-sort"></i> Sort</button>
 								<a href="<?php echo base_url($lang . '/backoffice/page/home/list-top-portfolios/create'); ?>" class="btn btn-primary">
@@ -86,8 +86,8 @@
 														<i class="fas fa-cog"></i> Manage
 													</button>
 													<div class="dropdown-menu">
-														<a class="dropdown-item has-icon" href="<?php echo base_url($lang . '/backoffice/page/home/list-top-clients/edit'); ?>"><i class="far fa-edit"></i> Edit</a>
-														<a class="dropdown-item has-icon" onclick="deleteTopPortfolio('<?php echo base_url($lang . '/backoffice/page/home/list-top-clients/destroy/' . $portfolio->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
+														<a class="dropdown-item has-icon" href="<?php echo base_url($lang . '/backoffice/page/home/list-top-portfolios/edit/' . $portfolio->id); ?>"><i class="far fa-edit"></i> Edit</a>
+														<a class="dropdown-item has-icon" onclick="deleteTopPortfolio('<?php echo base_url($lang . '/backoffice/page/home/list-top-portfolios/destroy/' . $portfolio->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
 													</div>
 												</div>
 											</td>
