@@ -425,6 +425,16 @@ a:hover {
 		padding: 3rem 0.5rem 2rem !important;
 	}
 }
+.ttl-home-img { }
+@media (max-width: 576px) {
+	.ttl-home-img {
+		text-align: center !important;
+	}
+	.ttl-home-img img {
+		width: calc( 100% - 60px );
+		margin: 0 auto;
+	}
+}
 .about__title--head span {
 	color: #0d84be;
 }

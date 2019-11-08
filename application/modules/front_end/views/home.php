@@ -35,7 +35,7 @@
 			<div class="col-md-6 col-lg-6 order-lg-2 showcase-img d-none d-sm-block" style="background-image: url('<?php echo base_url('storage/uploads/images/abouts/' . unserialize($about->img_section)[$lang]); ?>');">
 			</div>
 			<div class="col-xs-12 col-md-6 col-lg-6 order-lg-1 my-auto showcase-text text-center wow fadeInLeft">
-				<div class="title-about" style="">
+				<div class="title-about ttl-home-img" style="">
 					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-about.png' : 'resources/front_end/images/title-about.png'); ?>" class="img-fluid">
 				</div>
 				<h2 class="about__title--head mt-5 mb-4"><span>S</span>ocial Media Master</h2>
@@ -53,7 +53,7 @@
 <!-- Service -->
 <section id="service" class="wow fadeInUp" style="overflow:hidden">
 	<div class="container-fluid text-center sec-home-service">
-		<div class="title-service" style="text-align: left; padding: 4rem 0;">
+		<div class="title-service ttl-home-img" style="text-align: left; padding: 4rem 0;">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-service.png' : 'resources/front_end/images/title-service.png'); ?>" class="img-fluid">
 		</div>
 		<div class="row">
@@ -73,12 +73,12 @@
 <!-- Client -->
 <section id="client" class="wow fadeInUp">
 	<div class="container-fluid">
-		<div class="title-client" style="text-align: center; padding: 4rem 0;">
+		<div class="title-client ttl-home-img" style="text-align: center; padding: 4rem 0;">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-cilent.png' : 'resources/front_end/images/title-cilent.png'); ?>" class="img-fluid">
 		</div>
 		<div class="row sec-client">
 			<?php foreach ($top_clients as $top_client) { ?>
-				<div class="col-12 col-md-6 col-lg-2 mb-4">
+				<div class="col-6 col-md-6 col-lg-2 mb-4">
 					<img src="<?php echo base_url('/storage/uploads/images/home/' .  unserialize($top_client->image)[$lang]); ?>" alt="<?php echo unserialize($top_client->title)[$lang]; ?>" class="img-fluid img-clients">
 				</div>
 			<?php } ?>
@@ -97,18 +97,18 @@
 <!-- Portfolios -->
 <section id="portfolio" class="wow fadeInUp">
 	<div class="container-fluid">
-		<div class="title-client" style="text-align: center; padding: 0 4rem 4rem;">
+		<div class="title-client ttl-home-img" style="text-align: center; padding: 0 4rem 4rem;">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/our-port.png' : 'resources/front_end/images/our-port.png'); ?>" class="img-fluid">
 		</div>
 		<div class="row sec-client">
 			<?php foreach ($top_portfolios as $top_portfolio) { ?>
-				<div class="col-12 col-md-6 col-lg-3 mb-4">
+				<div class="col-6 col-md-6 col-lg-3 mb-4">
 					<img src="<?php echo base_url('/storage/uploads/images/home/' . unserialize($top_portfolio->image)[$lang]); ?>" alt="<?php echo unserialize($top_portfolio->title)[$lang]; ?>" class="img-fluid img-clients">
 				</div>
 			<?php } ?>
 			<?php $slice_portfolios = array_slice($portfolios, 0, 4); ?>
 			<?php foreach ($slice_portfolios as $portfolio) { ?>
-				<div class="col-12 col-md-6 col-lg-3 mb-4">
+				<div class="col-6 col-md-6 col-lg-3 mb-4">
 					<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/portfolios/' . unserialize($portfolio->image)[$lang]); ?>" alt="<?php echo unserialize($portfolio->title)[$lang]; ?>">
 				</div>
 			<?php } ?>
@@ -120,7 +120,7 @@
 <!-- Blog -->
 <section id="blog">
 	<div class="container-fluid">
-		<div class="title-client" style="text-align: center; padding: 4rem;">
+		<div class="title-client ttl-home-img" style="text-align: center; padding: 0 0 4rem;">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-blog.png' : 'resources/front_end/images/title-blog.png'); ?>" class="img-fluid">
 		</div>
 		<div class="row row-60 row-sm">

@@ -223,7 +223,8 @@
 		padding-bottom: 0;
 	}
 	
-    .box-text-service p {
+	.box-text-service p ,
+	.box-text-service div {
         line-height: 1.5;
 	}
 		
