@@ -5,10 +5,17 @@ class Top_client_model extends CI_Model {
 
     public function get_top_client_all()
     {
-        $query = $this->db->order_by('top_clients.sort', 'asc')->get('top_clients');
+        $query = $this->db->order_by('sort', 'asc')->get('top_clients');
 
         return $query->num_rows() > 0 ? $query->result() : [];
     }
+
+	public function get_client_home_custom($ignore)
+	{
+		$query = $this->db->where_not_in('id', $ignore)->order_by('sort', 'asc')->get('top_clients');
+
+		return $query->num_rows() > 0 ? $query->result() : [];
+	}
 
     public function get_top_client_by_id($id)
     {
@@ -16,6 +23,13 @@ class Top_client_model extends CI_Model {
 
         return $query->num_rows() > 0 ? $query->row() : false;
     }
+
+	public function get_top_client_by_limit($limit)
+	{
+		$query = $this->db->order_by('sort', 'asc')->limit($limit)->get('top_clients');
+
+		return $query->num_rows() > 0 ? $query->result() : [];
+	}
 
 	public function get_top_client_by_category_id($category_id)
 	{

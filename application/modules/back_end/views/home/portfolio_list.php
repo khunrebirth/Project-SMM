@@ -43,7 +43,7 @@
 				<div class="col-12">
 					<div class="card">
 						<div class="card-header">
-							<h4>List of Top Portfolios</h4>
+							<h4>List of Top Portfolios (4 อันดับแรก จะถูกแสดงที่ Home Page)</h4>
 							<div class="card-header-action">
 								<button class="btn btn-primary" id="btnSort"><i class="fas fa-sort"></i> Sort</button>
 								<a href="<?php echo base_url($lang . '/backoffice/page/home/list-top-portfolios/create'); ?>" class="btn btn-primary">

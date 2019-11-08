@@ -5,7 +5,7 @@ class Top_portfolio_model extends CI_Model {
 
     public function get_top_portfolio_all()
     {
-        $query = $this->db->order_by('top_portfolios.sort', 'asc')->get('top_portfolios');
+        $query = $this->db->order_by('sort', 'asc')->get('top_portfolios');
 
         return $query->num_rows() > 0 ? $query->result() : [];
     }
@@ -20,6 +20,13 @@ class Top_portfolio_model extends CI_Model {
 	public function get_top_portfolio_by_category_id($category_id)
 	{
 		$query = $this->db->where('category_id', $category_id)->order_by('sort', 'asc')->get('top_portfolios');
+
+		return $query->num_rows() > 0 ? $query->result() : [];
+	}
+
+	public function get_top_portfolio_by_limit($limit)
+	{
+		$query = $this->db->order_by('sort', 'asc')->limit($limit)->get('top_portfolios');
 
 		return $query->num_rows() > 0 ? $query->result() : [];
 	}

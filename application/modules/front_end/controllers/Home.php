@@ -19,7 +19,9 @@ class Home extends MX_Controller
 		// Model
 		$this->load->model('Page_model');
 		$this->load->model('Service_model');
+		$this->load->model('Top_client_model');
 		$this->load->model('Client_model');
+		$this->load->model('Top_portfolio_model');
 		$this->load->model('Portfolio_model');
 		$this->load->model('Blog_category_model');
 		$this->load->model('Blog_model');
@@ -38,8 +40,9 @@ class Home extends MX_Controller
 		*/
 
 		$page_content = $this->Page_model->get_page_by_id(2);
-		$clients = $this->Client_model->get_client_all();
-		$portfolios = $this->Portfolio_model->get_portfolio_all();
+
+		$clients = $this->Client_model->get_client_home_by_custom();
+		$portfolios = $this->Portfolio_model->get_portfolio_home_by_custom();
 		shuffle($clients);
 		shuffle($portfolios);
 
@@ -77,7 +80,9 @@ class Home extends MX_Controller
 		// Utilities
 		$data['about'] = $this->Page_model->get_page_by_id(3);
 		$data['services'] = $this->Service_model->get_service_all();
+		$data['top_clients'] = $this->Top_client_model->get_top_client_by_limit(6);
 		$data['clients'] = $clients;
+		$data['top_portfolios'] = $this->Top_portfolio_model->get_top_portfolio_by_limit(4);
 		$data['portfolios'] = $portfolios;
 		$data['blog_categories'] = $this->Blog_category_model->get_blog_category_all();
 		$data['blogs'] = $this->Blog_model->get_last_blog(4);

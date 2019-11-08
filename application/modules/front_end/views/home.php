@@ -77,25 +77,12 @@
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-cilent.png' : 'resources/front_end/images/title-cilent.png'); ?>" class="img-fluid">
 		</div>
 		<div class="row sec-client">
-			<div class="col-12 col-md-6 col-lg-2 mb-4">
-				<img src="<?php echo base_url('/storage/uploads/images/clients/smm_ava_15722370751.jpg');?>" alt="" class="img-fluid img-clients">
-			</div>
-			<div class="col-12 col-md-6 col-lg-2 mb-4">
-				<img src="<?php echo base_url('/storage/uploads/images/clients/smm_ava_15722370751.jpg');?>" alt="" class="img-fluid img-clients">
-			</div>
-			<div class="col-12 col-md-6 col-lg-2 mb-4">
-				<img src="<?php echo base_url('/storage/uploads/images/clients/smm_ava_15722370751.jpg');?>" alt="" class="img-fluid img-clients">
-			</div>
-			<div class="col-12 col-md-6 col-lg-2 mb-4">
-				<img src="<?php echo base_url('/storage/uploads/images/clients/smm_ava_15722370751.jpg');?>" alt="" class="img-fluid img-clients">
-			</div>
-			<div class="col-12 col-md-6 col-lg-2 mb-4">
-				<img src="<?php echo base_url('/storage/uploads/images/clients/smm_ava_15722370751.jpg');?>" alt="" class="img-fluid img-clients">
-			</div>
-			<div class="col-12 col-md-6 col-lg-2 mb-4">
-				<img src="<?php echo base_url('/storage/uploads/images/clients/smm_ava_15722370751.jpg');?>" alt="" class="img-fluid img-clients">
-			</div>
-			<?php $slice_clients = array_slice($clients, count($clients) - 6); ?>
+			<?php foreach ($top_clients as $top_client) { ?>
+				<div class="col-12 col-md-6 col-lg-2 mb-4">
+					<img src="<?php echo base_url('/storage/uploads/images/home/' .  unserialize($top_client->image)[$lang]); ?>" alt="<?php echo unserialize($top_client->title)[$lang]; ?>" class="img-fluid img-clients">
+				</div>
+			<?php } ?>
+			<?php $slice_clients = array_slice($clients, 0, 6); ?>
 			<?php foreach ($slice_clients as $client) { ?>
 				<div class="col-12 col-md-6 col-lg-2 mb-4">
 					<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/clients/' . unserialize($client->image)[$lang]); ?>" alt="<?php echo unserialize($client->title)[$lang]; ?>">
@@ -114,19 +101,12 @@
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-cilent.png' : 'resources/front_end/images/title-cilent.png'); ?>" class="img-fluid">
 		</div>
 		<div class="row sec-client">
-			<div class="col-12 col-md-6 col-lg-3 mb-4">
-				<img src="<?php echo base_url('/storage/uploads/images/clients/smm_ava_15722370751.jpg');?>" alt="" class="img-fluid img-clients">
-			</div>
-			<div class="col-12 col-md-6 col-lg-3 mb-4">
-				<img src="<?php echo base_url('/storage/uploads/images/clients/smm_ava_15722370751.jpg');?>" alt="" class="img-fluid img-clients">
-			</div>
-			<div class="col-12 col-md-6 col-lg-3 mb-4">
-				<img src="<?php echo base_url('/storage/uploads/images/clients/smm_ava_15722370751.jpg');?>" alt="" class="img-fluid img-clients">
-			</div>
-			<div class="col-12 col-md-6 col-lg-3 mb-4">
-				<img src="<?php echo base_url('/storage/uploads/images/clients/smm_ava_15722370751.jpg');?>" alt="" class="img-fluid img-clients">
-			</div>
-			<?php $slice_portfolios = array_slice($portfolios, count($portfolios) - 4); ?>
+			<?php foreach ($top_portfolios as $top_portfolio) { ?>
+				<div class="col-12 col-md-6 col-lg-3 mb-4">
+					<img src="<?php echo base_url('/storage/uploads/images/home/' . unserialize($top_portfolio->image)[$lang]); ?>" alt="<?php echo unserialize($top_portfolio->title)[$lang]; ?>" class="img-fluid img-clients">
+				</div>
+			<?php } ?>
+			<?php $slice_portfolios = array_slice($portfolios, 0, 4); ?>
 			<?php foreach ($slice_portfolios as $portfolio) { ?>
 				<div class="col-12 col-md-6 col-lg-3 mb-4">
 					<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/portfolios/' . unserialize($portfolio->image)[$lang]); ?>" alt="<?php echo unserialize($portfolio->title)[$lang]; ?>">
