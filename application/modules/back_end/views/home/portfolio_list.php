@@ -86,8 +86,8 @@
 														<i class="fas fa-cog"></i> Manage
 													</button>
 													<div class="dropdown-menu">
-														<a class="dropdown-item has-icon" href="<?php echo base_url($lang . '/backoffice/page/home/list-top-clients/edit'); ?>"><i class="far fa-edit"></i> Edit</a>
-														<a class="dropdown-item has-icon" onclick="deleteTopPortfolio('<?php echo base_url($lang . '/backoffice/page/home/list-top-clients/destroy/' . $portfolio->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
+														<a class="dropdown-item has-icon" href="<?php echo base_url($lang . '/backoffice/page/home/list-top-portfolios/edit/' . $portfolio->id); ?>"><i class="far fa-edit"></i> Edit</a>
+														<a class="dropdown-item has-icon" onclick="deleteTopPortfolio('<?php echo base_url($lang . '/backoffice/page/home/list-top-portfolios/destroy/' . $portfolio->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
 													</div>
 												</div>
 											</td>

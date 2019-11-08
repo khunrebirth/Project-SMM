@@ -189,7 +189,7 @@ class Home extends MX_Controller
 
 		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Page: Home - Top Clients - Edit(' . unserialize($client->title)['th'] . ')';
-		$this->data['content'] = 'clients/client_edit';
+		$this->data['content'] = 'home/client_edit';
 		$this->data['client'] = $client;
 
 		$this->load->view('app', $this->data);
@@ -342,6 +342,7 @@ class Home extends MX_Controller
 		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Page: Home - Top Portfolios - Edit(' . unserialize($portfolio->title)['th'] . ')';
 		$this->data['content'] = 'home/portfolio_edit';
+		$this->data['portfolio'] = $portfolio;
 
 		$this->load->view('app', $this->data);
 	}
