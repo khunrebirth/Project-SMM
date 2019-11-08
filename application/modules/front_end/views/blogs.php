@@ -141,10 +141,20 @@
 			</div>
 		</div>
 		<div class="sec-blogs-01 row">
-			<div class="col-12 col-lg-3 mb-5">
+			<div class="col-12 col-lg-3 mb-5 wrap-fixed-menu">
 				<ul class="list-catagory-client">
+					<li class="ttl-list-catagory">
+						<img src="<?php echo base_url('resources/front_end/images/service-menu.png');?>" alt="">
+					</li>
 					<?php foreach ($blog_categories as $key => $blog_category) { ?>
-						<li><a class="<?php if ($key == 0) { echo 'is-active'; } ?>" href="#categoryGroup-<?php echo $blog_category->id; ?>"><?php echo unserialize($blog_category->title)[$lang]; ?></a></li>
+						<li>
+							<a class="<?php if ($key == 0) { echo 'is-active'; } ?>" href="#categoryGroup-<?php echo $blog_category->id; ?>">
+								<figure>
+									<img src="<?php echo base_url('storage/uploads/images/blogs/'.unserialize($blog_category->icon)[$lang]); ?>" alt="">
+								</figure>	
+								<span><?php echo unserialize($blog_category->title)[$lang]; ?></span>
+							</a>
+						</li>
 					<?php } ?>
 				</ul>
 			</div>
@@ -207,4 +217,16 @@
 			}
 		});
 	});
+</script>
+<script>
+$(document).ready(function() {
+    $('.list-catagory-client').scrollToFixed({
+        marginTop: $('.navbar').outerHeight() + 30,
+        limit: function() {
+			var limit = $('.wrap-fixed-menu').offset().top + ( $('.wrap-fixed-menu').innerHeight() - $('.list-catagory-client').innerHeight());
+            return limit;
+        },
+		removeOffsets: true,
+    });
+});
 </script>
