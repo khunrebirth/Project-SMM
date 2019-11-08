@@ -110,7 +110,7 @@
 								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/home/list-top-clients'); ?>">&#9679; Top Clients</a>
 							</li>
 							<li class="<?php if ($this->uri->segment(2) == "home" && $this->uri->segment(3) == "list-top-portfolios") { echo 'active'; } ?>">
-								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/home/list-top-services'); ?>">&#9679; Top Portfolios</a>
+								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/home/list-top-portfolios'); ?>">&#9679; Top Portfolios</a>
 							</li>
 						</ul>
 					</li>

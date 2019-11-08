@@ -118,7 +118,7 @@ class Home extends MX_Controller
 	}
 
 	/***********************************
-	 * Client
+	 * Top Client
 	 * ********************************/
 
 	public function list_client()
@@ -140,7 +140,7 @@ class Home extends MX_Controller
 		$this->load->view('app', $this->data);
 	}
 
-	public function client_store($lang, $client_category_id)
+	public function client_store()
 	{
 		// Handle Image
 		$img_en = '';
@@ -195,10 +195,10 @@ class Home extends MX_Controller
 		$this->load->view('app', $this->data);
 	}
 
-	public function client_update($lang, $client_category_id, $client_id)
+	public function client_update($lang, $client_id)
 	{
 		// Get Old data
-		$client = $this->Client_model->get_client_by_id($client_id);
+		$client = $this->Top_client_model->get_top_client_by_id($client_id);
 
 		// Handle Image
 		$img_en = unserialize($client->image)['en'];
@@ -218,7 +218,7 @@ class Home extends MX_Controller
 		$input_text = ['en' => $this->input->post('text_en'), 'th' => $this->input->post('text_th')];
 
 		// Update Data
-		$update_client = $this->Client_model->update_client_by_id($client_id, [
+		$update_client = $this->Top_client_model->update_top_client_by_id($client_id, [
 			'image' => serialize($input_img),
 			'title' => serialize($input_title),
 			'text' => serialize($input_text),
@@ -230,7 +230,7 @@ class Home extends MX_Controller
 
 			logger_store([
 				'user_id' => $this->data['user']->id,
-				'detail' => 'แก้ไข Client (Clients Page)',
+				'detail' => 'แก้ไข Top Client (Home Page)',
 				'event' => 'update',
 				'ip' => $this->input->ip_address(),
 			]);
@@ -240,7 +240,7 @@ class Home extends MX_Controller
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
 
-		redirect($this->lang . '/backoffice/page/clients/list-clients/' . $client_category_id);
+		redirect($this->lang . '/backoffice/page/home/list-top-clients');
 	}
 
 	public function client_destroy($lang, $client_id)
@@ -248,15 +248,15 @@ class Home extends MX_Controller
 		$status = 500;
 		$response['success'] = 0;
 
-		$client = $this->Client_model->delete_client_by_id($client_id);
+		$delete_client = $this->Top_client_model->delete_top_client_by_id($client_id);
 
-		if ($client != false) {
+		if ($delete_client != false) {
 			$status = 200;
 			$response['success'] = 1;
 
 			logger_store([
 				'user_id' => $this->data['user']->id,
-				'detail' => 'ลบ Client (Clients Page)',
+				'detail' => 'ลบ Top Client (Home Page)',
 				'event' => 'delete',
 				'ip' => $this->input->ip_address(),
 			]);
@@ -269,43 +269,40 @@ class Home extends MX_Controller
 	}
 
 	/***********************************
-	 * Portfolio
+	 * Top Portfolio
 	 * ********************************/
 
-	public function list_portfolio($lang, $portfolio_category_id)
+	public function list_portfolio()
 	{
 		$this->data['lang'] = $this->lang;
-		$this->data['title'] = 'Page: Portfolios';
-		$this->data['content'] = 'portfolios/portfolio_list';
-		$this->data['portfolios'] = $this->Portfolio_model->get_portfolio_by_category_id($portfolio_category_id);
-		$this->data['category'] =  $this->Portfolio_category_model->get_portfolio_category_by_id($portfolio_category_id);
+		$this->data['title'] = 'Page: Home';
+		$this->data['content'] = 'home/portfolio_list';
+		$this->data['portfolios'] = $this->Top_portfolio_model->get_top_portfolio_all();
 
 		$this->load->view('app', $this->data);
 	}
 
-	public function portfolio_create($lang, $portfolio_category_id)
+	public function portfolio_create()
 	{
 		$this->data['lang'] = $this->lang;
-		$this->data['title'] = 'Page: Portfolios - Portfolios - Add';
-		$this->data['content'] = 'portfolios/portfolio_create';
-		$this->data['category'] =  $this->Portfolio_category_model->get_portfolio_category_by_id($portfolio_category_id);
-		$this->data['portfolio_categories'] = $this->Portfolio_category_model->get_portfolio_category_all();
+		$this->data['title'] = 'Page: Home - Top Portfolios - Add';
+		$this->data['content'] = 'home/portfolio_create';
 
 		$this->load->view('app', $this->data);
 	}
 
-	public function portfolio_store($lang, $portfolio_category_id)
+	public function portfolio_store()
 	{
 		// Handle Image
 		$img_en = '';
 		$img_th = '';
 
 		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
-			$img_en = $this->ddoo_upload_portfolio('img_en');
+			$img_en = $this->ddoo_upload_home('img_en');
 		}
 
 		if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
-			$img_th = $this->ddoo_upload_portfolio('img_th');
+			$img_th = $this->ddoo_upload_home('img_th');
 		}
 
 		// Filter Data
@@ -314,11 +311,10 @@ class Home extends MX_Controller
 		$input_text = ['en' => $this->input->post('text_en'), 'th' => $this->input->post('text_th')];
 
 		// Add Data
-		$add_portfolio = $this->Portfolio_model->insert_portfolio([
+		$add_portfolio = $this->Top_portfolio_model->insert_portfolio([
 			'image' => serialize($input_img),
 			'title' => serialize($input_title),
-			'text' => serialize($input_text),
-			'category_id' => $portfolio_category_id
+			'text' => serialize($input_text)
 		]);
 
 		// Set Session To View
@@ -326,7 +322,7 @@ class Home extends MX_Controller
 
 			logger_store([
 				'user_id' => $this->data['user']->id,
-				'detail' => 'เพิ่ม Portfolio (Portfolios Page)',
+				'detail' => 'เพิ่ม Top Portfolio (Home Page)',
 				'event' => 'add',
 				'ip' => $this->input->ip_address(),
 			]);
@@ -336,23 +332,21 @@ class Home extends MX_Controller
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
 
-		redirect($this->lang . '/backoffice/page/portfolios/list-portfolios/' . $portfolio_category_id);
+		redirect($this->lang . '/backoffice/page/home/list-top-portfolios');
 	}
 
-	public function portfolio_edit($lang, $portfolio_category_id, $portfolio_id)
+	public function portfolio_edit($lang, $portfolio_id)
 	{
-		$portfolio = $this->Portfolio_model->get_portfolio_by_id($portfolio_id);
+		$portfolio = $this->Top_portfolio_model->get_top_portfolio_by_id($portfolio_id);
 
 		$this->data['lang'] = $this->lang;
-		$this->data['title'] = 'Page: Portfolios - Portfolios - Edit(' . unserialize($portfolio->title)['th'] . ')';
-		$this->data['content'] = 'portfolios/portfolio_edit';
-		$this->data['portfolio'] = $portfolio;
-		$this->data['category'] =  $this->Portfolio_category_model->get_portfolio_category_by_id($portfolio_category_id);
+		$this->data['title'] = 'Page: Home - Top Portfolios - Edit(' . unserialize($portfolio->title)['th'] . ')';
+		$this->data['content'] = 'home/portfolio_edit';
 
 		$this->load->view('app', $this->data);
 	}
 
-	public function portfolio_update($lang, $portfolio_category_id, $portfolio_id)
+	public function portfolio_update($lang, $portfolio_id)
 	{
 		// Get Old data
 		$portfolio = $this->Portfolio_model->get_portfolio_by_id($portfolio_id);
@@ -362,11 +356,11 @@ class Home extends MX_Controller
 		$img_th = unserialize($portfolio->image)['th'];
 
 		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
-			$img_en = $this->ddoo_upload_portfolio('img_en');
+			$img_en = $this->ddoo_upload_home('img_en');
 		}
 
 		if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
-			$img_th = $this->ddoo_upload_portfolio('img_th');
+			$img_th = $this->ddoo_upload_home('img_th');
 		}
 
 		// Filter Data
@@ -375,7 +369,7 @@ class Home extends MX_Controller
 		$input_text = ['en' => $this->input->post('text_en'), 'th' => $this->input->post('text_th')];
 
 		// Update Data
-		$update_portfolio = $this->Portfolio_model->update_portfolio_by_id($portfolio_id, [
+		$update_portfolio = $this->Top_portfolio_model->update_top_portfolio_by_id($portfolio_id, [
 			'image' => serialize($input_img),
 			'title' => serialize($input_title),
 			'text' => serialize($input_text),
@@ -387,7 +381,7 @@ class Home extends MX_Controller
 
 			logger_store([
 				'user_id' => $this->data['user']->id,
-				'detail' => 'แก้ไข Portfolio (Portfolios Page)',
+				'detail' => 'แก้ไข Top Portfolio (Home Page)',
 				'event' => 'update',
 				'ip' => $this->input->ip_address(),
 			]);
@@ -397,7 +391,7 @@ class Home extends MX_Controller
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
 
-		redirect($this->lang . '/backoffice/page/portfolios/list-portfolios/' . $portfolio_id);
+		redirect($this->lang . '/backoffice/page/home/list-top-portfolios');
 	}
 
 	public function portfolio_destroy($lang, $portfolio_id)
@@ -405,7 +399,7 @@ class Home extends MX_Controller
 		$status = 500;
 		$response['success'] = 0;
 
-		$delete_portfolio = $this->Portfolio_model->delete_portfolio_by_id($portfolio_id);
+		$delete_portfolio = $this->Top_portfolio_model->delete_top_portfolio_by_id($portfolio_id);
 
 		if ($delete_portfolio != false) {
 			$status = 200;
@@ -413,7 +407,7 @@ class Home extends MX_Controller
 
 			logger_store([
 				'user_id' => $this->data['user']->id,
-				'detail' => 'ลบ Portfolio (Portfolios Page)',
+				'detail' => 'ลบ Top Portfolio (Home Page)',
 				'event' => 'delete',
 				'ip' => $this->input->ip_address(),
 			]);
@@ -429,12 +423,12 @@ class Home extends MX_Controller
 	 * Sorting (Using Ajax)
 	 * ********************************/
 
-	public function ajax_get_client_and_sort_show($lang, $category_id)
+	public function ajax_get_client_and_sort_show()
 	{
 		$status = 500;
 		$response['success'] = 0;
 
-		$clients = $this->Client_model->get_client_by_category_id($category_id);
+		$clients = $this->Top_client_model->get_top_client_all();
 
 		// Set Response
 		if ($clients != false) {
@@ -444,7 +438,7 @@ class Home extends MX_Controller
 			$counter = 1;
 			$html = '<ul id="sortable">';
 			foreach ($clients as $client) {
-				$html .= '<li id="' . $client->id . '" data-sort="' . $client->sort . '"><span style="padding: 0px 10px;">' . $counter . ' . </span><img alt="en" width="120px;" src="' . base_url('storage/uploads/images/clients/' . unserialize($client->image)['en']) . '">&nbsp;|&nbsp;<img alt="en" width="120px;" src="' . base_url('storage/uploads/images/clients/' . unserialize($client->image)['th']) . '"></li>';
+				$html .= '<li id="' . $client->id . '" data-sort="' . $client->sort . '"><span style="padding: 0px 10px;">' . $counter . ' . </span><img alt="en" width="120px;" src="' . base_url('storage/uploads/images/home/' . unserialize($client->image)['en']) . '">&nbsp;|&nbsp;<img alt="en" width="120px;" src="' . base_url('storage/uploads/images/home/' . unserialize($client->image)['th']) . '"></li>';
 				$counter++;
 			}
 			$html .= '</ul>';
@@ -473,7 +467,7 @@ class Home extends MX_Controller
 			$counter = 1;
 			foreach (array_combine($bundle_id, $bundle_sort) as $id => $sort) {
 
-				$this->Client_model->update_client_by_id($id, [
+				$this->Top_client_model->update_top_client_by_id($id, [
 					'sort' => $counter,
 					'updated_at' => date('Y-m-d H:i:s')
 				]);
@@ -486,7 +480,7 @@ class Home extends MX_Controller
 
 			logger_store([
 				'user_id' => $this->data['user']->id,
-				'detail' => 'จัดเรียง Client (Clients Page)',
+				'detail' => 'จัดเรียง Top Client (Home Page)',
 				'event' => 'sort_item',
 				'ip' => $this->input->ip_address(),
 			]);
@@ -499,12 +493,12 @@ class Home extends MX_Controller
 			->set_output(json_encode($response));
 	}
 
-	public function ajax_get_portfolio_and_sort_show($lang, $category_id)
+	public function ajax_get_portfolio_and_sort_show()
 	{
 		$status = 500;
 		$response['success'] = 0;
 
-		$portfolios = $this->Portfolio_model->get_portfolio_by_category_id($category_id);
+		$portfolios = $this->Top_portfolio_model->get_top_portfolio_all();
 
 		// Set Response
 		if ($portfolios != false) {
@@ -514,7 +508,7 @@ class Home extends MX_Controller
 			$counter = 1;
 			$html = '<ul id="sortable">';
 			foreach ($portfolios as $portfolio) {
-				$html .= '<li id="' . $portfolio->id . '" data-sort="' . $portfolio->sort . '"><span style="padding: 0px 10px;">' . $counter . ' . </span><img alt="en" width="120px;" src="' . base_url('storage/uploads/images/portfolios/' . unserialize($portfolio->image)['en']) . '">&nbsp;|&nbsp;<img alt="en" width="120px;" src="' . base_url('storage/uploads/images/portfolios/' . unserialize($portfolio->image)['th']) . '"></li>';
+				$html .= '<li id="' . $portfolio->id . '" data-sort="' . $portfolio->sort . '"><span style="padding: 0px 10px;">' . $counter . ' . </span><img alt="en" width="120px;" src="' . base_url('storage/uploads/images/home/' . unserialize($portfolio->image)['en']) . '">&nbsp;|&nbsp;<img alt="en" width="120px;" src="' . base_url('storage/uploads/images/home/' . unserialize($portfolio->image)['th']) . '"></li>';
 				$counter++;
 			}
 			$html .= '</ul>';
@@ -543,7 +537,7 @@ class Home extends MX_Controller
 			$counter = 1;
 			foreach (array_combine($bundle_id, $bundle_sort) as $id => $sort) {
 
-				$this->Portfolio_model->update_portfolio_by_id($id, [
+				$this->Top_portfolio_model->update_top_portfolio_by_id($id, [
 					'sort' => $counter,
 					'updated_at' => date('Y-m-d H:i:s')
 				]);
@@ -556,7 +550,7 @@ class Home extends MX_Controller
 
 			logger_store([
 				'user_id' => $this->data['user']->id,
-				'detail' => 'จัดเรียง Portfolio (Portfolios Page)',
+				'detail' => 'จัดเรียง Top Portfolio (Home Page)',
 				'event' => 'sort_item',
 				'ip' => $this->input->ip_address(),
 			]);

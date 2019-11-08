@@ -34,9 +34,8 @@
 		<div class="section-header">
 			<div class="section-header-breadcrumb">
 				<div class="breadcrumb-item"><a href="<?php echo base_url($lang . '/backoffice/dashboard'); ?>">Dashboard</a></div>
-				<div class="breadcrumb-item"><a href="#">Page: Portfolios</a></div>
-				<div class="breadcrumb-item"><a href="<?php echo base_url($lang . '/backoffice/page/portfolios/list-category-portfolios'); ?>">Categories</a></div>
-				<div class="breadcrumb-item active">Portfolios (Category: <?php echo unserialize($category->title)['th']; ?>)</div>
+				<div class="breadcrumb-item"><a href="#">Page: Home</a></div>
+				<div class="breadcrumb-item active">Portfolios</div>
 			</div>
 		</div>
 		<div class="section-body">
@@ -47,8 +46,7 @@
 							<h4>List of Portfolios</h4>
 							<div class="card-header-action">
 								<button class="btn btn-primary" id="btnSort"><i class="fas fa-sort"></i> Sort</button>
-								<input type="hidden" id="categoryId" value="<?php echo $category->id; ?>">
-								<a href="<?php echo base_url($lang . '/backoffice/page/portfolios/list-portfolios/create/' . $category->id); ?>" class="btn btn-primary">
+								<a href="<?php echo base_url($lang . '/backoffice/page/home/list-top-portfolios/create'); ?>" class="btn btn-primary">
 									<i class="fas fa-plus"></i> Add
 								</a>
 							</div>
@@ -75,25 +73,25 @@
 									</thead>
 									<tbody>
 									<?php
-										$counter = 1;
-										foreach ($portfolios as $portfolio) { ?>
-											<tr>
-												<td class="text-center"><?php echo $counter++; ?></td>
-												<td><img src="<?php echo base_url('storage/uploads/images/portfolios/' . unserialize($portfolio->image)['en']); ?>" width="120"></td>
-												<td><img src="<?php echo base_url('storage/uploads/images/portfolios/' . unserialize($portfolio->image)['th']); ?>" width="120"></td>
-												<td><?php echo $portfolio->created_at; ?></td>
-												<td>
-													<div class="dropdown d-inline">
-														<button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-															<i class="fas fa-cog"></i> Manage
-														</button>
-														<div class="dropdown-menu">
-															<a class="dropdown-item has-icon" href="<?php echo base_url($lang . '/backoffice/page/portfolios/list-portfolios/edit/' . $portfolio->category_id . '/' . $portfolio->id); ?>"><i class="far fa-edit"></i> Edit</a>
-															<a class="dropdown-item has-icon" onclick="deletePortfolio('<?php echo base_url($lang . '/backoffice/page/portfolios/list-portfolios/destroy/' . $portfolio->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
-														</div>
+									$counter = 1;
+									foreach ($portfolios as $portfolio) { ?>
+										<tr>
+											<td class="text-center"><?php echo $counter++; ?></td>
+											<td><img src="<?php echo base_url('storage/uploads/images/home/' . unserialize($portfolio->image)['en']); ?>" width="120"></td>
+											<td><img src="<?php echo base_url('storage/uploads/images/home/' . unserialize($portfolio->image)['th']); ?>" width="120"></td>
+											<td><?php echo $portfolio->created_at; ?></td>
+											<td>
+												<div class="dropdown d-inline">
+													<button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+														<i class="fas fa-cog"></i> Manage
+													</button>
+													<div class="dropdown-menu">
+														<a class="dropdown-item has-icon" href="<?php echo base_url($lang . '/backoffice/page/home/list-top-clients/edit'); ?>"><i class="far fa-edit"></i> Edit</a>
+														<a class="dropdown-item has-icon" onclick="deleteTopPortfolio('<?php echo base_url($lang . '/backoffice/page/home/list-top-clients/destroy/' . $portfolio->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
 													</div>
-												</td>
-											</tr>
+												</div>
+											</td>
+										</tr>
 									<?php } ?>
 									</tbody>
 								</table>
@@ -150,7 +148,7 @@
         }, 1 * 1500)
     }
 
-    function deletePortfolio(url) {
+    function deleteTopPortfolio(url) {
         swal({
             title: 'Are you sure ?',
             icon: 'warning',
@@ -189,11 +187,9 @@
     $(document).ready(function() {
         $('#btnSort').on('click', function() {
 
-            let $categoryId = $('#categoryId').val()
-
             $.ajax({
                 type: "POST",
-                url: window.base_url + '/' + window.langSite + '/backoffice/page/portfolios/list-portfolios/ajax/get/clients/sort/show/' + $categoryId,
+                url: window.base_url + '/' + window.langSite + '/backoffice/page/home/list-top-portfolios/ajax/get/clients/sort/show',
                 success: function(res) {
                     $('#custom-width-modal .modal-body').html(res.data)
                     $("#custom-width-modal #sortable").sortable({ placeholder: "ui-state-highlight" })
@@ -220,7 +216,7 @@
 
             $.ajax({
                 type: "POST",
-                url: window.base_url + '/' + window.langSite + '/backoffice/page/portfolios/list-portfolios/ajax/get/clients/sort/update',
+                url: window.base_url + '/' + window.langSite + '/backoffice/page/home/list-top-portfolios/ajax/get/clients/sort/update',
                 data: {
                     id: selectedID,
                     sort: selectedSort
