@@ -89,7 +89,7 @@
 														</button>
 														<div class="dropdown-menu">
 															<a class="dropdown-item has-icon" href="<?php echo base_url($lang . '/backoffice/page/portfolios/list-portfolios/edit/' . $portfolio->category_id . '/' . $portfolio->id); ?>"><i class="far fa-edit"></i> Edit</a>
-															<a class="dropdown-item has-icon" onclick="deleteClient('<?php echo base_url($lang . '/backoffice/page/portfolios/list-portfolios/destroy/' . $portfolio->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
+															<a class="dropdown-item has-icon" onclick="deletePortfolio('<?php echo base_url($lang . '/backoffice/page/portfolios/list-portfolios/destroy/' . $portfolio->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
 														</div>
 													</div>
 												</td>
@@ -150,7 +150,7 @@
         }, 1 * 1500)
     }
 
-    function deleteClient(url) {
+    function deletePortfolio(url) {
         swal({
             title: 'Are you sure ?',
             icon: 'warning',

@@ -106,6 +106,12 @@
 							<li class="<?php if ($this->uri->segment(2) == "home" && $this->uri->segment(3) == "content") { echo 'active'; } ?>">
 								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/home/content/2'); ?>">&#9679; Content</a>
 							</li>
+							<li class="<?php if ($this->uri->segment(2) == "home" && $this->uri->segment(3) == "list-top-clients") { echo 'active'; } ?>">
+								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/home/list-top-clients'); ?>">&#9679; Top Clients</a>
+							</li>
+							<li class="<?php if ($this->uri->segment(2) == "home" && $this->uri->segment(3) == "list-top-portfolios") { echo 'active'; } ?>">
+								<a class="nav-link" href="<?php echo base_url($lang . '/backoffice/page/home/list-top-portfolios'); ?>">&#9679; Top Portfolios</a>
+							</li>
 						</ul>
 					</li>
 					<li class="nav-item dropdown <?php if ($this->uri->segment(1) == "page" && $this->uri->segment(2) == "abouts") { echo 'active'; } ?>">

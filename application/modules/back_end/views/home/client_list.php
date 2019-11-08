@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css'); ?>">
 <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/datatables.net-select-bs4/css/select.bootstrap4.min.css'); ?>">
 <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/prismjs/themes/prism.css'); ?> ">
+<link href="<?php echo base_url('resources/back_end/assets/css/notiny.min.css'); ?>" rel="stylesheet">
 
 <!-- Custom CSS -->
 <style>
@@ -33,8 +34,8 @@
 		<div class="section-header">
 			<div class="section-header-breadcrumb">
 				<div class="breadcrumb-item"><a href="<?php echo base_url($lang . '/backoffice/dashboard'); ?>">Dashboard</a></div>
-				<div class="breadcrumb-item"><a href="#">Page: Portfolios</a></div>
-				<div class="breadcrumb-item active">Category</div>
+				<div class="breadcrumb-item"><a href="#">Page: Home</a></div>
+				<div class="breadcrumb-item">Top Clients</div>
 			</div>
 		</div>
 		<div class="section-body">
@@ -42,10 +43,10 @@
 				<div class="col-12">
 					<div class="card">
 						<div class="card-header">
-							<h4>List of Category</h4>
+							<h4>List of Top Clients</h4>
 							<div class="card-header-action">
 								<button class="btn btn-primary" id="btnSort"><i class="fas fa-sort"></i> Sort</button>
-								<a href="<?php echo base_url($lang . '/backoffice/page/portfolios/list-category-portfolios/create'); ?>" class="btn btn-primary">
+								<a href="<?php echo base_url($lang . '/backoffice/page/home/list-top-clients/create'); ?>" class="btn btn-primary">
 									<i class="fas fa-plus"></i> Add
 								</a>
 							</div>
@@ -64,37 +65,29 @@
 									<thead>
 									<tr>
 										<th class="text-center">#</th>
-										<th>Icon(en)</th>
-										<th>Icon(th)</th>
 										<th>Title(en)</th>
 										<th>Title(th)</th>
 										<th>Created at</th>
-										<th>Items</th>
 										<th>Action</th>
 									</tr>
 									</thead>
 									<tbody>
 									<?php
 										$counter = 1;
-										foreach ($categories as $category) { ?>
+										foreach ($clients as $client) { ?>
 											<tr>
 												<td class="text-center"><?php echo $counter++; ?></td>
-												<td><img src="<?php echo base_url('storage/uploads/images/portfolios/' . unserialize($category->icon)['en']); ?>" width="40"></td>
-												<td><img src="<?php echo base_url('storage/uploads/images/portfolios/' . unserialize($category->icon)['th']); ?>" width="40"></td>
-												<td><?php echo unserialize($category->title)['en']; ?></td>
-												<td><?php echo unserialize($category->title)['th']; ?></td>
-												<td><?php echo $category->created_at; ?></td>
-												<td>
-													<a class="btn btn-warning" href="<?php echo base_url($lang . '/backoffice/page/portfolios/list-portfolios/' . $category->id); ?>"><i class="far fa-view"></i> Items (<?php echo $category->counter; ?>)</a>
-												</td>
+												<td><img src="<?php echo base_url('storage/uploads/images/home/' . unserialize($client->image)['en']); ?>" width="120"></td>
+												<td><img src="<?php echo base_url('storage/uploads/images/home/' . unserialize($client->image)['th']); ?>" width="120"></td>
+												<td><?php echo $client->created_at; ?></td>
 												<td>
 													<div class="dropdown d-inline">
 														<button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 															<i class="fas fa-cog"></i> Manage
 														</button>
 														<div class="dropdown-menu">
-															<a class="dropdown-item has-icon" href="<?php echo base_url($lang . '/backoffice/page/portfolios/list-category-portfolios/edit/' . $category->id); ?>"><i class="far fa-edit"></i> Edit</a>
-															<a class="dropdown-item has-icon" onclick="deleteCategory('<?php echo base_url($lang . '/backoffice/page/portfolios/list-category-portfolios/destroy/' . $category->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
+															<a class="dropdown-item has-icon" href="<?php echo base_url($lang . '/backoffice/page/home/list-top-clients/edit/' . $client->id); ?>"><i class="far fa-edit"></i> Edit</a>
+															<a class="dropdown-item has-icon" onclick="deleteClient('<?php echo base_url($lang . '/backoffice/page/home/list-top-clients/destroy/' . $client->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
 														</div>
 													</div>
 												</td>
@@ -155,7 +148,7 @@
         }, 1 * 1500)
     }
 
-    function deleteCategory(url) {
+    function deleteClient(url) {
         swal({
             title: 'Are you sure ?',
             icon: 'warning',
@@ -194,9 +187,11 @@
     $(document).ready(function() {
         $('#btnSort').on('click', function() {
 
+            let $categoryId = $('#categoryId').val()
+
             $.ajax({
                 type: "POST",
-                url: window.base_url + '/' + window.langSite + '/backoffice/page/portfolios/list-category-portfolios/ajax/get/category-clients/sort/show',
+                url: window.base_url + '/' + window.langSite + '/backoffice/page/home/list-top-clients/ajax/get/clients/sort/show',
                 success: function(res) {
                     $('#custom-width-modal .modal-body').html(res.data)
                     $("#custom-width-modal #sortable").sortable({ placeholder: "ui-state-highlight" })
@@ -223,7 +218,7 @@
 
             $.ajax({
                 type: "POST",
-                url: window.base_url + '/' + window.langSite + '/backoffice/page/portfolios/list-category-portfolios/ajax/get/category-clients/sort/update',
+                url: window.base_url + '/' + window.langSite + '/backoffice/page/home/list-top-clients/ajax/get/clients/sort/update',
                 data: {
                     id: selectedID,
                     sort: selectedSort

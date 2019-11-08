@@ -165,6 +165,27 @@ $route['(\w{2})/ขอบคุณ'] = 'front_end/Thank_you';
 		$route['(\w{2})/backoffice/page/home/content/(:any)'] = 'back_end/Home/edit_content/$1/$2';
 		$route['(\w{2})/backoffice/page/home/content/update/(:any)'] = 'back_end/Home/update_content/$1/$2';
 
+		// Clients
+		$route['(\w{2})/backoffice/page/home/list-top-clients'] = 'back_end/Home/list_client';
+		$route['(\w{2})/backoffice/page/home/list-top-clients/create'] = 'back_end/Home/client_create';
+		$route['(\w{2})/backoffice/page/home/list-top-clients/store'] = 'back_end/Home/client_store';
+		$route['(\w{2})/backoffice/page/home/list-top-clients/edit/(:any)'] = "back_end/Home/client_edit/$1/$2";
+		$route['(\w{2})/backoffice/page/home/list-top-clients/update/(:any)'] = "back_end/Home/client_update/$1/$2";
+		$route['(\w{2})/backoffice/page/home/list-top-clients/destroy/(:any)'] = "back_end/Home/client_destroy/$1/$2";
+		$route['(\w{2})/backoffice/page/home/list-top-clients/ajax/get/clients/sort/show'] = 'back_end/Home/ajax_get_client_and_sort_show';
+		$route['(\w{2})/backoffice/page/home/list-top-clients/ajax/get/clients/sort/update'] = 'back_end/Home/ajax_get_client_and_sort_update';
+
+		// Portfolios
+		$route['(\w{2})/backoffice/page/home/list-top-portfolios'] = 'back_end/Home/list_portfolio/$1/$2';
+		$route['(\w{2})/backoffice/page/home/list-top-portfolios/create'] = 'back_end/Home/portfolio_create';
+		$route['(\w{2})/backoffice/page/home/list-top-portfolios/store'] = 'back_end/Home/portfolio_store';
+		$route['(\w{2})/backoffice/page/home/list-top-portfolios/edit/(:any)'] = "back_end/Home/portfolio_edit/$1/$2";
+		$route['(\w{2})/backoffice/page/home/list-top-portfolios/update/(:any)'] = "back_end/Home/portfolio_update/$1/$2";
+		$route['(\w{2})/backoffice/page/home/list-top-portfolios/destroy/(:any)'] = "back_end/Home/portfolio_destroy/$1/$2";
+		$route['(\w{2})/backoffice/page/home/list-top-portfolios/ajax/get/clients/sort/show'] = 'back_end/Home/ajax_get_portfolio_and_sort_show';
+		$route['(\w{2})/backoffice/page/home/list-top-portfolios/ajax/get/clients/sort/update'] = 'back_end/Home/ajax_get_portfolio_and_sort_update';
+
+
 		/*
 		| -------------------------------------------------------------------------
 		| Abouts
