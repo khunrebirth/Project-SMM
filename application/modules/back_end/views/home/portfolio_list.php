@@ -35,7 +35,7 @@
 			<div class="section-header-breadcrumb">
 				<div class="breadcrumb-item"><a href="<?php echo base_url($lang . '/backoffice/dashboard'); ?>">Dashboard</a></div>
 				<div class="breadcrumb-item"><a href="#">Page: Home</a></div>
-				<div class="breadcrumb-item active">Portfolios</div>
+				<div class="breadcrumb-item active">Top Portfolios</div>
 			</div>
 		</div>
 		<div class="section-body">
@@ -43,7 +43,7 @@
 				<div class="col-12">
 					<div class="card">
 						<div class="card-header">
-							<h4>List of Portfolios</h4>
+							<h4>List of Top Portfolios</h4>
 							<div class="card-header-action">
 								<button class="btn btn-primary" id="btnSort"><i class="fas fa-sort"></i> Sort</button>
 								<a href="<?php echo base_url($lang . '/backoffice/page/home/list-top-portfolios/create'); ?>" class="btn btn-primary">
