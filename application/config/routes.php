@@ -185,7 +185,6 @@ $route['(\w{2})/ขอบคุณ'] = 'front_end/Thank_you';
 		$route['(\w{2})/backoffice/page/home/list-top-portfolios/ajax/get/clients/sort/show'] = 'back_end/Home/ajax_get_portfolio_and_sort_show';
 		$route['(\w{2})/backoffice/page/home/list-top-portfolios/ajax/get/clients/sort/update'] = 'back_end/Home/ajax_get_portfolio_and_sort_update';
 
-
 		/*
 		| -------------------------------------------------------------------------
 		| Abouts
