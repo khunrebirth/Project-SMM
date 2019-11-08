@@ -68,8 +68,8 @@
 										<th>Icon(th)</th>
 										<th>Title(en)</th>
 										<th>Title(th)</th>
-										<th>Items</th>
 										<th>Created at</th>
+										<th>Items</th>
 										<th>Action</th>
 									</tr>
 									</thead>

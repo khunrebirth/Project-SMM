@@ -28,6 +28,8 @@ class Home extends MX_Controller
 		// Model
 		$this->load->model('User_model');
 		$this->load->model('Page_model');
+		$this->load->model('Top_client_model');
+		$this->load->model('Top_portfolio_model');
 
 		// Language
 		$this->lang = $this->config->item('language_abbr');
@@ -40,6 +42,10 @@ class Home extends MX_Controller
 
 		$this->data['user'] = $this->User_model->get_user_by_id($this->session->userdata('user_id'));
 	}
+
+	/***********************************
+	 * Content
+	 * ********************************/
 
 	public function edit_content($lang, $id)
 	{
@@ -109,6 +115,458 @@ class Home extends MX_Controller
 		}
 
 		redirect($lang . '/backoffice/page/home/content/' . $page_home_id);
+	}
+
+	/***********************************
+	 * Client
+	 * ********************************/
+
+	public function list_client()
+	{
+		$this->data['lang'] = $this->lang;
+		$this->data['title'] = 'Page: Home';
+		$this->data['content'] = 'home/client_list';
+		$this->data['clients'] = $this->Top_client_model->get_top_client_all();
+
+		$this->load->view('app', $this->data);
+	}
+
+	public function client_create()
+	{
+		$this->data['lang'] = $this->lang;
+		$this->data['title'] = 'Page: Home - Top Clients - Add';
+		$this->data['content'] = 'home/client_create';
+
+		$this->load->view('app', $this->data);
+	}
+
+	public function client_store($lang, $client_category_id)
+	{
+		// Handle Image
+		$img_en = '';
+		$img_th = '';
+
+		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
+			$img_en = $this->ddoo_upload_home('img_en');
+		}
+
+		if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
+			$img_th = $this->ddoo_upload_home('img_th');
+		}
+
+		// Filter Data
+		$input_img = ['en' => $img_en, 'th' => $img_th];
+		$input_title = ['en' => $this->input->post('img_title_alt_en'), 'th' => $this->input->post('img_title_alt_th')];
+		$input_text = ['en' => $this->input->post('text_en'), 'th' => $this->input->post('text_th')];
+
+		$add_client = $this->Top_client_model->insert_top_client([
+			'image' => serialize($input_img),
+			'title' => serialize($input_title),
+			'text' => serialize($input_text),
+		]);
+
+		// Set Session To View
+		if ($add_client) {
+
+			logger_store([
+				'user_id' => $this->data['user']->id,
+				'detail' => 'เพิ่ม Top Client (Home Page)',
+				'event' => 'add',
+				'ip' => $this->input->ip_address(),
+			]);
+
+			$this->session->set_flashdata('success', 'Add Done');
+		} else {
+			$this->session->set_flashdata('error', 'Something wrong');
+		}
+
+		redirect($this->lang . '/backoffice/page/home/list-top-clients');
+	}
+
+	public function client_edit($lang, $client_id)
+	{
+		$client = $this->Top_client_model->get_top_client_by_id($client_id);
+
+		$this->data['lang'] = $this->lang;
+		$this->data['title'] = 'Page: Home - Top Clients - Edit(' . unserialize($client->title)['th'] . ')';
+		$this->data['content'] = 'clients/client_edit';
+		$this->data['client'] = $client;
+
+		$this->load->view('app', $this->data);
+	}
+
+	public function client_update($lang, $client_category_id, $client_id)
+	{
+		// Get Old data
+		$client = $this->Client_model->get_client_by_id($client_id);
+
+		// Handle Image
+		$img_en = unserialize($client->image)['en'];
+		$img_th = unserialize($client->image)['th'];
+
+		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
+			$img_en = $this->ddoo_upload_home('img_en');
+		}
+
+		if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
+			$img_th = $this->ddoo_upload_home('img_th');
+		}
+
+		// Filter Data
+		$input_img = ['en' => $img_en, 'th' => $img_th];
+		$input_title = ['en' => $this->input->post('img_title_alt_en'), 'th' => $this->input->post('img_title_alt_th')];
+		$input_text = ['en' => $this->input->post('text_en'), 'th' => $this->input->post('text_th')];
+
+		// Update Data
+		$update_client = $this->Client_model->update_client_by_id($client_id, [
+			'image' => serialize($input_img),
+			'title' => serialize($input_title),
+			'text' => serialize($input_text),
+			'updated_at' => date('Y-m-d H:i:s')
+		]);
+
+		// Set Session To View
+		if ($update_client) {
+
+			logger_store([
+				'user_id' => $this->data['user']->id,
+				'detail' => 'แก้ไข Client (Clients Page)',
+				'event' => 'update',
+				'ip' => $this->input->ip_address(),
+			]);
+
+			$this->session->set_flashdata('success', 'Update Done');
+		} else {
+			$this->session->set_flashdata('error', 'Something wrong');
+		}
+
+		redirect($this->lang . '/backoffice/page/clients/list-clients/' . $client_category_id);
+	}
+
+	public function client_destroy($lang, $client_id)
+	{
+		$status = 500;
+		$response['success'] = 0;
+
+		$client = $this->Client_model->delete_client_by_id($client_id);
+
+		if ($client != false) {
+			$status = 200;
+			$response['success'] = 1;
+
+			logger_store([
+				'user_id' => $this->data['user']->id,
+				'detail' => 'ลบ Client (Clients Page)',
+				'event' => 'delete',
+				'ip' => $this->input->ip_address(),
+			]);
+		}
+
+		return $this->output
+			->set_status_header($status)
+			->set_content_type('application/json')
+			->set_output(json_encode($response));
+	}
+
+	/***********************************
+	 * Portfolio
+	 * ********************************/
+
+	public function list_portfolio($lang, $portfolio_category_id)
+	{
+		$this->data['lang'] = $this->lang;
+		$this->data['title'] = 'Page: Portfolios';
+		$this->data['content'] = 'portfolios/portfolio_list';
+		$this->data['portfolios'] = $this->Portfolio_model->get_portfolio_by_category_id($portfolio_category_id);
+		$this->data['category'] =  $this->Portfolio_category_model->get_portfolio_category_by_id($portfolio_category_id);
+
+		$this->load->view('app', $this->data);
+	}
+
+	public function portfolio_create($lang, $portfolio_category_id)
+	{
+		$this->data['lang'] = $this->lang;
+		$this->data['title'] = 'Page: Portfolios - Portfolios - Add';
+		$this->data['content'] = 'portfolios/portfolio_create';
+		$this->data['category'] =  $this->Portfolio_category_model->get_portfolio_category_by_id($portfolio_category_id);
+		$this->data['portfolio_categories'] = $this->Portfolio_category_model->get_portfolio_category_all();
+
+		$this->load->view('app', $this->data);
+	}
+
+	public function portfolio_store($lang, $portfolio_category_id)
+	{
+		// Handle Image
+		$img_en = '';
+		$img_th = '';
+
+		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
+			$img_en = $this->ddoo_upload_portfolio('img_en');
+		}
+
+		if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
+			$img_th = $this->ddoo_upload_portfolio('img_th');
+		}
+
+		// Filter Data
+		$input_img = ['en' => $img_en, 'th' => $img_th];
+		$input_title = ['en' => $this->input->post('img_title_alt_en'), 'th' => $this->input->post('img_title_alt_th')];
+		$input_text = ['en' => $this->input->post('text_en'), 'th' => $this->input->post('text_th')];
+
+		// Add Data
+		$add_portfolio = $this->Portfolio_model->insert_portfolio([
+			'image' => serialize($input_img),
+			'title' => serialize($input_title),
+			'text' => serialize($input_text),
+			'category_id' => $portfolio_category_id
+		]);
+
+		// Set Session To View
+		if ($add_portfolio) {
+
+			logger_store([
+				'user_id' => $this->data['user']->id,
+				'detail' => 'เพิ่ม Portfolio (Portfolios Page)',
+				'event' => 'add',
+				'ip' => $this->input->ip_address(),
+			]);
+
+			$this->session->set_flashdata('success', 'Add Done');
+		} else {
+			$this->session->set_flashdata('error', 'Something wrong');
+		}
+
+		redirect($this->lang . '/backoffice/page/portfolios/list-portfolios/' . $portfolio_category_id);
+	}
+
+	public function portfolio_edit($lang, $portfolio_category_id, $portfolio_id)
+	{
+		$portfolio = $this->Portfolio_model->get_portfolio_by_id($portfolio_id);
+
+		$this->data['lang'] = $this->lang;
+		$this->data['title'] = 'Page: Portfolios - Portfolios - Edit(' . unserialize($portfolio->title)['th'] . ')';
+		$this->data['content'] = 'portfolios/portfolio_edit';
+		$this->data['portfolio'] = $portfolio;
+		$this->data['category'] =  $this->Portfolio_category_model->get_portfolio_category_by_id($portfolio_category_id);
+
+		$this->load->view('app', $this->data);
+	}
+
+	public function portfolio_update($lang, $portfolio_category_id, $portfolio_id)
+	{
+		// Get Old data
+		$portfolio = $this->Portfolio_model->get_portfolio_by_id($portfolio_id);
+
+		// Handle Image
+		$img_en = unserialize($portfolio->image)['en'];
+		$img_th = unserialize($portfolio->image)['th'];
+
+		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
+			$img_en = $this->ddoo_upload_portfolio('img_en');
+		}
+
+		if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
+			$img_th = $this->ddoo_upload_portfolio('img_th');
+		}
+
+		// Filter Data
+		$input_img = ['en' => $img_en, 'th' => $img_th];
+		$input_title = ['en' => $this->input->post('img_title_alt_en'), 'th' => $this->input->post('img_title_alt_th')];
+		$input_text = ['en' => $this->input->post('text_en'), 'th' => $this->input->post('text_th')];
+
+		// Update Data
+		$update_portfolio = $this->Portfolio_model->update_portfolio_by_id($portfolio_id, [
+			'image' => serialize($input_img),
+			'title' => serialize($input_title),
+			'text' => serialize($input_text),
+			'updated_at' => date('Y-m-d H:i:s')
+		]);
+
+		// Set Session To View
+		if ($update_portfolio) {
+
+			logger_store([
+				'user_id' => $this->data['user']->id,
+				'detail' => 'แก้ไข Portfolio (Portfolios Page)',
+				'event' => 'update',
+				'ip' => $this->input->ip_address(),
+			]);
+
+			$this->session->set_flashdata('success', 'Update Done');
+		} else {
+			$this->session->set_flashdata('error', 'Something wrong');
+		}
+
+		redirect($this->lang . '/backoffice/page/portfolios/list-portfolios/' . $portfolio_id);
+	}
+
+	public function portfolio_destroy($lang, $portfolio_id)
+	{
+		$status = 500;
+		$response['success'] = 0;
+
+		$delete_portfolio = $this->Portfolio_model->delete_portfolio_by_id($portfolio_id);
+
+		if ($delete_portfolio != false) {
+			$status = 200;
+			$response['success'] = 1;
+
+			logger_store([
+				'user_id' => $this->data['user']->id,
+				'detail' => 'ลบ Portfolio (Portfolios Page)',
+				'event' => 'delete',
+				'ip' => $this->input->ip_address(),
+			]);
+		}
+
+		return $this->output
+			->set_status_header($status)
+			->set_content_type('application/json')
+			->set_output(json_encode($response));
+	}
+
+	/***********************************
+	 * Sorting (Using Ajax)
+	 * ********************************/
+
+	public function ajax_get_client_and_sort_show($lang, $category_id)
+	{
+		$status = 500;
+		$response['success'] = 0;
+
+		$clients = $this->Client_model->get_client_by_category_id($category_id);
+
+		// Set Response
+		if ($clients != false) {
+			$status = 200;
+			$response['success'] = 1;
+
+			$counter = 1;
+			$html = '<ul id="sortable">';
+			foreach ($clients as $client) {
+				$html .= '<li id="' . $client->id . '" data-sort="' . $client->sort . '"><span style="padding: 0px 10px;">' . $counter . ' . </span><img alt="en" width="120px;" src="' . base_url('storage/uploads/images/clients/' . unserialize($client->image)['en']) . '">&nbsp;|&nbsp;<img alt="en" width="120px;" src="' . base_url('storage/uploads/images/clients/' . unserialize($client->image)['th']) . '"></li>';
+				$counter++;
+			}
+			$html .= '</ul>';
+
+			$response['data'] = $html;
+		}
+
+		// Send Response
+		return $this->output
+			->set_status_header($status)
+			->set_content_type('application/json')
+			->set_output(json_encode($response));
+	}
+
+	public function ajax_get_client_and_sort_update()
+	{
+		$status = 500;
+		$response['success'] = 0;
+
+		// Set Response
+		if ($this->input->post()) {
+
+			$bundle_id = $this->input->post('id');
+			$bundle_sort = $this->input->post('sort');
+
+			$counter = 1;
+			foreach (array_combine($bundle_id, $bundle_sort) as $id => $sort) {
+
+				$this->Client_model->update_client_by_id($id, [
+					'sort' => $counter,
+					'updated_at' => date('Y-m-d H:i:s')
+				]);
+
+				$counter++;
+			}
+
+			$status = 200;
+			$response['success'] = 1;
+
+			logger_store([
+				'user_id' => $this->data['user']->id,
+				'detail' => 'จัดเรียง Client (Clients Page)',
+				'event' => 'sort_item',
+				'ip' => $this->input->ip_address(),
+			]);
+		}
+
+		// Send Response
+		return $this->output
+			->set_status_header($status)
+			->set_content_type('application/json')
+			->set_output(json_encode($response));
+	}
+
+	public function ajax_get_portfolio_and_sort_show($lang, $category_id)
+	{
+		$status = 500;
+		$response['success'] = 0;
+
+		$portfolios = $this->Portfolio_model->get_portfolio_by_category_id($category_id);
+
+		// Set Response
+		if ($portfolios != false) {
+			$status = 200;
+			$response['success'] = 1;
+
+			$counter = 1;
+			$html = '<ul id="sortable">';
+			foreach ($portfolios as $portfolio) {
+				$html .= '<li id="' . $portfolio->id . '" data-sort="' . $portfolio->sort . '"><span style="padding: 0px 10px;">' . $counter . ' . </span><img alt="en" width="120px;" src="' . base_url('storage/uploads/images/portfolios/' . unserialize($portfolio->image)['en']) . '">&nbsp;|&nbsp;<img alt="en" width="120px;" src="' . base_url('storage/uploads/images/portfolios/' . unserialize($portfolio->image)['th']) . '"></li>';
+				$counter++;
+			}
+			$html .= '</ul>';
+
+			$response['data'] = $html;
+		}
+
+		// Send Response
+		return $this->output
+			->set_status_header($status)
+			->set_content_type('application/json')
+			->set_output(json_encode($response));
+	}
+
+	public function ajax_get_portfolio_and_sort_update()
+	{
+		$status = 500;
+		$response['success'] = 0;
+
+		// Set Response
+		if ($this->input->post()) {
+
+			$bundle_id = $this->input->post('id');
+			$bundle_sort = $this->input->post('sort');
+
+			$counter = 1;
+			foreach (array_combine($bundle_id, $bundle_sort) as $id => $sort) {
+
+				$this->Portfolio_model->update_portfolio_by_id($id, [
+					'sort' => $counter,
+					'updated_at' => date('Y-m-d H:i:s')
+				]);
+
+				$counter++;
+			}
+
+			$status = 200;
+			$response['success'] = 1;
+
+			logger_store([
+				'user_id' => $this->data['user']->id,
+				'detail' => 'จัดเรียง Portfolio (Portfolios Page)',
+				'event' => 'sort_item',
+				'ip' => $this->input->ip_address(),
+			]);
+		}
+
+		// Send Response
+		return $this->output
+			->set_status_header($status)
+			->set_content_type('application/json')
+			->set_output(json_encode($response));
 	}
 
 	private function ddoo_upload_home($filename)

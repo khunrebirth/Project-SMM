@@ -266,7 +266,7 @@ class Portfolio extends MX_Controller
 	}
 
 	/***********************************
-	 * Client
+	 * Portfolio
 	 * ********************************/
 
 	public function list_portfolio($lang, $portfolio_category_id)
@@ -431,17 +431,17 @@ class Portfolio extends MX_Controller
 		$status = 500;
 		$response['success'] = 0;
 
-		$client_categories = $this->Client_category_model->get_client_category_all();
+		$portfolio_categories = $this->Portfolio_category_model->get_portfolio_category_all();
 
 		// Set Response
-		if ($client_categories != false) {
+		if ($portfolio_categories != false) {
 			$status = 200;
 			$response['success'] = 1;
 
 			$counter = 1;
 			$html = '<ul id="sortable">';
-			foreach ($client_categories as $client_category) {
-				$html .= '<li id="' . $client_category->id . '" data-sort="' . $client_category->sort . '"><span style="padding: 0px 10px;">' . $counter . '</span>' . unserialize($client_category->title)['en'] . '&nbsp;|&nbsp;' . unserialize($client_category->title)['th'] . '</li>';
+			foreach ($portfolio_categories as $portfolio_category) {
+				$html .= '<li id="' . $portfolio_category->id . '" data-sort="' . $portfolio_category->sort . '"><span style="padding: 0px 10px;">' . $counter . '</span>' . unserialize($portfolio_category->title)['en'] . '&nbsp;|&nbsp;' . unserialize($portfolio_category->title)['th'] . '</li>';
 				$counter++;
 			}
 			$html .= '</ul>';
@@ -470,7 +470,7 @@ class Portfolio extends MX_Controller
 			$counter = 1;
 			foreach (array_combine($bundle_id, $bundle_sort) as $id => $sort) {
 
-				$this->Client_category_model->update_client_category_by_id($id, [
+				$this->Portfolio_category_model->update_portfolio_category_by_id($id, [
 					'sort' => $counter,
 					'updated_at' => date('Y-m-d H:i:s')
 				]);
@@ -483,7 +483,7 @@ class Portfolio extends MX_Controller
 
 			logger_store([
 				'user_id' => $this->data['user']->id,
-				'detail' => 'จัดเรียง Client Category (Clients Page)',
+				'detail' => 'จัดเรียง Portfolio Category (Portfolios Page)',
 				'event' => 'sort_item',
 				'ip' => $this->input->ip_address(),
 			]);
@@ -496,22 +496,22 @@ class Portfolio extends MX_Controller
 			->set_output(json_encode($response));
 	}
 
-	public function ajax_get_client_and_sort_show($lang, $category_id)
+	public function ajax_get_portfolio_and_sort_show($lang, $category_id)
 	{
 		$status = 500;
 		$response['success'] = 0;
 
-		$clients = $this->Client_model->get_client_by_category_id($category_id);
+		$portfolios = $this->Portfolio_model->get_portfolio_by_category_id($category_id);
 
 		// Set Response
-		if ($clients != false) {
+		if ($portfolios != false) {
 			$status = 200;
 			$response['success'] = 1;
 
 			$counter = 1;
 			$html = '<ul id="sortable">';
-			foreach ($clients as $client) {
-				$html .= '<li id="' . $client->id . '" data-sort="' . $client->sort . '"><span style="padding: 0px 10px;">' . $counter . ' . </span><img alt="en" width="120px;" src="' . base_url('storage/uploads/images/portfolios/' . unserialize($client->image)['en']) . '">&nbsp;|&nbsp;<img alt="en" width="120px;" src="' . base_url('storage/uploads/images/portfolios/' . unserialize($client->image)['th']) . '"></li>';
+			foreach ($portfolios as $portfolio) {
+				$html .= '<li id="' . $portfolio->id . '" data-sort="' . $portfolio->sort . '"><span style="padding: 0px 10px;">' . $counter . ' . </span><img alt="en" width="120px;" src="' . base_url('storage/uploads/images/portfolios/' . unserialize($portfolio->image)['en']) . '">&nbsp;|&nbsp;<img alt="en" width="120px;" src="' . base_url('storage/uploads/images/portfolios/' . unserialize($portfolio->image)['th']) . '"></li>';
 				$counter++;
 			}
 			$html .= '</ul>';
@@ -526,7 +526,7 @@ class Portfolio extends MX_Controller
 			->set_output(json_encode($response));
 	}
 
-	public function ajax_get_client_and_sort_update()
+	public function ajax_get_portfolio_and_sort_update()
 	{
 		$status = 500;
 		$response['success'] = 0;
@@ -540,7 +540,7 @@ class Portfolio extends MX_Controller
 			$counter = 1;
 			foreach (array_combine($bundle_id, $bundle_sort) as $id => $sort) {
 
-				$this->Client_model->update_client_by_id($id, [
+				$this->Portfolio_model->update_portfolio_by_id($id, [
 					'sort' => $counter,
 					'updated_at' => date('Y-m-d H:i:s')
 				]);
@@ -553,7 +553,7 @@ class Portfolio extends MX_Controller
 
 			logger_store([
 				'user_id' => $this->data['user']->id,
-				'detail' => 'จัดเรียง Client (Clients Page)',
+				'detail' => 'จัดเรียง Portfolio (Portfolios Page)',
 				'event' => 'sort_item',
 				'ip' => $this->input->ip_address(),
 			]);
