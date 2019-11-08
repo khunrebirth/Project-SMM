@@ -17,8 +17,8 @@
 <header id="home">
 	<div class="container h-100">
 		<div class="row justify-content-end h-100 align-items-center">
-			<div class="text-center wow fadeInUp">
-				<h1 class="home__title--head mb-3">Re<span>s</span>ults Driven <br> Marketing Agency</h1>
+			<div class="text-center wow fadeInUp txt-top-home">
+				<h1 class="home__title--head mb-3">Re<span>s</span>ults Driven <br> <span class="sub">Marketing Agency</span></h1>
 				<p class="lead home__title--body">
 					จุดประกายให้ธุรกิจของคุณโลดแล่นบนโลกออนไลน์อย่างมืออาชีพด้วย <br>
 					ทีมงานคุณภาพที่เข้าใจดิจิทัลอย่างผู้เชียวชาญ
@@ -42,7 +42,7 @@
 				<div class="row justify-content-center">
 					<div class="col-xs-12 col-md-10 col-lg-8">
 						<p class="lead about__title--body mt-2 mb-4"><?php echo unserialize($about->content_left)[$lang]; ?></p>
-						<a href="<?php echo base_url($lang . '/' . lang('menu_about')); ?>" class="btn btn-primary"><?php echo lang('btn_read_more'); ?></a>
+						<a href="<?php echo base_url($lang . '/' . lang('menu_about')); ?>" class="btn btn-primary btn-full-sp"><?php echo lang('btn_read_more'); ?></a>
 					</div>
 				</div>
 			</div>
@@ -76,21 +76,25 @@
 		<div class="title-client ttl-home-img" style="text-align: center; padding: 4rem 0;">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-cilent.png' : 'resources/front_end/images/title-cilent.png'); ?>" class="img-fluid">
 		</div>
-		<div class="row sec-client">
-			<?php foreach ($top_clients as $top_client) { ?>
-				<div class="col-6 col-md-6 col-lg-2 mb-4">
-					<img src="<?php echo base_url('/storage/uploads/images/home/' .  unserialize($top_client->image)[$lang]); ?>" alt="<?php echo unserialize($top_client->title)[$lang]; ?>" class="img-fluid img-clients">
-				</div>
-			<?php } ?>
-			<?php $slice_clients = array_slice($clients, 0, 6); ?>
-			<?php foreach ($slice_clients as $client) { ?>
-				<div class="col-6 col-md-3 col-lg-2 mb-4">
-					<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/clients/' . unserialize($client->image)[$lang]); ?>" alt="<?php echo unserialize($client->title)[$lang]; ?>">
-				</div>
-			<?php } ?>
+		<div class="col-12 sec-client box-slide-client-sp  owl-carousel owl-theme">
+			<div class="row">
+				<?php foreach ($top_clients as $top_client) { ?>
+					<div class="col-4 col-md-4 col-lg-2 mb-4">
+						<img src="<?php echo base_url('/storage/uploads/images/home/' .  unserialize($top_client->image)[$lang]); ?>" alt="<?php echo unserialize($top_client->title)[$lang]; ?>" class="img-fluid img-clients">
+					</div>
+				<?php } ?>
+			</div>
+			<div class="row">
+				<?php $slice_clients = array_slice($clients, 0, 6); ?>
+				<?php foreach ($slice_clients as $client) { ?>
+					<div class="col-4 col-md-4 col-lg-2 mb-4">
+						<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/clients/' . unserialize($client->image)[$lang]); ?>" alt="<?php echo unserialize($client->title)[$lang]; ?>">
+					</div>
+				<?php } ?>
+			</div>
 		</div>
 	</div>
-		<p class="text-center col-12 mb-0"><a href="<?php echo base_url($lang . '/' . lang('menu_our_clients') . '/'); ?>" class="btn btn-primary"><?php echo lang('btn_read_all'); ?></a></p>
+		<p class="text-center col-12 mb-0"><a href="<?php echo base_url($lang . '/' . lang('menu_our_clients') . '/'); ?>" class="btn btn-primary btn-full-sp"><?php echo lang('btn_read_all'); ?></a></p>
 	</div>
 </section>
 
@@ -100,20 +104,32 @@
 		<div class="title-client ttl-home-img" style="text-align: center; padding: 0 4rem 4rem;">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/our-port.png' : 'resources/front_end/images/our-port.png'); ?>" class="img-fluid">
 		</div>
-		<div class="row sec-client">
-			<?php foreach ($top_portfolios as $top_portfolio) { ?>
-				<div class="col-6 col-md-6 col-lg-3 mb-4">
-					<img src="<?php echo base_url('/storage/uploads/images/home/' . unserialize($top_portfolio->image)[$lang]); ?>" alt="<?php echo unserialize($top_portfolio->title)[$lang]; ?>" class="img-fluid img-clients">
-				</div>
-			<?php } ?>
-			<?php $slice_portfolios = array_slice($portfolios, 0, 4); ?>
-			<?php foreach ($slice_portfolios as $portfolio) { ?>
-				<div class="col-6 col-md-6 col-lg-3 mb-4">
-					<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/portfolios/' . unserialize($portfolio->image)[$lang]); ?>" alt="<?php echo unserialize($portfolio->title)[$lang]; ?>">
-				</div>
-			<?php } ?>
+		<div class="col-12 sec-client box-slide-portfolio-sp  owl-carousel owl-theme">
+			<div class="row">
+				<?php foreach ($top_portfolios as $top_portfolio) { ?>
+					<div class="col-6 col-md-6 col-lg-3 mb-4">
+						<img src="<?php echo base_url('/storage/uploads/images/home/' . unserialize($top_portfolio->image)[$lang]); ?>" alt="<?php echo unserialize($top_portfolio->title)[$lang]; ?>" class="img-fluid img-clients">
+						<div class="caption-detail">
+							<p class="ttl">FashionIsland</p>
+							<p class="desc">เว็บไซต์</p>
+						</div>
+					</div>
+				<?php } ?>
+			</div>
+			<div class="row">
+				<?php $slice_portfolios = array_slice($portfolios, 0, 4); ?>
+				<?php foreach ($slice_portfolios as $portfolio) { ?>
+					<div class="col-6 col-md-6 col-lg-3 mb-4">
+						<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/portfolios/' . unserialize($portfolio->image)[$lang]); ?>" alt="<?php echo unserialize($portfolio->title)[$lang]; ?>">
+						<div class="caption-detail">
+							<p class="ttl">FashionIsland</p>
+							<p class="desc">เว็บไซต์</p>
+						</div>
+					</div>
+				<?php } ?>
+			</div>
 		</div>
-		<p class="text-center col-12 mb-0"><a href="<?php echo base_url($lang . '/' . lang('menu_portfolios')); ?>" class="btn btn-primary"><?php echo lang('btn_read_all'); ?></a></p>
+		<p class="text-center col-12 mb-0"><a href="<?php echo base_url($lang . '/' . lang('menu_portfolios')); ?>" class="btn btn-primary btn-full-sp"><?php echo lang('btn_read_all'); ?></a></p>
 	</div>
 </section>
 
@@ -125,7 +141,7 @@
 		</div>
 		<div class="row row-60 row-sm">
 			<?php foreach ($blogs as $blog) { ?>
-			<div class="col-xs-12 col-sm-6 col-lg-3" style="visibility: visible; animation-name: fadeInLeft;">
+			<div class="col-xs-12 col-sm-6 col-lg-3 blog__item" style="visibility: visible; animation-name: fadeInLeft;">
 				<article class="blog blog__modern">
 					<a class="blog__modern--figure" href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/' . unserialize($blog->blog_category_slug)[$lang] . '/' .  unserialize($blog->slug)[$lang]); ?>">
 						<img src="<?php echo base_url('storage/uploads/images/blogs/' . unserialize($blog->img)[$lang]) ?>" alt="<?php echo unserialize($blog->img_title_alt)[$lang]; ?>" width="370" height="307">
@@ -135,10 +151,11 @@
 					</a>
 					<h4 class="blog__modern--title"><a href="#"><?php echo unserialize($blog->title)[$lang]; ?></a></h4>
 					<p class="blog__modern--text"><?php echo unserialize($blog->description_section)[$lang]; ?></p>
+					<p class="blog__modern--bottom-text d-block d-md-none">22 ตุลาคม 2562 | บทความการตลาด</p>
 				</article>
 			</div>
 			<?php } ?>
-			<p class="text-center col-12 mb-0"><a href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/'); ?>" class="btn btn-primary"><?php echo lang('btn_read_all'); ?></a></p>
+			<p class="text-center col-12 mb-0"><a href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/'); ?>" class="btn btn-primary btn-full-sp"><?php echo lang('btn_read_all'); ?></a></p>
 		</div>
 	</div>
 </section>
@@ -168,10 +185,10 @@
 				</div>
 			</div>
 			<div class="item-team-ttl col-lg-3 col-sm-12">
-				<div class="title-team" style="text-align: center; padding: 3rem 0.5rem 2rem;">
+				<div class="title-team ttl-home-img" style="text-align: center; padding: 3rem 0.5rem 2rem;">
 					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-team.png' : 'resources/front_end/images/title-team.png'); ?>" class="img-fluid">
 				</div>
-				<p class="text-center col-12 mb-4"><a href="<?php echo base_url($lang . '/' . lang('menu_teams') . '/'); ?>" class="btn btn-primary"><?php echo lang('btn_read_all'); ?></a></p>
+				<p class="text-center col-12 mb-4"><a href="<?php echo base_url($lang . '/' . lang('menu_teams') . '/'); ?>" class="btn btn-primary btn-full-sp"><?php echo lang('btn_read_all'); ?></a></p>
 			</div>
 		</div>
 	</div>
@@ -180,7 +197,7 @@
 <!-- Contact -->
 <section id="contact" class="wow fadeInUp">
 	<div class="container">
-		<div class="title-contact" style="text-align: center; padding: 4rem 15px;">
+		<div class="title-contact ttl-home-img" style="text-align: center; padding: 4rem 15px;">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-contact.png' : 'resources/front_end/images/title-contact.png'); ?>" class="img-fluid">
 		</div>
 		<div class="row">
@@ -264,5 +281,41 @@
 				scrollTop: $("#contact").offset().top
 			}, 'slow');
 		});
+	});
+
+	$(function () {
+		var optional_owl = {
+			items: 1,
+			nav: false,
+			loop: true,
+			dots: true,
+		};
+		var select_owl_client = $('.box-slide-client-sp');
+		var select_owl_portfolio = $('.box-slide-portfolio-sp');
+
+		if ( $(window).width() < 768 ) {
+			startCarousel();
+		} else {
+			select_owl_client.addClass('off');
+			select_owl_portfolio.addClass('off');
+		}
+				
+		$(window).resize(function() {
+			if ( $(window).width() < 854 ) {
+			startCarousel();
+			} else {
+			stopCarousel();
+			}
+		});
+		function startCarousel(){
+			select_owl_client.owlCarousel(optional_owl);
+			select_owl_portfolio.owlCarousel(optional_owl);
+		}
+		function stopCarousel() {
+			select_owl_client.trigger('destroy.owl.carousel');
+			select_owl_client.addClass('off');
+			select_owl_portfolio.trigger('destroy.owl.carousel');
+			select_owl_portfolio.addClass('off');
+		}
 	});
 </script>

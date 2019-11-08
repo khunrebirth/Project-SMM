@@ -56,6 +56,20 @@
 	.item-fb-page {
 		margin-bottom: 20px;
 	}
+	.item-youtube {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+	}
 
 	.sec-social-contact {
 		overflow: hidden;
@@ -117,8 +131,10 @@
 										<blockquote cite="https://www.facebook.com/EmailDirectMarketing.EDM/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/EmailDirectMarketing.EDM/">บริการรับส่งอีเมล์ : Email Direct Marketing</a></blockquote>
 									</div>
 								</div>
-								<div class="col-cmn-5 item-fb-page">
-									<img src="<?php echo base_url('resources/front_end/images/title-social.png'); ?>" alt="">
+								<div class="col-cmn-5 item-fb-page item-youtube">
+									<a href="#dummy">
+										<img class="img-fluid" src="<?php echo base_url('resources/front_end/images/youtube.png'); ?>" alt="">
+									</a>
 								</div>
 							</div>
 						</div>
