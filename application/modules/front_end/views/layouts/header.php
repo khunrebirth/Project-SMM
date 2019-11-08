@@ -41,6 +41,11 @@
 
     <!-- Customer CSS -->
     <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style.css'); ?>">
+	<style>
+		.popup_popup {
+			display: none !important;
+		}
+	</style>
 
     <!-- fancybox CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous" />
@@ -58,12 +63,19 @@
 
     <!-- fancybox js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
-
     
     <!-- jquery scrolltofixed -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollToFixed/1.0.8/jquery-scrolltofixed-min.js" integrity="sha256-Kl1vQ0yioe6J6idmj55qGNgoOrKOTJh4WYFdmiVnvZw=" crossorigin="anonymous"></script>
+	<!-- Plugin Social -->
 	<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5dc3d55e04e0990012c1f4ee&product=inline-share-buttons&cms=website' async='async'></script>
-    
+	<script>
+		// Detect Plugin Social
+        $('.button_invert').click()
+
+        setTimeout(function () {
+            $('.button_invert').click()
+        }, 5000)
+	</script>
 </head>
 <body>
 
@@ -84,8 +96,7 @@
                 <a class="nav-link text-md-center <?php if ($this->uri->segment(0) == "about" || $this->uri->segment(0) == "เกี่ยวกับเรา") { echo 'active'; }?>" href="<?php echo base_url($lang . '/' . lang('menu_about')); ?>"><?php echo lang('menu_about'); ?></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-md-center <?php if ($this->uri->segment(0) == "services" || $this->uri->segment(0) == "บริการ") { echo 'active'; }?>  dropdown-toggle"
-                data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" ><?php echo lang('menu_service'); ?></a>
+                <a class="nav-link text-md-center <?php if ($this->uri->segment(0) == "services" || $this->uri->segment(0) == "บริการ") { echo 'active'; }?>  dropdown-toggle" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" ><?php echo lang('menu_service'); ?></a>
                 <div class="collapse wrap-sub-gnav" id="collapseExample" >
                     <ul class="list-sub-gnav row">
 						<?php
