@@ -234,10 +234,10 @@
         </div>
     </div>
     <div class="sec-about-vdo">
-        <div class="container">
-        <video id="videoId" width="100%" height="auto" autoplay loop>
-            <source src="<?php echo base_url('resources/front_end/video/VDO.mp4'); ?>" type="video/mp4">
-        </video>
+        <div class="container px-0">
+            <video id="videoId" width="100%" height="auto" autoplay loop muted>
+                <source src="<?php echo base_url('resources/front_end/video/VDO.mp4'); ?>" type="video/mp4">
+            </video>
         </div>
     </div>
     <div class="container">
