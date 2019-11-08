@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 08, 2019 at 03:54 AM
+-- Generation Time: Nov 08, 2019 at 03:56 AM
 -- Server version: 5.7.17-log
 -- PHP Version: 5.6.30
 
@@ -393,23 +393,6 @@ CREATE TABLE `logs` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `logs`
---
-
-INSERT INTO `logs` (`id`, `event_id`, `detail`, `user_id`, `ip`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(658, 6, 'จัดเรียง Portfolio (Portfolios Page)', 2, '::1', '2019-11-07 10:50:01', NULL, NULL),
-(659, 6, 'จัดเรียง Portfolio (Portfolios Page)', 2, '::1', '2019-11-07 10:50:08', NULL, NULL),
-(660, 1, 'เข้าสู่ระบบ SMM Backoffice', 2, '::1', '2019-11-08 02:19:29', NULL, NULL),
-(661, 6, 'จัดเรียง Top Client (Home Page)', 2, '::1', '2019-11-08 02:56:33', NULL, NULL),
-(662, 6, 'จัดเรียง Top Portfolio (Home Page)', 2, '::1', '2019-11-08 02:58:09', NULL, NULL),
-(663, 3, 'เพิ่ม Top Client (Home Page)', 2, '::1', '2019-11-08 03:45:39', NULL, NULL),
-(664, 5, 'ลบ Top Client (Home Page)', 2, '::1', '2019-11-08 03:45:55', NULL, NULL),
-(665, 3, 'เพิ่ม Top Portfolio (Home Page)', 2, '::1', '2019-11-08 03:46:06', NULL, NULL),
-(666, 5, 'ลบ Top Client (Home Page)', 2, '::1', '2019-11-08 03:46:16', NULL, NULL),
-(667, 5, 'ลบ Top Client (Home Page)', 2, '::1', '2019-11-08 03:46:26', NULL, NULL),
-(668, 5, 'ลบ Top Portfolio (Home Page)', 2, '::1', '2019-11-08 03:49:52', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1135,7 +1118,7 @@ ALTER TABLE `contents`
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=669;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=671;
 --
 -- AUTO_INCREMENT for table `log_events`
 --
@@ -1150,7 +1133,7 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT for table `portfolios`
 --
 ALTER TABLE `portfolios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
 --
 -- AUTO_INCREMENT for table `portfolio_categories`
 --

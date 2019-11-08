@@ -103,6 +103,12 @@
 	.list-tag-blog li:last-of-type::after {
 		display: none;
 	}
+
+	#st-1 .st-btn > img {
+		height: 26px;
+		width: 26px;
+		top: 7px;
+	}
 </style>
 
 <!-- Title -->
@@ -139,6 +145,7 @@
 					<img src="<?php echo base_url('storage/uploads/images/blogs/' . unserialize($blog->img)[$lang]); ?>" class="img-fluid" alt="<?php echo unserialize($blog->img_title_alt)[$lang]; ?>">
 				</figure>
 				<?php echo unserialize($blog->body)[$lang]; ?>
+				<div class="sharethis-inline-share-buttons"></div>
 				<div class="wrap-tag-blog">
 					<span class="ttl-tag-blog"><i class="fas fa-tags"></i> <?php echo lang('page_blog_tag'); ?></span>
 					<ul class="list-tag-blog">
@@ -174,7 +181,6 @@
 					<?php } ?>
 				</div>
 			</div>
-
 		</div>
 	</div>
 </section>
