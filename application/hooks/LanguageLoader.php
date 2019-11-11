@@ -2,13 +2,6 @@
 
 class LanguageLoader
 {
-//    function initialize() {
-//        $ci =& get_instance();
-//        $ci->load->helper('language');
-//        $ci->load->library('session');
-//        $ci->lang->load('message', $ci->session->userdata('site_lang'));
-//    }
-
 	function initialize() {
 		$ci =& get_instance();
 		$ci->load->config('config');
@@ -24,9 +17,5 @@ class LanguageLoader
 		} else {
 			$ci->lang->load('message','en');
 		}
-
-//		print_r($_SERVER['REQUEST_URI']); exit();
-
-//		if (count($segments) > 2) redirect($_SERVER['REQUEST_URI'], 'refresh');
 	}
 }
