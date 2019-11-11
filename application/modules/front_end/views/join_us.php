@@ -1,3 +1,4 @@
+<!-- Push Custom Style -->
 <style>
     .sec-job-activity__type-6-item {
         max-width: 720px;
@@ -132,6 +133,7 @@
 
 <!-- SiteMap -->
 <?php include 'layouts/sitemap.php'; ?>
+
 
 <!-- Push Custom Scripts -->
 <script>

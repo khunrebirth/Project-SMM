@@ -169,6 +169,9 @@
 
 <!-- SiteMap -->
 <?php include 'layouts/sitemap.php'; ?>
+
+
+<!-- Push Custom Scripts -->
 <script>
 $(function() {
 	$('.list-catagory-client li a').click(function(e){

@@ -266,6 +266,7 @@
 	</div>
 </section>
 
+<!-- Content -->
 <section class="sec-service-content">
 	<div class="row wrap-service-content mb-5">
 		<div class="col-lg-4 col-sm-12 text-center">
@@ -297,6 +298,7 @@
 	</div>
 </section>
 
+<!-- Form -->
 <div id="template" style="display:none;">
 	<h2 class="text-secondary contact__form--title"><?php echo lang('page_contact_title_first'); ?><span><?php echo lang('page_contact_title_center'); ?></span><?php echo lang('page_contact_title_end'); ?></h2>
 	<p class="text-secondary contact__form--body mb-4"><?php echo lang('page_contact_desc'); ?></p>

@@ -1,3 +1,4 @@
+<!-- Push Custom Style -->
 <style>
 	.box-teams-slide .owl-nav .owl-prev {
 		left: 0;
@@ -13,6 +14,7 @@
 		background-size: cover !important;
 	}
 </style>
+
 <!-- Home -->
 <header id="home">
 	<div class="container h-100">
