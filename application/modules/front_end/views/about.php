@@ -235,7 +235,8 @@
         <div class="row">
             <div class="col-12 text-center">
                 <div class="title-about" style="">
-					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-about.png' : 'resources/front_end/images/title-about.png'); ?>" alt="" class="img-fluid">
+					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-about.png' : 'resources/front_end/images/title-about.png'); ?>" alt="" class="img-fluid d-none d-md-block">
+					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-about.png' : 'resources/front_end/images/title-about.png'); ?>" alt="" class="img-fluid d-block d-md-none">
                 </div>
             </div>
 

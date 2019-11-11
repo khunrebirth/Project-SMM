@@ -90,7 +90,7 @@
 
 <nav class="navbar navbar-light fixed-top navbar-expand-lg navbar-no-bg">
     <a class="navbar-brand" href="<?php echo base_url($lang . '/' . lang('menu_home')); ?>">
-        <img src="<?php echo base_url('resources/front_end/images/logo-smm.png'); ?>" alt="logo-ssm">
+        <img class="logo" src="<?php echo base_url('resources/front_end/images/logo-smm.png'); ?>" alt="logo-ssm">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

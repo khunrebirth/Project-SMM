@@ -38,7 +38,8 @@
 			</div>
 			<div class="col-xs-12 col-md-6 col-lg-6 order-lg-1 my-auto showcase-text text-center wow fadeInLeft">
 				<div class="title-about ttl-home-img" style="">
-					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-about.png' : 'resources/front_end/images/title-about.png'); ?>" class="img-fluid">
+					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-about.png' : 'resources/front_end/images/title-about.png'); ?>" class="img-fluid d-none d-md-block">
+					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-about_sp.png' : 'resources/front_end/images/title-about_sp.png'); ?>" class="img-fluid d-block d-md-none">
 				</div>
 				<h2 class="about__title--head mt-5 mb-4"><span>S</span>ocial Media Master</h2>
 				<div class="row justify-content-center">
@@ -56,7 +57,8 @@
 <section id="service" class="wow fadeInUp" style="overflow:hidden">
 	<div class="container-fluid text-center sec-home-service">
 		<div class="title-service ttl-home-img" style="text-align: left; padding: 4rem 0;">
-			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-service.png' : 'resources/front_end/images/title-service.png'); ?>" class="img-fluid">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-service.png' : 'resources/front_end/images/title-service.png'); ?>" class="img-fluid d-none d-md-block">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-service_sp.png' : 'resources/front_end/images/title-service_sp.png'); ?>" class="img-fluid d-block d-md-none">
 		</div>
 		<div class="row">
 			<?php foreach ($services as $service) { ?>

@@ -137,6 +137,101 @@ a:hover {
 }
 
 /***** Menu *****/
+.logo { }
+@media (max-width: 576px) {
+	.logo {
+		max-height: 60px;
+	}
+}
+.navbar-toggler {
+	padding: 3px 8px;
+	padding: 3px 8px;
+    position: relative;
+}
+.navbar-toggler-icon { 
+	position: relative;
+	background-image: none !important;
+}
+.navbar-toggler::after,
+.navbar-toggler::before,
+.navbar-toggler-icon::after {
+	content:'';
+	position: absolute;
+	width: 30px;
+	height: 2px;
+	background-color: #9a9a9a;
+	left: 50%;
+	transform: translate3d(-50%,0,0);
+	-webkit-transform: translate3d(-50%,0,0);
+	-moz-transform: translate3d(-50%,0,0);
+	-ms-transform: translate3d(-50%,0,0);
+	-o-transform: translate3d(-50%,0,0);
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-ms-border-radius: 2px;
+	-o-border-radius: 2px;
+	transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+}
+.navbar-toggler[aria-expanded=true]::before {
+	top: 50%;
+	transform: translate3d(-50%,-50%,0) rotate(45deg);
+	-webkit-transform: translate3d(-50%,-50%,0) rotate(45deg);
+	-moz-transform: translate3d(-50%,-50%,0) rotate(45deg);
+	-ms-transform: translate3d(-50%,-50%,0) rotate(45deg);
+	-o-transform: translate3d(-50%,-50%,0) rotate(45deg);
+}
+.navbar-toggler[aria-expanded=true]::after {
+	bottom: 46%;
+	transform: translate3d(-50%,-50%,0) rotate(-45deg);
+	-webkit-transform: translate3d(-50%,-50%,0) rotate(-45deg);
+	-moz-transform: translate3d(-50%,-50%,0) rotate(-45deg);
+	-ms-transform: translate3d(-50%,-50%,0) rotate(-45deg);
+	-o-transform: translate3d(-50%,-50%,0) rotate(-45deg);
+}
+.navbar-toggler[aria-expanded=true] .navbar-toggler-icon::after {
+	top: 50%;
+	transform: translate3d(-50%,-50%,0);
+	-webkit-transform: translate3d(-50%,-50%,0);
+	-moz-transform: translate3d(-50%,-50%,0);
+	-ms-transform: translate3d(-50%,-50%,0);
+	-o-transform: translate3d(-50%,-50%,0);
+	opacity: 0;
+	visibility: hidden;
+}
+
+.navbar-toggler[aria-expanded=false]::before {
+	top: 10px;
+	transform: translate3d(-50%,0,0) rotate(0);
+	-webkit-transform: translate3d(-50%,0,0) rotate(0);
+	-moz-transform: translate3d(-50%,0,0) rotate(0);
+	-ms-transform: translate3d(-50%,0,0) rotate(0);
+	-o-transform: translate3d(-50%,0,0) rotate(0);
+}
+.navbar-toggler[aria-expanded=false]::after {
+	bottom: 10px;
+	transform: translate3d(-50%,0,0) rotate(0);
+	-webkit-transform: translate3d(-50%,0,0) rotate(0);
+	-moz-transform: translate3d(-50%,0,0) rotate(0);
+	-ms-transform: translate3d(-50%,0,0) rotate(0);
+	-o-transform: translate3d(-50%,0,0) rotate(0);
+}
+.navbar-toggler[aria-expanded=false] .navbar-toggler-icon::after {
+	top: 50%;
+	transform: translate3d(-50%,-50%,0);
+	-webkit-transform: translate3d(-50%,-50%,0);
+	-moz-transform: translate3d(-50%,-50%,0);
+	-ms-transform: translate3d(-50%,-50%,0);
+	-o-transform: translate3d(-50%,-50%,0);
+	opacity: 1;
+	visibility: visible;
+}
+
+
 .navbar-light .navbar-nav .active > .nav-link {
 	color: #127dbc;
 	align-content: center;
@@ -487,6 +582,9 @@ a:hover {
 	}
 }
 
+.title-about img {
+	margin: 0 auto;
+}
 @media (max-width: 768px) {
 
 	.ttl-home-img {
