@@ -116,10 +116,10 @@
 		font-size: 1.5rem;
 	}
 
-	@media (min-width: 576px) {
+	@media (max-width: 576px) {
 		.ttl-service-01,
 		.ttl-service-02 {
-			font-size: 20px;
+			font-size: 1.4rem;
 			margin-bottom: 10px;
 			padding-top: 20px;
 		}
@@ -256,6 +256,13 @@
 		width: 100%;
 		background-color: #00264c;
 	}
+    @media (max-width: 576px) {
+		.img-logo-client {
+			width: 150px;
+			margin-bottom: 20px;
+		}
+	}
+	
 </style>
 
 <!-- Title -->
@@ -360,7 +367,7 @@
 	<section class="sec-service-port row">
 		<div class="col row sec-service-port--inner">
 			<div class="col-md-12 col-lg-3 d-flex  justify-content-start justify-content-lg-end">
-				<img class="img-fluid" src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-our-client.png' : 'resources/front_end/images/title-our-client.png'); ?>">
+				<img class="img-fluid img-logo-client" src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-our-client.png' : 'resources/front_end/images/title-our-client.png'); ?>">
 			</div>
 			<div class=" col-md-12  col-lg-9">
 				<div class="wrap-slide-port owl-carousel owl-theme">

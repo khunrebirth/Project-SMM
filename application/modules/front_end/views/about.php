@@ -209,6 +209,24 @@
         display: block;
         margin: 0 auto;
     }
+    
+    @media (max-width: 992px) {
+        .about__title--head {
+            text-align: center;
+        }
+    }   
+    #about {
+        padding-top: 160px !important;
+        padding-bottom: 120px !important;
+    }
+    @media (max-width: 992px) {
+        #about {
+            padding: 120px 0 60px !important;
+        }
+        .about__split--title--body {
+            font-size: 1.15rem;
+        }
+    } 
 </style>
 
 <!-- About -->
@@ -221,14 +239,14 @@
                 </div>
             </div>
 
-            <div class="col-md-12 col-lg-12 mt-5 mb-1">
+            <div class="col-md-12 col-lg-12 mt-4 mt-md-5 mb-1">
                 <h2 class="about__title--head mt-md-0 mt-4"><span>S</span>ocial Media Master</h2>
                 <p class="lead about__split--title--body mt-4">
                     <?php echo unserialize($about->content_left)[$lang]; ?>
                 </p>
             </div>
 
-            <div class="col-xs-12 col-md-12 col-lg-12 lead about__split--title--body mb-5">
+            <div class="col-xs-12 col-md-12 col-lg-12 lead about__split--title--body mb-3 mb-md-5">
 				<?php echo unserialize($about->content_right)[$lang]; ?>
             </div>
         </div>

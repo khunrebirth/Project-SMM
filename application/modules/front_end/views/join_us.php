@@ -3,6 +3,11 @@
     .sec-job-activity__type-6-item {
         max-width: 720px;
     }
+    @media (max-width: 576px) {
+        .title-team {
+            padding: 2rem 0 !important;
+        }
+    }
 </style>
 
 <!-- Title -->
@@ -18,7 +23,7 @@
 <!-- Content -->
 <section id="job">
     <div class="container-fluid ">
-        <div class="title-team" style="text-align: center; padding: 4rem;">
+        <div class="title-team" style="text-align: center; padding: 0 0 3rem;">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-joinus.png' : 'resources/front_end/images/title-joinus.png'); ?>" alt="" class="img-fluid">
         </div>  
         <div class="row sec-job sec-job-info">

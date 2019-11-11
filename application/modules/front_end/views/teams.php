@@ -74,6 +74,16 @@
 	visibility: visible;
 	opacity: 1;
 }
+    @media (max-width: 576px) {
+        .title-team {
+            padding: 2rem 0 !important;
+        }
+        .box-slide-team {
+            padding: 0 !important;
+            margin: 0 -15px;
+            width: auto;
+        }
+    }
 
 /* @media (min-width: 576px) { 
 	.box-slide-team {
@@ -118,7 +128,7 @@
 <!-- Content -->
 <section id="team">
     <div class="container-fluid ">
-        <div class="title-team" style="text-align: center; padding: 4rem;">
+        <div class="title-team" style="text-align: center; padding: 0 0 3rem;">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-team.png' : 'resources/front_end/images/title-team.png'); ?>" alt="" class="img-fluid">
         </div>
         
@@ -130,7 +140,7 @@
 					$first_name = substr($fullname, 0, $posBlankSpace);
 					$last_name = substr($fullname, $posBlankSpace, strlen($fullname));
 				?>
-				<div class="col-12 col-lg-3">
+				<div class="col-12 col-md-3">
 					<div class="card team__card--parent mx-auto" >
 						<img class="card-img-top" src="<?php echo base_url('storage/uploads/images/teams/' . unserialize($team->image)[$lang]); ?>" alt="<?php echo unserialize($team->img_title_alt)[$lang]; ?>">
 						<img class="card-img-top is-hover" src="<?php echo base_url('storage/uploads/images/teams/' . unserialize($team->image_hover)[$lang]); ?>" alt="<?php echo unserialize($team->img_title_alt_hover)[$lang]; ?>">

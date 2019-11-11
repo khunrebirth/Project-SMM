@@ -145,7 +145,7 @@
                 <a class="btn btn-link btn__contact btn__contact--type-icon" href="tel:021939062"><i class="fas fa-phone-alt"></i></a>
             </li>
             <li class="nav-item wrap-btn-centact">
-                <a class="btn btn-link btn__contact btn__contact--type-icon" target="_blank" href="http://line.me/ti/p/~todayspark"><i class="far fa-comment-dots"></i></a>
+                <a class="btn btn-link btn__contact btn__contact--type-icon btn__contact--type-line" target="_blank" href="http://line.me/ti/p/~todayspark"><i class="far fa-comment-dots"></i></a>
             </li>
             <li class="nav-item wrap-btn-centact">
                 <a class="btn btn-link btn__contact" href="<?php echo base_url($lang . '/' . lang('menu_contact')); ?>"><?php echo lang('menu_contact'); ?></a>
