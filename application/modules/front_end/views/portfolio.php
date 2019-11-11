@@ -64,6 +64,10 @@
 				}else{
 					$('.item-client').fadeOut( "slow" );
 					$('.'+filter).fadeIn( "slow" );
+
+					// $('html,body').animate({
+					// 	scrollTop: $(".wrap-logo").offset().top - $('.navbar').innerHeight()
+					// }, 'slow');
 				}
 			}
 			$('.list-catagory-client li a').removeClass('is-active');
@@ -78,7 +82,8 @@
                     $('.item-client').fadeIn( "slow" );
                 } else {
                     $('.item-client').fadeOut( "slow" );
-                    $('.'+filter).fadeIn( "slow" );
+					$('.'+filter).fadeIn( "slow" );
+
                 }
             }
         });

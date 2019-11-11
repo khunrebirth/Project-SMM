@@ -119,7 +119,7 @@
 	@media (max-width: 576px) {
 		.ttl-service-01,
 		.ttl-service-02 {
-			font-size: 1.4rem;
+			font-size: 1.15rem;
 			margin-bottom: 10px;
 			padding-top: 20px;
 		}
@@ -128,7 +128,7 @@
 	@media (min-width: 768px) {
 		.ttl-service-01,
 		.ttl-service-02 {
-			font-size: 20px;
+			font-size: 1.15rem;
 			margin-bottom: 20px;
 			padding: 0;
 		}
@@ -307,7 +307,7 @@
 
 <!-- Form -->
 <div id="template" style="display:none;">
-	<h2 class="text-secondary contact__form--title"><?php echo lang('page_contact_title_first'); ?><span><?php echo lang('page_contact_title_center'); ?></span><?php echo lang('page_contact_title_end'); ?></h2>
+	<h2 class="text-secondary contact__form--title" ><?php echo lang('page_contact_title_first'); ?><span><?php echo lang('page_contact_title_center'); ?></span><?php echo lang('page_contact_title_end'); ?></h2>
 	<p class="text-secondary contact__form--body mb-4"><?php echo lang('page_contact_desc'); ?></p>
 	<form class="mt-4" action="<?php echo base_url($lang . '/'. 'contact/send') ?>" method="post">
 		<div class="form-group">
@@ -427,4 +427,5 @@
 			}
 		});
 	});
+
 </script>

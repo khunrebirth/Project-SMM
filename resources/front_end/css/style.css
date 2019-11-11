@@ -349,7 +349,7 @@ a:hover {
 
 @media (max-width: 576px) {
 	.txt-top-home {
-		margin-bottom: 35%;
+		margin-bottom: 30%;
 	}
 }
 
@@ -959,11 +959,12 @@ a.btn__contact--type-line {
 @media (max-width: 992px) {
 	.btn__contact--type-icon {
 		margin: 0 0 10px !important;
-		padding: 6px 25px !important;
+		padding: 6px 45px !important;
 	}
 
 	.navbar-light ul.navbar-nav li a.btn-link {
 		margin: 0;
+		padding: 6px 34px;
 	}
 }
 
