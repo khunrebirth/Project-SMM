@@ -1,3 +1,10 @@
+<style>
+	@media (max-width: 992px) { 
+		.title-client {
+			padding: 5rem 0 2rem !important;
+		}
+	}
+</style>
 <!-- Title -->
 <?php if ($banner) { ?>
 <section class="page-title main-hero-service" style="padding:0;">

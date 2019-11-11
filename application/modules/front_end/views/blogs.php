@@ -120,6 +120,11 @@
 		max-width: 1440px;
 		margin: 0 auto;
 	}
+	@media (max-width: 992px) { 
+		.title-client {
+			padding: 5rem 0 2rem !important;
+		}
+	}
 </style>
 
 <!-- Title -->

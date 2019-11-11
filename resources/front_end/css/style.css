@@ -1190,6 +1190,11 @@ footer p {
 .sec-footer-sitemap .card-body {
 	padding: 60px 0;
 }
+@media (max-width: 768px) {
+	.sec-footer-sitemap .card-body {
+		padding: 60px 0 10px;
+	}
+}
 
 .wrap-social {
 	width: 100%;

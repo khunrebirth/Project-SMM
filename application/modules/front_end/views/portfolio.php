@@ -1,3 +1,11 @@
+<style>
+	@media (max-width: 992px) { 
+		.title-client {
+			padding: 5rem 0 2rem !important;
+		}
+	}
+</style>
+
 <!-- Title -->
 <?php if ($banner) { ?>
 <section class="page-title main-hero-service" style="padding:0;">
@@ -12,7 +20,7 @@
 <section id="client">
     <div class="container-fluid">
         <div class="title-client" style="text-align: center; padding: 4rem;">
-			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-cilent.png' : 'resources/front_end/images/title-cilent.png'); ?>" class="img-fluid">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/our-port.png' : 'resources/front_end/images/our-port.png'); ?>" class="img-fluid">
         </div>
 		<div class="row sec-client">
 			<div class="col-12 col-lg-3 mb-5 wrap-fixed-menu">
