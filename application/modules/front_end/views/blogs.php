@@ -157,6 +157,9 @@
 						<img src="<?php echo base_url('resources/front_end/images/service-menu.png');?>" alt="">
 					</li>
 					<?php foreach ($blog_categories as $key => $blog_category) { ?>
+
+						<a href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/' . unserialize($blog_category->slug)[$lang]); ?>"><?php echo unserialize($blog_category->title)[$lang]; ?></a>
+
 						<li>
 							<a class="<?php if ($key == 0) { echo 'is-active'; } ?>" href="#categoryGroup-<?php echo $blog_category->id; ?>">
 								<figure>
@@ -183,7 +186,7 @@
 								<p class="blog__modern--text">
 									<?php echo unserialize($blog->description_section)[$lang]; ?>
 								</p>
-								
+
 								<p class="blog__modern--bottom-text d-block d-md-none">22 ตุลาคม 2562 | บทความการตลาด</p>
 							</article>
 						</div>
