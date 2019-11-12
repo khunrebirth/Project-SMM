@@ -63,7 +63,7 @@ class Blogs extends MX_Controller
 		$data['og_twitter']['description'] = unserialize($page_content->meta_tag_description)[$this->lang];
 		$data['og_twitter']['title_moblie'] = unserialize($page_content->meta_tag_moblie_title)[$this->lang];
 		$data['og_twitter']['description_moblie'] = unserialize($page_content->meta_tag_moblie_description)[$this->lang];
-		$data['og_twitter']['image'] = base_url('storage/uploads/images/blogs/'. unserialize($page_content->img_og_twitter)[$this->lang]);
+		$data['og_twitter']['image'] = base_url('storage/uploads/images/blogs/' . unserialize($page_content->img_og_twitter)[$this->lang]);
 
 		// Content
 		$data['content'] = 'blogs';
@@ -122,7 +122,7 @@ class Blogs extends MX_Controller
 		$data['og_twitter']['description'] = unserialize($page_content->meta_tag_description)[$this->lang];
 		$data['og_twitter']['title_moblie'] = unserialize($page_content->meta_tag_moblie_title)[$this->lang];
 		$data['og_twitter']['description_moblie'] = unserialize($page_content->meta_tag_moblie_description)[$this->lang];
-		$data['og_twitter']['image'] = base_url('storage/uploads/images/blogs/'. unserialize($page_content->img_og_twitter)[$this->lang]);
+		$data['og_twitter']['image'] = base_url('storage/uploads/images/blogs/' . unserialize($page_content->img_og_twitter)[$this->lang]);
 
 		// Content
 		$data['content'] = 'blogs';
