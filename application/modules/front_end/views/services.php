@@ -341,6 +341,7 @@
 					<?php if ($portfolio->service_id == 17) { ?>
 
 						<!-- TODO:: handle Portoflio Video -->
+						
 
 					<?php } else { ?>
 						<div class="col-12 col-md-6 col-lg-2 text-center mb-5">
@@ -435,4 +436,16 @@
 		});
 	});
 
+</script>
+<script>
+    $(function () {
+        $(".item-client").fancybox({ 
+            animationEffect : 'fade'
+        });
+
+		//data-fancybox="group1" 
+		//rel="gallery" class="fancybox"
+		//href
+		//
+    });
 </script>

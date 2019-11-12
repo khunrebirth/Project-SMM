@@ -49,13 +49,16 @@
 				<div class="row">
 					<?php foreach ($portfolios as $portfolio) { ?>
 						<?php if ($portfolio->category_id == 17) { ?>
-
 							<!-- TODO:: handle Portoflio Video -->
-
+							<a  rel="gallery-<?php echo $portfolio->category_id; ?>" class="item-client col-md-4 col-6 mb-4 vdo-fancybox categoryGroup-<?php echo $portfolio->category_id; ?>" data-fancybox href="https://www.youtube.com/embed/keqd4RUQK4s">
+								<figure class="thumb-youtube">
+									<img src="https://img.youtube.com/vi/keqd4RUQK4s/maxresdefault.jpg" alt="" class="img-fluid img-clients">
+								</figure>
+							</a>
 						<?php } else { ?>
-							<div class="item-client col-md-4 col-6 mb-4 categoryGroup-<?php echo $portfolio->category_id; ?>">
+							<a data-fancybox="gallery-<?php echo $portfolio->category_id; ?>" class="item-client col-md-4 col-6 mb-4 fancybox categoryGroup-<?php echo $portfolio->category_id; ?>" href="<?php echo base_url('storage/uploads/images/portfolios/' . unserialize($portfolio->image)[$lang]); ?>">
 								<img src="<?php echo base_url('storage/uploads/images/portfolios/' . unserialize($portfolio->image)[$lang]); ?>" alt="<?php echo unserialize($portfolio->title)[$lang]; ?>" class="img-fluid img-clients">
-							</div>
+							</a>
 						<?php } ?>
 					<?php } ?>
 				</div>
@@ -127,6 +130,7 @@
 				$('#menuService').hide();
 			}
 		});
+
     });
 </script>
 <script>
