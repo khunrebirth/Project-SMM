@@ -379,7 +379,6 @@ class Home extends MX_Controller
 
 	public function portfolio_update($lang, $portfolio_id)
 	{
-
 		// Get Old data
 		$portfolio = $this->Portfolio_model->get_portfolio_by_id($portfolio_id);
 

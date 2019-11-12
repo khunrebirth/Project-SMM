@@ -425,7 +425,7 @@ class Service extends MX_Controller
 	{
 		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Page: Services - Portfolio - Add';
-		$this->data['content'] = 'services/port_create';
+		$this->data['content'] = $service_id == 17 ? 'services/port_create(video)' : 'services/port_create';
 		$this->data['service'] = $service = $this->Service_model->get_service_by_id($service_id);
 
 		$this->load->view('app', $this->data);
@@ -433,28 +433,41 @@ class Service extends MX_Controller
 
 	public function service_portfolio_store($lang, $service_id)
 	{
-		// Handle Image
-		$img_en = '';
-		$img_th = '';
+		// 17 Service(video)
+		if ($service_id == 17) {
 
-		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
-			$img_en = $this->ddoo_upload_service('img_en');
+			// Filter Data
+			$input_img = ['en' => $this->input->post('sort_url_en'), 'th' => $this->input->post('sort_url_th')];
+
+			// Add Data
+			$add_service = $this->Service_portfolio_model->insert_service_port([
+				'img' => serialize($input_img),
+				'service_id' => $service_id
+			]);
+		} else {
+			// Handle Image
+			$img_en = '';
+			$img_th = '';
+
+			if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
+				$img_en = $this->ddoo_upload_service('img_en');
+			}
+
+			if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
+				$img_th = $this->ddoo_upload_service('img_th');
+			}
+
+			// Filter Data
+			$input_img = ['en' => $img_en, 'th' => $img_th];
+			$input_title = ['en' => $this->input->post('img_title_alt_en'), 'th' => $this->input->post('img_title_alt_th')];
+
+			// Add Data
+			$add_service = $this->Service_portfolio_model->insert_service_port([
+				'img' => serialize($input_img),
+				'img_title_alt' => serialize($input_title),
+				'service_id' => $service_id
+			]);
 		}
-
-		if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
-			$img_th = $this->ddoo_upload_service('img_th');
-		}
-
-		// Filter Data
-		$input_img = ['en' => $img_en, 'th' => $img_th];
-		$input_title = ['en' => $this->input->post('img_title_alt_en'), 'th' => $this->input->post('img_title_alt_th')];
-
-		// Add Data
-		$add_service = $this->Service_portfolio_model->insert_service_port([
-			'img' => serialize($input_img),
-			'img_title_alt' => serialize($input_title),
-			'service_id' => $service_id
-		]);
 
 		// Set Session To View
 		if ($add_service) {
@@ -480,7 +493,7 @@ class Service extends MX_Controller
 
 		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Page: Services - Portfolio - Edit';
-		$this->data['content'] = 'services/port_edit';
+		$this->data['content'] = $service_id == 17 ? 'services/port_edit(video)' : 'services/port_edit';
 		$this->data['service'] = $service;
 		$this->data['portfolio'] =  $this->Service_portfolio_model->get_service_portfolio_by_id($portfolio_id);
 

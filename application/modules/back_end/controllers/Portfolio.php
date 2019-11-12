@@ -284,7 +284,7 @@ class Portfolio extends MX_Controller
 	{
 		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Page: Portfolios - Portfolios - Add';
-		$this->data['content'] = 'portfolios/portfolio_create';
+		$this->data['content'] = $portfolio_category_id == 17 ? 'portfolios/portfolio_create(video)' : 'portfolios/portfolio_create';
 		$this->data['category'] =  $this->Portfolio_category_model->get_portfolio_category_by_id($portfolio_category_id);
 		$this->data['portfolio_categories'] = $this->Portfolio_category_model->get_portfolio_category_all();
 
@@ -342,7 +342,7 @@ class Portfolio extends MX_Controller
 
 		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Page: Portfolios - Portfolios - Edit(' . unserialize($portfolio->title)['th'] . ')';
-		$this->data['content'] = 'portfolios/portfolio_edit';
+		$this->data['content'] = $portfolio_category_id == 17 ? 'portfolios/portfolio_edit(video)' : 'portfolios/portfolio_edit';
 		$this->data['portfolio'] = $portfolio;
 		$this->data['category'] =  $this->Portfolio_category_model->get_portfolio_category_by_id($portfolio_category_id);
 
