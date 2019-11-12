@@ -70,7 +70,7 @@ class Blogs extends MX_Controller
 
 		// Utilities
 		$data['blog_categories'] = $this->Blog_category_model->get_blog_category_active();
-		$data['blogs'] = $this->Blog_model->get_blog_by_category_blog_id($data['blog_categories'][0]->id);
+		$data['blogs'] = $this->filter_data_blogs($this->Blog_model->get_blog_by_category_blog_id($data['blog_categories'][0]->id));
 		$data['banner'] = $this->Banner_model->get_banner_active_by_id(3);
 
 		/*
@@ -82,7 +82,7 @@ class Blogs extends MX_Controller
 		$this->load->view('app', $data);
 	}
 
-	public function category_show($lang, $blog_category_slug, $blog_category_id)
+	public function category_show($lang, $blog_category_slug)
 	{
 		/*
 		| -------------------------------------------------------------------------
@@ -90,8 +90,11 @@ class Blogs extends MX_Controller
 		| -------------------------------------------------------------------------
 		*/
 
-		$blog_category_id = hashids_decrypt($blog_category_id);
-		$page_content = $this->Blog_category_model->get_blog_category_by_id($blog_category_id);
+		$page_content = $lang == 'th'
+			? $this->Blog_category_model->get_blog_by_slug_th($blog_category_slug)
+			: $this->Blog_category_model->get_blog_by_slug_en($blog_category_slug);
+
+		$category_blogs = $page_content;
 
 		/*
 		| -------------------------------------------------------------------------
@@ -125,7 +128,7 @@ class Blogs extends MX_Controller
 
 		// Utilities
 		$data['blog_categories'] = $this->Blog_category_model->get_blog_category_active();
-		$data['blogs'] = $this->Blog_model->get_blog_by_category_blog_id($blog_category_id);
+		$data['blogs'] = $this->filter_data_blogs($this->Blog_model->get_blog_by_category_blog_id($category_blogs->id));
 		$data['banner'] = $this->Banner_model->get_banner_active_by_id(3);
 
 		/*
@@ -257,6 +260,28 @@ class Blogs extends MX_Controller
 		*/
 
 		$this->load->view('app', $data);
+	}
+
+	private function filter_data_blogs($blogs)
+	{
+		$bundle_blogs = [];
+
+		if (count($blogs) > 0) {
+			foreach ($blogs as $key => $blog) {
+				$bundle_blogs[$key]['category_blog_id'] = $blog->category_blog_id;
+				$bundle_blogs[$key]['blog_category_slug'] = $blog->blog_category_slug;
+				$bundle_blogs[$key]['slug'] = $blog->slug;
+				$bundle_blogs[$key]['img'] = $blog->img;
+				$bundle_blogs[$key]['img_title_alt'] = $blog->img_title_alt;
+				$bundle_blogs[$key]['created_at'] = $blog->created_at;
+				$bundle_blogs[$key]['title'] = $blog->title;
+				$bundle_blogs[$key]['description_section'] = $blog->description_section;
+				$bundle_blogs[$key]['title'] = $blog->title;
+				$bundle_blogs[$key]['tags'] = $this->filter_data_tags($blog);
+			}
+		}
+
+		return $bundle_blogs;
 	}
 
 	private function filter_data_tags($blog)

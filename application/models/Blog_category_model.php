@@ -31,6 +31,20 @@ class Blog_category_model extends CI_Model {
         return $query->num_rows() > 0 ? $query->row() : false;
     }
 
+	public function get_blog_by_slug_th($slug)
+	{
+		$query = $this->db->where('slug_th', $slug)->get('blog_categories');
+
+		return $query->num_rows() > 0 ? $query->row() : false;
+	}
+
+	public function get_blog_by_slug_en($slug)
+	{
+		$query = $this->db->where('slug_en', $slug)->get('blog_categories');
+
+		return $query->num_rows() > 0 ? $query->row() : false;
+	}
+
 	public function get_blog_category_active()
 	{
 		$query = $this->db->where('status', 'Y')->get('blog_categories');
