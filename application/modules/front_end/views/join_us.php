@@ -24,7 +24,8 @@
 <section id="job">
     <div class="container-fluid ">
         <div class="title-team" style="text-align: center; padding: 0 0 3rem;">
-			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-joinus.png' : 'resources/front_end/images/title-joinus.png'); ?>" alt="" class="img-fluid">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-joinus.png' : 'resources/front_end/images/title-joinus.png'); ?>" alt="" class="img-fluid d-none d-md-block mx-auto">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-joinus_sp.png' : 'resources/front_end/images/title-joinus_Sp.png'); ?>" alt="" class="img-fluid d-block d-md-none mx-auto">
         </div>  
         <div class="row sec-job sec-job-info">
             <div class="col-sm-12 col-md-6">

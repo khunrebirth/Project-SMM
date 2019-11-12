@@ -19,7 +19,8 @@
 <section id="client">
     <div class="container-fluid">
         <div class="title-client" style="text-align: center; padding: 4rem;display: block;position: relative;">
-			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-cilent.png' : 'resources/front_end/images/title-cilent.png'); ?>" class="img-fluid">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-cilent.png' : 'resources/front_end/images/title-cilent.png'); ?>" class="img-fluid d-none d-md-block mx-auto">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-cilent_sp.png' : 'resources/front_end/images/title-cilent_sp.png'); ?>" class="img-fluid d-block d-md-none mx-auto">
         </div>
 		<div class="row sec-client">
 			<div class="col-12 col-lg-3 wrap-fixed-menu mb-5">

@@ -38,8 +38,8 @@
 			</div>
 			<div class="col-xs-12 col-md-6 col-lg-6 order-lg-1 my-auto showcase-text text-center wow fadeInLeft">
 				<div class="title-about ttl-home-img" style="">
-					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-about.png' : 'resources/front_end/images/title-about.png'); ?>" class="img-fluid d-none d-md-block">
-					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-about_sp.png' : 'resources/front_end/images/title-about_sp.png'); ?>" class="img-fluid d-block d-md-none">
+					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-about.png' : 'resources/front_end/images/title-about.png'); ?>" class="img-fluid d-none d-md-block mx-auto">
+					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-about_sp.png' : 'resources/front_end/images/title-about_sp.png'); ?>" class="img-fluid d-block d-md-none mx-auto">
 				</div>
 				<h2 class="about__title--head mt-5 mb-4"><span>S</span>ocial Media Master</h2>
 				<div class="row justify-content-center">
@@ -58,7 +58,7 @@
 	<div class="container-fluid text-center sec-home-service">
 		<div class="title-service ttl-home-img" style="text-align: left; padding: 4rem 0;">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-service.png' : 'resources/front_end/images/title-service.png'); ?>" class="img-fluid d-none d-md-block">
-			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-service_sp.png' : 'resources/front_end/images/title-service_sp.png'); ?>" class="img-fluid d-block d-md-none">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-service_sp.png' : 'resources/front_end/images/title-service_sp.png'); ?>" class="img-fluid d-block d-md-none mx-auto">
 		</div>
 		<div class="row">
 			<?php foreach ($services as $service) { ?>
@@ -78,7 +78,8 @@
 <section id="client" class="wow fadeInUp">
 	<div class="container-fluid">
 		<div class="title-client ttl-home-img" style="text-align: center; padding: 4rem 0;">
-			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-cilent.png' : 'resources/front_end/images/title-cilent.png'); ?>" class="img-fluid">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-cilent.png' : 'resources/front_end/images/title-cilent.png'); ?>" class="img-fluid d-none d-md-block mx-auto">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-cilent_sp.png' : 'resources/front_end/images/title-cilent_sp.png'); ?>" class="img-fluid d-block d-md-none mx-auto">
 		</div>
 		<div class="col-12 sec-client box-slide-client-sp  owl-carousel owl-theme">
 			<div class="row">
@@ -106,7 +107,8 @@
 <section id="portfolio" class="wow fadeInUp">
 	<div class="container-fluid">
 		<div class="title-client ttl-home-img" style="text-align: center; padding: 0 4rem 4rem;">
-			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/our-port.png' : 'resources/front_end/images/our-port.png'); ?>" class="img-fluid">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/our-port.png' : 'resources/front_end/images/our-port.png'); ?>" class="img-fluid d-none d-md-block mx-auto">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/our-port_sp.png' : 'resources/front_end/images/our-port_sp.png'); ?>" class="img-fluid d-block d-md-none mx-auto">
 		</div>
 		<div class="col-12 sec-client box-slide-portfolio-sp  owl-carousel owl-theme">
 			<div class="row">
@@ -141,7 +143,8 @@
 <section id="blog">
 	<div class="container-fluid">
 		<div class="title-client ttl-home-img" style="text-align: center; padding: 0 0 4rem;">
-			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-blog.png' : 'resources/front_end/images/title-blog.png'); ?>" class="img-fluid">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-blog.png' : 'resources/front_end/images/title-blog.png'); ?>" class="img-fluid d-none d-md-block mx-auto">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-blog_sp.png' : 'resources/front_end/images/title-blog_sp.png'); ?>" class="img-fluid d-block d-md-none mx-auto">
 		</div>
 		<div class="row row-60 row-sm">
 			<?php foreach ($blogs as $blog) { ?>
@@ -190,7 +193,8 @@
 			</div>
 			<div class="item-team-ttl col-lg-3 col-sm-12">
 				<div class="title-team ttl-home-img" style="text-align: center; padding: 3rem 0.5rem 2rem;">
-					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-team.png' : 'resources/front_end/images/title-team.png'); ?>" class="img-fluid">
+					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-team.png' : 'resources/front_end/images/title-team.png'); ?>" class="img-fluid d-none d-md-block mx-auto">
+					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-team_sp.png' : 'resources/front_end/images/title-team_sp.png'); ?>" class="img-fluid d-block d-md-none mx-auto">
 				</div>
 				<p class="text-center col-12 mb-4"><a href="<?php echo base_url($lang . '/' . lang('menu_teams') . '/'); ?>" class="btn btn-primary btn-full-sp"><?php echo lang('btn_read_all'); ?></a></p>
 			</div>
@@ -202,7 +206,8 @@
 <section id="contact" class="wow fadeInUp">
 	<div class="container">
 		<div class="title-contact ttl-home-img" style="text-align: center; padding: 4rem 15px;">
-			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-contact.png' : 'resources/front_end/images/title-contact.png'); ?>" class="img-fluid">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-contact.png' : 'resources/front_end/images/title-contact.png'); ?>" class="img-fluid d-none d-md-block mx-auto">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-contact_sp.png' : 'resources/front_end/images/title-contact_sp.png'); ?>" class="img-fluid d-block d-md-none mx-auto">
 		</div>
 		<div class="row">
 			<div class="col-xs-12 col-md-7 col-lg-7 ">

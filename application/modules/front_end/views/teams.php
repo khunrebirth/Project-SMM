@@ -129,7 +129,8 @@
 <section id="team">
     <div class="container-fluid ">
         <div class="title-team" style="text-align: center; padding: 0 0 3rem;">
-			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-team.png' : 'resources/front_end/images/title-team.png'); ?>" alt="" class="img-fluid">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-team.png' : 'resources/front_end/images/title-team.png'); ?>" alt="" class="img-fluid d-none d-md-block mx-auto">
+			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-team_sp.png' : 'resources/front_end/images/title-team_sp.png'); ?>" alt="" class="img-fluid d-block d-md-none mx-auto">
         </div>
         
         <div class="box-slide-team row">
