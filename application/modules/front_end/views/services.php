@@ -308,7 +308,6 @@
 
 <!-- Form -->
 <div id="template" style="display:none;">
-<button onClick="modalClose()">0000</button>
 	<h2 class="text-secondary contact__form--title" ><?php echo lang('page_contact_title_first'); ?><span><?php echo lang('page_contact_title_center'); ?></span><?php echo lang('page_contact_title_end'); ?></h2>
 	<p class="text-secondary contact__form--body mb-4"><?php echo lang('page_contact_desc'); ?></p>
 	<form class="mt-4" action="<?php echo base_url($lang . '/'. 'contact/send') ?>" method="post">
@@ -340,22 +339,18 @@
 				<h3 class="col-12 ttl-port-list"><span><?php echo lang('page_services_txt_portfolio'); ?></span></h3>
 				<?php foreach ($service['portfolios'] as $portfolio) { ?>
 					<?php if ($portfolio->service_id == 17) { ?>
-
 						<!-- TODO:: handle Portoflio Video -->
-
-
+						<a class="col-12 col-md-6 col-lg-2 text-center item-youtube mb-5" data-fancybox href="https://www.youtube.com/embed/keqd4RUQK4s">
+							<div class="thumb-youtube" >
+								<img src="https://img.youtube.com/vi/keqd4RUQK4s/maxresdefault.jpg" alt="">
+							</div>
+						</a>
 					<?php } else { ?>
 						<div class="col-12 col-md-6 col-lg-2 text-center mb-5">
 							<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/services/' . unserialize($portfolio->img)[$lang]); ?>" alt="<?php echo unserialize($portfolio->img_title_alt)[$lang]; ?>">
 						</div>
 					<?php } ?>
 				<?php } ?>
-				
-				<a class="col-12 col-md-6 col-lg-2 text-center item-youtube mb-5" data-fancybox href="https://www.youtube.com/embed/keqd4RUQK4s">
-					<div class="thumb-youtube" >
-						<img src="https://img.youtube.com/vi/keqd4RUQK4s/maxresdefault.jpg" alt="">
-					</div>
-				</a>
 			</div>
 		</div>
 	</section>
@@ -442,10 +437,5 @@
 			}
 		});
 	});
-	function modalClose() {
-		$('.tippy-popper').prev().attr('aria-expanded','false');
-		$('.tippy-popper').remove();
-		// alert('e');
-	}
 
 </script>
