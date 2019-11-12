@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="<?php echo base_url('resources/front_end/js/jquery.Thailand.js/dist/jquery.Thailand.min.css'); ?>">
+
 <!-- Push Custom Style -->
 <style>
 	hr {
@@ -96,7 +98,7 @@
 						<div class="carousel-item active">
 							<div class="col-12">
 								<h3 class="ttl-form-regist"><?php echo lang('page_join_us_form_txt_title_section_infomation'); ?></h3>
-								<form class="mt-2" action="<?php echo base_url($lang . '/'. 'career-contact/send') ?>" method="post">
+								<form class="mt-2" action="<?php echo base_url($lang . '/'. 'career-contact/send') ?>" method="post" enctype="multipart/form-data" id="demo1">
 									<div class="row">
 										<div class="col-md-6 col-12">
 											<div class="form-group">
@@ -106,14 +108,6 @@
 										<div class="col-md-6 col-12">
 											<div class="form-group">
 												<input type="text" class="form-control" name="name" placeholder="<?php echo lang('page_join_us_form_txt_name'); ?>" required>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<label class="col-12" for=""><?php echo lang('page_join_us_form_txt_birthday'); ?></label>
-										<div class="col-md-6 col-12">
-											<div class="form-group">
-												<input type="text" class="form-control inp_date_01" name="birthday" required>
 											</div>
 										</div>
 									</div>
@@ -132,6 +126,12 @@
 									<div class="row">
 										<div class="col-md-6 col-12">
 											<div class="form-group">
+												<label for=""><?php echo lang('page_join_us_form_txt_birthday'); ?></label>
+												<input type="text" class="form-control inp_date_01" name="birthday" required>
+											</div>
+										</div>
+										<div class="col-md-3 col-12">
+											<div class="form-group">
 												<label for=""><?php echo lang('page_join_us_form_txt_status'); ?></label>
 												<select class="form-control" name="status">
 													<option value="<?php echo lang('page_join_us_form_txt_status_1'); ?>"><?php echo lang('page_join_us_form_txt_status_1'); ?></option>
@@ -141,10 +141,10 @@
 												</select>
 											</div>
 										</div>
-										<div class="col-md-6 col-12">
+										<div class="col-md-3 col-12">
 											<div class="form-group">
 												<label class="ttl-form"><?php echo lang('page_join_us_form_txt_gender'); ?></label>
-												<label class="radio-inline pl-4" for="">
+												<label class="radio-inline" for="">
 													<input type="radio" name="gender" value="male"> <?php echo lang('page_join_us_form_txt_male'); ?>
 												</label>
 												<label class="radio-inline ml-2" for="">
@@ -525,9 +525,40 @@
 <?php include 'layouts/sitemap.php'; ?>
 
 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.20/js/uikit.min.js"></script>
+
+<!-- dependencies for zip mode -->
+<script type="text/javascript" src="<?php echo base_url('resources/front_end/js/jquery.Thailand.js/dependencies/zip.js/zip.js'); ?>"></script>
+<!-- / dependencies for zip mode -->
+
+<script type="text/javascript" src="<?php echo base_url('resources/front_end/js/jquery.Thailand.js/dependencies/JQL.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('resources/front_end/js/jquery.Thailand.js/dependencies/typeahead.bundle.js'); ?>"></script>
+
+<script type="text/javascript" src="<?php echo base_url('resources/front_end/js/jquery.Thailand.js/dist/jquery.Thailand.min.js'); ?>"></script>
+
 <!-- Push Custom Scripts -->
 <script>
+
 	$(function () {
+
+        $.Thailand({
+            database: "<?php echo base_url('resources/front_end/js/jquery.Thailand.js/database/db.json'); ?>",
+
+            $district: $('#demo1 [name="addr_district"]'),
+            $amphoe: $('#demo1 [name="addr_amphoe"]'),
+            $province: $('#demo1 [name="addr_province"]'),
+            $zipcode: $('#demo1 [name="addr_zip"]'),
+
+            onDataFill: function(data){
+                console.info('Data Filled', data);
+            },
+
+            onLoad: function(){
+                console.info('Autocomplete is ready!');
+                $('#loader, .demo').toggle();
+            }
+        });
+
 		$("a.fancybox").fancybox({
 			animationEffect: 'fade'
 		}).attr('data-fancybox', 'group1');
@@ -539,6 +570,7 @@
 			$('.carousel').carousel('pause');
 			$(".modal").animate({ scrollTop: 0}, 600);
 		});
+
 		$('.btn-prev').on('click', function () {
 			$('.carousel').carousel('prev');
 			$('.carousel').carousel('pause');
@@ -548,6 +580,7 @@
 		$('.inp_date_01').datepicker({
             uiLibrary: 'bootstrap4'
         });
+
 		$('.inp_date_02').datepicker({
             uiLibrary: 'bootstrap4'
         });
