@@ -57,7 +57,7 @@
 
 <!-- Content -->
 <section id="job">
-	<div class="container-fluid ">
+	<div class="container-fluid">
 		<div class="row sec-job sec-job-detail">
 			<div class="col-sm-12 col-md-9">
 				<?php echo unserialize($career->content)[$lang]; ?>
@@ -253,7 +253,7 @@
 												<label class="col-12" for=""><?php echo lang('page_join_us_form_txt_old_company_exp'); ?></label>
 												<div class="col-md-12 col-12">
 													<div class="form-group">
-														<input type="text" class="form-control" name="old_company_exp ">
+														<input type="text" class="form-control" name="old_company_exp">
 													</div>
 												</div>
 											</div>
