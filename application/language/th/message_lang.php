@@ -74,22 +74,13 @@ $lang['page_team'] = 'ทีมงาน';
 | -------------------------------------------------------------------------
 */
 
+// First
 $lang['page_join_us_benefits'] = 'สวัสดิการที่คุณจะได้รับ';
 $lang['page_join_us_btn_apply'] = 'สมัคร';
-$lang['page_join_us_btn_back'] = 'กลับไปหน้าร่วมงานกับเรา';
 $lang['page_join_us_location'] = 'กรุงเทพ';
 $lang['page_join_us_unit'] = 'ตำแหน่ง';
 $lang['page_join_us_career_title'] = 'ตำแหน่งที่เปิดรับ';
 $lang['page_join_us_btn_apply_to_position'] = 'สมัครตำแหน่งนี้';
-$lang['page_join_us_title_first'] = 'กรอกแบบ';
-$lang['page_join_us_title_center'] = 'ฟอร์ม';
-$lang['page_join_us_title_end'] = 'เพื่อร่วมงานกับเรา';
-$lang['page_join_us_desc'] = 'เราจะติดต่อกลับโดยด่วนที่สุด';
-$lang['page_join_us_form_txt_name'] = 'ชื่อ*';
-$lang['page_join_us_form_txt_email'] = 'อีเมล์*';
-$lang['page_join_us_form_txt_phone'] = 'เบอร์ติดต่อ*';
-$lang['page_join_us_form_txt_detail'] = 'รายละเอียด';
-$lang['page_join_us_button_send'] = 'ตกลง';
 $lang['page_join_us_benefit_1'] = 'ประกันสังคม';
 $lang['page_join_us_benefit_2'] = 'กองทุนสำรองเลี้ยงชีพ 2.5%';
 $lang['page_join_us_benefit_3'] = 'ประกันกลุ่ม AIA';
@@ -98,6 +89,66 @@ $lang['page_join_us_benefit_5'] = 'โบนัส ประจำปี (ขึ
 $lang['page_join_us_benefit_6'] = 'ปรับเงินเดือนประจำปี';
 $lang['page_join_us_benefit_7'] = 'โบนัสประจำปี';
 $lang['page_join_us_benefit_8'] = 'ปรับเงินเดือนประจำปี';
+
+// Detail
+$lang['page_join_us_btn_back'] = 'กลับไปหน้าร่วมงานกับเรา';
+$lang['page_join_us_btn_next'] = 'ต่อไป';
+$lang['page_join_us_btn_back_form'] = 'ย้อนกลับ';
+$lang['page_join_us_btn_send'] = 'ส่งข้อมูล';
+$lang['page_join_us_button_send'] = 'ตกลง';
+$lang['page_join_us_title_first'] = 'กรอกแบบ';
+$lang['page_join_us_title_center'] = 'ฟอร์ม';
+$lang['page_join_us_title_end'] = 'เพื่อร่วมงานกับเรา';
+$lang['page_join_us_desc'] = 'เราจะติดต่อกลับโดยด่วนที่สุด';
+$lang['page_join_us_form_txt_title_section_infomation'] = 'ข้อมูลส่วนตัว';
+$lang['page_join_us_form_txt_card_id'] = 'รหัสบัตรประชาชน*';
+$lang['page_join_us_form_txt_name'] = 'ชื่อ*';
+$lang['page_join_us_form_txt_birthday'] = 'วัน/เดือน/ปี เกิด*';
+$lang['page_join_us_form_txt_email'] = 'อีเมล์*';
+$lang['page_join_us_form_txt_phone'] = 'เบอร์ติดต่อ*';
+$lang['page_join_us_form_txt_status'] = 'สถานะภาพ';
+$lang['page_join_us_form_txt_status_1'] = 'โสด';
+$lang['page_join_us_form_txt_status_2'] = 'แต่งงาน';
+$lang['page_join_us_form_txt_status_3'] = 'หย่าร้าง';
+$lang['page_join_us_form_txt_status_4'] = 'หม้าย';
+$lang['page_join_us_form_txt_gender'] = 'เพศ';
+$lang['page_join_us_form_txt_male'] = 'ชาย';
+$lang['page_join_us_form_txt_female'] = 'หญิง';
+$lang['page_join_us_form_txt_other'] = 'อื่น ๆ';
+$lang['page_join_us_form_txt_addr'] = 'ที่อยู่';
+$lang['page_join_us_form_txt_addr_no'] = 'บ้านเลขที่ / หมู่บ้าน / คอนโด';
+$lang['page_join_us_form_txt_addr_soi'] = 'ซอย';
+$lang['page_join_us_form_txt_addr_road'] = 'ถนน';
+$lang['page_join_us_form_txt_addr_amphoe'] = 'อำเภอ';
+$lang['page_join_us_form_txt_addr_district'] = 'ตำบล';
+$lang['page_join_us_form_txt_addr_province'] = 'จังหวัด';
+$lang['page_join_us_form_txt_addr_zip'] = 'รหัสไปรษณีย์';
+$lang['page_join_us_form_txt_detail'] = 'รายละเอียด';
+$lang['page_join_us_form_txt_title_section_old_work'] = 'ประวัติการทำงานล่าสุด';
+$lang['page_join_us_form_txt_old_company_name'] = 'ชื่อบริษัท';
+$lang['page_join_us_form_txt_old_company_position'] = 'ตำแหน่ง';
+$lang['page_join_us_form_txt_old_company_status'] = 'สถานะการทำงาน';
+$lang['page_join_us_form_txt_old_company_status_1'] = 'ลูกจ้าง';
+$lang['page_join_us_form_txt_old_company_status_2'] = 'ว่างงาน';
+$lang['page_join_us_form_txt_old_company_salary'] = 'เงินเดือน';
+$lang['page_join_us_form_txt_old_company_start_work'] = 'ตั้งแต่ วัน/เดือน/ปี';
+$lang['page_join_us_form_txt_old_company_exp'] = 'ประสบการณ์การทำงาน';
+$lang['page_join_us_form_txt_old_company_comment'] = 'กรุณาใส่ประวัติการทำงานทั้งหมด ตำแหน่ง/ชื่อบริษัท/ระยะเวลา';
+$lang['page_join_us_form_txt_title_section_edu'] = 'ประวัติการศึกษา';
+$lang['page_join_us_form_txt_edu_level'] = 'ระดับ';
+$lang['page_join_us_form_txt_edu_level_0'] = 'เลือกระดับการศึกษา';
+$lang['page_join_us_form_txt_edu_level_1'] = 'มัธยม / ปวช.';
+$lang['page_join_us_form_txt_edu_level_2'] = 'ปวส.';
+$lang['page_join_us_form_txt_edu_level_3'] = 'ปริญญาตรี';
+$lang['page_join_us_form_txt_edu_level_4'] = 'ปริญญาโท';
+$lang['page_join_us_form_txt_edu_level_5'] = 'อื่น ๆ';
+$lang['page_join_us_form_txt_edu_name'] = 'สถาบัน';
+$lang['page_join_us_form_txt_edu_pos'] = 'คณะ';
+$lang['page_join_us_form_txt_edu_date_start_to_ends'] = 'ปี (เริ่ม-จบ)';
+$lang['page_join_us_form_txt_edu_gpa'] = 'เกรดเฉลี่ย';
+$lang['page_join_us_form_txt_title_section_resume_and_img'] = 'แนบ Resume / รูป';
+$lang['page_join_us_form_file_resume'] = 'แนบ Resume';
+$lang['page_join_us_form_img'] = 'แนบรูป';
 
 /*
 | -------------------------------------------------------------------------
