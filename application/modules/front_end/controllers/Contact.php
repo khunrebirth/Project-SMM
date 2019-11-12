@@ -105,9 +105,9 @@ class Contact extends MX_Controller
 		$file_resume = '';
 		$img = '';
 
-		if (isset($_FILES['img']) && $_FILES['img']['name'] != '') {
-			$img = $this->ddoo_upload_img_contact('img');
-		}
+//		if (isset($_FILES['img']) && $_FILES['img']['name'] != '') {
+//			$img = $this->ddoo_upload_img_contact('img');
+//		}
 
 		if (isset($_FILES['file_resume']) && $_FILES['file_resume']['name'] != '') {
 			$file_resume = $this->do_upload_file_contact('file_resume');
@@ -174,7 +174,7 @@ class Contact extends MX_Controller
 			'addr' => $address,
 			'old_company_name' => $this->input->post('old_company_name'),
 			'old_company_position' => $this->input->post('old_company_position'),
-			'old_company_status' => '',
+			'old_company_status' => $this->input->post('old_company_status'),
 			'old_company_salary' => $this->input->post('old_company_salary'),
 			'old_company_start_work' => $this->input->post('old_company_start_work'),
 			'old_company_exp' => $this->input->post('old_company_exp'),

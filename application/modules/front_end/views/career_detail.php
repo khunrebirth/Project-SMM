@@ -226,6 +226,7 @@
 										<div class="col-md-6 col-12">
 											<div class="form-group">
 												<select class="form-control" name="old_company_status">
+													<option value=""><?php echo lang('page_join_us_form_txt_old_company_status_0'); ?></option>
 													<option value="<?php echo lang('page_join_us_form_txt_old_company_status_1'); ?>"><?php echo lang('page_join_us_form_txt_old_company_status_1'); ?></option>
 													<option value="<?php echo lang('page_join_us_form_txt_old_company_status_2'); ?>"><?php echo lang('page_join_us_form_txt_old_company_status_2'); ?></option>
 												</select>
@@ -284,12 +285,12 @@
 										<div class="form-group">
 											<label for=""><?php echo lang('page_join_us_form_txt_edu_level'); ?></label>
 											<select class="form-control" name="edu_level_group1">
-												<option value="<?php echo lang('page_join_us_form_txt_edu_level_0'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
-												<option value="<?php echo lang('page_join_us_form_txt_edu_level_1'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
-												<option value="<?php echo lang('page_join_us_form_txt_edu_level_2'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
-												<option value="<?php echo lang('page_join_us_form_txt_edu_level_3'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
-												<option value="<?php echo lang('page_join_us_form_txt_edu_level_4'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
-												<option value="<?php echo lang('page_join_us_form_txt_edu_level_5'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value=""><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_1'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_1'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_2'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_2'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_3'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_3'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_4'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_4'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_5'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_5'); ?></option>
 											</select>
 										</div>
 									</div>
@@ -322,12 +323,12 @@
 										<div class="form-group">
 											<label for=""><?php echo lang('page_join_us_form_txt_edu_level'); ?></label>
 											<select class="form-control" name="edu_level_group2">
-												<option value="<?php echo lang('page_join_us_form_txt_edu_level_0'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
-												<option value="<?php echo lang('page_join_us_form_txt_edu_level_1'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
-												<option value="<?php echo lang('page_join_us_form_txt_edu_level_2'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
-												<option value="<?php echo lang('page_join_us_form_txt_edu_level_3'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
-												<option value="<?php echo lang('page_join_us_form_txt_edu_level_4'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
-												<option value="<?php echo lang('page_join_us_form_txt_edu_level_5'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value=""><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_1'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_1'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_2'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_2'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_3'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_3'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_4'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_4'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_5'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_5'); ?></option>
 											</select>
 										</div>
 									</div>
@@ -360,12 +361,12 @@
 										<div class="form-group">
 											<label for=""><?php echo lang('page_join_us_form_txt_edu_level'); ?></label>
 											<select class="form-control" name="edu_level_group3">
-												<option value="<?php echo lang('page_join_us_form_txt_edu_level_0'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
-												<option value="<?php echo lang('page_join_us_form_txt_edu_level_1'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
-												<option value="<?php echo lang('page_join_us_form_txt_edu_level_2'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
-												<option value="<?php echo lang('page_join_us_form_txt_edu_level_3'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
-												<option value="<?php echo lang('page_join_us_form_txt_edu_level_4'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
-												<option value="<?php echo lang('page_join_us_form_txt_edu_level_5'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value=""><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_1'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_1'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_2'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_2'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_3'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_3'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_4'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_4'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_5'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_5'); ?></option>
 											</select>
 										</div>
 									</div>
@@ -398,12 +399,12 @@
 										<div class="form-group">
 											<label for=""><?php echo lang('page_join_us_form_txt_edu_level'); ?></label>
 											<select class="form-control" name="edu_level_group4">
-												<option value="<?php echo lang('page_join_us_form_txt_edu_level_0'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
-												<option value="<?php echo lang('page_join_us_form_txt_edu_level_1'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
-												<option value="<?php echo lang('page_join_us_form_txt_edu_level_2'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
-												<option value="<?php echo lang('page_join_us_form_txt_edu_level_3'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
-												<option value="<?php echo lang('page_join_us_form_txt_edu_level_4'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
-												<option value="<?php echo lang('page_join_us_form_txt_edu_level_5'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value=""><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_1'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_1'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_2'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_2'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_3'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_3'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_4'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_4'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_5'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_5'); ?></option>
 											</select>
 										</div>
 									</div>
@@ -436,12 +437,12 @@
 										<div class="form-group">
 											<label for=""><?php echo lang('page_join_us_form_txt_edu_level'); ?></label>
 											<select class="form-control" name="edu_level_group5">
-												<option value="<?php echo lang('page_join_us_form_txt_edu_level_0'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
-												<option value="<?php echo lang('page_join_us_form_txt_edu_level_1'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
-												<option value="<?php echo lang('page_join_us_form_txt_edu_level_2'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
-												<option value="<?php echo lang('page_join_us_form_txt_edu_level_3'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
-												<option value="<?php echo lang('page_join_us_form_txt_edu_level_4'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
-												<option value="<?php echo lang('page_join_us_form_txt_edu_level_5'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value=""><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_1'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_1'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_2'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_2'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_3'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_3'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_4'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_4'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_5'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_5'); ?></option>
 											</select>
 										</div>
 									</div>
@@ -494,20 +495,20 @@
 											</div>
 										</div>
                                     </div>
-                                    <div class="col-md-12 col-12">
-                                        <div class="form-group">
-                                            <label for=""><?php echo lang('page_join_us_form_img'); ?></label>
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text">Upload</span>
-                                                </div>
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" aria-describedby="inputGroupFileAddon01" name="img">
-                                                    <label class="custom-file-label" for="">Choose image</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+<!--                                    <div class="col-md-12 col-12">-->
+<!--                                        <div class="form-group">-->
+<!--                                            <label for="">--><?php //echo lang('page_join_us_form_img'); ?><!--</label>-->
+<!--                                            <div class="input-group">-->
+<!--                                                <div class="input-group-prepend">-->
+<!--                                                    <span class="input-group-text">Upload</span>-->
+<!--                                                </div>-->
+<!--                                                <div class="custom-file">-->
+<!--                                                    <input type="file" class="custom-file-input" aria-describedby="inputGroupFileAddon01" name="img">-->
+<!--                                                    <label class="custom-file-label" for="">Choose image</label>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
                                     <div class="col-12 text-center">
 										<span class="btn btn-primary text-center btn-prev"><?php echo lang('page_join_us_btn_back_form'); ?></span>
 										<button type="submit" class="btn btn-primary text-center btn-next"><?php echo lang('page_join_us_btn_send'); ?></button>

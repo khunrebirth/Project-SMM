@@ -128,6 +128,7 @@ $lang['page_join_us_form_txt_title_section_old_work'] = 'ประวัติ�
 $lang['page_join_us_form_txt_old_company_name'] = 'ชื่อบริษัท';
 $lang['page_join_us_form_txt_old_company_position'] = 'ตำแหน่ง';
 $lang['page_join_us_form_txt_old_company_status'] = 'สถานะการทำงาน';
+$lang['page_join_us_form_txt_old_company_status_0'] = 'เลือกสถานะการทำงาน';
 $lang['page_join_us_form_txt_old_company_status_1'] = 'ลูกจ้าง';
 $lang['page_join_us_form_txt_old_company_status_2'] = 'ว่างงาน';
 $lang['page_join_us_form_txt_old_company_salary'] = 'เงินเดือน';
@@ -146,7 +147,7 @@ $lang['page_join_us_form_txt_edu_name'] = 'สถาบัน';
 $lang['page_join_us_form_txt_edu_pos'] = 'คณะ';
 $lang['page_join_us_form_txt_edu_date_start_to_ends'] = 'ปี (เริ่ม-จบ)';
 $lang['page_join_us_form_txt_edu_gpa'] = 'เกรดเฉลี่ย';
-$lang['page_join_us_form_txt_title_section_resume_and_img'] = 'แนบ Resume / รูป';
+$lang['page_join_us_form_txt_title_section_resume_and_img'] = 'แนบ Resume';
 $lang['page_join_us_form_file_resume'] = 'แนบ Resume';
 $lang['page_join_us_form_img'] = 'แนบรูป';
 
