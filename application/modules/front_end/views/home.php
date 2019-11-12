@@ -114,7 +114,7 @@
 			<div class="row">
 				<?php foreach ($top_portfolios as $top_portfolio) { ?>
 					<div class="col-6 col-md-6 col-lg-3 mb-4">
-						<?php if ($top_portfolio == 17) { ?>
+						<?php if ($top_portfolio->category_id == 17) { ?>
 
 							<!-- TODO:: handle Portoflio Video -->
 
@@ -132,7 +132,7 @@
 				<?php $slice_portfolios = array_slice($portfolios, 0, 4); ?>
 				<?php foreach ($slice_portfolios as $portfolio) { ?>
 					<div class="col-6 col-md-6 col-lg-3 mb-4">
-						<?php if ($portfolio == 17) { ?>
+						<?php if ($portfolio->category_id == 17) { ?>
 
 							<!-- TODO:: handle Portoflio Video -->
 

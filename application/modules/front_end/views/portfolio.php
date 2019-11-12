@@ -44,7 +44,7 @@
 			<div class="col-12 col-lg-9 wrap-logo">
 				<div class="row">
 					<?php foreach ($portfolios as $portfolio) { ?>
-						<?php if ($portfolio == 17) { ?>
+						<?php if ($portfolio->category_id == 17) { ?>
 
 							<!-- TODO:: handle Portoflio Video -->
 

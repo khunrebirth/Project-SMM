@@ -337,7 +337,7 @@
 			<div class="row">
 				<h3 class="col-12 ttl-port-list"><span><?php echo lang('page_services_txt_portfolio'); ?></span></h3>
 				<?php foreach ($service['portfolios'] as $portfolio) { ?>
-					<?php if ($portfolio == 17) { ?>
+					<?php if ($portfolio->service_id == 17) { ?>
 
 						<!-- TODO:: handle Portoflio Video -->
 
