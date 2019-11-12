@@ -308,6 +308,7 @@
 
 <!-- Form -->
 <div id="template" style="display:none;">
+<button onClick="modalClose()">0000</button>
 	<h2 class="text-secondary contact__form--title" ><?php echo lang('page_contact_title_first'); ?><span><?php echo lang('page_contact_title_center'); ?></span><?php echo lang('page_contact_title_end'); ?></h2>
 	<p class="text-secondary contact__form--body mb-4"><?php echo lang('page_contact_desc'); ?></p>
 	<form class="mt-4" action="<?php echo base_url($lang . '/'. 'contact/send') ?>" method="post">
@@ -341,7 +342,7 @@
 					<?php if ($portfolio->service_id == 17) { ?>
 
 						<!-- TODO:: handle Portoflio Video -->
-						
+
 
 					<?php } else { ?>
 						<div class="col-12 col-md-6 col-lg-2 text-center mb-5">
@@ -349,6 +350,12 @@
 						</div>
 					<?php } ?>
 				<?php } ?>
+				
+				<a class="col-12 col-md-6 col-lg-2 text-center item-youtube mb-5" data-fancybox href="https://www.youtube.com/embed/keqd4RUQK4s">
+					<div class="thumb-youtube" >
+						<img src="https://img.youtube.com/vi/keqd4RUQK4s/maxresdefault.jpg" alt="">
+					</div>
+				</a>
 			</div>
 		</div>
 	</section>
@@ -435,17 +442,10 @@
 			}
 		});
 	});
+	function modalClose() {
+		$('.tippy-popper').prev().attr('aria-expanded','false');
+		$('.tippy-popper').remove();
+		// alert('e');
+	}
 
-</script>
-<script>
-    $(function () {
-        $(".item-client").fancybox({ 
-            animationEffect : 'fade'
-        });
-
-		//data-fancybox="group1" 
-		//rel="gallery" class="fancybox"
-		//href
-		//
-    });
 </script>
