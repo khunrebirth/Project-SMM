@@ -158,51 +158,44 @@
 										</div>
 									</div>
 									<div class="row">
-										<label class="col-12" for="">ที่อยู่</label>
+										<label class="col-12" for=""><?php echo lang('page_join_us_form_txt_addr'); ?></label>
 										<div class="col-md-6 col-12">
 											<div class="form-group">
-												<input type="text" class="form-control" name="phone"
-													placeholder="บ้านเลขที่ / หมู่บ้าน / คอนโด" required="">
+												<input type="text" class="form-control" name="addr_no" placeholder="<?php echo lang('page_join_us_form_txt_addr_no'); ?>">
 											</div>
 										</div>
 										<div class="col-md-6 col-12">
 											<div class="form-group">
-												<input type="text" class="form-control" name="phone" placeholder="ซอย"
-													required="">
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-md-6 col-12">
-											<div class="form-group">
-												<input type="text" class="form-control" name="phone" placeholder="ถนน"
-													required="">
-											</div>
-										</div>
-										<div class="col-md-6 col-12">
-											<div class="form-group">
-												<input type="text" class="form-control" name="phone" placeholder="อำเภอ"
-													required="">
+												<input type="text" class="form-control" name="addr_soi" placeholder="<?php echo lang('page_join_us_form_txt_addr_soi'); ?>">
 											</div>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-6 col-12">
 											<div class="form-group">
-												<input type="text" class="form-control" name="phone" placeholder="ตำบล"
-													required="">
+												<input type="text" class="form-control" name="addr_road" placeholder="<?php echo lang('page_join_us_form_txt_addr_road'); ?>">
 											</div>
 										</div>
 										<div class="col-md-6 col-12">
 											<div class="form-group">
-												<input type="text" class="form-control" name="phone" placeholder="จังหวัด"
-													required="">
+												<input type="text" class="form-control" name="addr_district" placeholder="<?php echo lang('page_join_us_form_txt_addr_district'); ?>">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-6 col-12">
+											<div class="form-group">
+												<input type="text" class="form-control" name="addr_amphoe" placeholder="<?php echo lang('page_join_us_form_txt_addr_amphoe'); ?>">
 											</div>
 										</div>
 										<div class="col-md-6 col-12">
 											<div class="form-group">
-												<input type="text" class="form-control" name="phone"
-													placeholder="รหัสไปรษณี" required="">
+												<input type="text" class="form-control" name="addr_province" placeholder="<?php echo lang('page_join_us_form_txt_addr_province'); ?>">
+											</div>
+										</div>
+										<div class="col-md-6 col-12">
+											<div class="form-group">
+												<input type="text" class="form-control" name="addr_zip" placeholder="<?php echo lang('page_join_us_form_txt_addr_zip'); ?>">
 											</div>
 										</div>
 									</div>
