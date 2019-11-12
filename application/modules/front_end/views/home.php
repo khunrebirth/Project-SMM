@@ -170,7 +170,7 @@
 					</a>
 					<h4 class="blog__modern--title"><a href="#"><?php echo unserialize($blog->title)[$lang]; ?></a></h4>
 					<p class="blog__modern--text"><?php echo unserialize($blog->description_section)[$lang]; ?></p>
-					<p class="blog__modern--bottom-text d-block d-md-none">22 ตุลาคม 2562 | บทความการตลาด</p>
+					<p class="blog__modern--bottom-text d-block d-sm-none">22 ตุลาคม 2562 | บทความการตลาด</p>
 				</article>
 			</div>
 			<?php } ?>
