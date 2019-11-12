@@ -308,7 +308,7 @@
 									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for=""><?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?></label>
-											<input type="text" class="form-control" name="edu_date_start_to_end_group1" placeholder="<?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?>)">
+											<input type="text" class="form-control" name="edu_date_start_to_end_group1" placeholder="<?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?>">
 										</div>
 									</div>
 									<div class="col-md-6 col-12">
@@ -346,7 +346,7 @@
 									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for=""><?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?></label>
-											<input type="text" class="form-control" name="edu_date_start_to_end_group2" placeholder="<?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?>)">
+											<input type="text" class="form-control" name="edu_date_start_to_end_group2" placeholder="<?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?>">
 										</div>
 									</div>
 									<div class="col-md-6 col-12">
@@ -384,7 +384,7 @@
 									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for=""><?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?></label>
-											<input type="text" class="form-control" name="edu_date_start_to_end_group3" placeholder="<?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?>)">
+											<input type="text" class="form-control" name="edu_date_start_to_end_group3" placeholder="<?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?>">
 										</div>
 									</div>
 									<div class="col-md-6 col-12">
@@ -422,7 +422,7 @@
 									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for=""><?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?></label>
-											<input type="text" class="form-control" name="edu_date_start_to_end_group4" placeholder="<?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?>)">
+											<input type="text" class="form-control" name="edu_date_start_to_end_group4" placeholder="<?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?>">
 										</div>
 									</div>
 									<div class="col-md-6 col-12">
@@ -460,7 +460,7 @@
 									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for=""><?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?></label>
-											<input type="text" class="form-control" name="edu_date_start_to_end_group5" placeholder="<?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?>)">
+											<input type="text" class="form-control" name="edu_date_start_to_end_group5" placeholder="<?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?>">
 										</div>
 									</div>
 									<div class="col-md-6 col-12">

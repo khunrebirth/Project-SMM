@@ -101,7 +101,49 @@ class Contact extends MX_Controller
 	{
 
 		echo 'asd'; exit();
-		$add_contact = true;
+
+		// Handle File Upload
+		$file_resume = '';
+		$img = '';
+
+		if (isset($_FILES['img']) && $_FILES['img']['name'] != '') {
+			$img = $this->ddoo_upload_img_contact('img');
+		}
+
+		if (isset($_FILES['file_resume']) && $_FILES['file_resume']['name'] != '') {
+			$file_resume = $this->do_upload_file_contact('file_resume');
+		}
+
+		// Handle Education
+		$education = '';
+
+		// Add Career Contact
+		$add_career_contact = $this->Career_contact_model->insert_contact([
+			'card_id' => $this->input->post('card_id'),
+			'name' => $this->input->post('name'),
+			'email' => $this->input->post('email'),
+			'phone' => $this->input->post('phone'),
+			'birthday' => $this->input->post('birthday'),
+			'status' => $this->input->post('status'),
+			'gender' => $this->input->post('gender'),
+			'addr_no' => $this->input->post('addr_no'),
+			'addr_soi' => $this->input->post('addr_soi'),
+			'addr_road' => $this->input->post('addr_road'),
+			'addr_district' => $this->input->post('addr_district'),
+			'addr_amphoe' => $this->input->post('addr_amphoe'),
+			'addr_province' => $this->input->post('addr_province'),
+			'addr_zip' => $this->input->post('addr_zip'),
+			'old_company_name' => $this->input->post('old_company_name'),
+			'old_company_position' => $this->input->post('old_company_position'),
+			'old_company_status' => '',
+			'old_company_salary' => $this->input->post('old_company_salary'),
+			'old_company_start_work' => $this->input->post('old_company_start_work'),
+			'old_company_exp' => $this->input->post('old_company_exp'),
+			'old_company_comment' => $this->input->post('old_company_comment'),
+			'education' => $education,
+			'file_resume' => $file_resume,
+			'img' => $img
+		]);
 
 		if ($add_contact) {
 			redirect($this->lang == 'th' ?  $this->lang . '/thanks' : $this->lang . '/ขอบคุณ');
@@ -110,5 +152,44 @@ class Contact extends MX_Controller
 		}
 
 		redirect('contact', 'refresh');
+	}
+
+	private function ddoo_upload_img_contact($filename)
+	{
+		$config['upload_path'] = './storage/uploads/images/contact';
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['encrypt_name'] = TRUE;
+
+		$this->load->library('upload', $config);
+
+		if ( ! $this->upload->do_upload($filename)) {
+			$error = array('error' => $this->upload->display_errors());
+
+			return false;
+
+		} else {
+			$data = array('upload_data' => $this->upload->data());
+
+			return $data['upload_data']['file_name'];
+		}
+	}
+
+	public function do_upload_file_contact($filename)
+	{
+		$config['upload_path'] = './storage/uploads/files/contact';
+		$config['allowed_types'] = 'pdf';
+		$config['encrypt_name'] = TRUE;
+
+		$this->load->library('upload', $config);
+
+		if (!$this->upload->do_upload($filename)) {
+			$error = array('error' => $this->upload->display_errors());
+
+			return false;
+		} else {
+			$data = array('upload_data' => $this->upload->data());
+
+			return $data['upload_data']['file_name'];
+		}
 	}
 }
