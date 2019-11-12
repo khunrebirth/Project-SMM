@@ -1,3 +1,4 @@
+<link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="<?php echo base_url('resources/front_end/js/jquery.Thailand.js/dist/jquery.Thailand.min.css'); ?>">
 
 <!-- Push Custom Style -->
@@ -525,6 +526,8 @@
 <?php include 'layouts/sitemap.php'; ?>
 
 
+<!-- JS Libraies -->
+<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.20/js/uikit.min.js"></script>
 
 <!-- dependencies for zip mode -->
@@ -538,9 +541,7 @@
 
 <!-- Push Custom Scripts -->
 <script>
-
 	$(function () {
-
         $.Thailand({
             database: "<?php echo base_url('resources/front_end/js/jquery.Thailand.js/database/db.json'); ?>",
 

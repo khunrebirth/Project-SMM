@@ -100,6 +100,7 @@ class Contact extends MX_Controller
 	public function career_contact()
 	{
 
+		echo 'asd'; exit();
 		$add_contact = true;
 
 		if ($add_contact) {
