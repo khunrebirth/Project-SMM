@@ -57,7 +57,7 @@
 
 <!-- Content -->
 <section id="job">
-	<div class="container-fluid ">
+	<div class="container-fluid">
 		<div class="row sec-job sec-job-detail">
 			<div class="col-sm-12 col-md-9">
 				<?php echo unserialize($career->content)[$lang]; ?>
@@ -253,7 +253,7 @@
 												<label class="col-12" for=""><?php echo lang('page_join_us_form_txt_old_company_exp'); ?></label>
 												<div class="col-md-12 col-12">
 													<div class="form-group">
-														<input type="text" class="form-control" name="old_company_exp ">
+														<input type="text" class="form-control" name="old_company_exp">
 													</div>
 												</div>
 											</div>
@@ -308,7 +308,7 @@
 									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for=""><?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?></label>
-											<input type="text" class="form-control" name="edu_date_start_to_end_group1" placeholder="<?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?>)">
+											<input type="text" class="form-control" name="edu_date_start_to_end_group1" placeholder="<?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?>">
 										</div>
 									</div>
 									<div class="col-md-6 col-12">
@@ -346,7 +346,7 @@
 									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for=""><?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?></label>
-											<input type="text" class="form-control" name="edu_date_start_to_end_group2" placeholder="<?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?>)">
+											<input type="text" class="form-control" name="edu_date_start_to_end_group2" placeholder="<?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?>">
 										</div>
 									</div>
 									<div class="col-md-6 col-12">
@@ -384,7 +384,7 @@
 									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for=""><?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?></label>
-											<input type="text" class="form-control" name="edu_date_start_to_end_group3" placeholder="<?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?>)">
+											<input type="text" class="form-control" name="edu_date_start_to_end_group3" placeholder="<?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?>">
 										</div>
 									</div>
 									<div class="col-md-6 col-12">
@@ -422,7 +422,7 @@
 									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for=""><?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?></label>
-											<input type="text" class="form-control" name="edu_date_start_to_end_group4" placeholder="<?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?>)">
+											<input type="text" class="form-control" name="edu_date_start_to_end_group4" placeholder="<?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?>">
 										</div>
 									</div>
 									<div class="col-md-6 col-12">
@@ -460,7 +460,7 @@
 									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for=""><?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?></label>
-											<input type="text" class="form-control" name="edu_date_start_to_end_group5" placeholder="<?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?>)">
+											<input type="text" class="form-control" name="edu_date_start_to_end_group5" placeholder="<?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?>">
 										</div>
 									</div>
 									<div class="col-md-6 col-12">
