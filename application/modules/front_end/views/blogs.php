@@ -187,7 +187,7 @@
 
 								<!-- handle moblie -->
 								<p class="blog__modern--bottom-text d-block d-md-none">
-									<?php echo $blog['created_at']; ?> |
+									<?php echo $lang == 'th' ? ssm_thai_date(strtotime($blog['created_at'])) : date('d F Y', strtotime($blog['created_at'])); ?> |
 									<?php
 										$maximum = count($blog['tags']);
 										$counter = 0;
