@@ -142,11 +142,11 @@
 		}
 
 		.ttl-service-01 {
-			font-size: 3rem;
+			font-size: 1.7rem;
 		}
 
 		.ttl-service-02 {
-			font-size: 2rem;
+			font-size: 1.5rem;
 		}
 	}
 
@@ -159,11 +159,11 @@
 		}
 
 		.ttl-service-01 {
-			font-size: 3rem;
+			font-size: 1.7rem;
 		}
 
 		.ttl-service-02 {
-			font-size: 2rem;
+			font-size: 1.5rem;
 		}
 	}
 
@@ -224,6 +224,7 @@
 	}
 	
 	.box-text-service p ,
+	.box-text-service ul,
 	.box-text-service div {
         line-height: 1.5;
 	}
