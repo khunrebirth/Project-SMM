@@ -206,57 +206,53 @@
 						</div>
 						<div class="carousel-item">
 							<div class="col-12">
-								<h3 class="ttl-form-regist">ประวัติการทำงานล่าสุด</h3>
-								<form class="mt-2"
-									action="<?php echo base_url($lang . '/'. 'career-contact/send') ?>" method="post">
+								<h3 class="ttl-form-regist"><?php echo lang('page_join_us_form_txt_title_section_old_work'); ?></h3>
+								<form class="mt-2" action="<?php echo base_url($lang . '/'. 'career-contact/send') ?>" method="post">
 									<div class="row">
 										<div class="col-md-6 col-12">
 											<div class="form-group">
-												<input type="text" class="form-control" name="name" placeholder="ชื่อบริษัท"
-													required="">
+												<input type="text" class="form-control" name="old_company_name" placeholder="<?php echo lang('page_join_us_form_txt_old_company_name'); ?>">
 											</div>
 										</div>
 										<div class="col-md-6 col-12">
 											<div class="form-group">
-												<input type="text" class="form-control" name="surname" placeholder="ตำแหน่ง"
-													required="">
+												<input type="text" class="form-control" name="old_company_position" placeholder="<?php echo lang('page_join_us_form_txt_old_company_position'); ?>">
 											</div>
 										</div>
 									</div>
 									<div class="row">
-										<label class="col-12" for="">สถานะการทำงาน</label>
+										<label class="col-12" for=""><?php echo lang('page_join_us_form_txt_old_company_status'); ?></label>
 										<div class="col-md-6 col-12">
 											<div class="form-group">
-												<select class="form-control" id="">
-													<option>ลูกจ้าง</option>
-													<option>ว่างงาน</option>
+												<select class="form-control" name="old_company_status">
+													<option value="<?php echo lang('page_join_us_form_txt_old_company_status_1'); ?>"><?php echo lang('page_join_us_form_txt_old_company_status_1'); ?></option>
+													<option value="<?php echo lang('page_join_us_form_txt_old_company_status_2'); ?>"><?php echo lang('page_join_us_form_txt_old_company_status_2'); ?></option>
 												</select>
 											</div>
 										</div>
 										<div class="col-md-6 col-12">
 											<div class="form-group">
-												<input type="text" class="form-control" name="surname"
-													placeholder="เงินเดือน" required="">
+												<input type="text" class="form-control" name="old_company_salary" placeholder="<?php echo lang('page_join_us_form_txt_old_company_salary'); ?>">
 											</div>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-12 col-md-6">
 											<div class="row">
-												<label class="col-12" for="">ตั้งแต่ วัน/เดือน/ปี</label>
+												<label class="col-12" for=""><?php echo lang('page_join_us_form_txt_old_company_start_work'); ?></label>
 												<div class="col-md-12 col-12">
 													<div class="form-group">
-														<input type="text" class="form-control inp_date_02" name="surname" required="">
+														<input type="text" class="form-control inp_date_02" name="old_company_start_work">
 													</div>
 												</div>
 											</div>
 										</div>
 										<div class="col-12 col-md-6">
 											<div class="row">
-												<label class="col-12" for="">ประสบการณ์การทำงาน</label>
+												<label class="col-12" for=""><?php echo lang('page_join_us_form_txt_old_company_exp'); ?></label>
 												<div class="col-md-12 col-12">
 													<div class="form-group">
-														<input type="text" class="form-control " name="surname"  required="">
+														<input type="text" class="form-control" name="old_company_exp ">
 													</div>
 												</div>
 											</div>
@@ -265,16 +261,15 @@
 									<div class="row">
 										<div class="col-md-12 col-12">
 											<div class="form-group">
-												<label for="">กรุณาใส่ประวัติการทำงานทั้งหมด
-													ตำแหน่ง/ชื่อบริษัท/ระยะเวลา</label>
-												<textarea class="form-control" name="" required="" rows="8"></textarea>
+												<label for=""><?php echo lang('page_join_us_form_txt_old_company_comment'); ?></label>
+												<textarea class="form-control" name="old_company_comment" rows="8"></textarea>
 											</div>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-12 text-center">
-											<span class="btn btn-primary text-center btn-prev">ย้อนกลับ</span>
-											<span class="btn btn-primary text-center btn-next">ต่อไป</span>
+											<span class="btn btn-primary text-center btn-prev"><?php echo lang('page_join_us_btn_back_form'); ?></span>
+											<span class="btn btn-primary text-center btn-next"><?php echo lang('page_join_us_btn_next'); ?></span>
 										</div>
 									</div>
 								</form>
@@ -282,13 +277,12 @@
 						</div>
 						<div class="carousel-item">
 							<div class="col-12">
-								<h3 class="ttl-form-regist">ประวัติการศึกษา</h3>
-								<form class="mt-2 row"
-									action="<?php echo base_url($lang . '/'. 'career-contact/send') ?>" method="post">
+								<h3 class="ttl-form-regist"><?php echo lang('page_join_us_form_txt_title_section_edu'); ?></h3>
+								<form class="mt-2 row" action="<?php echo base_url($lang . '/'. 'career-contact/send') ?>" method="post">
 									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for="">ระดับ</label>
-											<select class="form-control" id="">
+											<select class="form-control">
 												<option>มัธยม / ปวช.</option>
 												<option>ปวส.</option>
 												<option>ปริญญาตรี</option>
@@ -300,29 +294,25 @@
 									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for="">สถาบัน</label>
-											<input type="text" class="form-control" name="surname" placeholder="สถาบัน"
-												required="">
+											<input type="text" class="form-control" name="surname" placeholder="สถาบัน">
 										</div>
 									</div>
 									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for="">คณะ</label>
-											<input type="text" class="form-control" name="surname" placeholder="คณะ"
-												required="">
+											<input type="text" class="form-control" name="surname" placeholder="คณะ">
 										</div>
 									</div>
 									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for="">ปี (เริ่ม-จบ)</label>
-											<input type="text" class="form-control" name="surname"
-												placeholder="ปี (เริ่ม-จบ)" required="">
+											<input type="text" class="form-control" name="surname" placeholder="ปี (เริ่ม-จบ)">
 										</div>
 									</div>
 									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for="">เกรดเฉลี่ย</label>
-											<input type="text" class="form-control" name="surname"
-												placeholder="เกรดเฉลี่ย" required="">
+											<input type="text" class="form-control" name="surname" placeholder="เกรดเฉลี่ย">
 										</div>
 									</div>
 									<hr>
@@ -490,55 +480,47 @@
 										</div>
 									</div>
 									<div class="col-12 text-center">
-										<span class="btn btn-primary text-center btn-prev">ย้อนกลับ</span>
-										<span class="btn btn-primary text-center btn-next">ต่อไป</span>
+										<span class="btn btn-primary text-center btn-prev"><?php echo lang('page_join_us_btn_back_form'); ?></span>
+										<span class="btn btn-primary text-center btn-next"><?php echo lang('page_join_us_btn_next'); ?></span>
 									</div>
 								</form>
 							</div>
 						</div>
 						<div class="carousel-item">
 							<div class="col-12">
-								<h3 class="ttl-form-regist">แนบ Resume / รูป</h3>
-								<form class="mt-2 row"
-									action="<?php echo base_url($lang . '/'. 'career-contact/send') ?>" method="post">
+								<h3 class="ttl-form-regist"><?php echo lang('page_join_us_form_txt_title_section_resume_and_img'); ?></h3>
+								<form class="mt-2 row" action="<?php echo base_url($lang . '/'. 'career-contact/send') ?>" method="post">
 									<div class="col-md-12 col-12">
 										<div class="form-group">
-											<label for="">แนบ Resume</label>
+											<label for=""><?php echo lang('page_join_us_form_file_resume'); ?></label>
 											<div class="input-group">
 												<div class="input-group-prepend">
-													<span class="input-group-text"
-														id="inputGroupFileAddon01">Upload</span>
+													<span class="input-group-text">Upload</span>
 												</div>
 												<div class="custom-file">
-													<input type="file" class="custom-file-input" id="inputGroupFile01"
-														aria-describedby="inputGroupFileAddon01">
-													<label class="custom-file-label" for="inputGroupFile01">Choose
-														Resume / CV file</label>
+													<input type="file" class="custom-file-input" aria-describedby="inputGroupFileAddon01" name="file_resume">
+													<label class="custom-file-label" for="">Choose Resume / CV file</label>
 												</div>
 											</div>
 										</div>
                                     </div>
                                     <div class="col-md-12 col-12">
                                         <div class="form-group">
-                                            <label for="">แนบรูป</label>
+                                            <label for=""><?php echo lang('page_join_us_form_img'); ?></label>
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
-                                                    <span class="input-group-text"
-                                                        id="inputGroupFileAddon01">Upload</span>
+                                                    <span class="input-group-text">Upload</span>
                                                 </div>
                                                 <div class="custom-file">
-                                                    <input type="file" class="custom-file-input"
-                                                        id="inputGroupFile01"
-                                                        aria-describedby="inputGroupFileAddon01">
-                                                    <label class="custom-file-label"
-                                                        for="inputGroupFile01">Choose image</label>
+                                                    <input type="file" class="custom-file-input" aria-describedby="inputGroupFileAddon01" name="img">
+                                                    <label class="custom-file-label" for="">Choose image</label>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-12 text-center">
-                                        <span class="btn btn-primary text-center btn-prev">ย้อนกลับ</span>
-                                        <span class="btn btn-primary text-center btn-next">บันทึก</span>
+										<span class="btn btn-primary text-center btn-prev"><?php echo lang('page_join_us_btn_back_form'); ?></span>
+										<span class="btn btn-primary text-center btn-next"><?php echo lang('page_join_us_btn_send'); ?></span>
                                     </div>
 								</form>
 							</div>

@@ -92,6 +92,8 @@ $lang['page_join_us_benefit_8'] = 'ปรับเงินเดือนปร
 // Detail
 $lang['page_join_us_btn_back'] = 'Back';
 $lang['page_join_us_btn_next'] = 'Next';
+$lang['page_join_us_btn_back_form'] = 'Back';
+$lang['page_join_us_btn_send'] = 'Send';
 $lang['page_join_us_title_first'] = 'กรอกแบบ';
 $lang['page_join_us_title_center'] = 'ฟอร์ม';
 $lang['page_join_us_title_end'] = 'เพื่อร่วมงานกับเรา';
@@ -121,6 +123,22 @@ $lang['page_join_us_form_txt_addr_province'] = 'Province';
 $lang['page_join_us_form_txt_addr_zip'] = 'Zip';
 $lang['page_join_us_form_txt_detail'] = 'Detail';
 $lang['page_join_us_button_send'] = 'Send';
+$lang['page_join_us_form_txt_title_section_old_work'] = 'ประวัติการทำงานล่าสุด';
+$lang['page_join_us_form_txt_old_company_name'] = 'Company name';
+$lang['page_join_us_form_txt_old_company_position'] = 'Position';
+$lang['page_join_us_form_txt_old_company_status'] = 'Status';
+$lang['page_join_us_form_txt_old_company_status_1'] = 'ลูกจ้าง';
+$lang['page_join_us_form_txt_old_company_status_2'] = 'ว่างงาน';
+$lang['page_join_us_form_txt_old_company_salary'] = 'Salary';
+$lang['page_join_us_form_txt_old_company_start_work'] = 'ตั้งแต่ วัน/เดือน/ปี';
+$lang['page_join_us_form_txt_old_company_exp'] = 'ประสบการณ์การทำงาน';
+$lang['page_join_us_form_txt_old_company_comment'] = 'กรุณาใส่ประวัติการทำงานทั้งหมด ตำแหน่ง/ชื่อบริษัท/ระยะเวลา';
+
+$lang['page_join_us_form_txt_title_section_edu'] = 'Education';
+
+$lang['page_join_us_form_txt_title_section_resume_and_img'] = 'แนบ Resume / รูป';
+$lang['page_join_us_form_file_resume'] = 'แนบ Resume';
+$lang['page_join_us_form_img'] = 'แนบรูป';
 
 /*
 | -------------------------------------------------------------------------
