@@ -158,10 +158,10 @@
 					</li>
 					<?php foreach ($blog_categories as $key => $blog_category) { ?>
 
-						<a href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/' . unserialize($blog_category->slug)[$lang]); ?>"><?php echo unserialize($blog_category->title)[$lang]; ?></a>
+						
 
 						<li>
-							<a class="<?php if ($key == 0) { echo 'is-active'; } ?>" href="#categoryGroup-<?php echo $blog_category->id; ?>">
+							<a class="<?php if ($key == 0) { echo 'is-active'; } ?>" href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/' . unserialize($blog_category->slug)[$lang]); ?>">
 								<figure>
 									<img src="<?php echo base_url('storage/uploads/images/blogs/'.unserialize($blog_category->icon)[$lang]); ?>" alt="">
 								</figure>	
@@ -178,7 +178,8 @@
 							<article class="blog blog__modern">
 								<a class="blog__modern--figure" href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/' . unserialize($blog['blog_category_slug'])[$lang] . '/' .  unserialize($blog['slug'])[$lang]); ?>">
 									<img src="<?php echo base_url('storage/uploads/images/blogs/' . unserialize($blog['img'])[$lang]) ?>" alt="<?php echo unserialize($blog['img_title_alt'])[$lang]; ?>" width="370" height="307">
-									<div class="blog__modern--time">
+									
+									<div class="blog__modern--time d-none d-sm-block">
 										<time datetime="<?php echo $blog['created_at']; ?>"><span class="blog__modern--time--month"><?php echo date_format(date_create($blog['created_at']), 'm'); ?></span><span class="blog__modern--time--number"><?php echo date_format(date_create($blog['created_at']), 'd'); ?></span></time>
 									</div>
 								</a>
@@ -186,7 +187,7 @@
 								<p class="blog__modern--text"><?php echo unserialize($blog['description_section'])[$lang]; ?></p>
 
 								<!-- handle moblie -->
-								<p class="blog__modern--bottom-text d-block d-md-none">
+								<p class="blog__modern--bottom-text d-block d-sm-none">
 									<?php echo $lang == 'th' ? ssm_thai_date(strtotime($blog['created_at'])) : date('d F Y', strtotime($blog['created_at'])); ?> |
 									<?php
 										$maximum = count($blog['tags']);
@@ -214,41 +215,6 @@
 <!-- Push Custom Scripts -->
 <script>
 	$(function() {
-		$('.list-catagory-client li a').click(function(e){
-			e.preventDefault();
-			if(!$(this).hasClass('is-active')){
-				var hash = $(this).attr('href');
-				var filter = hash.split("#")[1];
-				if(filter == 'all'){
-					$('.item-blog').fadeIn( "slow" );
-				}else{
-					$('.item-blog').fadeOut( "slow" );
-					$('.'+filter).fadeIn( "slow" );
-
-					//for close slide when click on sp
-					if(window.matchMedia("(max-width: 992px)").matches){
-						$('#menuService').slideToggle();
-						$('.box-head-catagory').toggleClass('is-active');
-					}
-				}
-			}
-			$('.list-catagory-client li a').removeClass('is-active');
-			$(this).addClass('is-active');
-		});
-
-		$(".list-catagory-client li a").each(function( index ) {
-			if ($(this).hasClass('is-active')) {
-				var hash = $(this).attr('href');
-				var filter = hash.split("#")[1];
-				if (filter == 'all') {
-					$('.item-client').fadeIn( "slow" );
-				} else {
-					$('.item-client').fadeOut( "slow" );
-					$('.'+filter).fadeIn( "slow" );
-				}
-			}
-		});
-
 		//for menu service and respons
 		$('.box-head-catagory').click(function(e){
 			e.preventDefault();
