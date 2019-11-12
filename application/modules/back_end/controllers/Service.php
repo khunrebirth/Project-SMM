@@ -386,7 +386,11 @@ class Service extends MX_Controller
 		$status = 500;
 		$response['success'] = 0;
 
-		$service = $this->Service_model->delete_service_by_id($service_id);
+		if ($service_id == 17) {
+			$service = false;
+		} else {
+			$service = $this->Service_model->delete_service_by_id($service_id);
+		}
 
 		if ($service != false) {
 			$status = 200;
