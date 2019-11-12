@@ -421,3 +421,4 @@ $route['(\w{2})/ขอบคุณ'] = 'front_end/Thank_you';
 	*/
 
 	$route['(\w{2})/backoffice/helper/change/status'] = 'back_end/Helper/changeStatus';
+	$route['(\w{2})/backoffice/helper/change/ignore'] = 'back_end/Helper/changeIgnore';

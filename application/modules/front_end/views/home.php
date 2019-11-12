@@ -114,10 +114,16 @@
 			<div class="row">
 				<?php foreach ($top_portfolios as $top_portfolio) { ?>
 					<div class="col-6 col-md-6 col-lg-3 mb-4">
-						<img src="<?php echo base_url('/storage/uploads/images/home/' . unserialize($top_portfolio->image)[$lang]); ?>" alt="<?php echo unserialize($top_portfolio->title)[$lang]; ?>" class="img-fluid img-clients">
+						<?php if ($top_portfolio == 17) { ?>
+
+							<!-- TODO:: handle Portoflio Video -->
+
+						<?php } else { ?>
+							<img src="<?php echo base_url('/storage/uploads/images/home/' . unserialize($top_portfolio->image)[$lang]); ?>" alt="<?php echo unserialize($top_portfolio->title)[$lang]; ?>" class="img-fluid img-clients">
+						<?php } ?>
 						<div class="caption-detail">
-							<p class="ttl">FashionIsland</p>
-							<p class="desc">เว็บไซต์</p>
+							<p class="ttl"><?php echo unserialize($top_portfolio->text)[$lang]; ?></p>
+							<p class="desc"><?php echo unserialize($top_portfolio->category_title)[$lang]; ?></p>
 						</div>
 					</div>
 				<?php } ?>
@@ -126,10 +132,16 @@
 				<?php $slice_portfolios = array_slice($portfolios, 0, 4); ?>
 				<?php foreach ($slice_portfolios as $portfolio) { ?>
 					<div class="col-6 col-md-6 col-lg-3 mb-4">
-						<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/portfolios/' . unserialize($portfolio->image)[$lang]); ?>" alt="<?php echo unserialize($portfolio->title)[$lang]; ?>">
+						<?php if ($portfolio == 17) { ?>
+
+							<!-- TODO:: handle Portoflio Video -->
+
+						<?php } else { ?>
+							<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/portfolios/' . unserialize($portfolio->image)[$lang]); ?>" alt="<?php echo unserialize($portfolio->title)[$lang]; ?>">
+						<?php } ?>
 						<div class="caption-detail">
-							<p class="ttl">FashionIsland</p>
-							<p class="desc">เว็บไซต์</p>
+							<p class="ttl"><?php echo unserialize($portfolio->text)[$lang]; ?></p>
+							<p class="desc"><?php echo unserialize($portfolio->category_title)[$lang]; ?></p>
 						</div>
 					</div>
 				<?php } ?>

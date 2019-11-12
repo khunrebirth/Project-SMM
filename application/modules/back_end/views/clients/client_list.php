@@ -70,6 +70,7 @@
 										<th>Title(en)</th>
 										<th>Title(th)</th>
 										<th>Created at</th>
+										<th>Is Ignore (เว้นการแสดงผลหน้า Home)</th>
 										<th>Action</th>
 									</tr>
 									</thead>
@@ -82,6 +83,12 @@
 												<td><img src="<?php echo base_url('storage/uploads/images/clients/' . unserialize($client->image)['en']); ?>" width="120"></td>
 												<td><img src="<?php echo base_url('storage/uploads/images/clients/' . unserialize($client->image)['th']); ?>" width="120"></td>
 												<td><?php echo $client->created_at; ?></td>
+												<td>
+													<label class="custom-switch p-0">
+														<input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input cbToggleIgnore" data-id="<?php echo $client->id; ?>" <?php if ($client->ignore_home == 'Y') { echo 'checked'; } else { echo ''; } ?>>
+														<span class="custom-switch-indicator"></span>
+													</label>
+												</td>
 												<td>
 													<div class="dropdown d-inline">
 														<button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -142,6 +149,7 @@
 <script src="<?php echo base_url('resources/back_end/assets/js/vfs_fonts.js'); ?>"></script>
 <script src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.print.min.js"></script>
+<script src="<?php echo base_url('resources/back_end/assets/js/notiny.min.js'); ?>"></script>
 
 <script>
     function reload() {
@@ -184,6 +192,30 @@
                     swal('Cancel')
                 }
             })
+    }
+
+    function notify(event, message) {
+
+        let eventResponse = ''
+
+        switch (event) {
+            case 'success':
+                eventResponse = 'success'
+                break
+
+            case 'warning':
+                eventResponse = 'warning'
+                break
+
+            case 'error':
+                eventResponse = 'error'
+                break
+
+            default:
+                eventResponse = 'error'
+        }
+
+        $.notiny({ text: message, image: 'https://cdn2.iconfinder.com/data/icons/meeting-11/64/alarm-remind-bell-reminder-ring-512.png' });
     }
 
     $(document).ready(function() {
@@ -232,6 +264,32 @@
                     alert("failure")
                 }
             })
+        })
+
+        $('.cbToggleIgnore').on('click', function() {
+
+            let $data = {
+                id: $(this).attr('data-id'),
+                status: this.checked == false ? 'N' : 'Y',
+                table: 'clients'
+            }
+
+            $.ajax({
+                type: "POST",
+                url: window.base_url + '/' + window.langSite + '/backoffice/helper/change/ignore',
+                data: $data,
+                success: function(res) {
+                    setTimeout(function () {
+                        location.reload()
+                    }, 1 * 2000)
+
+                    notify('success', 'Save Change Successfully')
+                },
+                error: function() {
+                    alert("failure")
+                }
+            })
+
         })
     })
 </script>

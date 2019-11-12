@@ -44,9 +44,15 @@
 			<div class="col-12 col-lg-9 wrap-logo">
 				<div class="row">
 					<?php foreach ($portfolios as $portfolio) { ?>
-						<div class="item-client col-md-4 col-6 mb-4 categoryGroup-<?php echo $portfolio->category_id; ?>">
-							<img src="<?php echo base_url('storage/uploads/images/portfolios/' . unserialize($portfolio->image)[$lang]); ?>" alt="<?php echo unserialize($portfolio->title)[$lang]; ?>" class="img-fluid img-clients">
-						</div>
+						<?php if ($portfolio == 17) { ?>
+
+							<!-- TODO:: handle Portoflio Video -->
+
+						<?php } else { ?>
+							<div class="item-client col-md-4 col-6 mb-4 categoryGroup-<?php echo $portfolio->category_id; ?>">
+								<img src="<?php echo base_url('storage/uploads/images/portfolios/' . unserialize($portfolio->image)[$lang]); ?>" alt="<?php echo unserialize($portfolio->title)[$lang]; ?>" class="img-fluid img-clients">
+							</div>
+						<?php } ?>
 					<?php } ?>
 				</div>
 			</div>

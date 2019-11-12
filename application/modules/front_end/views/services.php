@@ -337,9 +337,15 @@
 			<div class="row">
 				<h3 class="col-12 ttl-port-list"><span><?php echo lang('page_services_txt_portfolio'); ?></span></h3>
 				<?php foreach ($service['portfolios'] as $portfolio) { ?>
-					<div class="col-12 col-md-6 col-lg-2 text-center mb-5">
-						<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/services/' . unserialize($portfolio->img)[$lang]); ?>" alt="<?php echo unserialize($portfolio->img_title_alt)[$lang]; ?>">
-					</div>
+					<?php if ($portfolio == 17) { ?>
+
+						<!-- TODO:: handle Portoflio Video -->
+
+					<?php } else { ?>
+						<div class="col-12 col-md-6 col-lg-2 text-center mb-5">
+							<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/services/' . unserialize($portfolio->img)[$lang]); ?>" alt="<?php echo unserialize($portfolio->img_title_alt)[$lang]; ?>">
+						</div>
+					<?php } ?>
 				<?php } ?>
 			</div>
 		</div>

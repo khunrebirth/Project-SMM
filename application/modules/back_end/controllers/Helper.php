@@ -102,4 +102,67 @@ class Helper extends MX_Controller
 			->set_content_type('application/json')
 			->set_output(json_encode($response));
 	}
+
+	public function changeIgnore()
+	{
+		$status = 500;
+		$response['success'] = 0;
+
+		switch ($this->input->post('table')) {
+			case 'clients':
+
+				$this->load->model('Client_model');
+
+				$update_client = $this->Client_model->update_client_by_id($this->input->post('id'), [
+					'ignore_home' => $this->input->post('status'),
+					'updated_at' => date('Y-m-d H:i:s')
+				]);
+
+				if ($update_client) {
+
+					$status = 200;
+					$response['success'] = 1;
+
+					logger_store([
+						'user_id' => $this->data['user']->id,
+						'detail' => 'แก้ไข Client',
+						'event' => 'update',
+						'ip' => $this->input->ip_address()
+					]);
+				}
+				break;
+
+			case 'portfolios':
+
+				$this->load->model('Portfolio_model');
+
+				$update_portfolio = $this->Portfolio_model->update_portfolio_by_id($this->input->post('id'), [
+					'ignore_home' => $this->input->post('status'),
+					'updated_at' => date('Y-m-d H:i:s')
+				]);
+
+				if ($update_portfolio) {
+
+					$status = 200;
+					$response['success'] = 1;
+
+					logger_store([
+						'user_id' => $this->data['user']->id,
+						'detail' => 'แก้ไข Portfolio',
+						'event' => 'update',
+						'ip' => $this->input->ip_address()
+					]);
+				}
+				break;
+
+			default:
+				;
+		}
+
+		// Send Response
+		return $this->output
+			->set_status_header($status)
+			->set_content_type('application/json')
+			->set_output(json_encode($response));
+	}
 }
