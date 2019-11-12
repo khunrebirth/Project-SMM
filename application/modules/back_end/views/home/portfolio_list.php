@@ -61,7 +61,7 @@
 							<?php } ?>
 
 							<div class="table-responsive">
-								<table class="table table-striped" id="ssmDataTable">
+								<table class="table table-striped" id="table-1">
 									<thead>
 									<tr>
 										<th class="text-center">#</th>
