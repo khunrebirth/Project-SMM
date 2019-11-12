@@ -34,7 +34,7 @@
             <div class="col-sm-12 col-md-6 wrap-video">
             <a class="vdo-fancybox" data-fancybox href="https://www.youtube.com/embed/keqd4RUQK4s">
                 <img class="img-fluid" src="https://img.youtube.com/vi/keqd4RUQK4s/maxresdefault.jpg" alt="">
-                <img class="ico-play-btn" src="<?php echo base_url('resources/front_end/images/join_us/play-button.png'); ?>" alt="">
+                <img class="ico-play-btn" src="<?php echo base_url('resources/front_end/images/join_us/play-button.png'); ?>">
             </a>
             </div>
         </div>
@@ -42,78 +42,40 @@
 			<h2 class="ttl-cmn-job"><?php echo lang('page_join_us_benefits'); ?></h2>
             <div class="col-6 col-md-4 d-flex flex-column align-items-center">
                 <figure>
-                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_time.png');?>" alt="">                </figure>
+                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_time.png');?>">
+				</figure>
                 <p class="text-center"><?php echo lang('page_join_us_benefit_1'); ?></p>
             </div>
             <div class="col-6 col-md-4 d-flex flex-column align-items-center">
                 <figure>
-                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_dress.png');?>" alt="">                </figure>
+                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_dress.png');?>">
+				</figure>
                 <p class="text-center"><?php echo lang('page_join_us_benefit_2'); ?></p>
             </div>
             <div class="col-6 col-md-4 d-flex flex-column align-items-center">
                 <figure>
-                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_money_03.png');?>" alt="">                </figure>
+                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_money_03.png');?>">
+				</figure>
                 <p class="text-center"><?php echo lang('page_join_us_benefit_3'); ?></p>
             </div>
             <div class="col-6 col-md-4 d-flex flex-column align-items-center">
                 <figure>
-                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_security_02.png');?>" alt="">                </figure>
+                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_security_02.png');?>">
+				</figure>
                 <p class="text-center"><?php echo lang('page_join_us_benefit_4'); ?></p>
             </div>
             <div class="col-6 col-md-4 d-flex flex-column align-items-center">
                 <figure>
-                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_people.png');?>" alt="">                </figure>
+                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_people.png');?>">
+				</figure>
                 <p class="text-center"><?php echo lang('page_join_us_benefit_5'); ?></p>
             </div>
             <div class="col-6 col-md-4 d-flex flex-column align-items-center">
                 <figure>
-                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_date.png');?>" alt="">                </figure>
+                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_date.png');?>">
+				</figure>
                 <p class="text-center"><?php echo lang('page_join_us_benefit_6'); ?></p>
             </div>
-        </div>
-        <div class="row sec-job sec-job-img">
-<!--            <ul class="list-img-team">-->
-<!--                <li>-->
-<!--                    <a data-fancybox="group1" rel="gallery" href="https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy" class="fancybox">-->
-<!--                        <div style="background-image:url(https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy);"></div>-->
-<!--                    </a>-->
-<!--                </li>-->
-<!--                <li>-->
-<!--                    <a data-fancybox="group1" rel="gallery" href="https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy" class="fancybox">-->
-<!--                        <div style="background-image:url(https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy);"></div>-->
-<!--                    </a>-->
-<!--                </li>-->
-<!--                <li>-->
-<!--                    <a data-fancybox="group1" rel="gallery" href="https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy" class="fancybox">-->
-<!--                        <div style="background-image:url(https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy);"></div>-->
-<!--                    </a>-->
-<!--                </li>-->
-<!--                <li>-->
-<!--                    <a data-fancybox="group1" rel="gallery" href="https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy" class="fancybox">-->
-<!--                        <div style="background-image:url(https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy);"></div>-->
-<!--                    </a>-->
-<!--                </li>-->
-<!--                <li>-->
-<!--                    <a data-fancybox="group1" rel="gallery" href="https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy" class="fancybox">-->
-<!--                        <div style="background-image:url(https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy);"></div>-->
-<!--                    </a>-->
-<!--                </li>-->
-<!--                <li>-->
-<!--                    <a data-fancybox="group1" rel="gallery" href="https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy" class="fancybox">-->
-<!--                        <div style="background-image:url(https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy);"></div>-->
-<!--                    </a>-->
-<!--                </li>-->
-<!--                <li>-->
-<!--                    <a data-fancybox="group1" rel="gallery" href="https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy" class="fancybox">-->
-<!--                        <div style="background-image:url(https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy);"></div>-->
-<!--                    </a>-->
-<!--                </li>-->
-<!--                <li>-->
-<!--                    <a data-fancybox="group1" rel="gallery" href="https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy" class="fancybox">-->
-<!--                        <div style="background-image:url(https://dummyimage.com/800x500/b8b8b8/ffffff.jpg&text=dummy);"></div>-->
-<!--                    </a>-->
-<!--                </li>-->
-<!--            </ul>-->
         </div>
 
         <div class="row sec-job sec-job-item">
