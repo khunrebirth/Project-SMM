@@ -281,202 +281,191 @@
 								<form class="mt-2 row" action="<?php echo base_url($lang . '/'. 'career-contact/send') ?>" method="post">
 									<div class="col-md-6 col-12">
 										<div class="form-group">
-											<label for="">ระดับ</label>
-											<select class="form-control">
-												<option>มัธยม / ปวช.</option>
-												<option>ปวส.</option>
-												<option>ปริญญาตรี</option>
-												<option>ปริญญาโท</option>
-												<option>อื่นๆ</option>
+											<label for=""><?php echo lang('page_join_us_form_txt_edu_level'); ?></label>
+											<select class="form-control" name="edu_level_group1">
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_0'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_1'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_2'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_3'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_4'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_5'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
 											</select>
 										</div>
 									</div>
 									<div class="col-md-6 col-12">
 										<div class="form-group">
-											<label for="">สถาบัน</label>
-											<input type="text" class="form-control" name="surname" placeholder="สถาบัน">
+											<label for=""><?php echo lang('page_join_us_form_txt_edu_name'); ?></label>
+											<input type="text" class="form-control" name="edu_name_group1" placeholder="<?php echo lang('page_join_us_form_txt_edu_name'); ?>">
 										</div>
 									</div>
 									<div class="col-md-6 col-12">
 										<div class="form-group">
-											<label for="">คณะ</label>
-											<input type="text" class="form-control" name="surname" placeholder="คณะ">
+											<label for=""><?php echo lang('page_join_us_form_txt_edu_pos'); ?></label>
+											<input type="text" class="form-control" name="edu_pos_group1" placeholder="<?php echo lang('page_join_us_form_txt_edu_pos'); ?>">
 										</div>
 									</div>
 									<div class="col-md-6 col-12">
 										<div class="form-group">
-											<label for="">ปี (เริ่ม-จบ)</label>
-											<input type="text" class="form-control" name="surname" placeholder="ปี (เริ่ม-จบ)">
+											<label for=""><?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?></label>
+											<input type="text" class="form-control" name="edu_date_start_to_end_group1" placeholder="<?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?>)">
 										</div>
 									</div>
 									<div class="col-md-6 col-12">
 										<div class="form-group">
-											<label for="">เกรดเฉลี่ย</label>
-											<input type="text" class="form-control" name="surname" placeholder="เกรดเฉลี่ย">
+											<label for=""><?php echo lang('page_join_us_form_txt_edu_gpa'); ?></label>
+											<input type="text" class="form-control" name="edu_gpa_group1" placeholder="<?php echo lang('page_join_us_form_txt_edu_gpa'); ?>">
 										</div>
 									</div>
 									<hr>
 									<div class="col-md-6 col-12">
 										<div class="form-group">
-											<label for="">ระดับ</label>
-											<select class="form-control" id="">
-												<option>มัธยม / ปวช.</option>
-												<option>ปวส.</option>
-												<option>ปริญญาตรี</option>
-												<option>ปริญญาโท</option>
-												<option>อื่นๆ</option>
+											<label for=""><?php echo lang('page_join_us_form_txt_edu_level'); ?></label>
+											<select class="form-control" name="edu_level_group2">
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_0'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_1'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_2'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_3'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_4'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_5'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
 											</select>
 										</div>
 									</div>
 									<div class="col-md-6 col-12">
 										<div class="form-group">
-											<label for="">สถาบัน</label>
-											<input type="text" class="form-control" name="surname" placeholder="สถาบัน"
-												required="">
+											<label for=""><?php echo lang('page_join_us_form_txt_edu_name'); ?></label>
+											<input type="text" class="form-control" name="edu_name_group2" placeholder="<?php echo lang('page_join_us_form_txt_edu_name'); ?>">
 										</div>
 									</div>
 									<div class="col-md-6 col-12">
 										<div class="form-group">
-											<label for="">คณะ</label>
-											<input type="text" class="form-control" name="surname" placeholder="คณะ"
-												required="">
+											<label for=""><?php echo lang('page_join_us_form_txt_edu_pos'); ?></label>
+											<input type="text" class="form-control" name="edu_pos_group2" placeholder="<?php echo lang('page_join_us_form_txt_edu_pos'); ?>">
 										</div>
 									</div>
 									<div class="col-md-6 col-12">
 										<div class="form-group">
-											<label for="">ปี (เริ่ม-จบ)</label>
-											<input type="text" class="form-control" name="surname"
-												placeholder="ปี (เริ่ม-จบ)" required="">
+											<label for=""><?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?></label>
+											<input type="text" class="form-control" name="edu_date_start_to_end_group2" placeholder="<?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?>)">
 										</div>
 									</div>
 									<div class="col-md-6 col-12">
 										<div class="form-group">
-											<label for="">เกรดเฉลี่ย</label>
-											<input type="text" class="form-control" name="surname"
-												placeholder="เกรดเฉลี่ย" required="">
+											<label for=""><?php echo lang('page_join_us_form_txt_edu_gpa'); ?></label>
+											<input type="text" class="form-control" name="edu_gpa_group2" placeholder="<?php echo lang('page_join_us_form_txt_edu_gpa'); ?>">
 										</div>
 									</div>
 									<hr>
 									<div class="col-md-6 col-12">
 										<div class="form-group">
-											<label for="">ระดับ</label>
-											<select class="form-control" id="">
-												<option>มัธยม / ปวช.</option>
-												<option>ปวส.</option>
-												<option>ปริญญาตรี</option>
-												<option>ปริญญาโท</option>
-												<option>อื่นๆ</option>
+											<label for=""><?php echo lang('page_join_us_form_txt_edu_level'); ?></label>
+											<select class="form-control" name="edu_level_group3">
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_0'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_1'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_2'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_3'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_4'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_5'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
 											</select>
 										</div>
 									</div>
 									<div class="col-md-6 col-12">
 										<div class="form-group">
-											<label for="">สถาบัน</label>
-											<input type="text" class="form-control" name="surname" placeholder="สถาบัน"
-												required="">
+											<label for=""><?php echo lang('page_join_us_form_txt_edu_name'); ?></label>
+											<input type="text" class="form-control" name="edu_name" placeholder="<?php echo lang('page_join_us_form_txt_edu_name'); ?>">
 										</div>
 									</div>
 									<div class="col-md-6 col-12">
 										<div class="form-group">
-											<label for="">คณะ</label>
-											<input type="text" class="form-control" name="surname" placeholder="คณะ"
-												required="">
+											<label for=""><?php echo lang('page_join_us_form_txt_edu_pos'); ?></label>
+											<input type="text" class="form-control" name="edu_pos_group3" placeholder="<?php echo lang('page_join_us_form_txt_edu_pos'); ?>">
 										</div>
 									</div>
 									<div class="col-md-6 col-12">
 										<div class="form-group">
-											<label for="">ปี (เริ่ม-จบ)</label>
-											<input type="text" class="form-control" name="surname"
-												placeholder="ปี (เริ่ม-จบ)" required="">
+											<label for=""><?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?></label>
+											<input type="text" class="form-control" name="edu_date_start_to_end_group3" placeholder="<?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?>)">
 										</div>
 									</div>
 									<div class="col-md-6 col-12">
 										<div class="form-group">
-											<label for="">เกรดเฉลี่ย</label>
-											<input type="text" class="form-control" name="surname"
-												placeholder="เกรดเฉลี่ย" required="">
+											<label for=""><?php echo lang('page_join_us_form_txt_edu_gpa'); ?></label>
+											<input type="text" class="form-control" name="edu_gpa_group3" placeholder="<?php echo lang('page_join_us_form_txt_edu_gpa'); ?>">
 										</div>
 									</div>
 									<hr>
 									<div class="col-md-6 col-12">
 										<div class="form-group">
-											<label for="">ระดับ</label>
-											<select class="form-control" id="">
-												<option>มัธยม / ปวช.</option>
-												<option>ปวส.</option>
-												<option>ปริญญาตรี</option>
-												<option>ปริญญาโท</option>
-												<option>อื่นๆ</option>
+											<label for=""><?php echo lang('page_join_us_form_txt_edu_level'); ?></label>
+											<select class="form-control" name="edu_level_group4">
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_0'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_1'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_2'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_3'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_4'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_5'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
 											</select>
 										</div>
 									</div>
 									<div class="col-md-6 col-12">
 										<div class="form-group">
-											<label for="">สถาบัน</label>
-											<input type="text" class="form-control" name="surname" placeholder="สถาบัน"
-												required="">
+											<label for=""><?php echo lang('page_join_us_form_txt_edu_name'); ?></label>
+											<input type="text" class="form-control" name="edu_name_group4" placeholder="<?php echo lang('page_join_us_form_txt_edu_name'); ?>">
 										</div>
 									</div>
 									<div class="col-md-6 col-12">
 										<div class="form-group">
-											<label for="">คณะ</label>
-											<input type="text" class="form-control" name="surname" placeholder="คณะ"
-												required="">
+											<label for=""><?php echo lang('page_join_us_form_txt_edu_pos'); ?></label>
+											<input type="text" class="form-control" name="edu_pos_group4" placeholder="<?php echo lang('page_join_us_form_txt_edu_pos'); ?>">
 										</div>
 									</div>
 									<div class="col-md-6 col-12">
 										<div class="form-group">
-											<label for="">ปี (เริ่ม-จบ)</label>
-											<input type="text" class="form-control" name="surname"
-												placeholder="ปี (เริ่ม-จบ)" required="">
+											<label for=""><?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?></label>
+											<input type="text" class="form-control" name="edu_date_start_to_end_group4" placeholder="<?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?>)">
 										</div>
 									</div>
 									<div class="col-md-6 col-12">
 										<div class="form-group">
-											<label for="">เกรดเฉลี่ย</label>
-											<input type="text" class="form-control" name="surname"
-												placeholder="เกรดเฉลี่ย" required="">
+											<label for=""><?php echo lang('page_join_us_form_txt_edu_gpa'); ?></label>
+											<input type="text" class="form-control" name="edu_gpa_group4" placeholder="<?php echo lang('page_join_us_form_txt_edu_gpa'); ?>">
 										</div>
 									</div>
 									<hr>
 									<div class="col-md-6 col-12">
 										<div class="form-group">
-											<label for="">ระดับ</label>
-											<select class="form-control" id="">
-												<option>มัธยม / ปวช.</option>
-												<option>ปวส.</option>
-												<option>ปริญญาตรี</option>
-												<option>ปริญญาโท</option>
-												<option>อื่นๆ</option>
+											<label for=""><?php echo lang('page_join_us_form_txt_edu_level'); ?></label>
+											<select class="form-control" name="edu_level_group5">
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_0'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_1'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_2'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_3'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_4'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
+												<option value="<?php echo lang('page_join_us_form_txt_edu_level_5'); ?>"><?php echo lang('page_join_us_form_txt_edu_level_0'); ?></option>
 											</select>
 										</div>
 									</div>
 									<div class="col-md-6 col-12">
 										<div class="form-group">
-											<label for="">สถาบัน</label>
-											<input type="text" class="form-control" name="surname" placeholder="สถาบัน"
-												required="">
+											<label for=""><?php echo lang('page_join_us_form_txt_edu_name'); ?></label>
+											<input type="text" class="form-control" name="edu_name_group5" placeholder="<?php echo lang('page_join_us_form_txt_edu_name'); ?>">
 										</div>
 									</div>
 									<div class="col-md-6 col-12">
 										<div class="form-group">
-											<label for="">คณะ</label>
-											<input type="text" class="form-control" name="surname" placeholder="คณะ"
-												required="">
+											<label for=""><?php echo lang('page_join_us_form_txt_edu_pos'); ?></label>
+											<input type="text" class="form-control" name="edu_pos_group5" placeholder="<?php echo lang('page_join_us_form_txt_edu_pos'); ?>">
 										</div>
 									</div>
 									<div class="col-md-6 col-12">
 										<div class="form-group">
-											<label for="">ปี (เริ่ม-จบ)</label>
-											<input type="text" class="form-control" name="surname"
-												placeholder="ปี (เริ่ม-จบ)" required="">
+											<label for=""><?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?></label>
+											<input type="text" class="form-control" name="edu_date_start_to_end_group5" placeholder="<?php echo lang('page_join_us_form_txt_edu_date_start_to_ends'); ?>)">
 										</div>
 									</div>
 									<div class="col-md-6 col-12">
 										<div class="form-group">
-											<label for="">เกรดเฉลี่ย</label>
-											<input type="text" class="form-control" name="surname"
-												placeholder="เกรดเฉลี่ย" required="">
+											<label for=""><?php echo lang('page_join_us_form_txt_edu_gpa'); ?></label>
+											<input type="text" class="form-control" name="edu_gpa_group5" placeholder="<?php echo lang('page_join_us_form_txt_edu_gpa'); ?>">
 										</div>
 									</div>
 									<div class="col-12 text-center">

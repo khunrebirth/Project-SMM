@@ -133,9 +133,18 @@ $lang['page_join_us_form_txt_old_company_salary'] = 'Salary';
 $lang['page_join_us_form_txt_old_company_start_work'] = 'ตั้งแต่ วัน/เดือน/ปี';
 $lang['page_join_us_form_txt_old_company_exp'] = 'ประสบการณ์การทำงาน';
 $lang['page_join_us_form_txt_old_company_comment'] = 'กรุณาใส่ประวัติการทำงานทั้งหมด ตำแหน่ง/ชื่อบริษัท/ระยะเวลา';
-
 $lang['page_join_us_form_txt_title_section_edu'] = 'Education';
-
+$lang['page_join_us_form_txt_edu_level'] = 'ระดับ';
+$lang['page_join_us_form_txt_edu_level_0'] = 'เลือกระดับการศึกษา';
+$lang['page_join_us_form_txt_edu_level_1'] = 'มัธยม / ปวช.';
+$lang['page_join_us_form_txt_edu_level_2'] = 'ปวส.';
+$lang['page_join_us_form_txt_edu_level_3'] = 'ปริญญาตรี';
+$lang['page_join_us_form_txt_edu_level_4'] = 'ปริญญาโท';
+$lang['page_join_us_form_txt_edu_level_5'] = 'อื่น ๆ';
+$lang['page_join_us_form_txt_edu_name'] = 'สถาบัน';
+$lang['page_join_us_form_txt_edu_pos'] = 'คณะ';
+$lang['page_join_us_form_txt_edu_date_start_to_ends'] = 'ปี (เริ่ม-จบ)';
+$lang['page_join_us_form_txt_edu_gpa'] = 'เกรดเฉลี่ย';
 $lang['page_join_us_form_txt_title_section_resume_and_img'] = 'แนบ Resume / รูป';
 $lang['page_join_us_form_file_resume'] = 'แนบ Resume';
 $lang['page_join_us_form_img'] = 'แนบรูป';
