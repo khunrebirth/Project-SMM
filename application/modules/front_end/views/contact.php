@@ -1,3 +1,10 @@
+<style>
+	@media (max-width: 992px) { 
+		.title-contact {
+			padding: 5rem 0 2rem !important;
+		}
+	}
+</style>
 <!-- Title -->
 <?php if ($banner) { ?>
 <section class="page-title main-hero-service" style="padding:0;">
@@ -12,7 +19,8 @@
 <section id="contact">
     <div class="container">
         <div class="title-contact" style="text-align: center; padding: 4rem;">
-            <img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-contact.png' : 'resources/front_end/images/title-contact.png'); ?>" class="img-fluid">
+            <img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-contact.png' : 'resources/front_end/images/title-contact.png'); ?>" class="img-fluid d-none d-md-block mx-auto">
+            <img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-contact_sp.png' : 'resources/front_end/images/title-contact_sp.png'); ?>" class="img-fluid d-block d-md-none mx-auto">
         </div>
         <div class="row">
             <div class="col-xs-12 col-md-6 col-lg-6 ">

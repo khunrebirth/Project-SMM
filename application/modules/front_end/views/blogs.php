@@ -148,8 +148,12 @@
 		</div>
 		<div class="sec-blogs-01 row">
 			<div class="col-12 col-lg-3 mb-5 wrap-fixed-menu">
-				<ul class="list-catagory-client">
-					<li class="ttl-list-catagory">
+				<a class="box-head-catagory" href="#menuService">
+					<span>Service</span>
+					<span><i class="fas fa-chevron-down"></i></span>
+				</a>
+				<ul class="list-catagory-client" id="menuService">
+					<li class="ttl-list-catagory d-none d-lg-block">
 						<img src="<?php echo base_url('resources/front_end/images/service-menu.png');?>" alt="">
 					</li>
 					<?php foreach ($blog_categories as $key => $blog_category) { ?>
@@ -207,6 +211,12 @@
 				}else{
 					$('.item-blog').fadeOut( "slow" );
 					$('.'+filter).fadeIn( "slow" );
+
+					//for close slide when click on sp
+					if(window.matchMedia("(max-width: 992px)").matches){
+						$('#menuService').slideToggle();
+						$('.box-head-catagory').toggleClass('is-active');
+					}
 				}
 			}
 			$('.list-catagory-client li a').removeClass('is-active');
@@ -223,6 +233,23 @@
 					$('.item-client').fadeOut( "slow" );
 					$('.'+filter).fadeIn( "slow" );
 				}
+			}
+		});
+		
+
+		//for menu service and respons
+		$('.box-head-catagory').click(function(e){
+			e.preventDefault();
+			var slide_item = $(this).attr('href');
+			$(slide_item).slideToggle();
+			$(this).toggleClass('is-active');
+		});
+		$( window ).resize(function() {
+			if(window.matchMedia("(min-width: 992px)").matches){
+				$('#menuService').show();
+				$('.box-head-catagory').removeClass('is-active');
+			}else{
+				$('#menuService').hide();
 			}
 		});
 	});

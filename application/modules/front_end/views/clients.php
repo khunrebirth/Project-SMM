@@ -24,8 +24,12 @@
         </div>
 		<div class="row sec-client">
 			<div class="col-12 col-lg-3 wrap-fixed-menu mb-5">
-				<ul class="list-catagory-client">
-					<li class="ttl-list-catagory">
+				<a class="box-head-catagory" href="#menuService">
+					<span>Service</span>
+					<span><i class="fas fa-chevron-down"></i></span>
+				</a>
+				<ul class="list-catagory-client" id="menuService">
+					<li class="ttl-list-catagory d-none d-lg-block">
 						<img src="<?php echo base_url('resources/front_end/images/service-menu.png');?>" alt="">
 					</li>
 					<?php foreach ($client_categories as $key => $client_category) { ?>
@@ -73,6 +77,11 @@
 				} else {
 					$('.item-client').fadeOut( "slow" );
 					$('.'+filter).fadeIn( "slow" );
+					//for close slide when click on sp
+					if(window.matchMedia("(max-width: 992px)").matches){
+						$('#menuService').slideToggle();
+						$('.box-head-catagory').toggleClass('is-active');
+					}
 				}
 			}
 			$('.list-catagory-client li a').removeClass('is-active');
@@ -92,6 +101,22 @@
             }
         });
 			
+
+		//for menu service and respons
+		$('.box-head-catagory').click(function(e){
+			e.preventDefault();
+			var slide_item = $(this).attr('href');
+			$(slide_item).slideToggle();
+			$(this).toggleClass('is-active');
+		});
+		$( window ).resize(function() {
+			if(window.matchMedia("(min-width: 992px)").matches){
+				$('#menuService').show();
+				$('.box-head-catagory').removeClass('is-active');
+			}else{
+				$('#menuService').hide();
+			}
+		});
 	
     });
 </script>

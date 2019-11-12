@@ -1898,6 +1898,35 @@ footer p {
 	max-width: 1470px;
 	margin: 0 auto;
 }
+.box-head-catagory {
+	display: none;
+}
+@media (max-width: 992px) {
+	.box-head-catagory {
+		padding: 8px 30px 3px;
+		background-color: #0a88c2;
+		position: relative;
+		display: flex;
+		cursor: pointer;
+		margin: 0 -30px;
+		justify-content: space-between;
+	}
+	.box-head-catagory span {
+		color: #fff;
+		font-size: 1.4rem;
+		font-weight: bold;
+	}
+	.box-head-catagory span i {
+		transition: all 0.3s;
+		-webkit-transition: all 0.3s;
+		-moz-transition: all 0.3s;
+		-ms-transition: all 0.3s;
+		-o-transition: all 0.3s;
+	}
+	.box-head-catagory.is-active span i {
+		transform: rotate(180deg);
+	}
+}
 
 .list-catagory-client {
 	position: relative;
@@ -1911,6 +1940,29 @@ footer p {
 	-moz-border-radius: 10px;
 	-ms-border-radius: 10px;
 	-o-border-radius: 10px;
+	transition: none;
+	-webkit-transition: none;
+	-moz-transition: none;
+	-ms-transition: none;
+	-o-transition: none;
+}
+@media (max-width: 992px) {
+	.list-catagory-client {
+		transition: inherit;
+		-webkit-transition: inherit;
+		-moz-transition: inherit;
+		-ms-transition: inherit;
+		-o-transition: inherit;
+		box-shadow: none;
+		border-radius: 0;
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+		-ms-border-radius: 0;
+		-o-border-radius: 0;
+		display: none;
+		margin: 0 -30px;
+		box-shadow: 0px 3px 6px #31495a52;
+	}
 }
 
 .list-catagory-client li {
@@ -1939,6 +1991,11 @@ footer p {
 	font-size: 1.2rem;
 	text-align: left;
 }
+@media (max-width: 992px) {
+	.list-catagory-client li a {
+		padding: 5px 30px;
+	}
+}
 
 .list-catagory-client li a:hover,
 .list-catagory-client li a.is-active {
@@ -1956,6 +2013,7 @@ footer p {
 	max-width: 20px;
 	margin-right: 8px;
 }
+
 
 .ttl-form-regist {
 	font-size: 1.5rem;
@@ -2009,24 +2067,6 @@ footer p {
 	height: 1px;
 	width: 100%;
 	background-color: #00264c;
-}
-
-.list-catagory-client {
-	transition: all 0.1s;
-	-webkit-transition: all 0.1s;
-	-moz-transition: all 0.1s;
-	-ms-transition: all 0.1s;
-	-o-transition: all 0.1s;
-}
-
-.list-catagory-client.is-fixed {
-	position: absolute;
-	width: calc(100% - 30px);
-	transform: translate3d(0, -50%, 0);
-	-webkit-transform: translate3d(0, -50%, 0);
-	-moz-transform: translate3d(0, -50%, 0);
-	-ms-transform: translate3d(0, -50%, 0);
-	-o-transform: translate3d(0, -50%, 0);
 }
 
 .sec-job-detail p,
@@ -2122,3 +2162,4 @@ footer p {
 	font-size: 1rem;
 	padding-top: 5px;
 }
+
