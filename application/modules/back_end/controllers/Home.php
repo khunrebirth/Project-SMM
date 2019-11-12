@@ -30,6 +30,7 @@ class Home extends MX_Controller
 		$this->load->model('Page_model');
 		$this->load->model('Top_client_model');
 		$this->load->model('Top_portfolio_model');
+		$this->load->model('Service_model');
 
 		// Language
 		$this->lang = $this->config->item('language_abbr');
@@ -287,35 +288,63 @@ class Home extends MX_Controller
 		$this->data['lang'] = $this->lang;
 		$this->data['title'] = 'Page: Home - Top Portfolios - Add';
 		$this->data['content'] = 'home/portfolio_create';
+		$this->data['services'] = $this->Service_model->get_service_all();
 
 		$this->load->view('app', $this->data);
 	}
 
 	public function portfolio_store()
 	{
-		// Handle Image
-		$img_en = '';
-		$img_th = '';
 
-		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
-			$img_en = $this->ddoo_upload_home('img_en');
+		// 17 Service(video)
+		if ($this->input->post('service') == 17) {
+
+			$service = $this->Service_model->get_service_by_id($this->input->post('service'));
+
+			// Filter Data
+			$input_img = ['en' => $this->input->post('sort_url_en'), 'th' => $this->input->post('sort_url_th')];
+			$input_text = ['en' => $this->input->post('text_en'), 'th' => $this->input->post('text_th')];
+
+			// Add Data
+			$add_portfolio = $this->Top_portfolio_model->insert_portfolio([
+				'image' => serialize($input_img), // url
+				'text' => serialize($input_text),
+
+				'category_id' => $service->id,
+				'category_title' => $service->title
+			]);
+		} else {
+
+			$service = $this->Service_model->get_service_by_id($this->input->post('service'));
+
+			// Handle Image
+			$img_en = '';
+			$img_th = '';
+
+			if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
+				$img_en = $this->ddoo_upload_home('img_en');
+			}
+
+			if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
+				$img_th = $this->ddoo_upload_home('img_th');
+			}
+
+			// Filter Data
+			$input_img = ['en' => $img_en, 'th' => $img_th];
+			$input_title = ['en' => $this->input->post('img_title_alt_en'), 'th' => $this->input->post('img_title_alt_th')];
+			$input_text = ['en' => $this->input->post('text_en'), 'th' => $this->input->post('text_th')];
+
+			// Add Data
+			$add_portfolio = $this->Top_portfolio_model->insert_portfolio([
+				'image' => serialize($input_img),
+				'title' => serialize($input_title),
+				'text' => serialize($input_text),
+
+				'category_id' => $service->id,
+				'category_title' => $service->title
+			]);
 		}
 
-		if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
-			$img_th = $this->ddoo_upload_home('img_th');
-		}
-
-		// Filter Data
-		$input_img = ['en' => $img_en, 'th' => $img_th];
-		$input_title = ['en' => $this->input->post('img_title_alt_en'), 'th' => $this->input->post('img_title_alt_th')];
-		$input_text = ['en' => $this->input->post('text_en'), 'th' => $this->input->post('text_th')];
-
-		// Add Data
-		$add_portfolio = $this->Top_portfolio_model->insert_portfolio([
-			'image' => serialize($input_img),
-			'title' => serialize($input_title),
-			'text' => serialize($input_text)
-		]);
 
 		// Set Session To View
 		if ($add_portfolio) {
@@ -343,6 +372,7 @@ class Home extends MX_Controller
 		$this->data['title'] = 'Page: Home - Top Portfolios - Edit(' . unserialize($portfolio->title)['th'] . ')';
 		$this->data['content'] = 'home/portfolio_edit';
 		$this->data['portfolio'] = $portfolio;
+		$this->data['services'] = $this->Service_model->get_service_all();
 
 		$this->load->view('app', $this->data);
 	}
@@ -352,30 +382,48 @@ class Home extends MX_Controller
 		// Get Old data
 		$portfolio = $this->Portfolio_model->get_portfolio_by_id($portfolio_id);
 
-		// Handle Image
-		$img_en = unserialize($portfolio->image)['en'];
-		$img_th = unserialize($portfolio->image)['th'];
+		// 17 Service(video)
+		if ($this->input->post('service_id') == 17) {
 
-		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
-			$img_en = $this->ddoo_upload_home('img_en');
+			// Filter Data
+			$input_img = ['en' => $this->input->post('sort_url_en'), 'th' => $this->input->post('sort_url_th')];
+			$input_text = ['en' => $this->input->post('text_en'), 'th' => $this->input->post('text_th')];
+
+			// Update Data
+			$update_portfolio = $this->Top_portfolio_model->update_top_portfolio_by_id($portfolio_id, [
+				'image' => serialize($input_img), // url
+				'text' => serialize($input_text),
+				'updated_at' => date('Y-m-d H:i:s')
+			]);
+
+		} else {
+
+			// Handle Image
+			$img_en = unserialize($portfolio->image)['en'];
+			$img_th = unserialize($portfolio->image)['th'];
+
+			if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
+				$img_en = $this->ddoo_upload_home('img_en');
+			}
+
+			if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
+				$img_th = $this->ddoo_upload_home('img_th');
+			}
+
+			// Filter Data
+			$input_img = ['en' => $img_en, 'th' => $img_th];
+			$input_title = ['en' => $this->input->post('img_title_alt_en'), 'th' => $this->input->post('img_title_alt_th')];
+			$input_text = ['en' => $this->input->post('text_en'), 'th' => $this->input->post('text_th')];
+
+			// Update Data
+			$update_portfolio = $this->Top_portfolio_model->update_top_portfolio_by_id($portfolio_id, [
+				'image' => serialize($input_img),
+				'title' => serialize($input_title),
+				'text' => serialize($input_text),
+				'updated_at' => date('Y-m-d H:i:s')
+			]);
 		}
 
-		if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
-			$img_th = $this->ddoo_upload_home('img_th');
-		}
-
-		// Filter Data
-		$input_img = ['en' => $img_en, 'th' => $img_th];
-		$input_title = ['en' => $this->input->post('img_title_alt_en'), 'th' => $this->input->post('img_title_alt_th')];
-		$input_text = ['en' => $this->input->post('text_en'), 'th' => $this->input->post('text_th')];
-
-		// Update Data
-		$update_portfolio = $this->Top_portfolio_model->update_top_portfolio_by_id($portfolio_id, [
-			'image' => serialize($input_img),
-			'title' => serialize($input_title),
-			'text' => serialize($input_text),
-			'updated_at' => date('Y-m-d H:i:s')
-		]);
 
 		// Set Session To View
 		if ($update_portfolio) {

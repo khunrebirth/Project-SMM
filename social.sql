@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 08, 2019 at 06:08 PM
+-- Generation Time: Nov 12, 2019 at 11:33 AM
 -- Server version: 5.7.17-log
 -- PHP Version: 5.6.30
 
@@ -47,10 +47,10 @@ CREATE TABLE `banners` (
 INSERT INTO `banners` (`id`, `status`, `title`, `page`, `img`, `img_moblie`, `img_title_alt`, `bottom`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (2, 'N', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:7:\"clients\";s:2:\"th\";s:36:\"ลูกค้าของเรา\";}', 'a:2:{s:2:\"en\";s:28:\"banner-client_1572246396.jpg\";s:2:\"th\";s:29:\"banner-client_15722463961.jpg\";}', 'a:2:{s:2:\"en\";s:28:\"banner-client_1572246396.jpg\";s:2:\"th\";s:29:\"banner-client_15722463961.jpg\";}', 'a:2:{s:2:\"en\";s:12:\"slider-1.jpg\";s:2:\"th\";s:12:\"slider-1.jpg\";}', '', '2019-10-28 07:06:36', '2019-11-06 19:33:31', '0000-00-00 00:00:00'),
 (3, 'N', 'a:2:{s:2:\"en\";s:5:\"Blogs\";s:2:\"th\";s:18:\"บทความ\";}', 'a:2:{s:2:\"en\";s:5:\"blogs\";s:2:\"th\";s:18:\"บทความ\";}', 'a:2:{s:2:\"en\";s:36:\"2ee9c1275f58f1acf520f0ea7d865d84.jpg\";s:2:\"th\";s:36:\"3255777830299b806ac0eee6f221bfe6.jpg\";}', 'a:2:{s:2:\"en\";s:36:\"2ee9c1275f58f1acf520f0ea7d865d84.jpg\";s:2:\"th\";s:36:\"3255777830299b806ac0eee6f221bfe6.jpg\";}', 'a:2:{s:2:\"en\";s:12:\"slider-1.jpg\";s:2:\"th\";s:12:\"slider-1.jpg\";}', '', '2019-10-25 04:07:38', '2019-11-06 01:08:53', '0000-00-00 00:00:00'),
-(4, 'Y', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:5:\"teams\";s:2:\"th\";s:18:\"ทีมงาน\";}', 'a:2:{s:2:\"en\";s:26:\"banner-team_1572247737.jpg\";s:2:\"th\";s:27:\"banner-team_15722477371.jpg\";}', 'a:2:{s:2:\"en\";s:26:\"banner-team_1572247737.jpg\";s:2:\"th\";s:27:\"banner-team_15722477371.jpg\";}', 'a:2:{s:2:\"en\";s:15:\"banner-team.jpg\";s:2:\"th\";s:15:\"banner-team.jpg\";}', '', '2019-10-28 07:28:57', '2019-10-28 07:28:57', '0000-00-00 00:00:00'),
+(4, 'Y', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:5:\"teams\";s:2:\"th\";s:18:\"ทีมงาน\";}', 'a:2:{s:2:\"en\";s:26:\"banner-team_1572247737.jpg\";s:2:\"th\";s:27:\"banner-team_15722477371.jpg\";}', 'a:2:{s:2:\"en\";s:27:\"banner-team2_1573444565.jpg\";s:2:\"th\";s:28:\"banner-team2_15734445651.jpg\";}', 'a:2:{s:2:\"en\";s:15:\"banner-team.jpg\";s:2:\"th\";s:15:\"banner-team.jpg\";}', '', '2019-10-28 07:28:57', '2019-11-11 03:56:05', '0000-00-00 00:00:00'),
 (5, 'Y', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:7:\"contact\";s:2:\"th\";s:18:\"ติดต่อ\";}', 'a:2:{s:2:\"en\";s:28:\"banne-contact_1572248871.jpg\";s:2:\"th\";s:29:\"banne-contact_15722488711.jpg\";}', 'a:2:{s:2:\"en\";s:28:\"banne-contact_1572248871.jpg\";s:2:\"th\";s:29:\"banne-contact_15722488711.jpg\";}', 'a:2:{s:2:\"en\";s:12:\"slider-1.jpg\";s:2:\"th\";s:12:\"slider-1.jpg\";}', '', '2019-10-28 07:47:51', '2019-10-28 07:47:51', '0000-00-00 00:00:00'),
 (6, 'Y', 'a:2:{s:2:\"en\";s:14:\"Thank you page\";s:2:\"th\";s:18:\"ขอบคุณ\";}', 'a:2:{s:2:\"en\";s:6:\"thanks\";s:2:\"th\";s:18:\"ขอบคุณ\";}', 'a:2:{s:2:\"en\";s:36:\"fde9a47418ec527b2c48b0988b6aa603.jpg\";s:2:\"th\";s:36:\"7fd22ff06e7576b292f48b4f48cd86bc.jpg\";}', 'a:2:{s:2:\"en\";s:36:\"fde9a47418ec527b2c48b0988b6aa603.jpg\";s:2:\"th\";s:36:\"7fd22ff06e7576b292f48b4f48cd86bc.jpg\";}', 'a:2:{s:2:\"en\";s:12:\"slider-1.jpg\";s:2:\"th\";s:12:\"slider-1.jpg\";}', '', '2019-10-25 04:07:11', '2019-10-25 04:07:11', '0000-00-00 00:00:00'),
-(7, 'Y', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:7:\"join-us\";s:2:\"th\";s:39:\"ร่วมงานกับเรา\";}', 'a:2:{s:2:\"en\";s:26:\"banner-team_1572247737.jpg\";s:2:\"th\";s:27:\"banner-team_15722477371.jpg\";}', 'a:2:{s:2:\"en\";s:26:\"banner-team_1572247737.jpg\";s:2:\"th\";s:27:\"banner-team_15722477371.jpg\";}', 'a:2:{s:2:\"en\";s:15:\"banner-team.jpg\";s:2:\"th\";s:15:\"banner-team.jpg\";}', '', '2019-10-28 07:28:57', '2019-10-28 07:28:57', '0000-00-00 00:00:00'),
+(7, 'Y', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:7:\"join-us\";s:2:\"th\";s:39:\"ร่วมงานกับเรา\";}', 'a:2:{s:2:\"en\";s:26:\"banner-team_1572247737.jpg\";s:2:\"th\";s:27:\"banner-team_15722477371.jpg\";}', 'a:2:{s:2:\"en\";s:28:\"banner-joinus_1573464399.jpg\";s:2:\"th\";s:29:\"banner-joinus_15734643991.jpg\";}', 'a:2:{s:2:\"en\";s:15:\"banner-team.jpg\";s:2:\"th\";s:15:\"banner-team.jpg\";}', '', '2019-10-28 07:28:57', '2019-11-11 09:26:39', '0000-00-00 00:00:00'),
 (8, 'N', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:10:\"portfolios\";s:2:\"th\";s:33:\"ผลงานของเรา\";}', 'a:2:{s:2:\"en\";s:28:\"banner-client_1572246396.jpg\";s:2:\"th\";s:29:\"banner-client_15722463961.jpg\";}', 'a:2:{s:2:\"en\";s:28:\"banner-client_1572246396.jpg\";s:2:\"th\";s:29:\"banner-client_15722463961.jpg\";}', 'a:2:{s:2:\"en\";s:12:\"slider-1.jpg\";s:2:\"th\";s:12:\"slider-1.jpg\";}', '', '2019-10-28 07:06:36', '2019-11-06 19:39:45', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
@@ -400,32 +400,6 @@ CREATE TABLE `logs` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `logs`
---
-
-INSERT INTO `logs` (`id`, `event_id`, `detail`, `user_id`, `ip`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(671, 1, 'เข้าสู่ระบบ SMM Backoffice', 2, '192.168.1.5', '2019-11-08 06:15:05', NULL, NULL),
-(672, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.5', '2019-11-08 06:16:12', NULL, NULL),
-(673, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.5', '2019-11-08 06:16:50', NULL, NULL),
-(674, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.5', '2019-11-08 06:17:42', NULL, NULL),
-(675, 4, 'แก้ไข Category (Clients Page)', 2, '192.168.1.5', '2019-11-08 06:18:39', NULL, NULL),
-(676, 4, 'แก้ไข Category (Clients Page)', 2, '192.168.1.5', '2019-11-08 06:18:57', NULL, NULL),
-(677, 4, 'แก้ไข Category (Clients Page)', 2, '192.168.1.5', '2019-11-08 06:19:15', NULL, NULL),
-(678, 4, 'แก้ไข Category (Portfolios Page)', 2, '192.168.1.5', '2019-11-08 06:19:56', NULL, NULL),
-(679, 4, 'แก้ไข Category (Portfolios Page)', 2, '192.168.1.5', '2019-11-08 06:20:10', NULL, NULL),
-(680, 4, 'แก้ไข Category (Portfolios Page)', 2, '192.168.1.5', '2019-11-08 06:20:29', NULL, NULL),
-(681, 4, 'แก้ไข Category (Blogs Page)', 2, '192.168.1.5', '2019-11-08 06:21:06', NULL, NULL),
-(682, 4, 'แก้ไข Category (Blogs Page)', 2, '192.168.1.5', '2019-11-08 06:21:31', NULL, NULL),
-(683, 4, 'แก้ไข Category (Blogs Page)', 2, '192.168.1.5', '2019-11-08 06:22:02', NULL, NULL),
-(684, 1, 'เข้าสู่ระบบ SMM Backoffice', 2, '192.168.1.7', '2019-11-08 07:12:20', NULL, NULL),
-(685, 1, 'เข้าสู่ระบบ SMM Backoffice', 2, '192.168.1.7', '2019-11-08 10:23:46', NULL, NULL),
-(686, 1, 'เข้าสู่ระบบ SMM Backoffice', 2, '192.168.1.115', '2019-11-08 10:28:36', NULL, NULL),
-(687, 3, 'เพิ่ม Client (Clients Page)', 2, '192.168.1.7', '2019-11-08 10:29:37', NULL, NULL),
-(688, 4, 'แก้ไข Client (Clients Page)', 2, '192.168.1.7', '2019-11-08 10:30:50', NULL, NULL),
-(689, 3, 'เพิ่ม Client (Clients Page)', 2, '192.168.1.7', '2019-11-08 10:32:38', NULL, NULL),
-(690, 3, 'เพิ่ม Client (Clients Page)', 2, '192.168.1.7', '2019-11-08 10:35:11', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -915,6 +889,8 @@ CREATE TABLE `top_portfolios` (
   `title` text NOT NULL,
   `image` text NOT NULL,
   `text` text NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `category_title` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
@@ -924,14 +900,14 @@ CREATE TABLE `top_portfolios` (
 -- Dumping data for table `top_portfolios`
 --
 
-INSERT INTO `top_portfolios` (`id`, `sort`, `title`, `image`, `text`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(15, 2, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:22:\"smm_ava_1572237075.jpg\";s:2:\"th\";s:23:\"smm_ava_15722370751.jpg\";}', '', '2019-10-28 04:31:15', '2019-11-07 19:58:09', '0000-00-00 00:00:00'),
-(16, 3, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:41:\"smm_balanze-by-hydrohealth_1572237084.jpg\";s:2:\"th\";s:42:\"smm_balanze-by-hydrohealth_15722370841.jpg\";}', '', '2019-10-28 04:31:24', '2019-11-07 19:58:09', '0000-00-00 00:00:00'),
-(17, 1, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:37:\"smm_blue-fish-solution_1572237092.jpg\";s:2:\"th\";s:38:\"smm_blue-fish-solution_15722370921.jpg\";}', '', '2019-10-28 04:31:32', '2019-11-07 19:58:09', '0000-00-00 00:00:00'),
-(18, 4, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:23:\"smm_dfsk_1572237101.jpg\";s:2:\"th\";s:24:\"smm_dfsk_15722371011.jpg\";}', '', '2019-10-28 04:31:41', '2019-11-07 19:58:09', '0000-00-00 00:00:00'),
-(19, 5, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:32:\"smm_fashionisland_1572237117.jpg\";s:2:\"th\";s:33:\"smm_fashionisland_15722371171.jpg\";}', '', '2019-10-28 04:31:57', '2019-11-07 19:58:09', '0000-00-00 00:00:00'),
-(20, 6, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:34:\"smm_hatari-wireless_1572237127.jpg\";s:2:\"th\";s:35:\"smm_hatari-wireless_15722371271.jpg\";}', '', '2019-10-28 04:32:07', '2019-11-07 19:58:09', '0000-00-00 00:00:00'),
-(21, 7, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:36:\"smm_infinityone-condo_1572237136.jpg\";s:2:\"th\";s:37:\"smm_infinityone-condo_15722371361.jpg\";}', '', '2019-10-28 04:32:16', '2019-11-07 19:58:09', '0000-00-00 00:00:00');
+INSERT INTO `top_portfolios` (`id`, `sort`, `title`, `image`, `text`, `category_id`, `category_title`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(15, 2, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:22:\"smm_ava_1572237075.jpg\";s:2:\"th\";s:23:\"smm_ava_15722370751.jpg\";}', '', 6, 'a:2:{s:2:\"en\";s:14:\"Website design\";s:2:\"th\";s:60:\"บริการออกแบบเว็บไซต์\";}', '2019-10-28 04:31:15', '2019-11-07 19:58:09', '0000-00-00 00:00:00'),
+(16, 3, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:41:\"smm_balanze-by-hydrohealth_1572237084.jpg\";s:2:\"th\";s:42:\"smm_balanze-by-hydrohealth_15722370841.jpg\";}', '', 6, 'a:2:{s:2:\"en\";s:14:\"Website design\";s:2:\"th\";s:60:\"บริการออกแบบเว็บไซต์\";}', '2019-10-28 04:31:24', '2019-11-07 19:58:09', '0000-00-00 00:00:00'),
+(17, 1, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:37:\"smm_blue-fish-solution_1572237092.jpg\";s:2:\"th\";s:38:\"smm_blue-fish-solution_15722370921.jpg\";}', '', 6, 'a:2:{s:2:\"en\";s:14:\"Website design\";s:2:\"th\";s:60:\"บริการออกแบบเว็บไซต์\";}', '2019-10-28 04:31:32', '2019-11-07 19:58:09', '0000-00-00 00:00:00'),
+(18, 4, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:23:\"smm_dfsk_1572237101.jpg\";s:2:\"th\";s:24:\"smm_dfsk_15722371011.jpg\";}', '', 6, 'a:2:{s:2:\"en\";s:14:\"Website design\";s:2:\"th\";s:60:\"บริการออกแบบเว็บไซต์\";}', '2019-10-28 04:31:41', '2019-11-07 19:58:09', '0000-00-00 00:00:00'),
+(19, 5, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:32:\"smm_fashionisland_1572237117.jpg\";s:2:\"th\";s:33:\"smm_fashionisland_15722371171.jpg\";}', '', 6, 'a:2:{s:2:\"en\";s:14:\"Website design\";s:2:\"th\";s:60:\"บริการออกแบบเว็บไซต์\";}', '2019-10-28 04:31:57', '2019-11-07 19:58:09', '0000-00-00 00:00:00'),
+(20, 6, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:34:\"smm_hatari-wireless_1572237127.jpg\";s:2:\"th\";s:35:\"smm_hatari-wireless_15722371271.jpg\";}', '', 6, 'a:2:{s:2:\"en\";s:14:\"Website design\";s:2:\"th\";s:60:\"บริการออกแบบเว็บไซต์\";}', '2019-10-28 04:32:07', '2019-11-07 19:58:09', '0000-00-00 00:00:00'),
+(21, 7, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:36:\"smm_infinityone-condo_1572237136.jpg\";s:2:\"th\";s:37:\"smm_infinityone-condo_15722371361.jpg\";}', '', 6, 'a:2:{s:2:\"en\";s:14:\"Website design\";s:2:\"th\";s:60:\"บริการออกแบบเว็บไซต์\";}', '2019-10-28 04:32:16', '2019-11-07 19:58:09', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -1164,7 +1140,7 @@ ALTER TABLE `contents`
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=691;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=697;
 --
 -- AUTO_INCREMENT for table `log_events`
 --
