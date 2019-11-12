@@ -75,6 +75,7 @@ $lang['page_team'] = 'Team Page';
 
 $lang['page_join_us_benefits'] = 'Benefits';
 $lang['page_join_us_btn_apply'] = 'Apply';
+$lang['page_join_us_btn_back'] = 'Back';
 $lang['page_join_us_location'] = 'Bangkok';
 $lang['page_join_us_unit'] = 'Position';
 $lang['page_join_us_career_title'] = 'Position';

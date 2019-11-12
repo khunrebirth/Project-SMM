@@ -59,7 +59,7 @@
 			<div class="col-sm-12 col-md-9">
 				<?php echo unserialize($career->content)[$lang]; ?>
 				<div class="col-12 d-flex justify-content-center mt-5 flex-column flex-md-row">
-					<a class="btn btn-back-job" href=""><i class="fas fa-chevron-left"></i> กลับไปยังหน้าน่วมงานกับเรา</a>
+					<a class="btn btn-back-job" href=""><i class="fas fa-chevron-left"></i> <?php echo lang('page_join_us_btn_back'); ?></a>
 					<button type="button" class="btn btn-join-job col-12 col-md-6" data-toggle="modal" data-target=".bd-example-modal-lg"><?php echo lang('page_join_us_btn_apply_to_position'); ?></button>
 				</div>
 			</div>
