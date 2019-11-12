@@ -95,71 +95,64 @@
 					<div class="carousel-inner">
 						<div class="carousel-item active">
 							<div class="col-12">
-								<h3 class="ttl-form-regist">ข้อมูลส่วนตัว</h3>
+								<h3 class="ttl-form-regist"><?php echo lang('page_join_us_form_txt_title_section_infomation'); ?></h3>
 								<form class="mt-2"
 									action="<?php echo base_url($lang . '/'. 'career-contact/send') ?>" method="post">
 									<div class="row">
 										<div class="col-md-6 col-12">
 											<div class="form-group">
-												<input type="text" class="form-control" name="id"
-													placeholder="เลขบัตรประชาชน" required="">
+												<input type="text" class="form-control" name="card_id" placeholder="<?php echo lang('page_join_us_form_txt_card_id'); ?>" required>
 											</div>
 										</div>
 										<div class="col-md-6 col-12">
 											<div class="form-group">
-												<input type="text" class="form-control" name="name"
-													placeholder="<?php echo lang('page_join_us_form_txt_name'); ?>"
-													required="">
+												<input type="text" class="form-control" name="name" placeholder="<?php echo lang('page_join_us_form_txt_name'); ?>" required>
 											</div>
 										</div>
 									</div>
 									<div class="row">
-										<label class="col-12" for="">วัน/เดือน/ปี เกิด</label>
+										<label class="col-12" for=""><?php echo lang('page_join_us_form_txt_birthday'); ?></label>
 										<div class="col-md-6 col-12">
 											<div class="form-group">
-												<input type="text" class="form-control inp_date_01" name="id"  required="">
+												<input type="text" class="form-control inp_date_01" name="birthday" required>
 											</div>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-6 col-12">
 											<div class="form-group">
-												<input type="text" class="form-control" name="email"
-													placeholder="<?php echo lang('page_join_us_form_txt_email'); ?>"
-													required="">
+												<input type="text" class="form-control" name="email" placeholder="<?php echo lang('page_join_us_form_txt_email'); ?>" required>
 											</div>
 										</div>
 										<div class="col-md-6 col-12">
 											<div class="form-group">
-												<input type="text" class="form-control" name="phone"
-													placeholder="<?php echo lang('page_join_us_form_txt_phone'); ?>"
-													required="">
+												<input type="text" class="form-control" name="phone" placeholder="<?php echo lang('page_join_us_form_txt_phone'); ?>" required>
 											</div>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-6 col-12">
 											<div class="form-group">
-												<label for="">สถานภาพ</label>
-												<select class="form-control" id="">
-													<option>โสด</option>
-													<option>แต่งงาน</option>
-													<option>หย่าร้าง</option>
-													<option>หม้าย</option>
+												<label for=""><?php echo lang('page_join_us_form_txt_status'); ?></label>
+												<select class="form-control" name="status">
+													<option value="<?php echo lang('page_join_us_form_txt_status_1'); ?>"><?php echo lang('page_join_us_form_txt_status_1'); ?></option>
+													<option value="<?php echo lang('page_join_us_form_txt_status_2'); ?>"><?php echo lang('page_join_us_form_txt_status_2'); ?></option>
+													<option value="<?php echo lang('page_join_us_form_txt_status_3'); ?>"><?php echo lang('page_join_us_form_txt_status_3'); ?></option>
+													<option value="<?php echo lang('page_join_us_form_txt_status_4'); ?>"><?php echo lang('page_join_us_form_txt_status_4'); ?></option>
 												</select>
 											</div>
 										</div>
 										<div class="col-md-6 col-12">
 											<div class="form-group">
-												<label class="ttl-form">เพศ</label>
+												<label class="ttl-form"><?php echo lang('page_join_us_form_txt_gender'); ?></label>
 												<label class="radio-inline pl-4" for="">
-													<input type="radio" name="gender" value=""> ชาย
+													<input type="radio" name="gender" value="male"> <?php echo lang('page_join_us_form_txt_male'); ?>
 												</label>
 												<label class="radio-inline ml-2" for="">
-													<input type="radio" name="gender" value=""> หญิง
+													<input type="radio" name="gender" value="female"> <?php echo lang('page_join_us_form_txt_female'); ?>
 												</label>
 												<label class="radio-inline ml-2" for="">
-													<input type="radio" name="gender" value=""> อื่นๆ
+													<input type="radio" name="gender" value="other"> <?php echo lang('page_join_us_form_txt_other'); ?>
 												</label>
 											</div>
 										</div>
