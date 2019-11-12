@@ -95,11 +95,11 @@
 			</div>
 			<div class="modal-body">
 				<div id="carouselExampleFade" class="carousel slide" data-interval="false">
-					<div class="carousel-inner">
+					<form class="carousel-inner" action="<?php echo base_url($lang . '/'. 'career-contact/send') ?>" method="post" enctype="multipart/form-data" id="demo1">
 						<div class="carousel-item active">
 							<div class="col-12">
 								<h3 class="ttl-form-regist"><?php echo lang('page_join_us_form_txt_title_section_infomation'); ?></h3>
-								<form class="mt-2" action="<?php echo base_url($lang . '/'. 'career-contact/send') ?>" method="post" enctype="multipart/form-data" id="demo1">
+								<div class="mt-2">
 									<div class="row">
 										<div class="col-md-6 col-12">
 											<div class="form-group">
@@ -202,13 +202,13 @@
 									<div class="col-12 text-center">
 										<span class="btn btn-primary text-center btn-next"><?php echo lang('page_join_us_btn_next'); ?></span>
 									</div>
-								</form>
+								</div>
 							</div>
 						</div>
 						<div class="carousel-item">
 							<div class="col-12">
 								<h3 class="ttl-form-regist"><?php echo lang('page_join_us_form_txt_title_section_old_work'); ?></h3>
-								<form class="mt-2" action="<?php echo base_url($lang . '/'. 'career-contact/send') ?>" method="post">
+								<div class="mt-2">
 									<div class="row">
 										<div class="col-md-6 col-12">
 											<div class="form-group">
@@ -273,13 +273,13 @@
 											<span class="btn btn-primary text-center btn-next"><?php echo lang('page_join_us_btn_next'); ?></span>
 										</div>
 									</div>
-								</form>
+								</div>
 							</div>
 						</div>
 						<div class="carousel-item">
 							<div class="col-12">
 								<h3 class="ttl-form-regist"><?php echo lang('page_join_us_form_txt_title_section_edu'); ?></h3>
-								<form class="mt-2 row" action="<?php echo base_url($lang . '/'. 'career-contact/send') ?>" method="post">
+								<div class="mt-2 row">
 									<div class="col-md-6 col-12">
 										<div class="form-group">
 											<label for=""><?php echo lang('page_join_us_form_txt_edu_level'); ?></label>
@@ -473,13 +473,13 @@
 										<span class="btn btn-primary text-center btn-prev"><?php echo lang('page_join_us_btn_back_form'); ?></span>
 										<span class="btn btn-primary text-center btn-next"><?php echo lang('page_join_us_btn_next'); ?></span>
 									</div>
-								</form>
+								</div>
 							</div>
 						</div>
 						<div class="carousel-item">
 							<div class="col-12">
 								<h3 class="ttl-form-regist"><?php echo lang('page_join_us_form_txt_title_section_resume_and_img'); ?></h3>
-								<form class="mt-2 row" action="<?php echo base_url($lang . '/'. 'career-contact/send') ?>" method="post">
+								<div class="mt-2 row">
 									<div class="col-md-12 col-12">
 										<div class="form-group">
 											<label for=""><?php echo lang('page_join_us_form_file_resume'); ?></label>
@@ -510,12 +510,12 @@
                                     </div>
                                     <div class="col-12 text-center">
 										<span class="btn btn-primary text-center btn-prev"><?php echo lang('page_join_us_btn_back_form'); ?></span>
-										<span class="btn btn-primary text-center btn-next"><?php echo lang('page_join_us_btn_send'); ?></span>
+										<button type="submit" class="btn btn-primary text-center btn-next"><?php echo lang('page_join_us_btn_send'); ?></button>
                                     </div>
-								</form>
+								</div>
 							</div>
 						</div>
-					</div>
+					</form>
 				</div>
 			</div>
 		</div>
