@@ -162,15 +162,27 @@
 			<?php foreach ($blogs as $blog) { ?>
 			<div class="col-xs-12 col-sm-6 col-lg-3 blog__item" style="visibility: visible; animation-name: fadeInLeft;">
 				<article class="blog blog__modern">
-					<a class="blog__modern--figure" href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/' . unserialize($blog->blog_category_slug)[$lang] . '/' .  unserialize($blog->slug)[$lang]); ?>">
-						<img src="<?php echo base_url('storage/uploads/images/blogs/' . unserialize($blog->img)[$lang]) ?>" alt="<?php echo unserialize($blog->img_title_alt)[$lang]; ?>" width="370" height="307">
+					<a class="blog__modern--figure" href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/' . unserialize($blog['blog_category_slug'])[$lang] . '/' .  unserialize($blog['slug'])[$lang]); ?>">
+						<img src="<?php echo base_url('storage/uploads/images/blogs/' . unserialize($blog['img'])[$lang]) ?>" alt="<?php echo unserialize($blog['img_title_alt'])[$lang]; ?>" width="370" height="307">
 						<div class="blog__modern--time">
-							<time datetime="<?php echo $blog->created_at; ?>"><span class="blog__modern--time--month"><?php echo date_format(date_create($blog->created_at), 'm'); ?></span><span class="blog__modern--time--number"><?php echo date_format(date_create($blog->created_at), 'd'); ?></span></time>
+							<time datetime="<?php echo $blog['created_at']; ?>"><span class="blog__modern--time--month"><?php echo date_format(date_create($blog['created_at']), 'm'); ?></span><span class="blog__modern--time--number"><?php echo date_format(date_create($blog['created_at']), 'd'); ?></span></time>
 						</div>
 					</a>
-					<h4 class="blog__modern--title"><a href="#"><?php echo unserialize($blog->title)[$lang]; ?></a></h4>
-					<p class="blog__modern--text"><?php echo unserialize($blog->description_section)[$lang]; ?></p>
-					<p class="blog__modern--bottom-text d-block d-md-none">22 ตุลาคม 2562 | บทความการตลาด</p>
+					<h4 class="blog__modern--title"><a href="#"><?php echo unserialize($blog['title'])[$lang]; ?></a></h4>
+					<p class="blog__modern--text"><?php echo unserialize($blog['description_section'])[$lang]; ?></p>
+					<!-- handle moblie -->
+					<p class="blog__modern--bottom-text d-block d-md-none">
+						<?php echo $lang == 'th' ? ssm_thai_date(strtotime($blog['created_at'])) : date('d F Y', strtotime($blog['created_at'])); ?> |
+						<?php
+							$maximum = count($blog['tags']);
+							$counter = 0;
+						?>
+						<?php foreach ($blog['tags'] as $tag) { ?>
+							<?php echo unserialize($tag->title)[$lang]; ?>
+							<?php $counter++; ?>
+							<?php if ($counter != $maximum)  { echo ','; } else { echo ''; } ?>
+						<?php } ?>
+					</p>
 				</article>
 			</div>
 			<?php } ?>

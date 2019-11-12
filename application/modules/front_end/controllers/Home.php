@@ -25,6 +25,7 @@ class Home extends MX_Controller
 		$this->load->model('Portfolio_model');
 		$this->load->model('Blog_category_model');
 		$this->load->model('Blog_model');
+		$this->load->model('Tag_model');
 		$this->load->model('Team_model');
 
 		// Language
@@ -85,7 +86,7 @@ class Home extends MX_Controller
 		$data['top_portfolios'] = $this->Top_portfolio_model->get_top_portfolio_by_limit(4);
 		$data['portfolios'] = $portfolios;
 		$data['blog_categories'] = $this->Blog_category_model->get_blog_category_all();
-		$data['blogs'] = $this->Blog_model->get_last_blog(4);
+		$data['blogs'] = $this->filter_data_blogs($this->Blog_model->get_last_blog(4));
 		$data['teams'] = $this->Team_model->get_team_all();
 
 		/*
@@ -95,5 +96,43 @@ class Home extends MX_Controller
 		*/
 
 		$this->load->view('app', $data);
+	}
+
+	private function filter_data_blogs($blogs)
+	{
+		$bundle_blogs = [];
+
+		if (count($blogs) > 0) {
+			foreach ($blogs as $key => $blog) {
+				$bundle_blogs[$key]['category_blog_id'] = $blog->category_blog_id;
+				$bundle_blogs[$key]['blog_category_slug'] = $blog->blog_category_slug;
+				$bundle_blogs[$key]['slug'] = $blog->slug;
+				$bundle_blogs[$key]['img'] = $blog->img;
+				$bundle_blogs[$key]['img_title_alt'] = $blog->img_title_alt;
+				$bundle_blogs[$key]['created_at'] = $blog->created_at;
+				$bundle_blogs[$key]['title'] = $blog->title;
+				$bundle_blogs[$key]['description_section'] = $blog->description_section;
+				$bundle_blogs[$key]['title'] = $blog->title;
+				$bundle_blogs[$key]['tags'] = $this->filter_data_tags($blog);
+			}
+		}
+
+		return $bundle_blogs;
+	}
+
+	private function filter_data_tags($blog)
+	{
+		$tags = [];
+
+		if ($blog->tag_id != '') {
+
+			$bundle_tag_id = explode(',' , $blog->tag_id);
+
+			foreach ($bundle_tag_id as $tag_id) {
+				$tags[] = $this->Tag_model->get_tag_by_id($tag_id);
+			}
+		}
+
+		return $tags;
 	}
 }
