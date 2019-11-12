@@ -96,8 +96,7 @@
 						<div class="carousel-item active">
 							<div class="col-12">
 								<h3 class="ttl-form-regist"><?php echo lang('page_join_us_form_txt_title_section_infomation'); ?></h3>
-								<form class="mt-2"
-									action="<?php echo base_url($lang . '/'. 'career-contact/send') ?>" method="post">
+								<form class="mt-2" action="<?php echo base_url($lang . '/'. 'career-contact/send') ?>" method="post">
 									<div class="row">
 										<div class="col-md-6 col-12">
 											<div class="form-group">
@@ -200,7 +199,7 @@
 										</div>
 									</div>
 									<div class="col-12 text-center">
-										<span class="btn btn-primary text-center btn-next">ต่อไป</span>
+										<span class="btn btn-primary text-center btn-next"><?php echo lang('page_join_us_btn_next'); ?></span>
 									</div>
 								</form>
 							</div>
