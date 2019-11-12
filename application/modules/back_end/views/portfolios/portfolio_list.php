@@ -80,8 +80,13 @@
 										foreach ($portfolios as $portfolio) { ?>
 											<tr>
 												<td class="text-center"><?php echo $counter++; ?></td>
-												<td><img src="<?php echo base_url('storage/uploads/images/portfolios/' . unserialize($portfolio->image)['en']); ?>" width="120"></td>
-												<td><img src="<?php echo base_url('storage/uploads/images/portfolios/' . unserialize($portfolio->image)['th']); ?>" width="120"></td>
+												<?php if ($portfolio->category_id == 17) { ?>
+													<td><?php unserialize($portfolio->image)['en']; ?></td>
+													<td><?php unserialize($portfolio->image)['th']; ?></td>
+												<?php } else { ?>
+													<td><img src="<?php echo base_url('storage/uploads/images/portfolios/' . unserialize($portfolio->image)['en']); ?>" width="120"></td>
+													<td><img src="<?php echo base_url('storage/uploads/images/portfolios/' . unserialize($portfolio->image)['th']); ?>" width="120"></td>
+												<?php } ?>
 												<td><?php echo $portfolio->created_at; ?></td>
 												<td>
 													<label class="custom-switch p-0">
