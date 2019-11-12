@@ -18,6 +18,7 @@ class Contact extends MX_Controller
 
         // Model
         $this->load->model('Contact_model');
+		$this->load->model('Career_contact_model');
 		$this->load->model('Page_model');
 		$this->load->model('Banner_model');
 
