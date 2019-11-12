@@ -130,6 +130,7 @@ class Blogs extends MX_Controller
 		$data['blog_categories'] = $this->Blog_category_model->get_blog_category_active();
 		$data['blogs'] = $this->filter_data_blogs($this->Blog_model->get_blog_by_category_blog_id($category_blogs->id));
 		$data['banner'] = $this->Banner_model->get_banner_active_by_id(3);
+		$data['category_id'] = $category_blogs->id;
 
 		/*
 		| -------------------------------------------------------------------------
