@@ -157,11 +157,8 @@
 						<img src="<?php echo base_url('resources/front_end/images/service-menu.png');?>" alt="">
 					</li>
 					<?php foreach ($blog_categories as $key => $blog_category) { ?>
-
-						
-
 						<li>
-							<a class="<?php if ($key == 0) { echo 'is-active'; } ?>" href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/' . unserialize($blog_category->slug)[$lang]); ?>">
+							<a class="<?php echo ( $category_id == $blog_category->id )?'is-active':''; ?>" href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/' . unserialize($blog_category->slug)[$lang]); ?>">
 								<figure>
 									<img src="<?php echo base_url('storage/uploads/images/blogs/'.unserialize($blog_category->icon)[$lang]); ?>" alt="">
 								</figure>	
