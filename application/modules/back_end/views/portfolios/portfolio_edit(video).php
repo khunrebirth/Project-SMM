@@ -34,7 +34,7 @@
 								<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#handleEn">EN</a></li>
 							</ul>
 							<!-- Tab panes -->
-							<form class="form-horizontal" method="post" action="<?php echo base_url($lang . '/backoffice/page/clients/list-clients/update/' . $category->id . '/' . $portfolio->id); ?>" enctype="multipart/form-data">
+							<form class="form-horizontal" method="post" action="<?php echo base_url($lang . '/backoffice/page/portfolios/list-portfolios/update/' . $category->id . '/' . $portfolio->id); ?>" enctype="multipart/form-data">
 								<div class="tab-content">
 									<div class="tab-pane active" id="handleTh">
 										<!-- Information -->

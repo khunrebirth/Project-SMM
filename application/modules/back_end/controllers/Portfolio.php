@@ -394,7 +394,7 @@ class Portfolio extends MX_Controller
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
 
-		redirect($this->lang . '/backoffice/page/portfolios/list-portfolios/' . $portfolio_id);
+		redirect($this->lang . '/backoffice/page/portfolios/list-portfolios/' . $portfolio_category_id);
 	}
 
 	public function portfolio_destroy($lang, $portfolio_id)

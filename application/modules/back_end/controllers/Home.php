@@ -380,7 +380,7 @@ class Home extends MX_Controller
 	public function portfolio_update($lang, $portfolio_id)
 	{
 		// Get Old data
-		$portfolio = $this->Portfolio_model->get_portfolio_by_id($portfolio_id);
+		$portfolio = $this->Top_portfolio_model->get_top_portfolio_by_id($portfolio_id);
 
 		// 17 Service(video)
 		if ($this->input->post('service_id') == 17) {

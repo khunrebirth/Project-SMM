@@ -34,7 +34,7 @@
 								<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#handleEn">EN</a></li>
 							</ul>
 							<!-- Tab panes -->
-							<form class="form-horizontal" method="post" action="<?php echo base_url($lang . '/backoffice/page/clients/list-clients/update/' . $category->id . '/' . $portfolio->id); ?>" enctype="multipart/form-data">
+							<form class="form-horizontal" method="post" action="<?php echo base_url($lang . '/backoffice/page/portfolios/list-portfolios/update/' . $category->id . '/' . $portfolio->id); ?>" enctype="multipart/form-data">
 								<div class="tab-content">
 									<div class="tab-pane active" id="handleTh">
 										<!-- Information -->
@@ -65,7 +65,7 @@
 										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Text</label>
 											<div class="col-sm-10">
-												<input class="form-control input-file-w-30" name="text_th" placeholder="Text" type="text" value="">
+												<input class="form-control input-file-w-30" name="text_th" placeholder="Text" type="text" value="<?php echo unserialize($portfolio->text)['th']; ?>">
 											</div>
 										</div>
 										<hr>
@@ -99,7 +99,7 @@
 										<div class="form-group row">
 											<label class="col-sm-2 col-form-label text-left text-md-right">Text</label>
 											<div class="col-sm-10">
-												<input class="form-control input-file-w-30" name="text_en" placeholder="Text" type="text" value="">
+												<input class="form-control input-file-w-30" name="text_en" placeholder="Text" type="text" value="<?php echo unserialize($portfolio->text)['en']; ?>">
 											</div>
 										</div>
 										<hr>
