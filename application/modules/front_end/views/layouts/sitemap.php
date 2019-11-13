@@ -12,100 +12,10 @@
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v4.0&appId=189754555007223&autoLogAppEvents=1"></script>
 
 <!-- Push Custom Style -->
-<style>
-	.fb-page {
-		width: 260px;
-	}
-	@media (min-width: 320px) { 
-		.fb-page {
-			width: 280px;
-		}
-	 }
-	@media (min-width: 380px) { 
-		.fb-page {
-			width: 300px;
-		}
-	 }
+<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style-sitemap.min.css'); ?>">
 
-	@media (min-width: 576px) { 
-		.fb-page {
-			width: 380px;
-		}
-	 }
-
-	@media (min-width: 768px) { 
-		.fb-page {
-			width: 400px;
-		}
-	 }
-
-	@media (min-width: 992px) { 
-		.fb-page {
-			width: 200px;
-		}
-	 }
-
-	@media (min-width: 1200px) { 
-		.fb-page {
-			width: 260px;
-		}
-	 }
-	
-
-
-	.item-fb-page {
-		margin-bottom: 20px;
-	}
-	.item-youtube {
-		display: -webkit-box;
-		display: -webkit-flex;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-box-align: center;
-		-webkit-align-items: center;
-		-ms-flex-align: center;
-		align-items: center;
-		-webkit-box-pack: center;
-		-webkit-justify-content: center;
-		-ms-flex-pack: center;
-		justify-content: center;
-	}
-
-	.sec-social-contact {
-		overflow: hidden;
-		max-width: 1440px;
-		margin: 0px auto 60px;
-		border-bottom: 1px solid #fff;
-		padding-bottom: 60px;
-	}
-	
-	@media (max-width: 768px) { 
-		.sec-social-contact {
-			padding-bottom: 30px;
-			margin: 0px auto 30px;
-		}
-	}
-	.col-cmn-5 {
-		flex: 0 0 20%;
-		padding: 0 10px;
-		margin: 0;
-		overflow: hidden;
-	}
-	
-	@media (max-width: 992px) {
-		.col-cmn-5 {
-			flex: 0 0 50%;
-			margin: 0 0 15px;
-		}
-	}
-	@media (max-width: 768px) {
-		.col-cmn-5 {
-			flex: 0 0 100%;
-		}
-	}
-</style>
 <div class="sec-footer-sitemap" id="accordion">
-	<div class="card text-center" style="background: #00264c; color: #fff; border-radius: 0;margin:0;">
+	<div class="card text-center box-footer-sitemap">
 		<div class="show">
 			<div class="card-body">
 				<div class="sec-sitemap">
@@ -116,18 +26,30 @@
 									<img src="<?php echo base_url('resources/front_end/images/title-social.png'); ?>" alt="">
 								</div>
 								<div class="col-cmn-5 item-fb-page">
-									<div class="fb-page" data-href="https://www.facebook.com/iSEO.SEM/" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
+									<div class="fb-page" data-href="https://www.facebook.com/iSEO.SEM/" data-width="" data-height="" 
+										data-small-header="<?php if (!smm_is_mobile()) { echo 'false'; } { echo 'true'; } ?>"
+										data-adapt-container-width="<?php if (!smm_is_mobile()) { echo 'true'; } else { echo 'false'; } ?>"
+										data-hide-cover="<?php if (!smm_is_mobile()) { echo 'false'; } else { echo 'true'; } ?>"
+										data-show-facepile="false">
 										<blockquote cite="https://www.facebook.com/iSEO.SEM/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/iSEO.SEM/">รับบริการทำ SEO SEM</a>
 										</blockquote>
 									</div>
 								</div>
 								<div class="col-cmn-5 item-fb-page">
-									<div class="fb-page" data-href="https://www.facebook.com/SocialMediaMarketing/" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
+									<div class="fb-page" data-href="https://www.facebook.com/SocialMediaMarketing/" data-width="" data-height="" 
+										data-small-header="<?php if (!smm_is_mobile()) { echo 'false'; } { echo 'true'; } ?>"
+										data-adapt-container-width="<?php if (!smm_is_mobile()) { echo 'true'; } else { echo 'false'; } ?>"
+										data-hide-cover="<?php if (!smm_is_mobile()) { echo 'false'; } else { echo 'true'; } ?>"
+										data-show-facepile="false">
 										<blockquote cite="https://www.facebook.com/SocialMediaMarketing/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/SocialMediaMarketing/">Social Media Master</a></blockquote>
 									</div>
 								</div>
 								<div class="col-cmn-5 item-fb-page">
-									<div class="fb-page" data-href="https://www.facebook.com/EmailDirectMarketing.EDM/" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
+									<div class="fb-page" data-href="https://www.facebook.com/EmailDirectMarketing.EDM/" data-width="" data-height="" 
+										data-small-header="<?php if (!smm_is_mobile()) { echo 'false'; } { echo 'true'; } ?>"
+										data-adapt-container-width="<?php if (!smm_is_mobile()) { echo 'true'; } else { echo 'false'; } ?>"
+										data-hide-cover="<?php if (!smm_is_mobile()) { echo 'false'; } else { echo 'true'; } ?>"
+										data-show-facepile="false">
 										<blockquote cite="https://www.facebook.com/EmailDirectMarketing.EDM/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/EmailDirectMarketing.EDM/">บริการรับส่งอีเมล์ : Email Direct Marketing</a></blockquote>
 									</div>
 								</div>
@@ -165,7 +87,7 @@
 						<div class="col-sm-12 col-md-6 sec-site-link col-lg-8 mb-3 mb-md-0">
 							<div class="row">
 								<div class="col-lg-3 col-sm-12 col-md-12">
-									<a class="d-block text-left" href=""><?php echo lang('menu_home'); ?></a>
+									<a class="d-block text-left ttl-footer-list" href=""><?php echo lang('menu_home'); ?></a>
 									<ul class="list-sitemap">
 										<li><a class="text-left" href="<?php echo base_url($lang . '/' . lang('menu_home')); ?>"><?php echo lang('menu_home'); ?></a></li>
 										<li><a class="text-left" href="<?php echo base_url($lang . '/' . lang('menu_about')); ?>"><?php echo lang('menu_about'); ?></a></li>
@@ -175,7 +97,7 @@
 									</ul>
 								</div>
 								<div class="col-lg-5 col-sm-12 col-md-12">
-									<a class="d-block text-left" href=""><?php echo lang('menu_service'); ?></a>
+									<a class="d-block text-left ttl-footer-list" href=""><?php echo lang('menu_service'); ?></a>
 									<ul class="list-sitemap">
 										<?php foreach ($services as $service) { ?>
 											<li><a class="text-left" href="<?php echo base_url($lang . '/' . lang('menu_service') . '/' . unserialize($service->slug)[$lang]); ?>"><?php echo unserialize($service->title)[$lang]; ?></a></li>
@@ -183,7 +105,7 @@
 									</ul>
 								</div>
 								<div class="col-lg-4 col-sm-12 col-md-12">
-									<a class="d-block text-left" href=""><?php echo lang('menu_blogs'); ?></a>
+									<a class="d-block text-left ttl-footer-list" href=""><?php echo lang('menu_blogs'); ?></a>
 									<ul class="list-sitemap">
 										<?php foreach ($last_blogs as $last_blog) { ?>
 											<li><a class="text-left" href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/' . unserialize($last_blog->blog_category_slug)[$lang] . '/' .  unserialize($last_blog->slug)[$lang]); ?>"><?php echo unserialize($last_blog->title)[$lang]; ?></a></li>

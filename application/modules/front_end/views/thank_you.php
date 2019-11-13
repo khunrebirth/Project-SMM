@@ -1,28 +1,8 @@
 <!-- Push Custom Style -->
-<style>
-	.box-thank-you {
-		max-width: 1440px;
-		width: 100%;
-		margin: 0 auto;
-		padding: 150px 0
-	}
-
-	.thank-you-ttl span {
-		color: #0d84be;
-	}
-
-	.thank-you-txt {
-		padding: 0 15px;
-	}
-
-	.thank-you-img {
-		padding: 0 30px;
-	}
-</style>
-
+<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style-thank_you.min.css'); ?>">
 <!-- Title -->
 <?php if ($banner) { ?>
-<section class="page-title main-hero-service" style="padding:0;">
+<section class="page-title main-hero-service p-0">
 	<img class="img-fluid" src="<?php echo base_url((!smm_is_mobile()) ? 'storage/uploads/images/banners/' . unserialize($banner->img)[$lang] : 'storage/uploads/images/banners/' . unserialize($banner->img_moblie)[$lang]); ?>" alt="<?php echo unserialize($banner->img_title_alt)[$lang]; ?>">
 	<div class="ttl-header-hero wow">
 		<h1><?php echo unserialize($banner->title)[$lang]; ?></h1>

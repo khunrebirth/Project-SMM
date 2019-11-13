@@ -33,14 +33,14 @@
     <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/hover-effect.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/hover-style.css'); ?>">
     <!-- Animate -->
-    <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/animate.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/animate.min.css'); ?>">
     <!-- OWL CAL CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 	<!-- fancybox CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous" />
     <!-- Customer CSS -->
-    <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style.min.css'); ?>">
 	<style>
 		.popup_popup {
 			display: none !important;
@@ -66,6 +66,7 @@
 	<!-- Plugin Social -->
 	<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5dc3d55e04e0990012c1f4ee&product=inline-share-buttons&cms=website' async='async'></script>
 	<script>
+        window.base_url = "<?php echo base_url(); ?>"
 		// Detect Plugin Social
         $('.button_invert').click()
 

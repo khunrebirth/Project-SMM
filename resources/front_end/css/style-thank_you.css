@@ -1,0 +1,18 @@
+.box-thank-you {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 150px 0
+}
+
+.thank-you-ttl span {
+    color: #0d84be;
+}
+
+.thank-you-txt {
+    padding: 0 15px;
+}
+
+.thank-you-img {
+    padding: 0 30px;
+}

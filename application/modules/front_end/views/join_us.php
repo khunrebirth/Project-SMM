@@ -1,18 +1,10 @@
 <!-- Push Custom Style -->
-<style>
-    .sec-job-activity__type-6-item {
-        max-width: 720px;
-    }
-    @media (max-width: 576px) {
-        .title-team {
-            padding: 2rem 0 !important;
-        }
-    }
-</style>
+<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style-join_us.min.css'); ?>">
+
 
 <!-- Title -->
 <?php if ($banner) { ?>
-<section class="page-title main-hero-service" style="padding:0;">
+<section class="page-title main-hero-service p-0" >
 	<img class="img-fluid" src="<?php echo base_url((!smm_is_mobile()) ? 'storage/uploads/images/banners/' . unserialize($banner->img)[$lang] : 'storage/uploads/images/banners/' . unserialize($banner->img_moblie)[$lang]); ?>" alt="<?php echo unserialize($banner->img_title_alt)[$lang]; ?>">
 	<div class="ttl-header-hero wow">
 		<h1><?php echo unserialize($banner->title)[$lang]; ?></h1>
@@ -23,7 +15,7 @@
 <!-- Content -->
 <section id="job">
     <div class="container-fluid ">
-        <div class="title-team" style="text-align: center; padding: 0 0 3rem;">
+        <div class="title-team text-center pb-5">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-joinus.png' : 'resources/front_end/images/title-joinus.png'); ?>" alt="" class="img-fluid d-none d-md-block mx-auto">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-joinus_sp.png' : 'resources/front_end/images/title-joinus_Sp.png'); ?>" alt="" class="img-fluid d-block d-md-none mx-auto">
         </div>  
@@ -103,21 +95,6 @@
 <?php include 'layouts/sitemap.php'; ?>
 
 
-<!-- Push Custom Scripts -->
-<script>
-    $(function () {
-        $("a.fancybox").fancybox({ 
-            animationEffect : 'fade'
-        }).attr('data-fancybox', 'group1');
 
-        $('.vdo-fancybox').fancybox({
-            youtube : {
-                controls : 0,
-                showinfo : 0
-            },
-            vimeo : {
-                color : 'f00'
-            }
-        });
-    });
-</script>
+<!-- Push Custom Scripts -->
+<script type="text/javascript" src="<?php echo base_url('resources/front_end/js/script-join_us.min.js'); ?>"></script>

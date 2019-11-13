@@ -1,14 +1,8 @@
-<style>
-	@media (max-width: 992px) { 
-		.title-client {
-			padding: 5rem 0 2rem !important;
-		}
-	}
-</style>
-
+<!-- Push Custom Style -->
+<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style-portfolio.min.css'); ?>">
 <!-- Title -->
 <?php if ($banner) { ?>
-<section class="page-title main-hero-service" style="padding:0;">
+<section class="page-title main-hero-service p-0">
 	<img class="img-fluid" src="<?php echo base_url((!smm_is_mobile()) ? 'storage/uploads/images/banners/' . unserialize($banner->img)[$lang] : 'storage/uploads/images/banners/' . unserialize($banner->img_moblie)[$lang]); ?>" alt="<?php echo unserialize($banner->img_title_alt)[$lang]; ?>">
 	<div class="ttl-header-hero wow">
 		<h1><?php echo unserialize($banner->title)[$lang]; ?></h1>
@@ -19,7 +13,7 @@
 <!-- Content -->
 <section id="client">
     <div class="container-fluid">
-        <div class="title-client" style="text-align: center; padding: 4rem;">
+        <div class="title-client text-center ttl-top-space">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/our-port.png' : 'resources/front_end/images/our-port.png'); ?>" class="img-fluid d-none d-md-block mx-auto">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/our-port_sp.png' : 'resources/front_end/images/our-port_sp.png'); ?>" class="img-fluid d-block d-md-none mx-auto">
         </div>
@@ -72,76 +66,4 @@
 
 
 <!-- Push Custom Scripts -->
-<script>
-    $(function () {
-        $(".client__navs a:first").tab('show');
-
-		$('.list-catagory-client li a').click(function(e){
-			e.preventDefault();
-			if(!$(this).hasClass('is-active')){
-				var hash = $(this).attr('href');
-				var filter = hash.split("#")[1];
-				if(filter == 'all'){
-					$('.item-client').fadeIn( "slow" );
-				}else{
-
-					$('.item-client').fadeOut( "slow" );
-					$('.'+filter).fadeIn( "slow" );
-
-					//for close slide when click on sp
-					if(window.matchMedia("(max-width: 992px)").matches){
-						$('#menuService').slideToggle();
-						$('.box-head-catagory').toggleClass('is-active');
-					}
-
-
-				}
-			}
-			$('.list-catagory-client li a').removeClass('is-active');
-			$(this).addClass('is-active');
-		});
-
-        $(".list-catagory-client li a").each(function( index ) {
-            if ($(this).hasClass('is-active')) {
-                var hash = $(this).attr('href');
-                var filter = hash.split("#")[1];
-                if (filter == 'all') {
-                    $('.item-client').fadeIn( "slow" );
-                } else {
-                    $('.item-client').fadeOut( "slow" );
-					$('.'+filter).fadeIn( "slow" );
-
-                }
-            }
-        });
-
-		//for menu service and respons
-		$('.box-head-catagory').click(function(e){
-			e.preventDefault();
-			var slide_item = $(this).attr('href');
-			$(slide_item).slideToggle();
-			$(this).toggleClass('is-active');
-		});
-		$( window ).resize(function() {
-			if(window.matchMedia("(min-width: 992px)").matches){
-				$('#menuService').show();
-				$('.box-head-catagory').removeClass('is-active');
-			}else{
-				$('#menuService').hide();
-			}
-		});
-
-    });
-</script>
-<script>
-$(document).ready(function() {
-    $('.list-catagory-client').scrollToFixed({
-        marginTop: $('.navbar').outerHeight() + 30,
-        limit: function() {
-			var limit = $('.wrap-fixed-menu').offset().top + ( $('.wrap-fixed-menu').innerHeight() - $('.list-catagory-client').innerHeight());
-            return limit;
-        },
-		removeOffsets: true,
-    });
-});
-</script>
+<script type="text/javascript" src="<?php echo base_url('resources/front_end/js/script-portfolio.min.js'); ?>"></script>

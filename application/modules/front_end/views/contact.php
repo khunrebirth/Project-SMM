@@ -1,13 +1,9 @@
-<style>
-	@media (max-width: 992px) { 
-		.title-contact {
-			padding: 5rem 0 2rem !important;
-		}
-	}
-</style>
+<!-- Push Custom Style -->
+<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style-contact.min.css'); ?>">
+
 <!-- Title -->
 <?php if ($banner) { ?>
-<section class="page-title main-hero-service" style="padding:0;">
+<section class="page-title main-hero-service p-0">
 	<img class="img-fluid" src="<?php echo base_url((!smm_is_mobile()) ? 'storage/uploads/images/banners/' . unserialize($banner->img)[$lang] : 'storage/uploads/images/banners/' . unserialize($banner->img_moblie)[$lang]); ?>" alt="<?php echo unserialize($banner->img_title_alt)[$lang]; ?>">
 	<div class="ttl-header-hero wow">
 		<h1><?php echo unserialize($banner->title)[$lang]; ?></h1>
@@ -18,7 +14,7 @@
 <!-- Content -->
 <section id="contact">
     <div class="container">
-        <div class="title-contact" style="text-align: center; padding: 4rem;">
+        <div class="title-contact text-center ttl-top-space">
             <img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-contact.png' : 'resources/front_end/images/title-contact.png'); ?>" class="img-fluid d-none d-md-block mx-auto">
             <img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-contact_sp.png' : 'resources/front_end/images/title-contact_sp.png'); ?>" class="img-fluid d-block d-md-none mx-auto">
         </div>
@@ -28,13 +24,13 @@
                     <div class="col-xs-12 col-md-4 col-lg-4 d-none d-sm-block">
                         <img src="https://www.anchorwave.com/wp-content/uploads/2016/04/google-partner358x138.png" alt="Follow Us on Facebook" class="img-fluid m-2">
                     </div>
-                    <div class="col-xs-12 col-md-8 col-lg8 d-none d-sm-block">
-                        <h2 class="text-secondary d-none d-sm-none d-md-none d-lg-block" style="font-size:1.2rem;">specialized in :</h2>
-                        <img src="http://www.clixmarketing.com/blog/wp-content/uploads/2015/02/photo.png" alt="Follow Us on Facebook" class="img-fluid m-2" style="width: 40px;">
-                        <img src="https://knockconsulting.com/images/icon-sm-instagram-round.svg" alt="Follow Us on Instagram" class="img-fluid m-2" style="width: 40px;">
-                        <img src="https://b2bm.s3.amazonaws.com/styles/default_image/s3/youtube-icon-full_color.png?itok=3QLCT4W_" alt="Follow Us on Youtube" class="img-fluid m-2" style="width: 40px;">
-                        <img src="https://knockconsulting.com/images/icon-sm-linkedin-round.svg" alt="Follow Us on Linkedin" class="img-fluid m-2" style="width: 40px;">
-                        <img src="https://knockconsulting.com/images/google-plus.svg" alt="Follow Us on Google Plus" class="img-fluid m-2" style="width: 40px;">
+                    <div class="col-xs-12 col-md-8 col-lg8 d-none d-sm-block box-specialized">
+                        <h2 class="text-secondary txt-contact d-none d-sm-none d-md-none d-lg-block">specialized in :</h2>
+                        <img src="http://www.clixmarketing.com/blog/wp-content/uploads/2015/02/photo.png" alt="Follow Us on Facebook" class="img-fluid m-2">
+                        <img src="https://knockconsulting.com/images/icon-sm-instagram-round.svg" alt="Follow Us on Instagram" class="img-fluid m-2">
+                        <img src="https://b2bm.s3.amazonaws.com/styles/default_image/s3/youtube-icon-full_color.png?itok=3QLCT4W_" alt="Follow Us on Youtube" class="img-fluid m-2">
+                        <img src="https://knockconsulting.com/images/icon-sm-linkedin-round.svg" alt="Follow Us on Linkedin" class="img-fluid m-2">
+                        <img src="https://knockconsulting.com/images/google-plus.svg" alt="Follow Us on Google Plus" class="img-fluid m-2">
                     </div>
                 </div>
                 <h2 class="text-secondary contact__title--head mt-3 mb-3"><?php echo lang('page_contact_company'); ?></h2>

@@ -1,0 +1,12 @@
+
+@media (max-width: 992px) { 
+    .title-contact {
+        padding: 5rem 0 2rem !important;
+    }
+}
+.txt-contact {
+    font-size: 1.2rem;
+}
+.box-specialized img {
+    width: 40px
+}

@@ -1,0 +1,8 @@
+.sec-job-activity__type-6-item {
+    max-width: 720px;
+}
+@media (max-width: 576px) {
+    .title-team {
+        padding: 2rem 0 !important;
+    }
+}

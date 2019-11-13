@@ -1,0 +1,34 @@
+.box-slide-team {
+    max-width: 1470px;
+    width: 100%;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+
+.team__card--parent .is-hover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.2s;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	-o-transition: all 0.2s;
+}
+
+.team__card--parent:hover .is-hover { 
+	visibility: visible;
+	opacity: 1;
+}
+    @media (max-width: 576px) {
+        .title-team {
+            padding: 2rem 0 !important;
+        }
+        .box-slide-team {
+            padding: 0 !important;
+            margin: 0 -15px;
+            width: auto;
+        }
+    }

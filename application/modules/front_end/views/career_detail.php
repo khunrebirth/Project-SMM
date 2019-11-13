@@ -2,49 +2,10 @@
 <link rel="stylesheet" href="<?php echo base_url('resources/front_end/js/jquery.Thailand.js/dist/jquery.Thailand.min.css'); ?>">
 
 <!-- Push Custom Style -->
-<style>
-	hr {
-		display: block;
-		position: relative;
-		width: 100%;
-	}
-
-	a.btn-back-job {
-		color: #fff;
-		background-color: #3d6d8a;
-		margin-right: 15px;
-		position: relative;
-		padding-left: 30px;
-		line-height: 1.5 !important;
-	}
-		
-	@media (max-width: 768px) {
-		a.btn-back-job {
-			margin-right: 0;
-		}
-	}
-
-	.btn-back-job:hover {
-		color: #fff;
-		background-color: #598ba9;
-	}
-
-	.btn-back-job i {
-		position: absolute;
-		top: 50%;
-		transform: translate3d(0,-50%,0);
-		left: 5px;
-	}
-
-	@media (max-width: 768px) {
-		.btn-back-job {
-			margin: 0 0 15px
-		}
-	}
-</style>
+<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style-career_detail.min.css'); ?>">
 
 <!-- Title -->
-<section class="page-title main-hero-service" style="padding:0;">
+<section class="page-title main-hero-service p-0">
 	<img class="img-fluid" src="<?php echo base_url((!smm_is_mobile()) ? 'storage/uploads/images/join_us/' . unserialize($career->img_cover)[$lang] : 'storage/uploads/images/join_us/' . unserialize($career->img_cover_moblie)[$lang]); ?>">
 	<div class="ttl-header-hero wow">
 		<h1><?php echo unserialize($career->title)[$lang]; ?></h1>
@@ -541,50 +502,5 @@
 <script type="text/javascript" src="<?php echo base_url('resources/front_end/js/jquery.Thailand.js/dist/jquery.Thailand.min.js'); ?>"></script>
 
 <!-- Push Custom Scripts -->
-<script>
-	$(function () {
-        $.Thailand({
-            database: "<?php echo base_url('resources/front_end/js/jquery.Thailand.js/database/db.json'); ?>",
+<script type="text/javascript" src="<?php echo base_url('resources/front_end/js/script-career_detail.min.js'); ?>"></script>
 
-            $district: $('#demo1 [name="addr_district"]'),
-            $amphoe: $('#demo1 [name="addr_amphoe"]'),
-            $province: $('#demo1 [name="addr_province"]'),
-            $zipcode: $('#demo1 [name="addr_zip"]'),
-
-            onDataFill: function(data){
-                console.info('Data Filled', data);
-            },
-
-            onLoad: function(){
-                console.info('Autocomplete is ready!');
-                $('#loader, .demo').toggle();
-            }
-        });
-
-		$("a.fancybox").fancybox({
-			animationEffect: 'fade'
-		}).attr('data-fancybox', 'group1');
-
-		$('.carousel').carousel('pause');
-
-		$('.btn-next').on('click', function () {
-			$('.carousel').carousel('next');
-			$('.carousel').carousel('pause');
-			$(".modal").animate({ scrollTop: 0}, 600);
-		});
-
-		$('.btn-prev').on('click', function () {
-			$('.carousel').carousel('prev');
-			$('.carousel').carousel('pause');
-			$(".modal").animate({ scrollTop: 0}, 600);
-		});
-
-		$('.inp_date_01').datepicker({
-            uiLibrary: 'bootstrap4'
-        });
-
-		$('.inp_date_02').datepicker({
-            uiLibrary: 'bootstrap4'
-        });
-	});
-</script>

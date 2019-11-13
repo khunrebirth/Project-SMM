@@ -1,19 +1,5 @@
 <!-- Push Custom Style -->
-<style>
-	.box-teams-slide .owl-nav .owl-prev {
-		left: 0;
-		background: url(<?php echo base_url($lang == 'th' ? 'resources/front_end/images/team/btn_arrow_left.png' : 'resources/front_end/images/team/btn_arrow_left.png');
-		?>) !important;
-		background-size: cover !important;
-	}
-
-	.box-teams-slide .owl-nav .owl-next {
-		right: 0;
-		background: url(<?php echo base_url($lang == 'th' ? 'resources/front_end/images/team/btn_arrow_right.png' : 'resources/front_end/images/team/btn_arrow_right.png');
-		?>) !important;
-		background-size: cover !important;
-	}
-</style>
+<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style-home.min.css'); ?>">
 
 <!-- Home -->
 <header id="home">
@@ -37,7 +23,7 @@
 			<div class="col-md-6 col-lg-6 order-lg-2 showcase-img d-none d-sm-block" style="background-image: url('<?php echo base_url('storage/uploads/images/abouts/' . unserialize($about->img_section)[$lang]); ?>');">
 			</div>
 			<div class="col-xs-12 col-md-6 col-lg-6 order-lg-1 my-auto showcase-text text-center wow fadeInLeft">
-				<div class="title-about ttl-home-img" style="">
+				<div class="title-about ttl-home-img">
 					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-about.png' : 'resources/front_end/images/title-about.png'); ?>" class="img-fluid d-none d-md-block mx-auto">
 					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-about_sp.png' : 'resources/front_end/images/title-about_sp.png'); ?>" class="img-fluid d-block d-md-none mx-auto">
 				</div>
@@ -54,9 +40,9 @@
 </section>
 
 <!-- Service -->
-<section id="service" class="wow fadeInUp" style="overflow:hidden">
+<section id="service" class="wow fadeInUp">
 	<div class="container-fluid text-center sec-home-service">
-		<div class="title-service ttl-home-img" style="text-align: left; padding: 4rem 0;">
+		<div class="title-service ttl-home-img text-left ttl-top-space__home">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-service.png' : 'resources/front_end/images/title-service.png'); ?>" class="img-fluid d-none d-md-block">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-service_sp.png' : 'resources/front_end/images/title-service_sp.png'); ?>" class="img-fluid d-block d-md-none mx-auto">
 		</div>
@@ -77,7 +63,7 @@
 <!-- Client -->
 <section id="client" class="wow fadeInUp">
 	<div class="container-fluid">
-		<div class="title-client ttl-home-img" style="text-align: center; padding: 4rem 0;">
+		<div class="title-client ttl-home-img text-center ttl-top-space__home">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-cilent.png' : 'resources/front_end/images/title-cilent.png'); ?>" class="img-fluid d-none d-md-block mx-auto">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-cilent_sp.png' : 'resources/front_end/images/title-cilent_sp.png'); ?>" class="img-fluid d-block d-md-none mx-auto">
 		</div>
@@ -106,7 +92,7 @@
 <!-- Portfolios -->
 <section id="portfolio" class="wow fadeInUp">
 	<div class="container-fluid">
-		<div class="title-client ttl-home-img" style="text-align: center; padding: 0 4rem 4rem;">
+		<div class="title-client ttl-home-img text-center ttl-top-space pt-0" >
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/our-port.png' : 'resources/front_end/images/our-port.png'); ?>" class="img-fluid d-none d-md-block mx-auto">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/our-port_sp.png' : 'resources/front_end/images/our-port_sp.png'); ?>" class="img-fluid d-block d-md-none mx-auto">
 		</div>
@@ -154,13 +140,13 @@
 <!-- Blog -->
 <section id="blog">
 	<div class="container-fluid">
-		<div class="title-client ttl-home-img" style="text-align: center; padding: 0 0 4rem;">
+		<div class="title-client ttl-home-img text-center ttl-top-space__home pt-0">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-blog.png' : 'resources/front_end/images/title-blog.png'); ?>" class="img-fluid d-none d-md-block mx-auto">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-blog_sp.png' : 'resources/front_end/images/title-blog_sp.png'); ?>" class="img-fluid d-block d-md-none mx-auto">
 		</div>
 		<div class="row row-60 row-sm">
 			<?php foreach ($blogs as $blog) { ?>
-			<div class="col-xs-12 col-sm-6 col-lg-3 blog__item" style="visibility: visible; animation-name: fadeInLeft;">
+			<div class="col-xs-12 col-sm-6 col-lg-3 blog__item animate-cmn">
 				<article class="blog blog__modern">
 					<a class="blog__modern--figure" href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/' . unserialize($blog['blog_category_slug'])[$lang] . '/' .  unserialize($blog['slug'])[$lang]); ?>">
 						<img src="<?php echo base_url('storage/uploads/images/blogs/' . unserialize($blog['img'])[$lang]) ?>" alt="<?php echo unserialize($blog['img_title_alt'])[$lang]; ?>" width="370" height="307">
@@ -204,7 +190,7 @@
 						$first_name = substr($fullname, 0, $posBlankSpace);
 						$last_name = substr($fullname, $posBlankSpace, strlen($fullname));
 					?>
-					<div class="card team__card--parent mb-0" style="width: 18rem;">
+					<div class="card team__card--parent mb-0">
 						<img class="card-img-top" src="<?php echo base_url('storage/uploads/images/teams/' . unserialize($team->image)[$lang]); ?>">
 						<img class="card-img-top is-hover" src="<?php echo base_url('storage/uploads/images/teams/' . unserialize($team->image_hover)[$lang]); ?>">
 						<div class="card-body pl-0 pt-2 pb-2">
@@ -216,7 +202,7 @@
 				</div>
 			</div>
 			<div class="item-team-ttl col-lg-3 col-sm-12">
-				<div class="title-team ttl-home-img" style="text-align: center; padding: 3rem 0.5rem 2rem;">
+				<div class="title-team ttl-home-img text-center">
 					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-team.png' : 'resources/front_end/images/title-team.png'); ?>" class="img-fluid d-none d-md-block mx-auto">
 					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-team_sp.png' : 'resources/front_end/images/title-team_sp.png'); ?>" class="img-fluid d-block d-md-none mx-auto">
 				</div>
@@ -229,7 +215,7 @@
 <!-- Contact -->
 <section id="contact" class="wow fadeInUp">
 	<div class="container">
-		<div class="title-contact ttl-home-img" style="text-align: center; padding: 4rem 15px;">
+		<div class="title-contact ttl-home-img text-center">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-contact.png' : 'resources/front_end/images/title-contact.png'); ?>" class="img-fluid d-none d-md-block mx-auto">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-contact_sp.png' : 'resources/front_end/images/title-contact_sp.png'); ?>" class="img-fluid d-block d-md-none mx-auto">
 		</div>
@@ -239,13 +225,13 @@
 					<div class="col-xs-12 col-md-4 col-lg-4 d-none d-sm-block">
 						<img src="https://www.anchorwave.com/wp-content/uploads/2016/04/google-partner358x138.png" alt="Follow Us on Facebook" class="img-fluid m-2">
 					</div>
-					<div class="col-xs-12 col-md-8 col-lg8 d-none d-sm-block">
-						<h2 class="text-secondary d-none d-sm-none d-md-none d-lg-block" style="font-size:1.2rem;">specialized in :</h2>
-						<img src="http://www.clixmarketing.com/blog/wp-content/uploads/2015/02/photo.png" alt="Follow Us on Facebook" class="img-fluid m-2" style="width: 40px;">
-						<img src="https://knockconsulting.com/images/icon-sm-instagram-round.svg" alt="Follow Us on Instagram" class="img-fluid m-2" style="width: 40px;">
-						<img src="https://b2bm.s3.amazonaws.com/styles/default_image/s3/youtube-icon-full_color.png?itok=3QLCT4W_" alt="Follow Us on Youtube" class="img-fluid m-2" style="width: 40px;">
-						<img src="https://knockconsulting.com/images/icon-sm-linkedin-round.svg" alt="Follow Us on Linkedin" class="img-fluid m-2" style="width: 40px;">
-						<img src="https://knockconsulting.com/images/google-plus.svg" alt="Follow Us on Google Plus" class="img-fluid m-2" style="width: 40px;">
+					<div class="col-xs-12 col-md-8 col-lg8 d-none d-sm-block box-specialized">
+						<h2 class="text-secondary d-none d-sm-none d-md-none d-lg-block">specialized in :</h2>
+						<img src="http://www.clixmarketing.com/blog/wp-content/uploads/2015/02/photo.png" alt="Follow Us on Facebook" class="img-fluid m-2">
+						<img src="https://knockconsulting.com/images/icon-sm-instagram-round.svg" alt="Follow Us on Instagram" class="img-fluid m-2">
+						<img src="https://b2bm.s3.amazonaws.com/styles/default_image/s3/youtube-icon-full_color.png?itok=3QLCT4W_" alt="Follow Us on Youtube" class="img-fluid m-2">
+						<img src="https://knockconsulting.com/images/icon-sm-linkedin-round.svg" alt="Follow Us on Linkedin" class="img-fluid m-2">
+						<img src="https://knockconsulting.com/images/google-plus.svg" alt="Follow Us on Google Plus" class="img-fluid m-2">
 					</div>
 				</div>
 				<h2 class="text-secondary contact__title--head mt-3 mb-3"><?php echo lang('page_contact_company'); ?>
@@ -275,80 +261,4 @@
 <?php include 'layouts/sitemap.php'; ?>
 
 <!-- Push Custom Scripts -->
-<script>
-	$(function () {
-		$(".client__navs a:first").tab('show')
-
-		$('.box-teams-slide').owlCarousel({
-			items: 4,
-			nav: true,
-			loop: true,
-			dots: false,
-			margin: 10,
-			scrollPerPage: true,
-			singleItem: false,
-			slideBy: 4,
-			responsive: {
-				0: {
-					items: 1,
-					slideBy: 1,
-				},
-				576: {
-					items: 2,
-					slideBy: 2,
-				},
-				768: {
-					items: 3,
-					slideBy: 3,
-				},
-				1200: {
-					items: 4,
-				}
-			}
-		});
-
-		$(".js-scroll-contact").click(function (event) {
-			event.preventDefault();
-
-			$('html,body').animate({
-				scrollTop: $("#contact").offset().top
-			}, 'slow');
-		});
-	});
-
-	$(function () {
-		var optional_owl = {
-			items: 1,
-			nav: false,
-			loop: true,
-			dots: true,
-		};
-		var select_owl_client = $('.box-slide-client-sp');
-		var select_owl_portfolio = $('.box-slide-portfolio-sp');
-
-		if ( $(window).width() < 768 ) {
-			startCarousel();
-		} else {
-			select_owl_client.addClass('off');
-			select_owl_portfolio.addClass('off');
-		}
-				
-		$(window).resize(function() {
-			if ( $(window).width() < 854 ) {
-			startCarousel();
-			} else {
-			stopCarousel();
-			}
-		});
-		function startCarousel(){
-			select_owl_client.owlCarousel(optional_owl);
-			select_owl_portfolio.owlCarousel(optional_owl);
-		}
-		function stopCarousel() {
-			select_owl_client.trigger('destroy.owl.carousel');
-			select_owl_client.addClass('off');
-			select_owl_portfolio.trigger('destroy.owl.carousel');
-			select_owl_portfolio.addClass('off');
-		}
-	});
-</script>
+<script type="text/javascript" src="<?php echo base_url('resources/front_end/js/script-home.min.js'); ?>"></script>
