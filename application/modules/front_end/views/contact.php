@@ -1,5 +1,5 @@
 <!-- Push Custom Style -->
-<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style-contact.min.css'); ?>">
+<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style_contact.min.css'); ?>">
 
 <!-- Title -->
 <?php if ($banner) { ?>

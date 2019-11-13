@@ -42,9 +42,6 @@
     <!-- Customer CSS -->
     <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style.min.css'); ?>">
 	<style>
-		.popup_popup {
-			display: none !important;
-		}
 	</style>
 
 
@@ -65,14 +62,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollToFixed/1.0.8/jquery-scrolltofixed-min.js" integrity="sha256-Kl1vQ0yioe6J6idmj55qGNgoOrKOTJh4WYFdmiVnvZw=" crossorigin="anonymous"></script>
 	<!-- Plugin Social -->
 	<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5dc3d55e04e0990012c1f4ee&product=inline-share-buttons&cms=website' async='async'></script>
-	<script>
+    
+    <script src="<?php echo base_url('resources/front_end/js/script.min.js'); ?>"></script>
+    <script>
         window.base_url = "<?php echo base_url(); ?>"
-		// Detect Plugin Social
-        $('.button_invert').click()
-
-        setTimeout(function () {
-            $('.button_invert').click()
-        }, 5000)
     </script>
 </head>
 <body>

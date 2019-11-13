@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="https://unpkg.com/tippy.js@5/dist/backdrop.css" />
 
 <!-- Push Custom Style -->
-<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style-services.min.css'); ?>">
+<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style_services.min.css'); ?>">
 
 <!-- Title -->
 <section class="page-title main-hero-service p-0">
@@ -141,4 +141,4 @@
 
 
 <!-- Push Custom Scripts -->
-<script type="text/javascript" src="<?php echo base_url('resources/front_end/js/script-services.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('resources/front_end/js/script_services.min.js'); ?>"></script>

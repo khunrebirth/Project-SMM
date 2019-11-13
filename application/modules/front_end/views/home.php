@@ -1,5 +1,5 @@
 <!-- Push Custom Style -->
-<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style-home.min.css'); ?>">
+<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style_home.min.css'); ?>">
 
 <!-- Home -->
 <header id="home">
@@ -261,4 +261,4 @@
 <?php include 'layouts/sitemap.php'; ?>
 
 <!-- Push Custom Scripts -->
-<script type="text/javascript" src="<?php echo base_url('resources/front_end/js/script-home.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('resources/front_end/js/script_home.min.js'); ?>"></script>

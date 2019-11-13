@@ -1,5 +1,5 @@
 <!-- Push Custom Style -->
-<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style-clients.min.css'); ?>">
+<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style_clients.min.css'); ?>">
 
 <!-- Title -->
 <?php if ($banner) { ?>
@@ -59,5 +59,5 @@
 
 
 <!-- Push Custom Scripts -->
-<script src="<?php echo base_url('resources/front_end/js/script-clients.min.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo base_url('resources/front_end/js/script_clients.min.js'); ?>" type="text/javascript"></script>
 

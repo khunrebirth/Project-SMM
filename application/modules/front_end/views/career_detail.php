@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="<?php echo base_url('resources/front_end/js/jquery.Thailand.js/dist/jquery.Thailand.min.css'); ?>">
 
 <!-- Push Custom Style -->
-<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style-career_detail.min.css'); ?>">
+<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style_career_detail.min.css'); ?>">
 
 <!-- Title -->
 <section class="page-title main-hero-service p-0">
@@ -502,5 +502,5 @@
 <script type="text/javascript" src="<?php echo base_url('resources/front_end/js/jquery.Thailand.js/dist/jquery.Thailand.min.js'); ?>"></script>
 
 <!-- Push Custom Scripts -->
-<script type="text/javascript" src="<?php echo base_url('resources/front_end/js/script-career_detail.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('resources/front_end/js/script_career_detail.min.js'); ?>"></script>
 

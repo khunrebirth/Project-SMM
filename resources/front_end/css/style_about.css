@@ -7,7 +7,7 @@
 }
 
 .test {
-    background: url('<?php base_url() ?>resources/front_end/images/about/about-smm1.jpg') no-repeat center center;
+    background: url('../images/about/about-smm1.jpg') no-repeat center center;
     background-size: cover;
 }
 

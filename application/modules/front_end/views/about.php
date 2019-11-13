@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style-about.min.css'); ?>">
+<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style_about.min.css'); ?>">
 <!-- About -->
 <section id="about" >
     <div class="container">
@@ -220,5 +220,5 @@
     });
 </script> -->
 
-<script src="<?php  echo base_url('resources/front_end/js/script-about.js'); ?>" type="text/javascript"></script>
+<script src="<?php  echo base_url('resources/front_end/js/script_about.js'); ?>" type="text/javascript"></script>
 

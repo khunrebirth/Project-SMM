@@ -1,6 +1,6 @@
 
 <!-- Push Custom Style -->
-<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style-tags.min.css'); ?>">
+<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style_tags.min.css'); ?>">
 
 <!-- Title -->
 <?php if ($banner) { ?>
@@ -54,4 +54,4 @@
 
 
 <!-- Push Custom Scripts -->
-<script type="text/javascript" src="<?php echo base_url('resources/front_end/js/script-tags.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('resources/front_end/js/script_tags.min.js'); ?>"></script>

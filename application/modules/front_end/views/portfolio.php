@@ -1,5 +1,5 @@
 <!-- Push Custom Style -->
-<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style-portfolio.min.css'); ?>">
+<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style_portfolio.min.css'); ?>">
 <!-- Title -->
 <?php if ($banner) { ?>
 <section class="page-title main-hero-service p-0">
@@ -66,4 +66,4 @@
 
 
 <!-- Push Custom Scripts -->
-<script type="text/javascript" src="<?php echo base_url('resources/front_end/js/script-portfolio.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('resources/front_end/js/script_portfolio.min.js'); ?>"></script>

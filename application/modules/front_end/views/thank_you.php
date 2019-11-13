@@ -1,5 +1,5 @@
 <!-- Push Custom Style -->
-<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style-thank_you.min.css'); ?>">
+<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style_thank_you.min.css'); ?>">
 <!-- Title -->
 <?php if ($banner) { ?>
 <section class="page-title main-hero-service p-0">

@@ -12,7 +12,7 @@
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v4.0&appId=189754555007223&autoLogAppEvents=1"></script>
 
 <!-- Push Custom Style -->
-<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style-sitemap.min.css'); ?>">
+<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style_sitemap.min.css'); ?>">
 
 <div class="sec-footer-sitemap" id="accordion">
 	<div class="card text-center box-footer-sitemap">

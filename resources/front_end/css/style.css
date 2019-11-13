@@ -2340,5 +2340,8 @@ common
 }
 
 /*=====================================
-helper class
+custom class
 ======================================*/
+.popup_popup {
+	display: none !important;
+}

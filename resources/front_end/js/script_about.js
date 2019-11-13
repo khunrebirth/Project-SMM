@@ -48,9 +48,8 @@ $(document).ready(function(e) {
     });
 
     $('.goal_real_estate').click(function(){
-        // console.log('goal click');
         $('.test').fadeTo('ease', 0.3, function() {
-            $(this).css('background-image', 'url('+window.base_url+'resources/front_end/images/about/about-smm1.jp');
+            $(this).css('background-image', 'url('+window.base_url+'resources/front_end/images/about/about-smm1.jpg');
         }).fadeTo('slow', 1);
         $("#test").html('Social Media Master ได้เริ่มก่อตั้งบริษัทที่ให้บริการวางแผนและประชาสัมพันธ์ผ่านสื่อออนไลน์ซึ่งถือได้ว่า เราคือดิจิทัล เอเจนซี่เจ้าแรก ๆ ในยุคนั้น')
     });
