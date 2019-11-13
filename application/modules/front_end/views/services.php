@@ -1,20 +1,13 @@
-<!-- CSS Libraries -->
 <script src="https://unpkg.com/popper.js@1"></script>
 <script src="https://unpkg.com/tippy.js@5"></script>
 <link rel="stylesheet" href="https://unpkg.com/tippy.js@5/dist/backdrop.css" />
-
-<!-- Push Custom Style -->
 <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style_services.min.css'); ?>">
-
-<!-- Title -->
 <section class="page-title main-hero-service p-0">
 	<img class="img-fluid" src="<?php echo base_url((!smm_is_mobile()) ? 'storage/uploads/images/banners/' . unserialize($service['banner_img'])[$lang] : 'storage/uploads/images/banners/' . unserialize($service['banner_img_moblie'])[$lang]); ?>" alt="<?php echo unserialize($service['banner_img_title_alt'])[$lang]; ?>">
 	<div class="ttl-header-hero wow">
 		<h1><?php echo unserialize($service['banner_title'])[$lang]; ?></h1>
 	</div>
 </section>
-
-<!-- Content -->
 <section class="sec-service-content">
 	<div class="row wrap-service-content mb-5">
 		<div class="col-lg-4 col-sm-12 text-center">
@@ -45,8 +38,6 @@
 		</div>
 	</div>
 </section>
-
-<!-- Form -->
 <div class="d-none" id="template">
 	<h2 class="text-secondary contact__form--title" ><?php echo lang('page_contact_title_first'); ?><span><?php echo lang('page_contact_title_center'); ?></span><?php echo lang('page_contact_title_end'); ?></h2>
 	<p class="text-secondary contact__form--body mb-4"><?php echo lang('page_contact_desc'); ?></p>
@@ -71,7 +62,6 @@
 		</div>
 	</form>
 </div>
-
 <?php if (count($service['portfolios']) > 0) { ?>
 	<section class="sec-service-port-list">
 		<div class="col sec-service-port--inner">
@@ -79,7 +69,6 @@
 				<h3 class="col-12 ttl-port-list"><span><?php echo lang('page_services_txt_portfolio'); ?></span></h3>
 				<?php foreach ($service['portfolios'] as $portfolio) { ?>
 					<?php if ($portfolio->service_id == 17) { ?>
-						<!-- TODO:: handle Portoflio Video -->
 						<a class="col-12 col-md-6 col-lg-2 text-center item-youtube mb-5" data-fancybox href="https://www.youtube.com/embed/keqd4RUQK4s">
 							<div class="thumb-youtube" >
 								<img src="https://img.youtube.com/vi/keqd4RUQK4s/maxresdefault.jpg" alt="">
@@ -95,8 +84,6 @@
 		</div>
 	</section>
 <?php } ?>
-
-<!-- Service -->
 <section id="service" class="wow fadeInUp pb-0">
 	<div class="container-fluid text-center sec-home-service">
 		<div class="title-service ttl-home-img">
@@ -116,7 +103,6 @@
 		</div>
 	</div>
 </section>
-
 <?php if (count($service['our_clients']) > 0) { ?>
 	<section class="sec-service-port row">
 		<div class="col row sec-service-port--inner">
@@ -135,10 +121,5 @@
 		</div>
 	</section>
 <?php } ?>
-
-<!-- SiteMap -->
 <?php include 'layouts/sitemap.php'; ?>
-
-
-<!-- Push Custom Scripts -->
 <script type="text/javascript" src="<?php echo base_url('resources/front_end/js/script_services.min.js'); ?>"></script>
