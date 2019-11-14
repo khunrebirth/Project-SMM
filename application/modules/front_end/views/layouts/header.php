@@ -28,7 +28,7 @@ $CI->load->model('Service_model');
 	<meta name="twitter:title" content="<?php if (!smm_is_mobile()) { echo $og_twitter['title']; } else { echo $og_twitter['title_moblie']; } ?>" />
 	<meta name="twitter:description" content="<?php echo $og_twitter['description']; ?>" />
 	<meta name="twitter:image" content="<?php if (!smm_is_mobile()) { echo $og_twitter['description']; } else { echo $og_twitter['description_moblie']; } ?>" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Prompt:300,400,500,700,900&subset=thai">
     <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/bootstrap.min.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/hover-effect.css'); ?>">
@@ -56,7 +56,7 @@ $CI->load->model('Service_model');
 
 <nav class="navbar navbar-light fixed-top navbar-expand-lg navbar-no-bg">
     <a class="navbar-brand" href="<?php echo base_url($lang . '/' . lang('menu_home')); ?>">
-        <img class="logo" src="<?php echo base_url('resources/front_end/images/logo-smm.png'); ?>" alt="logo-ssm">
+        <img class="logo lazy" data-src="<?php echo base_url('resources/front_end/images/logo-smm.png'); ?>" alt="logo-ssm">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -77,7 +77,7 @@ $CI->load->model('Service_model');
 						<?php foreach ($services as $service) { ?>
 							<li class="item col-lg-2 col-md-12 col-sm-12">
 								<a class="d-flex flex-column text-center" href="<?php echo base_url($lang . '/' . lang('menu_service') . '/' . unserialize($service->slug)[$lang]); ?>">
-									<img class="d-md-none d-none img-gnavi d-lg-block" src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service->img_on_navbar)[$lang]); ?>">
+									<img class="d-md-none d-none img-gnavi d-lg-block lazy" data-src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service->img_on_navbar)[$lang]); ?>">
 									<span><?php echo unserialize($service->title)[$lang]; ?></span>
 								</a>
 							</li>
