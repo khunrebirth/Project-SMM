@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 12, 2019 at 05:50 PM
+-- Generation Time: Nov 14, 2019 at 02:51 PM
 -- Server version: 5.7.17-log
 -- PHP Version: 5.6.30
 
@@ -435,7 +435,15 @@ INSERT INTO `logs` (`id`, `event_id`, `detail`, `user_id`, `ip`, `created_at`, `
 (703, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.5', '2019-11-12 07:21:59', NULL, NULL),
 (704, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.5', '2019-11-12 07:29:56', NULL, NULL),
 (705, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.5', '2019-11-12 07:30:49', NULL, NULL),
-(706, 4, 'แก้ไข Career (Join Us Page)', 2, '192.168.1.5', '2019-11-12 07:32:01', NULL, NULL);
+(706, 4, 'แก้ไข Career (Join Us Page)', 2, '192.168.1.5', '2019-11-12 07:32:01', NULL, NULL),
+(707, 1, 'เข้าสู่ระบบ SMM Backoffice', 2, '192.168.1.7', '2019-11-13 03:38:47', NULL, NULL),
+(708, 4, 'แก้ไข Content (About Page)', 2, '192.168.1.7', '2019-11-13 03:39:34', NULL, NULL),
+(709, 4, 'แก้ไข Content (About Page)', 2, '192.168.1.7', '2019-11-13 03:40:43', NULL, NULL),
+(710, 4, 'แก้ไข Content (About Page)', 2, '192.168.1.7', '2019-11-13 03:41:02', NULL, NULL),
+(711, 4, 'แก้ไข Content (About Page)', 2, '192.168.1.7', '2019-11-13 03:41:34', NULL, NULL),
+(712, 4, 'แก้ไข Content (About Page)', 2, '192.168.1.7', '2019-11-13 03:42:08', NULL, NULL),
+(713, 4, 'แก้ไข Content (About Page)', 2, '192.168.1.7', '2019-11-13 03:42:30', NULL, NULL),
+(714, 4, 'แก้ไข Content (About Page)', 2, '192.168.1.7', '2019-11-13 03:42:46', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -494,7 +502,7 @@ CREATE TABLE `pages` (
 
 INSERT INTO `pages` (`id`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `meta_tag_moblie_title`, `meta_tag_moblie_description`, `meta_tag_moblie_keywords`, `img_og_twitter`, `page`, `content_left`, `content_right`, `img_section`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (2, 'a:2:{s:2:\"en\";s:17:\"Home | social.com\";s:2:\"th\";s:34:\"หน้าแรก | social.com\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:24:\"Home Moblie | social.com\";s:2:\"th\";s:53:\"หน้าแรก มือถือ | social.com\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:4:\"home\";s:2:\"th\";s:21:\"หน้าแรก\";}', '', '', '', '2019-10-28 07:06:36', '2019-11-04 00:17:23', '0000-00-00 00:00:00'),
-(3, 'a:2:{s:2:\"en\";s:18:\"About | social.com\";s:2:\"th\";s:49:\"เกี่ยวกับเรา | social.com\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:25:\"About Moblie | social.com\";s:2:\"th\";s:68:\"เกี่ยวกับเรา มือถือ | social.com\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:5:\"about\";s:2:\"th\";s:36:\"เกี่ยวกับเรา\";}', 'a:2:{s:2:\"en\";s:539:\"เราคือเอเจนซี่ออนไลน์ที่มีประสบการณ์ในสายงานดิจิทัลพร้อมด้วยบริการการตลาดที่หลากหลายอย่างครบวงจรกว่า 4 ล้านแฟนเพจที่เราดูแล กว่า 300 ล้าน impression ที่เราสร้าง ผู้เทนด์ โซเซียลมีเดีย ในประเทศไทย..\";s:2:\"th\";s:548:\"เราคือเอเจนซี่ออนไลน์ ที่มีประสบการณ์ในสายงานดิจิทัล พร้อมด้วยบริการการตลาดที่หลากหลายอย่างครบวงจร กว่า 4 ล้านแฟนเพจที่เราดูแล กว่า 300 ล้าน impression ที่เราสร้าง ผู้นำเทนด์ โซเซียลมีเดีย ในประเทศไทย..\";}', 'a:2:{s:2:\"en\";s:1218:\"<p class=\"lead about__split--title--body mt-4 mb-4\">                     <strong style=\"line-height: 2.5;\">เป้าหมายของเรา</strong> <br>                     เรามีความมุ่งมั่นที่จะวางแผนการตลาดออนไลน์ที่ดีที่สุดเพื่อให้ลูกค้าของเราบรรลุวัตถุประสงค์ที่ตั้งไว้  ด้วยการวางกลยุทธ์ที่ผ่านการคิดวิเคราะห์หากลุ่มลูกค้าที่ตรงจุดกับธุรกิจของคุณ                     <br><br>                     นอกจากจากวางแผนการตลาดออนไลน์แล้วเรายังทำงานร่วมกันกับลูกค้าเพื่อให้คำแนะนำและปรึกษาใน การวางแนวทางสื่ออนไลน์ให้ได้ผลลัพธ์ที่คุ้มค่าที่สุดอีกด้วย                 </p>\";s:2:\"th\";s:1218:\"<p class=\"lead about__split--title--body mt-4 mb-4\">                     <strong style=\"line-height: 2.5;\">เป้าหมายของเรา</strong> <br>                     เรามีความมุ่งมั่นที่จะวางแผนการตลาดออนไลน์ที่ดีที่สุดเพื่อให้ลูกค้าของเราบรรลุวัตถุประสงค์ที่ตั้งไว้  ด้วยการวางกลยุทธ์ที่ผ่านการคิดวิเคราะห์หากลุ่มลูกค้าที่ตรงจุดกับธุรกิจของคุณ                     <br><br>                     นอกจากจากวางแผนการตลาดออนไลน์แล้วเรายังทำงานร่วมกันกับลูกค้าเพื่อให้คำแนะนำและปรึกษาใน การวางแนวทางสื่ออนไลน์ให้ได้ผลลัพธ์ที่คุ้มค่าที่สุดอีกด้วย                 </p>\";}', 'a:2:{s:2:\"en\";s:9:\"about.jpg\";s:2:\"th\";s:9:\"about.jpg\";}', '2019-10-25 04:07:38', '2019-11-05 03:46:25', '0000-00-00 00:00:00'),
+(3, 'a:2:{s:2:\"en\";s:18:\"About | social.com\";s:2:\"th\";s:49:\"เกี่ยวกับเรา | social.com\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:25:\"About Moblie | social.com\";s:2:\"th\";s:68:\"เกี่ยวกับเรา มือถือ | social.com\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:5:\"about\";s:2:\"th\";s:36:\"เกี่ยวกับเรา\";}', 'a:2:{s:2:\"en\";s:539:\"เราคือเอเจนซี่ออนไลน์ที่มีประสบการณ์ในสายงานดิจิทัลพร้อมด้วยบริการการตลาดที่หลากหลายอย่างครบวงจรกว่า 4 ล้านแฟนเพจที่เราดูแล กว่า 300 ล้าน impression ที่เราสร้าง ผู้เทนด์ โซเซียลมีเดีย ในประเทศไทย..\";s:2:\"th\";s:548:\"เราคือเอเจนซี่ออนไลน์ ที่มีประสบการณ์ในสายงานดิจิทัล พร้อมด้วยบริการการตลาดที่หลากหลายอย่างครบวงจร กว่า 4 ล้านแฟนเพจที่เราดูแล กว่า 300 ล้าน impression ที่เราสร้าง ผู้นำเทนด์ โซเซียลมีเดีย ในประเทศไทย..\";}', 'a:2:{s:2:\"en\";s:1218:\"<p class=\"lead about__split--title--body mt-4 mb-4\">                     <strong style=\"line-height: 2.5;\">เป้าหมายของเรา</strong> <br>                     เรามีความมุ่งมั่นที่จะวางแผนการตลาดออนไลน์ที่ดีที่สุดเพื่อให้ลูกค้าของเราบรรลุวัตถุประสงค์ที่ตั้งไว้  ด้วยการวางกลยุทธ์ที่ผ่านการคิดวิเคราะห์หากลุ่มลูกค้าที่ตรงจุดกับธุรกิจของคุณ                     <br><br>                     นอกจากจากวางแผนการตลาดออนไลน์แล้วเรายังทำงานร่วมกันกับลูกค้าเพื่อให้คำแนะนำและปรึกษาใน การวางแนวทางสื่ออนไลน์ให้ได้ผลลัพธ์ที่คุ้มค่าที่สุดอีกด้วย                 </p>\";s:2:\"th\";s:1142:\"<p class=\"lead about__split--title--body mt-4 mb-4\" style=\"font-size:25px;\"> \r\n<strong style=\"line-height: 2.5;\">เป้าหมายของเรา</strong> <br>เรามีความมุ่งมั่นที่จะวางแผนการตลาดออนไลน์ที่ดีที่สุดเพื่อให้ลูกค้าของเราบรรลุวัตถุประสงค์ที่ตั้งไว้  ด้วยการวางกลยุทธ์ที่ผ่านการคิดวิเคราะห์หากลุ่มลูกค้าที่ตรงจุดกับธุรกิจของคุณ    นอกจากจากวางแผนการตลาดออนไลน์แล้วเรายังทำงานร่วมกันกับลูกค้าเพื่อให้คำแนะนำและปรึกษาใน การวางแนวทางสื่ออนไลน์ให้ได้ผลลัพธ์ที่คุ้มค่าที่สุดอีกด้วย  </p>\";}', 'a:2:{s:2:\"en\";s:9:\"about.jpg\";s:2:\"th\";s:9:\"about.jpg\";}', '2019-10-25 04:07:38', '2019-11-13 03:42:46', '0000-00-00 00:00:00'),
 (4, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:8:\"services\";s:2:\"th\";s:18:\"บริการ\";}', '', '', '', '2019-10-28 07:28:57', '2019-10-28 07:28:57', '0000-00-00 00:00:00'),
 (5, 'a:2:{s:2:\"en\";s:20:\"Cleints | social.com\";s:2:\"th\";s:49:\"ลูกค้าของเรา | social.com\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:27:\"Cleints Moblie | social.com\";s:2:\"th\";s:68:\"ลูกค้าของเรา มือถือ | social.com\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:7:\"clients\";s:2:\"th\";s:36:\"ลูกค้าของเรา\";}', '', '', '', '2019-10-28 07:47:51', '2019-11-05 03:46:57', '0000-00-00 00:00:00'),
 (6, 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:0:\"\";s:2:\"th\";s:0:\"\";}', 'a:2:{s:2:\"en\";s:5:\"blogs\";s:2:\"th\";s:18:\"บทความ\";}', '', '', '', '2019-10-25 04:07:11', '2019-10-25 04:07:11', '0000-00-00 00:00:00'),
@@ -1146,7 +1154,7 @@ ALTER TABLE `careers`
 -- AUTO_INCREMENT for table `career_contacts`
 --
 ALTER TABLE `career_contacts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `career_galleries`
 --
@@ -1166,7 +1174,7 @@ ALTER TABLE `client_categories`
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `contents`
 --
@@ -1176,7 +1184,7 @@ ALTER TABLE `contents`
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=707;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=715;
 --
 -- AUTO_INCREMENT for table `log_events`
 --
@@ -1191,7 +1199,7 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT for table `portfolios`
 --
 ALTER TABLE `portfolios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 --
 -- AUTO_INCREMENT for table `portfolio_categories`
 --
@@ -1231,12 +1239,12 @@ ALTER TABLE `teams`
 -- AUTO_INCREMENT for table `top_clients`
 --
 ALTER TABLE `top_clients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `top_portfolios`
 --
 ALTER TABLE `top_portfolios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT for table `users`
 --
