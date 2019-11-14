@@ -76,18 +76,22 @@ class Banner extends MX_Controller
 
 		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
 			$img_en = $this->ddoo_upload_banner('img_en');
+			smm_img_covert_to_webp('storage/uploads/images/banners/' . $img_en);
 		}
 
 		if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
 			$img_th = $this->ddoo_upload_banner('img_th');
+			smm_img_covert_to_webp('storage/uploads/images/banners/' . $img_th);
 		}
 
 		if (isset($_FILES['img_moblie_en']) && $_FILES['img_moblie_en']['name'] != '') {
 			$img_moblie_en = $this->ddoo_upload_banner('img_moblie_en');
+			smm_img_covert_to_webp('storage/uploads/images/banners/' . $img_moblie_en);
 		}
 
 		if (isset($_FILES['img_moblie_th']) && $_FILES['img_moblie_th']['name'] != '') {
 			$img_moblie_th = $this->ddoo_upload_banner('img_moblie_th');
+			smm_img_covert_to_webp('storage/uploads/images/banners/' . $img_moblie_th);
 		}
 
 		// Filter Data

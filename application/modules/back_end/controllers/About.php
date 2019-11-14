@@ -76,10 +76,12 @@ class About extends MX_Controller
 
 		if (isset($_FILES['img_section_en']) && $_FILES['img_section_en']['name'] != '') {
 			$img_section_en = $this->ddoo_upload_about('img_section_en');
+			smm_img_covert_to_webp('storage/uploads/images/abouts/' . $img_section_en);
 		}
 
 		if (isset($_FILES['img_section_th']) && $_FILES['img_section_th']['name'] != '') {
 			$img_section_th = $this->ddoo_upload_about('img_section_th');
+			smm_img_covert_to_webp('storage/uploads/images/abouts/' . $img_section_th);
 		}
 
 		// Filter Data

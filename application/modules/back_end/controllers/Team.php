@@ -142,18 +142,22 @@ class Team extends MX_Controller
 
 		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
 			$img_en = $this->ddoo_upload_team('img_en');
+			smm_img_covert_to_webp('storage/uploads/images/teams/' . $img_en);
 		}
 
 		if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
 			$img_th = $this->ddoo_upload_team('img_th');
+			smm_img_covert_to_webp('storage/uploads/images/teams/' . $img_th);
 		}
 
 		if (isset($_FILES['img_hover_en']) && $_FILES['img_hover_en']['name'] != '') {
 			$img_hover_en = $this->ddoo_upload_team('img_hover_en');
+			smm_img_covert_to_webp('storage/uploads/images/teams/' . $img_hover_en);
 		}
 
 		if (isset($_FILES['img_hover_th']) && $_FILES['img_hover_th']['name'] != '') {
 			$img_hover_th = $this->ddoo_upload_team('img_hover_th');
+			smm_img_covert_to_webp('storage/uploads/images/teams/' . $img_hover_th);
 		}
 
 		// Filter Data
@@ -219,18 +223,22 @@ class Team extends MX_Controller
 
 		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
 			$img_en = $this->ddoo_upload_team('img_en');
+			smm_img_covert_to_webp('storage/uploads/images/teams/' . $img_en);
 		}
 
 		if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
 			$img_th = $this->ddoo_upload_team('img_th');
+			smm_img_covert_to_webp('storage/uploads/images/teams/' . $img_th);
 		}
 
 		if (isset($_FILES['img_hover_en']) && $_FILES['img_hover_en']['name'] != '') {
 			$img_hover_en = $this->ddoo_upload_team('img_hover_en');
+			smm_img_covert_to_webp('storage/uploads/images/teams/' . $img_hover_en);
 		}
 
 		if (isset($_FILES['img_hover_th']) && $_FILES['img_hover_th']['name'] != '') {
 			$img_hover_th = $this->ddoo_upload_team('img_hover_th');
+			smm_img_covert_to_webp('storage/uploads/images/teams/' . $img_hover_th);
 		}
 
 		// Filter Data
@@ -373,7 +381,6 @@ class Team extends MX_Controller
 	{
 		$config['upload_path'] = './storage/uploads/images/teams';
 		$config['allowed_types'] = 'gif|jpg|png';
-//		$config['encrypt_name'] = TRUE;
 		$config['file_name'] = pathinfo($_FILES[$filename]['name'], PATHINFO_FILENAME) . '_' . time();
 
 		$this->load->library('upload', $config);

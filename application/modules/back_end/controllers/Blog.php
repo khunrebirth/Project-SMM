@@ -85,10 +85,12 @@ class Blog extends MX_Controller {
 
 		if (isset($_FILES['icon_en']) && $_FILES['icon_en']['name'] != '') {
 			$icon_en = $this->ddoo_upload_blog('icon_en');
+			smm_img_covert_to_webp('storage/uploads/images/blogs/' . $icon_en);
 		}
 
 		if (isset($_FILES['icon_th']) && $_FILES['icon_th']['name'] != '') {
 			$icon_th = $this->ddoo_upload_blog('icon_th');
+			smm_img_covert_to_webp('storage/uploads/images/blogs/' . $icon_th);
 		}
 
 		// Filter Data
@@ -172,10 +174,12 @@ class Blog extends MX_Controller {
 
 		if (isset($_FILES['icon_en']) && $_FILES['icon_en']['name'] != '') {
 			$icon_en = $this->ddoo_upload_blog('icon_en');
+			smm_img_covert_to_webp('storage/uploads/images/blogs/' . $icon_en);
 		}
 
 		if (isset($_FILES['icon_th']) && $_FILES['icon_th']['name'] != '') {
 			$icon_th = $this->ddoo_upload_blog('icon_th');
+			smm_img_covert_to_webp('storage/uploads/images/blogs/' . $icon_th);
 		}
 
 		// Filter Data
@@ -296,10 +300,12 @@ class Blog extends MX_Controller {
 
 		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
 			$img_en = $this->ddoo_upload_blog('img_en');
+			smm_img_covert_to_webp('storage/uploads/images/blogs/' . $img_en);
 		}
 
 		if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
 			$img_th = $this->ddoo_upload_blog('img_th');
+			smm_img_covert_to_webp('storage/uploads/images/blogs/' . $img_th);
 		}
 
 		// Filter Data
@@ -391,10 +397,12 @@ class Blog extends MX_Controller {
 
 		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
 			$img_en = $this->ddoo_upload_blog('img_en');
+			smm_img_covert_to_webp('storage/uploads/images/blogs/' . $img_en);
 		}
 
 		if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
 			$img_th = $this->ddoo_upload_blog('img_th');
+			smm_img_covert_to_webp('storage/uploads/images/blogs/' . $img_th);
 		}
 
 		// Filter Data
@@ -554,7 +562,6 @@ class Blog extends MX_Controller {
 	{
 		$config['upload_path'] = './storage/uploads/images/blogs';
 		$config['allowed_types'] = 'gif|jpg|png';
-//		$config['encrypt_name'] = TRUE;
 		$config['file_name'] = pathinfo($_FILES[$filename]['name'], PATHINFO_FILENAME) . '_' . time();
 
 		$this->load->library('upload', $config);

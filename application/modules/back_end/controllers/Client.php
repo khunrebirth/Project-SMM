@@ -148,10 +148,12 @@ class Client extends MX_Controller
 
 		if (isset($_FILES['icon_en']) && $_FILES['icon_en']['name'] != '') {
 			$icon_en = $this->ddoo_upload_client('icon_en');
+			smm_img_covert_to_webp('storage/uploads/images/clients/' . $icon_en);
 		}
 
 		if (isset($_FILES['icon_th']) && $_FILES['icon_th']['name'] != '') {
 			$icon_th = $this->ddoo_upload_client('icon_th');
+			smm_img_covert_to_webp('storage/uploads/images/clients/' . $icon_th);
 		}
 
 		// Filter Data
@@ -205,10 +207,12 @@ class Client extends MX_Controller
 
 		if (isset($_FILES['icon_en']) && $_FILES['icon_en']['name'] != '') {
 			$icon_en = $this->ddoo_upload_client('icon_en');
+			smm_img_covert_to_webp('storage/uploads/images/clients/' . $icon_en);
 		}
 
 		if (isset($_FILES['icon_th']) && $_FILES['icon_th']['name'] != '') {
 			$icon_th = $this->ddoo_upload_client('icon_th');
+			smm_img_covert_to_webp('storage/uploads/images/clients/' . $icon_th);
 		}
 
 		// Filter Data
@@ -299,10 +303,12 @@ class Client extends MX_Controller
 
 		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
 			$img_en = $this->ddoo_upload_client('img_en');
+			smm_img_covert_to_webp('storage/uploads/images/clients/' . $img_en);
 		}
 
 		if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
 			$img_th = $this->ddoo_upload_client('img_th');
+			smm_img_covert_to_webp('storage/uploads/images/clients/' . $img_th);
 		}
 
 		// Filter Data
@@ -365,10 +371,12 @@ class Client extends MX_Controller
 
 		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
 			$img_en = $this->ddoo_upload_client('img_en');
+			smm_img_covert_to_webp('storage/uploads/images/clients/' . $img_en);
 		}
 
 		if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
 			$img_th = $this->ddoo_upload_client('img_th');
+			smm_img_covert_to_webp('storage/uploads/images/clients/' . $img_th);
 		}
 
 		// Filter Data
