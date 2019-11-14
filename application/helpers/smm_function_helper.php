@@ -86,7 +86,7 @@ function smm_img_covert_to_webp($path_file) {
 }
 
 
-function get_browser_name($user_agent)
+function smm_get_browser_name($user_agent)
 {
 	if (strpos($user_agent, 'Opera') || strpos($user_agent, 'OPR/')) return 'Opera';
 	elseif (strpos($user_agent, 'Edge')) return 'Edge';
@@ -98,7 +98,7 @@ function get_browser_name($user_agent)
 	return 'Other';
 }
 
-function is_safari()
+function ssm_is_safari()
 {
-	return get_browser_name($_SERVER['HTTP_USER_AGENT'] == 'Safari') ? true : false;
+	return smm_get_browser_name($_SERVER['HTTP_USER_AGENT'] == 'Safari') ? true : false;
 }
