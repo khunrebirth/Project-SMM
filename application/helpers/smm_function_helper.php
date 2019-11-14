@@ -98,7 +98,7 @@ function smm_get_browser_name($user_agent)
 	return 'Other';
 }
 
-function ssm_is_safari()
+function smm_is_safari()
 {
 	return (smm_get_browser_name($_SERVER['HTTP_USER_AGENT']) == 'Safari') ? true : false;
 }
