@@ -100,5 +100,5 @@ function smm_get_browser_name($user_agent)
 
 function ssm_is_safari()
 {
-	return smm_get_browser_name($_SERVER['HTTP_USER_AGENT'] == 'Safari') ? true : false;
+	return (smm_get_browser_name($_SERVER['HTTP_USER_AGENT']) == 'Safari') ? true : false;
 }
