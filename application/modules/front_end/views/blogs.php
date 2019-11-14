@@ -1,7 +1,4 @@
-<!-- Push Custom Style -->
 <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style_blogs.min.css'); ?>">
-
-<!-- Title -->
 <?php if ($banner) { ?>
 <section class="page-title main-hero-service p-0">
 	<img class="img-fluid" src="<?php echo base_url((!smm_is_mobile()) ? 'storage/uploads/images/banners/' . unserialize($banner->img)[$lang] : 'storage/uploads/images/banners/' . unserialize($banner->img_moblie)[$lang]); ?>" alt="<?php echo unserialize($banner->img_title_alt)[$lang]; ?>">
@@ -10,8 +7,6 @@
 	</div>
 </section>
 <?php } ?>
-
-<!-- Content -->
 <section id="blog">
 	<div class="container-fluid">
 		<div class="row">
@@ -56,8 +51,6 @@
 								</a>
 								<h4 class="blog__modern--title"><a href="#"><?php echo unserialize($blog['title'])[$lang]; ?></a></h4>
 								<p class="blog__modern--text"><?php echo unserialize($blog['description_section'])[$lang]; ?></p>
-
-								<!-- handle moblie -->
 								<p class="blog__modern--bottom-text d-block d-sm-none">
 									<?php echo $lang == 'th' ? ssm_thai_date(strtotime($blog['created_at'])) : date('d F Y', strtotime($blog['created_at'])); ?> |
 									<?php
@@ -78,10 +71,5 @@
 		</div>
 	</div>
 </section>
-
-<!-- SiteMap -->
 <?php include 'layouts/sitemap.php'; ?>
-
-
-<!-- Push Custom Scripts -->
 <script type="text/javascript" src="<?php echo base_url('resources/front_end/js/script_blog.min.js'); ?>"></script>

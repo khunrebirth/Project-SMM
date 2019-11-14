@@ -1,6 +1,4 @@
-<!-- Push Custom Style -->
 <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style_portfolio.min.css'); ?>">
-<!-- Title -->
 <?php if ($banner) { ?>
 <section class="page-title main-hero-service p-0">
 	<img class="img-fluid" src="<?php echo base_url((!smm_is_mobile()) ? 'storage/uploads/images/banners/' . unserialize($banner->img)[$lang] : 'storage/uploads/images/banners/' . unserialize($banner->img_moblie)[$lang]); ?>" alt="<?php echo unserialize($banner->img_title_alt)[$lang]; ?>">
@@ -9,8 +7,6 @@
 	</div>
 </section>
 <?php } ?>
-
-<!-- Content -->
 <section id="client">
     <div class="container-fluid">
         <div class="title-client text-center ttl-top-space">
@@ -43,8 +39,7 @@
 				<div class="row">
 					<?php foreach ($portfolios as $portfolio) { ?>
 						<?php if ($portfolio->category_id == 17) { ?>
-							<!-- TODO:: handle Portoflio Video -->
-							<a  rel="gallery-<?php echo $portfolio->category_id; ?>" class="item-client col-md-4 col-6 mb-4 vdo-fancybox categoryGroup-<?php echo $portfolio->category_id; ?>" data-fancybox href="https://www.youtube.com/embed/keqd4RUQK4s">
+							<a rel="gallery-<?php echo $portfolio->category_id; ?>" class="item-client col-md-4 col-6 mb-4 vdo-fancybox categoryGroup-<?php echo $portfolio->category_id; ?>" data-fancybox href="https://www.youtube.com/embed/keqd4RUQK4s">
 								<figure class="thumb-youtube">
 									<img src="https://img.youtube.com/vi/keqd4RUQK4s/maxresdefault.jpg" alt="" class="img-fluid img-clients">
 								</figure>
@@ -60,10 +55,5 @@
 		</div>
     </div>
 </section>
-
-<!-- SiteMap -->
 <?php include 'layouts/sitemap.php'; ?>
-
-
-<!-- Push Custom Scripts -->
 <script type="text/javascript" src="<?php echo base_url('resources/front_end/js/script_portfolio.min.js'); ?>"></script>

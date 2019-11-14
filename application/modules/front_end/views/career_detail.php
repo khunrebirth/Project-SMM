@@ -1,10 +1,6 @@
-<link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css">
 <link rel="stylesheet" href="<?php echo base_url('resources/front_end/js/jquery.Thailand.js/dist/jquery.Thailand.min.css'); ?>">
-
-<!-- Push Custom Style -->
 <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style_career_detail.min.css'); ?>">
-
-<!-- Title -->
 <section class="page-title main-hero-service p-0">
 	<img class="img-fluid" src="<?php echo base_url((!smm_is_mobile()) ? 'storage/uploads/images/join_us/' . unserialize($career->img_cover)[$lang] : 'storage/uploads/images/join_us/' . unserialize($career->img_cover_moblie)[$lang]); ?>">
 	<div class="ttl-header-hero wow">
@@ -15,8 +11,6 @@
 		</p>
 	</div>
 </section>
-
-<!-- Content -->
 <section id="job">
 	<div class="container-fluid">
 		<div class="row sec-job sec-job-detail">
@@ -44,7 +38,6 @@
 		</div>
 	</div>
 </section>
-
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
@@ -456,20 +449,6 @@
 											</div>
 										</div>
                                     </div>
-<!--                                    <div class="col-md-12 col-12">-->
-<!--                                        <div class="form-group">-->
-<!--                                            <label for="">--><?php //echo lang('page_join_us_form_img'); ?><!--</label>-->
-<!--                                            <div class="input-group">-->
-<!--                                                <div class="input-group-prepend">-->
-<!--                                                    <span class="input-group-text">Upload</span>-->
-<!--                                                </div>-->
-<!--                                                <div class="custom-file">-->
-<!--                                                    <input type="file" class="custom-file-input" aria-describedby="inputGroupFileAddon01" name="img">-->
-<!--                                                    <label class="custom-file-label" for="">Choose image</label>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
                                     <div class="col-12 text-center">
 										<span class="btn btn-primary text-center btn-prev"><?php echo lang('page_join_us_btn_back_form'); ?></span>
 										<button type="submit" class="btn btn-primary text-center btn-next"><?php echo lang('page_join_us_btn_send'); ?></button>
@@ -483,24 +462,12 @@
 		</div>
 	</div>
 </div>
-
-<!-- SiteMap -->
 <?php include 'layouts/sitemap.php'; ?>
-
-
-<!-- JS Libraies -->
-<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.20/js/uikit.min.js"></script>
-
-<!-- dependencies for zip mode -->
 <script type="text/javascript" src="<?php echo base_url('resources/front_end/js/jquery.Thailand.js/dependencies/zip.js/zip.js'); ?>"></script>
-<!-- / dependencies for zip mode -->
-
 <script type="text/javascript" src="<?php echo base_url('resources/front_end/js/jquery.Thailand.js/dependencies/JQL.min.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('resources/front_end/js/jquery.Thailand.js/dependencies/typeahead.bundle.js'); ?>"></script>
-
 <script type="text/javascript" src="<?php echo base_url('resources/front_end/js/jquery.Thailand.js/dist/jquery.Thailand.min.js'); ?>"></script>
-
-<!-- Push Custom Scripts -->
 <script type="text/javascript" src="<?php echo base_url('resources/front_end/js/script_career_detail.min.js'); ?>"></script>
 

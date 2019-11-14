@@ -1,6 +1,4 @@
-<!-- Push Custom Style -->
 <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style_blog_detail.min.css'); ?>">
-<!-- Title -->
 <?php if ($banner) { ?>
 <section class="page-title main-hero-service p-0">
 	<img class="img-fluid" src="<?php echo base_url((!smm_is_mobile()) ? 'storage/uploads/images/banners/' . unserialize($banner->img)[$lang] : 'storage/uploads/images/banners/' . unserialize($banner->img_moblie)[$lang]); ?>" alt="<?php echo unserialize($banner->img_title_alt)[$lang]; ?>">
@@ -9,8 +7,6 @@
 	</div>
 </section>
 <?php } ?>
-
-<!-- Content -->
 <section id="blog">
 	<div class="container-fluid">
 		<div class="row">
@@ -61,9 +57,7 @@
 											</div>
 										</a>
 										<h4 class="blog__modern--title"><a href="#"><?php echo unserialize($suggest_blog->title)[$lang]; ?></a></h4>
-										<p class="blog__modern--text">
-											<?php echo unserialize($suggest_blog->description_section)[$lang]; ?>
-										</p>
+										<p class="blog__modern--text"><?php echo unserialize($suggest_blog->description_section)[$lang]; ?></p>
 									</article>
 								</div>
 							<?php } ?>
@@ -74,6 +68,4 @@
 		</div>
 	</div>
 </section>
-
-<!-- SiteMap -->
 <?php include 'layouts/sitemap.php'; ?>

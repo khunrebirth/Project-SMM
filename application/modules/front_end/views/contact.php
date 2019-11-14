@@ -1,7 +1,4 @@
-<!-- Push Custom Style -->
 <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style_contact.min.css'); ?>">
-
-<!-- Title -->
 <?php if ($banner) { ?>
 <section class="page-title main-hero-service p-0">
 	<img class="img-fluid" src="<?php echo base_url((!smm_is_mobile()) ? 'storage/uploads/images/banners/' . unserialize($banner->img)[$lang] : 'storage/uploads/images/banners/' . unserialize($banner->img_moblie)[$lang]); ?>" alt="<?php echo unserialize($banner->img_title_alt)[$lang]; ?>">
@@ -10,8 +7,6 @@
 	</div>
 </section>
 <?php } ?>
-
-<!-- Content -->
 <section id="contact">
     <div class="container">
         <div class="title-contact text-center ttl-top-space">
@@ -76,6 +71,4 @@
         </div>
     </div>
 </section>
-
-<!-- SiteMap -->
 <?php include 'layouts/sitemap.php'; ?>

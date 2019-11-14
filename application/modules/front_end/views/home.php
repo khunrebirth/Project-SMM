@@ -1,7 +1,4 @@
-<!-- Push Custom Style -->
 <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style_home.min.css'); ?>">
-
-<!-- Home -->
 <header id="home">
 	<div class="container h-100">
 		<div class="row justify-content-end h-100 align-items-center">
@@ -15,8 +12,6 @@
 		</div>
 	</div>
 </header>
-
-<!-- About -->
 <section id="about" class="showcase">
 	<div class="container-fluid p-0">
 		<div class="row no-gutters">
@@ -38,8 +33,6 @@
 		</div>
 	</div>
 </section>
-
-<!-- Service -->
 <section id="service" class="wow fadeInUp">
 	<div class="container-fluid text-center sec-home-service">
 		<div class="title-service ttl-home-img text-left ttl-top-space__home">
@@ -59,8 +52,6 @@
 		</div>
 	</div>
 </section>
-
-<!-- Client -->
 <section id="client" class="wow fadeInUp">
 	<div class="container-fluid">
 		<div class="title-client ttl-home-img text-center ttl-top-space__home">
@@ -86,10 +77,7 @@
 		</div>
 	</div>
 	<p class="text-center col-12 mb-0"><a href="<?php echo base_url($lang . '/' . lang('menu_our_clients') . '/'); ?>" class="btn btn-primary btn-full-sp"><?php echo lang('btn_read_all'); ?></a></p>
-	
 </section>
-
-<!-- Portfolios -->
 <section id="portfolio" class="wow fadeInUp">
 	<div class="container-fluid">
 		<div class="title-client ttl-home-img text-center ttl-top-space pt-0" >
@@ -136,8 +124,6 @@
 	</div>
 	<p class="text-center col-12 mb-0"><a href="<?php echo base_url($lang . '/' . lang('menu_portfolios')); ?>" class="btn btn-primary btn-full-sp"><?php echo lang('btn_read_all'); ?></a></p>
 </section>
-
-<!-- Blog -->
 <section id="blog">
 	<div class="container-fluid">
 		<div class="title-client ttl-home-img text-center ttl-top-space__home pt-0">
@@ -156,7 +142,6 @@
 					</a>
 					<h4 class="blog__modern--title"><a href="#"><?php echo unserialize($blog['title'])[$lang]; ?></a></h4>
 					<p class="blog__modern--text"><?php echo unserialize($blog['description_section'])[$lang]; ?></p>
-					<!-- handle moblie -->
 					<p class="blog__modern--bottom-text d-block d-md-none">
 						<?php echo $lang == 'th' ? ssm_thai_date(strtotime($blog['created_at'])) : date('d F Y', strtotime($blog['created_at'])); ?> |
 						<?php
@@ -176,8 +161,6 @@
 		</div>
 	</div>
 </section>
-
-<!-- Team -->
 <section id="team" class="wow fadeInUp">
 	<div class="container-fluid ">
 		<div class="sec-wrap-teams row flex-sm-column-reverse flex-column-reverse flex-md-column-reverse flex-lg-row">
@@ -211,8 +194,6 @@
 		</div>
 	</div>
 </section>
-
-<!-- Contact -->
 <section id="contact" class="wow fadeInUp">
 	<div class="container">
 		<div class="title-contact ttl-home-img text-center">
@@ -251,14 +232,9 @@
 					</div>
 				</div>
 			</div>
-			<!-- Map -->
 			<div class="col-xs-12 col-md-5 col-lg-5"></div>
 		</div>
 	</div>
 </section>
-
-<!-- SiteMap -->
 <?php include 'layouts/sitemap.php'; ?>
-
-<!-- Push Custom Scripts -->
 <script type="text/javascript" src="<?php echo base_url('resources/front_end/js/script_home.min.js'); ?>"></script>

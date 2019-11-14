@@ -1,7 +1,4 @@
-<!-- Push Custom Style -->
 <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style_teams.min.css'); ?>">
-
-<!-- Title -->
 <?php if ($banner) { ?>
 <section class="page-title main-hero-service p-0">
 	<img class="img-fluid" src="<?php echo base_url((!smm_is_mobile()) ? 'storage/uploads/images/banners/' . unserialize($banner->img)[$lang] : 'storage/uploads/images/banners/' . unserialize($banner->img_moblie)[$lang]); ?>" alt="<?php echo unserialize($banner->img_title_alt)[$lang]; ?>">
@@ -10,15 +7,12 @@
 	</div>
 </section>
 <?php } ?>
-
-<!-- Content -->
 <section id="team">
     <div class="container-fluid ">
         <div class="title-team text-center pb-5" >
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-team.png' : 'resources/front_end/images/title-team.png'); ?>" alt="" class="img-fluid d-none d-md-block mx-auto">
 			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-team_sp.png' : 'resources/front_end/images/title-team_sp.png'); ?>" alt="" class="img-fluid d-block d-md-none mx-auto">
         </div>
-        
         <div class="box-slide-team row">
 			<?php foreach ($teams as $team) { ?>
 				<?php
@@ -41,7 +35,4 @@
         </div>
     </div>
 </section>
-
-<!-- SiteMap -->
 <?php include 'layouts/sitemap.php'; ?>
-
