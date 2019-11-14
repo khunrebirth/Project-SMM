@@ -38,6 +38,8 @@ $CI->load->model('Service_model');
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous" />
     <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style.min.css'); ?>">
+    
+
     <script type="text/javascript" src="<?php echo base_url('resources/front_end/js/jquery-3.4.1.min.js'); ?>"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script type="text/javascript" src="<?php echo base_url('resources/front_end/js/bootstrap.min.js'); ?>"></script>
@@ -73,7 +75,6 @@ $CI->load->model('Service_model');
                 <a class="nav-link text-md-center <?php if ($this->uri->segment(0) == "services" || $this->uri->segment(0) == "บริการ") { echo 'active'; }?>  dropdown-toggle" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" ><?php echo lang('menu_service'); ?></a>
                 <div class="collapse wrap-sub-gnav" id="collapseExample" >
                     <ul class="list-sub-gnav row">
-						<?php $services = $CI->Service_model->get_service_all(); ?>
 						<?php foreach ($services as $service) { ?>
 							<li class="item col-lg-2 col-md-12 col-sm-12">
 								<a class="d-flex flex-column text-center" href="<?php echo base_url($lang . '/' . lang('menu_service') . '/' . unserialize($service->slug)[$lang]); ?>">
