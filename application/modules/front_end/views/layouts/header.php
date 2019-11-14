@@ -1,10 +1,9 @@
 <?php
-	// initialize
-	$CI =& get_instance();
+// initialize
+$CI =& get_instance();
 
-	// Model
-	$CI->load->model('Service_model');
-	$CI->load->model('Blog_model');
+// Model
+$CI->load->model('Service_model');
 ?>
 <!doctype html>
 <html lang="en">
@@ -39,17 +38,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous" />
     <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style.min.css'); ?>">
-    <script type='text/javascript' src="<?php echo base_url('resources/front_end/js/jquery-3.4.1.min.js'); ?>"></script>
-    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script type='text/javascript' src="<?php echo base_url('resources/front_end/js/bootstrap.min.js'); ?>"></script>
-    <script type='text/javascript' src="<?php echo base_url('resources/front_end/js/wow.js'); ?>"></script>
-    <script type='text/javascript' src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
-    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/ScrollToFixed/1.0.8/jquery-scrolltofixed-min.js" integrity="sha256-Kl1vQ0yioe6J6idmj55qGNgoOrKOTJh4WYFdmiVnvZw=" crossorigin="anonymous"></script>
-	<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5dc3d55e04e0990012c1f4ee&product=inline-share-buttons&cms=website' async='async'></script>
-    <script type='text/javascript' src="<?php echo base_url('resources/front_end/js/script.min.js'); ?>"></script>
-    <script type='text/javascript'>
+    <script type="text/javascript" src="<?php echo base_url('resources/front_end/js/jquery-3.4.1.min.js'); ?>"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="<?php echo base_url('resources/front_end/js/bootstrap.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('resources/front_end/js/wow.js'); ?>"></script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ScrollToFixed/1.0.8/jquery-scrolltofixed-min.js" integrity="sha256-Kl1vQ0yioe6J6idmj55qGNgoOrKOTJh4WYFdmiVnvZw=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src='https://platform-api.sharethis.com/js/sharethis.js#property=5dc3d55e04e0990012c1f4ee&product=inline-share-buttons&cms=website' async='async'></script>
+    <script type="text/javascript" src="<?php echo base_url('resources/front_end/js/script.min.js'); ?>"></script>
+    <script type="text/javascript">
         window.base_url = "<?php echo base_url(); ?>"
     </script>
 </head>
