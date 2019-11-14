@@ -440,15 +440,22 @@ a:hover {
 #home {
 	height: 100vh;
 	min-height: 500px;
-	background-image: url('http://192.168.1.7/web/khun/social.co.th/resources/front_end/images/brn_top_01.jpg');
+	/* background-image: url('http://192.168.1.5/social-dev/resources/front_end/images/brn_top_01.jpg.webp'); */
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 }
+/* ::-webkit-full-page-media, :future, :root #home { 
+	background-image: url('http://192.168.1.5/social-dev/resources/front_end/images/brn_top_01.jpg') ;
+} */
+_:-webkit-full-screen:not(:root:root), #home{
+	/* background-image: url('http://192.168.1.5/social-dev/resources/front_end/images/brn_top_01.jpg') ; */
+
+}
 
 @media (max-width: 768px) {
 	#home {
-		background-image: url('http://192.168.1.7/web/khun/social.co.th/resources/front_end/images/bg-herobanner.jpg');
+		/* background-image: url('http://192.168.1.7/web/khun/social.co.th/resources/front_end/images/bg-herobanner.jpg'); */
 	}
 }
 
