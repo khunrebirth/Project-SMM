@@ -46,11 +46,6 @@ function ssm_thai_date($time) {
 		'12' => 'ธันวาคม'
 	];
 
-//	$thai_date_return = "วัน" . $bundle_thai_day[date("w", $time)];
-//	$thai_date_return .= "ที่ " . date("j", $time);
-//	$thai_date_return .= " เดือน" . $bundle_thai_month[date("n", $time)];
-//	$thai_date_return .=  " พ.ศ." . (date("Y", $time) + 543);
-
 	$thai_date_return = date("j", $time);
 	$thai_date_return .= " " . $bundle_thai_month[date("n", $time)];
 	$thai_date_return .=  " " . (date("Y", $time) + 543);
