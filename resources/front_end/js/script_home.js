@@ -10,6 +10,7 @@ $(function () {
         scrollPerPage: true,
         singleItem: false,
         slideBy: 4,
+        lazyLoad: true,
         responsive: {
             0: {
                 items: 1,
