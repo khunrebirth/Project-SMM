@@ -210,8 +210,8 @@
 						$team_title =  base_url($lang == 'th' ? 'resources/front_end/images/title-team.png' : 'resources/front_end/images/title-team.png');
 						$team_title_sp =  base_url($lang == 'th' ? 'resources/front_end/images/title-team_sp.png' : 'resources/front_end/images/title-team_sp.png');
 					?>
-					<img data-src="<?php echo !smm_is_safari() ? $team_title . 'webp' : $team_title; ?>" class="img-fluid d-none d-md-block mx-auto lazy">
-					<img data-src="<?php echo !smm_is_safari() ? $team_title_sp . 'webp' : $team_title_sp; ?>" class="img-fluid d-block d-md-none mx-auto lazy">
+					<img data-src="<?php echo !smm_is_safari() ? $team_title . '.webp' : $team_title; ?>" class="img-fluid d-none d-md-block mx-auto lazy">
+					<img data-src="<?php echo !smm_is_safari() ? $team_title_sp . '.webp' : $team_title_sp; ?>" class="img-fluid d-block d-md-none mx-auto lazy">
 				</div>
 				<p class="text-center col-12 mb-4"><a href="<?php echo base_url($lang . '/' . lang('menu_teams') . '/'); ?>" class="btn btn-primary btn-full-sp"><?php echo lang('btn_read_all'); ?></a></p>
 			</div>
@@ -225,8 +225,8 @@
 				$contact_title =  base_url($lang == 'th' ? 'resources/front_end/images/title-contact.png' : 'resources/front_end/images/title-contact.png');
 				$contact_title_sp =  base_url($lang == 'th' ? 'resources/front_end/images/title-contact_sp.png' : 'resources/front_end/images/title-contact_sp.png');
 			?>
-			<img data-src="<?php echo !smm_is_safari() ? $contact_title . 'webp' : $contact_title; ?>" class="img-fluid d-none d-md-block mx-auto lazy">
-			<img data-src="<?php echo !smm_is_safari() ? $contact_title_sp . 'webp' : $contact_title_sp; ?>" class="img-fluid d-block d-md-none mx-auto lazy">
+			<img data-src="<?php echo !smm_is_safari() ? $contact_title . '.webp' : $contact_title; ?>" class="img-fluid d-none d-md-block mx-auto lazy">
+			<img data-src="<?php echo !smm_is_safari() ? $contact_title_sp . '.webp' : $contact_title_sp; ?>" class="img-fluid d-block d-md-none mx-auto lazy">
 		</div>
 		<div class="row">
 			<div class="col-xs-12 col-md-7 col-lg-7 ">
