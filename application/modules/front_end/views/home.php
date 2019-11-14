@@ -15,7 +15,7 @@
 <section id="about" class="showcase">
 	<div class="container-fluid p-0">
 		<div class="row no-gutters">
-			<div class="col-md-6 col-lg-6 order-lg-2 showcase-img d-none d-sm-block" style="background-image: url('<?php echo base_url('storage/uploads/images/abouts/' . unserialize($about->img_section)[$lang]); ?>');">
+			<div class="col-md-6 col-lg-6 order-lg-2 showcase-img d-none d-sm-block" style="background-image: url('<?php echo base_url(!ssm_is_safari() ? 'storage/uploads/images/abouts/' . unserialize($about->img_section)[$lang] . '.webp' : 'storage/uploads/images/abouts/' . unserialize($about->img_section)[$lang]); ?>');">
 			</div>
 			<div class="col-xs-12 col-md-6 col-lg-6 order-lg-1 my-auto showcase-text text-center wow fadeInLeft">
 				<div class="title-about ttl-home-img">
@@ -43,9 +43,9 @@
 			<?php foreach ($services as $service) { ?>
 			<a href="<?php echo base_url($lang . '/' . lang('menu_service') . '/' . unserialize($service->slug)[$lang]); ?>" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05 ico-service">
 				<div class="wrap-icon-flip">
-					<img data-src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service->icon)[$lang]); ?>" class="img-fluid service__icon--resize lazy">
+					<img data-src="<?php echo base_url(!ssm_is_safari() ? 'storage/uploads/images/services/' . unserialize($service->icon)[$lang] . '.webp' : 'storage/uploads/images/services/' . unserialize($service->icon)[$lang]); ?>" class="img-fluid service__icon--resize lazy">
 				</div>
-				<img data-src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service->icon)[$lang]); ?>" class="img-fluid service__icon--resize ico-service__img lazy">
+				<img data-src="<?php echo base_url(!ssm_is_safari() ? 'storage/uploads/images/services/' . unserialize($service->icon)[$lang] . '.webp' : 'storage/uploads/images/services/' . unserialize($service->icon)[$lang]); ?>" class="img-fluid service__icon--resize ico-service__img lazy">
 				<p class="service__title--body"><?php echo unserialize($service->title)[$lang]; ?></p>
 			</a>
 			<?php } ?>
@@ -62,7 +62,7 @@
 			<div class="row">
 				<?php foreach ($top_clients as $top_client) { ?>
 					<div class="col-4 col-md-4 col-lg-2 mb-4">
-						<img data-src="<?php echo base_url('/storage/uploads/images/home/' .  unserialize($top_client->image)[$lang]); ?>" alt="<?php echo unserialize($top_client->title)[$lang]; ?>" class="img-fluid img-clients lazy">
+						<img data-src="<?php echo base_url(!ssm_is_safari() ? '/storage/uploads/images/home/' .  unserialize($top_client->image)[$lang] . '.webp' : '/storage/uploads/images/home/' .  unserialize($top_client->image)[$lang]); ?>" alt="<?php echo unserialize($top_client->title)[$lang]; ?>" class="img-fluid img-clients lazy">
 					</div>
 				<?php } ?>
 			</div>
@@ -70,7 +70,7 @@
 				<?php $slice_clients = array_slice($clients, 0, 6); ?>
 				<?php foreach ($slice_clients as $client) { ?>
 					<div class="col-4 col-md-4 col-lg-2 mb-4">
-						<img class="img-fluid lazy" data-src="<?php echo base_url('storage/uploads/images/clients/' . unserialize($client->image)[$lang]); ?>" alt="<?php echo unserialize($client->title)[$lang]; ?>">
+						<img class="img-fluid lazy" data-src="<?php echo base_url(!ssm_is_safari() ? 'storage/uploads/images/clients/' . unserialize($client->image)[$lang] .'.webp' : 'storage/uploads/images/clients/' . unserialize($client->image)[$lang]); ?>" alt="<?php echo unserialize($client->title)[$lang]; ?>">
 					</div>
 				<?php } ?>
 			</div>
@@ -93,7 +93,7 @@
 							<!-- TODO:: handle Portoflio Video -->
 
 						<?php } else { ?>
-							<img data-src="<?php echo base_url('/storage/uploads/images/home/' . unserialize($top_portfolio->image)[$lang]); ?>" alt="<?php echo unserialize($top_portfolio->title)[$lang]; ?>" class="img-fluid img-clients lazy">
+							<img data-src="<?php echo base_url(!ssm_is_safari() ? '/storage/uploads/images/home/' . unserialize($top_portfolio->image)[$lang] . '.webp' : '/storage/uploads/images/home/' . unserialize($top_portfolio->image)[$lang]); ?>" alt="<?php echo unserialize($top_portfolio->title)[$lang]; ?>" class="img-fluid img-clients lazy">
 						<?php } ?>
 						<div class="caption-detail">
 							<p class="ttl"><?php echo unserialize($top_portfolio->text)[$lang]; ?></p>
@@ -111,7 +111,7 @@
 							<!-- TODO:: handle Portoflio Video -->
 
 						<?php } else { ?>
-							<img class="img-fluid lazy" data-src="<?php echo base_url('storage/uploads/images/portfolios/' . unserialize($portfolio->image)[$lang]); ?>" alt="<?php echo unserialize($portfolio->title)[$lang]; ?>">
+							<img class="img-fluid lazy" data-src="<?php echo base_url(!ssm_is_safari() ? 'storage/uploads/images/portfolios/' . unserialize($portfolio->image)[$lang] . '.webp' : 'storage/uploads/images/portfolios/' . unserialize($portfolio->image)[$lang]); ?>" alt="<?php echo unserialize($portfolio->title)[$lang]; ?>">
 						<?php } ?>
 						<div class="caption-detail">
 							<p class="ttl"><?php echo unserialize($portfolio->text)[$lang]; ?></p>
@@ -135,7 +135,7 @@
 			<div class="col-xs-12 col-sm-6 col-lg-3 blog__item animate-cmn">
 				<article class="blog blog__modern">
 					<a class="blog__modern--figure" href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/' . unserialize($blog['blog_category_slug'])[$lang] . '/' .  unserialize($blog['slug'])[$lang]); ?>">
-						<img class="lazy" data-src="<?php echo base_url('storage/uploads/images/blogs/' . unserialize($blog['img'])[$lang]) ?>" alt="<?php echo unserialize($blog['img_title_alt'])[$lang]; ?>" width="370" height="307">
+						<img class="lazy" data-src="<?php echo base_url(!ssm_is_safari() ? 'storage/uploads/images/blogs/' . unserialize($blog['img'])[$lang] . '.webp' : 'storage/uploads/images/blogs/' . unserialize($blog['img'])[$lang]) ?>" alt="<?php echo unserialize($blog['img_title_alt'])[$lang]; ?>" width="370" height="307">
 						<div class="blog__modern--time">
 							<time datetime="<?php echo $blog['created_at']; ?>"><span class="blog__modern--time--month"><?php echo date_format(date_create($blog['created_at']), 'm'); ?></span><span class="blog__modern--time--number"><?php echo date_format(date_create($blog['created_at']), 'd'); ?></span></time>
 						</div>
@@ -174,8 +174,8 @@
 						$last_name = substr($fullname, $posBlankSpace, strlen($fullname));
 					?>
 					<div class="card team__card--parent mb-0">
-						<img class="card-img-top owl-lazy" data-src="<?php echo base_url('storage/uploads/images/teams/' . unserialize($team->image)[$lang]); ?>">
-						<img class="card-img-top is-hover owl-lazy" data-src="<?php echo base_url('storage/uploads/images/teams/' . unserialize($team->image_hover)[$lang]); ?>">
+						<img class="card-img-top owl-lazy" data-src="<?php echo base_url(!ssm_is_safari() ? 'storage/uploads/images/teams/' . unserialize($team->image)[$lang] . '.webp' : 'storage/uploads/images/teams/' . unserialize($team->image)[$lang]); ?>">
+						<img class="card-img-top is-hover owl-lazy" data-src="<?php echo base_url(!ssm_is_safari() ? 'storage/uploads/images/teams/' . unserialize($team->image_hover)[$lang] . '.webp' : 'storage/uploads/images/teams/' . unserialize($team->image_hover)[$lang]); ?>">
 						<div class="card-body pl-0 pt-2 pb-2">
 							<h5 class="card-title team__crad--title"><?php echo $first_name; ?><br><?php echo $last_name; ?></h5>
 							<p class="card-text team__crad--body"><?php echo unserialize($team->body)[$lang]; ?></p>
