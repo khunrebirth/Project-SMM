@@ -94,50 +94,62 @@ class Service extends MX_Controller
 
 		if (isset($_FILES['icon_en']) && $_FILES['icon_en']['name'] != '') {
 			$icon_en = $this->ddoo_upload_service('icon_en');
+			smm_img_covert_to_webp('storage/uploads/images/services/' . $icon_en);
 		}
 
 		if (isset($_FILES['icon_th']) && $_FILES['icon_th']['name'] != '') {
 			$icon_th = $this->ddoo_upload_service('icon_th');
+			smm_img_covert_to_webp('storage/uploads/images/services/' . $icon_th);
 		}
 
 		if (isset($_FILES['img_on_navbar_en']) && $_FILES['img_on_navbar_en']['name'] != '') {
 			$img_on_navbar_en = $this->ddoo_upload_service('img_on_navbar_en');
+			smm_img_covert_to_webp('storage/uploads/images/services/' . $img_on_navbar_en);
 		}
 
 		if (isset($_FILES['img_on_navbar_th']) && $_FILES['img_on_navbar_th']['name'] != '') {
 			$img_on_navbar_th = $this->ddoo_upload_service('img_on_navbar_th');
+			smm_img_covert_to_webp('storage/uploads/images/services/' . $img_on_navbar_th);
 		}
 
 		if (isset($_FILES['content_top_img_en']) && $_FILES['content_top_img_en']['name'] != '') {
 			$content_top_img_en = $this->ddoo_upload_service('content_top_img_en');
+			smm_img_covert_to_webp('storage/uploads/images/services/' . $content_top_img_en);
 		}
 
 		if (isset($_FILES['content_top_img_th']) && $_FILES['content_top_img_th']['name'] != '') {
 			$content_top_img_th = $this->ddoo_upload_service('content_top_img_th');
+			smm_img_covert_to_webp('storage/uploads/images/services/' . $content_top_img_th);
 		}
 
 		if (isset($_FILES['content_bottom_img_en']) && $_FILES['content_bottom_img_en']['name'] != '') {
 			$content_bottom_img_en = $this->ddoo_upload_service('content_bottom_img_en');
+			smm_img_covert_to_webp('storage/uploads/images/services/' . $content_bottom_img_en);
 		}
 
 		if (isset($_FILES['content_bottom_img_th']) && $_FILES['content_bottom_img_th']['name'] != '') {
 			$content_bottom_img_th = $this->ddoo_upload_service('content_bottom_img_th');
+			smm_img_covert_to_webp('storage/uploads/images/services/' . $content_bottom_img_th);
 		}
 
 		if (isset($_FILES['banner_img_en']) && $_FILES['banner_img_en']['name'] != '') {
 			$banner_img_en = $this->ddoo_upload_banner('banner_img_en');
+			smm_img_covert_to_webp('storage/uploads/images/banners/' . $banner_img_en);
 		}
 
 		if (isset($_FILES['banner_img_th']) && $_FILES['banner_img_th']['name'] != '') {
 			$banner_img_th = $this->ddoo_upload_banner('banner_img_th');
+			smm_img_covert_to_webp('storage/uploads/images/banners/' . $banner_img_th);
 		}
 
 		if (isset($_FILES['banner_img_moblie_en']) && $_FILES['banner_img_moblie_en']['name'] != '') {
 			$banner_img_moblie_en = $this->ddoo_upload_banner('banner_img_moblie_en');
+			smm_img_covert_to_webp('storage/uploads/images/banners/' . $banner_img_moblie_en);
 		}
 
 		if (isset($_FILES['banner_img_moblie_th']) && $_FILES['banner_img_moblie_th']['name'] != '') {
 			$banner_img_moblie_th = $this->ddoo_upload_banner('banner_img_moblie_th');
+			smm_img_covert_to_webp('storage/uploads/images/banners/' . $banner_img_moblie_th);
 		}
 
 		// Filter Data
@@ -258,50 +270,62 @@ class Service extends MX_Controller
 
 		if (isset($_FILES['icon_en']) && $_FILES['icon_en']['name'] != '') {
 			$icon_en = $this->ddoo_upload_service('icon_en');
+			smm_img_covert_to_webp('storage/uploads/images/services/' . $icon_en);
 		}
 
 		if (isset($_FILES['icon_th']) && $_FILES['icon_th']['name'] != '') {
 			$icon_th = $this->ddoo_upload_service('icon_th');
+			smm_img_covert_to_webp('storage/uploads/images/services/' . $icon_th);
 		}
 
 		if (isset($_FILES['img_on_navbar_en']) && $_FILES['img_on_navbar_en']['name'] != '') {
 			$img_on_navbar_en = $this->ddoo_upload_service('img_on_navbar_en');
+			smm_img_covert_to_webp('storage/uploads/images/services/' . $img_on_navbar_en);
 		}
 
 		if (isset($_FILES['img_on_navbar_th']) && $_FILES['img_on_navbar_th']['name'] != '') {
 			$img_on_navbar_th = $this->ddoo_upload_service('img_on_navbar_th');
+			smm_img_covert_to_webp('storage/uploads/images/services/' . $img_on_navbar_th);
 		}
 
 		if (isset($_FILES['content_top_img_en']) && $_FILES['content_top_img_en']['name'] != '') {
 			$content_top_img_en = $this->ddoo_upload_service('content_top_img_en');
+			smm_img_covert_to_webp('storage/uploads/images/services/' . $content_top_img_en);
 		}
 
 		if (isset($_FILES['content_top_img_th']) && $_FILES['content_top_img_th']['name'] != '') {
 			$content_top_img_th = $this->ddoo_upload_service('content_top_img_th');
+			smm_img_covert_to_webp('storage/uploads/images/services/' . $content_top_img_th);
 		}
 
 		if (isset($_FILES['content_bottom_img_en']) && $_FILES['content_bottom_img_en']['name'] != '') {
 			$content_bottom_img_en = $this->ddoo_upload_service('content_bottom_img_en');
+			smm_img_covert_to_webp('storage/uploads/images/services/' . $content_bottom_img_en);
 		}
 
 		if (isset($_FILES['content_bottom_img_th']) && $_FILES['content_bottom_img_th']['name'] != '') {
 			$content_bottom_img_th = $this->ddoo_upload_service('content_bottom_img_th');
+			smm_img_covert_to_webp('storage/uploads/images/services/' . $content_bottom_img_th);
 		}
 
 		if (isset($_FILES['banner_img_en']) && $_FILES['banner_img_en']['name'] != '') {
 			$banner_img_en = $this->ddoo_upload_banner('banner_img_en');
+			smm_img_covert_to_webp('storage/uploads/images/banners/' . $banner_img_en);
 		}
 
 		if (isset($_FILES['banner_img_th']) && $_FILES['banner_img_th']['name'] != '') {
 			$banner_img_th = $this->ddoo_upload_banner('banner_img_th');
+			smm_img_covert_to_webp('storage/uploads/images/banners/' . $banner_img_th);
 		}
 
 		if (isset($_FILES['banner_img_moblie_en']) && $_FILES['banner_img_moblie_en']['name'] != '') {
 			$banner_img_moblie_en = $this->ddoo_upload_banner('banner_img_moblie_en');
+			smm_img_covert_to_webp('storage/uploads/images/banners/' . $banner_img_moblie_en);
 		}
 
 		if (isset($_FILES['banner_img_moblie_th']) && $_FILES['banner_img_moblie_th']['name'] != '') {
 			$banner_img_moblie_th = $this->ddoo_upload_banner('banner_img_moblie_th');
+			smm_img_covert_to_webp('storage/uploads/images/banners/' . $banner_img_moblie_th);
 		}
 
 		// Filter Data
@@ -455,10 +479,12 @@ class Service extends MX_Controller
 
 			if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
 				$img_en = $this->ddoo_upload_service('img_en');
+				smm_img_covert_to_webp('storage/uploads/images/services/' . $img_en);
 			}
 
 			if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
 				$img_th = $this->ddoo_upload_service('img_th');
+				smm_img_covert_to_webp('storage/uploads/images/services/' . $img_th);
 			}
 
 			// Filter Data
@@ -515,10 +541,12 @@ class Service extends MX_Controller
 
 		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
 			$img_en = $this->ddoo_upload_service('img_en');
+			smm_img_covert_to_webp('storage/uploads/images/services/' . $img_en);
 		}
 
 		if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
 			$img_th = $this->ddoo_upload_service('img_th');
+			smm_img_covert_to_webp('storage/uploads/images/services/' . $img_th);
 		}
 
 		// Filter Data
@@ -608,10 +636,12 @@ class Service extends MX_Controller
 
 		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
 			$img_en = $this->ddoo_upload_service('img_en');
+			smm_img_covert_to_webp('storage/uploads/images/services/' . $img_en);
 		}
 
 		if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
 			$img_th = $this->ddoo_upload_service('img_th');
+			smm_img_covert_to_webp('storage/uploads/images/services/' . $img_th);
 		}
 
 		// Filter Data
@@ -667,10 +697,12 @@ class Service extends MX_Controller
 
 		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
 			$img_en = $this->ddoo_upload_service('img_en');
+			smm_img_covert_to_webp('storage/uploads/images/services/' . $img_en);
 		}
 
 		if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
 			$img_th = $this->ddoo_upload_service('img_th');
+			smm_img_covert_to_webp('storage/uploads/images/services/' . $img_th);
 		}
 
 		// Filter Data

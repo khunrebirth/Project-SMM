@@ -162,18 +162,22 @@ class Join_us extends MX_Controller
 
 		if (isset($_FILES['img_cover_en']) && $_FILES['img_cover_en']['name'] != '') {
 			$img_cover_en = $this->ddoo_upload_join_us('img_cover_en');
+			smm_img_covert_to_webp('storage/uploads/images/join_us/' . $img_cover_en);
 		}
 
 		if (isset($_FILES['img_cover_th']) && $_FILES['img_cover_th']['name'] != '') {
 			$img_cover_th = $this->ddoo_upload_join_us('img_cover_th');
+			smm_img_covert_to_webp('storage/uploads/images/join_us/' . $img_cover_th);
 		}
 
 		if (isset($_FILES['img_cover_moblie_en']) && $_FILES['img_cover_moblie_en']['name'] != '') {
 			$img_cover_moblie_en = $this->ddoo_upload_join_us('img_cover_moblie_en');
+			smm_img_covert_to_webp('storage/uploads/images/join_us/' . $img_cover_moblie_en);
 		}
 
 		if (isset($_FILES['img_cover_moblie_th']) && $_FILES['img_cover_moblie_th']['name'] != '') {
 			$img_cover_moblie_th = $this->ddoo_upload_join_us('img_cover_moblie_th');
+			smm_img_covert_to_webp('storage/uploads/images/join_us/' . $img_cover_moblie_th);
 		}
 
 		// Filter Data
@@ -271,18 +275,22 @@ class Join_us extends MX_Controller
 
 		if (isset($_FILES['img_cover_en']) && $_FILES['img_cover_en']['name'] != '') {
 			$img_cover_en = $this->ddoo_upload_join_us('img_cover_en');
+			smm_img_covert_to_webp('storage/uploads/images/join_us/' . $img_cover_en);
 		}
 
 		if (isset($_FILES['img_cover_th']) && $_FILES['img_cover_th']['name'] != '') {
 			$img_cover_th = $this->ddoo_upload_join_us('img_cover_th');
+			smm_img_covert_to_webp('storage/uploads/images/join_us/' . $img_cover_th);
 		}
 
 		if (isset($_FILES['img_cover_moblie_en']) && $_FILES['img_cover_moblie_en']['name'] != '') {
 			$img_cover_moblie_en = $this->ddoo_upload_join_us('img_cover_moblie_en');
+			smm_img_covert_to_webp('storage/uploads/images/join_us/' . $img_cover_moblie_en);
 		}
 
 		if (isset($_FILES['img_cover_moblie_th']) && $_FILES['img_cover_moblie_th']['name'] != '') {
 			$img_cover_moblie_th = $this->ddoo_upload_join_us('img_cover_moblie_th');
+			smm_img_covert_to_webp('storage/uploads/images/join_us/' . $img_cover_moblie_th);
 		}
 
 		// Filter Data
@@ -404,10 +412,12 @@ class Join_us extends MX_Controller
 
 		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
 			$img_en = $this->ddoo_upload_join_us('img_en');
+			smm_img_covert_to_webp('storage/uploads/images/join_us/' . $img_en);
 		}
 
 		if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
 			$img_th = $this->ddoo_upload_join_us('img_th');
+			smm_img_covert_to_webp('storage/uploads/images/join_us/' . $img_th);
 		}
 
 		// Filter Data
@@ -463,10 +473,12 @@ class Join_us extends MX_Controller
 
 		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
 			$img_en = $this->ddoo_upload_join_us('img_en');
+			smm_img_covert_to_webp('storage/uploads/images/join_us/' . $img_en);
 		}
 
 		if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
 			$img_th = $this->ddoo_upload_join_us('img_th');
+			smm_img_covert_to_webp('storage/uploads/images/join_us/' . $img_th);
 		}
 
 		// Filter Data

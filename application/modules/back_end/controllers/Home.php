@@ -149,10 +149,12 @@ class Home extends MX_Controller
 
 		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
 			$img_en = $this->ddoo_upload_home('img_en');
+			smm_img_covert_to_webp('storage/uploads/images/home/' . $img_en);
 		}
 
 		if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
 			$img_th = $this->ddoo_upload_home('img_th');
+			smm_img_covert_to_webp('storage/uploads/images/home/' . $img_th);
 		}
 
 		// Filter Data
@@ -207,10 +209,12 @@ class Home extends MX_Controller
 
 		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
 			$img_en = $this->ddoo_upload_home('img_en');
+			smm_img_covert_to_webp('storage/uploads/images/home/' . $img_en);
 		}
 
 		if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
 			$img_th = $this->ddoo_upload_home('img_th');
+			smm_img_covert_to_webp('storage/uploads/images/home/' . $img_th);
 		}
 
 		// Filter Data
@@ -323,10 +327,12 @@ class Home extends MX_Controller
 
 			if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
 				$img_en = $this->ddoo_upload_home('img_en');
+				smm_img_covert_to_webp('storage/uploads/images/home/' . $img_en);
 			}
 
 			if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
 				$img_th = $this->ddoo_upload_home('img_th');
+				smm_img_covert_to_webp('storage/uploads/images/home/' . $img_th);
 			}
 
 			// Filter Data
@@ -404,10 +410,12 @@ class Home extends MX_Controller
 
 			if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
 				$img_en = $this->ddoo_upload_home('img_en');
+				smm_img_covert_to_webp('storage/uploads/images/home/' . $img_en);
 			}
 
 			if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
 				$img_th = $this->ddoo_upload_home('img_th');
+				smm_img_covert_to_webp('storage/uploads/images/home/' . $img_th);
 			}
 
 			// Filter Data

@@ -148,10 +148,12 @@ class Portfolio extends MX_Controller
 
 		if (isset($_FILES['icon_en']) && $_FILES['icon_en']['name'] != '') {
 			$icon_en = $this->ddoo_upload_portfolio('icon_en');
+			smm_img_covert_to_webp('storage/uploads/images/portfolios/' . $icon_en);
 		}
 
 		if (isset($_FILES['icon_th']) && $_FILES['icon_th']['name'] != '') {
 			$icon_th = $this->ddoo_upload_portfolio('icon_th');
+			smm_img_covert_to_webp('storage/uploads/images/portfolios/' . $icon_th);
 		}
 
 		// Filter Data
@@ -205,10 +207,12 @@ class Portfolio extends MX_Controller
 
 		if (isset($_FILES['icon_en']) && $_FILES['icon_en']['name'] != '') {
 			$icon_en = $this->ddoo_upload_portfolio('icon_en');
+			smm_img_covert_to_webp('storage/uploads/images/portfolios/' . $icon_en);
 		}
 
 		if (isset($_FILES['icon_th']) && $_FILES['icon_th']['name'] != '') {
 			$icon_th = $this->ddoo_upload_portfolio('icon_th');
+			smm_img_covert_to_webp('storage/uploads/images/portfolios/' . $icon_th);
 		}
 
 		// Filter Data
@@ -299,10 +303,12 @@ class Portfolio extends MX_Controller
 
 		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
 			$img_en = $this->ddoo_upload_portfolio('img_en');
+			smm_img_covert_to_webp('storage/uploads/images/portfolios/' . $img_en);
 		}
 
 		if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
 			$img_th = $this->ddoo_upload_portfolio('img_th');
+			smm_img_covert_to_webp('storage/uploads/images/portfolios/' . $img_th);
 		}
 
 		// Filter Data
@@ -360,10 +366,12 @@ class Portfolio extends MX_Controller
 
 		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
 			$img_en = $this->ddoo_upload_portfolio('img_en');
+			smm_img_covert_to_webp('storage/uploads/images/portfolios/' . $img_en);
 		}
 
 		if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
 			$img_th = $this->ddoo_upload_portfolio('img_th');
+			smm_img_covert_to_webp('storage/uploads/images/portfolios/' . $img_th);
 		}
 
 		// Filter Data
