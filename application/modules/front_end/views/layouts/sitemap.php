@@ -38,7 +38,7 @@ $CI->load->model('Blog_model');
 								</div>
 								<div class="col-cmn-5 item-fb-page item-youtube">
 									<a href="#dummy">
-										<img class="img-fluid" src="<?php echo base_url('resources/front_end/images/youtube.png'); ?>" alt="youtube">
+										<img class="img-fluid" src="<?php echo base_url(!smm_is_safari() ? 'resources/front_end/images/youtube.png.webp' : 'resources/front_end/images/youtube.png'); ?>" alt="youtube">
 									</a>
 								</div>
 							</div>
