@@ -6,3 +6,344 @@
         padding: 2rem 0 !important;
     }
 }
+
+/*=======================================
+wrap-video  
+=======================================*/
+.wrap-video {
+	position: relative;
+	padding-bottom: 30%;
+	padding-top: 25px;
+	padding-top: 0px;
+	height: 0;
+}
+
+@media (max-width: 768px) {
+	.wrap-video {
+		padding-bottom: 55%;
+	}
+}
+
+.wrap-video iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+/*=======================================
+sec-job-info  
+=======================================*/
+.sec-job-info {
+	padding-bottom: 60px;
+	margin-bottom: 60px;
+	border-bottom: 1px solid #e6e6e6;
+}
+
+@media (max-width: 768px) {
+	.sec-job-info {
+		padding-bottom: 30px;
+		margin-bottom: 30px;
+	}
+}
+
+/*=======================================
+sec-job-activity  
+=======================================*/
+.sec-job-activity {
+	max-width: 998px;
+	margin-bottom: 60px;
+}
+
+@media (max-width: 768px) {
+	.sec-job-activity {
+		margin-bottom: 30px;
+	}
+}
+
+.sec-job-activity figure {
+	background: #127dbc;
+	padding: 15px;
+	margin: 5px;
+	border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px;
+}
+
+.sec-job-activity figure img {
+	width: 70px;
+	height: auto;
+}
+
+
+/*=======================================
+sec-job-item  
+=======================================*/
+.sec-job-item {
+	max-width: 998px;
+	margin-bottom: 0;
+}
+/*=======================================
+list-cmn-job 
+=======================================*/
+.list-cmn-job {
+	list-style: none;
+	width: 100%;
+	padding: 0;
+	margin: 0 0 20px;
+}
+
+.list-cmn-job li {
+	width: 100%;
+	margin: 0 0 30px;
+	padding: 0;
+}
+
+.list-cmn-job li:last-of-type {
+	margin-bottom: 0;
+}
+
+.list-cmn-job li a {
+	border: 1px solid transparent;
+	color: #127dbc;
+	position: relative;
+	transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	padding-top: 5px;
+	padding-bottom: 8px;
+}
+
+.list-cmn-job li a::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 0;
+	height: calc(100% + 2px);
+	width: 3px;
+	background-color: #127dbc;
+	transform: translate3d(0, -50%, 0);
+	-webkit-transform: translate3d(0, -50%, 0);
+	-moz-transform: translate3d(0, -50%, 0);
+	-ms-transform: translate3d(0, -50%, 0);
+	-o-transform: translate3d(0, -50%, 0);
+}
+
+.list-cmn-job li a:hover {
+	border: 1px solid #c5e2ff;
+	border-left: 1px solid transparent;
+}
+
+.list-cmn-job li a:hover .job-btn {
+	background-color: #8cc5ff;
+	color: #fff;
+}
+
+.list-cmn-job li a .txt .ttl {
+	font-size: 1.5rem;
+	margin-bottom: 8px;
+	font-weight: bold;
+}
+
+.list-cmn-job li a .txt span {
+	margin-right: 10px;
+	font-size: 1rem;
+}
+
+.list-cmn-job li a .txt span i {
+	padding-right: 5px;
+}
+/*=======================================
+btn-join-job  
+=======================================*/
+.job-btn {
+	padding: 5px 10px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	background-color: #cbe1f7;
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-o-transition: all 0.5s;
+
+}
+/*=======================================
+list-img-team 
+=======================================*/
+.list-img-team {
+	position: relative;
+	height: 750px;
+	width: 100%;
+	padding: 0;
+	list-style: none;
+}
+
+.list-img-team li {
+	position: absolute;
+}
+
+.list-img-team li:nth-child(1) {
+	left: 0;
+	top: 0;
+}
+
+.list-img-team li:nth-child(2) {
+	left: 500px;
+	top: 0;
+}
+
+.list-img-team li:nth-child(3) {
+	left: 750px;
+	top: 0;
+}
+
+.list-img-team li:nth-child(4) {
+	left: 500px;
+	top: 250px;
+}
+
+.list-img-team li:nth-child(5) {
+	left: 0;
+	top: 500px;
+}
+
+.list-img-team li:nth-child(6) {
+	left: 250px;
+	top: 500px;
+}
+
+.list-img-team li:nth-child(7) {
+	left: 500px;
+	top: 500px;
+}
+
+.list-img-team li:nth-child(8) {
+	left: 750px;
+	top: 400px;
+}
+
+.list-img-team li a {
+	padding: 5px;
+	width: 250px;
+	height: 250px;
+	display: block;
+}
+
+.list-img-team :nth-child(1) a {
+	width: 500px;
+	height: 500px;
+}
+
+.list-img-team :nth-child(3) a {
+	width: 248px;
+	height: 400px;
+}
+
+.list-img-team :nth-child(8) a {
+	width: 248px;
+	height: 350px;
+}
+
+.list-img-team li a > div {
+	height: 100%;
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+	transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	overflow: hidden;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+}
+
+.list-img-team li a:hover > div {
+	transform: scale(0.97);
+	-webkit-transform: scale(0.97);
+	-moz-transform: scale(0.97);
+	-ms-transform: scale(0.97);
+	-o-transform: scale(0.97);
+}
+
+@media (max-width: 1020px) {
+	.list-img-team {
+		display: flex;
+		flex-wrap: wrap;
+		height: auto;
+	}
+
+	.list-img-team li {
+		position: relative;
+		width: 50%;
+		left: 0 !important;
+		top: 0 !important;
+	}
+
+	.list-img-team li a {
+		width: 100% !important;
+		height: 255px !important;
+	}
+}
+
+/*=======================================
+ico-play-btn 
+=======================================*/
+.ico-play-btn {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 20%;
+	height: auto;
+	transform: translate3d(-50%, -50%, 0);
+	-webkit-transform: translate3d(-50%, -50%, 0);
+	-moz-transform: translate3d(-50%, -50%, 0);
+	-ms-transform: translate3d(-50%, -50%, 0);
+	-o-transform: translate3d(-50%, -50%, 0);
+}
+
+/*=======================================
+ttl-cmn-job 
+=======================================*/
+.ttl-cmn-job {
+	font-size: 2rem;
+	margin-bottom: 20px;
+	color: #127dbc;
+	display: block;
+	text-align: center;
+	width: 100%;
+}
+/*=======================================
+txt-detail-job 
+=======================================*/
+.txt-detail-job {
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+}
+
+.txt-detail-job span {
+	color: #fff;
+	text-shadow: 3px 3px 6px #00000066;
+	margin-right: 37px;
+}
+
+.txt-detail-job span:last-of-type {
+	margin-right: 0;
+}
+
+.txt-detail-job span i {
+	margin-right: 5px;
+}
