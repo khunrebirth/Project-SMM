@@ -237,4 +237,5 @@
 	</div>
 </section>
 <?php include 'layouts/sitemap.php'; ?>
+<script type="text/javascript" src="<?php echo base_url('resources/front_end/js/wow.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('resources/front_end/js/script_home.min.js'); ?>"></script>

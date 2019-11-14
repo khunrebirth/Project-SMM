@@ -69,3 +69,4 @@
 	</div>
 </section>
 <?php include 'layouts/sitemap.php'; ?>
+<script type="text/javascript" src='https://platform-api.sharethis.com/js/sharethis.js#property=5dc3d55e04e0990012c1f4ee&product=inline-share-buttons&cms=website' async='async'></script>

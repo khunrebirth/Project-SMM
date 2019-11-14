@@ -1,6 +1,5 @@
 function config() {
-    new WOW().init()
-
+    // new WOW().init()
     $(".navbar").toggleClass('scrolled', $(this).scrollTop() > $(".navbar").height())
 }
 

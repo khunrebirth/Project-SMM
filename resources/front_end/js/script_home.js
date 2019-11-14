@@ -1,4 +1,9 @@
+function config_wow() {
+    new WOW().init()
+}
 $(function () {
+
+config_wow();
     $(".client__navs a:first").tab('show')
 
     $('.box-teams-slide').owlCarousel({
