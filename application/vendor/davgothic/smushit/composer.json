@@ -1,0 +1,31 @@
+{
+  "name": "davgothic/smushit",
+  "type": "library",
+  "description": "SmushIt is a PHP client for the popular Yahoo! image compression web service Smush.it",
+  "homepage": "https://github.com/davgothic/smushit",
+  "keywords": ["image-optimization", "smushit"],
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "David Hancock",
+      "email": "davgothic@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^4.8",
+    "guzzlehttp/guzzle": "^6.0"
+  },
+  "suggest": {
+    "guzzlehttp/guzzle": "Required for using Guzzle client"
+  },
+  "autoload": {
+    "psr-4": {
+      "DavGothic\\SmushIt\\": "src/"
+    }
+  }
+}

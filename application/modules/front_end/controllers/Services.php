@@ -25,6 +25,24 @@ class Services extends MX_Controller
 		$this->lang = $this->config->item('language_abbr');
 	}
 
+	private function load_css_critical() {
+		return '
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+			<link rel="stylesheet" href="https://unpkg.com/tippy.js@5/dist/backdrop.css" />
+			<link rel="stylesheet" href="' . base_url('resources/front_end/css/style_services.min.css') . '">
+		';
+	}
+
+	private function load_js_critical() {
+		return '
+			<script type="text/javascript" src="https://unpkg.com/popper.js@1"></script>
+			<script type="text/javascript" src="https://unpkg.com/tippy.js@5"></script>
+			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+			<script type="text/javascript" src="' . base_url('resources/front_end/js/script_services.min.js') . '"></script>
+		';
+	}
+
 	public function index() {}
 
 	public function show($lang, $service_slug)
@@ -71,6 +89,10 @@ class Services extends MX_Controller
 
 		// Content
 		$data['content'] = 'services';
+
+		// Load CSS & JS Critical
+		$data['css_critical'] = $this->load_css_critical();
+		$data['js_critical'] = $this->load_js_critical();
 
 		// Utilities
 		$data['service'] = $this->filter_data_service($service);

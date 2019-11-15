@@ -6,8 +6,8 @@ $CI =& get_instance();
 $CI->load->model('Service_model');
 $CI->load->model('Blog_model');
 ?>
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v4.0&appId=189754555007223&autoLogAppEvents=1"></script>
+<!--<div id="fb-root"></div>-->
+<!--<script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v4.0&appId=189754555007223&autoLogAppEvents=1"></script>-->
 <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style_sitemap.min.css'); ?>">
 <div class="sec-footer-sitemap" id="accordion">
 	<div class="card text-center box-footer-sitemap">
@@ -20,22 +20,22 @@ $CI->load->model('Blog_model');
 								<div class="col-cmn-5 item-fb-page">
 									<img src="<?php echo base_url('resources/front_end/images/title-social.png'); ?>" alt="">
 								</div>
-								<div class="col-cmn-5 item-fb-page">
-									<div class="fb-page" data-href="https://www.facebook.com/iSEO.SEM/" data-width="" data-height="" data-small-header="<?php if (!smm_is_mobile()) { echo 'false'; } { echo 'true'; } ?>" data-adapt-container-width="<?php if (!smm_is_mobile()) { echo 'true'; } else { echo 'false'; } ?>" data-hide-cover="<?php if (!smm_is_mobile()) { echo 'false'; } else { echo 'true'; } ?>" data-show-facepile="false">
-										<blockquote cite="https://www.facebook.com/iSEO.SEM/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/iSEO.SEM/">รับบริการทำ SEO SEM</a>
-										</blockquote>
-									</div>
-								</div>
-								<div class="col-cmn-5 item-fb-page">
-									<div class="fb-page" data-href="https://www.facebook.com/SocialMediaMarketing/" data-width="" data-height="" data-small-header="<?php if (!smm_is_mobile()) { echo 'false'; } { echo 'true'; } ?>" data-adapt-container-width="<?php if (!smm_is_mobile()) { echo 'true'; } else { echo 'false'; } ?>" data-hide-cover="<?php if (!smm_is_mobile()) { echo 'false'; } else { echo 'true'; } ?>" data-show-facepile="false">
-										<blockquote cite="https://www.facebook.com/SocialMediaMarketing/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/SocialMediaMarketing/">Social Media Master</a></blockquote>
-									</div>
-								</div>
-								<div class="col-cmn-5 item-fb-page">
-									<div class="fb-page" data-href="https://www.facebook.com/EmailDirectMarketing.EDM/" data-width="" data-height="" data-small-header="<?php if (!smm_is_mobile()) { echo 'false'; } { echo 'true'; } ?>" data-adapt-container-width="<?php if (!smm_is_mobile()) { echo 'true'; } else { echo 'false'; } ?>" data-hide-cover="<?php if (!smm_is_mobile()) { echo 'false'; } else { echo 'true'; } ?>" data-show-facepile="false">
-										<blockquote cite="https://www.facebook.com/EmailDirectMarketing.EDM/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/EmailDirectMarketing.EDM/">บริการรับส่งอีเมล์ : Email Direct Marketing</a></blockquote>
-									</div>
-								</div>
+<!--								<div class="col-cmn-5 item-fb-page">-->
+<!--									<div class="fb-page" data-href="https://www.facebook.com/iSEO.SEM/" data-width="" data-height="" data-small-header="--><?php //if (!smm_is_mobile()) { echo 'false'; } { echo 'true'; } ?><!--" data-adapt-container-width="--><?php //if (!smm_is_mobile()) { echo 'true'; } else { echo 'false'; } ?><!--" data-hide-cover="--><?php //if (!smm_is_mobile()) { echo 'false'; } else { echo 'true'; } ?><!--" data-show-facepile="false">-->
+<!--										<blockquote cite="https://www.facebook.com/iSEO.SEM/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/iSEO.SEM/">รับบริการทำ SEO SEM</a>-->
+<!--										</blockquote>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--								<div class="col-cmn-5 item-fb-page">-->
+<!--									<div class="fb-page" data-href="https://www.facebook.com/SocialMediaMarketing/" data-width="" data-height="" data-small-header="--><?php //if (!smm_is_mobile()) { echo 'false'; } { echo 'true'; } ?><!--" data-adapt-container-width="--><?php //if (!smm_is_mobile()) { echo 'true'; } else { echo 'false'; } ?><!--" data-hide-cover="--><?php //if (!smm_is_mobile()) { echo 'false'; } else { echo 'true'; } ?><!--" data-show-facepile="false">-->
+<!--										<blockquote cite="https://www.facebook.com/SocialMediaMarketing/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/SocialMediaMarketing/">Social Media Master</a></blockquote>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--								<div class="col-cmn-5 item-fb-page">-->
+<!--									<div class="fb-page" data-href="https://www.facebook.com/EmailDirectMarketing.EDM/" data-width="" data-height="" data-small-header="--><?php //if (!smm_is_mobile()) { echo 'false'; } { echo 'true'; } ?><!--" data-adapt-container-width="--><?php //if (!smm_is_mobile()) { echo 'true'; } else { echo 'false'; } ?><!--" data-hide-cover="--><?php //if (!smm_is_mobile()) { echo 'false'; } else { echo 'true'; } ?><!--" data-show-facepile="false">-->
+<!--										<blockquote cite="https://www.facebook.com/EmailDirectMarketing.EDM/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/EmailDirectMarketing.EDM/">บริการรับส่งอีเมล์ : Email Direct Marketing</a></blockquote>-->
+<!--									</div>-->
+<!--								</div>-->
 								<div class="col-cmn-5 item-fb-page item-youtube">
 									<a href="#dummy">
 										<img class="img-fluid" src="<?php echo base_url(!smm_is_safari() ? 'resources/front_end/images/youtube.png.webp' : 'resources/front_end/images/youtube.png'); ?>" alt="youtube">

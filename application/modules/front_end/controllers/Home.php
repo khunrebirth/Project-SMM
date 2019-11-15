@@ -32,6 +32,23 @@ class Home extends MX_Controller
 		$this->lang = $this->config->item('language_abbr');
 	}
 
+	private function load_css_critical() {
+		return '
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" integrity="sha256-PHcOkPmOshsMBC+vtJdVr5Mwb7r0LkSVJPlPrp/IMpU=" crossorigin="anonymous" />
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+			<link rel="stylesheet" href="' . base_url('resources/front_end/css/style_home.min.css') . '">
+		';
+	}
+
+	private function load_js_critical() {
+		return '
+			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+			<script type="text/javascript" src="' . base_url('resources/front_end/js/wow.js') . '"></script>
+			<script type="text/javascript" src="' . base_url('resources/front_end/js/script_home.min.js') . '"></script>
+		';
+	}
+
 	public function index()
 	{
 		/*
@@ -77,6 +94,10 @@ class Home extends MX_Controller
 
 		// Content
 		$data['content'] = 'home';
+
+		// Load CSS & JS Critical
+		$data['css_critical'] = $this->load_css_critical();
+		$data['js_critical'] = $this->load_js_critical();
 
 		// Utilities
 		$data['about'] = $this->Page_model->get_page_by_id(3);

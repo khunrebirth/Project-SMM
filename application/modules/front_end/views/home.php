@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style_home.min.css'); ?>">
 <header id="home">
 	<div class="container h-100">
 		<div class="row justify-content-end h-100 align-items-center">
@@ -265,5 +264,3 @@
 	</div>
 </section>
 <?php include 'layouts/sitemap.php'; ?>
-<script type="text/javascript" src="<?php echo base_url('resources/front_end/js/wow.js'); ?>"></script>
-<script type="text/javascript" src="<?php echo base_url('resources/front_end/js/script_home.min.js'); ?>"></script>

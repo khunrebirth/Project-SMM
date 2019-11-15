@@ -1,7 +1,3 @@
-<script src="https://unpkg.com/popper.js@1"></script>
-<script src="https://unpkg.com/tippy.js@5"></script>
-<link rel="stylesheet" href="https://unpkg.com/tippy.js@5/dist/backdrop.css" />
-<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style_services.min.css'); ?>">
 <section class="page-title main-hero-service p-0">
 	<img class="img-fluid" src="<?php echo base_url((!smm_is_mobile()) ? 'storage/uploads/images/banners/' . unserialize($service['banner_img'])[$lang] : 'storage/uploads/images/banners/' . unserialize($service['banner_img_moblie'])[$lang]); ?>" alt="<?php echo unserialize($service['banner_img_title_alt'])[$lang]; ?>">
 	<div class="ttl-header-hero wow">
@@ -122,4 +118,3 @@
 	</section>
 <?php } ?>
 <?php include 'layouts/sitemap.php'; ?>
-<script type="text/javascript" src="<?php echo base_url('resources/front_end/js/script_services.min.js'); ?>"></script>

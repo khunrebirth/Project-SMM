@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 14, 2019 at 02:51 PM
+-- Generation Time: Nov 15, 2019 at 02:40 PM
 -- Server version: 5.7.17-log
 -- PHP Version: 5.6.30
 
@@ -420,30 +420,6 @@ CREATE TABLE `logs` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `logs`
---
-
-INSERT INTO `logs` (`id`, `event_id`, `detail`, `user_id`, `ip`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(697, 1, 'เข้าสู่ระบบ SMM Backoffice', 2, '192.168.1.5', '2019-11-12 06:39:12', NULL, NULL),
-(698, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.5', '2019-11-12 07:02:20', NULL, NULL),
-(699, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.5', '2019-11-12 07:06:50', NULL, NULL),
-(700, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.5', '2019-11-12 07:09:32', NULL, NULL),
-(701, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.5', '2019-11-12 07:12:41', NULL, NULL),
-(702, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.5', '2019-11-12 07:20:03', NULL, NULL),
-(703, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.5', '2019-11-12 07:21:59', NULL, NULL),
-(704, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.5', '2019-11-12 07:29:56', NULL, NULL),
-(705, 4, 'แก้ไข Service (Services Page)', 2, '192.168.1.5', '2019-11-12 07:30:49', NULL, NULL),
-(706, 4, 'แก้ไข Career (Join Us Page)', 2, '192.168.1.5', '2019-11-12 07:32:01', NULL, NULL),
-(707, 1, 'เข้าสู่ระบบ SMM Backoffice', 2, '192.168.1.7', '2019-11-13 03:38:47', NULL, NULL),
-(708, 4, 'แก้ไข Content (About Page)', 2, '192.168.1.7', '2019-11-13 03:39:34', NULL, NULL),
-(709, 4, 'แก้ไข Content (About Page)', 2, '192.168.1.7', '2019-11-13 03:40:43', NULL, NULL),
-(710, 4, 'แก้ไข Content (About Page)', 2, '192.168.1.7', '2019-11-13 03:41:02', NULL, NULL),
-(711, 4, 'แก้ไข Content (About Page)', 2, '192.168.1.7', '2019-11-13 03:41:34', NULL, NULL),
-(712, 4, 'แก้ไข Content (About Page)', 2, '192.168.1.7', '2019-11-13 03:42:08', NULL, NULL),
-(713, 4, 'แก้ไข Content (About Page)', 2, '192.168.1.7', '2019-11-13 03:42:30', NULL, NULL),
-(714, 4, 'แก้ไข Content (About Page)', 2, '192.168.1.7', '2019-11-13 03:42:46', NULL, NULL);
 
 -- --------------------------------------------------------
 
