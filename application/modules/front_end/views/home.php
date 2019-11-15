@@ -1,6 +1,5 @@
 <header id="home">
-<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style_home.min.css'); ?>">
-<header class="lazy" data-bg="url('<?php echo base_url(!ssm_is_safari() ? 'resources/front_end/images/brn_top_01.jpg.webp' : 'resources/front_end/images/brn_top_01.jpg');?>')" id="home">
+<header class="lazy" data-bg="url('<?php echo base_url(!smm_is_safari() ? 'resources/front_end/images/brn_top_01.jpg.webp' : 'resources/front_end/images/brn_top_01.jpg');?>')" id="home">
 	<div class="container h-100">
 		<div class="row justify-content-end h-100 align-items-center">
 			<div class="text-center wow fadeInUp txt-top-home">
@@ -16,12 +15,7 @@
 <section id="about" class="showcase">
 	<div class="container-fluid p-0">
 		<div class="row no-gutters">
-<<<<<<< HEAD
-			<div class="col-md-6 col-lg-6 order-lg-2 showcase-img d-none d-sm-block lazy" data-bg="url('<?php echo base_url(!ssm_is_safari() ? 'storage/uploads/images/abouts/' . unserialize($about->img_section)[$lang] . '.webp' : 'storage/uploads/images/abouts/' . unserialize($about->img_section)[$lang]); ?>')">
-=======
-			<div class="col-md-6 col-lg-6 order-lg-2 showcase-img d-none d-sm-block" style="background-image: url('<?php echo base_url(!smm_is_safari() ? 'storage/uploads/images/abouts/' . unserialize($about->img_section)[$lang] . '.webp' : 'storage/uploads/images/abouts/' . unserialize($about->img_section)[$lang]); ?>');">
->>>>>>> a5b0fb1c44bbaf9084563a8276790361db27de62
-			</div>
+			<div class="col-md-6 col-lg-6 order-lg-2 showcase-img d-none d-sm-block lazy" data-bg="url('<?php echo base_url(!smm_is_safari() ? 'storage/uploads/images/abouts/' . unserialize($about->img_section)[$lang] . '.webp' : 'storage/uploads/images/abouts/' . unserialize($about->img_section)[$lang]); ?>')">
 			<div class="col-xs-12 col-md-6 col-lg-6 order-lg-1 my-auto showcase-text text-center wow fadeInLeft">
 				<div class="title-about ttl-home-img">
 					<?php
