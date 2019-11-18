@@ -1,5 +1,23 @@
 <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style_home.min.css'); ?>">
-<header class="lazy" data-bg="url('<?php echo base_url(!ssm_is_safari() ? 'resources/front_end/images/brn_top_01.jpg.webp' : 'resources/front_end/images/brn_top_01.jpg');?>')" id="home">
+
+<?php
+	$home_bg;
+	if(!smm_is_safari()){
+		if(smm_is_mobile() == 0){
+			$home_bg = base_url('resources/front_end/images/brn_top_01.jpg.webp');
+		}else{
+			$home_bg =  base_url('resources/front_end/images/bg-herobanner.jpg.webp');
+		}
+	}else{
+		if(smm_is_mobile() == 0){
+			$home_bg =  base_url('resources/front_end/images/brn_top_01.jpg');
+		}else{
+			$home_bg = base_url('resources/front_end/images/bg-herobanner.jpg');
+		}
+	}
+?>
+<header class="lazy" 
+	data-bg="url('<?php echo $home_bg;?>')" id="home" >
 	<div class="container h-100">
 		<div class="row justify-content-end h-100 align-items-center">
 			<div class="text-center wow fadeInUp txt-top-home">
@@ -15,11 +33,7 @@
 <section id="about" class="showcase">
 	<div class="container-fluid p-0">
 		<div class="row no-gutters">
-<<<<<<< HEAD
-			<div class="col-md-6 col-lg-6 order-lg-2 showcase-img d-none d-sm-block lazy" data-bg="url('<?php echo base_url(!ssm_is_safari() ? 'storage/uploads/images/abouts/' . unserialize($about->img_section)[$lang] . '.webp' : 'storage/uploads/images/abouts/' . unserialize($about->img_section)[$lang]); ?>')">
-=======
-			<div class="col-md-6 col-lg-6 order-lg-2 showcase-img d-none d-sm-block" style="background-image: url('<?php echo base_url(!smm_is_safari() ? 'storage/uploads/images/abouts/' . unserialize($about->img_section)[$lang] . '.webp' : 'storage/uploads/images/abouts/' . unserialize($about->img_section)[$lang]); ?>');">
->>>>>>> a5b0fb1c44bbaf9084563a8276790361db27de62
+			<div class="col-md-6 col-lg-6 order-lg-2 showcase-img d-none d-sm-block lazy" data-bg="url('<?php echo base_url(!smm_is_safari() ? 'storage/uploads/images/abouts/' . unserialize($about->img_section)[$lang] . '.webp' : 'storage/uploads/images/abouts/' . unserialize($about->img_section)[$lang]); ?>')">
 			</div>
 			<div class="col-xs-12 col-md-6 col-lg-6 order-lg-1 my-auto showcase-text text-center wow fadeInLeft">
 				<div class="title-about ttl-home-img">
@@ -78,7 +92,8 @@
 			<div class="row">
 				<?php foreach ($top_clients as $top_client) { ?>
 					<div class="col-4 col-md-4 col-lg-2 mb-4">
-						<img data-src="<?php echo base_url(!smm_is_safari() ? '/storage/uploads/images/home/' .  unserialize($top_client->image)[$lang] . '.webp' : '/storage/uploads/images/home/' .  unserialize($top_client->image)[$lang]); ?>" alt="<?php echo unserialize($top_client->title)[$lang]; ?>" class="img-fluid img-clients lazy">
+						<img data-src="<?php echo base_url(!smm_is_safari() ? '/storage/uploads/images/home/' .  unserialize($top_client->image)[$lang] . '.webp' : '/storage/uploads/images/home/' .  unserialize($top_client->image)[$lang]); ?>" alt="<?php echo unserialize($top_client->title)[$lang]; ?>" 
+						class="img-fluid img-clients <?php echo (smm_is_mobile())?'owl-lazy':'lazy'; ?>">
 					</div>
 				<?php } ?>
 			</div>
@@ -86,7 +101,7 @@
 				<?php $slice_clients = array_slice($clients, 0, 6); ?>
 				<?php foreach ($slice_clients as $client) { ?>
 					<div class="col-4 col-md-4 col-lg-2 mb-4">
-						<img class="img-fluid lazy" data-src="<?php echo base_url(!smm_is_safari() ? 'storage/uploads/images/clients/' . unserialize($client->image)[$lang] .'.webp' : 'storage/uploads/images/clients/' . unserialize($client->image)[$lang]); ?>" alt="<?php echo unserialize($client->title)[$lang]; ?>">
+						<img class="img-fluid <?php echo (smm_is_mobile())?'owl-lazy':'lazy'; ?>" data-src="<?php echo base_url(!smm_is_safari() ? 'storage/uploads/images/clients/' . unserialize($client->image)[$lang] .'.webp' : 'storage/uploads/images/clients/' . unserialize($client->image)[$lang]); ?>" alt="<?php echo unserialize($client->title)[$lang]; ?>">
 					</div>
 				<?php } ?>
 			</div>
@@ -113,7 +128,8 @@
 							<!-- TODO:: handle Portoflio Video -->
 
 						<?php } else { ?>
-							<img data-src="<?php echo base_url(!smm_is_safari() ? '/storage/uploads/images/home/' . unserialize($top_portfolio->image)[$lang] . '.webp' : '/storage/uploads/images/home/' . unserialize($top_portfolio->image)[$lang]); ?>" alt="<?php echo unserialize($top_portfolio->title)[$lang]; ?>" class="img-fluid img-clients lazy">
+							<img data-src="<?php echo base_url(!smm_is_safari() ? '/storage/uploads/images/home/' . unserialize($top_portfolio->image)[$lang] . '.webp' : '/storage/uploads/images/home/' . unserialize($top_portfolio->image)[$lang]); ?>" alt="<?php echo unserialize($top_portfolio->title)[$lang]; ?>" 
+							class="img-fluid img-clients <?php echo (smm_is_mobile())?'owl-lazy':'lazy'; ?> ">
 						<?php } ?>
 						<div class="caption-detail">
 							<p class="ttl"><?php echo unserialize($top_portfolio->text)[$lang]; ?></p>
@@ -131,7 +147,7 @@
 							<!-- TODO:: handle Portoflio Video -->
 
 						<?php } else { ?>
-							<img class="img-fluid lazy" data-src="<?php echo base_url(!smm_is_safari() ? 'storage/uploads/images/portfolios/' . unserialize($portfolio->image)[$lang] . '.webp' : 'storage/uploads/images/portfolios/' . unserialize($portfolio->image)[$lang]); ?>" alt="<?php echo unserialize($portfolio->title)[$lang]; ?>">
+							<img class="img-fluid <?php echo (smm_is_mobile())?'owl-lazy':'lazy'; ?> " data-src="<?php echo base_url(!smm_is_safari() ? 'storage/uploads/images/portfolios/' . unserialize($portfolio->image)[$lang] . '.webp' : 'storage/uploads/images/portfolios/' . unserialize($portfolio->image)[$lang]); ?>" alt="<?php echo unserialize($portfolio->title)[$lang]; ?>">
 						<?php } ?>
 						<div class="caption-detail">
 							<p class="ttl"><?php echo unserialize($portfolio->text)[$lang]; ?></p>

@@ -6,7 +6,7 @@ $CI =& get_instance();
 $CI->load->model('Service_model');
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="en" class="preload">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -44,9 +44,17 @@ $CI->load->model('Service_model');
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ScrollToFixed/1.0.8/jquery-scrolltofixed-min.js" integrity="sha256-Kl1vQ0yioe6J6idmj55qGNgoOrKOTJh4WYFdmiVnvZw=" crossorigin="anonymous"></script>
     <script type="text/javascript">
         window.base_url = "<?php echo base_url(); ?>"
+        $(document).ready(function() {
+            setTimeout(function(){ 
+                $('html').removeClass('preload');
+                $('.preload').hide('slow');
+            }, 500);
+        });
     </script>
 </head>
 <body>
+
+<section class="preload"></section>
 
 <nav class="navbar navbar-light fixed-top navbar-expand-lg navbar-no-bg">
     <a class="navbar-brand" href="<?php echo base_url($lang . '/' . lang('menu_home')); ?>">

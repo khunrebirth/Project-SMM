@@ -49,6 +49,7 @@ $(function () {
         nav: false,
         loop: true,
         dots: true,
+        lazyLoad: true,
     };
     var select_owl_client = $('.box-slide-client-sp');
     var select_owl_portfolio = $('.box-slide-portfolio-sp');
