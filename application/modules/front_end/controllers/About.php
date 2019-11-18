@@ -23,13 +23,15 @@ class About extends MX_Controller
 		$this->lang = $this->config->item('language_abbr');
 	}
 
-	private function load_css_critical() {
+	private function load_css_critical()
+	{
 		return '
 			<link rel="stylesheet" href="' . base_url('resources/front_end/css/style_about.min.css') . '">
 		';
 	}
 
-	private function load_js_critical() {
+	private function load_js_critical()
+	{
 		return '
 			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
 			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>

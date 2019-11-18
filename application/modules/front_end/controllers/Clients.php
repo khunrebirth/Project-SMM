@@ -6,13 +6,15 @@ class Clients extends MX_Controller
 
 	private $lang = 'th';
 
-	private function load_css_critical() {
+	private function load_css_critical()
+	{
 		return '
 			<link rel="stylesheet" href="' . base_url('resources/front_end/css/style_clients.min.css') . '">
 		';
 	}
 
-	private function load_js_critical() {
+	private function load_js_critical()
+	{
 		return '
 			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ScrollToFixed/1.0.8/jquery-scrolltofixed-min.js" integrity="sha256-Kl1vQ0yioe6J6idmj55qGNgoOrKOTJh4WYFdmiVnvZw=" crossorigin="anonymous"></script>
 			<script type="text/javascript" src="' . base_url('resources/front_end/js/script_clients.min.js') . '"></script>

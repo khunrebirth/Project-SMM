@@ -24,13 +24,15 @@ class Teams extends MX_Controller
 		$this->lang = $this->config->item('language_abbr');
 	}
 
-	private function load_css_critical() {
+	private function load_css_critical()
+	{
 		return '
 			<link rel="stylesheet" href="' . base_url('resources/front_end/css/style_teams.min.css') . '">
 		';
 	}
 
-	private function load_js_critical() {
+	private function load_js_critical()
+	{
 		return '';
 	}
 

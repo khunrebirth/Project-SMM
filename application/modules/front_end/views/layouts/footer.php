@@ -22,7 +22,6 @@
 	var scrollFromTop = $(".sec-footer-sitemap").offset().top;
 	$(document).scroll(function () {
 		if ($(this).scrollTop() + $(window).height()  > scrollFromTop) {
-			console.log('to');
 			if(!$(".sec-footer-sitemap").hasClass('including')){
 				$(".sec-footer-sitemap").addClass('including');
 				script('https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v4.0&appId=189754555007223&autoLogAppEvents=1');

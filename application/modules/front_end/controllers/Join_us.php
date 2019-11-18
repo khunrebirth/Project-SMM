@@ -25,7 +25,8 @@ class Join_us extends MX_Controller
 		$this->lang = $this->config->item('language_abbr');
 	}
 
-	private function load_css_critical($page) {
+	private function load_css_critical($page)
+	{
 
 		$css_critical = '';
 
@@ -57,7 +58,8 @@ class Join_us extends MX_Controller
 		return $css_critical;
 	}
 
-	private function load_js_critical($page) {
+	private function load_js_critical($page)
+	{
 
 		$js_critical = '';
 

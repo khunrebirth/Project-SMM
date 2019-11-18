@@ -25,7 +25,8 @@ class Services extends MX_Controller
 		$this->lang = $this->config->item('language_abbr');
 	}
 
-	private function load_css_critical() {
+	private function load_css_critical()
+	{
 		return '
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
@@ -35,7 +36,8 @@ class Services extends MX_Controller
 		';
 	}
 
-	private function load_js_critical() {
+	private function load_js_critical()
+	{
 		return '
 			<script type="text/javascript" src="https://unpkg.com/popper.js@1"></script>
 			<script type="text/javascript" src="https://unpkg.com/tippy.js@5"></script>
