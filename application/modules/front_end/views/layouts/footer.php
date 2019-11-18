@@ -18,5 +18,25 @@
 </script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.3.0/dist/lazyload.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url('resources/front_end/js/script.min.js'); ?>"></script>
+<script type="text/javascript">
+	var scrollFromTop = $(".sec-footer-sitemap").offset().top;
+	$(document).scroll(function () {
+		if ($(this).scrollTop() + $(window).height()  > scrollFromTop) {
+			console.log('to');
+			if(!$(".sec-footer-sitemap").hasClass('including')){
+				$(".sec-footer-sitemap").addClass('including');
+				script('https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v4.0&appId=189754555007223&autoLogAppEvents=1');
+			}
+		}
+		function script(url) {
+		    var s = document.createElement('script');
+		    s.type = 'text/javascript';
+		    s.async = true;
+		    s.src = url;
+		    var x = document.getElementsByTagName('head')[0];
+		    x.appendChild(s);
+		}
+	});
+</script>
 </body>
 </html>

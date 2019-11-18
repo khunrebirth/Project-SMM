@@ -7,7 +7,7 @@ $CI->load->model('Service_model');
 $CI->load->model('Blog_model');
 ?>
 <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v4.0&appId=189754555007223&autoLogAppEvents=1"></script>
+<!-- <script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v4.0&appId=189754555007223&autoLogAppEvents=1"></script> -->
 <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style_sitemap.min.css'); ?>">
 <div class="sec-footer-sitemap" id="accordion">
 	<div class="card text-center box-footer-sitemap">
