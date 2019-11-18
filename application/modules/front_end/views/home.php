@@ -1,9 +1,9 @@
 <?php
-	$home_bg;
-	if(!smm_is_safari()) {
-		$home_bg = (!smm_is_mobile())? base_url('resources/front_end/images/brn_top_01.jpg.webp'): base_url('resources/front_end/images/bg-herobanner.jpg.webp');
-	}else{
-		$home_bg = (!smm_is_mobile())? base_url('resources/front_end/images/brn_top_01.jpg'): base_url('resources/front_end/images/bg-herobanner.jpg');
+	$home_bg = '';
+	if (!smm_is_safari()) {
+		$home_bg = !smm_is_mobile() ? base_url('resources/front_end/images/brn_top_01.jpg.webp') : base_url('resources/front_end/images/bg-herobanner.jpg.webp');
+	} else {
+		$home_bg = !smm_is_mobile() ? base_url('resources/front_end/images/brn_top_01.jpg') : base_url('resources/front_end/images/bg-herobanner.jpg');
 	}
 ?>
 <header class="lazy" data-bg="url('<?php echo $home_bg; ?>')" id="home">
