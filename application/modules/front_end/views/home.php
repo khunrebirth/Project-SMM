@@ -1,23 +1,5 @@
-<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style_home.min.css'); ?>">
-
-<?php
-	$home_bg;
-	if(!smm_is_safari()){
-		if(smm_is_mobile() == 0){
-			$home_bg = base_url('resources/front_end/images/brn_top_01.jpg.webp');
-		}else{
-			$home_bg =  base_url('resources/front_end/images/bg-herobanner.jpg.webp');
-		}
-	}else{
-		if(smm_is_mobile() == 0){
-			$home_bg =  base_url('resources/front_end/images/brn_top_01.jpg');
-		}else{
-			$home_bg = base_url('resources/front_end/images/bg-herobanner.jpg');
-		}
-	}
-?>
-<header class="lazy" 
-	data-bg="url('<?php echo $home_bg;?>')" id="home" >
+<header id="home">
+<header class="lazy" data-bg="url('<?php echo base_url(!smm_is_safari() ? 'resources/front_end/images/brn_top_01.jpg.webp' : 'resources/front_end/images/brn_top_01.jpg');?>')" id="home">
 	<div class="container h-100">
 		<div class="row justify-content-end h-100 align-items-center">
 			<div class="text-center wow fadeInUp txt-top-home">
@@ -34,7 +16,6 @@
 	<div class="container-fluid p-0">
 		<div class="row no-gutters">
 			<div class="col-md-6 col-lg-6 order-lg-2 showcase-img d-none d-sm-block lazy" data-bg="url('<?php echo base_url(!smm_is_safari() ? 'storage/uploads/images/abouts/' . unserialize($about->img_section)[$lang] . '.webp' : 'storage/uploads/images/abouts/' . unserialize($about->img_section)[$lang]); ?>')">
-			</div>
 			<div class="col-xs-12 col-md-6 col-lg-6 order-lg-1 my-auto showcase-text text-center wow fadeInLeft">
 				<div class="title-about ttl-home-img">
 					<?php
@@ -285,5 +266,3 @@
 	</div>
 </section>
 <?php include 'layouts/sitemap.php'; ?>
-<script type="text/javascript" src="<?php echo base_url('resources/front_end/js/wow.js'); ?>"></script>
-<script type="text/javascript" src="<?php echo base_url('resources/front_end/js/script_home.min.js'); ?>"></script>

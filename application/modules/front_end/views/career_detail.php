@@ -1,6 +1,3 @@
-<link rel="stylesheet" href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css">
-<link rel="stylesheet" href="<?php echo base_url('resources/front_end/js/jquery.Thailand.js/dist/jquery.Thailand.min.css'); ?>">
-<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style_career_detail.min.css'); ?>">
 <section class="page-title main-hero-service p-0">
 	<img class="img-fluid" src="<?php echo base_url((!smm_is_mobile()) ? 'storage/uploads/images/join_us/' . unserialize($career->img_cover)[$lang] : 'storage/uploads/images/join_us/' . unserialize($career->img_cover_moblie)[$lang]); ?>">
 	<div class="ttl-header-hero wow">
@@ -463,11 +460,3 @@
 	</div>
 </div>
 <?php include 'layouts/sitemap.php'; ?>
-<script type="text/javascript" src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.20/js/uikit.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url('resources/front_end/js/jquery.Thailand.js/dependencies/zip.js/zip.js'); ?>"></script>
-<script type="text/javascript" src="<?php echo base_url('resources/front_end/js/jquery.Thailand.js/dependencies/JQL.min.js'); ?>"></script>
-<script type="text/javascript" src="<?php echo base_url('resources/front_end/js/jquery.Thailand.js/dependencies/typeahead.bundle.js'); ?>"></script>
-<script type="text/javascript" src="<?php echo base_url('resources/front_end/js/jquery.Thailand.js/dist/jquery.Thailand.min.js'); ?>"></script>
-<script type="text/javascript" src="<?php echo base_url('resources/front_end/js/script_career_detail.min.js'); ?>"></script>
-

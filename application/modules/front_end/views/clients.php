@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style_clients.min.css'); ?>">
 <?php if ($banner) { ?>
 <section class="page-title main-hero-service p-0">
 	<img class="img-fluid" src="<?php echo base_url((!smm_is_mobile()) ? 'storage/uploads/images/banners/' . unserialize($banner->img)[$lang] : 'storage/uploads/images/banners/' . unserialize($banner->img_moblie)[$lang]); ?>" alt="<?php echo unserialize($banner->img_title_alt)[$lang]; ?>">
@@ -49,4 +48,3 @@
     </div>
 </section>
 <?php include 'layouts/sitemap.php'; ?>
-<script type="text/javascript" src="<?php echo base_url('resources/front_end/js/script_clients.min.js'); ?>"></script>

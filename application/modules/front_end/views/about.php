@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style_about.min.css'); ?>">
 <section id="about" >
     <div class="container">
         <div class="row">
@@ -10,9 +9,7 @@
             </div>
             <div class="col-md-12 col-lg-12 mt-4 mt-md-5 mb-1">
                 <h2 class="about__title--head mt-md-0 mt-4"><span>S</span>ocial Media Master</h2>
-                <p class="lead about__split--title--body mt-4">
-                    <?php echo unserialize($about->content_left)[$lang]; ?>
-                </p>
+                <p class="lead about__split--title--body mt-4"><?php echo unserialize($about->content_left)[$lang]; ?></p>
             </div>
             <div class="col-xs-12 col-md-12 col-lg-12 lead about__split--title--body mb-3 mb-md-5">
 				<?php echo unserialize($about->content_right)[$lang]; ?>
@@ -108,7 +105,5 @@
     </div>
 </section>
 <?php include 'layouts/sitemap.php'; ?>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
-<script type="text/javascript" src="<?php  echo base_url('resources/front_end/js/script_about.js'); ?>"></script>
+
 

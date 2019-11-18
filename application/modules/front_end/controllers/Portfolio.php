@@ -26,6 +26,19 @@ class Portfolio extends MX_Controller
 		$this->lang = $this->config->item('language_abbr');
 	}
 
+	private function load_css_critical() {
+		return '
+			<link rel="stylesheet" href="' . base_url('resources/front_end/css/style_portfolio.min.css') . '">
+		';
+	}
+
+	private function load_js_critical() {
+		return '
+			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ScrollToFixed/1.0.8/jquery-scrolltofixed-min.js" integrity="sha256-Kl1vQ0yioe6J6idmj55qGNgoOrKOTJh4WYFdmiVnvZw=" crossorigin="anonymous"></script>
+			<script type="text/javascript" src="' . base_url('resources/front_end/js/script_portfolio.min.js') . '"></script>
+		';
+	}
+
 	public function index()
 	{
 
@@ -67,6 +80,10 @@ class Portfolio extends MX_Controller
 
 		// Content
 		$data['content'] = 'portfolio';
+
+		// Load CSS & JS Critical
+		$data['css_critical'] = $this->load_css_critical();
+		$data['js_critical'] = $this->load_js_critical();
 
 		// Utilities
 		$data['portfolio_categories'] = $this->Portfolio_category_model->get_portfolio_category_all();

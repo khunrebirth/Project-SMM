@@ -6,6 +6,19 @@ class Clients extends MX_Controller
 
 	private $lang = 'th';
 
+	private function load_css_critical() {
+		return '
+			<link rel="stylesheet" href="' . base_url('resources/front_end/css/style_clients.min.css') . '">
+		';
+	}
+
+	private function load_js_critical() {
+		return '
+			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ScrollToFixed/1.0.8/jquery-scrolltofixed-min.js" integrity="sha256-Kl1vQ0yioe6J6idmj55qGNgoOrKOTJh4WYFdmiVnvZw=" crossorigin="anonymous"></script>
+			<script type="text/javascript" src="' . base_url('resources/front_end/js/script_clients.min.js') . '"></script>
+		';
+	}
+
 	public function __construct()
 	{
 		parent::__construct();
@@ -67,6 +80,10 @@ class Clients extends MX_Controller
 
 		// Content
 		$data['content'] = 'clients';
+
+		// Load CSS & JS Critical
+		$data['css_critical'] = $this->load_css_critical();
+		$data['js_critical'] = $this->load_js_critical();
 
 		// Utilities
 		$data['client_categories'] = $this->Client_category_model->get_client_category_all();
