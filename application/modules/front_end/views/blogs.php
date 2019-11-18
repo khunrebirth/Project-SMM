@@ -1,6 +1,6 @@
 <?php if ($banner) { ?>
 <section class="page-title main-hero-service p-0">
-	<img class="img-fluid" src="<?php echo base_url((!smm_is_mobile()) ? 'storage/uploads/images/banners/' . unserialize($banner->img)[$lang] : 'storage/uploads/images/banners/' . unserialize($banner->img_moblie)[$lang]); ?>" alt="<?php echo unserialize($banner->img_title_alt)[$lang]; ?>">
+	<img class="img-fluid lazy" data-src="<?php echo base_url((!smm_is_mobile()) ? 'storage/uploads/images/banners/' . unserialize($banner->img)[$lang] : 'storage/uploads/images/banners/' . unserialize($banner->img_moblie)[$lang]); ?>" alt="<?php echo unserialize($banner->img_title_alt)[$lang]; ?>">
 	<div class="ttl-header-hero wow">
 		<h1><?php echo unserialize($banner->title)[$lang]; ?></h1>
 	</div>
@@ -10,8 +10,8 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="title-client col-12 text-center ttl-top-space">
-				<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-blog.png' : 'resources/front_end/images/title-blog.png'); ?>" class="img-fluid d-none d-md-block mx-auto">
-				<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-blog_sp.png' : 'resources/front_end/images/title-blog_sp.png'); ?>" class="img-fluid d-block d-md-none mx-auto">
+				<img data-src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-blog.png' : 'resources/front_end/images/title-blog.png'); ?>" class="img-fluid d-none d-md-block mx-auto lazy">
+				<img data-src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-blog_sp.png' : 'resources/front_end/images/title-blog_sp.png'); ?>" class="img-fluid d-block d-md-none mx-auto lazy">
 			</div>
 		</div>
 		<div class="sec-blogs-01 row">
@@ -22,13 +22,13 @@
 				</a>
 				<ul class="list-catagory-client" id="menuService">
 					<li class="ttl-list-catagory d-none d-lg-block">
-						<img src="<?php echo base_url('resources/front_end/images/service-menu.png');?>" alt="">
+						<img class="lazy" data-src="<?php echo base_url('resources/front_end/images/service-menu.png');?>" alt="">
 					</li>
 					<?php foreach ($blog_categories as $key => $blog_category) { ?>
 						<li>
 							<a class="<?php echo ( $category_id == $blog_category->id )?'is-active':''; ?>" href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/' . unserialize($blog_category->slug)[$lang]); ?>">
 								<figure>
-									<img src="<?php echo base_url('storage/uploads/images/blogs/'.unserialize($blog_category->icon)[$lang]); ?>" alt="">
+									<img class="lazy" data-src="<?php echo base_url('storage/uploads/images/blogs/'.unserialize($blog_category->icon)[$lang]); ?>" alt="">
 								</figure>	
 								<span><?php echo unserialize($blog_category->title)[$lang]; ?></span>
 							</a>
@@ -42,7 +42,7 @@
 						<div class="col-xs-12 col-sm-6 col-lg-4 item-blog animate-cmn categoryGroup-<?php echo $blog['category_blog_id']; ?>">
 							<article class="blog blog__modern">
 								<a class="blog__modern--figure" href="<?php echo base_url($lang . '/' . lang('menu_blogs') . '/' . unserialize($blog['blog_category_slug'])[$lang] . '/' .  unserialize($blog['slug'])[$lang]); ?>">
-									<img src="<?php echo base_url('storage/uploads/images/blogs/' . unserialize($blog['img'])[$lang]) ?>" alt="<?php echo unserialize($blog['img_title_alt'])[$lang]; ?>" width="370" height="307">
+									<img class="lazy" data-src="<?php echo base_url('storage/uploads/images/blogs/' . unserialize($blog['img'])[$lang]) ?>" alt="<?php echo unserialize($blog['img_title_alt'])[$lang]; ?>" width="370" height="307">
 									
 									<div class="blog__modern--time d-none d-sm-block">
 										<time datetime="<?php echo $blog['created_at']; ?>"><span class="blog__modern--time--month"><?php echo date_format(date_create($blog['created_at']), 'm'); ?></span><span class="blog__modern--time--number"><?php echo date_format(date_create($blog['created_at']), 'd'); ?></span></time>

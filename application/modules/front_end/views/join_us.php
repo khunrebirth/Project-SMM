@@ -1,6 +1,6 @@
 <?php if ($banner) { ?>
 <section class="page-title main-hero-service p-0" >
-	<img class="img-fluid" src="<?php echo base_url((!smm_is_mobile()) ? 'storage/uploads/images/banners/' . unserialize($banner->img)[$lang] : 'storage/uploads/images/banners/' . unserialize($banner->img_moblie)[$lang]); ?>" alt="<?php echo unserialize($banner->img_title_alt)[$lang]; ?>">
+	<img class="img-fluid lazy" data-src="<?php echo base_url((!smm_is_mobile()) ? 'storage/uploads/images/banners/' . unserialize($banner->img)[$lang] : 'storage/uploads/images/banners/' . unserialize($banner->img_moblie)[$lang]); ?>" alt="<?php echo unserialize($banner->img_title_alt)[$lang]; ?>">
 	<div class="ttl-header-hero wow">
 		<h1><?php echo unserialize($banner->title)[$lang]; ?></h1>
 	</div>
@@ -9,8 +9,8 @@
 <section id="job">
     <div class="container-fluid ">
         <div class="title-team text-center pb-5">
-			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-joinus.png' : 'resources/front_end/images/title-joinus.png'); ?>" alt="" class="img-fluid d-none d-md-block mx-auto">
-			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-joinus_sp.png' : 'resources/front_end/images/title-joinus_Sp.png'); ?>" alt="" class="img-fluid d-block d-md-none mx-auto">
+			<img data-src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-joinus.png' : 'resources/front_end/images/title-joinus.png'); ?>" alt="" class="img-fluid d-none d-md-block mx-auto lazy">
+			<img data-src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-joinus_sp.png' : 'resources/front_end/images/title-joinus_Sp.png'); ?>" alt="" class="img-fluid d-block d-md-none mx-auto lazy">
         </div>  
         <div class="row sec-job sec-job-info">
             <div class="col-sm-12 col-md-6">
@@ -18,8 +18,8 @@
             </div>
             <div class="col-sm-12 col-md-6 wrap-video">
             <a class="vdo-fancybox" data-fancybox href="https://www.youtube.com/embed/keqd4RUQK4s">
-                <img class="img-fluid" src="https://img.youtube.com/vi/keqd4RUQK4s/maxresdefault.jpg" alt="">
-                <img class="ico-play-btn" src="<?php echo base_url('resources/front_end/images/join_us/play-button.png'); ?>">
+                <img class="img-fluid lazy" data-src="https://img.youtube.com/vi/keqd4RUQK4s/maxresdefault.jpg" alt="">
+                <img class="ico-play-btn lazy" data-src="<?php echo base_url('resources/front_end/images/join_us/play-button.png'); ?>">
             </a>
             </div>
         </div>
@@ -27,37 +27,37 @@
 			<h2 class="ttl-cmn-job"><?php echo lang('page_join_us_benefits'); ?></h2>
             <div class="col-6 col-md-4 d-flex flex-column align-items-center">
                 <figure>
-                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_time.png');?>">
+                    <img class="lazy" data-src="<?php echo base_url('resources/front_end/images/join_us/ico_time.png');?>">
 				</figure>
                 <p class="text-center"><?php echo lang('page_join_us_benefit_1'); ?></p>
             </div>
             <div class="col-6 col-md-4 d-flex flex-column align-items-center">
                 <figure>
-                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_dress.png');?>">
+                    <img class="lazy" data-src="<?php echo base_url('resources/front_end/images/join_us/ico_dress.png');?>">
 				</figure>
                 <p class="text-center"><?php echo lang('page_join_us_benefit_2'); ?></p>
             </div>
             <div class="col-6 col-md-4 d-flex flex-column align-items-center">
                 <figure>
-                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_money_03.png');?>">
+                    <img class="lazy" data-src="<?php echo base_url('resources/front_end/images/join_us/ico_money_03.png');?>">
 				</figure>
                 <p class="text-center"><?php echo lang('page_join_us_benefit_3'); ?></p>
             </div>
             <div class="col-6 col-md-4 d-flex flex-column align-items-center">
                 <figure>
-                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_security_02.png');?>">
+                    <img class="lazy" data-src="<?php echo base_url('resources/front_end/images/join_us/ico_security_02.png');?>">
 				</figure>
                 <p class="text-center"><?php echo lang('page_join_us_benefit_4'); ?></p>
             </div>
             <div class="col-6 col-md-4 d-flex flex-column align-items-center">
                 <figure>
-                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_people.png');?>">
+                    <img class="lazy" data-src="<?php echo base_url('resources/front_end/images/join_us/ico_people.png');?>">
 				</figure>
                 <p class="text-center"><?php echo lang('page_join_us_benefit_5'); ?></p>
             </div>
             <div class="col-6 col-md-4 d-flex flex-column align-items-center">
                 <figure>
-                    <img src="<?php echo base_url('resources/front_end/images/join_us/ico_date.png');?>">
+                    <img class="lazy" data-src="<?php echo base_url('resources/front_end/images/join_us/ico_date.png');?>">
 				</figure>
                 <p class="text-center"><?php echo lang('page_join_us_benefit_6'); ?></p>
             </div>

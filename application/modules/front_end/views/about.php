@@ -3,8 +3,8 @@
         <div class="row">
             <div class="col-12 text-center">
                 <div class="title-about">
-					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-about.png' : 'resources/front_end/images/title-about.png'); ?>" alt="" class="img-fluid d-none d-md-block">
-					<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-about_sp.png' : 'resources/front_end/images/title-about_sp.png'); ?>" alt="" class="img-fluid d-block d-md-none">
+					<img data-src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-about.png' : 'resources/front_end/images/title-about.png'); ?>" alt="" class="img-fluid d-none d-md-block lazy">
+					<img data-src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-about_sp.png' : 'resources/front_end/images/title-about_sp.png'); ?>" alt="" class="img-fluid d-block d-md-none lazy">
                 </div>
             </div>
             <div class="col-md-12 col-lg-12 mt-4 mt-md-5 mb-1">
@@ -68,35 +68,35 @@
         <div class="d-block d-lg-flex sec-about-story">
             <div class="item-story">
                 <p class="ttl">2011</p>
-                <img class="img-fluid" src="<?php echo base_url('resources/front_end/images/about/about1.jpg'); ?>" alt="">
+                <img class="img-fluid lazy" data-src="<?php echo base_url('resources/front_end/images/about/about1.jpg'); ?>" alt="">
                 <p class="txt">
                     Social Media Master ได้เริ่มก่อตั้งบริษัทที่ให้บริการวางแผนและประชาสัมพันธ์ผ่านสื่อออนไลน์ซึ่งถือได้ว่า เราคือดิจิทัล เอเจนซี่เจ้าแรก ๆ ในยุคนั้น
                 </p>
             </div>
             <div class="item-story">
                 <p class="ttl">2013</p>
-                <img class="img-fluid" src="<?php echo base_url('resources/front_end/images/about/about2.jpg'); ?>" alt="">
+                <img class="img-fluid lazy" data-src="<?php echo base_url('resources/front_end/images/about/about2.jpg'); ?>" alt="">
                 <p class="txt">
                     เราคือผู้เชี่ยวชาญในเรื่อง SEOด้วยประสบการณ์กว่า 15 ปีในการคลุกคลีกับการเพิ่มประสิทธิภาพของเว็บไซต์เพื่อให้ติดอันดับในการค้นหาของกูเกิล ทำให้เรากลายเป็นผู้เชี่ยวชาญและเป็น Google Partners จากจุดเริ่มต้นนี้เราได้พัฒนาระบบการทำเว็บไซต์เพื่อรองรับการค้นหาจาก 3 เสิร์ชเอ็นจิ้นชั้นนำอย่าง Google Yahoo และ Bing โดยเน้นไปที่การทำ SEO และ SEM
                 </p>
             </div>
             <div class="item-story">
                 <p class="ttl">2015</p>
-                <img class="img-fluid" src="<?php echo base_url('resources/front_end/images/about/about3.jpg'); ?>" alt="">
+                <img class="img-fluid lazy" data-src="<?php echo base_url('resources/front_end/images/about/about3.jpg'); ?>" alt="">
                 <p class="txt">
                     เราเชื่อมั่นในพลังของความสร้างสรรค์การตลาดผ่านคอนเทนต์ไม่ใช่แนวคิดที่แปลกใหม่ในโลกการตลาดดิจิทัลอีกต่อไป แต่กำลังกลายเป็นขุมพลังที่มีความสำคัญมากกว่าที่เคย ดังคำเปรียบเปรยที่ว่า "Content is the king" เพราะคอนเทนต์ที่มีประสิทธิภาพนอกจากจะช่วยให้การวางกลยุทธ์ทางการตลาดออนไลน์ประสบผลสำเร็จได้แล้ว ยังช่วยส่งผลลัพธ์ที่ดีต่อเว็บไซต์อีกด้วย
                 </p>
             </div>
             <div class="item-story">
                 <p class="ttl">2017</p>
-                <img class="img-fluid" src="<?php echo base_url('resources/front_end/images/about/about4.jpg'); ?>" alt="">
+                <img class="img-fluid lazy" data-src="<?php echo base_url('resources/front_end/images/about/about4.jpg'); ?>" alt="">
                 <p class="txt">
                     ผู้เชี่ยวชาญและให้คำปรึกษาการวางแผนกลยุทธ์ดิจิทัลออนไลน์ด้วยทักษะและประสบการณ์ในหลากหลายธุรกิจของเราจึงทำให้เรามีทีมงานที่เข้าถึงข้อมูลสามารถช่วยวิเคราะห์แผนการลงโฆษณาออนไลน์เพื่อให้ลูกค้าของเราเข้าถึงกลุ่มเป้าหมายได้อย่างตรงจุดที่สุด
                 </p>
             </div>
             <div class="item-story">
                 <p class="ttl ttl--now">NOW</p>
-                <img class="img-fluid" src="<?php echo base_url('resources/front_end/images/about/about5.jpg'); ?>" alt="">
+                <img class="img-fluid lazy" data-src="<?php echo base_url('resources/front_end/images/about/about5.jpg'); ?>" alt="">
                 <p class="txt">
                     ดิจิทัลเอเจนซี่ชั้นนำเพราะยุคปัจจุบันผู้บริโภคมีพฤติกรรมที่เปลี่ยนไป หันหน้าเข้าสู่โลกออนไลน์มากขึ้น เราคือดิจิทัลเอเจนซี่ตัวจริงที่ติดตามความเคลื่อนไหวของโลกออนไลน์ทุกลมหายใจ เราพร้อมแล้วที่จะช่วยให้ธุรกิจของคุณโลดแล่นบนโลกออนไลน์อย่างมีประสิทธิภาพ
                 </p>

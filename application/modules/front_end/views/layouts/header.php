@@ -6,7 +6,7 @@ $CI =& get_instance();
 $CI->load->model('Service_model');
 ?>
 <!doctype html>
-<html lang="en" class="preload">
+<html lang="en" class="preload_screen">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -29,18 +29,67 @@ $CI->load->model('Service_model');
 	<meta name="twitter:description" content="<?php echo $og_twitter['description']; ?>" />
 	<meta name="twitter:image" content="<?php if (!smm_is_mobile()) { echo $og_twitter['description']; } else { echo $og_twitter['description_moblie']; } ?>" />
     <script type="text/javascript">
-        window.base_url = "<?php echo base_url(); ?>"
-        $(document).ready(function() {
+        window.base_url = "<?php echo base_url(); ?>";
+        window.addEventListener('DOMContentLoaded', (event) => {
+            var div = document.getElementsByTagName("div");
             setTimeout(function(){ 
-                $('html').removeClass('preload');
-                $('.preload').hide('slow');
+                var class_data = document.querySelector('html').classList[0];
+                document.querySelector('html').classList.remove(class_data);
+                document.querySelector(".preload").classList.add('hide');
             }, 500);
         });
     </script>
+    <style>
+        /*=====================================
+        preload class
+        ======================================*/
+        html.preload_screen {
+            overflow: hidden;
+            position: relative;
+        }
+        .preload {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #127dbc;
+            z-index: 1035;
+            transition: all 0.3s;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -ms-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 5rem;
+            line-height: 0;
+        }
+        .preload.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+        @keyframes blink {
+            0% { opacity: .2; }
+            20% { opacity: 1;}
+            100% { opacity: .2;}
+        }
+        .preload span {
+            animation-name: blink;
+            animation-duration: 1.4s;
+            animation-iteration-count: infinite;
+            animation-fill-mode: both;
+            color: #fff;
+        }       
+        .preload span:nth-child(2) { animation-delay: .2s; }
+        .preload span:nth-child(3) { animation-delay: .4s; }
+</style>
 </head>
 <body>
 
-<section class="preload"></section>
+<section class="preload"><span>.</span><span>.</span><span>.</span></section>
 
 <nav class="navbar navbar-light fixed-top navbar-expand-lg navbar-no-bg">
     <a class="navbar-brand" href="<?php echo base_url($lang . '/' . lang('menu_home')); ?>">

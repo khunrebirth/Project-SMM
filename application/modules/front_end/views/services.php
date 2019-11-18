@@ -1,5 +1,5 @@
 <section class="page-title main-hero-service p-0">
-	<img class="img-fluid" src="<?php echo base_url((!smm_is_mobile()) ? 'storage/uploads/images/banners/' . unserialize($service['banner_img'])[$lang] : 'storage/uploads/images/banners/' . unserialize($service['banner_img_moblie'])[$lang]); ?>" alt="<?php echo unserialize($service['banner_img_title_alt'])[$lang]; ?>">
+	<img class="img-fluid lazy" data-src="<?php echo base_url((!smm_is_mobile()) ? 'storage/uploads/images/banners/' . unserialize($service['banner_img'])[$lang] : 'storage/uploads/images/banners/' . unserialize($service['banner_img_moblie'])[$lang]); ?>" alt="<?php echo unserialize($service['banner_img_title_alt'])[$lang]; ?>">
 	<div class="ttl-header-hero wow">
 		<h1><?php echo unserialize($service['banner_title'])[$lang]; ?></h1>
 	</div>
@@ -7,7 +7,7 @@
 <section class="sec-service-content">
 	<div class="row wrap-service-content mb-5">
 		<div class="col-lg-4 col-sm-12 text-center">
-			<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service['content_top_img'])[$lang]); ?>" alt="<?php echo unserialize($service['content_top_img_title_alt'])[$lang]; ?>">
+			<img class="img-fluid lazy" data-src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service['content_top_img'])[$lang]); ?>" alt="<?php echo unserialize($service['content_top_img_title_alt'])[$lang]; ?>">
 		</div>
 		<div class="col-lg-8 col-sm-12 d-flex justify-content-end">
 			<div class="col-lg-11 col-sm-12 d-flex justify-content-between flex-column">
@@ -21,7 +21,7 @@
 	</div>
 	<div class="row wrap-service-content mb-5 flex-row-reverse flex-sm-column flex-lg-row-reverse">
 		<div class="col-lg-4 col-sm-12 text-center">
-			<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service['content_bottom_img'])[$lang]); ?>" alt="<?php echo unserialize($service['content_bottom_img_title_alt'])[$lang]; ?>">
+			<img class="img-fluid lazy" data-src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service['content_bottom_img'])[$lang]); ?>" alt="<?php echo unserialize($service['content_bottom_img_title_alt'])[$lang]; ?>">
 		</div>
 		<div class="col-lg-8 col-sm-12 d-flex">
 			<div class="col-11 col-lg-11 col-sm-12 d-flex justify-content-between flex-column">
@@ -67,12 +67,12 @@
 					<?php if ($portfolio->service_id == 17) { ?>
 						<a class="col-12 col-md-6 col-lg-2 text-center item-youtube mb-5" data-fancybox href="https://www.youtube.com/embed/keqd4RUQK4s">
 							<div class="thumb-youtube" >
-								<img src="https://img.youtube.com/vi/keqd4RUQK4s/maxresdefault.jpg" alt="">
+								<img class="lazy" data-src="https://img.youtube.com/vi/keqd4RUQK4s/maxresdefault.jpg" alt="">
 							</div>
 						</a>
 					<?php } else { ?>
 						<div class="col-12 col-md-6 col-lg-2 text-center mb-5">
-							<img class="img-fluid" src="<?php echo base_url('storage/uploads/images/services/' . unserialize($portfolio->img)[$lang]); ?>" alt="<?php echo unserialize($portfolio->img_title_alt)[$lang]; ?>">
+							<img class="img-fluid lazy" data-src="<?php echo base_url('storage/uploads/images/services/' . unserialize($portfolio->img)[$lang]); ?>" alt="<?php echo unserialize($portfolio->img_title_alt)[$lang]; ?>">
 						</div>
 					<?php } ?>
 				<?php } ?>
@@ -83,16 +83,16 @@
 <section id="service" class="wow fadeInUp pb-0">
 	<div class="container-fluid text-center sec-home-service">
 		<div class="title-service ttl-home-img">
-			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-service.png' : 'resources/front_end/images/title-service.png'); ?>" class="img-fluid d-none d-md-block">
-			<img src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-service_sp.png' : 'resources/front_end/images/title-service_sp.png'); ?>" class="img-fluid d-block d-md-none mx-auto">
+			<img data-src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-service.png' : 'resources/front_end/images/title-service.png'); ?>" class="img-fluid d-none d-md-block lazy">
+			<img data-src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-service_sp.png' : 'resources/front_end/images/title-service_sp.png'); ?>" class="img-fluid d-block d-md-none mx-auto lazy">
 		</div>
 		<div class="row">
 			<?php foreach ($services as $service_parent) { ?>
 				<a href="<?php echo base_url($lang . '/' . lang('menu_service') . '/' . unserialize($service_parent->slug)[$lang]); ?>" class="col-xs-12 col-md-3 col-lg-3 mb-5 col-cmn-05 ico-service">
 					<div class="wrap-icon-flip">
-						<img src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service_parent->icon)[$lang]); ?>" class="img-fluid service__icon--resize">
+						<img data-src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service_parent->icon)[$lang]); ?>" class="img-fluid service__icon--resize lazy">
 					</div>
-					<img src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service_parent->icon)[$lang]); ?>" class="img-fluid service__icon--resize ico-service__img">
+					<img data-src="<?php echo base_url('storage/uploads/images/services/' . unserialize($service_parent->icon)[$lang]); ?>" class="img-fluid service__icon--resize lazy ico-service__img">
 					<p class="service__title--body"><?php echo unserialize($service_parent->title)[$lang]; ?></p>
 				</a>
 			<?php } ?>
@@ -103,13 +103,13 @@
 	<section class="sec-service-port row">
 		<div class="col row sec-service-port--inner">
 			<div class="col-md-12 col-lg-3 d-flex  justify-content-start justify-content-lg-end">
-				<img class="img-fluid img-logo-client" src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-our-client.png' : 'resources/front_end/images/title-our-client.png'); ?>">
+				<img class="img-fluid img-logo-client lazy" data-src="<?php echo base_url($lang == 'th' ? 'resources/front_end/images/title-our-client.png' : 'resources/front_end/images/title-our-client.png'); ?>">
 			</div>
 			<div class=" col-md-12  col-lg-9">
 				<div class="wrap-slide-port owl-carousel owl-theme">
 					<?php foreach ($service['our_clients'] as $client) { ?>
 						<div class="item">
-							<img src="<?php echo base_url('storage/uploads/images/services/' . unserialize($client->img)[$lang]) ?>" alt="<?php echo unserialize($client->img_title_alt)[$lang]; ?>">
+							<img class="lazy" data-src="<?php echo base_url('storage/uploads/images/services/' . unserialize($client->img)[$lang]) ?>" alt="<?php echo unserialize($client->img_title_alt)[$lang]; ?>">
 						</div>
 					<?php } ?>
 				</div>

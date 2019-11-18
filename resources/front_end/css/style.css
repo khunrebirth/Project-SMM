@@ -2064,24 +2064,6 @@ custom class
 	display: none !important;
 }
 
-/*=====================================
-preload class
-======================================*/
-html.preload {
-	overflow: hidden;
-	position: relative;
-}
-.preload {
-	position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #127dbc;
-    z-index: 1035;
-}
-
 
 .box-slide-portfolio-sp .owl-item {
 	overflow: hidden;
@@ -2090,4 +2072,8 @@ html.preload {
 	-moz-transition: all 0.5s;
 	-ms-transition: all 0.5s;
 	-o-transition: all 0.5s;
+}
+.box-slide-client-sp .owl-item .row>div {
+	/* height: 200px !important; */
+	/* overflow: hidden !important; */
 }

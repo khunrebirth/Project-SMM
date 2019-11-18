@@ -31,6 +31,7 @@ class Services extends MX_Controller
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 			<link rel="stylesheet" href="https://unpkg.com/tippy.js@5/dist/backdrop.css" />
 			<link rel="stylesheet" href="' . base_url('resources/front_end/css/style_services.min.css') . '">
+
 		';
 	}
 

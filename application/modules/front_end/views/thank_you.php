@@ -1,6 +1,6 @@
 <?php if ($banner) { ?>
 <section class="page-title main-hero-service p-0">
-	<img class="img-fluid" src="<?php echo base_url((!smm_is_mobile()) ? 'storage/uploads/images/banners/' . unserialize($banner->img)[$lang] : 'storage/uploads/images/banners/' . unserialize($banner->img_moblie)[$lang]); ?>" alt="<?php echo unserialize($banner->img_title_alt)[$lang]; ?>">
+	<img class="img-fluid lazy" data-src="<?php echo base_url((!smm_is_mobile()) ? 'storage/uploads/images/banners/' . unserialize($banner->img)[$lang] : 'storage/uploads/images/banners/' . unserialize($banner->img_moblie)[$lang]); ?>" alt="<?php echo unserialize($banner->img_title_alt)[$lang]; ?>">
 	<div class="ttl-header-hero wow">
 		<h1><?php echo unserialize($banner->title)[$lang]; ?></h1>
 	</div>
@@ -13,7 +13,7 @@
 			<p class="lead thank-you-txt mt-4 mb-4"><?php echo lang('page_thanks_content'); ?></p>
 		</div>
 		<div class="col-xs-12 col-md-6 col-lg-6 pl-md-5 text-left text-lg-left text-sm-center  thank-you-img">
-			<img src="<?php echo base_url('resources/front_end/images/title-service.png')?>" class="img-fluid">
+			<img data-src="<?php echo base_url('resources/front_end/images/title-service.png')?>" class="img-fluid lazy">
 			<div class="col text-left mt-5">
 				<a href="<?php echo base_url($lang . '/' . lang('menu_home')); ?>" class="btn btn-primary text-center col-lg-6 col-sm-12"><?php echo lang('page_thanks_btn_back'); ?></a>
 			</div>

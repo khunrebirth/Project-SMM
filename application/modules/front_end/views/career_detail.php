@@ -1,5 +1,5 @@
 <section class="page-title main-hero-service p-0">
-	<img class="img-fluid" src="<?php echo base_url((!smm_is_mobile()) ? 'storage/uploads/images/join_us/' . unserialize($career->img_cover)[$lang] : 'storage/uploads/images/join_us/' . unserialize($career->img_cover_moblie)[$lang]); ?>">
+	<img class="img-fluid lazy" data-src="<?php echo base_url((!smm_is_mobile()) ? 'storage/uploads/images/join_us/' . unserialize($career->img_cover)[$lang] : 'storage/uploads/images/join_us/' . unserialize($career->img_cover_moblie)[$lang]); ?>">
 	<div class="ttl-header-hero wow">
 		<h1><?php echo unserialize($career->title)[$lang]; ?></h1>
 		<p class="txt-detail-job">
@@ -25,7 +25,7 @@
 					<?php foreach ($career_galleries as $career_gallery) { ?>
 					<li class="item">
 						<a data-fancybox="group1" rel="gallery" class="fancybox" href="<?php echo base_url('storage/uploads/images/join_us/' . unserialize($career_gallery->img)[$lang]); ?>">
-							<img class="nav-job-img" src="<?php  echo base_url('storage/uploads/images/join_us/' . unserialize($career_gallery->img)[$lang]); ?>" alt="<?php echo unserialize($career_gallery->img_title_alt)[$lang]; ?>">
+							<img class="nav-job-img lazy" data-src="<?php  echo base_url('storage/uploads/images/join_us/' . unserialize($career_gallery->img)[$lang]); ?>" alt="<?php echo unserialize($career_gallery->img_title_alt)[$lang]; ?>">
 						</a>
 					</li>
 					<?php } ?>

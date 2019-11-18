@@ -15,7 +15,7 @@
 <section id="about" class="showcase">
 	<div class="container-fluid p-0">
 		<div class="row no-gutters">
-			<div class="col-md-6 col-lg-6 order-lg-2 showcase-img d-none d-sm-block lazy" data-bg="url('<?php echo base_url(!smm_is_safari() ? 'storage/uploads/images/abouts/' . unserialize($about->img_section)[$lang] . '.webp' : 'storage/uploads/images/abouts/' . unserialize($about->img_section)[$lang]); ?>')">
+			<div class="col-md-6 col-lg-6 order-lg-2 showcase-img d-none d-sm-block lazy" data-bg="url('<?php echo base_url(!smm_is_safari() ? 'storage/uploads/images/abouts/' . unserialize($about->img_section)[$lang] . '.webp' : 'storage/uploads/images/abouts/' . unserialize($about->img_section)[$lang]); ?>')"></div>
 			<div class="col-xs-12 col-md-6 col-lg-6 order-lg-1 my-auto showcase-text text-center wow fadeInLeft">
 				<div class="title-about ttl-home-img">
 					<?php
@@ -105,9 +105,12 @@
 				<?php foreach ($top_portfolios as $top_portfolio) { ?>
 					<div class="col-6 col-md-6 col-lg-3 mb-4">
 						<?php if ($top_portfolio->category_id == 17) { ?>
-
 							<!-- TODO:: handle Portoflio Video -->
-
+							<a class="box-youtube" data-fancybox href="https://www.youtube.com/embed/keqd4RUQK4s">
+								<div class="thumb-youtube" >
+									<img class="lazy img-fluid" data-src="https://img.youtube.com/vi/keqd4RUQK4s/maxresdefault.jpg" alt="">
+								</div>
+							</a>
 						<?php } else { ?>
 							<img data-src="<?php echo base_url(!smm_is_safari() ? '/storage/uploads/images/home/' . unserialize($top_portfolio->image)[$lang] . '.webp' : '/storage/uploads/images/home/' . unserialize($top_portfolio->image)[$lang]); ?>" alt="<?php echo unserialize($top_portfolio->title)[$lang]; ?>" 
 							class="img-fluid img-clients <?php echo (smm_is_mobile())?'owl-lazy':'lazy'; ?> ">
@@ -124,9 +127,12 @@
 				<?php foreach ($slice_portfolios as $portfolio) { ?>
 					<div class="col-6 col-md-6 col-lg-3 mb-4">
 						<?php if ($portfolio->category_id == 17) { ?>
-
 							<!-- TODO:: handle Portoflio Video -->
-
+							<a class="box-youtube" data-fancybox href="https://www.youtube.com/embed/keqd4RUQK4s">
+								<div class="thumb-youtube" >
+									<img class="lazy img-fluid" data-src="https://img.youtube.com/vi/keqd4RUQK4s/maxresdefault.jpg" alt="">
+								</div>
+							</a>
 						<?php } else { ?>
 							<img class="img-fluid <?php echo (smm_is_mobile())?'owl-lazy':'lazy'; ?> " data-src="<?php echo base_url(!smm_is_safari() ? 'storage/uploads/images/portfolios/' . unserialize($portfolio->image)[$lang] . '.webp' : 'storage/uploads/images/portfolios/' . unserialize($portfolio->image)[$lang]); ?>" alt="<?php echo unserialize($portfolio->title)[$lang]; ?>">
 						<?php } ?>
