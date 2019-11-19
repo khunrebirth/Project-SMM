@@ -8,7 +8,7 @@ class LanguageLoader
 		$ci->load->helper('language');
 
 		$segments = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
-		$language = isset($segments[1]) && $segments[1] != "" ? $segments[1] : $ci->config->item('language_abbr');
+		$language = isset($segments[3]) && $segments[3] != "" ? $segments[3] : $ci->config->item('language_abbr');
 		$ci->config->set_item('language_abbr', $language);
 		$site_lang = $ci->config->item('language_abbr');
 
