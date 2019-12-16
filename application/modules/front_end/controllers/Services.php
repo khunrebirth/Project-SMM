@@ -117,7 +117,7 @@ class Services extends MX_Controller
 		$data['id'] = $service->id;
 		$data['title'] = $service->title;
 		$data['banner_img'] = $service->banner_img;
-		$data['banner_img_moblie'] = $service->banner_img;
+		$data['banner_img_moblie'] = $service->banner_img_moblie;
 		$data['banner_img_title_alt'] = $service->banner_img_title_alt;
 		$data['banner_title'] = $service->banner_title;
 		$data['content_top_img'] = $service->content_top_img;
